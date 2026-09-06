@@ -1,0 +1,28 @@
+[
+  {
+    "id":"part2-msk-q01",
+    "module":"Musculoskeletal and Rheumatology",
+    "specialty":"Musculoskeletal and Sport Medicine",
+    "topic":"In-toeing",
+    "subtopic":"Metatarsus adductus",
+    "yearTags":[2017],
+    "examPart":"Part II",
+    "stemEn":"A newborn is shown with an in-toeing deformity. Which statement best describes the appropriate management?",
+    "options":[{"key":"A","text":"It will not respond with stretch"},{"key":"B","text":"It is not common"},{"key":"C","text":"It needs surgical intervention"},{"key":"D","text":"Reassurance"}],
+    "recalledAnswer":"D if flexible; source notes C if semiflexible, although the accompanying explanation also describes observation for semiflexible infants under 6 months",
+    "verifiedAnswer":null,
+    "answerConfidence":"low",
+    "explanationAr":"السؤال يعتمد على صورة in-toeing وعلى درجة flexibility. المصدر يقول إن metatarsus adductus هو أكثر congenital foot deformation شيوعًا وسبب شائع للـin-toeing في الرضع. إذا كان Flexible فإنه غالبًا يتحسن تلقائيًا ولا يحتاج passive stretching. المصدر يذكر في مفتاح السؤال D reassurance إذا كان flexible، لكنه يكتب C إذا كان semiflexible، بينما شرحه نفسه يقول إن semiflexible metatarsus adductus عند الرضع <6 أشهر يمكن البدء معه بالملاحظة. لذلك لا نعتمد جوابًا نهائيًا قبل مراجعة الصورة والسياق.",
+    "incorrectOptionsAr":"لا يمكن استبعاد C بصورة آمنة دون رؤية الصورة وتحديد flexibility؛ ولهذا السؤال غير جاهز للنشر.",
+    "keywords":["in-toeing","metatarsus adductus","flexibility","newborn"],
+    "clinicalPearl":"Management of metatarsus adductus depends on flexibility; flexible deformity generally resolves spontaneously.",
+    "image":{"requiredForQuestion":true,"sourceRef":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026; Musculoskeletal and Sport Medicine Q1","assetPath":null,"status":"missing","captionEn":"Original source image required to assess the in-toeing deformity and flexibility context.","captionAr":"الصورة الأصلية مطلوبة لتقييم تشوه in-toeing وسياق درجة المرونة."},
+    "tts":{"enabled":true,"language":"en","text":"A newborn is shown with an in-toeing deformity. Which statement best describes the appropriate management? Option A, it will not respond with stretch. Option B, it is not common. Option C, it needs surgical intervention. Option D, reassurance."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","questionNumber":"Musculoskeletal and Sport Medicine Q1","years":[2017]}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation distinguishes flexible from semiflexible disease but its stated key is internally inconsistent for semiflexible management."},
+    "duplicateOf":null,
+    "reviewStatus":"image_missing",
+    "publishable":false,
+    "blockers":["original_image_required","source_key_internal_inconsistency","clinical_verification_pending"]
+  }
+]
