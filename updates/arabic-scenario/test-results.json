@@ -1,0 +1,37 @@
+{
+  "verified_on": "2026-09-06",
+  "status": "local_fixture_tests_passed",
+  "deployment_performed": false,
+  "production_tested": false,
+  "ios_safari_tested": false,
+  "module_sha256": "e8bb1034c700f7034f9b3a8a49d487931d3d63cdc346837b8c727ba40b1a47d2",
+  "test_source_sha256": "2fcc5cb3e1dacf1f2e7155cdf05ed0d5fcca5ad9cbc989bb2a2fcd109102d1a5",
+  "node": {
+    "version": "v22.16.0",
+    "command": "node --test tests/scenario-panel.test.mjs",
+    "passed": 42,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "environment": "Headless Chromium; in-memory fixture with mocked API responses",
+    "viewport": {"width": 390, "height": 844},
+    "passed": 8,
+    "checks": [
+      "Stored Arabic scenario displayed without an API request.",
+      "Opening the panel did not submit the form or reveal answer feedback.",
+      "Arabic RTL panel fits a 390-pixel mobile viewport without horizontal overflow.",
+      "The same control closes the panel.",
+      "An unconfigured mock API shows a clear message without substituting an answer explanation.",
+      "A successful mock response using the existing POST /api/scenario contract renders.",
+      "Normal answer submission remains independent of the scenario control.",
+      "No uncaught browser JavaScript errors and no external network requests."
+    ],
+    "fixture_provenance": "Existing user-saved PediaRounds_Arabic_Repair.zip; browser_smoke.py and browser-harness.html rerun locally in this task."
+  },
+  "limitations": [
+    "The original full application source and deployment workflow are not present in this repository.",
+    "Question-bank integration and clinical content were not tested or published.",
+    "Passing fixture tests does not establish that the live site is fixed."
+  ]
+}
