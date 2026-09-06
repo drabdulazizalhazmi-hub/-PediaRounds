@@ -1,0 +1,33 @@
+[
+  {
+    "id": "part2-metabolic-urea-q07",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Urea Cycle Disorders",
+    "subtopic": "Ornithine transcarbamylase deficiency",
+    "yearTags": [2025, 2024, 2023, 2019, 2017],
+    "examPart": "Part II",
+    "stemEn": "A 10-day-old boy presented with poor feeding and respiratory alkalosis. Labs showed hyperammonemia (ammonia 1600), metabolic alkalosis, low plasma citrulline and high urine orotic acid. His mother's brother has the same disease. What is the most likely diagnosis?",
+    "options": [
+      {"key": "A", "text": "Ornithine transcarbamylase (OTC) deficiency"},
+      {"key": "B", "text": "Citrullinemia"},
+      {"key": "C", "text": "N-Acetylglutamate synthetase (NAGS) deficiency"}
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "الرضيع لديه hyperammonemia شديدة مع respiratory alkalosis، وlow citrulline مع high urine orotic acid. وجود إصابة في خال الطفل يدعم نمط X-linked؛ وهذه المجموعة من clues في المصدر تشير إلى OTC deficiency.",
+    "reasoningEn": "The source pattern of severe hyperammonemia, low citrulline, elevated urinary orotic acid, and an X-linked family history supports OTC deficiency.",
+    "incorrectOptionsAr": "Citrullinemia ترتبط بارتفاع citrulline وليس انخفاضه. NAGS deficiency تسبب hyperammonemia لكن لا تعطي النمط الكلاسيكي لارتفاع urine orotic acid المذكور في السؤال.",
+    "keywords": ["hyperammonemia", "respiratory alkalosis", "low citrulline", "high urine orotic acid", "X-linked"],
+    "clinicalPearl": "Hyperammonemia without metabolic acidosis should trigger urgent consideration of a urea-cycle disorder.",
+    "managementSteps": ["Treat hyperammonemia as a metabolic emergency", "Temporarily stop protein during acute decompensation", "Provide high-calorie dextrose and specialist metabolic input"],
+    "diagnosticSteps": ["Plasma amino acids", "Urine orotic acid", "Molecular confirmation when appropriate"],
+    "image": null,
+    "tts": {"enabled": true, "language": "en", "text": null},
+    "sourceRefs": [{"sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026", "year": 2025, "part": "Part II", "page": null, "questionNumber": "Q7", "notes": "Also recalled in 2024, 2023, 2019 and 2017; source explanation cites UpToDate."}],
+    "verification": {"upToDate": "not_checked", "nelson": "not_checked", "guideline": "not_checked", "referenceNotes": "Source cites UpToDate; independent verification pending."},
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  }
+]
