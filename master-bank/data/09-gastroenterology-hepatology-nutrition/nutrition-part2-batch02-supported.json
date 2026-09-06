@@ -1,0 +1,36 @@
+{
+  "batchId": "nutrition-part2-batch02-supported",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+  "examPart": "Part II",
+  "sourceSpecialty": "Nutrition and Malnutrition",
+  "module": "gastroenterology-hepatology-nutrition",
+  "questions": [
+    {
+      "id": "part2-nutrition-q023-picky-eater-family-model",
+      "module": "gastroenterology-hepatology-nutrition",
+      "specialty": "Nutrition and Malnutrition",
+      "topic": "Feeding difficulties",
+      "subtopic": "Picky eating",
+      "yearTags": [2025],
+      "examPart": "Part II",
+      "stemEn": "A child with Down syndrome and autism is brought by the family because he is a picky eater. How should this be managed?",
+      "options": [{"key":"A","text":"Implement a strict food program"},{"key":"B","text":"Encourage a model family eating plan"},{"key":"C","text":"Allow 60 minutes for feeding time"}],
+      "recalledAnswer": "B",
+      "verifiedAnswer": null,
+      "answerConfidence": "moderate",
+      "explanationAr": "المصدر يختار تشجيع model family eating plan. ويشرح أن feeding guidelines تشمل تقليل المشتتات، وضع feeding schedule يساعد على hunger، إبقاء الوجبة في حدود 20–30 دقيقة، تشجيع self-feeding، وتكرار عرض الطعام الجديد بدون ضغط.",
+      "reasoningEn": "The source favors a positive family mealtime model rather than a strict feeding program or prolonged meals.",
+      "incorrectOptionsAr": "Strict food program لا يتماشى مع النهج المرن والهادئ الذي يصفه المصدر. Allowing 60 minutes is longer than the source's recommended 20–30 minute meal duration.",
+      "keywords": ["Down syndrome","autism","picky eater","family meal","feeding schedule"],
+      "clinicalPearl": "The source emphasizes pleasant structured family meals, limited mealtime duration, and repeated food exposure without pressure.",
+      "managementSteps": ["Reduce mealtime distractions", "Use a regular feeding schedule", "Limit meals to about 20–30 minutes as described by the source", "Encourage age-appropriate self-feeding", "Offer new foods repeatedly without pressure"],
+      "diagnosticSteps": [],
+      "image": null,
+      "tts": {"enabled":true,"language":"en","text":"A child with Down syndrome and autism is brought by the family because he is a picky eater. How should this be managed? A. Implement a strict food program. B. Encourage a model family eating plan. C. Allow sixty minutes for feeding time."},
+      "sourceRefs": [{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2025,"part":"Part II","page":null,"questionNumber":"Nutrition and Malnutrition Q23","notes":"Source states similar to Question 42 in General Pediatrics Board Review 3rd edition 2020."}],
+      "verification": {"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation is based on the cited General Pediatrics Board Review question."},
+      "duplicateOf": null,
+      "reviewStatus": "needs_verification"
+    }
+  ]
+}
