@@ -1,0 +1,39 @@
+{
+  "format": "pediarounds-d2-2025-source-import-v1",
+  "project_id": "appgprj_6a9b542a7a7c81919e2e97f30ed411bd",
+  "title": "D2 2025 — Nine-Method Drills · Q37–Q96",
+  "question_count": 59,
+  "source_pdf_page_count": 194,
+  "publication_status": "prepared_for_import_not_live_published",
+  "workflow": {
+    "before_answer": ["question_en", "options_en", "scenario_ar"],
+    "after_answer": ["source_answer_line", "source_explanation_en", "high_yield_points_en", "paper_vs_book_conflict_note_en"],
+    "preserve_done_and_resume_ids_on_live_merge": true,
+    "do_not_invent_missing_options": true,
+    "manual_deduplication_against_live_bank_required": true
+  },
+  "counts": {
+    "standard_mcq_cards": 48,
+    "recall_cards_missing_multiple_options": 11,
+    "source_marked_incomplete_or_uncertain": 14,
+    "paper_vs_book_conflict_or_conditional_key": 11,
+    "manual_review_required": 22
+  },
+  "content_revision": {
+    "id": "2026-09-06-arabic-content-v2",
+    "date": "2026-09-06",
+    "scope": "59 case-specific pre-answer Arabic scenarios; remove explicit answer text from 7 display stems.",
+    "source_import_sha256": "99af1e021011c62b39dc220748fc296ecd0612441c8e69b3043c919cca3f3b0f",
+    "native_project_schema_compatibility": "unverified",
+    "deployment_status": "migrating_to_github_not_live_published",
+    "clinical_validation": "Original answer keys and explanations preserved, not independently reverified. Arabic scenarios require clinician review before live release.",
+    "verification_label_policy": "NELSON-VERIFIED or similar strings inside source explanations are inherited source labels, not verification performed in this revision.",
+    "source_number_gaps_in_saved_import": [43],
+    "gap_note": "Question 43 is absent from the saved import. The original PDF was not re-extracted in this revision; no missing question has been invented."
+  },
+  "parts": [
+    {"file":"questions-part-1.json","count":20},
+    {"file":"questions-part-2.json","count":20},
+    {"file":"questions-part-3.json","count":19}
+  ]
+}
