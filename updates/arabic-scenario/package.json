@@ -1,0 +1,8 @@
+{
+  "name": "pediarounds-arabic-scenario-repair",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": { "test": "node --test tests/scenario-panel.test.mjs" },
+  "engines": { "node": ">=18" }
+}
