@@ -1,0 +1,72 @@
+{
+  "section": "Neonatology / Neonatal Hematological Conditions",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+  "range": "Q8-Q13",
+  "questionCount": 6,
+  "rules": {
+    "englishTTS": true,
+    "arabicExplanation": true,
+    "preserveSourceWording": true,
+    "recalledAnswerSeparateFromVerifiedAnswer": true,
+    "imageRequiredWhenSourceImageDependent": true
+  },
+  "questions": [
+    {
+      "id":"NEO-HEM-008",
+      "stem":"A newborn found to have platelet count of 4,000 with normal WBC count. The mother’s platelet count is normal. What is most likely diagnosis?",
+      "options":["Neonatal alloimmune thrombocytopenia","Neonatal autoimmune thrombocytopenia"],
+      "years":[2022,2018],
+      "recalledAnswer":"Neonatal alloimmune thrombocytopenia",
+      "verifiedAnswer":null,
+      "status":"needs_verification",
+      "arabicExplanation":"النقطة الفارقة في صياغة المصدر هي severe isolated neonatal thrombocytopenia مع maternal platelet count طبيعي. المصدر يفسر NAIT/FNAIT بأن الجنين يرث paternal platelet antigen غير موجود عند الأم، فتكوّن الأم IgG antiplatelet antibodies تعبر المشيمة وتدمر صفائح الجنين/الوليد. أما neonatal autoimmune thrombocytopenia فترتبط غالبًا بأجسام مضادة تتفاعل مع صفائح الأم والجنين كما في maternal ITP أو SLE.",
+      "clinicalPearl":"Severe neonatal thrombocytopenia + normal maternal platelets strongly points toward NAIT/FNAIT in the source framing."
+    },
+    {
+      "id":"NEO-HEM-009",
+      "stem":"A newborn found to have bruising and IVH grade I. His platelet count is 20,000. His mother’s platelet count is 200,000 (neonatal alloimmune thrombocytopenia case). What will you do next?",
+      "options":[],
+      "years":[],
+      "recalledAnswer":null,
+      "verifiedAnswer":null,
+      "status":"source_options_pending",
+      "arabicExplanation":"الصياغة المتاحة من المصدر تؤكد NAIT مع bleeding/IVH وplatelets 20,000، لكن نتيجة الاسترجاع الحالية لم تعرض خيارات السؤال أو مفتاحه كاملًا؛ لذلك لم أختلق answer أو options.",
+      "clinicalPearl":"Do not publish until the complete source choices and recalled key are captured."
+    },
+    {
+      "id":"NEO-HEM-010",
+      "status":"source_capture_pending",
+      "verifiedAnswer":null,
+      "arabicExplanation":"يُستكمل حرفيًا من صفحات Neonatal Hematological Conditions في المصدر قبل النشر."
+    },
+    {
+      "id":"NEO-HEM-011",
+      "status":"source_capture_pending",
+      "verifiedAnswer":null,
+      "arabicExplanation":"يُستكمل حرفيًا من المصدر؛ لا تُملأ الفجوات من الذاكرة."
+    },
+    {
+      "id":"NEO-HEM-012",
+      "stem":"A 2-day-old newborn was found to be jaundiced. Peripheral blood smear picture was provided showing spherocytosis. What is the most likely cause?",
+      "options":["ABO incompatibility","Congenial leukemia","Sideroblastic anemia","Iron deficiency anemia"],
+      "years":[2019],
+      "recalledAnswer":"ABO incompatibility",
+      "verifiedAnswer":null,
+      "status":"image_required_needs_verification",
+      "image":{"required":true,"status":"image_missing","description":"Peripheral blood smear showing spherocytosis"},
+      "arabicExplanation":"المصدر يربط neonatal jaundice مع spherocytosis/microspherocytosis في peripheral smear بـ ABO alloimmune hemolytic disease of the newborn، ويذكر أن هذا النمط لا يُرى عادةً في Rh disease.",
+      "clinicalPearl":"Neonatal hemolysis + spherocytes on smear is a classic source clue for ABO incompatibility."
+    },
+    {
+      "id":"NEO-HEM-013",
+      "stem":"A 4-day-old newborn presented with jaundice. Laboratory results showed indirect (unconjugated) hyperbilirubinemia. The mother reported that she is giving him breastfeeding every 4 hours. He is passing stool once daily, and he is passing urine 3 times daily. What is the most likely cause?",
+      "options":["Breast milk jaundice","Breastfeeding jaundice"],
+      "years":[2025],
+      "recalledAnswer":"Breastfeeding jaundice",
+      "verifiedAnswer":null,
+      "status":"needs_verification",
+      "arabicExplanation":"حسب شرح المصدر، هذا breastfeeding jaundice بسبب suboptimal intake في أول أسبوع: الرضاعة كل 4 ساعات تعني تقريبًا 6 feeds/day مع قلة stool/urine، ما يؤدي إلى delayed meconium excretion وزيادة enterohepatic bilirubin load. المصدر يذكر أن الوقاية والعلاج يرتكزان على تحسين فعالية وتكرار الرضاعة.",
+      "clinicalPearl":"Early jaundice + inadequate feeding frequency/output → think suboptimal-intake (breastfeeding) jaundice, not breast-milk jaundice."
+    }
+  ]
+}
