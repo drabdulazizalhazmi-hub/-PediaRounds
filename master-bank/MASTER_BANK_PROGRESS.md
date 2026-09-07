@@ -8,29 +8,63 @@
 - Base branch: `main`
 - PR #2: merged
 - PR #4: merged successfully as `c24996e32b4279f71518455483c45afb7da49bc7`
-- PR #3: closed as superseded by PR #4
+- PR #3: closed as superseded
 - Current working branch: `master-bank/review-images-verification`
 - Current pull request: **PR #5 — Review images, incomplete recalls, and clinical verification**
-- Phase: **image recovery / source-supported incomplete-recall cleanup / clinical verification**
+- Phase: **quality cleanup after full numbered-source coverage**
 
 ## Source coverage milestone
 
-Latest successful closure quality run reported:
+Latest closure QA:
+- **1023 records scanned**
+- **1022/1022 enumerated source slots covered**
+- **0 missing source slots**
+- **0 duplicate IDs**
+- **0 section/Q structural collisions**
 
-- **Questions scanned: 1023**
-- **Enumerated expected source slots: 1022**
-- **Covered expected slots: 1022**
-- **Missing expected slots: 0**
-- **Exact duplicate IDs: 0**
-- **Possible section/Q collisions: 0**
-- **All canonical sections: full source-number coverage**
+The 1023-vs-1022 discrepancy is the source's Genetics numbering anomaly: TOC prints 53 but actual Genetics sequence ends at Q52. Do not fabricate Q53.
 
-The 1023-vs-1022 discrepancy is a source numbering anomaly: the source TOC prints Genetics = 53, but the actual Genetics sequence ends at Q52 before Metabolic Disorders. **Do not fabricate Genetics Q53.**
+## Sparse-recall quality milestone
 
-## Current review-status baseline
+The source-wide sparse set contained **167 questions** where the source preserved zero or one answer option:
+- 163 single-option recalls
+- 4 zero-option recalls
+- 48 image/media cues
+- 10 uncertain/unclear source-answer texts
 
-From the closure audit before PR #5 cleanup:
+All **167/167** have now received a direct source re-read in four large batches (59 + 42 + 28 + 38). Remaining sparse recalls awaiting direct source re-read: **0**.
 
+No missing distractors or calculation inputs were invented, and no `verifiedAnswer` was assigned solely from recall-source text.
+
+## Sparse image/media milestone — 48/48 complete
+
+Files:
+- `review-queue/sparse-media-triage-48-20260907.json`
+- `review-queue/sparse-image-association-34-20260907.json`
+- `review-queue/sparse-media-missing14-audit-20260907.json`
+
+Final media results:
+- **48/48 media cues audited**.
+- **23 questions** have exact pre-answer original-image associations; **28 original embedded image files** are identified by PDF xref, bbox, dimensions and SHA-256.
+- **10 questions** had embedded candidates proven to be post-answer/explanation/reference graphics; these are explicitly blocked from pre-answer display.
+- **1 question — Neonatology Q7** has nearby Ballard teaching images but no uniquely identifiable original question image.
+- **8 questions** explicitly reference media whose original image is absent from the current PDF extraction: Oncology Q15; Cardiology Q32; Endocrinology Q17/Q48; Infectious Q67; Nephrology Q46; Neurology Q14/Q34.
+- **6 prior media cues are actually text-only questions** and should not carry an image-required blocker: Immunology Q4; Metabolic Q15; Nephrology Q6; Neurology Q8; Trauma Q2/Q29.
+
+No source image bytes were committed publicly; publication rights and clinical image review remain separate gates.
+
+## Important retained source/clinical gates
+
+- Allergy Q27: source gives methacholine challenge but explicitly says exercise challenge is more direct/preferred if offered.
+- Dermatology Q12: source key says IV acyclovir while source explanation says oral antiviral therapy; keep `conflicting` until independently verified.
+- Research Q10: specificity cannot be calculated because source data are absent; source prints `X`.
+- Research Q12: source preserves OR=6 without underlying numbers.
+- Nephrology Q46: original renal ultrasound missing and source answer unresolved (`X`).
+- Neonatology Q7: question image not uniquely identifiable.
+
+## Current review-status baseline inherited from closure
+
+Before PR #5 cleanup:
 - `needs_verification`: 585
 - `image_missing`: 198
 - `image_needs_review`: 10
@@ -39,94 +73,34 @@ From the closure audit before PR #5 cleanup:
 - `outdated`: 9
 - `deduplicated`: 13
 
-Image validation reported **249 image-dependent questions** and **0 public repository assetPaths**. Original images may exist in private/source bundles, but publication remains blocked until image association, clinical review, and rights/publication handling are completed.
-
-## PR #5 quality work completed
-
-- Pulmonary Q9 and Q10: reconciled with already recovered original microscopy assets in the private source-review bundle; stale missing-image blockers were corrected without publishing source image bytes.
-- Added a **large-batch sparse-source audit covering 167 questions** whose 2026 Part II source text preserves only zero or one answer option.
-- Sparse audit breakdown: **163 single-option recalls + 4 zero-option recalls**.
-- **48/167** sparse recalls contain image/media cues and are explicitly grouped for original-asset reconciliation.
-- **10/167** have uncertain/unclear source answer text and are explicitly flagged for source/clinical review.
-
-### Direct source re-read batches completed
-
-**Batch 59** — `review-queue/source-sparse-large-review-59-index-20260907.json`
-- Endocrinology: 17
-- Genetics: 15
-- Infectious Diseases: 14
-- Neurology: 13
-- 21 image/media-dependent items
-
-**Batch 42** — `review-queue/source-sparse-large-review-42-index-20260907.json`
-- Gastroenterology: 10
-- Hematology: 9
-- Metabolic Disorders: 9
-- Nephrology/Urology: 7
-- Medical Ethics/Patient Safety: 7
-- 9 image/media-dependent items
-- 8 uncertain/conflicting source-answer items
-
-**Batch 28** — `review-queue/source-sparse-large-review-28-index-20260907.json`
-- Cardiology: 6
-- Neonatology: 6
-- Trauma and Accidents: 6
-- Critical Care Medicine: 5
-- Immunology: 5
-- 9 image/media-dependent items
-- Key retained gates: Neonatology Q7 zero-option image identification; Immunology Q4 wording conflict; Trauma Q37 antidote note; Critical Care Q34 image/context gate.
-
-**Final Batch 38** — `review-queue/source-sparse-final-38-index-20260907.json`
-- Pulmonary/Sleep: 4
-- Allergy: 3
-- Oncology: 3
-- Nutrition and Malnutrition: 3
-- Rheumatology: 4
-- Musculoskeletal and Sport Medicine: 3
-- Substances Abuse and Toxicology: 3
-- Behavioral Medicine and Psychiatric Disorders: 4
-- Growth and Development: 2
-- Dermatology: 2
-- Ophthalmology: 1
-- ENT: 1
-- Research, Biostatistics, and Communication Skills: 5
-- Key retained gates include Allergy Q27 source nuance (exercise challenge preferred if offered), Dermatology Q12 IV-vs-oral antiviral source conflict, and Research Q10/Q12 missing calculation inputs.
-
-### Aggregate sparse-recall review progress
-
-- **167 / 167 sparse recalls** have now received a direct source re-read and cross-chat reservation.
-- Remaining sparse recalls awaiting direct source re-read: **0**.
-- No missing distractors were reconstructed.
-- No missing calculations were invented.
-- No `verifiedAnswer` was assigned solely from the recall source.
+These counts are a baseline, not the final post-cleanup state; media audit has now refined many image assumptions without silently changing clinical verification status.
 
 ## Coordination protocol — mandatory
 
 1. GitHub wins over chat memory.
-2. Do not re-import already covered source-number ranges.
+2. Do not re-import completed numbered ranges or re-run completed sparse/media batches unless validating a specific finding.
 3. Preserve `recalledAnswer` separately from `verifiedAnswer`.
-4. Keep `verifiedAnswer: null` until independent verification is explicitly recorded.
-5. Do not invent missing distractors, images, years, stems, calculations, or answer keys.
-6. Image-dependent questions stay blocked until an original source image is linked and reviewed; do not substitute generated images.
-7. Maintain clean English stem/options/TTS plus clear Arabic clinical explanation with English medical terminology.
-8. Preserve `conflicting`, `outdated`, `incomplete_recall`, `image_missing`, and `image_needs_review` until genuinely resolved.
-9. Do not commit source PDFs, credentials, tokens, passwords, or secrets.
-10. Before writing, refetch this file if another conversation may have advanced PR #5.
+4. Keep `verifiedAnswer: null` until independent verification is recorded.
+5. Do not invent missing distractors, images, years, stems, calculations or keys.
+6. Original source images only for source-dependent MCQs; no generated substitutes.
+7. Keep English stem/options/TTS and clear Arabic explanation with English medical terminology.
+8. Preserve unresolved `conflicting`, `outdated`, `incomplete_recall`, `image_missing`, and `image_needs_review` states until genuinely resolved.
+9. Do not commit source PDFs, credentials, tokens, passwords or secrets.
+10. Refetch coordination state before writing if another chat may have advanced PR #5.
 
 ## Highest-priority next work
 
-1. Reconcile image/media assets for the fully reviewed 167-question sparse set, prioritizing exact original assets already identified in source manifests/bundles.
-2. Resolve `incomplete_recall` only where another permitted source/original wording supplies missing detail; otherwise preserve incompleteness.
-3. Review `conflicting` / `outdated` records in large controlled batches after source integrity is stable.
-4. Advance `needs_verification` in controlled clinical batches using UpToDate → Nelson → current specialty guideline.
-5. Keep the same cross-chat handoff and do not restart completed sparse-review batches.
+1. Start **large controlled batches of `conflicting` and `outdated` records** now that sparse source/media integrity is stable.
+2. Where conflicts can be resolved, verify against UpToDate → Nelson → current specialty guideline and document support/conflict explicitly.
+3. Keep source keys unchanged in provenance even when a verified answer differs.
+4. Then move into large `needs_verification` batches.
 
 ## Style contract between conversations
 
-- Work in **large batches** when source quality permits.
+- Work in large batches when source quality permits.
 - Report only work actually committed.
-- Source completeness, image readiness, and clinical verification are separate gates.
+- Source completeness, media readiness, publication permission, and clinical verification are separate gates.
 
 ---
 
-**Handoff rule:** all 167 source-sparse recalls have now been re-read directly from the source. From here, optimize image readiness, unresolved recall quality, and clinical verification at scale.
+**Handoff rule:** numbered source coverage is complete, all 167 sparse recalls are directly reviewed, and all 48 sparse media cues are technically reconciled. Next phase is clinical conflict/outdated-key resolution at scale.
