@@ -18,61 +18,44 @@
 - Sparse recall: **167/167 directly re-read**.
 - Sparse media: **48/48 audited**.
 - Outdated queue: **9/9 reviewed**.
-- Conflicting queue assignment: **131/131 assigned; 0 unassigned** across three coordinated batches.
+- Conflicting queue assignment: **131/131 assigned; 0 unassigned**.
 
 ## Clinical conflict resolution — underway
-Resolution files:
-- `review-queue/conflicting-clinical-resolution-batch01-12-20260907.json`
-- `review-queue/conflicting-clinical-resolution-batch02-8-20260907.json`
-- `review-queue/conflicting-clinical-resolution-batch02-heme-05-20260907.json`
-- `review-queue/conflicting-clinical-resolution-batch03-nephro-06-20260907.json`
-- `review-queue/conflicting-clinical-resolution-batch04-endo-rheum-02-20260907.json`
-- `review-queue/conflicting-clinical-resolution-batch05-7-20260907.json`
-- `review-queue/conflicting-clinical-resolution-batch06-12-20260907.json`
-- `review-queue/conflicting-clinical-resolution-batch07-6-20260907.json`
-- `review-queue/conflicting-clinical-resolution-batch08-12-20260907.json`
+Latest resolution files include:
 - `review-queue/conflicting-clinical-resolution-batch09-11-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch10-6-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch11-12-20260907.json`
 
 ### Current-guidance resolution progress
-- **81 conflicting records reviewed** in resolution passes.
-- **21 clean modern answers** supported by retained stems/options.
-- **60 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient clinical context, missing original media, version-sensitive content, or internally malformed data.
-- **0 recalled answers overwritten**.
+- **99 / 131 conflicting records resolution-reviewed**.
+- **27 clean modern answers** supported by retained stems/options in review overlays.
+- **72 retained non-publishable** because of under-specification, missing best option, image dependence, version sensitivity, multiple plausible answers, or internal source defects.
+- **32 conflicts remain not yet resolution-reviewed**.
+- **0 recalledAnswer values overwritten**.
 
-### Clean modern answers currently supported in review overlays
-- Cardiology Q26 → **B, synchronized cardioversion**.
-- Cardiology Q27 → **B, synchronized cardioversion**.
-- Endocrinology Q55 → **C, both IFG and IGT** under ADA 2026 criteria.
-- Hematology Q48 → **D, factor XII deficiency**.
-- Hematology Q17 → **D, paroxysmal nocturnal hemoglobinuria**.
-- Nephrology/Urology Q62 → **A, testicular torsion** for the retained stem with reduced Doppler perfusion.
-- Endocrinology Q15 → **A**, based on current McCune-Albright peripheral-precocious-puberty management framing.
-- Rheumatology Q12 → **C, 8,000 WBC with 30% PMN**, best retained fit for inflammatory JIA synovial fluid; not a diagnostic cutoff.
-- Hematology Q10 → **A, liver/biliary ultrasound** for acute RUQ pain with bilirubin/liver-test abnormalities in SCD.
-- Gastroenterology Q79 → **B, pelvic MRI** among retained options for suspected psoas/pelvic abscess in Crohn disease.
-- Gastroenterology Q85 → **B, transabdominal ultrasound** as the recommended initial imaging option when imaging is requested.
-- Sleep Q17 → **A, nightmares** based on late-night REM timing.
-- Pulmonary Q6 (ABPA) → **D, productive cough with brown mucus plugs** as the strongest current supporting feature among retained choices under revised ISHAM criteria.
-- Oncology Q2 (Fanconi anemia) → **D, myelodysplastic syndrome** as the best retained hematologic-risk answer, with major AML risk also acknowledged.
-- Endocrinology Q7 → **A, confirm GH-axis diagnosis before committing to GH treatment**; low IGF-1 alone is insufficient.
-- Gastroenterology Q57 → **C, CT angiography** as the best retained confirmatory/anatomic study for a suspected vascular ring; source image remains a separate publication gate.
-- Growth & Development Q2 → **B, 7 years** for U/L segment ratio approaching 1:1 under current anthropometry references.
-- Growth & Development Q6 → **B, 9 months** as the best retained option; CDC 2026 lists sitting without support by 9 months.
-- Ophthalmology Q8 → **A, infantile/congenital nystagmus** for onset at four months with normal eye examination and normal MRI.
+### Newly resolved in batch09
 - Growth & Development Q18 → **C, absent stranger anxiety at 12 months** as the clearly delayed retained social finding under CDC 2026 milestone ages.
-- Growth & Development Q21 → **A, language delay** as the best retained diagnosis, with corrected-age and audiology assessment caveats.
+- Growth & Development Q21 → **A, language delay**, with corrected-age and audiology-assessment caveats.
 
-### Latest batch09 — 11 reviewed
-- Growth Q18 and Q21 were cleanly resolved as above.
-- Growth Q15 remains under-supported because the source itself marks the caregiver/calming examination choice uncertain.
-- Neonatology Q11 remains invalid because Rh antigen inheritance probability is not hemolytic-disease risk and key sensitization/genotype context is missing.
-- Neonatology Q19 remains unresolved because congenital-syphilis treatment depends on a >=30-day maternal-treatment threshold, regimen adequacy, neonatal titers/evaluation, and follow-up; the retained `4 weeks` is 28 days.
-- Neonatology Q21 remains invalid as a single-best-answer item because current NIH guidance accepts both HIV RNA and DNA NATs in exposed infants.
-- Neonatology Q23 remains context-dependent because persistent candidemia can require fundoscopy, LP, echocardiography and abdominal imaging as part of dissemination evaluation.
-- Neonatology Q36 remains non-publishable because the waiter-tip upper-plexus pattern does not justify the retained C5-T1 option as the precise root-level answer.
-- Critical Care Q17 remains non-publishable; newer evidence shows factor VIII is not a reliable DIC-versus-liver-disease discriminator and neither retained fibrinogen nor FDP is uniquely reliable.
-- Infectious Viral Q13 remains unresolved because EBV itself can cause rash and no amoxicillin exposure was stated.
-- Infectious Immunization Q116 remains historical/version-sensitive because the 2020 question does not define which Saudi schedule revisions are being compared.
+### Concurrent batch10 retained from the other active chat
+- Critical Care Q19 → **C, caregiver CPR training/resources** for a discharge-ready lower-risk BRUE framing.
+- Critical Care Q12/Q15, Behavioral Q10/Q17, and Hematology Q50 remain non-publishable for their documented missing-context, multiple-correct, missing-option, or internally inconsistent laboratory-data reasons.
+
+### Newly resolved in batch11
+- Gastroenterology Q45 → **B, cerebral edema** for symptomatic hyponatremia with stupor at Na 121 mmol/L.
+- Gastroenterology Q53 → **C, eosinophilic esophagitis** for solid-food dysphagia with adaptive frequent drinking during meals; atopy is not required.
+- Infectious Diseases TB Q61 → **C, INH for 9 months among retained options** under Saudi MOH/National TB Program thresholds and LTBI regimen framing.
+- Infectious Diseases TB Q63 → **B, TB infection** for a positive 11-mm TST, no symptoms, and normal chest radiograph under Saudi pediatric TB guidance.
+- Infectious Diseases CNS Q89 → **A, HSV PCR** among the retained tests for meningoencephalitis/seizures.
+
+### Important batch11 unresolved items
+- Cardiology Q54: no single universal viral myocarditis etiology can be verified from the retained stem/source conflict.
+- Gastro Q44: diarrheal dehydration does not uniquely determine Na 120.
+- Gastro Q56: source image/diagnosis remains unreconciled (hiatal hernia versus achalasia).
+- Neurology Q39: FND is not equivalent to factitious disorder; organic-workup context is incomplete.
+- Neurology Q24: developmental regression is nonspecific and the retained choices lack adequate discriminators.
+- Neurology Q6: the glutamate/GABA binary is too absolute for a universal seizure rule.
+- Neurology Q18: infantile-spasm treatment depends on etiology; hormonal therapy is absent and TSC is not stated.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -83,7 +66,7 @@ Resolution files:
 - `outdated`: 9
 - `deduplicated`: 13
 
-These baseline canonical counts do not automatically decrement merely because a review-overlay file was added; canonical record changes require an explicit safe update pass.
+These baseline canonical counts do not automatically decrement when review-overlay files are added; canonical record changes require an explicit safe update pass.
 
 ## Coordination protocol
 1. GitHub wins over chat memory.
@@ -95,8 +78,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large clinical conflict-resolution batches through the **remaining 50/131 conflicts not yet resolution-reviewed**, prioritizing complete stems/options in Critical Care, Gastroenterology, Infectious Diseases, Endocrinology, Hematology/Oncology, Genetics, Respiratory, Behavioral/Psychiatry, Neonatology, and other sections. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue large clinical-resolution batches through the **remaining 32 / 131 conflicts not yet resolution-reviewed**, prioritizing complete retained stems/options in Endocrinology, Nephrology/Urology, Rheumatology, Gastroenterology, Infectious Diseases, Hematology/Oncology, Genetics, Respiratory, Behavioral/Psychiatry, Neonatology, and other sections. Resolve only where retained choices and current evidence support a clean single-best answer; otherwise document the blocker. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **81 clinical conflicts have now been resolution-reviewed**, with **21 clean modern answer resolutions** and **60 correctly retained as invalid/under-specified/context-dependent/version-sensitive**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **99 clinical conflicts have now been resolution-reviewed**, with **27 clean modern answer resolutions**, **72 correctly retained as non-publishable**, and **32 remaining for resolution review**.
