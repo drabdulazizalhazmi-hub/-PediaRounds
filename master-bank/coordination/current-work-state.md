@@ -1,6 +1,6 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 09:55 +03:00
+Updated: 2026-09-07 10:00 +03:00
 Active branch: `master-bank/post-merge-audit`
 Active PR: #3 — `Continue PediaRounds post-merge audit`
 Base: `main`
@@ -25,19 +25,19 @@ Previous PR #2 was merged into `main` on 2026-09-07.
 
 ## Latest synchronized work
 - PR #2 merged; all earlier Master Bank work is now on `main`.
-- New shared branch/PR for continued work: `master-bank/post-merge-audit` / PR #3.
-- Pulmonary source-image review batch completed for Q6, Q9, Q10, Q12; source images were extracted into a private review bundle and hashed.
+- Active continuation branch/PR: `master-bank/post-merge-audit` / PR #3.
+- Pulmonary source-image review completed for Q6, Q9, Q10, Q12.
 - Gastro source-image review covers Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75 and Q81.
-- Added `master-bank/sources/question-image-linkage-20260907.json` so recovered Gastro source images are now explicitly tied to canonical `questionId` + record path, instead of existing only as an unlinked image manifest.
-- Explicit question-image linkage currently covers canonical records Q56, Q57, Q64, Q65, Q68, Q70, Q73, Q74, Q75 and Q81; Q63 image is recovered but its canonical record path still needs exact resolution.
-- Gastro Q56 and Q57 remain conflicting because the source itself questions image interpretation / definitive testing; linking the source image does not resolve the clinical conflict.
-- Gastro Q73 and Q74 remain incomplete recalls because only one source option survives; the source image is now linked but missing distractors are not invented.
+- `master-bank/sources/question-image-linkage-20260907.json` explicitly ties recovered Gastro source-image metadata to canonical question IDs and record paths.
+- **Gastro Q63 canonical linkage is now resolved** as `part2-gi-q063-small-bowel-obstruction` in `master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-batch01-supported.json`; its recovered image `p238-x892.jpeg` is linked with status `image_needs_review`.
+- Gastro Q56/Q57 remain conflicting because the source itself questions image interpretation/definitive testing.
+- Gastro Q73/Q74 remain incomplete recalls because missing distractors were not preserved; source images are linked but no options were invented.
 - Pulmonary Q14 still references an X-ray not present as an embedded/raster asset in the current source page and remains `image_missing`.
 - Q9/Q10 Pulmonary and Sleep Q15 remain incomplete single-option recalls despite image recovery where applicable.
 
 ## Previously synchronized coverage
 - Dermatology Q1–Q22; Ophthalmology Q1–Q10; ENT Q1–Q9; Growth Q1–Q21.
-- Neonatology Q1–Q43; Neurology files span Q1–Q50; Nephrology/Urology Q1–Q63.
+- Neonatology Q1–Q43; Neurology Q1–Q50; Nephrology/Urology Q1–Q63.
 - Rheumatology Q1–Q16; Musculoskeletal Q1–Q19; Critical Care Q1–Q55; Trauma Q1–Q44.
 - Cardiology Q1–Q57; Endocrinology Q1–Q65; Hematology Q1–Q57; Oncology Q1–Q20.
 - Infectious Diseases through Q125; Genetics through Q52 with source TOC discrepancy for missing Q53; Metabolic Q1–Q23.
