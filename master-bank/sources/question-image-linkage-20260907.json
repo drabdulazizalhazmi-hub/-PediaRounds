@@ -5,7 +5,7 @@
   "links": [
     {"questionId":"part2-gi-q056","questionNumber":"Gastroenterology Q56","recordPath":"master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-q52-q56.json","sourcePage":235,"reviewAsset":"p235-x881.jpeg","sha256":"10898fadf45bc3a49ee57eee0191f32e1780749a61c6d750a02c66cdebad5e14","status":"image_needs_review","publicAssetPath":null},
     {"questionId":"part2-gi-q057","questionNumber":"Gastroenterology Q57","recordPath":"master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-q57-q61.json","sourcePage":235,"reviewAsset":"p235-x882.jpeg","sha256":"6e09dc2b48875f6019ac5a1583b70322aa81aa0ea27ab8171e022d8e10cbde9d","status":"image_needs_review","publicAssetPath":null},
-    {"questionId":null,"questionNumber":"Gastroenterology Q63","recordPath":null,"sourcePage":238,"reviewAsset":"p238-x892.jpeg","sha256":"60c926a6babe9e1b515cc4c50a51e8d36e9ceeb067bf0e29200f73598d16155e","status":"canonical_record_path_pending","publicAssetPath":null},
+    {"questionId":"part2-gi-q063-small-bowel-obstruction","questionNumber":"Gastroenterology Q63","recordPath":"master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-batch01-supported.json","sourcePage":238,"reviewAsset":"p238-x892.jpeg","sha256":"60c926a6babe9e1b515cc4c50a51e8d36e9ceeb067bf0e29200f73598d16155e","status":"image_needs_review","publicAssetPath":null},
     {"questionId":"part2-gi-q064","questionNumber":"Gastroenterology Q64","recordPath":"master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-q64-q70.json","sourcePage":239,"reviewAsset":"p239-x896.jpeg","sha256":"c04f35ef5898daf41964ddb98149a75abce8d81f74d3b238358645f53fc7e72a","status":"image_needs_review","publicAssetPath":null},
     {"questionId":"part2-gi-q065","questionNumber":"Gastroenterology Q65","recordPath":"master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-q64-q70.json","sourcePage":239,"reviewAsset":"p239-x897.jpeg","sha256":"1d31970fa15b7529a2115c79413cab6d92607a051bd1e3561e308ce39cb05cef","status":"image_needs_review","publicAssetPath":null},
     {"questionId":"part2-gi-q068","questionNumber":"Gastroenterology Q68","recordPath":"master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-q64-q70.json","sourcePage":241,"reviewAsset":"p241-x904.jpeg","sha256":"fd2e75c8c7012a8be1e760f9187aa525cd9b4b63a85ad80b4a9bbde0cf791926","status":"image_needs_review","publicAssetPath":null},
@@ -16,7 +16,8 @@
     {"questionId":"part2-gi-q081","questionNumber":"Gastroenterology Q81","recordPath":"master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-q80-q85.json","sourcePage":249,"reviewAsset":"p249-x933.jpeg","sha256":"source-hash-recorded-in-private-gastro-review-package","status":"image_needs_review","publicAssetPath":null}
   ],
   "rules": [
-    "Question record and image metadata are now explicitly linked by questionId and recordPath.",
+    "Question record and image metadata are explicitly linked by questionId and recordPath.",
+    "Recovered image assets must render with their linked question in the private review workflow.",
     "Original source-image bytes remain in the private review bundle until publication rights are cleared.",
     "Do not replace source images with generated substitutes.",
     "Image-dependent questions remain non-publishable until clinical image review and public-asset approval are complete."
