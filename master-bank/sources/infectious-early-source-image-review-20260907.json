@@ -1,0 +1,32 @@
+{
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "purpose": "Private-review mapping for early Infectious Diseases Part II question images. Original image bytes are kept out of the public repository pending publication-rights and clinical review.",
+  "scope": {
+    "questionsReviewed": "Infectious Diseases Q8-Q19",
+    "sourcePages": "274-280",
+    "status": "early_other_viral_image_batch_complete"
+  },
+  "privateReviewPackage": {
+    "filename": "PediaRounds_infectious_early_source_image_review.zip",
+    "sha256": "ce650f6e0df395421a76e0266b5b5f7ff707cabd6b1f24b26f86f2161eaafab6"
+  },
+  "assets": [
+    {"question":"Infectious Diseases Q8","questionId":"part2-id-viral-q08","sourcePage":274,"asset":"q08-gloves-socks.jpg","sha256":"c641aa3fa4570e448f1933392d82d376fad56217947d8d03c1732c0296be3574","mapping":"papular-purpuric gloves-and-socks syndrome rash image","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q9","questionId":"part2-id-viral-q09","sourcePage":275,"asset":"q09-cold-panniculitis.jpg","sha256":"9ff536b5ff2934491a5dff4ef5d17226546182b2678410b1df085a050994ffba","mapping":"bilateral cheek cold panniculitis clinical photograph","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q12","questionId":"part2-id-viral-q12","sourcePage":276,"asset":"q12-infectious-mononucleosis.jpg","sha256":"f9f0ac42985c0533a38ee65139d497b0482d90741eadeb9fa838cc34889428d3","mapping":"oropharyngeal/exudative tonsillar image accompanying infectious mononucleosis recall","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q17","questionId":"part2-id-viral-q17","sourcePage":279,"asset":"q17-koplik-spots.jpg","sha256":"82e1d9a938882c9370044008d8e59113d3765c6b434cffe9dde521312e3d638b","mapping":"buccal lesion image consistent with Koplik spots","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q17/Q18","questionIds":["part2-id-viral-q17","part2-id-viral-q18"],"sourcePage":279,"asset":"q17-q18-measles-rash.jpg","sha256":"9aca1bfd8fb4f1a13c7c47f6d2222ad0cc6ebb04c7a7db5ac7555f4940154921","mapping":"measles exanthem image; Q17 explicitly uses two images and Q18 immediately refers to 'this skin rash', supporting reuse of the same rash image","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q19","questionId":"part2-id-viral-q19","sourcePage":280,"asset":"q19-hmpv-cxr.jpg","sha256":"3358b2fec76b5d630e4d76b9c4538101a41a5157c2312b3e64a02a5e46eeb449","mapping":"chest radiograph accompanying the human metapneumovirus vignette","status":"image_needs_review"}
+  ],
+  "excludedExplanatoryGraphics": [
+    {"sourcePage":277,"reason":"infectious mononucleosis summary table is explanatory material, not the recalled question image"},
+    {"sourcePage":278,"reason":"viral-rash teaching graphic is explanatory material, not substituted for a question image"}
+  ],
+  "rules": [
+    "Do not commit source-image bytes to the public repository until publication rights are cleared.",
+    "Do not replace a missing question image with an explanatory figure from the source.",
+    "A source image may link to more than one canonical question when the source text explicitly reuses it.",
+    "Image-dependent questions remain non-publishable until clinical image review and publication approval are complete."
+  ]
+}
