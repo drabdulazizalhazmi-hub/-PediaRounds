@@ -1,0 +1,32 @@
+{
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "purpose": "Private-review mapping for mid/later Infectious Diseases Part II question images. Original image bytes stay out of the public repository pending publication-rights and clinical review.",
+  "scope": {"sourcePagesReviewed":"281-337","status":"batch_complete"},
+  "privateReviewPackage": {"filename":"PediaRounds_infectious_mid_source_image_review.zip","sha256":"65120722be6287b65f757ead683a4d8fb17b166c5f8ea3f338fd947e97ee54c2"},
+  "assets": [
+    {"question":"Infectious Diseases Q27/Q28","sourcePage":285,"asset":"q27-q28-scarlet-fever.jpeg","width":348,"height":228,"sha256":"061bf1afcae50d35b4c5b4a4ceb7974e41506e4680e2e95ae0ee09cd23d64425","mapping":"shared scarlet-fever rash image","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q37","sourcePage":292,"asset":"q37-splinter-hemorrhage.jpeg","width":258,"height":195,"sha256":"9a1acdcbc2a45b6109c54809a471a6a7de8df9ab1ee2c409a28c2d374773010b","mapping":"splinter hemorrhage image in infective-endocarditis recall","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q42","sourcePage":294,"asset":"q42-pneumonia-cxr.jpeg","width":221,"height":226,"sha256":"6eb69b9dd9a9fb11e4e9c4a82c23ab8344ccae9ffacea84cbac9970003cc8156","mapping":"chest radiograph in pneumonia causative-organism recall","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q57","sourcePage":305,"asset":"q57-gram-negative-coccobacilli.jpeg","width":124,"height":103,"sha256":"3f25425bfe54df961acaa640dee3df25916d89f411b1588c3e57e5d6e4dd650a","mapping":"Gram-stain image showing gram-negative coccobacilli","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q66","sourcePage":311,"asset":"q66-erythema-multiforme.jpeg","width":190,"height":198,"sha256":"491267b4e0b44b5c1b865f56bb36ec2f225e5b5ac598e02bb05423711adb13ec","mapping":"targetoid erythema-multiforme skin lesions","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q78","sourcePage":316,"asset":"q78-steeple-sign.jpeg","width":159,"height":174,"sha256":"9eaaff8ff10ce0b366d9a90d5ff296d9f4a69bed1e51d254cfdf158131c0e438","mapping":"neck radiograph with steeple sign","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q81","sourcePage":319,"asset":"q81-retropharyngeal-abscess.jpeg","width":305,"height":289,"sha256":"3f55d9d779c26cc9b9ff1850be801a2f9b992b1538902703e7c6cb7f8f22fb3d","mapping":"lateral neck radiograph showing increased prevertebral space","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q83","sourcePage":320,"asset":"q83-thumb-sign.jpeg","width":244,"height":289,"sha256":"06a5ae20588c1bb189330bc06cac3d0a78c5d37c1a1e2f64b7689e70aede22d0","mapping":"lateral neck radiograph demonstrating thumb sign","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q94","sourcePage":329,"asset":"q94-periorbital-redness.jpeg","width":343,"height":147,"sha256":"d035b795dfe7aa5830b10b33a088e47587c10e2dc8aa3fb1366892c7aea3bac1","mapping":"clinical photograph of periorbital redness","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q96","sourcePage":331,"asset":"q96-oral-thrush.jpeg","width":179,"height":154,"sha256":"3365a6758a39e6ceca657c3f929fac50a978664a6ee07991bfc63b499a85a015","mapping":"oral candidiasis clinical photograph","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q97","sourcePage":331,"asset":"q97-candida-diaper-rash.jpeg","width":263,"height":304,"sha256":"e5568970b364b6a12433cfaacf18f070bca47b9833c8abbf2043ff6561ed58c0","mapping":"candidal diaper dermatitis photograph","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q98","sourcePage":332,"asset":"q98-perianal-strep.jpeg","width":80,"height":98,"sha256":"365d7def0908baa9487e9dfa7e30d0810170500266e82f6cd2c8aa5e6819fee8","mapping":"perianal erythema photograph used in GAS dermatitis recall","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q99","sourcePage":332,"asset":"q99-hydatid-ct.jpeg","width":311,"height":204,"sha256":"f96ab81430c7eba83309af8cbd83f58712d832e55cb51ddbf2396f411f1005df","mapping":"abdominal CT with multiple hepatic hydatid cysts","status":"image_needs_review"},
+    {"question":"Infectious Diseases Q107","sourcePage":337,"asset":"q107-slapped-cheek.jpeg","width":203,"height":254,"sha256":"c98827f381d5c3ef35ca1fad436a345c35e2d932a58cf012dc58fb9bf9756072","mapping":"slapped-cheek erythema infectiosum photograph","status":"image_needs_review"}
+  ],
+  "sourceImageMissing": [
+    {"question":"Infectious Diseases Q30","sourcePage":287,"reason":"stem says a picture was provided, but the page contains an explanatory table rather than the recalled question image"},
+    {"question":"Infectious Diseases Q67","sourcePage":311,"reason":"stem says a chest X-ray was provided, but the page contains the erythema-multiforme skin image for Q66 and no matching question radiograph"}
+  ],
+  "rules": [
+    "Do not substitute explanatory source figures for missing question images.",
+    "Do not commit source-image bytes to the public repository until publication rights are cleared.",
+    "Image-dependent questions remain non-publishable until clinical image review and publication approval are complete."
+  ]
+}
