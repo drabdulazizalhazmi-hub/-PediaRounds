@@ -8,7 +8,7 @@
 - Active working branch: `master-bank/post-merge-audit`
 - Active pull request: `#3 — Continue PediaRounds post-merge audit`
 - Base branch: `main`
-- Last synchronized: `2026-09-07 09:45 +03:00`
+- Last synchronized: `2026-09-07 09:47 +03:00`
 
 ## Mandatory coordination protocol
 1. Before work, read this file and `coordination/current-work-state.md`, then inspect PR #3.
@@ -20,32 +20,13 @@
 7. The repository is public: extracted copyrighted source images/PDFs are not committed until publication rights are cleared. Record source page/hash and keep private-review bundles separate.
 8. After each successful batch, update both shared coordination files.
 
-## Latest batch — Gastroenterology source images
-Recovered original source-image objects from the Part II PDF for:
-- **Q56** barium study; source itself questions hiatal hernia versus a possibly incorrect achalasia image.
-- **Q57** barium study in a vascular-ring vignette.
-- **Q63** abdominal radiograph for obstruction.
-- **Q64** double-bubble radiograph.
-- **Q65** free-air / intestinal-perforation radiograph.
-- **Q68** corkscrew upper-GI image.
-- **Q70** abdominal radiograph in intussusception vignette.
-- **Q73** Meckel scan.
-- **Q74/Q75** Peutz-Jeghers mucocutaneous pigmentation image.
-
-Added `master-bank/sources/gastro-source-image-review-20260907.json` with source pages, image dimensions, SHA-256 hashes, mappings and `image_needs_review` gates.
-
-Private review bundle: `PediaRounds_gastro_source_image_review.zip`
-SHA-256: `2e4938961377a74bacc75b4b4222b1aba1496842461d019bfd134c9c2b252fa5`
-
-Important source conflicts retained:
-- Q56: source explicitly states the supplied radiological picture could represent hiatal hernia or could be an incorrect achalasia image.
-- Q57: recalled key says chest X-ray, while the source explanation says CT angiography is the common definitive identification method.
-
-## Previous post-merge batch — Pulmonary images
-- Recovered source images for Pulmonary Q6, Q9, Q10, Q12.
-- Added `master-bank/sources/pulmonary-source-image-review-20260907.json` with hashes/source pages.
-- Pulmonary Q14 remains `image_missing` because the current source page contains no embedded/raster question image.
-- Q9 and Q10 remain single-option incomplete recalls despite image recovery.
+## Latest batch
+Gastro image recovery advanced:
+- Previously recovered source images for **Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75**.
+- Recovered the original **Gastro Q81 liver-biopsy image** from source page 249.
+- Updated `master-bank/sources/gastro-source-image-review-20260907.json` with Q81 dimensions/hash and refreshed private-review package hash.
+- Q81 remains `image_needs_review`: source text labels the biopsy as suggestive of alpha-1 antitrypsin deficiency, but no independent image interpretation is claimed.
+- Private-review image bytes remain outside the public repository pending publication-rights and clinical review.
 
 ## Strongly represented source ranges already on main
 - Growth & Development Q1–Q21
@@ -65,7 +46,7 @@ Important source conflicts retained:
 - Endocrinology Q1–Q65
 - Hematology Q1–Q57; Oncology Q1–Q20
 - Infectious Diseases through Q125
-- Genetics Q1–Q52; do not fabricate Q53 because source numbering ends at Q52 before Metabolic Disorders
+- Genetics Q1–Q52; do not fabricate Q53 because the source numbering ends at Q52 before Metabolic Disorders
 - Metabolic Disorders Q1–Q23
 
 ## Requires exact canonical closure audit
@@ -80,17 +61,16 @@ Important source conflicts retained:
 - Gastro Q42 duplicate option label in source.
 - Gastro Q44–Q45 sodium/cerebral-edema assumptions incomplete.
 - Gastro Q53 achalasia vs eosinophilic esophagitis overlap.
-- Gastro Q56–Q57 image recovered privately, but both remain source-conflicted.
-- Gastro Q63/Q64/Q65/Q68/Q70/Q73–Q75 images recovered privately; public asset publication and final image review remain blocked.
-- Gastro Q81 still requires original image recovery.
-- Pulmonary Q6/Q9/Q10/Q12 images recovered privately; public publication and clinical-image review remain blocked.
+- Gastro Q56–Q57 source image recovered privately; source itself questions interpretation/definitive study.
+- Gastro Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81 source images recovered privately and remain publication/clinical-review gated.
+- Pulmonary Q6/Q9/Q10/Q12 source images recovered privately; public publication and clinical-image review remain blocked.
 - Pulmonary Q14 original image not present in current source file.
 - Sleep Q15 single-option incomplete recall.
 
 ## Next action
-1. Recover the remaining image-dependent Gastro items, especially Q81, and then other high-value missing source assets.
-2. Continue the canonical 1023-ID coverage/duplicate audit on PR #3.
-3. Resolve recoverable `incomplete_recall` items directly from source.
+1. Continue the canonical 1023-ID coverage/duplicate audit on PR #3.
+2. Recover the next high-priority source images/attachments into private review bundles and add hash/source-page manifests.
+3. Resolve recoverable `incomplete_recall` items directly from the source.
 4. Only after structural integrity is stable, verify conflicting/outdated clinical keys using UpToDate, then Nelson, then current specialty guidance.
 
 ## Style contract
