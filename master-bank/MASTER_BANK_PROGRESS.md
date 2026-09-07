@@ -48,27 +48,58 @@ Image validation reported **249 image-dependent questions** and **0 public repos
 - Sparse audit breakdown: **163 single-option recalls + 4 zero-option recalls**.
 - **48/167** sparse recalls contain image/media cues and are explicitly grouped for original-asset reconciliation.
 - **10/167** have uncertain/unclear source answer text and are explicitly flagged for source/clinical review.
-- Completed a **direct source re-read of 59 sparse-recall questions** across the four largest priority groups:
-  - Endocrinology: **17**
-  - Genetics: **15**
-  - Infectious Diseases: **14**
-  - Neurology: **13**
-- Within this 59-question batch, **21** have image/media dependencies; **Genetics Q10** is a zero-option incomplete recall with uncertain source answer and remains non-publishable.
-- The exact 59-question reservation/index is stored in `review-queue/source-sparse-large-review-59-index-20260907.json` to prevent cross-chat duplication.
-- Missing distractors remain unfilled; no answer choices, calculations, years, or images were invented.
 
-## Largest remaining sparse-recall groups to prioritize
+### Direct source re-read batches completed
 
+**Batch 59** — `review-queue/source-sparse-large-review-59-index-20260907.json`
+- Endocrinology: 17
+- Genetics: 15
+- Infectious Diseases: 14
+- Neurology: 13
+- 21 image/media-dependent items
+
+**Batch 42** — `review-queue/source-sparse-large-review-42-index-20260907.json`
 - Gastroenterology: 10
 - Hematology: 9
 - Metabolic Disorders: 9
 - Nephrology/Urology: 7
 - Medical Ethics/Patient Safety: 7
+- 9 image/media-dependent items
+- 8 uncertain/conflicting source-answer items
+
+**Batch 28** — `review-queue/source-sparse-large-review-28-index-20260907.json`
 - Cardiology: 6
 - Neonatology: 6
 - Trauma and Accidents: 6
 - Critical Care Medicine: 5
 - Immunology: 5
+- 9 image/media-dependent items
+- Key retained gates: Neonatology Q7 zero-option image identification; Immunology Q4 wording conflict; Trauma Q37 antidote note; Critical Care Q34 image/context gate.
+
+### Aggregate sparse-recall review progress
+
+- **129 / 167 sparse recalls** have now received a direct source re-read and cross-chat reservation.
+- Remaining sparse recalls: **38**.
+- No missing distractors were reconstructed.
+- No `verifiedAnswer` was assigned solely from the recall source.
+
+## Remaining sparse-recall groups
+
+- Pulmonary/Sleep: 4
+- Allergy: 3
+- Oncology: 3
+- Nutrition and Malnutrition: 3
+- Rheumatology: 4
+- Musculoskeletal and Sport Medicine: 3
+- Substances Abuse and Toxicology: 3
+- Behavioral Medicine and Psychiatric Disorders: 4
+- Growth and Development: 2
+- Dermatology: 2
+- Ophthalmology: 1
+- ENT: 1
+- Research, Biostatistics, and Communication Skills: 5
+
+Total remaining = **38**.
 
 ## Coordination protocol — mandatory
 
@@ -85,8 +116,8 @@ Image validation reported **249 image-dependent questions** and **0 public repos
 
 ## Highest-priority next work
 
-1. Continue the sparse-recall queue in another **large batch**, prioritizing Gastroenterology + Hematology + Metabolic Disorders + Nephrology/Urology + Medical Ethics/Patient Safety.
-2. For image/media sparse recalls, reconcile exact original source assets where available; keep unresolved items blocked.
+1. Finish the **remaining 38 sparse recalls in one large batch** if source quality permits.
+2. Then reconcile image/media assets for the now-reviewed sparse set, using original source assets only.
 3. Resolve `incomplete_recall` only where another permitted source/original wording supplies missing detail; otherwise preserve incompleteness.
 4. Review `conflicting` / `outdated` records after source integrity is stable.
 5. Advance `needs_verification` in controlled clinical batches using UpToDate → Nelson → current specialty guideline.
