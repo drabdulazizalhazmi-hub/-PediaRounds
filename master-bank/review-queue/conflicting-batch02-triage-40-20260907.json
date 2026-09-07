@@ -1,0 +1,92 @@
+{
+  "batchId": "conflicting-batch02-triage-40-20260907",
+  "scope": "Next 40 canonical records from the 131-record conflicting queue, reserved for cross-chat review after batch01.",
+  "policy": [
+    "Preserve recalledAnswer unchanged.",
+    "Do not assign verifiedAnswer from recall text alone.",
+    "Do not invent missing choices, context, images, calculations, or policy details.",
+    "Resolve with current UpToDate/Nelson/current guideline only when the retained options/context permit a defensible single-best answer.",
+    "Keep policy/jurisdiction-sensitive questions unresolved until current Saudi institutional or national guidance is checked."
+  ],
+  "count": 40,
+  "groups": [
+    {
+      "section": "Growth and Development",
+      "count": 5,
+      "items": [
+        {"id":"part2-dev-q02","sourceQuestion":"Growth and Development Q2","conflictType":"reference-table discrepancy"},
+        {"id":"part2-dev-q06","sourceQuestion":"Growth and Development Q6","conflictType":"best-option versus more accurate milestone age"},
+        {"id":"part2-dev-q15","sourceQuestion":"Growth and Development Q15","conflictType":"source key explicitly uncertain/unsupported"},
+        {"id":"part2-dev-q18","sourceQuestion":"Growth and Development Q18","conflictType":"source key explicitly weak evidence"},
+        {"id":"part2-dev-q21","sourceQuestion":"Growth and Development Q21","conflictType":"source diagnosis uncertain; important hearing/development differential"}
+      ]
+    },
+    {
+      "section": "Neonatology",
+      "count": 5,
+      "items": [
+        {"id":"part2-neo-q11","sourceQuestion":"Neonatology Q11","conflictType":"inheritance probability versus disease risk wording"},
+        {"id":"part2-neo-q19","sourceQuestion":"Neonatology Q19","conflictType":"regimen/titer context incomplete and time threshold mismatch"},
+        {"id":"part2-neo-q21","sourceQuestion":"Neonatology Q21","conflictType":"more than one acceptable NAT method"},
+        {"id":"part2-neo-q23","sourceQuestion":"Neonatology Q23","conflictType":"persistent candidemia workup under-specified"},
+        {"id":"part2-neo-q36","sourceQuestion":"Neonatology Q36","conflictType":"source key versus source explanation root-level mismatch"}
+      ]
+    },
+    {
+      "section": "Cardiology",
+      "count": 3,
+      "items": [
+        {"id":"part2-cardio-acq-q54","sourceQuestion":"Cardiology Q54","conflictType":"etiology answer depends on source framing"},
+        {"id":"part2-cardio-arr-q26","sourceQuestion":"Cardiology Q26","conflictType":"SVT first action depends on immediate IV/IO availability"},
+        {"id":"part2-cardio-arr-q27","sourceQuestion":"Cardiology Q27","conflictType":"neonatal SVT first action depends on immediate IV/IO availability"}
+      ]
+    },
+    {
+      "section": "Gastroenterology",
+      "count": 12,
+      "items": [
+        {"id":"part2-gi-q051-eosinophilic-esophagitis","sourceQuestion":"Gastroenterology Q51","conflictType":"diagnostic/management framing conflict"},
+        {"id":"part2-gi-q007","sourceQuestion":"Gastroenterology Q7","conflictType":"source key/context conflict"},
+        {"id":"part2-gi-q017","sourceQuestion":"Gastroenterology Q17","conflictType":"source key/context conflict"},
+        {"id":"part2-gi-q035","sourceQuestion":"Gastroenterology Q35","conflictType":"congenital diarrhea differential unresolved without stool electrolytes"},
+        {"id":"part2-gi-q042","sourceQuestion":"Gastroenterology Q42","conflictType":"duplicate option labels in source"},
+        {"id":"part2-gi-q044","sourceQuestion":"Gastroenterology Q44","conflictType":"source assumptions missing from recall"},
+        {"id":"part2-gi-q045","sourceQuestion":"Gastroenterology Q45","conflictType":"source assumptions missing from recall"},
+        {"id":"part2-gi-q053","sourceQuestion":"Gastroenterology Q53","conflictType":"achalasia versus eosinophilic esophagitis overlap"},
+        {"id":"part2-gi-q056","sourceQuestion":"Gastroenterology Q56","conflictType":"image-dependent interpretation/definitive study uncertain"},
+        {"id":"part2-gi-q057","sourceQuestion":"Gastroenterology Q57","conflictType":"image-dependent interpretation/definitive study uncertain"},
+        {"id":"part2-gi-q058","sourceQuestion":"Gastroenterology Q58","conflictType":"GER/PPI framing requires current verification"},
+        {"id":"part2-gi-q059","sourceQuestion":"Gastroenterology Q59","conflictType":"GER/PPI framing requires current verification"}
+      ]
+    },
+    {
+      "section": "Neurology",
+      "count": 4,
+      "items": [
+        {"id":"part2-neuro-cn-q39","sourceQuestion":"Neurology Q39","conflictType":"source key/context conflict"},
+        {"id":"part2-neuro-neurocutaneous-q24","sourceQuestion":"Neurology Q24","conflictType":"source key/context conflict"},
+        {"id":"part2-neuro-q06","sourceQuestion":"Neurology Q6","conflictType":"source uncertainty retained"},
+        {"id":"part2-neuro-q18","sourceQuestion":"Neurology Q18","conflictType":"possible missing etiologic clue"}
+      ]
+    },
+    {
+      "section": "Infectious Diseases",
+      "count": 11,
+      "items": [
+        {"id":"part2-atypical-q61","sourceQuestion":"Q61","conflictType":"source key/context conflict"},
+        {"id":"part2-atypical-q63","sourceQuestion":"Q63","conflictType":"source key/context conflict"},
+        {"id":"part2-id-cns-q89","sourceQuestion":"Q89","conflictType":"source key/context conflict"},
+        {"id":"part2-id-gramneg-q57","sourceQuestion":"Q57","conflictType":"brucellosis source key/context conflict"},
+        {"id":"part2-id-gp-q37","sourceQuestion":"Q37","conflictType":"gram-positive infection source conflict"},
+        {"id":"part2-id-gp-q38","sourceQuestion":"Q38","conflictType":"gram-positive infection source conflict"},
+        {"id":"part2-id-gp-q40","sourceQuestion":"Q40","conflictType":"gram-positive infection source conflict"},
+        {"id":"part2-id-gp-q43","sourceQuestion":"Q43","conflictType":"gram-positive infection source conflict"},
+        {"id":"part2-id-gp-q45","sourceQuestion":"Q45","conflictType":"gram-positive infection source conflict"},
+        {"id":"part2-id-imm-q103","sourceQuestion":"Q103","conflictType":"immunization/infection-control source conflict"},
+        {"id":"part2-id-imm-q116","sourceQuestion":"Q116","conflictType":"Saudi vaccine schedule version-dependent; no unique answer"}
+      ]
+    }
+  ],
+  "status": "reserved_for_large_batch_resolution",
+  "next": "Review these 40 against current clinical guidance where the retained options permit resolution; leave irreducible or jurisdiction-sensitive conflicts unresolved and documented."
+}
