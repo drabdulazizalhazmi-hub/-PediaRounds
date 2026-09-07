@@ -29,11 +29,12 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch04-endo-rheum-02-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch05-7-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch06-12-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch07-6-20260907.json`
 
 ### Current-guidance resolution progress
-- **52 conflicting records reviewed** in resolution passes.
-- **14 clean modern answers** supported by retained stems/options.
-- **38 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient severity/risk/volume context, missing original media, or internally malformed data.
+- **58 conflicting records reviewed** in resolution passes.
+- **16 clean modern answers** supported by retained stems/options.
+- **42 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient clinical context, missing original media, or internally malformed data.
 - **0 recalled answers overwritten**.
 
 ### Clean modern answers currently supported in review overlays
@@ -51,20 +52,16 @@ Resolution files:
 - Sleep Q17 → **A, nightmares** based on late-night REM timing.
 - Pulmonary Q6 (ABPA) → **D, productive cough with brown mucus plugs** as the strongest current supporting feature among retained choices under revised ISHAM criteria.
 - Oncology Q2 (Fanconi anemia) → **D, myelodysplastic syndrome** as the best retained hematologic-risk answer, with major AML risk also acknowledged.
+- Endocrinology Q7 → **A, confirm GH-axis diagnosis before committing to GH treatment**; low IGF-1 alone is insufficient.
+- Gastroenterology Q57 → **C, CT angiography** as the best retained confirmatory/anatomic study for a suspected vascular ring; source image remains a separate publication gate.
 
-### Latest mixed resolution pass — 12 reviewed
-- Sleep Q17 resolved to nightmares based on timing.
-- Pulmonary Q6 resolved to brown mucus plugs as the strongest current ABPA supporting feature; image publication gate remains.
-- Asthma Q28 remains invalid because GINA 2026 severity is treatment-intensity based rather than one spirometric variable.
-- Infectious Q80 bacterial tracheitis remains invalid because modern empiric treatment is combination broad-spectrum/MRSA coverage absent from the single-choice options.
-- Infectious Q100 malaria remains invalid because species, severity and acquisition/resistance context are missing and artemisinin monotherapy wording is inadequate.
-- Genetics Q19 remains no-correct-option Noonan recall.
-- Genetics Q24 remains invalid because anencephaly is a subtype of open neural tube defect, overlapping A and C.
-- Genetics Q25 remains multiple-valid-context because both advanced maternal and paternal age can prompt genetic counseling.
-- Oncology Q2 resolved to MDS as the best retained answer.
-- Oncology Q8 remains unresolved because the diagnosis needed to justify eculizumab is not established.
-- Behavioral Q12 remains context-dependent because ADHD diagnosis/management requires setting/impairment information.
-- Psychiatry Q33 remains non-publishable because current agitation care uses environmental safety/verbal de-escalation and restraint only when necessary after less restrictive measures fail.
+### Latest batch07 — 6 reviewed
+- Endocrinology Q7 resolved to A using Pediatric Endocrine Society diagnostic framing.
+- Gastroenterology Q57 resolved to CT angiography; source printed chest-X-ray key conflicts with its own explanation and modern cross-sectional imaging practice.
+- Gastroenterology Q58 remains unresolved: infant regurgitation may be physiologic GER, but recurrent wheeze should not be attributed to GERD without additional evidence.
+- Gastroenterology Q59 remains unresolved because the retained 2-week PPI option does not match the current 4–8 week empiric trial used for typical symptoms in older children.
+- Oncology Q20 remains unresolved because post-radiation bowel injury can produce true obstruction or pseudo-obstruction and the missing image prevents reliable mechanism assignment.
+- Metabolic Q21 remains unresolved because type 2 Gaucher disease requires active supportive multidisciplinary care; none of the retained choices represents that modern management.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -87,8 +84,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large clinical conflict-resolution batches through remaining Endocrinology, Critical Care, Gastroenterology, Infectious Diseases, Oncology, Genetics, Respiratory, and Behavioral/Psychiatry conflicts not yet covered by resolution overlays. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue large clinical conflict-resolution batches through remaining Critical Care, Gastroenterology, Infectious Diseases, Endocrinology, Hematology/Oncology, Genetics, Respiratory, and Behavioral/Psychiatry conflicts not yet covered by resolution overlays. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **52 clinical conflicts have now been resolution-reviewed**, with **14 clean modern answer resolutions** and **38 correctly retained as invalid/under-specified/context-dependent**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **58 clinical conflicts have now been resolution-reviewed**, with **16 clean modern answer resolutions** and **42 correctly retained as invalid/under-specified/context-dependent**.
