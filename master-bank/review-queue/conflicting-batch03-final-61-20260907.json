@@ -1,0 +1,180 @@
+{
+  "batchId": "conflicting-batch03-final-61-20260907",
+  "scope": "Final 61 canonical records from the baseline 131-record conflicting queue, after excluding batch01 (30) and batch02 (40).",
+  "policy": [
+    "Preserve recalledAnswer unchanged.",
+    "Do not assign verifiedAnswer from recall text alone.",
+    "Do not invent missing options, context, images, calculations, or policy details.",
+    "Resolve only when current UpToDate -> Nelson -> current specialty guideline and the retained options/context support a defensible single-best answer.",
+    "Keep image-dependent, version-sensitive, jurisdiction-sensitive, and under-specified items unresolved when the missing context prevents safe grading."
+  ],
+  "count": 61,
+  "groups": [
+    {
+      "section": "Respiratory / Asthma / Sleep",
+      "count": 3,
+      "items": [
+        {"id":"PR-RESP-ASTH-028","sourceQuestion":"Asthma Q28","conflictType":"asthma severity classification/source key uncertainty"},
+        {"id":"PR-P2-RESP-006","sourceQuestion":"Pulmonary Q6","conflictType":"ABPA source framing conflict"},
+        {"id":"PR-P2-SLEEP-017","sourceQuestion":"Sleep Q17","conflictType":"parasomnia source framing conflict"}
+      ]
+    },
+    {
+      "section": "Substances Abuse and Toxicology",
+      "count": 1,
+      "items": [
+        {"id":"part2-substance-q08","sourceQuestion":"Q8","conflictType":"source answer unresolved"}
+      ]
+    },
+    {
+      "section": "Ophthalmology",
+      "count": 3,
+      "items": [
+        {"id":"part2-ophthalmology-q03","sourceQuestion":"Ophthalmology Q3","conflictType":"preferred next step absent from choices plus image/publication gate"},
+        {"id":"part2-ophthalmology-q08","sourceQuestion":"Ophthalmology Q8","conflictType":"duplicate source option labels and uncertain recalled answer"},
+        {"id":"part2-ophthalmology-q10","sourceQuestion":"Ophthalmology Q10","conflictType":"source option conflates chalazion and hordeolum plus image gate"}
+      ]
+    },
+    {
+      "section": "Gastroenterology",
+      "count": 4,
+      "items": [
+        {"id":"part2-gi-q071","sourceQuestion":"Gastroenterology Q71","conflictType":"source allows more than one diagnosis depending framing"},
+        {"id":"part2-gi-q079","sourceQuestion":"Gastroenterology Q79","conflictType":"imaging modality/source option conflict"},
+        {"id":"part2-gi-q080","sourceQuestion":"Gastroenterology Q80","conflictType":"source key versus accepted initial operation conflict"},
+        {"id":"part2-gi-q085","sourceQuestion":"Gastroenterology Q85","conflictType":"imaging indication/available option conflict"}
+      ]
+    },
+    {
+      "section": "Nutrition and Malnutrition",
+      "count": 2,
+      "items": [
+        {"id":"part2-nutrition-q014-symmetric-growth-fall","sourceQuestion":"Nutrition and Malnutrition Q14","conflictType":"growth-pattern interpretation conflict"},
+        {"id":"part2-nutrition-q015-growth-chart-intestinal-biopsy","sourceQuestion":"Nutrition and Malnutrition Q15","conflictType":"growth-chart/biopsy interpretation conflict"}
+      ]
+    },
+    {
+      "section": "Infectious Diseases",
+      "count": 3,
+      "items": [
+        {"id":"part2-id-other-q100","sourceQuestion":"Q100","conflictType":"source key/context conflict"},
+        {"id":"part2-id-viral-q13","sourceQuestion":"Other Viral Q13","conflictType":"uncertain source key and incomplete metadata"},
+        {"id":"part2-id-urt-q80","sourceQuestion":"Q80","conflictType":"upper respiratory source key/context conflict"}
+      ]
+    },
+    {
+      "section": "Allergy",
+      "count": 1,
+      "items": [
+        {"id":"PR-AI-ALL-012","sourceQuestion":"Allergy Q12","conflictType":"seasonal allergic rhinitis answer A-or-C source ambiguity"}
+      ]
+    },
+    {
+      "section": "Nephrology and Urology",
+      "count": 9,
+      "items": [
+        {"id":"part2-nephro-aki-q07","sourceQuestion":"Q7","conflictType":"source lists more than one answer"},
+        {"id":"part2-nephro-aki-q12","sourceQuestion":"Q12","conflictType":"AKI source key/context conflict"},
+        {"id":"part2-nephro-cau-q53","sourceQuestion":"Q53","conflictType":"congenital urogenital anomaly management conflict"},
+        {"id":"part2-nephro-cystic-q47","sourceQuestion":"Q47","conflictType":"cystic kidney source key/context conflict"},
+        {"id":"part2-nephro-htn-q13","sourceQuestion":"Q13","conflictType":"pediatric hypertension source key/context conflict"},
+        {"id":"part2-nephro-proteinuria-q33","sourceQuestion":"Q33","conflictType":"proteinuria source key/context conflict"},
+        {"id":"PR-NEPH-URO-059","sourceQuestion":"59","conflictType":"urologic emergency management/source option conflict"},
+        {"id":"PR-NEPH-URO-062","sourceQuestion":"62","conflictType":"acute scrotum diagnosis/source context conflict"},
+        {"id":"part2-nephro-vasculitis-q38","sourceQuestion":"Q38","conflictType":"vasculitis/hematuria source key/context conflict"}
+      ]
+    },
+    {
+      "section": "Endocrinology",
+      "count": 4,
+      "items": [
+        {"id":"part2-endo-calcium-q28","sourceQuestion":"Endocrinology Q28","conflictType":"rickets workup has several appropriate initial tests"},
+        {"id":"part2-endo-dm-q55","sourceQuestion":"Endocrinology Q55","conflictType":"prediabetes threshold depends on diagnostic standard"},
+        {"id":"part2-endo-puberty-q15","sourceQuestion":"Endocrinology Q15","conflictType":"McCune-Albright source key/context conflict"},
+        {"id":"part2-endo-short-q07","sourceQuestion":"Endocrinology Q7","conflictType":"source treatment key versus need for stimulation testing before treatment"}
+      ]
+    },
+    {
+      "section": "Metabolic Disorders",
+      "count": 1,
+      "items": [
+        {"id":"part2-metabolic-complex-q21","sourceQuestion":"Q21","conflictType":"complex-molecule disorder source key/context conflict"}
+      ]
+    },
+    {
+      "section": "Genetics",
+      "count": 3,
+      "items": [
+        {"id":"part2-genetics-aneuploidy-q19","sourceQuestion":"Genetics Q19","conflictType":"no recalled answer established"},
+        {"id":"part2-genetics-aneuploidy-q24","sourceQuestion":"Genetics Q24","conflictType":"aneuploidy source key/context conflict"},
+        {"id":"part2-genetics-aneuploidy-q25","sourceQuestion":"Genetics Q25","conflictType":"source preserves A-or-B ambiguity"}
+      ]
+    },
+    {
+      "section": "Hematology",
+      "count": 9,
+      "items": [
+        {"id":"part2-heme-q48-factor12-vs11","sourceQuestion":"Q48","conflictType":"factor XII versus XI isolated prolonged aPTT conflict"},
+        {"id":"part2-heme-q50-factor-assay-conflict","sourceQuestion":"Q50","conflictType":"factor assay answer unresolved"},
+        {"id":"part2-heme-q01-beta-thal-electrophoresis","sourceQuestion":"Hematology Q1","conflictType":"beta-thalassemia electrophoresis/source interpretation conflict"},
+        {"id":"part2-heme-q05-scd-cns-crisis","sourceQuestion":"Hematology Q5","conflictType":"sickle-cell neurologic emergency management conflict"},
+        {"id":"part2-heme-q10-scd-ruq-ultrasound","sourceQuestion":"Hematology Q10","conflictType":"sickle-cell hepatobiliary evaluation conflict"},
+        {"id":"part2-heme-q13-scd-psych-referral","sourceQuestion":"Hematology Q13","conflictType":"sickle-cell neurocognitive referral/source framing conflict"},
+        {"id":"part2-heme-q17-dark-urine-pnh-conflict","sourceQuestion":"Hematology Q17","conflictType":"intravascular hemolysis/PNH source conflict"},
+        {"id":"part2-heme-q20-megaloblastic-risk","sourceQuestion":"Hematology Q20","conflictType":"megaloblastic anemia risk-factor source conflict"},
+        {"id":"part2-heme-q27-lead-vs-ida-conflict","sourceQuestion":"Hematology Q27","conflictType":"lead poisoning versus iron-deficiency workup conflict"}
+      ]
+    },
+    {
+      "section": "Oncology",
+      "count": 3,
+      "items": [
+        {"id":"part2-onc-q02-fanconi-mds","sourceQuestion":"Q2","conflictType":"Fanconi anemia/MDS source interpretation conflict"},
+        {"id":"part2-onc-q08-eculizumab-unclear","sourceQuestion":"Q8","conflictType":"TMA/HUS eculizumab indication unclear"},
+        {"id":"part2-onc-q20-radiation-pseudo-obstruction","sourceQuestion":"Q20","conflictType":"radiation enteropathy versus obstruction diagnosis/management conflict"}
+      ]
+    },
+    {
+      "section": "Musculoskeletal and Rheumatology",
+      "count": 3,
+      "items": [
+        {"id":"part2-msk-q16","sourceQuestion":"Musculoskeletal Q16","conflictType":"pediatric fracture source key/context conflict"},
+        {"id":"PR-RHEUM-007","sourceQuestion":"7","conflictType":"juvenile dermatomyositis weakness-pattern option conflict"},
+        {"id":"PR-RHEUM-012","sourceQuestion":"12","conflictType":"JIA synovial-fluid interpretation conflict"}
+      ]
+    },
+    {
+      "section": "Critical Care Medicine",
+      "count": 6,
+      "items": [
+        {"id":"part2-cc-q12","sourceQuestion":"Critical Care Q12","conflictType":"basic/advanced life support source key conflict"},
+        {"id":"part2-cc-q15","sourceQuestion":"Critical Care Q15","conflictType":"basic/advanced life support source key conflict"},
+        {"id":"part2-cc-q17","sourceQuestion":"Critical Care Q17","conflictType":"basic/advanced life support source key conflict"},
+        {"id":"part2-cc-q19","sourceQuestion":"Critical Care Q19","conflictType":"basic/advanced life support source key conflict"},
+        {"id":"part2-cc-q38","sourceQuestion":"Critical Care Q38","conflictType":"conditional respiratory answer plus original image missing/unreviewed"},
+        {"id":"part2-cc-q45","sourceQuestion":"Critical Care Q45","conflictType":"historical/evolving respiratory practice"}
+      ]
+    },
+    {
+      "section": "Behavioral Medicine and Psychiatry",
+      "count": 5,
+      "items": [
+        {"id":"part2-beh-q10","sourceQuestion":"Behavioral Q10","conflictType":"more than one ADHD diagnostic feature is correct"},
+        {"id":"part2-beh-q12","sourceQuestion":"Behavioral Q12","conflictType":"ADHD management depends on symptom setting/context"},
+        {"id":"part2-beh-q17","sourceQuestion":"Behavioral Q17","conflictType":"source says correct stimulant adjustment was absent from original options"},
+        {"id":"part2-beh-q21","sourceQuestion":"Behavioral Q21","conflictType":"head-banging management source key uncertain"},
+        {"id":"part2-psych-q33","sourceQuestion":"Psychiatric Q33","conflictType":"de-escalation/environmental-safety source key conflict"}
+      ]
+    }
+  ],
+  "batchOutcome": {
+    "assigned": 61,
+    "baselineConflicting": 131,
+    "previouslyAssigned": 70,
+    "totalAssignedAfterThisBatch": 131,
+    "unassignedAfterThisBatch": 0,
+    "recalledAnswersOverwritten": 0,
+    "verifiedAnswersForced": 0
+  },
+  "next": "With all 131 conflicting records now assigned to coordinated batches, perform clinical-resolution passes by specialty, prioritizing records with complete retained options/context. Keep irreducible, image-dependent, version-sensitive, or jurisdiction-sensitive conflicts non-publishable."
+}
