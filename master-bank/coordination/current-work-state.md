@@ -25,21 +25,34 @@ A source-wide scan of the 2026 Part II collection identified **167 source-sparse
 
 The grouped queue is committed at `master-bank/review-queue/source-sparse-recalls-20260907.json`.
 
-Largest groups:
-- Endocrinology 17
-- Genetics 15
-- Infectious Diseases 14
-- Neurology 13
-- Gastroenterology 10
-- Hematology 9
-- Metabolic Disorders 9
+## Large batch completed in PR #5
 
-This queue is for **quality recovery**, not new question import. Missing distractors must not be invented.
+A direct re-read of the uploaded source has now been completed for **59 sparse recalls** across the four largest groups:
 
-## PR #5 work already completed
+- Endocrinology: 17
+- Genetics: 15
+- Infectious Diseases: 14
+- Neurology: 13
 
-- Pulmonary Q9 and Q10 original microscopy assets were reconciled with the private source-review bundle; their public assetPath remains null pending rights/clinical review.
-- The 167-question sparse-recall audit now gives both chats the same large-batch worklist.
+Within this batch:
+- 21 items have image/media dependencies.
+- Genetics Q10 remains a zero-option incomplete recall with uncertain source answer.
+- Missing distractors were not reconstructed.
+- No `verifiedAnswer` was assigned solely from the recall source.
+- The batch is reserved at `master-bank/review-queue/source-sparse-large-review-59-index-20260907.json` so parallel chats do not repeat it.
+
+## Remaining largest groups
+
+- Gastroenterology: 10
+- Hematology: 9
+- Metabolic Disorders: 9
+- Nephrology/Urology: 7
+- Medical Ethics/Patient Safety: 7
+- Cardiology: 6
+- Neonatology: 6
+- Trauma and Accidents: 6
+- Critical Care Medicine: 5
+- Immunology: 5
 
 ## Shared execution rules
 
@@ -55,7 +68,7 @@ This queue is for **quality recovery**, not new question import. Missing distrac
 
 ## Next batch shared by all chats
 
-Work through the 167 sparse recalls in **large specialty batches**, beginning with Endocrinology + Genetics + Infectious Diseases + Neurology. For each item: recover only source-supported wording/assets, preserve incompleteness when distractors are absent, and separately queue clinical verification.
+Continue in a **large batch** with Gastroenterology + Hematology + Metabolic Disorders + Nephrology/Urology + Medical Ethics/Patient Safety. Recover only source-supported wording/assets, preserve incompleteness when distractors are absent, and separately queue clinical verification.
 
 ## Coordination rule
 
