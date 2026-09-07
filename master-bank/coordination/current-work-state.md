@@ -1,6 +1,6 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 10:25 +03:00
+Updated: 2026-09-07 10:32 +03:00
 Active branch: `master-bank/post-merge-audit`
 Active PR: #3 — `Continue PediaRounds post-merge audit`
 Base: `main`
@@ -15,38 +15,44 @@ Base: `main`
 
 ## Current priority
 1. Canonical 1023-ID coverage/duplicate audit.
-2. Recover source images and attachments, link each to canonical question IDs/paths.
+2. Recover source images/attachments and link them to canonical questions.
 3. Resolve source-supported `incomplete_recall` items without inventing distractors.
 4. Preserve conflicting/outdated source keys until independent verification.
 
 ## Latest synchronized work
-- **Nutrition Q1–Q23 image-reference audit is complete** for source pages 254–270. The only explicit image-dependent item found is **Nutrition Q8**.
-- **Nutrition Q8** (`part2-nutrition-q008-abetalipoproteinemia-acanthocytes`) has the actual acanthocyte smear recovered from source page 259 and linked to `nutrition-part2-q04-q12.json`; no other Nutrition Q1–Q23 question stem explicitly references picture/photo/smear/radiograph/X-ray terminology.
-- Nutrition image manifest was updated to record the full-section audit status: `master-bank/sources/nutrition-source-image-review-20260907.json`.
-- **Infectious Diseases image audit has now started.** A targeted search across pages 270–349 identified multiple image-dependent recalls; the first early viral batch Q8–Q19 was processed.
-- Recovered and privately packaged early Infectious source images:
-  - Q8 papular-purpuric gloves-and-socks syndrome — page 274.
-  - Q9 cold panniculitis of the cheeks — page 275.
-  - Q12 infectious-mononucleosis oropharyngeal image — page 276.
-  - Q17 two measles images: Koplik spots + exanthem — page 279.
-  - Q18 reuses the measles exanthem image referenced immediately after Q17 in the source text.
-  - Q19 chest radiograph in the human-metapneumovirus vignette — page 280.
-- Private Infectious review package: `PediaRounds_infectious_early_source_image_review.zip`, SHA-256 `ce650f6e0df395421a76e0266b5b5f7ff707cabd6b1f24b26f86f2161eaafab6`.
-- New Infectious linkage metadata:
-  - `master-bank/sources/infectious-early-source-image-review-20260907.json`
-  - `master-bank/sources/infectious-question-image-linkage-20260907.json`
-- The source also contains explanatory graphics on pages 277–278; these were explicitly excluded rather than substituted for question images.
-- Early Gastro linkage remains Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29; Gastro Q8–Q11, Q14–Q15, Q19–Q20 remain `source_image_missing` where their referenced question image is absent.
+- Nutrition Q1–Q23 image-reference audit remains complete; only Nutrition Q8 is explicitly image-dependent.
+- Infectious image audit advanced substantially beyond the early viral batch.
+- New committed batch: `master-bank/sources/infectious-mid-source-image-review-20260907.json`.
+- Recovered actual Infectious source images in this batch:
+  - Q27/Q28 shared scarlet-fever rash — page 285.
+  - Q37 splinter hemorrhage — page 292.
+  - Q42 pneumonia chest radiograph — page 294.
+  - Q57 gram-negative coccobacilli Gram stain — page 305.
+  - Q66 erythema-multiforme targetoid lesions — page 311.
+  - Q78 steeple-sign radiograph — page 316.
+  - Q81 retropharyngeal-abscess lateral neck radiograph — page 319.
+  - Q83 thumb-sign radiograph — page 320.
+  - Q94 periorbital-redness photograph — page 329.
+  - Q96 oral-thrush photograph — page 331.
+  - Q97 candidal diaper-rash photograph — page 331.
+  - Q98 perianal-streptococcal dermatitis photograph — page 332.
+  - Q99 hepatic hydatid-cyst CT — page 332.
+  - Q107 slapped-cheek erythema-infectiosum photograph — page 337.
+- New private batch package: `PediaRounds_infectious_mid_source_image_review.zip`, SHA-256 `65120722be6287b65f757ead683a4d8fb17b166c5f8ea3f338fd947e97ee54c2`.
+- Infectious Q30 remains `source_image_missing`: the recall says a picture was provided, but page 287 contains an explanatory table rather than the original question image.
+- Infectious Q67 remains `source_image_missing`: the recall says a chest X-ray was provided, but page 311 contains the Q66 skin image and no matching question radiograph.
+- Earlier Infectious recovered images remain Q8, Q9, Q12, Q17, Q18 and Q19.
+- Early Gastro recovered/linkable images remain Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29; Gastro Q8–Q11, Q14–Q15, Q19–Q20 remain `source_image_missing` where referenced assets are absent.
 - Later Gastro image-linked questions remain Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81.
 - Pulmonary source-image review remains Q6, Q9, Q10, Q12; Pulmonary Q14 source image is absent.
 
 ## Known review gates
-- Gastro Q8–Q11, Q14–Q15, Q19–Q20: source image referenced but absent from current source page.
+- Gastro Q8–Q11, Q14–Q15, Q19–Q20: referenced question image absent.
 - Gastro Q35, Q42, Q44–Q45, Q53, Q56–Q57 and selected later GI items retain source conflicts.
 - Gastro Q73/Q74 remain incomplete recalls despite image recovery.
-- Nutrition Q8 image is recovered but remains `image_needs_review` and publication-gated.
-- Infectious Q8/Q9/Q12/Q17/Q18/Q19 images are recovered privately and remain `image_needs_review` until clinical review/publication approval.
+- Nutrition Q8 image recovered but publication/clinical review remains pending.
+- Infectious recovered images remain `image_needs_review`; Q30/Q67 are `source_image_missing`.
 - Pulmonary Q9/Q10 and Sleep Q15 remain incomplete recalls.
 
 ## Coordination rule
-GitHub is shared memory between chats. Read this file, `MASTER_BANK_PROGRESS.md`, and PR #3 before writes; update both handoff files after a successful batch.
+GitHub is shared memory between chats. Read this file, `MASTER_BANK_PROGRESS.md`, and PR #3 before writes; update both handoff files after each successful batch.
