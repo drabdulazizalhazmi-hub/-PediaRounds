@@ -23,20 +23,17 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch02-8-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch02-heme-05-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch03-nephro-06-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch04-endo-rheum-02-20260907.json`
 
 ### Aggregate clinical-resolution progress
-- **31 conflicting records reviewed in current-guidance resolution passes.**
-- **6 resolved to clean modern verified answers in review overlays.**
+- **33 conflicting records reviewed in current-guidance resolution passes.**
+- **8 resolved to clean modern verified answers in review overlays.**
 - **25 retained as invalid, under-specified, missing the best option, image-dependent, or context-dependent.**
 - **0 recalledAnswer values overwritten.**
 
-### Newly completed Nephrology/Urology pass — 6 reviewed
-- Nephrology Q33: FSGS + years of steroids does not establish steroid-dependent versus steroid-resistant disease. IPNA management differs by phenotype; no unique modern answer.
-- Nephrology Q38: IgA vasculitis commonly causes hematuria/proteinuria, but renal failure is a minority severe manifestation; retained `most common complication` options are invalid.
-- Nephrology Q47: bilateral kidney masses on X-ray with missing/unreviewed original image cannot verify ARPKD; modern diagnosis relies on characteristic ultrasound findings.
-- Nephrology Q53: Potter sequence can result from bilateral renal dysplasia or obstructive uropathy such as PUV; more than one retained option is plausible without prenatal imaging context.
-- Nephrology Q59: at 12 months, persistent cryptorchidism needs surgical referral/orchiopexy; routine pre-referral ultrasound is not recommended and `urgent exploratory laparotomy` is not the standard generic action. Best modern action is absent from choices.
-- Nephrology Q62: **resolved to A, testicular torsion** for the retained stem because acute pain plus decreased intratesticular Doppler perfusion outweighs the conflicting blue-dot clue; urgent treatment is required.
+### Newly completed Endocrinology/Rheumatology pass — 2 reviewed
+- Endocrinology Q15: **resolved to A, GnRH agonist should not be assumed to treat the gonadotropin-independent McCune-Albright precocious-puberty process.** Current MAS guidance uses aromatase/sex-steroid directed therapy for the peripheral process and adds GnRH agonist if secondary central puberty develops.
+- Rheumatology Q12: **resolved to C, 8,000 WBC with 30% PMN**, as the best retained JIA synovial-fluid pattern. This is a best-fit choice, not a diagnostic cutoff; JIA usually has inflammatory fluid below the very high neutrophilic counts typical of acute bacterial arthritis.
 
 ## Important retained gates
 - Ethics Q10/Q11: current Saudi/MOH DNR policy and perioperative DNR handling required.
@@ -58,7 +55,7 @@ Resolution files:
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Continue large clinical-resolution passes through remaining Hematology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious conflicts, then move to the `needs_verification` queue. Favor complete stems/options with a defensible modern single-best answer; otherwise keep non-publishable and document why.
+Continue large clinical-resolution passes through remaining Hematology, Endocrinology, Critical Care, Gastroenterology, and Infectious conflicts, then move to the `needs_verification` queue. Favor complete stems/options with a defensible modern single-best answer; otherwise keep non-publishable and document why.
 
 ## Coordination rule
 If another chat advances PR #5, refetch this file and `MASTER_BANK_PROGRESS.md` before writing and follow the newest GitHub state.
