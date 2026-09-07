@@ -17,25 +17,24 @@
 5. Public repo must not contain source PDF/image bytes; use private review bundles and committed linkage/hash metadata.
 6. Update both handoff files after a successful batch.
 
-## Latest completed batch — Gastro Q19/Q20 + Nutrition Q8 image recovery
-- **Gastro Q19** source page 209: stem says a congenital diaphragmatic hernia picture was provided, but no question image is present on the rendered page. Marked `source_image_missing`.
-- **Gastro Q20** source page 209: stem says a gastroschisis picture was provided, but no question image is present. The page-210 omphalocele/gastroschisis comparison is explanatory material only and was not substituted. Marked `source_image_missing`.
-- Updated `master-bank/sources/gastro-early-source-image-review-20260907.json` and `master-bank/sources/question-image-linkage-20260907.json` for Q19/Q20.
+## Latest completed batch — Nutrition Q1-Q23 image audit complete
+- **Nutrition and Malnutrition Q1-Q23** source-image/reference audit is complete for source pages 254–270.
+- A targeted full-section search for picture/photo/smear/radiograph/X-ray terminology identified **only Q8** as explicitly image-dependent in the source text. source-note: source PDF audit only
 - **Nutrition Q8**: recovered the actual embedded acanthocyte smear from source page 259 for `part2-nutrition-q008-abetalipoproteinemia-acanthocytes`.
   - canonical record: `master-bank/data/09-gastroenterology-hepatology-nutrition/nutrition-part2-q04-q12.json`
   - asset: `p259-000.jpg`
   - dimensions: 199×149
   - SHA-256: `1b394584e1cce65d81490b8754b2e6a120fb38515bfed2c4077f5cf49aaeb4df`
   - status: `image_needs_review`
-- New files:
-  - `master-bank/sources/nutrition-source-image-review-20260907.json`
-  - `master-bank/sources/nutrition-question-image-linkage-20260907.json`
-- Private Nutrition review package: `PediaRounds_nutrition_source_image_review.zip`; SHA-256 `bdf29e800855897a5a51a0d4abf2b8bb7cc3057ecbb3b42a1e037e1f2423abf7`.
+- `master-bank/sources/nutrition-source-image-review-20260907.json` now records `complete_for_image_references` for Q1-Q23.
+- `master-bank/sources/nutrition-question-image-linkage-20260907.json` remains the direct Q8 question↔image linkage record.
+- Private Nutrition review package remains `PediaRounds_nutrition_source_image_review.zip`; SHA-256 `bdf29e800855897a5a51a0d4abf2b8bb7cc3057ecbb3b42a1e037e1f2423abf7`.
 
-## Previously recovered/linkable image assets
-- Early Gastro: Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29.
-- Later Gastro: Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81.
-- Pulmonary: Q6, Q9, Q10, Q12.
+## Previously completed image audit work
+- Gastro Q19/Q20 source page 209: stems say pictures were provided, but no actual question images are present; both are `source_image_missing` and no explanatory graphic was substituted.
+- Early Gastro recovered/linkable: Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29.
+- Later Gastro recovered/linkable: Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81.
+- Pulmonary recovered/linkable: Q6, Q9, Q10, Q12.
 
 ## Source-image-missing gates
 - Gastro Q8–Q11, Q14–Q15, Q19–Q20: source stem references an image, but the actual question image is absent from the current PDF page.
@@ -46,7 +45,7 @@ Growth Q1–Q21; Dermatology Q1–Q22; Ophthalmology Q1–Q10; ENT Q1–Q9; Neon
 
 ## Still requires canonical closure audit
 - Gastroenterology Q1–Q86 (overlap between explicit ranges and older supported batches).
-- Nutrition Q1–Q23 (supported/gap overlap).
+- Nutrition Q1–Q23 question coverage is source-complete, but supported/gap-file overlap still requires canonical deduplication.
 - Pulmonary/Sleep/Asthma legacy + canonical overlap.
 - Allergy/Immunology canonical deduplication/verification.
 - Medical Ethics/Patient Safety separation of structured MCQs vs incomplete recalls.
@@ -58,7 +57,7 @@ Growth Q1–Q21; Dermatology Q1–Q22; Ophthalmology Q1–Q10; ENT Q1–Q9; Neon
 - Pulmonary Q9/Q10 and Sleep Q15: incomplete recalls.
 
 ## Next action
-1. Continue scanning Nutrition Q1–Q23 for any additional source images/attachments and link only actual embedded question assets.
-2. Continue resolving source-supported `incomplete_recall` items without inventing distractors.
+1. Move from Nutrition image recovery to **Nutrition canonical deduplication/closure audit** because the image-reference scan is complete.
+2. Resolve source-supported `incomplete_recall` items without inventing distractors.
 3. Continue canonical 1023-ID dedup/coverage audit in larger batches.
 4. Independently verify clinical conflicts only after structural/source integrity is stable.
