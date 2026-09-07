@@ -1,6 +1,6 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 09:40 +03:00
+Updated: 2026-09-07 09:45 +03:00
 Active branch: `master-bank/post-merge-audit`
 Active PR: #3 — `Continue PediaRounds post-merge audit`
 Base: `main`
@@ -25,15 +25,18 @@ Previous PR #2 was merged into `main` on 2026-09-07.
 
 ## Latest synchronized work
 - PR #2 merged; all earlier Master Bank work is now on `main`.
-- New shared branch/PR for continued work: `master-bank/post-merge-audit` / PR #3.
-- Pulmonary source-image review batch completed for Q6, Q9, Q10, Q12; source images were extracted into a private review bundle and hashed.
-- `master-bank/sources/pulmonary-source-image-review-20260907.json` records the recovered assets and blockers.
-- Pulmonary Q14 references a lytic-lesion X-ray in the stem, but the current source page contains no embedded/raster question image; keep `image_missing` and do not fabricate a substitute.
-- Q9 and Q10 still have single-option/incomplete-recall blockers even though their source images were recovered.
+- Active shared branch/PR: `master-bank/post-merge-audit` / PR #3.
+- Pulmonary source-image review completed for Q6, Q9, Q10, Q12; source images were extracted privately and hashed in `master-bank/sources/pulmonary-source-image-review-20260907.json`.
+- Pulmonary Q14 remains `image_missing` because the current source page contains no embedded/raster question image.
+- Gastroenterology source-image recovery batch completed for Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73 and Q74/Q75.
+- New manifest: `master-bank/sources/gastro-source-image-review-20260907.json` records source page, dimensions, SHA-256, mapping and `image_needs_review` status.
+- Gastro private review bundle SHA-256: `2e4938961377a74bacc75b4b4222b1aba1496842461d019bfd134c9c2b252fa5`.
+- Q56 source itself questions whether the supplied image represents hiatal hernia versus a wrong achalasia image; retain conflict.
+- Q57 source key says chest X-ray while the explanation states CT angiography is the common definitive study; retain conflict.
 
 ## Previously synchronized coverage
 - Dermatology Q1–Q22; Ophthalmology Q1–Q10; ENT Q1–Q9; Growth Q1–Q21.
-- Neonatology Q1–Q43; Neurology files span Q1–Q50; Nephrology/Urology Q1–Q63.
+- Neonatology Q1–Q43; Neurology Q1–Q50; Nephrology/Urology Q1–Q63.
 - Rheumatology Q1–Q16; Musculoskeletal Q1–Q19; Critical Care Q1–Q55; Trauma Q1–Q44.
 - Cardiology Q1–Q57; Endocrinology Q1–Q65; Hematology Q1–Q57; Oncology Q1–Q20.
 - Infectious Diseases through Q125; Genetics through Q52 with source TOC discrepancy for missing Q53; Metabolic Q1–Q23.
