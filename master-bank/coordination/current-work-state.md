@@ -51,3 +51,8 @@ Current Part I 2025 imported range: `Q1–Q30`
 
 ## Coordination rule
 GitHub is the shared memory between chats. If another chat advances PR #6 or the branch, refetch before writing and merge the newer state rather than overwriting it.
+
+## Current Site integration owner — user handoff, 2026-09-07
+The user asked one continuation conversation to take over, avoid restarting, stop parallel work, and finish the existing Site quickly. This conversation cannot technically stop other conversations. Please do not begin another source import, rewrite question ranges, or deploy the Site concurrently. Continue from the committed records; preserve any work already completed.
+
+Active work: connect the current Master Bank and Part I 2025 Q1–Q30 to the existing PediaRounds Site (`appgprj_6a9b542a7a7c81919e2e97f30ed411bd`). The original Site source is now accessible; integration uses existing Site question UIDs, keeps DONE/checkpoints, preserves original images and source keys, and separates unresolved source reviews from scored questions. No source re-extraction is being restarted. Publishing and the final receipt will be handled by the current continuation conversation.
