@@ -1,0 +1,40 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch04-endo-rheum-02-20260907",
+  "scope": "Targeted current-guidance resolution pass for remaining Endocrinology and Rheumatology conflicts with complete retained stems/options.",
+  "policy": [
+    "Preserve recalledAnswer unchanged as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options support a defensible modern single-best answer.",
+    "Do not invent missing options, thresholds, images, or context.",
+    "If a precise numeric pattern is not uniquely diagnostic, retain the item as non-publishable rather than forcing certainty."
+  ],
+  "items": [
+    {
+      "id": "part2-endo-puberty-q15",
+      "sourceQuestion": "Endocrinology Q15",
+      "modernOutcome": "resolved_for_current_stem",
+      "verifiedAnswer": "A",
+      "reason": "McCune-Albright syndrome classically causes gonadotropin-independent precocious puberty from autonomous sex-steroid production. GnRH agonists treat central, GnRH-dependent precocious puberty and should not be expected to control the peripheral process unless secondary central puberty develops. The retained option A therefore correctly identifies the treatment that should not be automatically assumed to work for the peripheral process.",
+      "references": [
+        "Pediatric Endocrine Society: McCune-Albright Syndrome",
+        "FD/MAS International Consortium best-practice management guideline"
+      ]
+    },
+    {
+      "id": "PR-RHEUM-012",
+      "sourceQuestion": "Rheumatology Q12",
+      "modernOutcome": "resolved_for_retained_choices_with_caution",
+      "verifiedAnswer": "C",
+      "reason": "JIA synovial fluid is usually inflammatory and typically remains below the very high neutrophilic counts seen in acute bacterial arthritis. Published JIA series report median synovial WBC around 11,757/mm3 with broad overlap, while pediatric bacterial arthritis commonly exceeds 50,000/mm3 and often 100,000/mm3 with neutrophil predominance. Among the retained choices, 8,000 WBC with 30% PMN is the best fit; however, the exact count/differential is not a diagnostic cutoff and must be interpreted with the clinical context.",
+      "references": [
+        "Characteristics of synovial fluid in patients with juvenile idiopathic arthritis, 2019",
+        "PIDS/IDSA 2023 Acute Bacterial Arthritis in Pediatrics guideline"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 2,
+    "resolvedToModernVerifiedAnswer": 2,
+    "remainingNonPublishableInThisBatch": 0,
+    "recalledAnswersOverwritten": 0
+  }
+}
