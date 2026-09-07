@@ -21,6 +21,8 @@ jobs:
       - name: Structural audit
         continue-on-error: true
         run: python master-bank/tools/audit_master_bank.py
+      - name: Source coverage audit
+        run: python master-bank/tools/audit_source_coverage.py
       - name: Duplicate report
         continue-on-error: true
         run: python master-bank/tools/detect_duplicate_questions.py
