@@ -11,8 +11,7 @@
 - PR #3: closed as superseded by PR #4
 - Current working branch: `master-bank/review-images-verification`
 - Current pull request: **PR #5 — Review images, incomplete recalls, and clinical verification**
-- Latest observed PR #5 head: `c397612baa53902e31d4fb38975c3431372bad85`
-- Phase: **image recovery / incomplete-recall cleanup / clinical verification**
+- Phase: **large-batch sparse-recall cleanup / image recovery / clinical verification**
 
 ## Source coverage milestone
 
@@ -44,10 +43,26 @@ Image validation reported **249 image-dependent questions** and **0 public repos
 
 ## PR #5 quality work completed
 
-- Pulmonary Q9 (acute eosinophilic pneumonia) and Q10 (pulmonary alveolar proteinosis): corrected stale `original_image_missing` state because the original microscopy images had already been technically recovered into the private review bundle.
-- Added exact private-review filenames and SHA-256 hashes to the canonical records.
-- Kept `assetPath: null`, `publishable: false`, `incomplete_recall`, and image rights/clinical-review blockers. No source image bytes were committed publicly.
-- Pulmonary Q7 remains incomplete because the source preserves only one option.
+- Pulmonary Q9 and Q10: reconciled with already recovered original microscopy assets in the private source-review bundle; stale missing-image blockers were corrected without publishing source image bytes.
+- Added a **large-batch sparse-source audit covering 167 questions** whose 2026 Part II source text preserves only zero or one answer option.
+- Sparse audit breakdown: **163 single-option recalls + 4 zero-option recalls**.
+- **48/167** sparse recalls contain image/media cues and are now explicitly grouped for original-asset reconciliation.
+- **10/167** have uncertain/unclear source answer text and are explicitly flagged for source/clinical review.
+- Sparse recalls are grouped by specialty and question number in `review-queue/source-sparse-recalls-20260907.json` so future chats can work in large batches without rediscovering the same problem set.
+- Missing distractors remain unfilled; no answer choices, calculations, years, or images were invented.
+
+## Largest sparse-recall groups to prioritize
+
+- Endocrinology: 17
+- Genetics: 15
+- Infectious Diseases: 14
+- Neurology: 13
+- Gastroenterology: 10
+- Hematology: 9
+- Metabolic Disorders: 9
+- Nephrology/Urology: 7
+- Medical Ethics/Patient Safety: 7
+- Cardiology: 6
 
 ## Coordination protocol — mandatory
 
@@ -64,17 +79,18 @@ Image validation reported **249 image-dependent questions** and **0 public repos
 
 ## Highest-priority next work
 
-1. Reconcile more recoverable source-image records already identified in Neonatology, Dermatology, Ophthalmology, Gastroenterology, and Pulmonary manifests.
-2. Resolve `incomplete_recall` only where original source text supplies missing detail; otherwise preserve incompleteness.
-3. Review `conflicting` / `outdated` records after source integrity is stable.
-4. Advance `needs_verification` in controlled clinical batches using UpToDate → Nelson → current specialty guideline.
+1. Work through the **167-question sparse-recall queue in large batches**, starting with Endocrinology + Genetics + Infectious Diseases + Neurology.
+2. For the **48 image/media sparse recalls**, reconcile exact original source assets where available; keep unresolved items blocked.
+3. Resolve `incomplete_recall` only where another permitted source/original wording supplies missing detail; otherwise preserve incompleteness.
+4. Review `conflicting` / `outdated` records after source integrity is stable.
+5. Advance `needs_verification` in controlled clinical batches using UpToDate → Nelson → current specialty guideline.
 
 ## Style contract between conversations
 
-- Work in large batches when source quality permits.
+- Work in **large batches** when source quality permits.
 - Report only work actually committed.
 - Source completeness, image readiness, and clinical verification are separate gates.
 
 ---
 
-**Handoff rule:** the numbered source bank is structurally covered. From here, optimize quality—not quantity.
+**Handoff rule:** the numbered source bank is structurally covered. From here, optimize quality at scale—not by repeating completed sections.
