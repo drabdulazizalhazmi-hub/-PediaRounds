@@ -42,6 +42,27 @@ Explicit-media-but-missing group: Oncology Q15; Cardiology Q32; Endocrinology Q1
 
 Text-only false-positive group: Immunology Q4; Metabolic Q15; Nephrology Q6; Neurology Q8; Trauma Q2/Q29.
 
+## Outdated clinical review — 9/9 complete
+
+All nine canonical records carrying `reviewStatus=outdated` received a current clinical review in:
+- `review-queue/outdated-clinical-review-9-20260907.json`
+
+Results:
+- **9/9 reviewed**.
+- **8/9** do not have a clean modern single-best answer using the retained source options/context and remain non-publishable historical/outdated items.
+- **Metabolic Q5** still supports PKU as the diagnosis, but the ferric-chloride urine test is a legacy diagnostic method; the diagnosis can be independently supported while the item remains labeled legacy/outdated.
+- No `recalledAnswer` was overwritten.
+
+Key modern corrections retained for handoff:
+- Trauma Q37: hydroxocobalamin is preferred over the source-only sodium thiosulfate framing for severe smoke-inhalation cyanide poisoning.
+- Growth Q20: ID severity must use adaptive functioning, not mental-age/IQ ratio alone.
+- Neurology Q49: current Saudi/GCC MG pathways prioritize antibody + electrodiagnostic testing rather than edrophonium as the next test.
+- Infectious Q115: historical Saudi catch-up product list is time-sensitive; use current MOH schedule.
+- Infectious Q119: HIV and sickle-cell disease are pneumococcal risk conditions; current PCV15/PCV20/PPSV23 use depends on age and vaccine history.
+- Infectious Q123: a tetanus booster is indicated for the puncture wound interval, but Tdap is preferred at age 11 when Tdap has not already been given/known; Tdap is absent from the source options.
+- Endocrinology Q61: current ISPAD guidance does not support osmotic shift as the primary established mechanism; DKA cerebral injury is multifactorial with hypoperfusion/hyperinflammation central.
+- Behavioral Q16: sudden cardiac death with stimulants is extremely rare and not shown to be increased over unexposed children; source framing is outdated.
+
 ## Important retained gates
 
 - Allergy Q27: source gives methacholine challenge but says exercise challenge is more direct/preferred if offered.
@@ -54,7 +75,7 @@ Text-only false-positive group: Immunology Q4; Metabolic Q15; Nephrology Q6; Neu
 ## Shared execution rules
 
 - GitHub is the shared memory across chats; read this file and `MASTER_BANK_PROGRESS.md` before writes.
-- Do not restart completed numbered sections, sparse batches, or sparse-media triage.
+- Do not restart completed numbered sections, sparse batches, sparse-media triage, or the 9-item outdated review.
 - Keep `recalledAnswer` separate from `verifiedAnswer`.
 - Do not invent missing options, calculations, media, years, stems or answer keys.
 - Original source images only; no generated substitute for source-dependent image questions.
@@ -63,7 +84,7 @@ Text-only false-positive group: Immunology Q4; Metabolic Q15; Nephrology Q6; Neu
 
 ## Next shared batch
 
-The 167 sparse recalls and their 48 media cues are fully triaged. **Next priority: large controlled review of `conflicting` + `outdated` records**, then advance `needs_verification` using UpToDate → Nelson → current specialty guideline while preserving source keys separately.
+The sparse/source/media audit and all 9 outdated records are now reviewed. **Next priority: large controlled batches from the 131 `conflicting` records**, prioritizing questions where current guidance can resolve the source disagreement without reconstructing missing choices. After that, advance the 585 `needs_verification` records.
 
 ## Coordination rule
 
