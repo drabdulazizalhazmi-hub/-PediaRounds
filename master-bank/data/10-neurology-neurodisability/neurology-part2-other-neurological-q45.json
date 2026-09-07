@@ -1,0 +1,29 @@
+[
+  {
+    "id":"part2-neuro-q45",
+    "module":"Neurology and Neurodisability",
+    "specialty":"Neurology",
+    "topic":"Other Neurological Diseases",
+    "subtopic":"Charcot-Marie-Tooth disease inheritance",
+    "yearTags":[2024,2022,2020],
+    "examPart":"Part II",
+    "stemEn":"A child has a progressively worsening abnormal gait, distal leg muscle atrophy, pes cavus and absent deep tendon reflexes. Sensation is described as normal. What mode of inheritance is being tested?",
+    "options":[{"key":"A","text":"X-linked dominant"},{"key":"B","text":"X-linked recessive"},{"key":"C","text":"Autosomal dominant"},{"key":"D","text":"Autosomal recessive"}],
+    "recalledAnswer":"C",
+    "verifiedAnswer":null,
+    "answerConfidence":"moderate",
+    "explanationAr":"المصدر يفسر الحالة على أنها Charcot-Marie-Tooth disease type 1 (CMT1) ويختار autosomal dominant. العلامات المذكورة تشمل progressive gait abnormality، distal leg muscle atrophy، pes cavus وareflexia. يضيف المصدر ملاحظة مهمة: CMT1 غالبًا يترافق مع sensory loss، رغم أن بعض variants قد يكون فيها الفقد الحسي خفيفًا؛ لذلك لم تُحوّل الإجابة إلى verified تلقائيًا.",
+    "reasoningEn":"The source identifies the phenotype as CMT1 and states that the tested inheritance pattern is autosomal dominant, while noting that sensory findings can vary.",
+    "incorrectOptionsAr":"المصدر لا يقدم مناقشة مستقلة لكل نمط وراثة؛ الاختيار C مبني على تصنيف الحالة في الشرح كـCMT1 ذي inheritance autosomal dominant.",
+    "keywords":["Charcot-Marie-Tooth","CMT1","pes cavus","areflexia","distal muscle atrophy","autosomal dominant"],
+    "clinicalPearl":"Pes cavus, distal weakness/atrophy and areflexia are classic peripheral neuropathy clues in the source description of CMT1.",
+    "managementSteps":[],
+    "diagnosticSteps":[],
+    "image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"captionAr":null,"captionEn":null,"status":"not_required"},
+    "tts":{"enabled":true,"language":"en","text":"A child has a progressively worsening abnormal gait, distal leg muscle atrophy, pes cavus and absent deep tendon reflexes. Sensation is described as normal. What mode of inheritance is being tested? Option A, X-linked dominant. Option B, X-linked recessive. Option C, autosomal dominant. Option D, autosomal recessive."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","year":2026,"part":"Part II","page":512,"questionNumber":"Neurology Q45","notes":"Part II 2024, 2022 and 2020; source answer C. Source notes that usual CMT1 sensory loss makes the recalled normal-sensation wording imperfect."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived CMT1 inheritance answer; independent verification pending."},
+    "duplicateOf":null,
+    "reviewStatus":"needs_verification"
+  }
+]
