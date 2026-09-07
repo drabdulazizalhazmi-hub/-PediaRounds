@@ -1,0 +1,33 @@
+{
+  "batchId": "sparse-media-missing14-audit-20260907",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "scope": "14 sparse-recall items from the 48-question media triage with no suitable embedded raster in the question span",
+  "method": "Direct re-read of each source question plus adjacent-page image audit. Items are split into explicit media references whose original image is absent from the current PDF extraction, versus false-positive media cues where the question is text-only and does not actually require an image asset.",
+  "counts": {
+    "reviewed": 14,
+    "explicitMediaReferenceButNoEmbeddedRaster": 8,
+    "textOnlyFalsePositiveMediaCue": 6
+  },
+  "policy": {
+    "missingMedia": "Keep blocked as original_image_missing; do not substitute generated or teaching images.",
+    "textOnlyFalsePositive": "Remove image-required assumptions from later cleanup; the question can still remain incomplete for other reasons.",
+    "publicAssetPath": "null"
+  },
+  "items": [
+    {"section":"Immunology","questionNumber":4,"sourcePdfPage":45,"status":"text_only_false_positive_media_cue","evidence":"The stem says 'picture of meningitis' as a clinical-presentation phrase; it does not state that an image was supplied. No question raster is present."},
+    {"section":"Oncology","questionNumber":15,"sourcePdfPage":107,"status":"explicit_media_reference_but_no_embedded_raster","mediaType":"X-ray","evidence":"Stem explicitly says an X-ray of Ewing sarcoma was provided; no suitable pre-answer raster is embedded in the inspected question span."},
+    {"section":"Cardiology","questionNumber":32,"sourcePdfPage":139,"status":"explicit_media_reference_but_no_embedded_raster","mediaType":"ECG","evidence":"Stem states ECG showing prolonged QT interval; no suitable ECG raster is embedded in the inspected question span."},
+    {"section":"Endocrinology","questionNumber":17,"sourcePdfPage":167,"status":"explicit_media_reference_but_no_embedded_raster","mediaType":"clinical photograph","evidence":"Stem explicitly says a picture of a girl showing hirsutism; no suitable pre-answer raster is embedded."},
+    {"section":"Endocrinology","questionNumber":48,"sourcePdfPage":185,"status":"explicit_media_reference_but_no_embedded_raster","mediaType":"clinical photograph","evidence":"Stem explicitly references a picture showing skin hyperpigmentation; no suitable pre-answer raster is embedded."},
+    {"section":"Infectious Diseases","questionNumber":67,"sourcePdfPage":311,"status":"explicit_media_reference_but_no_embedded_raster","mediaType":"chest X-ray","evidence":"Stem explicitly says chest X-ray was provided showing bilateral infiltration; no suitable pre-answer raster is embedded."},
+    {"section":"Metabolic Disorders","questionNumber":15,"sourcePdfPage":394,"status":"text_only_false_positive_media_cue","evidence":"The source question is text-only: sepsis-like presentation, hepatomegaly and E. coli growth. It does not reference an image."},
+    {"section":"Nephrology and Urologic Disorders","questionNumber":6,"sourcePdfPage":405,"status":"text_only_false_positive_media_cue","evidence":"The source question is text-only and asks the next step for enuresis with recurrent falls and weak anal tone; no image is referenced."},
+    {"section":"Nephrology and Urologic Disorders","questionNumber":46,"sourcePdfPage":430,"status":"explicit_media_reference_but_no_embedded_raster","mediaType":"kidney ultrasound","evidence":"Stem explicitly says a kidney ultrasound picture was provided with poorly differentiated cortex/medulla; no suitable embedded pre-answer raster is present. Source answer is also unresolved (X)."},
+    {"section":"Neurology","questionNumber":8,"sourcePdfPage":487,"status":"text_only_false_positive_media_cue","evidence":"The source question is text-only: focal convulsion followed by persistent right-limb weakness; no image is referenced."},
+    {"section":"Neurology","questionNumber":14,"sourcePdfPage":491,"status":"explicit_media_reference_but_no_embedded_raster","mediaType":"EEG","evidence":"Stem explicitly says an EEG picture was provided and suggestive of absence epilepsy; no suitable pre-answer raster is embedded."},
+    {"section":"Neurology","questionNumber":34,"sourcePdfPage":506,"status":"explicit_media_reference_but_no_embedded_raster","mediaType":"MRI","evidence":"Stem explicitly says MRI was provided showing multiple dense areas in ADEM; no suitable pre-answer raster is embedded."},
+    {"section":"Trauma and Accidents","questionNumber":2,"sourcePdfPage":562,"status":"text_only_false_positive_media_cue","evidence":"The source question is text-only and asks the next step after trauma, unresponsiveness and seizure; no image is referenced."},
+    {"section":"Trauma and Accidents","questionNumber":29,"sourcePdfPage":577,"status":"text_only_false_positive_media_cue","evidence":"The source question is text-only: a 2-month-old with focal seizure after reported fall; no image is referenced."}
+  ]
+}
