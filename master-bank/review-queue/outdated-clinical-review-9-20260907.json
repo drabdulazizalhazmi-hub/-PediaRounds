@@ -1,0 +1,141 @@
+{
+  "batchId": "outdated-clinical-review-9-20260907",
+  "reviewedOn": "2026-09-07",
+  "scope": "All 9 canonical records currently carrying reviewStatus=outdated",
+  "policy": {
+    "recalledAnswer": "Preserved exactly; never overwritten by current guidance.",
+    "verifiedAnswer": "Not assigned in this review file unless the current evidence clearly supports a source option as the modern answer.",
+    "sourceVsCurrent": "Historical exam logic is kept separate from contemporary clinical practice.",
+    "nextStep": "Canonical records should be updated only after the evidence note below is merged into each record; questions with no modern correct listed option remain non-publishable."
+  },
+  "references": {
+    "cyanidePediatricConsensus": "https://pubmed.ncbi.nlm.nih.gov/24196100/",
+    "AAIDDcriteria": "https://aaidd.org/intellectual-disability/definition",
+    "APAintellectualDisability": "https://www.psychiatry.org/patients-families/intellectual-disability",
+    "SaudiGCCMyastheniaConsensus2025": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12205206/",
+    "SaudiMOHImmunizationSchedule": "https://www.moh.gov.sa/en/HealthAwareness/EducationalContent/vaccination/Pages/vaccination1.aspx",
+    "CDCPneumococcalRisk2026": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/risk-indications.html",
+    "CDCTetanusWound": "https://www.cdc.gov/tetanus/hcp/clinical-guidance/index.html",
+    "CDCTdapACIP": "https://www.cdc.gov/acip/evidence-to-recommendations/tdap-etr.html",
+    "ISPAD_DKA_2022": "https://www.ispad.org/static/6dd62eae-c8cb-4b4a-84e1efc768505746/Ch11PediatricDiabetes.pdf",
+    "ACMG_PAH_2023": "https://pubmed.ncbi.nlm.nih.gov/39630157/",
+    "AAP_ADHD": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7067282/"
+  },
+  "items": [
+    {
+      "id": "part2-trauma-q37",
+      "sourceQuestion": "Trauma and Accidents Q37",
+      "recalledAnswer": "A — sodium thiosulfate",
+      "currentConclusion": "source_option_outdated",
+      "currentPreferredConcept": "Hydroxocobalamin is the preferred empiric cyanide antidote for severe smoke-inhalation cyanide poisoning where indicated; sodium thiosulfate is not the preferred stand-alone modern answer.",
+      "verifiedAnswer": null,
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "The only retained option is historical and does not represent the preferred contemporary antidote.",
+      "evidenceRefs": ["cyanidePediatricConsensus"]
+    },
+    {
+      "id": "part2-dev-q20",
+      "sourceQuestion": "Growth and Development Q20",
+      "recalledAnswer": "B — moderate intellectual disability from mental-age/IQ calculation",
+      "currentConclusion": "classification_method_outdated",
+      "currentPreferredConcept": "Diagnosis and severity assessment require intellectual functioning plus adaptive functioning; severity is based primarily on adaptive-function deficits rather than a mental-age ratio or IQ alone.",
+      "verifiedAnswer": null,
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "The stem does not provide enough adaptive-function information to assign a current severity category.",
+      "evidenceRefs": ["AAIDDcriteria", "APAintellectualDisability"]
+    },
+    {
+      "id": "part2-neuro-q49",
+      "sourceQuestion": "Neurology Q49",
+      "recalledAnswer": "A — edrophonium test",
+      "currentConclusion": "diagnostic_test_outdated",
+      "currentPreferredConcept": "Current diagnostic pathways prioritize anti-AChR/other appropriate antibody testing and electrodiagnostic testing such as repetitive nerve stimulation or single-fiber EMG in the appropriate clinical context; edrophonium is not the preferred modern next test.",
+      "verifiedAnswer": null,
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "The source preserves only edrophonium, while current Saudi/GCC consensus uses serologic and electrodiagnostic pathways.",
+      "evidenceRefs": ["SaudiGCCMyastheniaConsensus2025"]
+    },
+    {
+      "id": "part2-id-imm-q115",
+      "sourceQuestion": "Infectious Diseases Q115",
+      "recalledAnswer": "B — historical catch-up combination",
+      "currentConclusion": "time_sensitive_schedule_outdated",
+      "currentPreferredConcept": "Use the current Saudi MOH catch-up/routine schedule and prior valid doses; do not use a fixed historical product list as timeless guidance.",
+      "verifiedAnswer": null,
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "The option names/products include historical pneumococcal wording and the exact Saudi catch-up combination cannot be safely inferred from an old recall.",
+      "evidenceRefs": ["SaudiMOHImmunizationSchedule"]
+    },
+    {
+      "id": "part2-id-imm-q119",
+      "sourceQuestion": "Infectious Diseases Q119",
+      "recalledAnswer": "C — 13-year-old with HIV",
+      "currentConclusion": "risk_based_pneumococcal_question_outdated",
+      "currentPreferredConcept": "Both HIV and sickle cell disease are pneumococcal risk conditions. Current recommendations use PCV15/PCV20 and may use PPSV23 depending age and prior PCV history; PPSV23 itself is not a context-free single-answer rule.",
+      "verifiedAnswer": null,
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "The 18-month sickle-cell option is below the PPSV23 minimum age, but the 13-year-old HIV option still requires prior vaccine history to determine whether PPSV23 is indicated; the stem is insufficient for current guidance.",
+      "evidenceRefs": ["CDCPneumococcalRisk2026"]
+    },
+    {
+      "id": "part2-id-imm-q123",
+      "sourceQuestion": "Infectious Diseases Q123",
+      "recalledAnswer": "B — Td",
+      "currentConclusion": "product_choice_outdated",
+      "currentPreferredConcept": "For a dirty/puncture wound, a booster is indicated when at least 5 years have passed since the last tetanus-containing dose in a person with a completed primary series. At age 11 years, Tdap is preferred if the person has not previously received Tdap or Tdap history is unknown.",
+      "verifiedAnswer": null,
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "The need for a booster is supported, but the modern preferred product (Tdap) is absent from the source options.",
+      "evidenceRefs": ["CDCTetanusWound", "CDCTdapACIP"]
+    },
+    {
+      "id": "part2-endo-dm-q61",
+      "sourceQuestion": "Endocrinology Q61",
+      "recalledAnswer": "A — shifting of serum osmolality",
+      "currentConclusion": "mechanism_answer_outdated",
+      "currentPreferredConcept": "DKA-related cerebral injury is multifactorial. ISPAD notes that rapid fluid/osmolality change was the earlier theory, whereas more recent evidence points to cerebral hypoperfusion and DKA-related hyperinflammation as central mechanisms; cerebral edema correlates with dehydration/hyperventilation rather than osmotic change during treatment.",
+      "verifiedAnswer": null,
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "None of the listed options adequately represents the current mechanistic understanding, so the historical answer A should not be auto-graded as current medicine.",
+      "evidenceRefs": ["ISPAD_DKA_2022"]
+    },
+    {
+      "id": "part2-metabolic-aa-q05",
+      "sourceQuestion": "Metabolic Q5",
+      "recalledAnswer": "A — phenylketonuria",
+      "currentConclusion": "diagnosis_remains_plausible_but_test_is_legacy",
+      "currentPreferredConcept": "The phenotype plus urinary phenylpyruvate historically points to PKU/PAH deficiency, but ferric chloride urine testing is a legacy diagnostic method. Current care relies on newborn screening, quantitative phenylalanine assessment and confirmatory/genotype-guided evaluation.",
+      "verifiedAnswer": "A",
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "The diagnosis represented by option A remains compatible with the described historical finding, but the question teaches an obsolete diagnostic test and should be labeled legacy rather than presented as a modern work-up.",
+      "evidenceRefs": ["ACMG_PAH_2023"]
+    },
+    {
+      "id": "part2-beh-q16",
+      "sourceQuestion": "Behavioral Q16",
+      "recalledAnswer": "A — sudden cardiac death",
+      "currentConclusion": "risk_framing_outdated_and_incomplete",
+      "currentPreferredConcept": "Sudden cardiac death during stimulant therapy is extremely rare, and stimulants have not been shown to increase sudden-death risk above that of unexposed children. Common adverse effects include appetite loss, abdominal pain, headache and sleep disturbance; cardiac history/risk assessment remains important.",
+      "verifiedAnswer": null,
+      "recommendedStatus": "outdated",
+      "publishable": false,
+      "reason": "The source keeps only one option and frames an extremely rare event as the defining 'most concerning' adverse effect, which is not a sound current single-best-answer item.",
+      "evidenceRefs": ["AAP_ADHD"]
+    }
+  ],
+  "summary": {
+    "reviewed": 9,
+    "currentCorrectSourceOptionClearlyRetained": 1,
+    "itemsWithNoValidModernListedAnswerOrInsufficientCurrentContext": 8,
+    "canonicalRecalledAnswersChanged": 0,
+    "recommendedNextAction": "Apply these evidence notes to canonical records, keeping eight items non-publishable and retaining Metabolic Q5 as a verified diagnosis with an explicit legacy-test warning."
+  }
+}
