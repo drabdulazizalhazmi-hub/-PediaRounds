@@ -1,112 +1,73 @@
 # PediaRounds Master Bank — Shared Progress & Handoff
 
-> **Single source of truth for coordination between ChatGPT conversations.**
-> Every conversation working on PediaRounds must read this file **and** the current PR #2 file list before starting, then update this file after each successful batch.
+> **Single source of truth for coordination between ChatGPT conversations.** Read this file and `coordination/current-work-state.md` before work, then update both after every successful batch.
 
-## Repository / PR
+## Repository / active phase
 
 - Repository: `drabdulazizalhazmi-hub/-PediaRounds`
-- Working branch: `master-bank/scfhs-merge`
-- Pull request: `#2 — Initialize PediaRounds Master Bank`
 - Base branch: `main`
-- Last synchronized: `2026-09-07 09:15 +03:00`
-- Last observed PR head before this handoff update: `c956dcfa289c12d1169120ab3d0b827615f81143`
-- PR status at sync: open, mergeable, 266 commits / 207 changed files
+- PR #2: merged
+- PR #4: merged successfully as `c24996e32b4279f71518455483c45afb7da49bc7`
+- PR #3: closed as superseded by PR #4
+- Current working branch: `master-bank/review-images-verification`
+- Phase: **image recovery / incomplete-recall cleanup / clinical verification**
+
+## Source coverage milestone
+
+Latest successful quality run on the closure branch reported:
+
+- **Questions scanned: 1023**
+- **Enumerated expected source slots: 1022**
+- **Covered expected slots: 1022**
+- **Missing expected slots: 0**
+- **Exact duplicate IDs: 0**
+- **Possible section/Q collisions: 0**
+- **All canonical sections: full source-number coverage**
+
+The 1023-vs-1022 discrepancy is a source numbering anomaly: the source TOC prints Genetics = 53, but the actual Genetics sequence ends at Q52 before Metabolic Disorders. **Do not fabricate Genetics Q53.**
+
+## Current review-status inventory
+
+From the same successful audit:
+
+- `needs_verification`: 585
+- `image_missing`: 198
+- `image_needs_review`: 10
+- `incomplete_recall`: 77
+- `conflicting`: 131
+- `outdated`: 9
+- `deduplicated`: 13
+
+Image validation reported **249 image-dependent questions** and **0 public repository assetPaths**. Original images may exist in private/source bundles, but publication remains blocked until image association, clinical review, and rights/publication handling are completed.
 
 ## Coordination protocol — mandatory
 
-1. **Before doing work:** fetch this file, `coordination/current-work-state.md`, and list changed filenames in PR #2.
-2. Do **not** rely on a chat's remembered “next question” if GitHub shows newer files.
-3. Reuse the same branch and PR; do not open another Master Bank PR unless explicitly requested.
-4. Before creating a new question-data file, check whether the exact range/path already exists.
-5. Preserve `recalledAnswer` separately from `verifiedAnswer`.
-6. Image-dependent questions remain blocked as `image_missing` / `image_needs_review` until the original image is linked and reviewed.
-7. Keep English question/TTS and clear Arabic clinical explanation with English medical terminology.
-8. Do not silently correct source conflicts; mark `conflicting`, `incomplete_recall`, or `outdated` and document why.
+1. GitHub wins over chat memory.
+2. Do not re-import already covered source-number ranges.
+3. Preserve `recalledAnswer` separately from `verifiedAnswer`.
+4. Keep `verifiedAnswer: null` until independent verification is explicitly recorded.
+5. Do not invent missing distractors, images, years, stems, calculations, or answer keys.
+6. Image-dependent questions stay blocked until an original source image is linked and reviewed; do not substitute generated images.
+7. Maintain clean English stem/options/TTS plus clear Arabic clinical explanation with English medical terminology.
+8. Preserve `conflicting`, `outdated`, `incomplete_recall`, `image_missing`, and `image_needs_review` until genuinely resolved.
 9. Do not commit source PDFs, credentials, tokens, passwords, or secrets.
-10. **After a successful batch:** update this file and `coordination/current-work-state.md`. If another conversation updated either first, refetch and merge the newer state rather than overwriting it.
+10. Before writing, refetch this file if another conversation may have advanced the branch.
 
-## Latest handoff
+## Highest-priority next work
 
-Cross-chat coordination is active. GitHub is the shared memory and the branch has moved beyond older chat pointers.
-
-Recent synchronized work includes:
-- **Dermatology:** data files cover `Q1–Q22`.
-- **Ophthalmology:** canonical data covers `Q1–Q10`; stale duplicate/review artifacts were reduced; image-dependent questions remain gated.
-- **Growth & Development:** `Q1–Q21` dataset exists.
-- **Gastroenterology:** explicit gap-fill files now cover the previously missing ranges through `Q85`; `Q62–Q63` and `Q86` were already present in supported batches. Exact ID/duplicate audit is still required before final `86/86` claim.
-- **Nutrition:** gap files were added through `Q23`; exact coverage/duplicate audit remains required.
-- **ENT:** canonical file is `Q1–Q9`; old Q1–Q2 duplicate removed.
-- **Infectious Diseases:** source coverage exists through `Q125`; immunization canonical split is `Q101–Q114` + `Q115–Q125` after overlapping exports were removed.
-- **Genetics:** overlapping exports were reduced. Do not fabricate Q53: TOC states 53 but actual source numbering reaches Q52 before Metabolic Disorders.
-- **Neurology:** Q44 source text was recovered and restored.
-- **Sleep Medicine:** duplicate coverage was reduced; Q15 is preserved as a single-option incomplete recall, Q16–Q18 remain in the canonical respiratory/sleep batch.
-- **QA tooling:** branch now includes audit/manifest/duplicate/asset-validation/answer-normalization tooling and GitHub quality workflows. Use these outputs as structural gates when available.
-
-## Coverage notes
-
-### Strongly represented / full-range datasets visible in PR #2
-
-- Growth & Development `Q1–Q21`
-- Dermatology `Q1–Q22`
-- Ophthalmology `Q1–Q10`
-- ENT `Q1–Q9`
-- Neonatology `Q1–Q43`
-- Neurology files span `Q1–Q50`
-- Nephrology & Urologic Disorders files span `Q1–Q63`
-- Rheumatology `Q1–Q16`
-- Musculoskeletal & Sport Medicine `Q1–Q19`
-- Critical Care Medicine files span `Q1–Q55`
-- Trauma & Accidents files span `Q1–Q44`
-- Substances Abuse & Toxicology `Q1–Q15`
-- Behavioral Medicine & Psychiatric Disorders `Q1–Q33`
-- Cardiology files span `Q1–Q57`
-- Endocrinology files span `Q1–Q65`
-- Hematology files span `Q1–Q57`; Oncology files span `Q1–Q20`
-- Infectious Diseases files span the major Part II subsections through `Q125`
-- Genetics files span `Q1–Q52`; source/review notes govern the Q53 discrepancy
-- Metabolic Disorders files span `Q1–Q23`
-
-### Requires exact canonical coverage audit before calling fully complete
-
-- **Gastroenterology Q1–Q86:** generic `batch*-supported` files overlap explicit ranges.
-- **Nutrition & Malnutrition Q1–Q23:** supported/gap files may overlap.
-- **Pulmonary / Sleep / Asthma:** respiratory/ENT canonical files plus legacy batch data overlap; some single-option/image-dependent recalls remain.
-- **Allergy / Immunology:** data exists, but canonical deduplication and verification remain required.
-- **Medical Ethics & Patient Safety:** structured records plus incomplete-recall queues must be separated correctly.
-
-## Review gates currently known
-
-- Gastro Q35: congenital diarrhea differential remains `conflicting` without stool electrolytes.
-- Gastro Q42: duplicate option label in source.
-- Gastro Q44–Q45: sodium/cerebral-edema stems have source assumptions missing from recall.
-- Gastro Q53: achalasia vs eosinophilic esophagitis overlap.
-- Gastro Q56–Q57: original imaging required; source itself questions image interpretation / definitive study.
-- Gastro Q58–Q59: GER/PPI framing requires verification.
-- Gastro Q64, Q65, Q68, Q70, Q73–Q75, Q81: original images required.
-- Gastro Q71, Q80: source conflicts explicitly documented.
-- Gastro Q79, Q85: source option set differs from preferred modern imaging framing.
-- Dermatology/Ophthalmology image-dependent items remain gated by image manifests/review queues.
-- Pulmonary image-dependent items and single-option recalls remain non-publishable until original assets/options are restored.
-
-## Next action
-
-**Do not blindly continue from an old question number.** The next batch should:
-
-1. Advance the **Master Bank canonical coverage audit / 1023-ID manifest** against the latest PR.
-2. Identify and remove only proven structural duplicates/path overlaps.
-3. Prioritize already-extracted source images/attachments and recoverable `incomplete_recall` records.
-4. Only then import a genuinely missing range, using the standard schema and review gates.
-5. Update both shared coordination files immediately after the batch lands.
+1. **Image recovery:** reconcile the 249 image-dependent records with existing source/image manifests and recoverable original embedded images. Keep rights/publication status separate from technical extraction.
+2. **Incomplete recalls:** resolve the 77 `incomplete_recall` records only where the original uploaded source provides the missing detail. Otherwise leave them incomplete.
+3. **Conflicts/outdated keys:** review the 131 `conflicting` and 9 `outdated` records with source text first, then independent references where requested/appropriate.
+4. **Clinical verification:** advance `needs_verification` in controlled batches using priority UpToDate → Nelson → current specialty guideline. Never infer independent verification merely because the source book cites one of these references.
+5. Keep the 1023-record manifest structurally stable while cleanup proceeds.
 
 ## Style contract between conversations
 
-- Work in **large batches** when source quality permits.
-- Be concise in chat status updates: report only what was actually committed.
-- Do not claim a section is complete merely because files exist; exact ID coverage + duplicate audit + review gates determine completion.
-- When source text is incomplete, preserve the gap rather than inventing wording.
-- UpToDate first, then Nelson, then a current specialty guideline for independent verification when required.
+- Work in large batches when source quality permits.
+- Report only work actually committed.
+- Do not call a record publishable because its source slot exists.
+- Source completeness, image readiness, and clinical verification are separate gates.
 
 ---
 
-**Handoff rule:** GitHub wins over chat memory. Read the branch, work forward, update the shared handoff, and leave the next conversation a clean state.
+**Handoff rule:** the numbered source bank is structurally covered. From here, optimize quality—not quantity.
