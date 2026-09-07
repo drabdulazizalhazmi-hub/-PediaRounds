@@ -1,0 +1,104 @@
+[
+  {
+    "id":"part2-gi-q071","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of The Small and Large Intestine","subtopic":"Intussusception associations","yearTags":[2025],"examPart":"Part II",
+    "stemEn":"A child has abdominal pain and ultrasound shows the target sign of intussusception. Which listed condition is associated with this disease?",
+    "options":[{"key":"A","text":"Viral illness"},{"key":"B","text":"Meckel's diverticulum"},{"key":"C","text":"Henoch-Schönlein purpura (HSP)"},{"key":"D","text":"Hirschsprung disease"}],
+    "recalledAnswer":"C","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يطبع C كأكثر إجابة محتملة في الامتحانات، لكنه يذكر صراحة أن A (viral illness) يمكن أن تكون صحيحة أيضًا لأن adenovirus وURTI/gastroenteritis قد تترافق مع intussusception.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"This source item is ambiguous: both HSP and preceding viral illness are recognized associations.","managementSteps":[],"diagnosticSteps":[],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A child has abdominal pain and ultrasound shows the target sign of intussusception. Which listed condition is associated with this disease? Option A. Viral illness. Option B. Meckel's diverticulum. Option C. Henoch-Schönlein purpura. Option D. Hirschsprung disease."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2025,"part":"Part II","page":243,"questionNumber":"Gastroenterology Q71","notes":"Source states: C (most likely in exams), or A."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"conflicting","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q072","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of The Small and Large Intestine","subtopic":"Superior mesenteric artery syndrome","yearTags":[2024],"examPart":"Part II",
+    "stemEn":"A 13-year-old girl has recurrent abdominal pain and vomiting for 3 months with 7-kg unintentional weight loss. Upper GI study shows a dilated stomach with abrupt duodenal cutoff. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Superior mesenteric artery syndrome"},{"key":"B","text":"Peptic ulcer disease"},{"key":"C","text":"GERD"},{"key":"D","text":"Intussusception"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Superior mesenteric artery syndrome ويشرح أن نقص mesenteric fat بعد weight loss قد يضيّق aortomesenteric angle ويضغط الجزء الثالث من duodenum.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Weight loss plus proximal duodenal dilation and abrupt cutoff suggests SMA syndrome.","managementSteps":[],"diagnosticSteps":[],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A 13-year-old girl has recurrent abdominal pain and vomiting for 3 months with 7-kg unintentional weight loss. Upper GI study shows a dilated stomach with abrupt duodenal cutoff. What is the most likely diagnosis? Option A. Superior mesenteric artery syndrome. Option B. Peptic ulcer disease. Option C. GERD. Option D. Intussusception."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2024,"part":"Part II","page":244,"questionNumber":"Gastroenterology Q72","notes":null}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q073","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of The Small and Large Intestine","subtopic":"Meckel diverticulum","yearTags":[2017],"examPart":"Part II",
+    "stemEn":"A child presents with bloody stool and a Meckel scan image is provided. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Meckel's diverticulum"},{"key":"?","text":"Other answer choices were not preserved in the source recall"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يختار Meckel's diverticulum. ويشرح أن ectopic gastric mucosa قد تسبب painless bleeding وأن Meckel scan يكشف gastric mucosa ectopia.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Painless lower GI bleeding with a positive Meckel scan suggests Meckel diverticulum.","managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"Gastroenterology Q73 original Meckel scan","assetPath":null,"captionAr":"الصورة الأصلية مطلوبة قبل النشر.","captionEn":"Original source image required before publication.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A child presents with bloody stool and a Meckel scan image is provided. What is the most likely diagnosis? Option A. Meckel's diverticulum."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2017,"part":"Part II","page":244,"questionNumber":"Gastroenterology Q73","notes":"Only the recalled correct option was preserved."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"incomplete_recall","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q074","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of The Small and Large Intestine","subtopic":"Peutz-Jeghers syndrome","yearTags":[2025],"examPart":"Part II",
+    "stemEn":"A child presents with bloody stool and hyperpigmented macules shown in the original image. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Peutz-Jeghers syndrome (PJS)"},{"key":"?","text":"Other answer choices were not preserved in the source recall"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يختار Peutz-Jeghers syndrome ويصف mucocutaneous pigmentation مع GI hamartomatous polyposis.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Mucocutaneous pigmentation plus GI bleeding is a classic PJS clue.","managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"Gastroenterology Q74 original source image","assetPath":null,"captionAr":"الصورة الأصلية مطلوبة قبل النشر.","captionEn":"Original source image required before publication.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A child presents with bloody stool and hyperpigmented macules shown in the original image. What is the most likely diagnosis? Option A. Peutz-Jeghers syndrome."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2025,"part":"Part II","page":245,"questionNumber":"Gastroenterology Q74","notes":"Only the recalled correct option was preserved."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"incomplete_recall","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q075","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of The Small and Large Intestine","subtopic":"Peutz-Jeghers syndrome","yearTags":[2020,2018,2017],"examPart":"Part II",
+    "stemEn":"A child has hyperpigmented macules as shown in the original image, and his father has the same finding. What is true about this condition?",
+    "options":[{"key":"A","text":"He is predisposed to have intestinal polyps"},{"key":"B","text":"He is at risk to have thrombocytopenia"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار predisposition to intestinal polyps ويشير إلى Peutz-Jeghers syndrome ذي النمط autosomal dominant.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"PJS is inherited in an autosomal-dominant pattern and predisposes to GI hamartomatous polyps.","managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"Gastroenterology Q75 original source image","assetPath":null,"captionAr":"الصورة الأصلية مطلوبة قبل النشر.","captionEn":"Original source image required before publication.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A child has hyperpigmented macules as shown in the original image, and his father has the same finding. What is true about this condition? Option A. He is predisposed to have intestinal polyps. Option B. He is at risk to have thrombocytopenia."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2020,"part":"Part II","page":245,"questionNumber":"Gastroenterology Q75","notes":"Also recalled in 2018 and 2017."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"image_missing","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q076","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Inflammatory Bowel Disease","subtopic":"IBD diagnosis","yearTags":[2025],"examPart":"Part II",
+    "stemEn":"A 10-year-old boy has intermittent bloody diarrhea with mucus for 3 months and weight loss. Which investigation should be requested?",
+    "options":[{"key":"A","text":"Stool PCR"},{"key":"B","text":"Colonoscopy with biopsy"}],
+    "recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Colonoscopy with biopsy لتأكيد inflammatory bowel disease بعد استبعاد الأسباب المعدية حسب السياق.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Chronic bloody diarrhea with weight loss warrants endoscopic evaluation with tissue diagnosis.","managementSteps":[],"diagnosticSteps":["Colonoscopy with biopsy"],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A 10-year-old boy has intermittent bloody diarrhea with mucus for 3 months and weight loss. Which investigation should be requested? Option A. Stool PCR. Option B. Colonoscopy with biopsy."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2025,"part":"Part II","page":245,"questionNumber":"Gastroenterology Q76","notes":"Similar to PREP 2016 Q207 per source."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q077","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Inflammatory Bowel Disease","subtopic":"Ulcerative colitis flare","yearTags":[2021,2020,2019],"examPart":"Part II",
+    "stemEn":"A child with ulcerative colitis on azathioprine develops abdominal pain, bloody diarrhea and fever. Labs show thrombocytosis, elevated ESR and CRP. What is the next step?",
+    "options":[{"key":"A","text":"Stool culture and C. difficile toxin testing"},{"key":"B","text":"Colonoscopy"},{"key":"C","text":"Start steroid"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار stool culture وC. difficile toxin testing، لكنه ينبه أن سؤالًا مشابهًا في مرجع آخر كان يضم abdominal X-ray كخيار مفضل. لذلك تُحفظ الإجابة المسترجعة منفصلة عن التحقق النهائي.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"In a suspected UC flare, superimposed enteric infection—especially C. difficile—must be excluded.","managementSteps":[],"diagnosticSteps":["Stool culture","C. difficile testing"],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A child with ulcerative colitis on azathioprine develops abdominal pain, bloody diarrhea and fever. Labs show thrombocytosis, elevated ESR and CRP. What is the next step? Option A. Stool culture and C. difficile toxin testing. Option B. Colonoscopy. Option C. Start steroid."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2021,"part":"Part II","page":246,"questionNumber":"Gastroenterology Q77","notes":"Source notes a similar reference question would prefer abdominal X-ray if offered."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q078","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Inflammatory Bowel Disease","subtopic":"Azathioprine-induced pancreatitis","yearTags":[2021],"examPart":"Part II",
+    "stemEn":"A child with inflammatory bowel disease started azathioprine 2 weeks ago and now has epigastric pain with elevated lipase and negative C. difficile testing. What should be done next?",
+    "options":[{"key":"A","text":"Stop azathioprine"},{"key":"B","text":"Keep NPO"},{"key":"C","text":"Start low-fat diet"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Stop azathioprine ويشرح أن pancreatitis من adverse effects المعروفة المبكرة لـazathioprine/6-MP.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"New pancreatitis soon after azathioprine initiation should prompt withdrawal of the offending drug.","managementSteps":["Stop azathioprine pending clinical review"],"diagnosticSteps":[],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A child with inflammatory bowel disease started azathioprine 2 weeks ago and now has epigastric pain with elevated lipase and negative C. difficile testing. What should be done next? Option A. Stop azathioprine. Option B. Keep NPO. Option C. Start low-fat diet."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2021,"part":"Part II","page":247,"questionNumber":"Gastroenterology Q78","notes":null}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q079","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Inflammatory Bowel Disease","subtopic":"Psoas abscess","yearTags":[2020],"examPart":"Part II",
+    "stemEn":"A child with Crohn disease develops lower abdominal pain that is worsened by hip extension. What is the next step among the listed choices?",
+    "options":[{"key":"A","text":"Abdominal ultrasound"},{"key":"B","text":"Pelvic MRI"}],
+    "recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يختار Pelvic MRI من الخيارات، لكنه يذكر أن CT هو optimal imaging modality لتقييم psoas abscess لو كان موجودًا ضمن الخيارات.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Crohn disease plus pain on hip extension raises concern for psoas abscess.","managementSteps":[],"diagnosticSteps":[],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A child with Crohn disease develops lower abdominal pain that is worsened by hip extension. What is the next step among the listed choices? Option A. Abdominal ultrasound. Option B. Pelvic MRI."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2020,"part":"Part II","page":247,"questionNumber":"Gastroenterology Q79","notes":"Source states CT would be preferred if offered."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"conflicting","publishable":false,"contentType":"mcq_draft"
+  }
+]
