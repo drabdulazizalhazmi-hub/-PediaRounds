@@ -46,23 +46,29 @@ Image validation reported **249 image-dependent questions** and **0 public repos
 - Pulmonary Q9 and Q10: reconciled with already recovered original microscopy assets in the private source-review bundle; stale missing-image blockers were corrected without publishing source image bytes.
 - Added a **large-batch sparse-source audit covering 167 questions** whose 2026 Part II source text preserves only zero or one answer option.
 - Sparse audit breakdown: **163 single-option recalls + 4 zero-option recalls**.
-- **48/167** sparse recalls contain image/media cues and are now explicitly grouped for original-asset reconciliation.
+- **48/167** sparse recalls contain image/media cues and are explicitly grouped for original-asset reconciliation.
 - **10/167** have uncertain/unclear source answer text and are explicitly flagged for source/clinical review.
-- Sparse recalls are grouped by specialty and question number in `review-queue/source-sparse-recalls-20260907.json` so future chats can work in large batches without rediscovering the same problem set.
+- Completed a **direct source re-read of 59 sparse-recall questions** across the four largest priority groups:
+  - Endocrinology: **17**
+  - Genetics: **15**
+  - Infectious Diseases: **14**
+  - Neurology: **13**
+- Within this 59-question batch, **21** have image/media dependencies; **Genetics Q10** is a zero-option incomplete recall with uncertain source answer and remains non-publishable.
+- The exact 59-question reservation/index is stored in `review-queue/source-sparse-large-review-59-index-20260907.json` to prevent cross-chat duplication.
 - Missing distractors remain unfilled; no answer choices, calculations, years, or images were invented.
 
-## Largest sparse-recall groups to prioritize
+## Largest remaining sparse-recall groups to prioritize
 
-- Endocrinology: 17
-- Genetics: 15
-- Infectious Diseases: 14
-- Neurology: 13
 - Gastroenterology: 10
 - Hematology: 9
 - Metabolic Disorders: 9
 - Nephrology/Urology: 7
 - Medical Ethics/Patient Safety: 7
 - Cardiology: 6
+- Neonatology: 6
+- Trauma and Accidents: 6
+- Critical Care Medicine: 5
+- Immunology: 5
 
 ## Coordination protocol — mandatory
 
@@ -79,8 +85,8 @@ Image validation reported **249 image-dependent questions** and **0 public repos
 
 ## Highest-priority next work
 
-1. Work through the **167-question sparse-recall queue in large batches**, starting with Endocrinology + Genetics + Infectious Diseases + Neurology.
-2. For the **48 image/media sparse recalls**, reconcile exact original source assets where available; keep unresolved items blocked.
+1. Continue the sparse-recall queue in another **large batch**, prioritizing Gastroenterology + Hematology + Metabolic Disorders + Nephrology/Urology + Medical Ethics/Patient Safety.
+2. For image/media sparse recalls, reconcile exact original source assets where available; keep unresolved items blocked.
 3. Resolve `incomplete_recall` only where another permitted source/original wording supplies missing detail; otherwise preserve incompleteness.
 4. Review `conflicting` / `outdated` records after source integrity is stable.
 5. Advance `needs_verification` in controlled clinical batches using UpToDate → Nelson → current specialty guideline.
