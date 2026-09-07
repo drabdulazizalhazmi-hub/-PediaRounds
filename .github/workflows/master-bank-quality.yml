@@ -25,6 +25,8 @@ jobs:
         run: python master-bank/tools/audit_source_coverage.py
       - name: Source representation audit
         run: python master-bank/tools/audit_source_representation.py
+      - name: Review status audit
+        run: python master-bank/tools/audit_review_status.py
       - name: Duplicate report
         continue-on-error: true
         run: python master-bank/tools/detect_duplicate_questions.py
