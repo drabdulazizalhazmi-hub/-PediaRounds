@@ -1,0 +1,129 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch09-11-20260907",
+  "scope": "Next 11 current-guidance conflict-resolution records after 70 prior conflicts were resolution-reviewed. This batch covers Growth and Development, Neonatology, Critical Care, and Infectious Diseases.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options and current evidence support a defensible modern single-best answer.",
+    "Do not invent missing gestational age, maternal treatment details, neonatal titers, diagnostic tests, exposure history, images, or vaccine-schedule version context.",
+    "When current guidance shows multiple valid pathways or the best answer is absent from the retained choices, keep verifiedAnswer null and the item non-publishable.",
+    "Do not silently convert historical source teaching into current guidance."
+  ],
+  "items": [
+    {
+      "id": "part2-dev-q15",
+      "modernOutcome": "under_supported_examination_technique_item",
+      "verifiedAnswer": null,
+      "reason": "The source itself marks keeping the crying child with the mother until calm as uncertain and provides no authoritative rule establishing that choice as a universal next step. Pediatric examination technique should be adapted to urgency, age, distress, and which portions of the exam can be observed while the child remains with the caregiver. The retained stem does not establish enough context to promote B to a verified answer.",
+      "references": [
+        "Source uncertainty preserved; no current high-authority source located that makes one retained option a universal rule"
+      ]
+    },
+    {
+      "id": "part2-dev-q18",
+      "modernOutcome": "resolved_among_retained_developmental_findings",
+      "verifiedAnswer": "C",
+      "reason": "CDC 2026 lists being shy, clingy, or fearful around strangers as a milestone most babies achieve by 9 months. By contrast, waving bye-bye is a 12-month milestone, so failure at 10 months is not yet clearly delayed, and pointing to ask for something/get help is a 15-month milestone, so failure at 12 months is not yet clearly delayed. Therefore a 12-month-old with no stranger anxiety is the best retained finding warranting further developmental assessment.",
+      "references": [
+        "CDC Learn the Signs. Act Early. Milestones by 9 Months, 2026",
+        "CDC Learn the Signs. Act Early. Milestones by 1 Year, 2026",
+        "CDC Learn the Signs. Act Early. Milestones by 15 Months, 2026"
+      ]
+    },
+    {
+      "id": "part2-dev-q21",
+      "modernOutcome": "resolved_to_expressive_language_delay_with_hearing_assessment_caveat",
+      "verifiedAnswer": "A",
+      "reason": "At 18 months, current CDC milestones include trying to say at least three words besides mama/dada and following a one-step verbal direction without gestures. The retained child mainly babbles and has only recently said mama/dada but follows a verbal command, supporting an expressive language delay as the best retained diagnosis. Prematurity requires corrected-age consideration, and prior NICU exposure plus language delay still warrants hearing assessment; those caveats do not make hearing impairment the most likely retained diagnosis from the stem alone.",
+      "references": [
+        "CDC Learn the Signs. Act Early. Milestones by 18 Months, 2026",
+        "American Family Physician: Speech and Language Delay in Children, developmental milestones and recommendation for hearing/developmental evaluation"
+      ]
+    },
+    {
+      "id": "part2-neo-q11",
+      "modernOutcome": "inheritance_probability_not_equal_to_hemolytic_disease_risk",
+      "verifiedAnswer": null,
+      "reason": "An Rh-negative mother with an Rh-positive father can carry an Rh-positive fetus, but the risk of hemolytic disease depends on fetal Rh status, paternal zygosity, maternal sensitization/antibody status, prophylaxis, and pregnancy history. Current references emphasize paternal/fetal testing and maternal antibody screening. A 50% chance of inheriting Rh positivity, when applicable, cannot be equated with a 50% chance of hemolytic anemia. Option B is also not generally correct because disease usually follows prior sensitization, and option A is not supported as written. No retained option is a clean modern answer.",
+      "references": [
+        "Merck Manual Professional: Hemolytic Disease of the Fetus and Neonate, reviewed 2024",
+        "Merck Manual Professional: Perinatal Anemia"
+      ]
+    },
+    {
+      "id": "part2-neo-q19",
+      "modernOutcome": "maternal_treatment_timing_and_neonatal_evaluation_missing",
+      "verifiedAnswer": null,
+      "reason": "CDC congenital-syphilis management depends on adequacy and stage-appropriate maternal penicillin therapy, whether treatment began at least 30 days before delivery, maternal and neonatal quantitative nontreponemal titers, neonatal examination/evaluation, and follow-up reliability. The retained '4 weeks' equals 28 days and therefore does not satisfy the >=30-day criterion, while the maternal regimen and neonatal titer are missing. Ten-day IM or IV penicillin pathways can both be appropriate depending on the scenario, so B versus C cannot be uniquely graded.",
+      "references": [
+        "CDC STI Treatment Guidelines: Congenital Syphilis",
+        "CDC STI Treatment Guidelines: Syphilis During Pregnancy"
+      ]
+    },
+    {
+      "id": "part2-neo-q21",
+      "modernOutcome": "both_retained_HIV_NAT_methods_acceptable",
+      "verifiedAnswer": null,
+      "reason": "NIH Perinatal Guidelines updated June 2026 state that plasma HIV RNA NAT and cell-associated HIV DNA NAT are generally equally recommended for diagnosis of HIV in infants younger than 18 months with perinatal exposure. Because both retained choices are acceptable virologic tests and the stem provides no context favoring one, the single-best-answer format is invalid.",
+      "references": [
+        "NIH Perinatal Guidelines: Diagnosis of HIV Infection in Infants and Children, updated June 25, 2026"
+      ]
+    },
+    {
+      "id": "part2-neo-q23",
+      "modernOutcome": "persistent_candidemia_requires_broader_dissemination_evaluation",
+      "verifiedAnswer": null,
+      "reason": "Current pediatric candidemia guidance recommends considering evaluation for dissemination in persistent candidemia, potentially including fundoscopy, lumbar puncture, echocardiography, abdominal imaging of kidney/liver/spleen, and targeted bone imaging depending on the clinical context. Prematurity and prolonged candidemia increase concern. Thus echocardiography is reasonable but abdominal imaging is also relevant, and the retained stem does not provide enough detail to make C the unique next test.",
+      "references": [
+        "NIH Pediatric Opportunistic Infection Guidelines: Candida Infections, 2025-2026 update"
+      ]
+    },
+    {
+      "id": "part2-neo-q36",
+      "modernOutcome": "classic_Erb_root_level_absent_from_options",
+      "verifiedAnswer": null,
+      "reason": "The waiter-tip posture in the retained stem is characteristic of an upper brachial plexus/Erb injury. Current MSD guidance describes Erb palsy as an upper plexus injury involving C5-C7, while the source explanation specifically names C5-C6; an entire-plexus injury affects the whole arm. The retained B option, C5-T1, is therefore too broad for the described posture, and the precise best root-level answer is absent from the choices.",
+      "references": [
+        "MSD Manual Professional: Birth Injuries, neonatal brachial plexus injuries"
+      ]
+    },
+    {
+      "id": "part2-cc-q17",
+      "modernOutcome": "no_reliable_retained_single_test_distinguishes_DIC_from_liver_disease",
+      "verifiedAnswer": null,
+      "reason": "The source suggests factor VIII as a missing better discriminator, but newer evidence shows factor VIII levels do not reliably distinguish DIC from liver-disease coagulopathy. Fibrin degradation products can also be elevated in liver disease, and fibrinogen may be reduced in both conditions. Therefore neither retained A nor B is a reliable single discriminator, and the source's factor-VIII teaching should not be promoted as current guidance.",
+      "references": [
+        "Factor VIII Levels and ISTH DIC Scores Do Not Distinguish DIC from the Coagulopathy of Liver Disease, Acta Haematologica 2024 / PubMed 39004080"
+      ]
+    },
+    {
+      "id": "part2-id-viral-q13",
+      "modernOutcome": "antibiotic_exposure_not_stated_and_EBV_itself_can_cause_rash",
+      "verifiedAnswer": null,
+      "reason": "CDC notes that rash can occur as part of infectious mononucleosis and separately advises avoiding ampicillin/amoxicillin because antibiotic-associated rash can occur. The retained stem never states amoxicillin exposure, so B cannot be inferred. Option A, a separate concurrent viral illness, is also not established because EBV itself can produce rash. Neither retained option is a defensible unique answer.",
+      "references": [
+        "CDC: About Infectious Mononucleosis, current 2026 content"
+      ]
+    },
+    {
+      "id": "part2-id-imm-q116",
+      "modernOutcome": "historical_schedule_change_question_version_dependent",
+      "verifiedAnswer": null,
+      "reason": "The item asks about 'recent changes' in a 2020 Saudi exam but does not define the old and new schedule versions being compared. Current Saudi MOH pages list Tdap at age 11 and HPV in adolescent age ranges, but the MOH immunization page still presents a versioned national schedule effective from 2013 and current HPV pages have broader age guidance. Current facts cannot safely reconstruct which historical change the 2020 question intended. The record should remain non-publishable until the exact schedule version is attached.",
+      "references": [
+        "Saudi Ministry of Health: National Immunization Schedule, current page updated 2026",
+        "Saudi Ministry of Health: HPV guidance, updated 2026"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 11,
+    "resolvedToModernVerifiedAnswer": 2,
+    "retainedNonPublishable": 9,
+    "recalledAnswersOverwritten": 0,
+    "aggregateAfterThisBatch": {
+      "resolutionReviewed": 81,
+      "cleanModernAnswersInOverlays": 21,
+      "retainedInvalidUnderSpecifiedOrContextDependent": 60
+    }
+  }
+}
