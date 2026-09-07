@@ -15,24 +15,36 @@ Base: `main`
 - Sparse recalls: **167/167** directly re-read from source; no missing distractors/calculations invented.
 - Sparse media cues: **48/48** technically reconciled.
 - Outdated queue: **9/9** received current clinical review; recalled keys preserved.
-
-## Conflicting queue — all 131 assigned
-- Batch 1: `review-queue/conflicting-batch01-triage-30-20260907.json` — 30
-- Batch 2: `review-queue/conflicting-batch02-triage-40-20260907.json` — 40
-- Batch 3: `review-queue/conflicting-batch03-final-61-20260907.json` — 61
-- **131/131 assigned; 0 unassigned.**
+- Conflicting queue assignment: **131/131 assigned; 0 unassigned.**
 
 ## Clinical conflict resolution — active
-First current-guidance resolution pass committed:
+Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch01-12-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch02-8-20260907.json`
 
-Outcome:
-- **12 conflicts reviewed against current guidance/frameworks.**
-- **4 resolved to a defensible modern verified answer in the retained stem/options:** Cardiology Q26 = B; Cardiology Q27 = B; Endocrinology Q55 = C under ADA 2026 criteria; Hematology Q48 = D (factor XII deficiency).
-- Trauma Q10: current PECARN cervical-spine guidance supports clinical clearance without imaging in a truly low-risk child; because `no imaging` is absent from retained options, item remains non-publishable.
-- Rheumatology Q7: modern JDM guidance supports symmetric proximal weakness, but the source's ascending/descending labels make the options invalid as a clean modern SBA.
-- Dermatology Q12: systemic antiviral therapy is required, but oral versus IV route depends on severity/ability to take oral therapy; retained context does not uniquely settle route.
-- Hematology Q50, Behavioral Q10/Q17, Research Q7/Q9 remain irreducible/under-specified as written.
+### Resolution batch 1 — 12 reviewed
+- 4 clean modern answers supported by retained stems/options:
+  - Cardiology Q26 = B
+  - Cardiology Q27 = B
+  - Endocrinology Q55 = C under ADA 2026
+  - Hematology Q48 = D
+- 8 others retained as non-publishable because the best modern action is missing, severity/context is insufficient, or the source/options are internally invalid.
+
+### Resolution batch 2 — 8 reviewed
+This pass focused on removing false certainty from items whose retained options cannot safely represent current practice.
+- Nephrology Q7: both FENa <1% and concentrated urine fit prerenal azotemia; invalid single-best-answer.
+- Nephrology Q12: HUS fluid management requires actual volume-status assessment; oliguria + respiratory distress may represent overload, so source key `administer fluid` cannot be promoted.
+- Nephrology Q13: for a second stage-1 BP reading after 1–2 weeks, AAP pathway calls for upper/lower-extremity BP and another office recheck before ABPM; the best next step is absent from retained options.
+- Endocrinology Q28: initial rickets assessment is a panel (Ca/P/ALP/PTH/25-OH-D/renal function), so several options are essential and there is no unique SBA.
+- Critical Care Q12: neonatal shock requires stabilization plus context-directed fluid and prompt antibiotics when sepsis is suspected; none of the retained options cleanly matches current management.
+- Critical Care Q15: pulmonary capillary wedge pressure is not a standard modern 'late sign' of pediatric septic shock; question is malformed/outdated.
+- Critical Care Q17: fibrinogen/FDP do not reliably distinguish DIC from liver failure as a single test; no retained option is safe to verify.
+- Critical Care Q19: lower-risk BRUE supports family education/CPR resources and no home monitoring, but the retained stem lacks risk stratification; no universal single answer can be verified.
+
+### Aggregate clinical-resolution progress
+- **20 conflicting records reviewed in current-guidance resolution passes.**
+- **4 resolved to clean modern verified answers in the review overlays.**
+- **16 identified as invalid, under-specified, missing the best option, or context-dependent.**
 - **0 recalledAnswer values overwritten.**
 
 ## Important retained gates
@@ -48,14 +60,14 @@ Outcome:
 
 ## Shared execution rules
 - GitHub is the shared memory across chats.
-- Do not restart completed numbered, sparse, media, outdated, conflict-assignment, or clinical-resolution batch01 work.
+- Do not restart completed numbered, sparse, media, outdated, conflict-assignment, or clinical-resolution batch01/batch02 work.
 - Preserve `recalledAnswer` separately from `verifiedAnswer`.
 - Do not invent missing options, calculations, media, years, stems, or keys.
 - Original source images only; no generated substitutes for source-dependent MCQs.
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Continue **large clinical-resolution passes** through the assigned conflicts. Prioritize complete retained stems/options in Hematology, Endocrinology, Nephrology/Urology, Critical Care, and Rheumatology where current guidance can support a clean answer. Keep invalid/under-specified items non-publishable. After conflict-resolution passes, advance the `needs_verification` queue.
+Continue **large clinical-resolution passes** through Hematology, Nephrology/Urology, Endocrinology, Critical Care, Rheumatology, and then Gastro/Infectious conflicts. Favor complete stems/options with a truly defensible modern single-best answer; otherwise keep non-publishable and document why. After conflict-resolution passes, advance the `needs_verification` queue.
 
 ## Coordination rule
 If another chat advances PR #5, refetch this file and `MASTER_BANK_PROGRESS.md` before writing and follow the newest GitHub state.
