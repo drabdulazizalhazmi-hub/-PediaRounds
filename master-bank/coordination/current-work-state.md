@@ -36,25 +36,49 @@ Batch outcome:
 - **30 reviewed and conflict-classified**.
 - **0 recalledAnswer values overwritten**.
 - **0 forced verifiedAnswer values** where the retained stem/options cannot support one.
-- All 30 remain non-publishable pending the verification action recorded per item.
 
-Priority examples:
+### Batch 2 reserved/triaged — 40 additional conflicts
+File: `review-queue/conflicting-batch02-triage-40-20260907.json`
+
+Breakdown:
+- Growth & Development: 5
+- Neonatology: 5
+- Cardiology: 3
+- Gastroenterology: 12
+- Neurology: 4
+- Infectious Diseases: 11
+
+Batch 2 policy:
+- Preserve every recalled answer.
+- Do not assign verified answers from recall text alone.
+- Resolve only where current UpToDate → Nelson → current specialty guidance and the retained options/context support a clean single-best answer.
+- Keep version-sensitive vaccine, image-dependent, and under-specified items unresolved rather than reconstructing context.
+
+### Aggregate conflict progress
+- **70/131 conflicting records are now explicitly assigned to coordinated review batches.**
+- **61 conflicting records remain unassigned.**
+
+## Important retained gates
 - Ethics Q10/Q11: current Saudi/MOH DNR policy and perioperative DNR handling required.
-- Research Q7/Q9: variable coding/diagnostic-table context is missing; no statistical-test/metric answer should be forced.
-- Trauma Q10: source key and source explanation disagree on cervical-spine imaging.
+- Research Q7/Q9: variable coding/diagnostic-table context is missing; no answer should be forced.
+- Trauma Q10: source key and explanation disagree on cervical-spine imaging.
 - Dermatology Q12: source key says IV acyclovir while explanation says oral antiviral therapy.
-- Ophthalmology Q2: canonical blocker says the preferred next step is absent from retained choices.
+- Gastro Q35: congenital diarrhea differential remains unresolved without stool electrolytes.
+- Gastro Q56/Q57: original imaging/definitive-study interpretation remains uncertain.
+- Neonatology Q36: key and explanation disagree on brachial plexus root level.
+- Cardiology Q26/Q27: first SVT action depends on immediate IV/IO availability.
+- Infectious Q116: answer depends on the version of the Saudi vaccine schedule.
 
 ## Shared execution rules
 - GitHub is the shared memory across chats.
-- Do not restart completed numbered, sparse, media, outdated, or conflict-batch work.
+- Do not restart completed numbered, sparse, media, outdated, conflict-batch01, or conflict-batch02 work.
 - Preserve `recalledAnswer` separately from `verifiedAnswer`.
 - Do not invent missing options, calculations, media, years, stems, or keys.
 - Original source images only; no generated substitutes for source-dependent MCQs.
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Continue the remaining **101 conflicting records** in large controlled batches, prioritizing clinically resolvable conflicts using current UpToDate → Nelson → specialty guideline. Policy-sensitive Saudi items require current policy/jurisdiction references rather than general medical knowledge.
+Resolve clinically resolvable items from Batch 2 in controlled sub-batches, then reserve/triage the final **61 conflicting records**. After the conflicting queue is fully classified/resolved as far as safely possible, move to the `needs_verification` queue.
 
 ## Coordination rule
 If another chat advances PR #5, refetch this file and `MASTER_BANK_PROGRESS.md` before writing and follow the newest GitHub state.
