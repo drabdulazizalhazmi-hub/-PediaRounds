@@ -1,0 +1,93 @@
+[
+  {
+    "id":"part2-ophthalmology-q01","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Abnormal red reflex","subtopic":"Congenital cataract","yearTags":[2020,2017],"examPart":"Part II",
+    "stemEn":"A newborn delivered with forceps is found to have an absent red reflex in the left eye. Which diagnosis best explains this finding?",
+    "options":[{"key":"A","text":"Congenital cataract"},{"key":"B","text":"Retinal detachment"},{"key":"C","text":"Retinoblastoma"},{"key":"D","text":"Corneal birth trauma"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"غياب الـ red reflex عند الرضيع يستدعي تقييمًا عينيًا سريعًا. التجميع يذكر Congenital cataract كالإجابة المسترجعة لهذا السؤال.",
+    "reasoningEn":"The source key identifies congenital cataract. Independent verification is still pending.",
+    "incorrectOptionsAr":null,"keywords":["absent red reflex","congenital cataract","leukocoria"],"clinicalPearl":"Any abnormal or absent red reflex in infancy requires urgent ophthalmic assessment.","managementSteps":["Arrange urgent ophthalmology assessment"],"diagnosticSteps":["Repeat red reflex examination","Complete ophthalmic examination"],
+    "image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"captionAr":null,"captionEn":null,"status":"not_required"},
+    "tts":{"enabled":true,"language":"en","text":"A newborn delivered with forceps is found to have an absent red reflex in the left eye. Which diagnosis best explains this finding? A. Congenital cataract. B. Retinal detachment. C. Retinoblastoma. D. Corneal birth trauma."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 2026","year":null,"part":"Part II","page":null,"questionNumber":"Ophthalmology Q1","notes":"Paraphrased from recalled exam question; years 2020 and 2017."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-ophthalmology-q02","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Leukocoria","subtopic":"Urgent evaluation","yearTags":[2022],"examPart":"Part II",
+    "stemEn":"An infant has strabismus and an abnormal unilateral red reflex. Which of the recalled options was selected as the next step?",
+    "options":[{"key":"A","text":"CT scan"},{"key":"B","text":"TORCH screening"}],
+    "recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"التجميع يذكر أن B قد تكون الإجابة المسترجعة، لكنه يوضح أن أفضل خطوة سريريًا هي urgent ophthalmology referral مع فحص شامل وقد يلزم examination under anesthesia. لأن هذا الخيار غير موجود أصلًا، يبقى السؤال متعارضًا ولا يصلح للنشر النهائي كما هو.",
+    "reasoningEn":"The source itself states that the listed answer may not represent the best clinical next step and that urgent ophthalmology evaluation is preferable; CT is discouraged in possible RB1 disease.",
+    "incorrectOptionsAr":"CT ليست الخيار المفضل كفحص أولي في leukocoria المشتبه بها حسب شرح المصدر، وTORCH قد يُطلب فقط حسب القصة والفحص وليس بدل التقييم العيني العاجل.","keywords":["leukocoria","strabismus","retinoblastoma","red reflex"],"clinicalPearl":"Leukocoria is an urgent ophthalmology referral finding.","managementSteps":["Urgent ophthalmology referral"],"diagnosticSteps":["Dilated ophthalmic examination","Consider ocular ultrasound and examination under anesthesia as directed by ophthalmology"],
+    "image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"captionAr":null,"captionEn":null,"status":"not_required"},
+    "tts":{"enabled":true,"language":"en","text":"An infant has strabismus and an abnormal unilateral red reflex. Which of the recalled options was selected as the next step? A. CT scan. B. TORCH screening."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 2026","year":2022,"part":"Part II","page":null,"questionNumber":"Ophthalmology Q2","notes":"Source explicitly notes the listed choices omit the clinically preferred urgent ophthalmology referral."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Internal source conflict preserved."},"duplicateOf":null,"reviewStatus":"conflicting"
+  },
+  {
+    "id":"part2-ophthalmology-q03","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Leukocoria","subtopic":"Urgent evaluation","yearTags":[2022],"examPart":"Part II",
+    "stemEn":"A 14-month-old boy has unilateral leukocoria shown in the original exam image. Which recalled option was selected for the next step?",
+    "options":[{"key":"A","text":"CT scan"},{"key":"B","text":"TORCH screening"}],
+    "recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"السؤال يعتمد على صورة leukocoria، والصورة الأصلية غير مرفوعة إلى المستودع. التجميع نفسه يقول إن أفضل خطوة هي urgent ophthalmology referral وليس أيًا من الخيارين بشكل مثالي، لذلك بقي السؤال conflicting وimage_missing.",
+    "reasoningEn":"The recalled choices do not contain the source-described preferred action of urgent ophthalmology evaluation.",
+    "incorrectOptionsAr":null,"keywords":["unilateral leukocoria","retinoblastoma","urgent ophthalmology"],"clinicalPearl":"A white pupillary reflex must be treated as an urgent eye finding until serious causes are excluded.","managementSteps":["Urgent ophthalmology referral"],"diagnosticSteps":["Review original image","Dilated eye examination"],
+    "image":{"requiredForQuestion":true,"sourceRef":"Ophthalmology Q3 original exam image","assetPath":null,"captionAr":"صورة leukocoria أحادية الجانب مطلوبة من المصدر الأصلي.","captionEn":"Original unilateral leukocoria image required.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A fourteen-month-old boy has unilateral leukocoria shown in the original exam image. Which recalled option was selected for the next step? A. CT scan. B. TORCH screening."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 2026","year":2022,"part":"Part II","page":null,"questionNumber":"Ophthalmology Q3","notes":"Image-dependent; source notes preferred urgent ophthalmology referral is absent from choices."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Image and option-set review required."},"duplicateOf":null,"reviewStatus":"image_missing"
+  },
+  {
+    "id":"part2-ophthalmology-q04","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Leukocoria","subtopic":"Retinoblastoma","yearTags":[2025],"examPart":"Part II",
+    "stemEn":"A 7-month-old boy presents with unilateral leukocoria. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Retinoblastoma"},{"key":"B","text":"Congenital cataract"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"التجميع يختار Retinoblastoma في هذا السيناريو. Leukocoria في الرضع علامة عالية الأهمية وتحتاج تقييم عيون عاجل.",
+    "reasoningEn":"The source key is retinoblastoma; independent confirmation is pending.",
+    "incorrectOptionsAr":null,"keywords":["leukocoria","retinoblastoma","infant"],"clinicalPearl":"Retinoblastoma is a critical diagnosis to exclude in unilateral leukocoria.","managementSteps":["Urgent ophthalmology referral"],"diagnosticSteps":["Dilated fundus examination","Further imaging/staging as directed by ophthalmology"],
+    "image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"captionAr":null,"captionEn":null,"status":"not_required"},
+    "tts":{"enabled":true,"language":"en","text":"A seven-month-old boy presents with unilateral leukocoria. What is the most likely diagnosis? A. Retinoblastoma. B. Congenital cataract."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 2026","year":2025,"part":"Part II","page":null,"questionNumber":"Ophthalmology Q4","notes":"Paraphrased."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-ophthalmology-q05","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Retinoblastoma","subtopic":"Second primary tumors","yearTags":[2018],"examPart":"Part II",
+    "stemEn":"A child with an image suggestive of retinoblastoma is at increased risk of which additional malignancy?",
+    "options":[{"key":"A","text":"Osteosarcoma"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"التجميع يربط hereditary retinoblastoma / RB1 مع زيادة خطر الأورام الأولية اللاحقة، ويذكر Osteosarcoma كالإجابة المسترجعة.",
+    "reasoningEn":"The source identifies osteosarcoma as the recalled associated subsequent malignancy.",
+    "incorrectOptionsAr":null,"keywords":["RB1","retinoblastoma","osteosarcoma"],"clinicalPearl":"Heritable RB1 disease carries a long-term risk of additional primary malignancies.","managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"Ophthalmology Q5 leukocoria/retinoblastoma image","assetPath":null,"captionAr":"الصورة الأصلية مطلوبة قبل النشر.","captionEn":"Original retinoblastoma/leukocoria image required.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A child with an image suggestive of retinoblastoma is at increased risk of which additional malignancy? A. Osteosarcoma."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 2026","year":2018,"part":"Part II","page":null,"questionNumber":"Ophthalmology Q5","notes":"Image-dependent; source answer osteosarcoma."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Image missing; independent verification pending."},"duplicateOf":null,"reviewStatus":"image_missing"
+  },
+  {
+    "id":"part2-ophthalmology-q06","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Retinoblastoma","subtopic":"Leukocoria and strabismus","yearTags":[2019],"examPart":"Part II",
+    "stemEn":"A 2-year-old boy has strabismus on cover testing and a yellow-white pupillary reflex. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Retinoblastoma"},{"key":"B","text":"Very high myopia"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"وجود strabismus مع white/yellow pupillary reflex يوجّه بقوة في التجميع إلى Retinoblastoma. هذه علامة تستدعي تقييمًا عينيًا عاجلًا.",
+    "reasoningEn":"The source key is retinoblastoma based on leukocoria plus strabismus.",
+    "incorrectOptionsAr":null,"keywords":["strabismus","white pupillary reflex","retinoblastoma"],"clinicalPearl":"Strabismus can be an initial presentation of retinoblastoma when accompanied by leukocoria.","managementSteps":["Urgent ophthalmology referral"],"diagnosticSteps":["Dilated fundus examination"],
+    "image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"captionAr":null,"captionEn":null,"status":"not_required"},
+    "tts":{"enabled":true,"language":"en","text":"A two-year-old boy has strabismus on cover testing and a yellow-white pupillary reflex. What is the most likely diagnosis? A. Retinoblastoma. B. Very high myopia."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 2026","year":2019,"part":"Part II","page":null,"questionNumber":"Ophthalmology Q6","notes":"Paraphrased."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-ophthalmology-q07","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Strabismus","subtopic":"Pseudostrabismus","yearTags":[2023],"examPart":"Part II",
+    "stemEn":"A 16-month-old girl appears cross-eyed, but the cover-uncover test shows no corrective movement and the corneal light reflex is centered in both eyes. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Pseudostrabismus"},{"key":"B","text":"Myopia with strabismus"},{"key":"C","text":"Accommodative esotropia"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المظهر الخارجي يوحي بالحول، لكن normal cover-uncover test وcorneal light reflex المركزي يدعمان Pseudostrabismus حسب التجميع.",
+    "reasoningEn":"No refixation on cover testing with symmetric central corneal light reflex supports pseudostrabismus in the source.",
+    "incorrectOptionsAr":null,"keywords":["pseudostrabismus","cover-uncover test","corneal light reflex"],"clinicalPearl":"Apparent crossing with normal alignment tests suggests pseudostrabismus.","managementSteps":["Routine follow-up if examination is otherwise normal","Refer if true strabismus is suspected"],"diagnosticSteps":["Cover-uncover test","Corneal light reflex assessment"],
+    "image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"captionAr":null,"captionEn":null,"status":"not_required"},
+    "tts":{"enabled":true,"language":"en","text":"A sixteen-month-old girl appears cross-eyed, but the cover-uncover test shows no corrective movement and the corneal light reflex is centered in both eyes. What is the most likely diagnosis? A. Pseudostrabismus. B. Myopia with strabismus. C. Accommodative esotropia."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 2026","year":2023,"part":"Part II","page":null,"questionNumber":"Ophthalmology Q7","notes":"Similar to PREP 2019 question 169 per source."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  }
+]
