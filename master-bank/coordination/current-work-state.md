@@ -1,6 +1,6 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 09:47 +03:00
+Updated: 2026-09-07 09:55 +03:00
 Active branch: `master-bank/post-merge-audit`
 Active PR: #3 — `Continue PediaRounds post-merge audit`
 Base: `main`
@@ -19,7 +19,7 @@ Previous PR #2 was merged into `main` on 2026-09-07.
 ## Current priority — closure audit
 1. Maintain a comprehensive 1023-question canonical manifest and identify true coverage gaps.
 2. Resolve duplicate/overlapping exports and keep one canonical file per question range.
-3. Recover source images/attachments into private review bundles, record hashes/source pages, and keep public asset publication gated.
+3. Recover source images/attachments into private review bundles, record hashes/source pages, and link each recovered asset to its canonical question record.
 4. Resolve recoverable `incomplete_recall` records from the original source before adding new material.
 5. Review clinically conflicting/outdated keys after structural/source integrity is stable.
 
@@ -27,9 +27,11 @@ Previous PR #2 was merged into `main` on 2026-09-07.
 - PR #2 merged; all earlier Master Bank work is now on `main`.
 - New shared branch/PR for continued work: `master-bank/post-merge-audit` / PR #3.
 - Pulmonary source-image review batch completed for Q6, Q9, Q10, Q12; source images were extracted into a private review bundle and hashed.
-- Gastro source-image review now covers Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75 and Q81.
-- Gastro Q81 original liver-biopsy image was recovered from source page 249 and added to the private review package; SHA-256 is recorded in `master-bank/sources/gastro-source-image-review-20260907.json`.
-- Gastro Q81 source framing is conjugated hyperbilirubinemia with biopsy suggestive of alpha-1 antitrypsin deficiency; preserve as source mapping only, not independent image interpretation.
+- Gastro source-image review covers Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75 and Q81.
+- Added `master-bank/sources/question-image-linkage-20260907.json` so recovered Gastro source images are now explicitly tied to canonical `questionId` + record path, instead of existing only as an unlinked image manifest.
+- Explicit question-image linkage currently covers canonical records Q56, Q57, Q64, Q65, Q68, Q70, Q73, Q74, Q75 and Q81; Q63 image is recovered but its canonical record path still needs exact resolution.
+- Gastro Q56 and Q57 remain conflicting because the source itself questions image interpretation / definitive testing; linking the source image does not resolve the clinical conflict.
+- Gastro Q73 and Q74 remain incomplete recalls because only one source option survives; the source image is now linked but missing distractors are not invented.
 - Pulmonary Q14 still references an X-ray not present as an embedded/raster asset in the current source page and remains `image_missing`.
 - Q9/Q10 Pulmonary and Sleep Q15 remain incomplete single-option recalls despite image recovery where applicable.
 
