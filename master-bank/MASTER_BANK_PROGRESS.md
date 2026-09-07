@@ -19,50 +19,30 @@
 - Sparse media: **48/48 audited**.
 - Outdated queue: **9/9 reviewed**.
 
-## Conflict-resolution progress — authoritative unique-ID counter
-`master-bank/tools/audit_conflict_resolution_coverage.py` is now the authoritative counter. Batch summary totals must not be added together because several IDs were reviewed more than once.
+## Conflict-resolution progress — unique-ID counter
+`master-bank/tools/audit_conflict_resolution_coverage.py` is authoritative. Batch summary totals must not be added because some IDs were reviewed more than once.
 
-Latest CI-audited state:
+After the completed 10-item non-policy clinical/source overlay batch:
 - **131 canonical `conflicting` records**.
-- **104 / 131 unique canonical conflicts resolution-reviewed**.
-- **29 clean modern answer resolutions** in review overlays.
-- **75 unique reviewed conflicts retained non-publishable**.
-- **27 canonical conflicts remain without a clinical-resolution overlay**.
+- **Expected 114 / 131 unique canonical conflicts resolution-reviewed** (next CI run must confirm; CI wins if different).
+- **35 clean modern answer resolutions** in review overlays.
+- **79 unique reviewed conflicts retained non-publishable**.
+- **17 canonical conflicts remain without a clinical-resolution overlay**.
 - **0 recalled answers overwritten**.
 
-### Duplicate resolution passes detected
-10 canonical IDs have duplicate resolution overlays: Trauma Q10; Research Q7/Q9; Hematology Q50; Behavioral Q10/Q17; Critical Care Q12/Q15/Q17/Q19. These duplicates do not advance progress.
+Known duplicate resolution passes remain excluded from unique progress. `part2-nephro-cystic-q46` remains overlay-only and does not advance the conflict counter.
 
-### Overlay-only record
-`part2-nephro-cystic-q46` was reviewed in batch14 but is not a canonical `reviewStatus=conflicting` record, so it does not advance the conflict counter.
-
-### Original triage count defect
-The three original assignment batches enumerate only 130 IDs while claiming 131. CI found the omitted canonical conflict: **Neonatology Q40 — breast engorgement advice**. It is now explicitly tracked among the remaining 27.
-
-## Exact remaining work
-### Non-policy clinical/source conflicts — 10
-- Gastroenterology Q51 (`part2-gi-q051-eosinophilic-esophagitis`)
-- Infectious GP Q37, Q38, Q40, Q43, Q45
-- Infectious Gram-negative Q57
-- Infectious Immunization Q103
-- Neonatology Q40
-- Trauma Q9
-
-### Saudi/policy-sensitive Ethics & Patient Safety — 17
+## Exact remaining conflict work — 17 Saudi/policy-sensitive records
 - Ethics Q6, Q7, Q8, Q10, Q11
 - Patient Safety Q12, Q16, Q17, Q18, Q20, Q22, Q23, Q25, Q26, Q28, Q31, Q33
 
-## Current clinical/source notes for the next 10
-- **Gastro Q51:** source chooses steroid for EoE, but retained context has only a 2-week PPI trial and modern first-line therapy can include PPI, swallowed topical steroid, or dietary therapy; resolve only within retained choices and current EoE guidance.
-- **Infectious Q37:** suspected IE; blood cultures and echocardiography are both core evaluation components. Determine whether the wording supports a unique `next` test.
-- **Infectious Q38:** postoperative IE 2 months after VSD repair; organism depends on timing/prosthetic material and current IE epidemiology.
-- **Infectious Q40:** SCD-associated IE microbiology; source itself lacks a specific SCD reference.
-- **Infectious Q43:** fully vaccinated 4-year-old admitted/ill-looking with CAP; ampicillin versus ceftriaxone depends on severity and local resistance/complications.
-- **Infectious Q45:** pneumonia/effusion after blunt trauma; source admits S. aureus versus pneumococcus uncertainty and its trauma rationale does not match the blunt mechanism.
-- **Brucellosis Q57:** Brucella serology versus synovial culture; original Gram-stain image is still missing.
-- **Immunization Q103:** stem says HPV genital warts but source explanation discusses herpes; verify breastfeeding precautions for HPV itself.
-- **Neonatology Q40:** source warm-compress key conflicts with modern lactation/engorgement guidance emphasizing anti-inflammatory measures; distinguish engorgement from mastitis/ductal narrowing.
-- **Trauma Q9:** lytic skull lesion after minor trauma; source itself found no answer and the retained scenario is poorly connected. Do not force LCH biopsy versus MRI without adequate diagnostic context.
+These must be checked against current Saudi jurisdiction-specific sources (MOH/SCFHS/SPSC/SFDA/institutional policy as appropriate). Preserve unresolved ambiguity rather than manufacturing a single-best answer.
+
+## Completed non-policy clinical/source batch
+The prior remaining 10 clinical/source conflicts now all have resolution overlays in `review-queue/conflicting-clinical-resolution-batch15-clinical-10-20260907.json`:
+- 6 support clean modern verified answers.
+- 4 remain non-publishable due to insufficient/ambiguous retained context.
+- `recalledAnswer` was not overwritten.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -75,6 +55,9 @@ The three original assignment batches enumerate only 130 IDs while claiming 131.
 
 Baseline canonical counts do not automatically decrement when an overlay is created; canonical changes require an explicit safe update pass.
 
+## Parallel Part I import
+PR **#6 — Import Part I 2025 Q1–Q30** is open on `master-bank/part1-2025-batch01`. It is a separate import stream from PR #5 quality resolution. Coordinate via GitHub before overlapping writes or merges.
+
 ## Coordination protocol
 1. GitHub + the CI unique-ID audit win over chat memory.
 2. Before a conflict batch, verify every ID appears in the exact remaining list.
@@ -85,10 +68,10 @@ Baseline canonical counts do not automatically decrement when an overlay is crea
 7. Source PDFs, credentials, tokens, and secrets must not be committed.
 
 ## Highest-priority next work
-1. Resolve the **10 non-policy clinical/source conflicts** without overlap.
-2. Then resolve/document the **17 Saudi/policy-sensitive** records with current MOH/SCFHS/SPSC/SFDA/institutional sources as appropriate.
-3. Re-run the unique-ID audit; only after it reaches **131/131** move to large `needs_verification` batches.
+1. Resolve/document the **17 Saudi/policy-sensitive** conflicts with current authoritative Saudi sources.
+2. Re-run the unique-ID audit; only after it reaches **131/131** move to large `needs_verification` batches.
+3. Keep PR #6 Part I import moving independently, without duplicating PR #5 work.
 
 ---
 
-**Handoff rule:** source coverage is structurally complete. The authoritative conflict counter is **104/131 unique reviewed, 27 remaining**; never use raw batch totals to advance it.
+**Handoff rule:** source coverage is structurally complete. Expected conflict counter after batch15 is **114/131 unique reviewed, 17 remaining**; CI is authoritative and raw batch totals must never be used.
