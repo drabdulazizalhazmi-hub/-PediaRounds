@@ -1,0 +1,65 @@
+{
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "purpose": "Private-review mapping for Infectious Diseases Q23-Q25 CSF microscopy images. Original image bytes are kept out of the public repository pending publication-rights and clinical review.",
+  "scope": {
+    "questionsReviewed": "Infectious Diseases Q23-Q26",
+    "sourcePages": "282-284",
+    "status": "microscopy_batch_complete"
+  },
+  "privateReviewPackage": {
+    "filename": "PediaRounds_infectious_microscopy_source_image_review.zip",
+    "sha256": "0b4a9e5938529e18b2113526c99fbb37dbd04a8c72694632464ef9ae2930a4fe"
+  },
+  "assets": [
+    {
+      "question": "Infectious Diseases Q23",
+      "questionId": "part2-id-gp-q23",
+      "recordPath": "master-bank/data/11-infectious-diseases/infectious-part2-gram-positive-batch01-q23-q33.json",
+      "sourcePage": 282,
+      "asset": "q23-listeria-gram-positive-rods.jpg",
+      "width": 176,
+      "height": 199,
+      "sha256": "09d13ee04753aedc368c4e408adb756f2fb9568a033bf60be973fef75d3f80d7",
+      "mapping": "CSF microscopy image showing Gram-positive rods in the neonatal listeriosis recall",
+      "status": "image_needs_review",
+      "publicAssetPath": null
+    },
+    {
+      "question": "Infectious Diseases Q24",
+      "questionId": "part2-id-gp-q24",
+      "recordPath": "master-bank/data/11-infectious-diseases/infectious-part2-gram-positive-batch01-q23-q33.json",
+      "sourcePage": 283,
+      "asset": "q24-gbs-gram-positive-cocci-chains.jpg",
+      "width": 250,
+      "height": 188,
+      "sha256": "44d043c18a2a0620276e6df80dce83a8be12419fdc245bc83d5d4710724fdd1f",
+      "mapping": "CSF microscopy image showing Gram-positive cocci in chains in the Group B Streptococcus recall",
+      "status": "image_needs_review",
+      "publicAssetPath": null
+    },
+    {
+      "question": "Infectious Diseases Q25",
+      "questionId": "part2-id-gp-q25",
+      "recordPath": "master-bank/data/11-infectious-diseases/infectious-part2-gram-positive-batch01-q23-q33.json",
+      "sourcePage": 284,
+      "asset": "q25-pneumococcus-diplococci.jpg",
+      "width": 204,
+      "height": 162,
+      "sha256": "7384a7d3e0ff313ed0b58819901a3f7126f24c8776a93b9b4f5b96f3d60bde3d",
+      "mapping": "CSF microscopy image showing Gram-positive cocci in pairs/short chains in the pneumococcal meningitis recall",
+      "status": "image_needs_review",
+      "publicAssetPath": null
+    }
+  ],
+  "excludedExplanatoryGraphics": [
+    {"sourcePage": 283, "reason": "large Gram-positive morphology teaching chart is explanatory material, not the Q24 question image"},
+    {"sourcePage": 284, "reason": "large Gram-stain interpretation table is explanatory material, not the Q25 question image"}
+  ],
+  "sourceNotes": [
+    "Q23-Q25 each explicitly state that a microscopic CSF image was provided.",
+    "The corresponding small embedded microscopy images are present on pages 282-284 and were extracted directly from the PDF image objects.",
+    "Q26 is not image-dependent.",
+    "No generated or substitute image was used."
+  ]
+}
