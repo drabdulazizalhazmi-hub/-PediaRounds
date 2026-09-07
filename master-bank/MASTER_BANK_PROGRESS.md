@@ -8,7 +8,7 @@
 - Active working branch: `master-bank/post-merge-audit`
 - Active pull request: `#3 — Continue PediaRounds post-merge audit`
 - Base branch: `main`
-- Last synchronized: `2026-09-07 09:55 +03:00`
+- Last synchronized: `2026-09-07 10:00 +03:00`
 
 ## Mandatory coordination protocol
 1. Before work, read this file and `coordination/current-work-state.md`, then inspect PR #3.
@@ -23,11 +23,11 @@
 ## Latest batch
 Question/image linkage advanced:
 - Gastro source-image review covers **Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81**.
-- Added `master-bank/sources/question-image-linkage-20260907.json` to explicitly connect recovered source-image metadata to the canonical question IDs and JSON record paths.
-- Canonical question linkage is now explicit for **Q56, Q57, Q64, Q65, Q68, Q70, Q73, Q74, Q75, Q81**.
-- **Q63** image is recovered and hashed, but the exact canonical record path is still pending resolution and is not guessed.
-- Public `assetPath` remains null because the repository is public; original source-image bytes stay in the private review package pending publication-rights and clinical review.
-- Linking an image does not override review gates: Q56/Q57 remain conflicting, Q73/Q74 remain incomplete recalls, and Q81 remains image-needs-review.
+- `master-bank/sources/question-image-linkage-20260907.json` now explicitly connects recovered source-image metadata to canonical question IDs and JSON record paths.
+- **Gastro Q63 is now fully resolved structurally:** canonical ID `part2-gi-q063-small-bowel-obstruction`, record path `master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-batch01-supported.json`, source page 238, recovered asset `p238-x892.jpeg`, status `image_needs_review`.
+- Canonical question/image linkage is therefore explicit for **Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74, Q75, Q81**.
+- Public `assetPath` remains null because the repository is public; original source-image bytes stay in private review packages pending publication-rights and clinical review.
+- Linking an image does not override review gates: Q56/Q57 remain conflicting; Q73/Q74 remain incomplete recalls; Q81 remains image-needs-review.
 
 ## Strongly represented source ranges already on main
 - Growth & Development Q1–Q21
@@ -63,15 +63,15 @@ Question/image linkage advanced:
 - Gastro Q44–Q45 sodium/cerebral-edema assumptions incomplete.
 - Gastro Q53 achalasia vs eosinophilic esophagitis overlap.
 - Gastro Q56–Q57 source image recovered privately; source itself questions interpretation/definitive study.
-- Gastro Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81 source images recovered privately and remain publication/clinical-review gated.
+- Gastro Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81 source images recovered privately and linked to canonical question records; they remain publication/clinical-review gated.
 - Pulmonary Q6/Q9/Q10/Q12 source images recovered privately; public publication and clinical-image review remain blocked.
 - Pulmonary Q14 original image not present in current source file.
 - Sleep Q15 single-option incomplete recall.
 
 ## Next action
-1. Resolve the exact canonical record path for Gastro Q63 and add it to the question-image linkage index.
-2. Continue linking recovered source images to canonical question IDs rather than keeping them only in image manifests.
-3. Recover the next high-priority source images/attachments and resolve source-supported `incomplete_recall` items.
+1. Continue recovering source images for earlier Gastro questions still marked `image_missing` (for example Q1, Q23, Q28 where present in the source) and link each to its canonical question record.
+2. Continue resolving source-supported `incomplete_recall` records without inventing missing distractors.
+3. Continue the canonical 1023-ID duplicate/coverage audit.
 4. Only after structural integrity is stable, verify conflicting/outdated clinical keys using UpToDate, then Nelson, then current specialty guidance.
 
 ## Style contract
