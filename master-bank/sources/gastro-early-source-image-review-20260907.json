@@ -4,22 +4,30 @@
   "purpose": "Private-review mapping for early Gastroenterology Part II question images. Public assetPath remains null until publication-rights and clinical review are complete.",
   "privateReviewPackage": {
     "filename": "PediaRounds_gastro_early_source_image_review.zip",
-    "sha256": "f736a9858315d42a81c175b99036819e99c996e92eae0d8687fd28df7e5aa41e"
+    "sha256": "6d75c470486323c655b578389ab9fa7d5beadd0184a499c0474dce9a3611d942"
   },
   "assets": [
     {"question":"Gastro Q1/Q2","page":197,"asset":"p197-x736.jpeg","width":160,"height":224,"sha256":"3a638e2705b3b5fd46b5e8f1369b9a4c6e816fb27c102227c722a6231f135267","mapping":"shared contrast-enema image showing small left colon","status":"image_needs_review"},
     {"question":"Gastro Q3","page":198,"asset":"p198-x740.jpeg","width":151,"height":182,"sha256":"2ea878c9d770044e1500ea065c92a835a21f81443b25f9181188bcbc22feb092","mapping":"contrast-enema image in meconium plug syndrome vignette","status":"image_needs_review"},
-    {"question":"Gastro Q23","page":212,"asset":"p212-x793.jpeg","width":270,"height":329,"sha256":"bc4256283992baf57fb7b82b9d37f7ebd21e5ade7f0f8f2c0ee840adfc52ec01","mapping":"abdominal radiograph referenced in functional constipation vignette","status":"image_needs_review"},
-    {"question":"Gastro Q28/Q29","page":216,"asset":"p216-x808.jpeg","width":271,"height":215,"sha256":"3fc629e7e98529f78fb760a09433797581385cdb37e907d9aacd662f7d756f3e","mapping":"shared dermatitis herpetiformis clinical photograph","status":"image_needs_review"},
+    {"question":"Gastro Q5","page":200,"asset":"p200-x748.jpeg","width":150,"height":200,"sha256":"6bf2067646ae077ae5e7f1e06d270821d4a0f06b6ca9f7e2a02a1c4e29653f8f","mapping":"contrast-enema image showing dilated proximal colon and narrow distal colon in Hirschsprung-disease recall","status":"image_needs_review"},
+    {"question":"Gastro Q8","page":202,"asset":null,"mapping":"stem says an X-ray showed normal stomach gas; rendered page contains only an explanatory classification table, not the question radiograph","status":"source_image_missing"},
+    {"question":"Gastro Q9","page":203,"asset":null,"mapping":"stem says an X-ray showed no stomach gas; rendered page contains an explanatory TEF anatomy illustration, not the question radiograph","status":"source_image_missing"},
     {"question":"Gastro Q10","page":204,"asset":null,"mapping":"stem states X-ray showed no stomach gas, but no question image is present on the rendered source page","status":"source_image_missing"},
-    {"question":"Gastro Q11","page":204,"asset":null,"mapping":"stem states X-ray showed tracheoesophageal fistula, but no question image is present on the rendered source page","status":"source_image_missing"}
+    {"question":"Gastro Q11","page":204,"asset":null,"mapping":"stem states X-ray showed tracheoesophageal fistula, but no question image is present on the rendered source page","status":"source_image_missing"},
+    {"question":"Gastro Q13","page":205,"asset":"p205-x766.jpeg","width":176,"height":222,"sha256":"439b7b9fb7aaca79ac1db041ece5feab7002be8c3b9afde0d706b8f924266386","mapping":"chest radiograph showing left-sided congenital diaphragmatic hernia","status":"image_needs_review"},
+    {"question":"Gastro Q14","page":206,"asset":null,"mapping":"stem refers to an X-ray finding of left-sided CDH, but page 206 contains explanatory Bochdalek/Morgagni graphics rather than the question radiograph","status":"source_image_missing"},
+    {"question":"Gastro Q15","page":206,"asset":null,"mapping":"stem refers to an X-ray finding of CDH, but page 206 contains explanatory graphics rather than the question radiograph","status":"source_image_missing"},
+    {"question":"Gastro Q23","page":212,"asset":"p212-x793.jpeg","width":270,"height":329,"sha256":"bc4256283992baf57fb7b82b9d37f7ebd21e5ade7f0f8f2c0ee840adfc52ec01","mapping":"abdominal radiograph referenced in functional constipation vignette","status":"image_needs_review"},
+    {"question":"Gastro Q28/Q29","page":216,"asset":"p216-x808.jpeg","width":271,"height":215,"sha256":"3fc629e7e98529f78fb760a09433797581385cdb37e907d9aacd662f7d756f3e","mapping":"shared dermatitis herpetiformis clinical photograph","status":"image_needs_review"}
   ],
   "sourceNotes": [
     "Q1 and Q2 both refer to the small-left-colon contrast-enema image on source page 197; only one embedded image object is present and it is linked to both questions.",
-    "Q3 has a separate contrast-enema image on source page 198.",
+    "Q3 and Q5 have separate contrast-enema images on pages 198 and 200 respectively.",
+    "Q8 and Q9 stems mention X-rays, but the actual radiographs are absent from the rendered pages; the visible images are explanatory tables/illustrations and are not substituted for the missing question radiographs.",
+    "Q10 and Q11 likewise reference X-rays that are absent from current source page 204.",
+    "Q13 has an actual chest radiograph on page 205. Q14 and Q15 mention X-ray findings, but page 206 contains only explanatory graphics, so their question radiographs remain missing.",
     "Q23 source explicitly states that an abdominal X-ray was provided and was suggestive of functional constipation.",
     "Q28 and Q29 use the same dermatitis-herpetiformis photograph on source page 216.",
-    "Q10 and Q11 refer to X-ray pictures in their stems, but the current source page does not actually contain those images; keep them image_missing rather than fabricating substitutes.",
     "These extracted image bytes are not committed to this public repository; only source-page/hash metadata is committed."
   ]
 }
