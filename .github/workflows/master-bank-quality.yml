@@ -1,0 +1,31 @@
+name: master-bank-quality
+
+on:
+  pull_request:
+    paths:
+      - 'master-bank/**'
+      - '.github/workflows/master-bank-quality.yml'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Structural audit
+        continue-on-error: true
+        run: python master-bank/tools/audit_master_bank.py
+      - name: Duplicate report
+        continue-on-error: true
+        run: python master-bank/tools/detect_duplicate_questions.py
+      - name: Asset validation
+        continue-on-error: true
+        run: python master-bank/tools/validate_assets.py
+      - name: Build manifest
+        run: python master-bank/tools/build_manifest.py
