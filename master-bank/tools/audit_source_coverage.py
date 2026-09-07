@@ -84,13 +84,30 @@ def load_questions() -> list[tuple[Path, dict[str, Any]]]:
     return out
 
 
+def parse_question_number(raw: Any) -> int | None:
+    """Accept both modern 'Section Q12' refs and older numeric refs (12/'12')."""
+    if isinstance(raw, int) and not isinstance(raw, bool):
+        return raw if 0 < raw < 10000 else None
+    text = str(raw or "").strip()
+    if text.isdigit():
+        n = int(text)
+        return n if 0 < n < 10000 else None
+    m = QNUM_RE.search(text)
+    return int(m.group(1)) if m else None
+
+
 def qnum(q: dict[str, Any]) -> int | None:
     for ref in q.get("sourceRefs") or []:
-        if isinstance(ref, dict) and ref.get("questionNumber"):
-            m = QNUM_RE.search(str(ref["questionNumber"]))
-            if m:
-                return int(m.group(1))
-    m = QNUM_RE.search(str(q.get("id", "")))
+        if isinstance(ref, dict) and ref.get("questionNumber") not in (None, ""):
+            n = parse_question_number(ref.get("questionNumber"))
+            if n is not None:
+                return n
+    # IDs commonly encode qNN even when old records lack normalized sourceRefs.
+    raw_id = str(q.get("id", ""))
+    m = re.search(r"(?:^|[-_])q0*(\d{1,4})(?:\b|[-_]|$)", raw_id, re.I)
+    if m:
+        return int(m.group(1))
+    m = re.search(r"(?:^|[-_])0*(\d{1,4})(?:\b|[-_]|$)", raw_id)
     return int(m.group(1)) if m else None
 
 
@@ -156,7 +173,6 @@ def section_from_path(path: Path) -> str | None:
 
 def fallback_section(q: dict[str, Any]) -> str | None:
     s = " ".join(str(q.get(k) or "") for k in ("specialty", "topic", "module")).lower()
-    # Fallback only; path mapping above is authoritative for overlapping topics.
     if "pulmonary medicine" in s or "sleep medicine" in s:
         return "Pulmonary and Sleep Medicine"
     if "immunology" in s and "allergy" not in s:
@@ -258,7 +274,6 @@ def main() -> int:
         for label, count in sorted(unmapped.items()):
             print(f"  {label}: {count}")
 
-    # Report-only while the bank is still being completed.
     return 0
 
 
