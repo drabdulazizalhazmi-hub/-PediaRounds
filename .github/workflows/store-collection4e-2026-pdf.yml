@@ -1,0 +1,36 @@
+name: Store original pediatric collection PDF
+on:
+  push:
+    branches: ['upload/collection4e-2026-85f22d']
+    paths:
+      - '.source-upload/collection4e-2026/**'
+      - '.github/workflows/store-collection4e-2026-pdf.yml'
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read the uploaded chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git -c core.hooksPath=/dev/null fetch --depth=1 origin "$GITHUB_SHA"
+          git -c core.hooksPath=/dev/null checkout --detach FETCH_HEAD
+      - name: Reassemble and verify the original PDF
+        run: python3 .source-upload/collection4e-2026/assemble.py
+      - name: Store the verified PDF on this upload branch
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.manifest.json
+          git commit -m 'Store verified original pediatric collection PDF'
+          upload_auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $upload_auth" push origin "HEAD:${GITHUB_REF_NAME}"

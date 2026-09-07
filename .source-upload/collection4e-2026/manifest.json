@@ -1,0 +1,91 @@
+{
+  "originalName": "Pediatric Saudi Board Exams Question Collection 4th ED 1-May-2026.pdf",
+  "sha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+  "gitBlobSha": "877c0340c880bef4ed37ac6ec28b744cff4e6fef",
+  "sizeBytes": 37848909,
+  "pages": 690,
+  "actualQuestionStarts": 1022,
+  "declaredQuestionCount": 1023,
+  "sourceUnmodified": true,
+  "site": "https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site",
+  "chunks": [
+    {
+      "gitBlobSha": "5b10d2f50c99c0d1f08b86344a6daccbec30b885",
+      "path": ".source-upload/collection4e-2026/part-00.bin",
+      "sha256": "a2270979938ede1209e01624927a0958c3974775df12557a895da8adff3a6039",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "72278bf314307b4b229a67c0dff00b279c22495a",
+      "path": ".source-upload/collection4e-2026/part-01.bin",
+      "sha256": "41c967100b3e9f4150fe7499f4913693cee42940f4b5fce94fa3d5f87627ecf8",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "8fa855fa641fbf99ed151a33887d9cccd262d73f",
+      "path": ".source-upload/collection4e-2026/part-02.bin",
+      "sha256": "425d0f8c1a0061df5599abd554e489dd2a2d76c7f367698bc8bcb0b883979a85",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "6822b9c58755938fd8006105b5bc80e9be55e550",
+      "path": ".source-upload/collection4e-2026/part-03.bin",
+      "sha256": "9b9583ee3e1fe609639c3ec92f347f7eef43fb2359e4e6e903986f4945253353",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "a7be15841bd800c5819763e8fb7a69321d172c72",
+      "path": ".source-upload/collection4e-2026/part-04.bin",
+      "sha256": "c02ec8e4c384f9219ed6ffdf037ce19bf2c46a9380dd0734f0adb8a7af2c2e58",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "c94959cbaecaa5f9ce78f313d6da7c4d3ec44f8d",
+      "path": ".source-upload/collection4e-2026/part-05.bin",
+      "sha256": "9c99c2827fcf572400580ab3a3fe247beafd3866b117462d920f541309fead05",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "25374fc7b0c10fd28bb94cc966d81461a59bbbeb",
+      "path": ".source-upload/collection4e-2026/part-06.bin",
+      "sha256": "7796e09f837154cf3adf6aced96bdfe473b29e6897823f7b9d3384cec12a7e63",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "e948d455d36892549a0b6f180f252eca1fcec6b5",
+      "path": ".source-upload/collection4e-2026/part-07.bin",
+      "sha256": "2c4d7b0c5c39242ca7c6478f4925b8bf57dfa8a35d9510944107b2ac8f5c3285",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "092beebc446e40e3009298fc3b2e9e267e295a50",
+      "path": ".source-upload/collection4e-2026/part-08.bin",
+      "sha256": "16c566b75e5935bfb28368a329d0ac03392e00406c17323e69a45b07ddcd55da",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "86f3b4b7272168816da84bec1db5c34f6addc3fb",
+      "path": ".source-upload/collection4e-2026/part-09.bin",
+      "sha256": "fb31603974137fd782fce525fbd08e5192b171363ed32ef046b5148ac869bbb1",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "a9281d14181a16e6e99ce733baec306cac3c9faa",
+      "path": ".source-upload/collection4e-2026/part-10.bin",
+      "sha256": "b3a7f251f83648ef9f20b6ae0c604a207e81f62e12d1f9dd2bc07a9a4a47134e",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "0b1305f2c87731e82078bce55892c06f140cb689",
+      "path": ".source-upload/collection4e-2026/part-11.bin",
+      "sha256": "c0a828576bd8cadecb3c6ae7349aa5a5510c09a63548ffb2c7bacf5fd9f17e09",
+      "sizeBytes": 2949120
+    },
+    {
+      "gitBlobSha": "046483b9e2d041c5c80c7041808b5d9346dfef46",
+      "path": ".source-upload/collection4e-2026/part-12.bin",
+      "sha256": "48cb29952d2508ff7772fec12320569caeb2b33bf43284fe9336a1904aad7980",
+      "sizeBytes": 2459469
+    }
+  ]
+}
