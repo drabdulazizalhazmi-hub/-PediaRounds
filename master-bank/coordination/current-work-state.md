@@ -9,34 +9,32 @@ Base: `main`
 - 1023 records scanned.
 - 1022/1022 enumerated source slots covered; 0 missing.
 - Genetics TOC anomaly remains: TOC says 53, actual sequence ends at Q52. Do not fabricate Q53.
-- Exact duplicate IDs: 0; section/Q collisions: 0.
+- Exact duplicate IDs: 0; section-Q collisions: 0.
 
 ## Completed quality milestones
 - Sparse recalls: **167/167** directly re-read from source.
 - Sparse media cues: **48/48** technically reconciled.
 - Outdated queue: **9/9** clinically reviewed.
 
-## Conflict-resolution accounting — CI-audited unique IDs
-The authoritative counter is now produced by `tools/audit_conflict_resolution_coverage.py`; do not sum batch `reviewed` fields.
+## Conflict-resolution accounting — unique IDs only
+The authoritative counter is produced by `tools/audit_conflict_resolution_coverage.py`; never sum batch `reviewed` fields.
 
-Latest CI audit:
-- **131 canonical records** currently carry `reviewStatus=conflicting`.
-- **104 / 131 unique canonical conflict IDs** have at least one clinical-resolution overlay.
-- **29 clean modern verified answers** are supported in overlays.
-- **75 unique reviewed conflicts remain non-publishable** because of missing context/best option/media, malformed choices, version sensitivity, policy dependence, or multiple plausible answers.
-- **27 canonical conflicts remain without a clinical-resolution overlay.**
-- **0 recalledAnswer values overwritten.**
+Latest completed overlay batch (`batch15-clinical-10`) adds all 10 previously remaining non-policy clinical/source conflicts. Based on the prior CI-audited baseline of 104 unique reviewed IDs and the batch's 10 distinct canonical IDs:
+- **131 canonical conflicting records**.
+- **114 / 131 unique canonical conflict IDs now have at least one clinical-resolution overlay**.
+- **35 clean modern verified answers** are supported in overlays.
+- **79 unique reviewed conflicts remain non-publishable** because of missing context/best option/media, malformed choices, version sensitivity, policy dependence, or multiple plausible answers.
+- **17 canonical conflicts remain without a clinical-resolution overlay**.
+- **0 recalledAnswer values overwritten**.
+
+The next CI run must confirm these expected counts; if it differs, the CI audit wins.
 
 ### Duplicate overlay detection
-There are 10 canonical IDs that were accidentally resolution-reviewed twice: Trauma Q10; Research Q7/Q9; Hematology Q50; Behavioral Q10/Q17; Critical Care Q12/Q15/Q17/Q19. These duplicate passes do **not** increase the unique progress count.
+Known duplicate passes remain: Trauma Q10; Research Q7/Q9; Hematology Q50; Behavioral Q10/Q17; Critical Care Q12/Q15/Q17/Q19. Duplicate passes do not increase unique progress.
 
-`part2-nephro-cystic-q46` appears in a resolution overlay but is not a canonical `conflicting` record (its blocker is image/source-answer integrity), so it is reported as overlay-only and does not change the 104/131 counter.
+`part2-nephro-cystic-q46` is overlay-only and is not a canonical `conflicting` record, so it does not advance the counter.
 
-### Triage discrepancy corrected
-The three original conflict-assignment batches enumerate 130 IDs despite claiming 131. The CI audit found the omitted canonical conflict: **`part2-neo-q40` (Neonatology Q40, breast engorgement advice)**. It is now explicitly included in the remaining queue; do not rely on the old `131/131 assigned` statement.
-
-## Exact remaining 27 — use this list, not old batch arithmetic
-### Saudi/policy-sensitive Medical Ethics & Patient Safety — 17
+## Exact remaining 17 — Saudi/policy-sensitive Medical Ethics & Patient Safety
 - `part2-ethics-q06`
 - `part2-ethics-q07`
 - `part2-ethics-q08`
@@ -55,20 +53,11 @@ The three original conflict-assignment batches enumerate 130 IDs despite claimin
 - `part2-ethics-q31`
 - `part2-ethics-q33`
 
-### Clinical/source conflicts — 10
-- `part2-gi-q051-eosinophilic-esophagitis`
-- `part2-id-gp-q37`
-- `part2-id-gp-q38`
-- `part2-id-gp-q40`
-- `part2-id-gp-q43`
-- `part2-id-gp-q45`
-- `part2-id-gramneg-q57`
-- `part2-id-imm-q103`
-- `part2-neo-q40`
-- `part2-trauma-q09`
+## Newly completed non-policy batch 15
+The 10 clinical/source conflicts previously listed as remaining have all received overlays. Six support a clean modern answer and four remain deliberately non-publishable. See `review-queue/conflicting-clinical-resolution-batch15-clinical-10-20260907.json`.
 
 ## Shared execution rules
-- GitHub + the CI unique-ID audit are the shared memory across chats.
+- GitHub + the CI unique-ID audit are shared memory across chats.
 - Before a new conflict batch, refetch this file and ensure the ID is in the exact remaining list.
 - Preserve `recalledAnswer` separately from `verifiedAnswer`.
 - Do not invent missing options, calculations, images, years, stems, or keys.
@@ -77,7 +66,10 @@ The three original conflict-assignment batches enumerate 130 IDs despite claimin
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Resolve the **10 non-policy clinical/source conflicts first** where current evidence permits. Then handle the 17 Saudi/policy-sensitive Ethics/Patient Safety records using current jurisdiction-specific sources. After the unique counter reaches 131/131, move to large `needs_verification` batches.
+Resolve/document the **17 Saudi/policy-sensitive Ethics & Patient Safety records** using current jurisdiction-specific sources. Do not force a verified answer where the retained wording is institution-dependent, legally ambiguous, or lacks a current authoritative Saudi source. After the unique counter reaches 131/131, move to large `needs_verification` batches.
+
+## Parallel Part I stream
+PR #6 (`master-bank/part1-2025-batch01`) is separately importing Part I 2025 and is currently through Q30. Keep PR #5 quality work and PR #6 Part I import logically separate; coordinate through GitHub before overlapping writes.
 
 ## Coordination rule
-If another chat advances PR #5, refetch this file, `MASTER_BANK_PROGRESS.md`, and the latest conflict-resolution coverage artifact before writing. Never advance the counter from batch totals alone.
+If another chat advances PR #5, refetch this file, `MASTER_BANK_PROGRESS.md`, and the latest conflict-resolution coverage artifact before writing. Never advance the counter from raw batch totals.
