@@ -1,6 +1,6 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 10:15 +03:00
+Updated: 2026-09-07 10:25 +03:00
 Active branch: `master-bank/post-merge-audit`
 Active PR: #3 — `Continue PediaRounds post-merge audit`
 Base: `main`
@@ -20,21 +20,22 @@ Base: `main`
 4. Preserve conflicting/outdated source keys until independent verification.
 
 ## Latest synchronized work
-- Early Gastro image linkage now covers **Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29** in addition to later Gastro image-linked questions.
-- **Q5**: recovered the actual contrast-enema image from source page 200 (`p200-x748.jpeg`, SHA-256 `6bf2067646ae077ae5e7f1e06d270821d4a0f06b6ca9f7e2a02a1c4e29653f8f`) and linked it to canonical `part2-gi-q005`.
-- **Q13**: recovered the actual chest radiograph for left-sided congenital diaphragmatic hernia from source page 205 (`p205-x766.jpeg`, SHA-256 `439b7b9fb7aaca79ac1db041ece5feab7002be8c3b9afde0d706b8f924266386`) and linked it to canonical `part2-gi-q013`.
-- **Q8/Q9**: source stems say X-rays were provided, but rendered pages 202–203 contain only explanatory tables/TEF diagrams, not the question radiographs; both are `source_image_missing`.
-- **Q10/Q11** remain `source_image_missing` for the same reason on page 204.
-- **Q14/Q15** mention CDH X-ray findings, but page 206 contains explanatory Bochdalek/Morgagni graphics rather than the question radiograph; both remain `source_image_missing` instead of reusing an unproven image.
-- Private early-Gastro bundle now contains six recovered source images and has SHA-256 `6d75c470486323c655b578389ab9fa7d5beadd0184a499c0474dce9a3611d942`.
-- `master-bank/sources/gastro-early-source-image-review-20260907.json` and `master-bank/sources/question-image-linkage-20260907.json` were updated accordingly.
-- Previously synchronized Gastro image-linked questions remain Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81.
+- Early Gastro image audit was extended through **Q19/Q20**. Both stems explicitly say a picture was provided, but rendered source page 209 contains no corresponding question image. They are now tracked as `source_image_missing`; the explanatory omphalocele/gastroschisis graphic on page 210 was not substituted.
+- Existing early Gastro recovered/linkable images remain **Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29**; Q8–Q11 and Q14–Q15 remain `source_image_missing` where their cited radiographs are absent.
+- Nutrition image recovery has started. **Nutrition Q8** (`part2-nutrition-q008-abetalipoproteinemia-acanthocytes`) has an actual embedded peripheral-smear image on source page 259. The image was extracted directly from the PDF object as `p259-000.jpg` (199×149; SHA-256 `1b394584e1cce65d81490b8754b2e6a120fb38515bfed2c4077f5cf49aaeb4df`).
+- New private Nutrition review bundle: `PediaRounds_nutrition_source_image_review.zip`, SHA-256 `bdf29e800855897a5a51a0d4abf2b8bb7cc3057ecbb3b42a1e037e1f2423abf7`.
+- New metadata/linkage files:
+  - `master-bank/sources/nutrition-source-image-review-20260907.json`
+  - `master-bank/sources/nutrition-question-image-linkage-20260907.json`
+- Nutrition Q8 canonical record path is `master-bank/data/09-gastroenterology-hepatology-nutrition/nutrition-part2-q04-q12.json`.
+- Previously synchronized later Gastro image-linked questions remain Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81.
 - Pulmonary source-image review remains Q6, Q9, Q10, Q12; Pulmonary Q14 source image is absent.
 
 ## Known review gates
-- Gastro Q8–Q11, Q14–Q15: source image referenced but absent from current source page.
+- Gastro Q8–Q11, Q14–Q15, Q19–Q20: source image referenced but absent from current source page.
 - Gastro Q35, Q42, Q44–Q45, Q53, Q56–Q57 and selected later GI items retain source conflicts.
 - Gastro Q73/Q74 remain incomplete recalls despite image recovery.
+- Nutrition Q8 image is recovered but remains `image_needs_review` and publication-gated.
 - Pulmonary Q9/Q10 and Sleep Q15 remain incomplete recalls.
 
 ## Coordination rule
