@@ -22,38 +22,21 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch01-12-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch02-8-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch02-heme-05-20260907.json`
-
-### Resolution batch 1 — 12 reviewed
-- 4 clean modern answers supported by retained stems/options:
-  - Cardiology Q26 = B
-  - Cardiology Q27 = B
-  - Endocrinology Q55 = C under ADA 2026
-  - Hematology Q48 = D
-- 8 others retained as non-publishable because the best modern action is missing, severity/context is insufficient, or the source/options are internally invalid.
-
-### Resolution batch 2 — 8 reviewed
-This pass focused on removing false certainty from items whose retained options cannot safely represent current practice.
-- Nephrology Q7: both FENa <1% and concentrated urine fit prerenal azotemia; invalid single-best-answer.
-- Nephrology Q12: HUS fluid management requires actual volume-status assessment; oliguria + respiratory distress may represent overload, so source key `administer fluid` cannot be promoted.
-- Nephrology Q13: for a second stage-1 BP reading after 1–2 weeks, AAP pathway calls for upper/lower-extremity BP and another office recheck before ABPM; the best next step is absent from retained options.
-- Endocrinology Q28: initial rickets assessment is a panel (Ca/P/ALP/PTH/25-OH-D/renal function), so several options are essential and there is no unique SBA.
-- Critical Care Q12: neonatal shock requires stabilization plus context-directed fluid and prompt antibiotics when sepsis is suspected; none of the retained options cleanly matches current management.
-- Critical Care Q15: pulmonary capillary wedge pressure is not a standard modern 'late sign' of pediatric septic shock; question is malformed/outdated.
-- Critical Care Q17: fibrinogen/FDP do not reliably distinguish DIC from liver failure as a single test; no retained option is safe to verify.
-- Critical Care Q19: lower-risk BRUE supports family education/CPR resources and no home monitoring, but the retained stem lacks risk stratification; no universal single answer can be verified.
-
-### Hematology add-on pass — 5 reviewed
-- Hematology Q17: **resolved to D, paroxysmal nocturnal hemoglobinuria**. Morning dark urine + Coombs-negative intravascular hemolysis fits PNH; modern confirmation is flow cytometry for GPI-anchor protein deficiency.
-- Hematology Q1: modern pattern is most consistent with beta-thalassemia trait/minor, which is absent from the retained options; remains non-publishable.
-- Hematology Q5: `acute CNS crisis` lacks oxygenation/stroke/Hb/transfusion context; oxygen versus simple transfusion cannot be graded safely.
-- Hematology Q20: goat-milk folate deficiency and strict-vegan B12 deficiency are both plausible nutritional causes of megaloblastic anemia; missing context prevents a unique answer.
-- Hematology Q27: CDC supports blood lead testing (venous confirmation) as the diagnostic test; the retained `low urinary porphyrin` option is not the modern best test and the correct choice is absent.
+- `review-queue/conflicting-clinical-resolution-batch03-nephro-06-20260907.json`
 
 ### Aggregate clinical-resolution progress
-- **25 conflicting records reviewed in current-guidance resolution passes.**
-- **5 resolved to clean modern verified answers in the review overlays.**
-- **20 identified as invalid, under-specified, missing the best option, or context-dependent.**
+- **31 conflicting records reviewed in current-guidance resolution passes.**
+- **6 resolved to clean modern verified answers in review overlays.**
+- **25 retained as invalid, under-specified, missing the best option, image-dependent, or context-dependent.**
 - **0 recalledAnswer values overwritten.**
+
+### Newly completed Nephrology/Urology pass — 6 reviewed
+- Nephrology Q33: FSGS + years of steroids does not establish steroid-dependent versus steroid-resistant disease. IPNA management differs by phenotype; no unique modern answer.
+- Nephrology Q38: IgA vasculitis commonly causes hematuria/proteinuria, but renal failure is a minority severe manifestation; retained `most common complication` options are invalid.
+- Nephrology Q47: bilateral kidney masses on X-ray with missing/unreviewed original image cannot verify ARPKD; modern diagnosis relies on characteristic ultrasound findings.
+- Nephrology Q53: Potter sequence can result from bilateral renal dysplasia or obstructive uropathy such as PUV; more than one retained option is plausible without prenatal imaging context.
+- Nephrology Q59: at 12 months, persistent cryptorchidism needs surgical referral/orchiopexy; routine pre-referral ultrasound is not recommended and `urgent exploratory laparotomy` is not the standard generic action. Best modern action is absent from choices.
+- Nephrology Q62: **resolved to A, testicular torsion** for the retained stem because acute pain plus decreased intratesticular Doppler perfusion outweighs the conflicting blue-dot clue; urgent treatment is required.
 
 ## Important retained gates
 - Ethics Q10/Q11: current Saudi/MOH DNR policy and perioperative DNR handling required.
@@ -75,7 +58,7 @@ This pass focused on removing false certainty from items whose retained options 
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Continue **large clinical-resolution passes** through remaining Hematology, Nephrology/Urology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious conflicts. Favor complete stems/options with a truly defensible modern single-best answer; otherwise keep non-publishable and document why. After conflict-resolution passes, advance the `needs_verification` queue.
+Continue large clinical-resolution passes through remaining Hematology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious conflicts, then move to the `needs_verification` queue. Favor complete stems/options with a defensible modern single-best answer; otherwise keep non-publishable and document why.
 
 ## Coordination rule
 If another chat advances PR #5, refetch this file and `MASTER_BANK_PROGRESS.md` before writing and follow the newest GitHub state.
