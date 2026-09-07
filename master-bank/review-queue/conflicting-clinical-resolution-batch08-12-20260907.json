@@ -1,0 +1,139 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch08-12-20260907",
+  "scope": "Next 12 current-guidance conflict-resolution records after 58 prior conflicts were resolution-reviewed. This batch covers Growth and Development, Gastroenterology, Nutrition, Allergy, Toxicology, Ophthalmology, Musculoskeletal, and Behavioral Medicine.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options support a defensible modern single-best answer.",
+    "Do not invent missing options, images, severity details, developmental context, or diagnostic findings.",
+    "If more than one retained option is currently defensible, or the best modern action is absent, keep verifiedAnswer null and the item non-publishable.",
+    "Original source-image review remains a separate publication gate even when a text-based clinical answer can be resolved."
+  ],
+  "items": [
+    {
+      "id": "part2-dev-q02",
+      "modernOutcome": "resolved_to_current_reference_value",
+      "verifiedAnswer": "B",
+      "reason": "Current pediatric anthropometry references describe the upper-to-lower body-segment ratio as approximately 1.7 at birth and normalizing to about 1.0 by 7 years. Among the retained ages, 7 years is therefore the best supported current answer. The older recalled key of 10 years remains preserved as source provenance.",
+      "references": [
+        "NCBI StatPearls Short Stature: upper-to-lower segment ratio normalizes to 1:1 by about 7 years",
+        "Published pediatric body-proportion data showing mean U/L ratio approximately 0.96-0.98 at age 7"
+      ]
+    },
+    {
+      "id": "part2-dev-q06",
+      "modernOutcome": "resolved_among_retained_options",
+      "verifiedAnswer": "B",
+      "reason": "The current CDC developmental milestone framework lists sitting without support as a movement milestone most babies can do by 9 months. Although some developmental texts describe independent sitting earlier and milestone age is not a median achievement age, 9 months is the only defensible retained option and is explicitly supported by the current CDC checklist.",
+      "references": [
+        "CDC Learn the Signs. Act Early. Milestones by 9 Months, 2026: sits without support"
+      ]
+    },
+    {
+      "id": "part2-gi-q071",
+      "modernOutcome": "multiple_correct_associations_invalid_single_best_answer",
+      "verifiedAnswer": null,
+      "reason": "The question asks only which condition is associated with intussusception. Recent viral illness/adenovirus is a recognized association, IgA vasculitis (HSP) can be complicated by intussusception, and Meckel diverticulum can act as a pathologic lead point. More than one retained choice is therefore defensible, so the item cannot be modern-graded as a single-best-answer question without rewriting the stem.",
+      "references": [
+        "NCBI StatPearls Child Intussusception: viral infections and Meckel diverticulum are recognized causes/associations",
+        "Pediatric IgA vasculitis literature: intussusception is a recognized gastrointestinal complication"
+      ]
+    },
+    {
+      "id": "part2-nutrition-q014-symmetric-growth-fall",
+      "modernOutcome": "growth_pattern_under_specified",
+      "verifiedAnswer": null,
+      "reason": "Current AAP/NASPGHAN faltering-weight guidance defines concern using weight-for-length/BMI, weight-gain velocity, and meaningful z-score decline, then uses history and examination to direct evaluation. A shift from about the 10th to about the 5th percentile in weight, length, and head circumference alone does not distinguish nutritional deficiency, malabsorption, chromosomal disease, or normal small growth. The retained data do not support a unique diagnosis.",
+      "references": [
+        "AAP/NASPGHAN 2026 Clinical Practice Guideline for Diagnosis and Management of Faltering Weight"
+      ]
+    },
+    {
+      "id": "part2-nutrition-q015-growth-chart-intestinal-biopsy",
+      "modernOutcome": "routine_endoscopy_not_supported_best_initial_action_absent",
+      "verifiedAnswer": null,
+      "reason": "The retained stem provides low height and weight percentiles but no focal gastrointestinal features or persistent-treatment failure that would justify immediate intestinal biopsy. The 2026 AAP/NASPGHAN faltering-weight guideline recommends against endoscopy as part of the initial routine workup and reserves endoscopy with biopsy for persistent faltering weight or conditions that cannot be diagnosed without it. The appropriate initial evaluation is absent from the retained choices.",
+      "references": [
+        "AAP/NASPGHAN 2026 Faltering Weight guideline, Key Action Statement 3A and 3B"
+      ]
+    },
+    {
+      "id": "PR-AI-ALL-012",
+      "modernOutcome": "multiple_acceptable_second_generation_antihistamines",
+      "verifiedAnswer": null,
+      "reason": "Loratadine and cetirizine are both second-generation oral antihistamines and both are reasonable treatments for allergic rhinitis. ARIA-EAACI 2024-2025 specifically states that evidence in preschool- and school-aged children is insufficient to recommend one individual second-generation oral antihistamine over another; selection should consider efficacy, sedation, availability, affordability, and patient preferences. Thus A versus C is not a valid unique answer from the retained stem.",
+      "references": [
+        "ARIA-EAACI Guidelines 2024-2025 Revision Part II: oral and ocular treatments"
+      ]
+    },
+    {
+      "id": "part2-substance-q08",
+      "modernOutcome": "best_toxidrome_diagnosis_absent_from_options",
+      "verifiedAnswer": null,
+      "reason": "Miosis with bradypnea/respiratory depression and bradycardia is much more consistent with opioid toxicity than cocaine, amphetamine, or LSD. Current toxicology references describe sympathomimetics such as cocaine and amphetamine with mydriasis, tachycardia, hypertension and agitation. Because opioid exposure is absent from the retained choices, no option should be forced.",
+      "references": [
+        "Merck Manual Professional 2026: Opioid Toxicity and Withdrawal",
+        "Merck Manual Professional 2026: Common Toxic Syndromes"
+      ]
+    },
+    {
+      "id": "part2-ophthalmology-q03",
+      "modernOutcome": "urgent_ophthalmology_action_absent_from_options",
+      "verifiedAnswer": null,
+      "reason": "Unilateral leukocoria in a young child requires prompt ophthalmic evaluation because the differential includes retinoblastoma, cataract, retinal disease, infection and other serious causes. Neither CT nor TORCH testing is the universal first action from this retained stem; urgent ophthalmology examination is the key next step and is absent from the choices. The recovered original source image also remains under separate rights/clinical review.",
+      "references": [
+        "American Association for Pediatric Ophthalmology and Strabismus: Leukocoria, updated 2025"
+      ]
+    },
+    {
+      "id": "part2-ophthalmology-q08",
+      "modernOutcome": "resolved_among_retained_options",
+      "verifiedAnswer": "A",
+      "reason": "Rhythmic nystagmus beginning at four months with an otherwise normal eye examination and normal MRI is compatible with infantile nystagmus. AAPOS notes that infantile nystagmus usually begins between about 6 weeks and a few months of age and can vary with gaze direction. Neuroblastoma-associated opsoclonus-myoclonus is rare, usually presents with progressive multidirectional chaotic eye movements plus other neurologic features, and is not supported by this retained stem. Therefore A is the best retained answer.",
+      "references": [
+        "AAPOS Nystagmus guidance",
+        "NCI Neuroblastoma Treatment PDQ: opsoclonus/myoclonus syndrome"
+      ]
+    },
+    {
+      "id": "part2-ophthalmology-q10",
+      "modernOutcome": "internally_malformed_duplicate_entity_options",
+      "verifiedAnswer": null,
+      "reason": "The retained option set conflates chalazion with hordeolum while another option separately labels stye. AAPOS distinguishes a chalazion, caused by a blocked meibomian gland, from a stye/hordeolum, which is an infected eyelid gland. Because the answer choices collapse distinct diagnoses into overlapping labels, the item cannot be graded reliably without reconstructing the original option set and reviewing the source image.",
+      "references": [
+        "AAPOS Chalazion guidance: chalazion and stye/hordeolum are distinct entities"
+      ]
+    },
+    {
+      "id": "part2-msk-q16",
+      "modernOutcome": "occult_fracture_management_missing_from_choices",
+      "verifiedAnswer": null,
+      "reason": "A positive elbow fat-pad sign after trauma can represent an occult fracture even when no fracture line is visible. Meta-analysis estimates an occult-fracture rate around 45%. Typical management includes treating a concerning fat-pad sign as an occult/nondisplaced fracture with immobilization and appropriate follow-up; urgent orthopedic referral is not universally required in an otherwise uncomplicated case, while reassurance/no follow-up is also inadequate. The best modern management is absent from the retained options, and the original radiograph remains a publication blocker.",
+      "references": [
+        "JBJS Reviews meta-analysis of pediatric elbow fat-pad sign and occult fractures",
+        "Pediatric occult elbow-fracture management literature supporting immobilization and follow-up"
+      ]
+    },
+    {
+      "id": "part2-beh-q21",
+      "modernOutcome": "severity_and_developmental_context_required",
+      "verifiedAnswer": null,
+      "reason": "Head banging can be a self-limited preschool behavior, but frequent or injurious self-directed behavior also warrants assessment for developmental, sensory, emotional, pain, and safety concerns. AAP guidance supports reassurance/behavioral coaching for benign stereotypic behavior and specialty referral when behavior is severe, injurious, impairing, persistent despite primary-care intervention, or associated with developmental concerns. The retained stem does not state injury, impairment, developmental status, or prior interventions, so time-out, referral, and teaching an alternative expression strategy cannot be safely reduced to one universal answer.",
+      "references": [
+        "AAP Pediatric Care Online: Self-Stimulating Behaviors",
+        "AAP Pediatric Care Online: Disruptive Behavior and Aggression",
+        "AAP Pediatric Care Online: Emotional or Behavioral Problems in Children Younger Than 5 Years"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "resolvedToModernVerifiedAnswer": 3,
+    "retainedNonPublishable": 9,
+    "recalledAnswersOverwritten": 0,
+    "aggregateAfterThisBatch": {
+      "resolutionReviewed": 70,
+      "cleanModernAnswersInOverlays": 19,
+      "retainedInvalidUnderSpecifiedOrContextDependent": 51
+    }
+  }
+}
