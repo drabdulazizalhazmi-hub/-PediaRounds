@@ -11,7 +11,7 @@
 - PR #3: closed as superseded by PR #4
 - Current working branch: `master-bank/review-images-verification`
 - Current pull request: **PR #5 — Review images, incomplete recalls, and clinical verification**
-- Phase: **large-batch sparse-recall cleanup / image recovery / clinical verification**
+- Phase: **image recovery / source-supported incomplete-recall cleanup / clinical verification**
 
 ## Source coverage milestone
 
@@ -76,15 +76,7 @@ Image validation reported **249 image-dependent questions** and **0 public repos
 - 9 image/media-dependent items
 - Key retained gates: Neonatology Q7 zero-option image identification; Immunology Q4 wording conflict; Trauma Q37 antidote note; Critical Care Q34 image/context gate.
 
-### Aggregate sparse-recall review progress
-
-- **129 / 167 sparse recalls** have now received a direct source re-read and cross-chat reservation.
-- Remaining sparse recalls: **38**.
-- No missing distractors were reconstructed.
-- No `verifiedAnswer` was assigned solely from the recall source.
-
-## Remaining sparse-recall groups
-
+**Final Batch 38** — `review-queue/source-sparse-final-38-index-20260907.json`
 - Pulmonary/Sleep: 4
 - Allergy: 3
 - Oncology: 3
@@ -98,8 +90,15 @@ Image validation reported **249 image-dependent questions** and **0 public repos
 - Ophthalmology: 1
 - ENT: 1
 - Research, Biostatistics, and Communication Skills: 5
+- Key retained gates include Allergy Q27 source nuance (exercise challenge preferred if offered), Dermatology Q12 IV-vs-oral antiviral source conflict, and Research Q10/Q12 missing calculation inputs.
 
-Total remaining = **38**.
+### Aggregate sparse-recall review progress
+
+- **167 / 167 sparse recalls** have now received a direct source re-read and cross-chat reservation.
+- Remaining sparse recalls awaiting direct source re-read: **0**.
+- No missing distractors were reconstructed.
+- No missing calculations were invented.
+- No `verifiedAnswer` was assigned solely from the recall source.
 
 ## Coordination protocol — mandatory
 
@@ -116,11 +115,11 @@ Total remaining = **38**.
 
 ## Highest-priority next work
 
-1. Finish the **remaining 38 sparse recalls in one large batch** if source quality permits.
-2. Then reconcile image/media assets for the now-reviewed sparse set, using original source assets only.
-3. Resolve `incomplete_recall` only where another permitted source/original wording supplies missing detail; otherwise preserve incompleteness.
-4. Review `conflicting` / `outdated` records after source integrity is stable.
-5. Advance `needs_verification` in controlled clinical batches using UpToDate → Nelson → current specialty guideline.
+1. Reconcile image/media assets for the fully reviewed 167-question sparse set, prioritizing exact original assets already identified in source manifests/bundles.
+2. Resolve `incomplete_recall` only where another permitted source/original wording supplies missing detail; otherwise preserve incompleteness.
+3. Review `conflicting` / `outdated` records in large controlled batches after source integrity is stable.
+4. Advance `needs_verification` in controlled clinical batches using UpToDate → Nelson → current specialty guideline.
+5. Keep the same cross-chat handoff and do not restart completed sparse-review batches.
 
 ## Style contract between conversations
 
@@ -130,4 +129,4 @@ Total remaining = **38**.
 
 ---
 
-**Handoff rule:** the numbered source bank is structurally covered. From here, optimize quality at scale—not by repeating completed sections.
+**Handoff rule:** all 167 source-sparse recalls have now been re-read directly from the source. From here, optimize image readiness, unresolved recall quality, and clinical verification at scale.
