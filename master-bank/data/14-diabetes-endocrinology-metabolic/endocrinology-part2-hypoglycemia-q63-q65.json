@@ -1,5 +1,175 @@
 [
-{"id":"part2-endo-hypo-q63","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Congenital hyperinsulinism","yearTags":[2025],"examPart":"Part II","stemEn":"A newborn has persistent hypoglycemia despite increasing dextrose delivery. Critical labs show inappropriately high insulin and absent ketones. What is the most likely mechanism?","options":[{"key":"A","text":"Hyperinsulinemic hypoglycemia"}],"recalledAnswer":"A","verifiedAnswer":"A","answerConfidence":"high","explanationAr":"Insulin المرتفع أثناء hypoglycemia مع suppression للketogenesis يدل على hyperinsulinemic hypoglycemia. المولود قد يحتاج high glucose infusion rate وقد يحتاج diazoxide أو تدخلات أخرى حسب السبب.","reasoningEn":"Inappropriately detectable insulin with suppressed ketones during hypoglycemia is characteristic of hyperinsulinism.","incorrectOptionsAr":"لا توجد خيارات أخرى في الـrecall.","keywords":["neonatal hypoglycemia","high insulin","absent ketones"],"clinicalPearl":"Interpret insulin together with beta-hydroxybutyrate, free fatty acids, glucose response to glucagon and glucose infusion requirement.","image":null,"tts":{"enabled":true,"language":"en","text":"A newborn has persistent hypoglycemia despite increasing dextrose delivery. Critical labs show inappropriately high insulin and absent ketones. What is the most likely mechanism?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2025,"part":"Part II","page":193,"questionNumber":"Endocrinology Q63"}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":null},"duplicateOf":null,"reviewStatus":"needs_verification"},
-{"id":"part2-endo-hypo-q64","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Factitious hypoglycemia","yearTags":[2024,2019],"examPart":"Part II","stemEn":"A 2-month-old infant has hypoglycemia with high insulin but undetectable C-peptide. What is the most likely cause?","options":[{"key":"A","text":"Beckwith-Wiedemann syndrome"},{"key":"B","text":"Exogenous insulin exposure / factitious hypoglycemia"},{"key":"C","text":"Endogenous congenital hyperinsulinism"}],"recalledAnswer":"B","verifiedAnswer":"B","answerConfidence":"high","explanationAr":"Exogenous insulin يحتوي insulin بدون C-peptide، لذلك high insulin + suppressed C-peptide أثناء hypoglycemia يشير إلى external insulin administration. في infant يجب التفكير أيضًا في factitious disorder imposed on another وحماية الطفل.","reasoningEn":"Endogenous insulin is secreted with C-peptide; high insulin with absent C-peptide points to exogenous insulin.","incorrectOptionsAr":"BWS/congenital hyperinsulinism يرفعان endogenous insulin وبالتالي يكون C-peptide detectable.","keywords":["high insulin","undetectable C-peptide","factitious hypoglycemia"],"clinicalPearl":"Also test for insulin secretagogues when the biochemical pattern is unclear.","image":null,"tts":{"enabled":true,"language":"en","text":"A 2-month-old infant has hypoglycemia with high insulin but undetectable C-peptide. What is the most likely cause?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2024,"part":"Part II","page":194,"questionNumber":"Endocrinology Q64"}],"verification":{"upToDate":"supports","nelson":"supports","guideline":"not_checked","referenceNotes":"Source quotes UpToDate/Nelson."},"duplicateOf":null,"reviewStatus":"needs_verification"},
-{"id":"part2-endo-hypo-q65","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Beckwith-Wiedemann syndrome","yearTags":[2018],"examPart":"Part II","stemEn":"A child with classic Beckwith-Wiedemann syndrome undergoes abdominal ultrasound. Which renal finding may be associated?","options":[{"key":"A","text":"Nephromegaly / enlarged kidneys with renal abnormalities"},{"key":"B","text":"Isolated dysplastic kidney only"},{"key":"C","text":"Loss of corticomedullary differentiation as a defining feature"}],"recalledAnswer":"A","verifiedAnswer":"A","answerConfidence":"moderate","explanationAr":"Beckwith-Wiedemann syndrome قد يرتبط بـnephromegaly، renal medullary abnormalities, cysts, nephrocalcinosis وغيرها. كما يحتاج tumor surveillance حسب guideline.","reasoningEn":"Renal enlargement and several structural renal abnormalities are recognized in Beckwith-Wiedemann syndrome.","incorrectOptionsAr":"الخيارات الأخرى ليست الارتباط الأشيع/الأوضح في المصدر.","keywords":["Beckwith-Wiedemann","nephromegaly","renal ultrasound"],"clinicalPearl":"BWS requires age-dependent tumor surveillance for Wilms tumor and hepatoblastoma according to current protocols.","image":null,"tts":{"enabled":true,"language":"en","text":"A child with classic Beckwith-Wiedemann syndrome undergoes abdominal ultrasound. Which renal finding may be associated?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2018,"part":"Part II","page":194,"questionNumber":"Endocrinology Q65"}],"verification":{"upToDate":"supports","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source quotes UpToDate."},"duplicateOf":null,"reviewStatus":"needs_verification"}
+  {
+    "id": "part2-endo-hypo-q63",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Congenital hyperinsulinism",
+    "yearTags": [
+      2025
+    ],
+    "examPart": "Part II",
+    "stemEn": "A newborn has persistent hypoglycemia despite increasing dextrose delivery. Critical labs show inappropriately high insulin and absent ketones. What is the most likely mechanism?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hyperinsulinemic hypoglycemia"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Insulin المرتفع أثناء hypoglycemia مع suppression للketogenesis يدل على hyperinsulinemic hypoglycemia. المولود قد يحتاج high glucose infusion rate وقد يحتاج diazoxide أو تدخلات أخرى حسب السبب.",
+    "reasoningEn": "Inappropriately detectable insulin with suppressed ketones during hypoglycemia is characteristic of hyperinsulinism.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "neonatal hypoglycemia",
+      "high insulin",
+      "absent ketones"
+    ],
+    "clinicalPearl": "Interpret insulin together with beta-hydroxybutyrate, free fatty acids, glucose response to glucagon and glucose infusion requirement.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A newborn has persistent hypoglycemia despite increasing dextrose delivery. Critical labs show inappropriately high insulin and absent ketones. What is the most likely mechanism?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 193,
+        "questionNumber": "Endocrinology Q63"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": null
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-hypo-q64",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Factitious hypoglycemia",
+    "yearTags": [
+      2024,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 2-month-old infant has hypoglycemia with high insulin but undetectable C-peptide. What is the most likely cause?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Beckwith-Wiedemann syndrome"
+      },
+      {
+        "key": "B",
+        "text": "Exogenous insulin exposure / factitious hypoglycemia"
+      },
+      {
+        "key": "C",
+        "text": "Endogenous congenital hyperinsulinism"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "high",
+    "explanationAr": "Exogenous insulin يحتوي insulin بدون C-peptide، لذلك high insulin + suppressed C-peptide أثناء hypoglycemia يشير إلى external insulin administration. في infant يجب التفكير أيضًا في factitious disorder imposed on another وحماية الطفل.",
+    "reasoningEn": "Endogenous insulin is secreted with C-peptide; high insulin with absent C-peptide points to exogenous insulin.",
+    "incorrectOptionsAr": "BWS/congenital hyperinsulinism يرفعان endogenous insulin وبالتالي يكون C-peptide detectable.",
+    "keywords": [
+      "high insulin",
+      "undetectable C-peptide",
+      "factitious hypoglycemia"
+    ],
+    "clinicalPearl": "Also test for insulin secretagogues when the biochemical pattern is unclear.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 2-month-old infant has hypoglycemia with high insulin but undetectable C-peptide. What is the most likely cause?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 194,
+        "questionNumber": "Endocrinology Q64"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "supports",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate/Nelson."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-hypo-q65",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Beckwith-Wiedemann syndrome",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with classic Beckwith-Wiedemann syndrome undergoes abdominal ultrasound. Which renal finding may be associated?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Nephromegaly / enlarged kidneys with renal abnormalities"
+      },
+      {
+        "key": "B",
+        "text": "Isolated dysplastic kidney only"
+      },
+      {
+        "key": "C",
+        "text": "Loss of corticomedullary differentiation as a defining feature"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "moderate",
+    "explanationAr": "Beckwith-Wiedemann syndrome قد يرتبط بـnephromegaly، renal medullary abnormalities, cysts, nephrocalcinosis وغيرها. كما يحتاج tumor surveillance حسب guideline.",
+    "reasoningEn": "Renal enlargement and several structural renal abnormalities are recognized in Beckwith-Wiedemann syndrome.",
+    "incorrectOptionsAr": "الخيارات الأخرى ليست الارتباط الأشيع/الأوضح في المصدر.",
+    "keywords": [
+      "Beckwith-Wiedemann",
+      "nephromegaly",
+      "renal ultrasound"
+    ],
+    "clinicalPearl": "BWS requires age-dependent tumor surveillance for Wilms tumor and hepatoblastoma according to current protocols.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with classic Beckwith-Wiedemann syndrome undergoes abdominal ultrasound. Which renal finding may be associated?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2018,
+        "part": "Part II",
+        "page": 194,
+        "questionNumber": "Endocrinology Q65"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  }
 ]

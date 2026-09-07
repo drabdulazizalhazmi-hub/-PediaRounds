@@ -1,13 +1,716 @@
 [
-{"id":"part2-endo-dm-q52","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Metabolic syndrome and obesity","yearTags":[2025,2022,2021],"examPart":"Part II","stemEn":"An obese 10-year-old has high triglycerides, low HDL, blood pressure at the 95th percentile and acanthosis nigricans, but normal fasting glucose. What is the best initial management?","options":[{"key":"A","text":"Intensive lifestyle and health-behavior modification"},{"key":"B","text":"Bariatric surgery as first-line treatment"},{"key":"C","text":"Start insulin"},{"key":"D","text":"Start aspirin"}],"recalledAnswer":"A","verifiedAnswer":"A","answerConfidence":"high","explanationAr":"الطفل لديه obesity مع insulin-resistance/metabolic risk factors، لكن لا يوجد دليل على diabetes requiring insulin. البداية تكون structured lifestyle intervention تشمل nutrition, physical activity, sleep والسلوك الأسري.","reasoningEn":"Lifestyle treatment is foundational therapy for pediatric obesity and related metabolic risk factors.","incorrectOptionsAr":"Bariatric surgery لحالات severe obesity مختارة بعد تقييم؛ insulin لا يُعطى بدون diabetes indication؛ aspirin ليس علاج metabolic syndrome.","keywords":["obesity","acanthosis nigricans","metabolic syndrome","lifestyle"],"clinicalPearl":"Screen obesity-related comorbidities rather than treating BMI alone.","image":{"requiredForQuestion":true,"sourceRef":"source page 186 acanthosis image","assetPath":null,"captionAr":"صورة acanthosis الأصلية مطلوبة إذا كان التعرف البصري جزءًا من السؤال.","captionEn":"Original acanthosis image required if visually diagnostic.","status":"missing"},"tts":{"enabled":true,"language":"en","text":"An obese 10-year-old has high triglycerides, low HDL, blood pressure at the 95th percentile and acanthosis nigricans, but normal fasting glucose. What is the best initial management?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2025,"part":"Part II","page":186,"questionNumber":"Endocrinology Q52"}],"verification":{"upToDate":"supports","nelson":"not_checked","guideline":"supports","referenceNotes":"Source cites UpToDate/AAP obesity guidance."},"duplicateOf":null,"reviewStatus":"image_missing"},
-{"id":"part2-endo-dm-q53","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Type 2 diabetes screening","yearTags":[2025],"examPart":"Part II","stemEn":"An obese child has acanthosis nigricans. Which test can be used to screen for type 2 diabetes?","options":[{"key":"A","text":"IGF-1"},{"key":"B","text":"Hemoglobin A1c"},{"key":"C","text":"Cortisol"}],"recalledAnswer":"B","verifiedAnswer":"B","answerConfidence":"high","explanationAr":"Acanthosis nigricans علامة insulin resistance. Screening for type 2 diabetes يمكن أن يتم بـHbA1c أو fasting glucose أو OGTT حسب guideline والسياق.","reasoningEn":"HbA1c is an accepted screening test for dysglycemia/type 2 diabetes in at-risk youth.","incorrectOptionsAr":"IGF-1 لتقييم GH axis؛ cortisol لا يُستخدم كـscreening test للـT2DM.","keywords":["acanthosis nigricans","HbA1c","type 2 diabetes screening"],"clinicalPearl":"High-risk youth may need periodic repeat screening even if the first test is normal.","image":{"requiredForQuestion":true,"sourceRef":"source page 187 acanthosis image","assetPath":null,"captionAr":"الصورة الأصلية مطلوبة.","captionEn":"Original image required.","status":"missing"},"tts":{"enabled":true,"language":"en","text":"An obese child has acanthosis nigricans. Which test can be used to screen for type 2 diabetes?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2025,"part":"Part II","page":187,"questionNumber":"Endocrinology Q53"}],"verification":{"upToDate":"supports","nelson":"not_checked","guideline":"supports","referenceNotes":"Source maps to PREP and UpToDate principles."},"duplicateOf":"part2-endo-dm-q52","reviewStatus":"image_missing"},
-{"id":"part2-endo-dm-q54","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Type 2 diabetes","yearTags":[2018],"examPart":"Part II","stemEn":"An obese 10-year-old with polyuria, polydipsia, family history of type 2 diabetes and acanthosis nigricans has a bedside glucose of 500 mg/dL. Which diabetes type is most likely?","options":[{"key":"A","text":"Type 1 diabetes"},{"key":"B","text":"Type 2 diabetes"},{"key":"C","text":"Metabolic syndrome only"}],"recalledAnswer":"B","verifiedAnswer":"B","answerConfidence":"moderate","explanationAr":"Obesity + acanthosis + strong family history تجعل T2DM مرجحًا، لكن severe hyperglycemia لا يستبعد T1DM. في الممارسة يجب تقييم ketosis/DKA وautoantibodies/C-peptide حسب الحالة وعدم التأخر بالعلاج.","reasoningEn":"The phenotype strongly suggests type 2 diabetes, but classification should be confirmed because obese children can still have type 1 diabetes.","incorrectOptionsAr":"Metabolic syndrome وحده لا يفسر glucose 500؛ T1DM يبقى differential مهمًا حتى يكتمل التقييم.","keywords":["obesity","acanthosis","glucose 500","T2DM"],"clinicalPearl":"Treat metabolic decompensation first; classify diabetes after stabilization if necessary.","image":null,"tts":{"enabled":true,"language":"en","text":"An obese 10-year-old with polyuria, polydipsia, family history of type 2 diabetes and acanthosis nigricans has a bedside glucose of 500 milligrams per deciliter. Which diabetes type is most likely?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2018,"part":"Part II","page":187,"questionNumber":"Endocrinology Q54"}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Needs phenotype/classification caveat in final UI."},"duplicateOf":null,"reviewStatus":"needs_verification"},
-{"id":"part2-endo-dm-q55","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Prediabetes","yearTags":[2017],"examPart":"Part II","stemEn":"An obese 11-year-old has fasting glucose 100 mg/dL and a 2-hour OGTT glucose of 160 mg/dL. How should this be classified?","options":[{"key":"A","text":"Impaired fasting glucose only"},{"key":"B","text":"Impaired glucose tolerance"},{"key":"C","text":"Both impaired fasting and post-load glucose"},{"key":"D","text":"Type 2 diabetes"}],"recalledAnswer":"C","verifiedAnswer":null,"answerConfidence":"low","explanationAr":"2-hour OGTT 160 mg/dL يحقق impaired glucose tolerance. لكن fasting glucose 100 mg/dL يعتمد على definition المستخدمة: ADA تعتبر 100–125 impaired fasting glucose، بينما بعض pediatric criteria تاريخيًا استخدمت 110. لذلك مفتاح C يحتاج تحديد guideline.","reasoningEn":"The 2-hour value clearly indicates impaired glucose tolerance; whether fasting 100 mg/dL qualifies as IFG depends on the diagnostic standard used.","incorrectOptionsAr":"Type 2 diabetes يتطلب fasting ≥126 أو 2-hour ≥200 أو HbA1c ≥6.5% أو random ≥200 مع أعراض؛ الخيار B قد يكون الأدق تحت بعض المعايير.","keywords":["OGTT 160","fasting 100","IGT","IFG guideline conflict"],"clinicalPearl":"Always state the diagnostic standard when classifying prediabetes in adolescents.","image":null,"tts":{"enabled":true,"language":"en","text":"An obese 11-year-old has fasting glucose 100 milligrams per deciliter and a 2-hour oral glucose tolerance test value of 160. How should this be classified?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2017,"part":"Part II","page":188,"questionNumber":"Endocrinology Q55","notes":"Source key C assumes fasting 100 qualifies as IFG."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"conflicts","referenceNotes":"Verify against current ISPAD/ADA thresholds before publish."},"duplicateOf":null,"reviewStatus":"conflicting"},
-{"id":"part2-endo-dm-q56","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"HbA1c interpretation","yearTags":[2019],"examPart":"Part II","stemEn":"In a child with diabetes, HbA1c mainly reflects average glycemia over approximately what period?","options":[{"key":"A","text":"1 week"},{"key":"B","text":"1 month"},{"key":"C","text":"2 to 3 months"},{"key":"D","text":"6 months"}],"recalledAnswer":"C","verifiedAnswer":"C","answerConfidence":"high","explanationAr":"HbA1c يعكس average glucose خلال نحو 2–3 أشهر، مع وزن أكبر نسبيًا للأسابيع الأخيرة.","reasoningEn":"Because erythrocytes circulate for about 120 days, HbA1c integrates glycemia over the preceding 2–3 months.","incorrectOptionsAr":"أسبوع أو شهر قصير جدًا؛ 6 أشهر أطول من فترة الانعكاس المعتادة.","keywords":["HbA1c","2-3 months"],"clinicalPearl":"Conditions altering red-cell lifespan can distort HbA1c.","image":null,"tts":{"enabled":true,"language":"en","text":"In a child with diabetes, HbA1c mainly reflects average glycemia over approximately what period?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2019,"part":"Part II","page":189,"questionNumber":"Endocrinology Q56"}],"verification":{"upToDate":"supports","nelson":"supports","guideline":"not_checked","referenceNotes":"Source cites UpToDate/Nelson."},"duplicateOf":null,"reviewStatus":"needs_verification"},
-{"id":"part2-endo-dm-q57","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"DKA management","yearTags":[2019],"examPart":"Part II","stemEn":"A child with severe DKA has already begun initial fluid resuscitation. What insulin regimen is appropriate next?","options":[{"key":"A","text":"Continuous IV regular insulin around 0.05–0.1 units/kg/hour according to protocol"},{"key":"B","text":"Immediate intubation solely because DKA is severe"}],"recalledAnswer":"A","verifiedAnswer":"A","answerConfidence":"high","explanationAr":"بعد بدء fluids، يُستخدم continuous IV regular insulin بدون bolus عادة. الجرعة الشائعة 0.05–0.1 U/kg/h حسب العمر والبروتوكول. Intubation ليست routine وتُجنب إن أمكن بسبب مخاطرها في severe DKA.","reasoningEn":"Continuous IV insulin is standard after initial fluid therapy in pediatric DKA.","incorrectOptionsAr":"Intubation فقط عند respiratory failure/airway indication وليس بسبب severity label وحدها.","keywords":["DKA","IV insulin","0.05-0.1 U/kg/h"],"clinicalPearl":"Start potassium replacement according to serum potassium and urine output; never give an insulin bolus routinely in pediatric DKA.","image":null,"tts":{"enabled":true,"language":"en","text":"A child with severe diabetic ketoacidosis has already begun initial fluid resuscitation. What insulin regimen is appropriate next?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2019,"part":"Part II","page":189,"questionNumber":"Endocrinology Q57"}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"supports","referenceNotes":"Source cites ISPAD 2022."},"duplicateOf":null,"reviewStatus":"needs_verification"},
-{"id":"part2-endo-dm-q58","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"DKA shock","yearTags":[2024],"examPart":"Part II","stemEn":"An 8-year-old with likely DKA is hypotensive at 80/50 mmHg with cold extremities and clear dehydration. What is the most appropriate immediate fluid step?","options":[{"key":"A","text":"10 mL/kg isotonic saline"},{"key":"B","text":"20 mL/kg isotonic saline for shock, reassessing closely"},{"key":"C","text":"Start insulin before fluids"},{"key":"D","text":"Give bicarbonate bolus"}],"recalledAnswer":"B","verifiedAnswer":"B","answerConfidence":"moderate","explanationAr":"الطفل هنا في shock، لذا يحتاج prompt isotonic fluid bolus مع reassessment. حجم bolus قد يختلف حسب guideline وشدة shock، وغالبًا 10–20 mL/kg. بما أن 20 mL/kg أحد الخيارات ومع hypotension/cold extremities فهو معقول، لكن يجب اتباع current DKA protocol.","reasoningEn":"Shock in DKA requires prompt isotonic volume resuscitation before insulin; bolus volume is titrated to perfusion and guideline recommendations.","incorrectOptionsAr":"Insulin قبل volume resuscitation غير صحيح؛ bicarbonate لا يُستخدم روتينيًا.","keywords":["DKA","shock","isotonic bolus"],"clinicalPearl":"Use smaller repeated boluses with frequent reassessment when cardiac or renal compromise is a concern.","image":null,"tts":{"enabled":true,"language":"en","text":"An 8-year-old with likely diabetic ketoacidosis is hypotensive at 80 over 50 with cold extremities and clear dehydration. What is the most appropriate immediate fluid step?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2024,"part":"Part II","page":190,"questionNumber":"Endocrinology Q58"}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"supports","referenceNotes":"Check current ISPAD fluid wording before publication."},"duplicateOf":null,"reviewStatus":"needs_verification"},
-{"id":"part2-endo-dm-q59","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"DKA hypoglycemia during treatment","yearTags":[2025,2024,2021],"examPart":"Part II","stemEn":"During DKA treatment, a child's glucose falls to about 70 mg/dL while ketoacidosis is still being treated. What should be done?","options":[{"key":"A","text":"Give oral juice and stop IV therapy"},{"key":"B","text":"Reduce insulin if necessary while maintaining enough insulin to clear ketones, and increase dextrose per protocol"},{"key":"C","text":"Increase dextrose concentration only and ignore insulin sensitivity"},{"key":"D","text":"Increase total fluid rate"}],"recalledAnswer":"B","verifiedAnswer":"B","answerConfidence":"moderate","explanationAr":"في DKA لا نوقف insulin لمجرد انخفاض glucose إذا ketones/acidosis مستمرة. نزيد dextrose، وقد نخفض insulin إلى نحو 0.05 U/kg/h إذا needed لمنع hypoglycemia مع استمرار clearance للketones. إذا hypoglycemia حقيقية قد يلزم dextrose bolus حسب protocol.","reasoningEn":"Insulin must continue to suppress ketogenesis; dextrose is increased and insulin may be reduced if glucose falls too low.","incorrectOptionsAr":"Oral juice غير كافٍ في PICU DKA؛ زيادة fluid rate ليست الحل؛ dextrose alone قد لا يكفي إذا child شديد الحساسية للinsulin.","keywords":["DKA","glucose 70","dextrose","reduce insulin"],"clinicalPearl":"Treat the ketoacidosis, not just the glucose number.","image":null,"tts":{"enabled":true,"language":"en","text":"During diabetic ketoacidosis treatment, a child's glucose falls to about 70 milligrams per deciliter while ketoacidosis is still being treated. What should be done?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2025,"part":"Part II","page":191,"questionNumber":"Endocrinology Q59","notes":"Source also notes D10 bolus/temporary hold for true hypoglycemia per local MOH protocol."}],"verification":{"upToDate":"supports","nelson":"not_checked","guideline":"supports","referenceNotes":"Exact response should follow local/current pediatric DKA protocol."},"duplicateOf":null,"reviewStatus":"needs_verification"},
-{"id":"part2-endo-dm-q60","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"DKA potassium","yearTags":[2025,2023,2017],"examPart":"Part II","stemEn":"Six hours into DKA treatment with insulin and fluids, a child develops bradycardia and cardiac arrest. Initial potassium was normal, and the ECG now shows hypokalemic changes. What is the most likely cause?","options":[{"key":"A","text":"Cerebral edema"},{"key":"B","text":"Hypokalemia"},{"key":"C","text":"Hyperkalemia"},{"key":"D","text":"Acidosis-related arrhythmia"}],"recalledAnswer":"B","verifiedAnswer":"B","answerConfidence":"high","explanationAr":"DKA يسبب total-body potassium deficit حتى لو serum K طبيعي بالبداية. Insulin وتصحيح acidosis يدفعان K داخل الخلايا، لذلك قد يحدث severe hypokalemia إذا لم يُعوض بشكل مناسب.","reasoningEn":"Insulin-driven intracellular potassium shift can unmask profound total-body potassium depletion during DKA treatment.","incorrectOptionsAr":"ECG hypokalemia يوجه مباشرةً بعيدًا عن cerebral edema أو hyperkalemia.","keywords":["DKA","hypokalemia","cardiac arrest","insulin shift"],"clinicalPearl":"Potassium replacement is required in nearly all DKA patients once safe and indicated by serum level/urine output.","image":{"requiredForQuestion":true,"sourceRef":"source page 191 ECG","assetPath":null,"captionAr":"ECG الأصلي مطلوب.","captionEn":"Original ECG required.","status":"missing"},"tts":{"enabled":true,"language":"en","text":"Six hours into diabetic ketoacidosis treatment with insulin and fluids, a child develops bradycardia and cardiac arrest. Initial potassium was normal, and the ECG now shows hypokalemic changes. What is the most likely cause?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2025,"part":"Part II","page":191,"questionNumber":"Endocrinology Q60"}],"verification":{"upToDate":"supports","nelson":"not_checked","guideline":"supports","referenceNotes":"Source quotes UpToDate."},"duplicateOf":null,"reviewStatus":"image_missing"},
-{"id":"part2-endo-dm-q61","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"DKA cerebral injury","yearTags":[2023],"examPart":"Part II","stemEn":"Which mechanism was historically proposed to explain cerebral edema during pediatric DKA treatment?","options":[{"key":"A","text":"Rapid shifts in serum osmolality"},{"key":"B","text":"Hyponatremia alone"},{"key":"C","text":"Metabolic acidosis alone"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate","explanationAr":"Osmotic shifts كانت النظرية التقليدية، لكن الأدلة الحديثة تشير إلى أن DKA-related cerebral injury متعددة العوامل وتشمل cerebral hypoperfusion/inflammation، وليست مجرد rapid fluid/osmolality change. لذلك نحافظ على جواب الامتحان مع ملاحظة التحديث.","reasoningEn":"Osmotic shifts are the historical theory, but modern evidence supports a multifactorial pathophysiology of DKA cerebral injury.","incorrectOptionsAr":"Hyponatremia أو acidosis وحدهما لا يفسران المرض بالكامل.","keywords":["DKA cerebral injury","osmotic shifts","historical theory"],"clinicalPearl":"Do not teach cerebral edema as simply 'caused by fluids'; cerebral injury may begin before treatment.","image":null,"tts":{"enabled":true,"language":"en","text":"Which mechanism was historically proposed to explain cerebral edema during pediatric diabetic ketoacidosis treatment?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2023,"part":"Part II","page":192,"questionNumber":"Endocrinology Q61","notes":"Source itself contrasts historical osmotic theory with newer ISPAD evidence."}],"verification":{"upToDate":"supports","nelson":"not_checked","guideline":"conflicts","referenceNotes":"Keep as historical-exam answer, not current causal teaching."},"duplicateOf":null,"reviewStatus":"outdated"},
-{"id":"part2-endo-dm-q62","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Type 1 diabetes and celiac disease","yearTags":[2025],"examPart":"Part II","stemEn":"A child with type 1 diabetes has unpredictable glucose values, abdominal pain and lower-limb edema. Which screening test is most appropriate for celiac disease in an IgA-sufficient patient?","options":[{"key":"A","text":"Serum IgA level alone"},{"key":"B","text":"TSH"},{"key":"C","text":"Tissue transglutaminase IgA antibody"}],"recalledAnswer":"C","verifiedAnswer":"C","answerConfidence":"high","explanationAr":"T1DM يزيد خطر celiac disease. أفضل screening test في IgA-sufficient child هو tTG-IgA مع total IgA للتأكد من عدم وجود IgA deficiency.","reasoningEn":"Tissue transglutaminase IgA is the preferred screening antibody for celiac disease when total IgA is adequate.","incorrectOptionsAr":"IgA وحده لا يشخص celiac؛ TSH يفحص thyroid disease وليس celiac.","keywords":["type 1 diabetes","celiac","tTG-IgA"],"clinicalPearl":"Check total IgA because IgA deficiency can make tTG-IgA falsely negative.","image":null,"tts":{"enabled":true,"language":"en","text":"A child with type 1 diabetes has unpredictable glucose values, abdominal pain and lower-limb edema. Which screening test is most appropriate for celiac disease in an IgA-sufficient patient?"},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2025,"part":"Part II","page":193,"questionNumber":"Endocrinology Q62"}],"verification":{"upToDate":"supports","nelson":"not_checked","guideline":"supports","referenceNotes":"Source quotes PREP/UpToDate."},"duplicateOf":null,"reviewStatus":"needs_verification"}
+  {
+    "id": "part2-endo-dm-q52",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Metabolic syndrome and obesity",
+    "yearTags": [
+      2025,
+      2022,
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "An obese 10-year-old has high triglycerides, low HDL, blood pressure at the 95th percentile and acanthosis nigricans, but normal fasting glucose. What is the best initial management?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Intensive lifestyle and health-behavior modification"
+      },
+      {
+        "key": "B",
+        "text": "Bariatric surgery as first-line treatment"
+      },
+      {
+        "key": "C",
+        "text": "Start insulin"
+      },
+      {
+        "key": "D",
+        "text": "Start aspirin"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "الطفل لديه obesity مع insulin-resistance/metabolic risk factors، لكن لا يوجد دليل على diabetes requiring insulin. البداية تكون structured lifestyle intervention تشمل nutrition, physical activity, sleep والسلوك الأسري.",
+    "reasoningEn": "Lifestyle treatment is foundational therapy for pediatric obesity and related metabolic risk factors.",
+    "incorrectOptionsAr": "Bariatric surgery لحالات severe obesity مختارة بعد تقييم؛ insulin لا يُعطى بدون diabetes indication؛ aspirin ليس علاج metabolic syndrome.",
+    "keywords": [
+      "obesity",
+      "acanthosis nigricans",
+      "metabolic syndrome",
+      "lifestyle"
+    ],
+    "clinicalPearl": "Screen obesity-related comorbidities rather than treating BMI alone.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 186 acanthosis image",
+      "assetPath": null,
+      "captionAr": "صورة acanthosis الأصلية مطلوبة إذا كان التعرف البصري جزءًا من السؤال.",
+      "captionEn": "Original acanthosis image required if visually diagnostic.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An obese 10-year-old has high triglycerides, low HDL, blood pressure at the 95th percentile and acanthosis nigricans, but normal fasting glucose. What is the best initial management?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 186,
+        "questionNumber": "Endocrinology Q52"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Source cites UpToDate/AAP obesity guidance."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-endo-dm-q53",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Type 2 diabetes screening",
+    "yearTags": [
+      2025
+    ],
+    "examPart": "Part II",
+    "stemEn": "An obese child has acanthosis nigricans. Which test can be used to screen for type 2 diabetes?",
+    "options": [
+      {
+        "key": "A",
+        "text": "IGF-1"
+      },
+      {
+        "key": "B",
+        "text": "Hemoglobin A1c"
+      },
+      {
+        "key": "C",
+        "text": "Cortisol"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "high",
+    "explanationAr": "Acanthosis nigricans علامة insulin resistance. Screening for type 2 diabetes يمكن أن يتم بـHbA1c أو fasting glucose أو OGTT حسب guideline والسياق.",
+    "reasoningEn": "HbA1c is an accepted screening test for dysglycemia/type 2 diabetes in at-risk youth.",
+    "incorrectOptionsAr": "IGF-1 لتقييم GH axis؛ cortisol لا يُستخدم كـscreening test للـT2DM.",
+    "keywords": [
+      "acanthosis nigricans",
+      "HbA1c",
+      "type 2 diabetes screening"
+    ],
+    "clinicalPearl": "High-risk youth may need periodic repeat screening even if the first test is normal.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 187 acanthosis image",
+      "assetPath": null,
+      "captionAr": "الصورة الأصلية مطلوبة.",
+      "captionEn": "Original image required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An obese child has acanthosis nigricans. Which test can be used to screen for type 2 diabetes?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 187,
+        "questionNumber": "Endocrinology Q53"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Source maps to PREP and UpToDate principles."
+    },
+    "duplicateOf": "part2-endo-dm-q52",
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-endo-dm-q54",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Type 2 diabetes",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "An obese 10-year-old with polyuria, polydipsia, family history of type 2 diabetes and acanthosis nigricans has a bedside glucose of 500 mg/dL. Which diabetes type is most likely?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Type 1 diabetes"
+      },
+      {
+        "key": "B",
+        "text": "Type 2 diabetes"
+      },
+      {
+        "key": "C",
+        "text": "Metabolic syndrome only"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "Obesity + acanthosis + strong family history تجعل T2DM مرجحًا، لكن severe hyperglycemia لا يستبعد T1DM. في الممارسة يجب تقييم ketosis/DKA وautoantibodies/C-peptide حسب الحالة وعدم التأخر بالعلاج.",
+    "reasoningEn": "The phenotype strongly suggests type 2 diabetes, but classification should be confirmed because obese children can still have type 1 diabetes.",
+    "incorrectOptionsAr": "Metabolic syndrome وحده لا يفسر glucose 500؛ T1DM يبقى differential مهمًا حتى يكتمل التقييم.",
+    "keywords": [
+      "obesity",
+      "acanthosis",
+      "glucose 500",
+      "T2DM"
+    ],
+    "clinicalPearl": "Treat metabolic decompensation first; classify diabetes after stabilization if necessary.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An obese 10-year-old with polyuria, polydipsia, family history of type 2 diabetes and acanthosis nigricans has a bedside glucose of 500 milligrams per deciliter. Which diabetes type is most likely?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2018,
+        "part": "Part II",
+        "page": 187,
+        "questionNumber": "Endocrinology Q54"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Needs phenotype/classification caveat in final UI."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-dm-q55",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Prediabetes",
+    "yearTags": [
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "An obese 11-year-old has fasting glucose 100 mg/dL and a 2-hour OGTT glucose of 160 mg/dL. How should this be classified?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Impaired fasting glucose only"
+      },
+      {
+        "key": "B",
+        "text": "Impaired glucose tolerance"
+      },
+      {
+        "key": "C",
+        "text": "Both impaired fasting and post-load glucose"
+      },
+      {
+        "key": "D",
+        "text": "Type 2 diabetes"
+      }
+    ],
+    "recalledAnswer": "C",
+    "verifiedAnswer": null,
+    "answerConfidence": "low",
+    "explanationAr": "2-hour OGTT 160 mg/dL يحقق impaired glucose tolerance. لكن fasting glucose 100 mg/dL يعتمد على definition المستخدمة: ADA تعتبر 100–125 impaired fasting glucose، بينما بعض pediatric criteria تاريخيًا استخدمت 110. لذلك مفتاح C يحتاج تحديد guideline.",
+    "reasoningEn": "The 2-hour value clearly indicates impaired glucose tolerance; whether fasting 100 mg/dL qualifies as IFG depends on the diagnostic standard used.",
+    "incorrectOptionsAr": "Type 2 diabetes يتطلب fasting ≥126 أو 2-hour ≥200 أو HbA1c ≥6.5% أو random ≥200 مع أعراض؛ الخيار B قد يكون الأدق تحت بعض المعايير.",
+    "keywords": [
+      "OGTT 160",
+      "fasting 100",
+      "IGT",
+      "IFG guideline conflict"
+    ],
+    "clinicalPearl": "Always state the diagnostic standard when classifying prediabetes in adolescents.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An obese 11-year-old has fasting glucose 100 milligrams per deciliter and a 2-hour oral glucose tolerance test value of 160. How should this be classified?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2017,
+        "part": "Part II",
+        "page": 188,
+        "questionNumber": "Endocrinology Q55",
+        "notes": "Source key C assumes fasting 100 qualifies as IFG."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "conflicts",
+      "referenceNotes": "Verify against current ISPAD/ADA thresholds before publish."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting"
+  },
+  {
+    "id": "part2-endo-dm-q56",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "HbA1c interpretation",
+    "yearTags": [
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "In a child with diabetes, HbA1c mainly reflects average glycemia over approximately what period?",
+    "options": [
+      {
+        "key": "A",
+        "text": "1 week"
+      },
+      {
+        "key": "B",
+        "text": "1 month"
+      },
+      {
+        "key": "C",
+        "text": "2 to 3 months"
+      },
+      {
+        "key": "D",
+        "text": "6 months"
+      }
+    ],
+    "recalledAnswer": "C",
+    "verifiedAnswer": "C",
+    "answerConfidence": "high",
+    "explanationAr": "HbA1c يعكس average glucose خلال نحو 2–3 أشهر، مع وزن أكبر نسبيًا للأسابيع الأخيرة.",
+    "reasoningEn": "Because erythrocytes circulate for about 120 days, HbA1c integrates glycemia over the preceding 2–3 months.",
+    "incorrectOptionsAr": "أسبوع أو شهر قصير جدًا؛ 6 أشهر أطول من فترة الانعكاس المعتادة.",
+    "keywords": [
+      "HbA1c",
+      "2-3 months"
+    ],
+    "clinicalPearl": "Conditions altering red-cell lifespan can distort HbA1c.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "In a child with diabetes, HbA1c mainly reflects average glycemia over approximately what period?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2019,
+        "part": "Part II",
+        "page": 189,
+        "questionNumber": "Endocrinology Q56"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "supports",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites UpToDate/Nelson."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-dm-q57",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "DKA management",
+    "yearTags": [
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with severe DKA has already begun initial fluid resuscitation. What insulin regimen is appropriate next?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Continuous IV regular insulin around 0.05–0.1 units/kg/hour according to protocol"
+      },
+      {
+        "key": "B",
+        "text": "Immediate intubation solely because DKA is severe"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "بعد بدء fluids، يُستخدم continuous IV regular insulin بدون bolus عادة. الجرعة الشائعة 0.05–0.1 U/kg/h حسب العمر والبروتوكول. Intubation ليست routine وتُجنب إن أمكن بسبب مخاطرها في severe DKA.",
+    "reasoningEn": "Continuous IV insulin is standard after initial fluid therapy in pediatric DKA.",
+    "incorrectOptionsAr": "Intubation فقط عند respiratory failure/airway indication وليس بسبب severity label وحدها.",
+    "keywords": [
+      "DKA",
+      "IV insulin",
+      "0.05-0.1 U/kg/h"
+    ],
+    "clinicalPearl": "Start potassium replacement according to serum potassium and urine output; never give an insulin bolus routinely in pediatric DKA.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with severe diabetic ketoacidosis has already begun initial fluid resuscitation. What insulin regimen is appropriate next?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2019,
+        "part": "Part II",
+        "page": 189,
+        "questionNumber": "Endocrinology Q57"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Source cites ISPAD 2022."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-dm-q58",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "DKA shock",
+    "yearTags": [
+      2024
+    ],
+    "examPart": "Part II",
+    "stemEn": "An 8-year-old with likely DKA is hypotensive at 80/50 mmHg with cold extremities and clear dehydration. What is the most appropriate immediate fluid step?",
+    "options": [
+      {
+        "key": "A",
+        "text": "10 mL/kg isotonic saline"
+      },
+      {
+        "key": "B",
+        "text": "20 mL/kg isotonic saline for shock, reassessing closely"
+      },
+      {
+        "key": "C",
+        "text": "Start insulin before fluids"
+      },
+      {
+        "key": "D",
+        "text": "Give bicarbonate bolus"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "moderate",
+    "explanationAr": "الطفل هنا في shock، لذا يحتاج prompt isotonic fluid bolus مع reassessment. حجم bolus قد يختلف حسب guideline وشدة shock، وغالبًا 10–20 mL/kg. بما أن 20 mL/kg أحد الخيارات ومع hypotension/cold extremities فهو معقول، لكن يجب اتباع current DKA protocol.",
+    "reasoningEn": "Shock in DKA requires prompt isotonic volume resuscitation before insulin; bolus volume is titrated to perfusion and guideline recommendations.",
+    "incorrectOptionsAr": "Insulin قبل volume resuscitation غير صحيح؛ bicarbonate لا يُستخدم روتينيًا.",
+    "keywords": [
+      "DKA",
+      "shock",
+      "isotonic bolus"
+    ],
+    "clinicalPearl": "Use smaller repeated boluses with frequent reassessment when cardiac or renal compromise is a concern.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An 8-year-old with likely diabetic ketoacidosis is hypotensive at 80 over 50 with cold extremities and clear dehydration. What is the most appropriate immediate fluid step?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 190,
+        "questionNumber": "Endocrinology Q58"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Check current ISPAD fluid wording before publication."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-dm-q59",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "DKA hypoglycemia during treatment",
+    "yearTags": [
+      2025,
+      2024,
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "During DKA treatment, a child's glucose falls to about 70 mg/dL while ketoacidosis is still being treated. What should be done?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Give oral juice and stop IV therapy"
+      },
+      {
+        "key": "B",
+        "text": "Reduce insulin if necessary while maintaining enough insulin to clear ketones, and increase dextrose per protocol"
+      },
+      {
+        "key": "C",
+        "text": "Increase dextrose concentration only and ignore insulin sensitivity"
+      },
+      {
+        "key": "D",
+        "text": "Increase total fluid rate"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "moderate",
+    "explanationAr": "في DKA لا نوقف insulin لمجرد انخفاض glucose إذا ketones/acidosis مستمرة. نزيد dextrose، وقد نخفض insulin إلى نحو 0.05 U/kg/h إذا needed لمنع hypoglycemia مع استمرار clearance للketones. إذا hypoglycemia حقيقية قد يلزم dextrose bolus حسب protocol.",
+    "reasoningEn": "Insulin must continue to suppress ketogenesis; dextrose is increased and insulin may be reduced if glucose falls too low.",
+    "incorrectOptionsAr": "Oral juice غير كافٍ في PICU DKA؛ زيادة fluid rate ليست الحل؛ dextrose alone قد لا يكفي إذا child شديد الحساسية للinsulin.",
+    "keywords": [
+      "DKA",
+      "glucose 70",
+      "dextrose",
+      "reduce insulin"
+    ],
+    "clinicalPearl": "Treat the ketoacidosis, not just the glucose number.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "During diabetic ketoacidosis treatment, a child's glucose falls to about 70 milligrams per deciliter while ketoacidosis is still being treated. What should be done?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 191,
+        "questionNumber": "Endocrinology Q59",
+        "notes": "Source also notes D10 bolus/temporary hold for true hypoglycemia per local MOH protocol."
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Exact response should follow local/current pediatric DKA protocol."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-dm-q60",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "DKA potassium",
+    "yearTags": [
+      2025,
+      2023,
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "Six hours into DKA treatment with insulin and fluids, a child develops bradycardia and cardiac arrest. Initial potassium was normal, and the ECG now shows hypokalemic changes. What is the most likely cause?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cerebral edema"
+      },
+      {
+        "key": "B",
+        "text": "Hypokalemia"
+      },
+      {
+        "key": "C",
+        "text": "Hyperkalemia"
+      },
+      {
+        "key": "D",
+        "text": "Acidosis-related arrhythmia"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "high",
+    "explanationAr": "DKA يسبب total-body potassium deficit حتى لو serum K طبيعي بالبداية. Insulin وتصحيح acidosis يدفعان K داخل الخلايا، لذلك قد يحدث severe hypokalemia إذا لم يُعوض بشكل مناسب.",
+    "reasoningEn": "Insulin-driven intracellular potassium shift can unmask profound total-body potassium depletion during DKA treatment.",
+    "incorrectOptionsAr": "ECG hypokalemia يوجه مباشرةً بعيدًا عن cerebral edema أو hyperkalemia.",
+    "keywords": [
+      "DKA",
+      "hypokalemia",
+      "cardiac arrest",
+      "insulin shift"
+    ],
+    "clinicalPearl": "Potassium replacement is required in nearly all DKA patients once safe and indicated by serum level/urine output.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 191 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "Six hours into diabetic ketoacidosis treatment with insulin and fluids, a child develops bradycardia and cardiac arrest. Initial potassium was normal, and the ECG now shows hypokalemic changes. What is the most likely cause?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 191,
+        "questionNumber": "Endocrinology Q60"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-endo-dm-q61",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "DKA cerebral injury",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "Which mechanism was historically proposed to explain cerebral edema during pediatric DKA treatment?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Rapid shifts in serum osmolality"
+      },
+      {
+        "key": "B",
+        "text": "Hyponatremia alone"
+      },
+      {
+        "key": "C",
+        "text": "Metabolic acidosis alone"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "Osmotic shifts كانت النظرية التقليدية، لكن الأدلة الحديثة تشير إلى أن DKA-related cerebral injury متعددة العوامل وتشمل cerebral hypoperfusion/inflammation، وليست مجرد rapid fluid/osmolality change. لذلك نحافظ على جواب الامتحان مع ملاحظة التحديث.",
+    "reasoningEn": "Osmotic shifts are the historical theory, but modern evidence supports a multifactorial pathophysiology of DKA cerebral injury.",
+    "incorrectOptionsAr": "Hyponatremia أو acidosis وحدهما لا يفسران المرض بالكامل.",
+    "keywords": [
+      "DKA cerebral injury",
+      "osmotic shifts",
+      "historical theory"
+    ],
+    "clinicalPearl": "Do not teach cerebral edema as simply 'caused by fluids'; cerebral injury may begin before treatment.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "Which mechanism was historically proposed to explain cerebral edema during pediatric diabetic ketoacidosis treatment?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 192,
+        "questionNumber": "Endocrinology Q61",
+        "notes": "Source itself contrasts historical osmotic theory with newer ISPAD evidence."
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "conflicts",
+      "referenceNotes": "Keep as historical-exam answer, not current causal teaching."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "outdated"
+  },
+  {
+    "id": "part2-endo-dm-q62",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Type 1 diabetes and celiac disease",
+    "yearTags": [
+      2025
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with type 1 diabetes has unpredictable glucose values, abdominal pain and lower-limb edema. Which screening test is most appropriate for celiac disease in an IgA-sufficient patient?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Serum IgA level alone"
+      },
+      {
+        "key": "B",
+        "text": "TSH"
+      },
+      {
+        "key": "C",
+        "text": "Tissue transglutaminase IgA antibody"
+      }
+    ],
+    "recalledAnswer": "C",
+    "verifiedAnswer": "C",
+    "answerConfidence": "high",
+    "explanationAr": "T1DM يزيد خطر celiac disease. أفضل screening test في IgA-sufficient child هو tTG-IgA مع total IgA للتأكد من عدم وجود IgA deficiency.",
+    "reasoningEn": "Tissue transglutaminase IgA is the preferred screening antibody for celiac disease when total IgA is adequate.",
+    "incorrectOptionsAr": "IgA وحده لا يشخص celiac؛ TSH يفحص thyroid disease وليس celiac.",
+    "keywords": [
+      "type 1 diabetes",
+      "celiac",
+      "tTG-IgA"
+    ],
+    "clinicalPearl": "Check total IgA because IgA deficiency can make tTG-IgA falsely negative.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with type 1 diabetes has unpredictable glucose values, abdominal pain and lower-limb edema. Which screening test is most appropriate for celiac disease in an IgA-sufficient patient?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 193,
+        "questionNumber": "Endocrinology Q62"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Source quotes PREP/UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  }
 ]

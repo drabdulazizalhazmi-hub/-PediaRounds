@@ -1,20 +1,611 @@
 [
   {
-    "id":"part2-metabolic-energy-q08","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"MCAD deficiency","yearTags":[2024,2021],"examPart":"Part II","stemEn":"A 5-day-old neonate had laboratory findings of hypoglycemia, negative ketones, and slightly elevated lactic acid. What is the most likely diagnosis?","options":[{"key":"A","text":"Medium-chain acyl-CoA dehydrogenase (MCAD) deficiency"},{"key":"B","text":"Tyrosinemia"},{"key":"C","text":"Sepsis"},{"key":"D","text":"Phenylketonuria"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high","explanationAr":"وجود hypoglycemia مع غياب ketones هو clue أساسي في المصدر لـ fatty-acid oxidation defect، والمفتاح هنا MCAD deficiency.","reasoningEn":"Hypoketotic hypoglycemia is the key recalled clue for MCAD deficiency.","incorrectOptionsAr":"Tyrosinemia وPKU لا يفسران هذا النمط من hypoketotic hypoglycemia. Sepsis قد تسبب hypoglycemia لكنها لا تفسر غياب ketogenesis بهذا الشكل النوعي.","keywords":["hypoglycemia","negative ketones","MCAD","fatty acid oxidation"],"clinicalPearl":"Hypoglycemia with inappropriately low ketones is a high-yield clue for fatty-acid oxidation disorders.","managementSteps":["Avoid fasting","Give dextrose during acute illness"],"diagnosticSteps":[],"image":null,"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2024,"part":"Part II","page":null,"questionNumber":"Q8","notes":"Also recalled 2021"}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"},
+    "id": "part2-metabolic-energy-q08",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "MCAD deficiency",
+    "yearTags": [
+      2024,
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 5-day-old neonate had laboratory findings of hypoglycemia, negative ketones, and slightly elevated lactic acid. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Medium-chain acyl-CoA dehydrogenase (MCAD) deficiency"
+      },
+      {
+        "key": "B",
+        "text": "Tyrosinemia"
+      },
+      {
+        "key": "C",
+        "text": "Sepsis"
+      },
+      {
+        "key": "D",
+        "text": "Phenylketonuria"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "وجود hypoglycemia مع غياب ketones هو clue أساسي في المصدر لـ fatty-acid oxidation defect، والمفتاح هنا MCAD deficiency.",
+    "reasoningEn": "Hypoketotic hypoglycemia is the key recalled clue for MCAD deficiency.",
+    "incorrectOptionsAr": "Tyrosinemia وPKU لا يفسران هذا النمط من hypoketotic hypoglycemia. Sepsis قد تسبب hypoglycemia لكنها لا تفسر غياب ketogenesis بهذا الشكل النوعي.",
+    "keywords": [
+      "hypoglycemia",
+      "negative ketones",
+      "MCAD",
+      "fatty acid oxidation"
+    ],
+    "clinicalPearl": "Hypoglycemia with inappropriately low ketones is a high-yield clue for fatty-acid oxidation disorders.",
+    "managementSteps": [
+      "Avoid fasting",
+      "Give dextrose during acute illness"
+    ],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2024,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q8",
+        "notes": "Also recalled 2021"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
   {
-    "id":"part2-metabolic-energy-q09","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"Glycogen storage disease type I","yearTags":[2025,2022,2021,2017],"examPart":"Part II","stemEn":"A patient presented with hepatomegaly, palpable kidneys, hypoglycemia, positive ketones, and lactic acidosis. What is the most likely diagnosis?","options":[{"key":"A","text":"Von Gierke disease (glycogen storage disease type I)"},{"key":"B","text":"[Other options not recalled in source]"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high","explanationAr":"المصدر يجمع hepatomegaly مع enlarged kidneys وketotic hypoglycemia وlactic acidosis كصورة نموذجية لـ GSD I (Von Gierke).","reasoningEn":"The recalled cluster of hepatomegaly, renal enlargement, hypoglycemia, ketosis and lactic acidosis supports GSD I.","incorrectOptionsAr":"بقية الخيارات غير محفوظة في المصدر، لذلك لم تُختلق خيارات بديلة.","keywords":["hepatomegaly","palpable kidneys","hypoglycemia","lactic acidosis","Von Gierke"],"clinicalPearl":"GSD I is associated with fasting hypoglycemia, lactic acidosis, hyperuricemia and hyperlipidemia.","managementSteps":[],"diagnosticSteps":[],"image":null,"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2025,"part":"Part II","page":null,"questionNumber":"Q9","notes":"Also recalled 2022, 2021, 2017; source options incomplete."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation cites Nelson."},"duplicateOf":null,"reviewStatus":"incomplete_recall"},
+    "id": "part2-metabolic-energy-q09",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "Glycogen storage disease type I",
+    "yearTags": [
+      2025,
+      2022,
+      2021,
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A patient presented with hepatomegaly, palpable kidneys, hypoglycemia, positive ketones, and lactic acidosis. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Von Gierke disease (glycogen storage disease type I)"
+      },
+      {
+        "key": "B",
+        "text": "[Other options not recalled in source]"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "المصدر يجمع hepatomegaly مع enlarged kidneys وketotic hypoglycemia وlactic acidosis كصورة نموذجية لـ GSD I (Von Gierke).",
+    "reasoningEn": "The recalled cluster of hepatomegaly, renal enlargement, hypoglycemia, ketosis and lactic acidosis supports GSD I.",
+    "incorrectOptionsAr": "بقية الخيارات غير محفوظة في المصدر، لذلك لم تُختلق خيارات بديلة.",
+    "keywords": [
+      "hepatomegaly",
+      "palpable kidneys",
+      "hypoglycemia",
+      "lactic acidosis",
+      "Von Gierke"
+    ],
+    "clinicalPearl": "GSD I is associated with fasting hypoglycemia, lactic acidosis, hyperuricemia and hyperlipidemia.",
+    "managementSteps": [],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2025,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q9",
+        "notes": "Also recalled 2022, 2021, 2017; source options incomplete."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation cites Nelson."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall"
+  },
   {
-    "id":"part2-metabolic-energy-q10","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"Glycogen storage disease type I","yearTags":[2025,2024,2023,2017],"examPart":"Part II","stemEn":"A 4-month-old infant presented with hepatomegaly, metabolic acidosis, lactic acidosis, hyperuricemia, hypertriglyceridemia, and ketotic hypoglycemia. What is the most likely enzyme deficiency?","options":[{"key":"A","text":"Galactose-1-phosphate uridyltransferase (GALT) deficiency"},{"key":"B","text":"Glucose-6-phosphatase deficiency"},{"key":"C","text":"Phenylalanine hydroxylase deficiency"},{"key":"D","text":"Ornithine transcarbamylase deficiency"}],"recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"high","explanationAr":"التركيبة المذكورة—hepatomegaly + fasting/ketotic hypoglycemia + lactic acidosis + hyperuricemia + hypertriglyceridemia—هي نمط GSD I بسبب glucose-6-phosphatase deficiency.","reasoningEn":"This biochemical pattern is characteristic of von Gierke disease due to glucose-6-phosphatase deficiency.","incorrectOptionsAr":"GALT deficiency تميل لصورة galactosemia مع jaundice/cataracts/E. coli sepsis. PKU لا تسبب هذه الصورة الكبدية. OTC deficiency يسبب hyperammonemia غالبًا بدون metabolic acidosis.","keywords":["glucose-6-phosphatase","hyperuricemia","hypertriglyceridemia","lactic acidosis","ketotic hypoglycemia"],"clinicalPearl":"GSD I = severe fasting hypoglycemia plus lactic acidosis, hyperuricemia and hyperlipidemia.","managementSteps":[],"diagnosticSteps":[],"image":null,"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2025,"part":"Part II","page":null,"questionNumber":"Q10","notes":"Also recalled 2024, 2023, 2017; source cites UpToDate."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"},
+    "id": "part2-metabolic-energy-q10",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "Glycogen storage disease type I",
+    "yearTags": [
+      2025,
+      2024,
+      2023,
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 4-month-old infant presented with hepatomegaly, metabolic acidosis, lactic acidosis, hyperuricemia, hypertriglyceridemia, and ketotic hypoglycemia. What is the most likely enzyme deficiency?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Galactose-1-phosphate uridyltransferase (GALT) deficiency"
+      },
+      {
+        "key": "B",
+        "text": "Glucose-6-phosphatase deficiency"
+      },
+      {
+        "key": "C",
+        "text": "Phenylalanine hydroxylase deficiency"
+      },
+      {
+        "key": "D",
+        "text": "Ornithine transcarbamylase deficiency"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "التركيبة المذكورة—hepatomegaly + fasting/ketotic hypoglycemia + lactic acidosis + hyperuricemia + hypertriglyceridemia—هي نمط GSD I بسبب glucose-6-phosphatase deficiency.",
+    "reasoningEn": "This biochemical pattern is characteristic of von Gierke disease due to glucose-6-phosphatase deficiency.",
+    "incorrectOptionsAr": "GALT deficiency تميل لصورة galactosemia مع jaundice/cataracts/E. coli sepsis. PKU لا تسبب هذه الصورة الكبدية. OTC deficiency يسبب hyperammonemia غالبًا بدون metabolic acidosis.",
+    "keywords": [
+      "glucose-6-phosphatase",
+      "hyperuricemia",
+      "hypertriglyceridemia",
+      "lactic acidosis",
+      "ketotic hypoglycemia"
+    ],
+    "clinicalPearl": "GSD I = severe fasting hypoglycemia plus lactic acidosis, hyperuricemia and hyperlipidemia.",
+    "managementSteps": [],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2025,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q10",
+        "notes": "Also recalled 2024, 2023, 2017; source cites UpToDate."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
   {
-    "id":"part2-metabolic-energy-q11","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"Pompe disease","yearTags":[2022],"examPart":"Part II","stemEn":"A patient presented with hypotonia, hepatomegaly, and hypertrophic cardiomyopathy. What is the most likely diagnosis?","options":[{"key":"A","text":"Pompe disease"},{"key":"B","text":"[Other options not recalled in source]"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high","explanationAr":"Infantile Pompe disease في المصدر تتميز بـ severe hypotonia مع hypertrophic cardiomyopathy/cardiomegaly، وقد يظهر hepatomegaly غالبًا نتيجة heart failure.","reasoningEn":"The combination of generalized hypotonia and hypertrophic cardiomyopathy is a classic recalled presentation of infantile Pompe disease.","incorrectOptionsAr":"بقية الخيارات لم تُحفظ في التجميع الأصلي.","keywords":["Pompe","hypotonia","hypertrophic cardiomyopathy","hepatomegaly"],"clinicalPearl":"Infantile Pompe disease is a glycogen storage disorder with prominent cardiac and skeletal-muscle involvement.","managementSteps":[],"diagnosticSteps":["Confirm with acid alpha-glucosidase enzyme testing and/or molecular testing"],"image":null,"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2022,"part":"Part II","page":null,"questionNumber":"Q11","notes":"Source options incomplete; explanation cites UpToDate."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"incomplete_recall"},
+    "id": "part2-metabolic-energy-q11",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "Pompe disease",
+    "yearTags": [
+      2022
+    ],
+    "examPart": "Part II",
+    "stemEn": "A patient presented with hypotonia, hepatomegaly, and hypertrophic cardiomyopathy. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Pompe disease"
+      },
+      {
+        "key": "B",
+        "text": "[Other options not recalled in source]"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Infantile Pompe disease في المصدر تتميز بـ severe hypotonia مع hypertrophic cardiomyopathy/cardiomegaly، وقد يظهر hepatomegaly غالبًا نتيجة heart failure.",
+    "reasoningEn": "The combination of generalized hypotonia and hypertrophic cardiomyopathy is a classic recalled presentation of infantile Pompe disease.",
+    "incorrectOptionsAr": "بقية الخيارات لم تُحفظ في التجميع الأصلي.",
+    "keywords": [
+      "Pompe",
+      "hypotonia",
+      "hypertrophic cardiomyopathy",
+      "hepatomegaly"
+    ],
+    "clinicalPearl": "Infantile Pompe disease is a glycogen storage disorder with prominent cardiac and skeletal-muscle involvement.",
+    "managementSteps": [],
+    "diagnosticSteps": [
+      "Confirm with acid alpha-glucosidase enzyme testing and/or molecular testing"
+    ],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2022,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q11",
+        "notes": "Source options incomplete; explanation cites UpToDate."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall"
+  },
   {
-    "id":"part2-metabolic-energy-q12","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"Pompe disease","yearTags":[2025,2018],"examPart":"Part II","stemEn":"A baby presented with developmental delay, hypotonia, and cardiomegaly. A picture of muscle biopsy was provided. What is the most likely diagnosis?","options":[{"key":"A","text":"Pompe disease"},{"key":"B","text":"[Other options not recalled in source]"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high","explanationAr":"المصدر يربط hypotonia + cardiomegaly مع muscle biopsy showing vacuolar glycogen storage بـ Pompe disease. الصورة جزء من السؤال ويجب ربطها قبل النشر.","reasoningEn":"The source identifies the clinical picture and muscle-biopsy pattern as Pompe disease.","incorrectOptionsAr":"بقية الخيارات غير محفوظة في المصدر.","keywords":["Pompe","muscle biopsy","vacuolar myopathy","cardiomegaly","hypotonia"],"clinicalPearl":"Pompe muscle biopsy may show PAS-positive glycogen-filled vacuoles, though enzyme/molecular testing is preferred for confirmation.","managementSteps":[],"diagnosticSteps":["Link original biopsy image","Confirm with enzyme and/or molecular testing"],"image":{"requiredForQuestion":true,"sourceRef":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026 Q12","assetPath":null,"captionAr":"صورة muscle biopsy مرفقة في المصدر وتحتاج ربط الأصل.","captionEn":"Muscle-biopsy image from the source; original asset needs linking.","status":"missing"},"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2025,"part":"Part II","page":null,"questionNumber":"Q12","notes":"Also recalled 2018; image-based; source options incomplete."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source cites UpToDate."},"duplicateOf":null,"reviewStatus":"image_missing"},
+    "id": "part2-metabolic-energy-q12",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "Pompe disease",
+    "yearTags": [
+      2025,
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A baby presented with developmental delay, hypotonia, and cardiomegaly. A picture of muscle biopsy was provided. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Pompe disease"
+      },
+      {
+        "key": "B",
+        "text": "[Other options not recalled in source]"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "المصدر يربط hypotonia + cardiomegaly مع muscle biopsy showing vacuolar glycogen storage بـ Pompe disease. الصورة جزء من السؤال ويجب ربطها قبل النشر.",
+    "reasoningEn": "The source identifies the clinical picture and muscle-biopsy pattern as Pompe disease.",
+    "incorrectOptionsAr": "بقية الخيارات غير محفوظة في المصدر.",
+    "keywords": [
+      "Pompe",
+      "muscle biopsy",
+      "vacuolar myopathy",
+      "cardiomegaly",
+      "hypotonia"
+    ],
+    "clinicalPearl": "Pompe muscle biopsy may show PAS-positive glycogen-filled vacuoles, though enzyme/molecular testing is preferred for confirmation.",
+    "managementSteps": [],
+    "diagnosticSteps": [
+      "Link original biopsy image",
+      "Confirm with enzyme and/or molecular testing"
+    ],
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026 Q12",
+      "assetPath": null,
+      "captionAr": "صورة muscle biopsy مرفقة في المصدر وتحتاج ربط الأصل.",
+      "captionEn": "Muscle-biopsy image from the source; original asset needs linking.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2025,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q12",
+        "notes": "Also recalled 2018; image-based; source options incomplete."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall",
+    "publishable": false,
+    "blockers": [
+      "incomplete_source_text"
+    ]
+  },
   {
-    "id":"part2-metabolic-energy-q13","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"Galactosemia","yearTags":[2025,2023],"examPart":"Part II","stemEn":"An infant presented with hypoglycemia, acidosis, and bilateral cataract. What is the most likely enzyme deficiency?","options":[{"key":"A","text":"Galactose-1-phosphate uridyltransferase (GALT) deficiency"},{"key":"B","text":"[Other options not recalled in source]"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high","explanationAr":"Bilateral cataracts مع neonatal metabolic illness/hypoglycemia في المصدر تشير إلى classic galactosemia بسبب GALT deficiency.","reasoningEn":"The source key is GALT deficiency, fitting classic galactosemia with cataracts and metabolic illness after milk exposure.","incorrectOptionsAr":"بقية الخيارات غير محفوظة في المصدر.","keywords":["galactosemia","GALT","cataracts","hypoglycemia","acidosis"],"clinicalPearl":"Classic galactosemia may present after milk feeding with jaundice, liver dysfunction, cataracts and E. coli sepsis.","managementSteps":["Eliminate lactose/galactose when suspected"],"diagnosticSteps":[],"image":null,"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2025,"part":"Part II","page":null,"questionNumber":"Q13","notes":"Also recalled 2023; source options incomplete."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source cites Swaiman's Pediatric Neurology."},"duplicateOf":null,"reviewStatus":"incomplete_recall"},
+    "id": "part2-metabolic-energy-q13",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "Galactosemia",
+    "yearTags": [
+      2025,
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "An infant presented with hypoglycemia, acidosis, and bilateral cataract. What is the most likely enzyme deficiency?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Galactose-1-phosphate uridyltransferase (GALT) deficiency"
+      },
+      {
+        "key": "B",
+        "text": "[Other options not recalled in source]"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Bilateral cataracts مع neonatal metabolic illness/hypoglycemia في المصدر تشير إلى classic galactosemia بسبب GALT deficiency.",
+    "reasoningEn": "The source key is GALT deficiency, fitting classic galactosemia with cataracts and metabolic illness after milk exposure.",
+    "incorrectOptionsAr": "بقية الخيارات غير محفوظة في المصدر.",
+    "keywords": [
+      "galactosemia",
+      "GALT",
+      "cataracts",
+      "hypoglycemia",
+      "acidosis"
+    ],
+    "clinicalPearl": "Classic galactosemia may present after milk feeding with jaundice, liver dysfunction, cataracts and E. coli sepsis.",
+    "managementSteps": [
+      "Eliminate lactose/galactose when suspected"
+    ],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2025,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q13",
+        "notes": "Also recalled 2023; source options incomplete."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites Swaiman's Pediatric Neurology."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall"
+  },
   {
-    "id":"part2-metabolic-energy-q14","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"Galactosemia","yearTags":[2019],"examPart":"Part II","stemEn":"A 1-week-old boy presented with vomiting, lethargy and fever. On examination, he has jaundice and hepatomegaly. Urine culture taken as part of a septic workup grew Escherichia coli. What is the most likely enzyme deficiency?","options":[{"key":"A","text":"Galactose-1-phosphate uridyltransferase (GALT) deficiency"},{"key":"B","text":"[Other options not recalled in source]"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high","explanationAr":"E. coli sepsis مع jaundice/hepatomegaly في neonate بعد بدء الرضاعة هي clue امتحانية معروفة للـclassic galactosemia، والمصدر يحدد GALT deficiency.","reasoningEn":"The source associates neonatal E. coli infection plus hepatic disease with classic galactosemia due to GALT deficiency.","incorrectOptionsAr":"بقية الخيارات غير محفوظة في المصدر.","keywords":["E. coli","galactosemia","GALT","jaundice","hepatomegaly"],"clinicalPearl":"Think galactosemia in a neonate with E. coli sepsis and hepatic dysfunction.","managementSteps":["Stop galactose/lactose exposure when suspected","Treat sepsis urgently"],"diagnosticSteps":[],"image":null,"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2019,"part":"Part II","page":null,"questionNumber":"Q14","notes":"Source options incomplete."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"incomplete_recall"},
+    "id": "part2-metabolic-energy-q14",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "Galactosemia",
+    "yearTags": [
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 1-week-old boy presented with vomiting, lethargy and fever. On examination, he has jaundice and hepatomegaly. Urine culture taken as part of a septic workup grew Escherichia coli. What is the most likely enzyme deficiency?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Galactose-1-phosphate uridyltransferase (GALT) deficiency"
+      },
+      {
+        "key": "B",
+        "text": "[Other options not recalled in source]"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "E. coli sepsis مع jaundice/hepatomegaly في neonate بعد بدء الرضاعة هي clue امتحانية معروفة للـclassic galactosemia، والمصدر يحدد GALT deficiency.",
+    "reasoningEn": "The source associates neonatal E. coli infection plus hepatic disease with classic galactosemia due to GALT deficiency.",
+    "incorrectOptionsAr": "بقية الخيارات غير محفوظة في المصدر.",
+    "keywords": [
+      "E. coli",
+      "galactosemia",
+      "GALT",
+      "jaundice",
+      "hepatomegaly"
+    ],
+    "clinicalPearl": "Think galactosemia in a neonate with E. coli sepsis and hepatic dysfunction.",
+    "managementSteps": [
+      "Stop galactose/lactose exposure when suspected",
+      "Treat sepsis urgently"
+    ],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2019,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q14",
+        "notes": "Source options incomplete."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall"
+  },
   {
-    "id":"part2-metabolic-energy-q15","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"Galactosemia","yearTags":[2018],"examPart":"Part II","stemEn":"An infant presented with a sepsis-like picture and hepatomegaly. Blood culture grew Escherichia coli. What is the most likely diagnosis?","options":[{"key":"A","text":"Galactosemia"},{"key":"B","text":"[Other options not recalled in source]"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high","explanationAr":"المصدر يختار galactosemia لأن E. coli sepsis في الرضيع مع hepatomegaly من الـhigh-yield clues للمرض.","reasoningEn":"The recall key is galactosemia based on E. coli sepsis plus hepatomegaly in infancy.","incorrectOptionsAr":"بقية الخيارات غير محفوظة في المصدر.","keywords":["E. coli sepsis","galactosemia","hepatomegaly"],"clinicalPearl":"E. coli sepsis can be an early clue to classic galactosemia.","managementSteps":[],"diagnosticSteps":[],"image":null,"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2018,"part":"Part II","page":null,"questionNumber":"Q15","notes":"Source options incomplete."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"incomplete_recall"},
+    "id": "part2-metabolic-energy-q15",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "Galactosemia",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "An infant presented with a sepsis-like picture and hepatomegaly. Blood culture grew Escherichia coli. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Galactosemia"
+      },
+      {
+        "key": "B",
+        "text": "[Other options not recalled in source]"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "المصدر يختار galactosemia لأن E. coli sepsis في الرضيع مع hepatomegaly من الـhigh-yield clues للمرض.",
+    "reasoningEn": "The recall key is galactosemia based on E. coli sepsis plus hepatomegaly in infancy.",
+    "incorrectOptionsAr": "بقية الخيارات غير محفوظة في المصدر.",
+    "keywords": [
+      "E. coli sepsis",
+      "galactosemia",
+      "hepatomegaly"
+    ],
+    "clinicalPearl": "E. coli sepsis can be an early clue to classic galactosemia.",
+    "managementSteps": [],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2018,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q15",
+        "notes": "Source options incomplete."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall"
+  },
   {
-    "id":"part2-metabolic-energy-q16","module":"diabetes-endocrinology-metabolic","specialty":"Metabolic Disorders","topic":"Energy Utilization Defects","subtopic":"Galactosemia","yearTags":[2022],"examPart":"Part II","stemEn":"A neonate presented with conjugated hyperbilirubinemia. Which of the following could be the cause?","options":[{"key":"A","text":"Galactosemia"},{"key":"B","text":"Breast feeding jaundice"},{"key":"C","text":"Crigler–Najjar syndrome"},{"key":"D","text":"Gilbert disease"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate","explanationAr":"ضمن الخيارات الموجودة في المصدر، galactosemia هي الخيار المرتبط بhepatic disease ويمكن أن تسبب direct/conjugated hyperbilirubinemia، بينما البقية ترتبط أساسًا بـunconjugated hyperbilirubinemia.","reasoningEn":"Among the recalled options, galactosemia is the source key for conjugated hyperbilirubinemia.","incorrectOptionsAr":"Breastfeeding jaundice وCrigler–Najjar وGilbert ترتبط عادةً بunconjugated bilirubin وليست سببًا نموذجيًا للـconjugated hyperbilirubinemia.","keywords":["conjugated hyperbilirubinemia","galactosemia","neonate"],"clinicalPearl":"Conjugated hyperbilirubinemia in a neonate is pathologic and requires evaluation for hepatobiliary, infectious and metabolic causes.","managementSteps":[],"diagnosticSteps":[],"image":null,"tts":{"enabled":true,"language":"en","text":null},"sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2022,"part":"Part II","page":null,"questionNumber":"Q16","notes":"Source states A is the only listed option causing conjugated hyperbilirubinemia."}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"}
+    "id": "part2-metabolic-energy-q16",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Metabolic Disorders",
+    "topic": "Energy Utilization Defects",
+    "subtopic": "Galactosemia",
+    "yearTags": [
+      2022
+    ],
+    "examPart": "Part II",
+    "stemEn": "A neonate presented with conjugated hyperbilirubinemia. Which of the following could be the cause?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Galactosemia"
+      },
+      {
+        "key": "B",
+        "text": "Breast feeding jaundice"
+      },
+      {
+        "key": "C",
+        "text": "Crigler–Najjar syndrome"
+      },
+      {
+        "key": "D",
+        "text": "Gilbert disease"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "ضمن الخيارات الموجودة في المصدر، galactosemia هي الخيار المرتبط بhepatic disease ويمكن أن تسبب direct/conjugated hyperbilirubinemia، بينما البقية ترتبط أساسًا بـunconjugated hyperbilirubinemia.",
+    "reasoningEn": "Among the recalled options, galactosemia is the source key for conjugated hyperbilirubinemia.",
+    "incorrectOptionsAr": "Breastfeeding jaundice وCrigler–Najjar وGilbert ترتبط عادةً بunconjugated bilirubin وليست سببًا نموذجيًا للـconjugated hyperbilirubinemia.",
+    "keywords": [
+      "conjugated hyperbilirubinemia",
+      "galactosemia",
+      "neonate"
+    ],
+    "clinicalPearl": "Conjugated hyperbilirubinemia in a neonate is pathologic and requires evaluation for hepatobiliary, infectious and metabolic causes.",
+    "managementSteps": [],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2022,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q16",
+        "notes": "Source states A is the only listed option causing conjugated hyperbilirubinemia."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  }
 ]
