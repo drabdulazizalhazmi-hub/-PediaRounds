@@ -1,0 +1,69 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch13-trauma-derm-4-20260907",
+  "scope": "Four non-overlapping conflict records after batch12, focused on Trauma and Dermatology.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options and current evidence support a defensible single-best answer.",
+    "Do not invent missing image findings, resuscitation response, lesion diagnosis, weight, or treatment choices.",
+    "If management depends on omitted clinical details or the preferred modern treatment is absent, keep verifiedAnswer null and the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-trauma-q16",
+      "sourceQuestion": "Trauma Q16",
+      "modernOutcome": "management_depends_on_clinical_and_radiologic_severity",
+      "verifiedAnswer": null,
+      "reason": "The retained lucid interval and lens-shaped collection support epidural hematoma, but management cannot be reduced to universal immediate evacuation versus referral without hematoma size, thickness, midline shift, mass effect, GCS trend, focal deficit, or evidence of deterioration. Contemporary EDH management includes urgent neurosurgical consultation for all clinically significant EDH and surgical evacuation for patients meeting clinical/radiologic operative criteria; selected small stable EDHs can be observed with serial imaging. The source image is also missing. Therefore neither A nor B can be promoted as a universal single-best answer from the retained stem.",
+      "references": [
+        "NCBI StatPearls Epidural Hematoma, current 2025-2026 content: urgent neurosurgical consultation; operative versus nonoperative management depends on clinical/radiologic criteria",
+        "Surgical management of acute epidural hematomas: EDH >30 cm3 or neurologic deterioration favors evacuation; selected smaller stable EDH may be observed in a neurosurgical center"
+      ]
+    },
+    {
+      "id": "part2-trauma-q22",
+      "sourceQuestion": "Trauma Q22",
+      "modernOutcome": "resuscitation_response_missing_prevents_ct_vs_operation_choice",
+      "verifiedAnswer": null,
+      "reason": "Current APSA guidance prioritizes hemodynamic status after resuscitation rather than injury grade alone. Children with signs of ongoing bleeding after resuscitation may require operative exploration or other intervention, whereas CT-based nonoperative management applies to stabilized patients. The retained child is tachycardic and hypotensive with a splenic tear, but the stem does not state whether hypotension persists after blood/fluid resuscitation. CT versus surgery therefore depends on a missing management switch and cannot be safely graded from the retained wording.",
+      "references": [
+        "Updated APSA Guidelines for the Management of Blunt Liver and Spleen Injuries, Journal of Pediatric Surgery 2023: intervention is based on continued bleeding/hemodynamic abnormality after resuscitation"
+      ]
+    },
+    {
+      "id": "part2-derm-q10",
+      "sourceQuestion": "Dermatology Q10",
+      "modernOutcome": "diagnosis_uncertain_and_retained_options_do_not_represent_standard_management",
+      "verifiedAnswer": null,
+      "reason": "The source itself is uncertain whether the lesion represents herpetic gingivostomatitis, the original image is missing, and the keyed 'magic mouthwash' option conflicts with the source explanation. Current pediatric HSV gingivostomatitis guidance emphasizes hydration and analgesia, with acyclovir reserved for selected severe, early, or immunocompromised cases. Iron supplementation and nystatin are diagnosis-specific therapies not supported by the retained stem, and routine 'magic mouthwash' is not an evidence-based universal treatment. No retained option represents a clean modern management plan.",
+      "references": [
+        "Royal Children's Hospital Melbourne Clinical Practice Guideline: HSV Gingivostomatitis — management focuses on hydration and analgesia; acyclovir for selected cases"
+      ]
+    },
+    {
+      "id": "part2-derm-q20",
+      "sourceQuestion": "Dermatology Q20",
+      "modernOutcome": "preferred_infant_scabies_treatment_absent_and_ivermectin_safety_not_established",
+      "verifiedAnswer": null,
+      "reason": "A 6-month-old with household itching and a positive scraping is compatible with scabies, but current CDC guidance recommends permethrin 5% in infants and young children; it is FDA-approved from age 2 months. Safety of oral ivermectin has not been established in children weighing under 15 kg, and lindane should not be used in young children. Permethrin is absent from the retained options, so the source ivermectin key cannot be promoted as a modern answer for this infant.",
+      "references": [
+        "CDC Clinical Care of Scabies: permethrin 5% approved from age 2 months; safety of oral ivermectin not established below 15 kg",
+        "CDC STI Ectoparasitic Infections guideline: infants and young children should be treated with permethrin; lindane should not be used in children under 10 years"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 4,
+    "resolvedToModernVerifiedAnswer": 0,
+    "retainedNonPublishable": 4,
+    "recalledAnswersOverwritten": 0,
+    "aggregateFromPriorSharedState": {
+      "startingResolutionReviewed": 107,
+      "startingCleanModernAnswers": 29,
+      "startingRetainedNonPublishable": 78,
+      "resolutionReviewedAfterThisBatch": 111,
+      "cleanModernAnswersAfterThisBatch": 29,
+      "retainedNonPublishableAfterThisBatch": 82,
+      "remainingConflictsNotYetResolutionReviewed": 20
+    }
+  }
+}
