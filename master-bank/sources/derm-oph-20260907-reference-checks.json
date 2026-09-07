@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cdc-scabies-20260907",
+    "title": "CDC: Clinical Care of Scabies",
+    "url": "https://www.cdc.gov/scabies/hcp/clinical-care/index.html",
+    "checkedOn": "2026-09-07",
+    "appliesTo": [
+      "part2-derm-q20"
+    ],
+    "scope": "Limited medication-age safety check, not independent verification of this MCQ.",
+    "summaryAr": "فحص خارجي محدود: CDC يذكر أن permethrin 5% معتمد من عمر شهرين، وأن أمان oral ivermectin دون 15 kg غير مثبت. لا يوجد route أووزن واضح في الخيار الأصلي؛ بقي السؤال غير معتمد."
+  },
+  {
+    "id": "cdc-headlice-20260907",
+    "title": "CDC: Clinical Care of Head Lice",
+    "url": "https://www.cdc.gov/lice/hcp/clinical-care/index.html",
+    "checkedOn": "2026-09-07",
+    "appliesTo": [
+      "part2-derm-q18",
+      "part2-derm-q19"
+    ],
+    "scope": "US drug-age and retreatment timing check; local resistance and Saudi protocol not checked.",
+    "summaryAr": "فحص خارجي محدود: CDC يذكر permethrin 1% من عمر شهرين، وقد تلزم الإعادة في اليوم التاسع، مع احتمال resistance. لا تُعمم أفضلية المنتج على كل البلدان."
+  },
+  {
+    "id": "cdc-lice-school-20260907",
+    "title": "CDC: Providing Care for Individuals with Head Lice",
+    "url": "https://www.cdc.gov/lice/caring-head/index.html",
+    "checkedOn": "2026-09-07",
+    "appliesTo": [
+      "part2-derm-q19"
+    ],
+    "scope": "School-exclusion policy only; the whole answer key is not independently verified.",
+    "summaryAr": "فحص خارجي محدود: لا يؤيد CDC سياسات no-nit؛ يمكن العودة إلى المدرسة بعد بدء العلاج المناسب."
+  },
+  {
+    "id": "rch-hsv-20260907",
+    "title": "Royal Children's Hospital: HSV Gingivostomatitis",
+    "url": "https://www.rch.org.au/clinicalguide/guideline_index/HSV_Gingivostomatitis/",
+    "checkedOn": "2026-09-07",
+    "appliesTo": [
+      "part2-derm-q10"
+    ],
+    "scope": "Supportive-care and uncertainty check, not endorsement of the recalled magic-mouthwash option.",
+    "summaryAr": "فحص خارجي محدود: إرشاد RCH يركز على hydration وanalgesia، ويذكر أن topical analgesics شائعة الاستخدام رغم عدم ثبوت فعاليتها. لا يحول ذلك B? إلى إجابة علاجية موثقة."
+  },
+  {
+    "id": "aapos-chalazion-20260907",
+    "title": "AAPOS: Chalazion",
+    "url": "https://www.aapos.org/glossary/chalazion",
+    "checkedOn": "2026-09-07",
+    "appliesTo": [
+      "part2-ophthalmology-q10"
+    ],
+    "scope": "Terminology distinction only; image diagnosis and complete MCQ remain unverified.",
+    "summaryAr": "فحص خارجي محدود: AAPOS يميز Chalazion الناتج عن انسداد gland عن Stye/Hordeolum المرتبط بالعدوى. لذلك لا يُقبل جمع الاسمين كمرادفين في الخيار A دون تنبيه."
+  }
+]
