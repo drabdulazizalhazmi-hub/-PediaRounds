@@ -1,0 +1,32 @@
+name: master-bank-source-image-bundle
+
+on:
+  push:
+    branches: [master-bank/scfhs-merge]
+    paths:
+      - 'master-bank/source-bundles/derm-oph-source-images-20260907.json'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master-bank/scfhs-merge
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply source image bundle
+        run: python master-bank/tools/apply_source_image_bundle.py master-bank/source-bundles/derm-oph-source-images-20260907.json
+      - name: Commit linked source images
+        run: |
+          rm master-bank/source-bundles/derm-oph-source-images-20260907.json
+          git config user.name 'PediaRounds QA Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add master-bank/data master-bank/assets master-bank/source-bundles
+          git commit -m 'assets(master-bank): attach six original derm/oph source images'
+          git push origin HEAD:master-bank/scfhs-merge

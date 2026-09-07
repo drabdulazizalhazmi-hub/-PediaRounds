@@ -1,0 +1,64 @@
+[
+  {
+    "id":"part2-neuro-q46",
+    "module":"Neurology and Neurodisability",
+    "specialty":"Neurology",
+    "topic":"Other Neurological Diseases",
+    "subtopic":"Posterior fossa lesion and torticollis",
+    "yearTags":[2024,2020],
+    "examPart":"Part II",
+    "stemEn":"An 8-month-old previously healthy boy has persistent posterior head tilt toward the left shoulder, recurrent aspiration pneumonia, left esotropia and facial palsy. Other examination findings are unremarkable. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Congenital muscular torticollis"},{"key":"B","text":"Benign paroxysmal torticollis of infancy"},{"key":"C","text":"Posterior fossa tumor"},{"key":"D","text":"Sandifer syndrome"},{"key":"E","text":"Congenital undescended scapula syndrome"}],
+    "recalledAnswer":"C",
+    "verifiedAnswer":null,
+    "answerConfidence":"source_key_only",
+    "explanationAr":"الملف يختار Posterior fossa tumor. وجود esotropia وfacial palsy مع torticollis وrecurrent aspiration pneumonia يوحي بوجود علامات عصبية/cranial nerve involvement أكثر من congenital muscular torticollis البسيط. لم يورد المصدر شرحًا تفصيليًا لهذا السؤال، لذلك بقيت الإجابة recalled وليست verified.",
+    "incorrectOptionsAr":"المصدر لا يقدم تفصيلًا لكل خيار؛ لذلك لم أضف استبعادات غير مذكورة في الملف.",
+    "keywords":["torticollis","esotropia","facial palsy","aspiration pneumonia","posterior fossa"],
+    "clinicalPearl":"Torticollis accompanied by focal neurologic or cranial-nerve findings is a red flag for a central cause.",
+    "image":null,
+    "tts":{"enabled":true,"language":"en","text":"An 8-month-old previously healthy boy has persistent posterior head tilt toward the left shoulder, recurrent aspiration pneumonia, left esotropia and facial palsy. What is the most likely diagnosis? Option A, congenital muscular torticollis. Option B, benign paroxysmal torticollis of infancy. Option C, posterior fossa tumor. Option D, Sandifer syndrome. Option E, congenital undescended scapula syndrome."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","questionNumber":"Neurology Q46","years":[2024,2020]}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked"},
+    "duplicateOf":null,
+    "reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-neuro-q47",
+    "module":"Neurology and Neurodisability","specialty":"Neurology","topic":"Other Neurological Diseases","subtopic":"Spinal muscular atrophy","yearTags":[2021,2017],"examPart":"Part II",
+    "stemEn":"A neonate presents with hypotonia and hyporeflexia with a history of polyhydramnios. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Congenital myotonic dystrophy"},{"key":"B","text":"Congenital myopathy"},{"key":"C","text":"Spinal muscular atrophy (SMA)"},{"key":"D","text":"Myotonia congenita"}],
+    "recalledAnswer":"C","verifiedAnswer":null,"answerConfidence":"source_key_only",
+    "explanationAr":"مفتاح المصدر هو Spinal muscular atrophy (SMA). يشرح الملف أن polyhydramnios/decreased fetal movements قد تحدث مع neuromuscular disorders، وأن اجتماع neonatal hypotonia مع hyporeflexia يجعل SMA هو الاختيار المفضل من الخيارات المعطاة. هذا تلخيص لشرح المصدر، وليس تحققًا مستقلًا.",
+    "incorrectOptionsAr":"المصدر يذكر أن congenital myopathy قد تسبب hypotonia في infancy وقد تظهر داخل الرحم لكنها أندر، ويعتبر بقية الخيارات أقل ملاءمة للنمط المذكور.",
+    "keywords":["neonatal hypotonia","hyporeflexia","polyhydramnios","SMA"],"clinicalPearl":"A floppy infant with hyporeflexia suggests a peripheral neuromuscular process.",
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A neonate presents with hypotonia and hyporeflexia with a history of polyhydramnios. What is the most likely diagnosis? Option A, congenital myotonic dystrophy. Option B, congenital myopathy. Option C, spinal muscular atrophy. Option D, myotonia congenita."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","questionNumber":"Neurology Q47","years":[2021,2017]}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked"},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-neuro-q48","module":"Neurology and Neurodisability","specialty":"Neurology","topic":"Other Neurological Diseases","subtopic":"SMA diagnostic testing","yearTags":[2024,2023,2018],"examPart":"Part II",
+    "stemEn":"A neonate presents with hypotonia, hyporeflexia, weak sucking, a history of polyhydramnios and a bell-shaped chest. Which test should be requested?",
+    "options":[{"key":"A","text":"SMN gene testing"},{"key":"B","text":"Muscle biopsy"},{"key":"C","text":"Chromosomal study"},{"key":"D","text":"TORCH screening"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"source_key_only",
+    "explanationAr":"المصدر يربط السيناريو بـSMA ويختار SMN gene testing، مع إحالة مباشرة إلى السؤال السابق.","incorrectOptionsAr":"لا يورد المصدر مقارنة تفصيلية بين بقية الاختبارات.","keywords":["SMN gene","SMA","bell-shaped chest","weak sucking","hyporeflexia"],"clinicalPearl":"When the phenotype strongly suggests SMA, molecular testing for SMN is the source-selected confirmatory test.",
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A neonate presents with hypotonia, hyporeflexia, weak sucking, a history of polyhydramnios and a bell-shaped chest. Which test should be requested? Option A, SMN gene testing. Option B, muscle biopsy. Option C, chromosomal study. Option D, TORCH screening."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","questionNumber":"Neurology Q48","years":[2024,2023,2018]}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked"},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-neuro-q49","module":"Neurology and Neurodisability","specialty":"Neurology","topic":"Other Neurological Diseases","subtopic":"Juvenile myasthenia gravis diagnosis","yearTags":[2023,2018],"examPart":"Part II",
+    "stemEn":"A child has swallowing difficulty, bilateral ptosis and weakness that worsens toward the end of the day. What test should be done next?",
+    "options":[{"key":"A","text":"Edrophonium test"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"الملف يختار Edrophonium test لكنه ينبه صراحةً أن هذا الاختبار لم يعد مستخدمًا على نطاق واسع بسبب adverse effects ومنها bradycardia، ومع توفر neurophysiological testing وantibody testing الأكثر موثوقية. لذلك حُفظ مفتاح الامتحان تاريخيًا ولم يُعتمد كإجابة حديثة verified.",
+    "incorrectOptionsAr":"الخيارات الأخرى غير مسترجعة في هذا الـrecall.","keywords":["fatigable weakness","ptosis","dysphagia","myasthenia gravis","edrophonium"],"clinicalPearl":"Preserve historical exam keys separately from current diagnostic practice.",
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A child has swallowing difficulty, bilateral ptosis and weakness that worsens toward the end of the day. What test should be done next? Option A, edrophonium test."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","questionNumber":"Neurology Q49","years":[2023,2018]}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source itself states edrophonium is not widely used nowadays."},"duplicateOf":null,"reviewStatus":"outdated"
+  },
+  {
+    "id":"part2-neuro-q50","module":"Neurology and Neurodisability","specialty":"Neurology","topic":"Other Neurological Diseases","subtopic":"Juvenile myasthenia gravis treatment","yearTags":[2024,2020,2018],"examPart":"Part II",
+    "stemEn":"An adolescent has bilateral ptosis and swallowing difficulty that worsen at the end of the day. Which treatment should be given?",
+    "options":[{"key":"A","text":"Neostigmine or pyridostigmine"},{"key":"B","text":"Atropine"},{"key":"C","text":"Prednisolone"},{"key":"D","text":"IVIG"}],"recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"source_key_only",
+    "explanationAr":"المصدر يختار acetylcholinesterase inhibitor ويذكر أن pyridostigmine هو الدواء المعتاد للـmild-to-moderate myasthenia gravis، بينما neostigmine متوفر لكنه أقل استخدامًا.","incorrectOptionsAr":"المصدر لا يقدم شرحًا منفصلًا للخيارات B-D في هذا السؤال.","keywords":["juvenile myasthenia gravis","pyridostigmine","ptosis","fatigability"],"clinicalPearl":"Pyridostigmine is the source-described usual symptomatic acetylcholinesterase inhibitor.",
+    "image":null,"tts":{"enabled":true,"language":"en","text":"An adolescent has bilateral ptosis and swallowing difficulty that worsen at the end of the day. Which treatment should be given? Option A, neostigmine or pyridostigmine. Option B, atropine. Option C, prednisolone. Option D, IVIG."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","questionNumber":"Neurology Q50","years":[2024,2020,2018]}],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked"},"duplicateOf":null,"reviewStatus":"needs_verification"
+  }
+]

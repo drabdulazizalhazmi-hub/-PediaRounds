@@ -1,0 +1,52 @@
+[
+  {
+    "id":"part2-genetics-mode-q01","module":"genetics-dysmorphology","specialty":"Genetics","topic":"Modes of Inheritance","subtopic":"X-linked recessive inheritance","yearTags":[2025,2023,2018],"examPart":"Part II",
+    "stemEn":"A pedigree was provided showing an X-linked recessive pattern of inheritance. What is the mode of inheritance?",
+    "options":[{"key":"A","text":"X-linked recessive"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high",
+    "explanationAr":"الـpedigree في المصدر موصوف بأنه X-linked recessive؛ النمط النموذجي يكون أكثر في الذكور، ينتقل عبر carrier females، ولا يوجد male-to-male transmission.",
+    "reasoningEn":"The pedigree is described in the source as showing an X-linked recessive pattern.",
+    "incorrectOptionsAr":null,
+    "keywords":["pedigree","X-linked recessive","no male-to-male transmission"],
+    "clinicalPearl":"In X-linked recessive inheritance, affected fathers do not transmit the condition to sons, while carrier daughters may transmit it to their sons.",
+    "managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"source PDF pedigree","assetPath":null,"captionAr":"Pedigree يوضح X-linked recessive inheritance","captionEn":"Pedigree showing X-linked recessive inheritance","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":null},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2025,"part":"Part II","page":null,"questionNumber":"Genetics Q1","notes":"Also recalled in 2023 and 2018; pedigree required"}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source supplies pattern label; image must be linked before publication."},
+    "duplicateOf":null,"reviewStatus":"image_missing"
+  },
+  {
+    "id":"part2-genetics-mode-q02","module":"genetics-dysmorphology","specialty":"Genetics","topic":"Modes of Inheritance","subtopic":"Autosomal dominant recurrence risk","yearTags":[2022,2020,2017],"examPart":"Part II",
+    "stemEn":"An autosomal dominant pedigree was provided: males and females are equally affected, with no generation skip. An unaffected person at the bottom marries an unaffected wife. What is their chance of having an affected baby?",
+    "options":[{"key":"A","text":"Negligible"},{"key":"B","text":"25%"},{"key":"C","text":"50%"},{"key":"D","text":"75%"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high",
+    "explanationAr":"في autosomal dominant disease، الشخص الذي لم يرث الـpathogenic variant يكون unaffected ولا يملك الـvariant لينقله؛ لذلك مع زوجة unaffected يكون الخطر من نفس familial variant negligible وفق صياغة السؤال.",
+    "reasoningEn":"An unaffected individual in a fully penetrant autosomal dominant pedigree has not inherited the familial variant and therefore does not pass it to offspring.",
+    "incorrectOptionsAr":"25% و50% و75% تحتاج وجود parent يحمل الـvariant. الـ50% هي recurrence risk المعتادة عندما يكون أحد الوالدين heterozygous affected.",
+    "keywords":["autosomal dominant","pedigree","unaffected parent","recurrence risk"],
+    "clinicalPearl":"For a heterozygous affected parent, each pregnancy usually carries a 50% chance of inheriting the variant; an unaffected non-carrier does not transmit it.",
+    "managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"source PDF pedigree","assetPath":null,"captionAr":"Autosomal dominant pedigree","captionEn":"Autosomal dominant pedigree","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":null},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2022,"part":"Part II","page":null,"questionNumber":"Genetics Q2","notes":"Also recalled in 2020 and 2017; pedigree required"}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation cites UpToDate."},
+    "duplicateOf":null,"reviewStatus":"image_missing"
+  },
+  {
+    "id":"part2-genetics-mode-q03","module":"genetics-dysmorphology","specialty":"Genetics","topic":"Modes of Inheritance","subtopic":"Autosomal dominant features","yearTags":[2019],"examPart":"Part II",
+    "stemEn":"Which of the following statements is true regarding autosomal dominant inheritance?",
+    "options":[{"key":"A","text":"Males and females are equally affected"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high",
+    "explanationAr":"Autosomal traits تؤثر على الذكور والإناث بصورة متقاربة لأن الجين ليس على sex chromosome. وفي النمط dominant يمكن لأي والد affected أن ينقل الـvariant إلى نحو 50% من الأبناء إذا كان heterozygous.",
+    "reasoningEn":"Autosomal dominant traits generally affect males and females equally.",
+    "incorrectOptionsAr":null,
+    "keywords":["autosomal dominant","males and females equally affected"],
+    "clinicalPearl":"Vertical transmission across generations is a classic autosomal dominant pedigree clue when penetrance is high.",
+    "managementSteps":[],"diagnosticSteps":[],"image":null,
+    "tts":{"enabled":true,"language":"en","text":null},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Ed 2026","year":2019,"part":"Part II","page":null,"questionNumber":"Genetics Q3","notes":"Only one option preserved in source recall"}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation cites UpToDate."},
+    "duplicateOf":null,"reviewStatus":"incomplete_recall"
+  }
+]

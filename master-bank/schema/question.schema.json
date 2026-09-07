@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pediarounds.local/schema/question.schema.json",
+  "title": "PediaRoundsQuestion",
+  "type": "object",
+  "required": [
+    "id",
+    "module",
+    "stemEn",
+    "options",
+    "sourceRefs",
+    "reviewStatus"
+  ],
+  "properties": {
+    "id": {"type": "string"},
+    "module": {"type": "string"},
+    "specialty": {"type": "string"},
+    "topic": {"type": "string"},
+    "subtopic": {"type": "string"},
+    "yearTags": {"type": "array", "items": {"type": "integer"}, "uniqueItems": true},
+    "examPart": {"type": "string"},
+    "stemEn": {"type": "string"},
+    "options": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["key", "text"],
+        "properties": {
+          "key": {"type": "string"},
+          "text": {"type": "string"}
+        }
+      }
+    },
+    "recalledAnswer": {"type": ["string", "null"]},
+    "verifiedAnswer": {"type": ["string", "null"]},
+    "answerConfidence": {"enum": ["high", "moderate", "low", "unknown"]},
+    "explanationAr": {"type": ["string", "null"]},
+    "reasoningEn": {"type": ["string", "null"]},
+    "incorrectOptionsAr": {"type": ["string", "null"]},
+    "keywords": {"type": "array", "items": {"type": "string"}},
+    "clinicalPearl": {"type": ["string", "null"]},
+    "managementSteps": {"type": "array", "items": {"type": "string"}},
+    "diagnosticSteps": {"type": "array", "items": {"type": "string"}},
+    "image": {
+      "type": ["object", "null"],
+      "properties": {
+        "requiredForQuestion": {"type": "boolean"},
+        "sourceRef": {"type": ["string", "null"]},
+        "assetPath": {"type": ["string", "null"]},
+        "captionAr": {"type": ["string", "null"]},
+        "captionEn": {"type": ["string", "null"]},
+        "status": {"enum": ["available", "missing", "needs_review", "not_required"]}
+      }
+    },
+    "tts": {
+      "type": "object",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "language": {"const": "en"},
+        "text": {"type": ["string", "null"]}
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["sourceName"],
+        "properties": {
+          "sourceName": {"type": "string"},
+          "year": {"type": ["integer", "null"]},
+          "part": {"type": ["string", "null"]},
+          "page": {"type": ["integer", "null"]},
+          "questionNumber": {"type": ["string", "null"]},
+          "notes": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "upToDate": {"enum": ["not_checked", "supports", "conflicts", "unavailable"]},
+        "nelson": {"enum": ["not_checked", "supports", "conflicts", "unavailable"]},
+        "guideline": {"enum": ["not_checked", "supports", "conflicts", "unavailable"]},
+        "referenceNotes": {"type": ["string", "null"]}
+      }
+    },
+    "duplicateOf": {"type": ["string", "null"]},
+    "reviewStatus": {
+      "enum": [
+        "imported",
+        "deduplicated",
+        "image_checked",
+        "needs_verification",
+        "verified",
+        "ready_for_publish",
+        "conflicting",
+        "incomplete_recall",
+        "image_missing",
+        "image_needs_review",
+        "outdated"
+      ]
+    }
+  }
+}

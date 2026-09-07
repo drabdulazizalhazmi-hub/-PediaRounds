@@ -1,0 +1,112 @@
+[
+  {
+    "id":"part2-nutrition-q004-cf-vitamin-a-iih","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Vitamin deficiency","subtopic":"Vitamin A deficiency in cystic fibrosis","yearTags":[2020,2017],"examPart":"Part II",
+    "stemEn":"A patient with cystic fibrosis and a sweat chloride result of 90 presents with headache. Brain imaging shows features of raised intracranial pressure, including an empty sella. Which vitamin deficiency is the source asking about?",
+    "options":[{"key":"A","text":"Vitamin A deficiency"},{"key":"B","text":"Vitamin E deficiency"},{"key":"C","text":"Vitamin C deficiency"},{"key":"D","text":"Vitamin D deficiency"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يختار Vitamin A deficiency. شرحه يذكر empty sella ضمن العلامات الشعاعية المرتبطة بـidiopathic intracranial hypertension، ثم يذكر hypovitaminosis A ضمن الحالات المرتبطة بارتفاع الضغط داخل القحف، مع إحالة خاصة إلى حالات cystic fibrosis. حُفظ مفتاح المصدر كما هو ولم يُحوّل إلى verified answer.",
+    "reasoningEn":"The source explicitly links the recalled CF scenario and empty-sella finding to hypovitaminosis A, but independent verification is still required.",
+    "incorrectOptionsAr":"المصدر لا يناقش B وC وD تفصيليًا في هذا السؤال؛ لا نضيف تعليلًا غير موجود في المادة الأصلية.","keywords":["cystic fibrosis","empty sella","intracranial hypertension","vitamin A"],"clinicalPearl":"Source-derived association only; verify independently before publication.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A patient with cystic fibrosis presents with headache and imaging features of raised intracranial pressure including an empty sella. Which vitamin deficiency is being tested? A. Vitamin A deficiency. B. Vitamin E deficiency. C. Vitamin C deficiency. D. Vitamin D deficiency."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":null,"part":"Part II","page":256,"questionNumber":"Nutrition and Malnutrition Q4","notes":"Part II 2020 and 2017; source explanation extends onto page 257."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; verify the hypovitaminosis-A/IIH framing independently."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-nutrition-q005-cf-vitamin-e-neurology","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Vitamin deficiency","subtopic":"Vitamin E deficiency","yearTags":[2022],"examPart":"Part II",
+    "stemEn":"A patient with cystic fibrosis presents with areflexia and ataxia. What is the most probable vitamin deficiency?",
+    "options":[{"key":"A","text":"Vitamin E"},{"key":"?","text":"Other recalled options were not preserved in the source"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Vitamin E، ويصف severe prolonged vitamin E deficiency بأنه قد يبدأ بفقد deep tendon reflexes ثم limb/truncal ataxia مع posterior-column dysfunction وocular findings.",
+    "reasoningEn":"The source explanation directly associates areflexia and ataxia with prolonged vitamin E deficiency.",
+    "incorrectOptionsAr":"الخيارات الأخرى غير محفوظة في الـrecall، لذلك لم تُنشأ بدائل من الذاكرة.","keywords":["cystic fibrosis","areflexia","ataxia","vitamin E"],"clinicalPearl":"Loss of deep tendon reflexes is highlighted by the source as an early neurologic sign of vitamin E deficiency.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A patient with cystic fibrosis presents with areflexia and ataxia. What is the most probable vitamin deficiency? A. Vitamin E."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2022,"part":"Part II","page":257,"questionNumber":"Nutrition and Malnutrition Q5","notes":"Only one answer choice was preserved in the source recall."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation cites Nelson; independent verification pending."},"duplicateOf":null,"reviewStatus":"incomplete_recall"
+  },
+  {
+    "id":"part2-nutrition-q006-vitamin-e-ophthalmoplegia","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Vitamin deficiency","subtopic":"Vitamin E neurologic manifestations","yearTags":[2024,2023],"examPart":"Part II",
+    "stemEn":"A patient with cystic fibrosis has ataxia, decreased sensation, and loss of deep tendon reflexes. Which additional finding is expected in the source question?",
+    "options":[{"key":"A","text":"Ophthalmoplegia"},{"key":"B","text":"Bitot's spots"},{"key":"C","text":"Skin desquamation"},{"key":"D","text":"Trousseau's sign"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Ophthalmoplegia ويعيد إلى شرح Q5، الذي يذكر ophthalmoplegia وnystagmus ضمن المظاهر العصبية المتقدمة لـVitamin E deficiency.",
+    "reasoningEn":"The source's preceding explanation lists ophthalmoplegia among neurologic manifestations of vitamin E deficiency.",
+    "incorrectOptionsAr":"Bitot's spots ترتبط في نفس المصدر بـVitamin A deficiency. أما C وD فلا يناقشهما المصدر تفصيليًا هنا.","keywords":["vitamin E","ophthalmoplegia","ataxia","areflexia"],"clinicalPearl":"The source links posterior-column/cerebellar signs plus ophthalmoplegia to prolonged vitamin E deficiency.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A patient with cystic fibrosis has ataxia, decreased sensation, and loss of deep tendon reflexes. Which additional finding is expected? A. Ophthalmoplegia. B. Bitot's spots. C. Skin desquamation. D. Trousseau's sign."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":null,"part":"Part II","page":258,"questionNumber":"Nutrition and Malnutrition Q6","notes":"Part II 2024 and 2023."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-nutrition-q007-liver-disease-vitamin-e","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Vitamin deficiency","subtopic":"Vitamin E deficiency in liver disease","yearTags":[2025,2018],"examPart":"Part II",
+    "stemEn":"A child with liver disease presents with ophthalmoplegia, ataxia, and loss of sensation. What is the most likely vitamin deficiency?",
+    "options":[{"key":"A","text":"Vitamin A"},{"key":"B","text":"Vitamin E"},{"key":"C","text":"Vitamin D"},{"key":"D","text":"Vitamin K"}],
+    "recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Vitamin E ويُحيل إلى نفس الشرح السابق عن neurologic manifestations of vitamin E deficiency.",
+    "reasoningEn":"The source treats the neurologic pattern as vitamin E deficiency in the setting of chronic liver disease.",
+    "incorrectOptionsAr":"المصدر لا يقدم مقارنة تفصيلية لبقية fat-soluble vitamins في هذا السؤال.","keywords":["liver disease","vitamin E","ataxia","ophthalmoplegia"],"clinicalPearl":"Fat-soluble vitamin deficiency can complicate chronic hepatobiliary disease; the source tests vitamin E here.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A child with liver disease presents with ophthalmoplegia, ataxia, and loss of sensation. What is the most likely vitamin deficiency? A. Vitamin A. B. Vitamin E. C. Vitamin D. D. Vitamin K."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":null,"part":"Part II","page":258,"questionNumber":"Nutrition and Malnutrition Q7","notes":"Part II 2025 and 2018."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-nutrition-q008-abetalipoproteinemia-acanthocytes","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Malabsorption","subtopic":"Abetalipoproteinemia","yearTags":[2018],"examPart":"Part II",
+    "stemEn":"A child with a history of malabsorption has manifestations of vitamin E deficiency. The original question includes a peripheral-smear image showing acanthocytes. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Abetalipoproteinemia"},{"key":"?","text":"Other recalled options were not preserved in the source"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Abetalipoproteinemia ويصفها كـautosomal recessive disorder مع fat malabsorption، hypolipidemia، retinitis pigmentosa، cerebellar ataxia وacanthocytosis. كما يذكر أن التأثيرات العصبية والشبكية مرتبطة خصوصًا بـVitamin E deficiency.",
+    "reasoningEn":"The source combines fat malabsorption, vitamin E deficiency manifestations, and acanthocytes to identify abetalipoproteinemia.",
+    "incorrectOptionsAr":"الخيارات الأخرى غير محفوظة في المصدر، ولم تُنشأ بدائل جديدة.","keywords":["acanthocytes","abetalipoproteinemia","fat malabsorption","vitamin E"],"clinicalPearl":"Acanthocytosis plus fat malabsorption and neurologic/retinal disease is the source's high-yield clue.","managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"Nutrition and Malnutrition Q8 peripheral-smear image","assetPath":null,"captionAr":"الصورة الأصلية للأكانثوسايت مطلوبة قبل النشر.","captionEn":"Original acanthocyte smear image required before publication.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A child with malabsorption has manifestations of vitamin E deficiency. A peripheral smear shows acanthocytes. What is the most likely diagnosis? A. Abetalipoproteinemia."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2018,"part":"Part II","page":258,"questionNumber":"Nutrition and Malnutrition Q8","notes":"Image-dependent; explanation continues on page 259."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"image_missing"
+  },
+  {
+    "id":"part2-nutrition-q009-terminal-ileum-b12","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Vitamin deficiency","subtopic":"Vitamin B12 malabsorption after ileal resection","yearTags":[2023,2020,2019,2018],"examPart":"Part II",
+    "stemEn":"A 4-month-old infant presents with pallor. His neonatal course included NEC requiring bowel resection that involved the ileocecal junction, followed by a period of TPN. What could be the cause of his anemia?",
+    "options":[{"key":"A","text":"Vitamin B12 deficiency"},{"key":"B","text":"Iron deficiency"},{"key":"C","text":"Folic acid deficiency"},{"key":"D","text":"TPN-related anemia"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Vitamin B12 deficiency ويذكر ileal resections ضمن أسباب B12 malabsorption. كما يصف macrocytic anemia وبعض المظاهر العصبية عند الرضع.",
+    "reasoningEn":"The source links ileal resection to vitamin B12 malabsorption and anemia.",
+    "incorrectOptionsAr":"المصدر لا يفصل استبعاد الخيارات الأخرى في هذا الـstem، لذلك لا نضيف أسبابًا غير منصوص عليها.","keywords":["NEC","ileal resection","vitamin B12","anemia"],"clinicalPearl":"Terminal ileal loss is a key source clue for vitamin B12 malabsorption.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A four-month-old infant has pallor after NEC surgery with resection involving the ileocecal junction. What could be the cause of anemia? A. Vitamin B12 deficiency. B. Iron deficiency. C. Folic acid deficiency. D. TPN-related anemia."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":null,"part":"Part II","page":259,"questionNumber":"Nutrition and Malnutrition Q9","notes":"Part II 2023, 2020, 2019, 2018."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation cites Nelson; independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-nutrition-q010-terminal-ileum-macrocytic","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Vitamin deficiency","subtopic":"Macrocytic anemia after terminal ileal resection","yearTags":[2017],"examPart":"Part II",
+    "stemEn":"A newborn had NEC requiring bowel resection that included the terminal ileum. What type of anemia is expected in the source question?",
+    "options":[{"key":"A","text":"Macrocytic anemia"},{"key":"B","text":"Microcytic anemia"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Macrocytic anemia ويربطه بالسؤال السابق عن Vitamin B12 malabsorption بعد terminal ileal resection.",
+    "reasoningEn":"The source keys macrocytic anemia based on the preceding vitamin B12 deficiency item.",
+    "incorrectOptionsAr":"المصدر لا يقدم شرحًا منفصلًا لـMicrocytic anemia هنا، بل يحيل إلى Q9.","keywords":["terminal ileum","vitamin B12","macrocytic anemia"],"clinicalPearl":"The source tests B12-related macrocytosis after terminal ileal resection.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A newborn had NEC requiring bowel resection that included the terminal ileum. What type of anemia is expected? A. Macrocytic anemia. B. Microcytic anemia."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2017,"part":"Part II","page":260,"questionNumber":"Nutrition and Malnutrition Q10","notes":"Source refers back to Q9."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  },
+  {
+    "id":"part2-nutrition-q011-angular-stomatitis-b2","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Vitamin deficiency","subtopic":"Riboflavin deficiency","yearTags":[2019,2018],"examPart":"Part II",
+    "stemEn":"A child presents with the oral finding described in the source as angular stomatitis. Which vitamin deficiency is most likely?",
+    "options":[{"key":"A","text":"Thiamin (Vitamin B1)"},{"key":"B","text":"Riboflavin (Vitamin B2)"},{"key":"C","text":"Niacin (Vitamin B3)"},{"key":"D","text":"Pyridoxine (Vitamin B6)"}],
+    "recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Riboflavin (Vitamin B2) ويذكر ضمن مظاهر riboflavin deficiency: cheilitis، stomatitis، glossitis، sore throat وseborrheic dermatitis.",
+    "reasoningEn":"The source explanation directly lists stomatitis and cheilitis among riboflavin-deficiency manifestations.",
+    "incorrectOptionsAr":"المصدر لا يقارن B1 وB3 وB6 تفصيليًا في هذا السؤال.","keywords":["angular stomatitis","riboflavin","vitamin B2"],"clinicalPearl":"Angular stomatitis/cheilitis is the source's clue for riboflavin deficiency.","managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"Nutrition and Malnutrition Q11 angular-stomatitis image/complaint","assetPath":null,"captionAr":"الصورة الأصلية للآفة الفموية مطلوبة قبل النشر.","captionEn":"Original oral-lesion image required before publication.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A child presents with angular stomatitis. Which vitamin deficiency is most likely? A. Thiamin, vitamin B1. B. Riboflavin, vitamin B2. C. Niacin, vitamin B3. D. Pyridoxine, vitamin B6."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":null,"part":"Part II","page":260,"questionNumber":"Nutrition and Malnutrition Q11","notes":"Part II 2019 and 2018; answer appears on page 261."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"image_missing"
+  },
+  {
+    "id":"part2-nutrition-q012-wilson-copper","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Trace elements","subtopic":"Wilson disease","yearTags":[2022,2019],"examPart":"Part II",
+    "stemEn":"A 14-year-old boy has behavioral change, declining school performance, and jaundice in a scenario labeled Wilson disease. Abnormal metabolism of which substance causes this condition?",
+    "options":[{"key":"A","text":"Copper"},{"key":"B","text":"Iron"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Copper ويصف Wilson disease بأنه اضطراب وراثي في copper metabolism بسبب خلل ATP7B مع ضعف biliary copper excretion وتراكم النحاس في liver، brain وcornea.",
+    "reasoningEn":"The source explicitly defines Wilson disease as a disorder of copper metabolism.",
+    "incorrectOptionsAr":"Iron ليس المعدن الذي يذكره المصدر كسبب لهذا الاضطراب.","keywords":["Wilson disease","copper","ATP7B","behavioral change"],"clinicalPearl":"The source emphasizes hepatic, neurologic, and psychiatric manifestations of copper accumulation.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"A fourteen-year-old boy has behavioral change, school decline, and jaundice in a Wilson disease scenario. Abnormal metabolism of which substance causes this condition? A. Copper. B. Iron."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":null,"part":"Part II","page":261,"questionNumber":"Nutrition and Malnutrition Q12","notes":"Part II 2022 and 2019; explanation continues on page 262."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  }
+]

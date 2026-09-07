@@ -1,0 +1,1039 @@
+[
+  {
+    "id": "part2-cardio-chd-q07",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Congenital heart disease",
+    "yearTags": [
+      2020,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "Which congenital heart lesion is classically associated with left-axis deviation in infancy?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Atrioventricular septal defect"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "وجود left/superior axis deviation في الرضع يرتبط بشكل مشهور بـ AV septal defect، وقد يُرى أيضًا مع tricuspid atresia بحسب السياق السريري.",
+    "reasoningEn": "AV septal defect is a classic congenital cause of superior/left QRS axis deviation.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall الأصلي.",
+    "keywords": [
+      "left axis deviation",
+      "AV canal"
+    ],
+    "clinicalPearl": "In a cyanotic infant, superior axis also raises tricuspid atresia.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "Which congenital heart lesion is classically associated with left-axis deviation in infancy?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2020,
+        "part": "Part II",
+        "page": 120,
+        "questionNumber": "Cardiology Q7"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites AAP/Park."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q08",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Cyanotic congenital heart disease",
+    "yearTags": [
+      2024,
+      2022,
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 6-hour-old cyanotic newborn has a single loud S2, oligemic lungs on chest X-ray, and left-axis deviation on ECG. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tricuspid atresia"
+      },
+      {
+        "key": "B",
+        "text": "Truncus arteriosus"
+      },
+      {
+        "key": "C",
+        "text": "Tetralogy of Fallot"
+      },
+      {
+        "key": "D",
+        "text": "Transposition of the great arteries"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "التركيبة عالية العائد هي cyanosis + single S2 + decreased pulmonary vascularity + superior/left axis deviation = Tricuspid atresia.",
+    "reasoningEn": "The combination of cyanosis, decreased pulmonary blood flow, single S2, and superior axis is characteristic of tricuspid atresia.",
+    "incorrectOptionsAr": "TGA عادة ليس معه oligemic lungs بهذه الصورة ولا superior axis؛ truncus غالبًا increased pulmonary flow؛ TOF قد يكون oligemic لكن الـaxis عادة rightward.",
+    "keywords": [
+      "single S2",
+      "oligemic lungs",
+      "left axis deviation"
+    ],
+    "clinicalPearl": "Superior axis in a cyanotic neonate is a major clue to tricuspid atresia.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 121 chest X-ray",
+      "assetPath": null,
+      "captionAr": "صورة الصدر الأصلية مطلوبة قبل النشر.",
+      "captionEn": "Original chest X-ray required before publication.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 6-hour-old cyanotic newborn has a single loud S2, oligemic lungs on chest X-ray, and left-axis deviation on ECG. What is the most likely diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 121,
+        "questionNumber": "Cardiology Q8"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-chd-q09",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Ductal-dependent pulmonary blood flow",
+    "yearTags": [
+      2024,
+      2023,
+      2020,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A profoundly cyanotic newborn has oligemic lungs and improves after prostaglandin E1. Which diagnosis best fits?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Transposition of the great arteries"
+      },
+      {
+        "key": "B",
+        "text": "Pulmonary atresia"
+      },
+      {
+        "key": "C",
+        "text": "Tetralogy of Fallot"
+      },
+      {
+        "key": "D",
+        "text": "Total anomalous pulmonary venous return"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Pulmonary atresia تعتمد على PDA لتوفير pulmonary blood flow؛ لذلك prostaglandin E1 يحافظ على ductal patency ويحسن الأكسجة.",
+    "reasoningEn": "Pulmonary atresia is a ductal-dependent lesion with reduced pulmonary blood flow and marked neonatal cyanosis.",
+    "incorrectOptionsAr": "TGA يحتاج mixing وليس oligemic lung pattern بشكل نموذجي؛ TOF عادة لا يكون duct-dependent دائمًا؛ TAPVR لا يُعالج بهذه الآلية وحدها.",
+    "keywords": [
+      "prostaglandin E1",
+      "oligemic lungs",
+      "pulmonary atresia"
+    ],
+    "clinicalPearl": "PGE1 maintains pulmonary blood flow in ductal-dependent right-sided obstruction.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 121 chest X-ray",
+      "assetPath": null,
+      "captionAr": "صورة الأشعة مطلوبة.",
+      "captionEn": "Chest X-ray required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A profoundly cyanotic newborn has oligemic lungs and improves after prostaglandin E1. Which diagnosis best fits?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 121,
+        "questionNumber": "Cardiology Q9"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites Park."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-chd-q10",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Critical pulmonary stenosis",
+    "yearTags": [
+      2025
+    ],
+    "examPart": "Part II",
+    "stemEn": "A cyanotic newborn with markedly reduced pulmonary blood flow is started on prostaglandin. Which lesion is most likely if antegrade right ventricular outflow is critically obstructed?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tricuspid atresia with TGA"
+      },
+      {
+        "key": "B",
+        "text": "Critical pulmonary stenosis"
+      },
+      {
+        "key": "C",
+        "text": "Ventricular septal defect"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "high",
+    "explanationAr": "Critical pulmonary stenosis قد تجعل pulmonary blood flow معتمدًا على الـductus. الحفاظ على PDA بالـPGE1 يمنع severe hypoxemia.",
+    "reasoningEn": "Critical pulmonary stenosis can be ductal-dependent because antegrade pulmonary flow is inadequate.",
+    "incorrectOptionsAr": "VSD لا يسبب هذه الصورة؛ tricuspid atresia with TGA له physiology مختلفة ويحتاج دلائل أخرى.",
+    "keywords": [
+      "critical pulmonary stenosis",
+      "duct-dependent"
+    ],
+    "clinicalPearl": "Severe RV outflow obstruction may present with cyanosis as the ductus closes.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 123 image",
+      "assetPath": null,
+      "captionAr": "الصورة الأصلية مطلوبة.",
+      "captionEn": "Original image required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A cyanotic newborn with markedly reduced pulmonary blood flow is started on prostaglandin. Which lesion is most likely if antegrade right ventricular outflow is critically obstructed?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 124,
+        "questionNumber": "Cardiology Q10"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-chd-q11",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Prostaglandin physiology",
+    "yearTags": [
+      2024,
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "In pulmonary atresia, why does prostaglandin E1 improve oxygenation?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It increases pulmonary flow through a left-to-right ductal shunt"
+      },
+      {
+        "key": "B",
+        "text": "It increases pulmonary flow through a right-to-left ductal shunt"
+      },
+      {
+        "key": "C",
+        "text": "It increases systemic flow through a left-to-right shunt"
+      },
+      {
+        "key": "D",
+        "text": "It increases systemic flow through a right-to-left shunt"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "في pulmonary atresia نحتاج ductal flow من aorta إلى pulmonary artery، أي left-to-right عبر الـPDA، لتغذية الرئتين.",
+    "reasoningEn": "Maintaining ductal patency allows blood to pass from the systemic circulation into the pulmonary arteries, increasing pulmonary blood flow.",
+    "incorrectOptionsAr": "Right-to-left ductal flow يفيد أكثر في بعض left-sided obstructive lesions للحفاظ على systemic output.",
+    "keywords": [
+      "PGE1",
+      "left-to-right ductal shunt",
+      "pulmonary flow"
+    ],
+    "clinicalPearl": "Direction of ductal benefit depends on whether pulmonary or systemic blood flow is obstructed.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "In pulmonary atresia, why does prostaglandin E1 improve oxygenation?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 124,
+        "questionNumber": "Cardiology Q11"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Source cites review of PGE1 in ductal-dependent lesions."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q12",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Patent ductus arteriosus",
+    "yearTags": [
+      2022
+    ],
+    "examPart": "Part II",
+    "stemEn": "An infant has bounding peripheral pulses from a hemodynamically significant PDA. Which drug can promote ductal closure?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Indomethacin"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Indomethacin يثبط prostaglandin synthesis وبالتالي يساعد على إغلاق PDA في الحالات المناسبة، خصوصًا الخدج.",
+    "reasoningEn": "Cyclooxygenase inhibition lowers prostaglandin levels and promotes PDA closure.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "bounding pulses",
+      "PDA",
+      "indomethacin"
+    ],
+    "clinicalPearl": "Ibuprofen is another commonly used pharmacologic option for PDA closure in preterm infants.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An infant has bounding peripheral pulses from a hemodynamically significant PDA. Which drug can promote ductal closure?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2022,
+        "part": "Part II",
+        "page": 124,
+        "questionNumber": "Cardiology Q12"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites Park."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q13",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "PDA with NEC",
+    "yearTags": [
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "A neonate with a hemodynamically significant PDA develops necrotizing enterocolitis and is unstable. What is the best PDA strategy among the listed options?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ibuprofen"
+      },
+      {
+        "key": "B",
+        "text": "Indomethacin"
+      },
+      {
+        "key": "C",
+        "text": "Furosemide"
+      },
+      {
+        "key": "D",
+        "text": "Urgent surgical correction"
+      }
+    ],
+    "recalledAnswer": "D",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "وجود NEC يعد contraindication مهمًا لاستخدام indomethacin/NSAID closure في هذا السياق؛ لذلك إذا كان PDA مهمًا hemodynamically فقد نحتاج surgical/device closure حسب الاستقرار والعمر والوزن.",
+    "reasoningEn": "When medical closure is contraindicated and the PDA is hemodynamically significant, procedural closure may be required.",
+    "incorrectOptionsAr": "Indomethacin وibuprofen قد يكونان غير مناسبين مع NEC؛ furosemide لا يغلق الـPDA.",
+    "keywords": [
+      "PDA",
+      "NEC",
+      "contraindication to indomethacin"
+    ],
+    "clinicalPearl": "Always reassess current neonatal PDA guidance because device closure options have evolved.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 125 abdominal X-ray with pneumatosis",
+      "assetPath": null,
+      "captionAr": "صورة NEC الأصلية مطلوبة.",
+      "captionEn": "Original NEC radiograph required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A neonate with a hemodynamically significant PDA develops necrotizing enterocolitis and is unstable. What is the best PDA strategy among the listed options?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2021,
+        "part": "Part II",
+        "page": 125,
+        "questionNumber": "Cardiology Q13"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Needs current neonatal PDA guideline check."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-chd-q14",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Transposition of the great arteries",
+    "yearTags": [
+      2024,
+      2022
+    ],
+    "examPart": "Part II",
+    "stemEn": "A newborn has mild cyanosis, diaphoresis, and cardiomegaly. Which form of transposition is more likely to have better mixing and therefore milder cyanosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "TGA without VSD"
+      },
+      {
+        "key": "B",
+        "text": "TGA with VSD"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "moderate",
+    "explanationAr": "وجود VSD يزيد intercirculatory mixing في TGA وقد يجعل cyanosis أقل شدة مقارنةً بغياب مواقع mixing الكافية.",
+    "reasoningEn": "A VSD can improve mixing between the parallel circulations and may lessen cyanosis in TGA.",
+    "incorrectOptionsAr": "TGA alone قد يكون شديد الزرقة إذا كان mixing غير كافٍ.",
+    "keywords": [
+      "TGA",
+      "VSD",
+      "mixing"
+    ],
+    "clinicalPearl": "Severity of cyanosis in TGA depends mainly on the adequacy of mixing.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A newborn has mild cyanosis, diaphoresis, and cardiomegaly. Which form of transposition is more likely to have better mixing and therefore milder cyanosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 125,
+        "questionNumber": "Cardiology Q14"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q15",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Transposition of the great arteries",
+    "yearTags": [
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A cyanotic newborn has an egg-on-a-string chest X-ray and improves with prostaglandin, but oxygenation remains limited. What procedure improves atrial-level mixing?",
+    "options": [
+      {
+        "key": "A",
+        "text": "PDA ligation"
+      },
+      {
+        "key": "B",
+        "text": "Balloon atrial septostomy"
+      },
+      {
+        "key": "C",
+        "text": "Blalock-Taussig shunt"
+      },
+      {
+        "key": "D",
+        "text": "Fontan procedure"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "high",
+    "explanationAr": "في D-TGA، إذا كان mixing غير كافٍ فالـ balloon atrial septostomy يوسع الاتصال الأذيني ويحسن systemic oxygenation بسرعة.",
+    "reasoningEn": "Balloon atrial septostomy improves mixing between parallel circulations in critically cyanotic TGA.",
+    "incorrectOptionsAr": "PDA ligation يزيل مصدر mixing؛ Blalock shunt وFontan تخص physiology مختلفة.",
+    "keywords": [
+      "egg on a string",
+      "TGA",
+      "balloon atrial septostomy"
+    ],
+    "clinicalPearl": "Start PGE1 early when TGA is strongly suspected and mixing is inadequate.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 126 chest X-ray",
+      "assetPath": null,
+      "captionAr": "صورة egg-on-a-string مطلوبة.",
+      "captionEn": "Original egg-on-a-string radiograph required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A cyanotic newborn has an egg-on-a-string chest X-ray and improves with prostaglandin, but oxygenation remains limited. What procedure improves atrial-level mixing?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2017,
+        "part": "Part II",
+        "page": 126,
+        "questionNumber": "Cardiology Q15"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-chd-q16",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Ventricular septal defect",
+    "yearTags": [
+      2025,
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 7-week-old infant has heart failure, left ventricular hypertrophy, and a short systolic murmur. Which lesion best fits?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Coarctation of the aorta"
+      },
+      {
+        "key": "B",
+        "text": "Ventricular septal defect"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "moderate",
+    "explanationAr": "Moderate/large VSD يبدأ يسبب heart failure بعد انخفاض pulmonary vascular resistance خلال الأسابيع الأولى، مع LV volume overload وcardiomegaly.",
+    "reasoningEn": "Moderate or large VSDs often become symptomatic with heart failure at 3–8 weeks as pulmonary vascular resistance falls.",
+    "incorrectOptionsAr": "Critical coarctation غالبًا يظهر neonatal shock/poor perfusion عند إغلاق الـPDA، وليس هذا النمط وحده.",
+    "keywords": [
+      "7 weeks",
+      "heart failure",
+      "VSD"
+    ],
+    "clinicalPearl": "Large VSDs may have softer murmurs when RV and LV pressures are similar.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 7-week-old infant has heart failure, left ventricular hypertrophy, and a short systolic murmur. Which lesion best fits?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 127,
+        "questionNumber": "Cardiology Q16"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes AAP/UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q17",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Ventricular septal defect",
+    "yearTags": [
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 1-month-old infant is newly found to have a small VSD. Which statement about the murmur can be true?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A small muscular VSD may produce an early systolic murmur"
+      },
+      {
+        "key": "B",
+        "text": "Every VSD causes heart failure after one month"
+      },
+      {
+        "key": "C",
+        "text": "A normal newborn examination excludes a significant VSD"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Small muscular VSD قد ينغلق أثناء systole، لذلك قد يكون الـmurmur early systolic. ليس كل VSD يسبب heart failure، كما أن murmur قد لا يكون واضحًا مباشرة بعد الولادة بسبب ارتفاع PVR.",
+    "reasoningEn": "A small muscular VSD can produce an early systolic murmur as the defect narrows during contraction.",
+    "incorrectOptionsAr": "الـHF يعتمد على حجم الشنت؛ والفحص الطبيعي في الأيام الأولى لا يستبعد VSD.",
+    "keywords": [
+      "small VSD",
+      "early systolic murmur",
+      "PVR"
+    ],
+    "clinicalPearl": "VSD murmurs may become more apparent as pulmonary vascular resistance falls after birth.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 1-month-old infant is newly found to have a small VSD. Which statement about the murmur can be true?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2017,
+        "part": "Part II",
+        "page": 128,
+        "questionNumber": "Cardiology Q17"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate and Perloff."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q18",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "TAPVR",
+    "yearTags": [
+      2024,
+      2023,
+      2022
+    ],
+    "examPart": "Part II",
+    "stemEn": "A cyanotic infant with cardiomegaly has a classic snowman appearance on chest X-ray. What is the diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Supracardiac total anomalous pulmonary venous return"
+      },
+      {
+        "key": "B",
+        "text": "Tetralogy of Fallot"
+      },
+      {
+        "key": "C",
+        "text": "Tetralogy of Fallot with VSD"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Snowman / figure-of-8 sign هو clue معروف للـ supracardiac TAPVR في الحالات التي يتسع فيها vertical vein/SVC مع القلب.",
+    "reasoningEn": "The snowman sign is classically associated with supracardiac TAPVR.",
+    "incorrectOptionsAr": "TOF يعطي boot-shaped heart وليس snowman.",
+    "keywords": [
+      "snowman sign",
+      "TAPVR"
+    ],
+    "clinicalPearl": "The snowman sign generally develops after some time rather than immediately at birth.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 130-131 chest X-ray",
+      "assetPath": null,
+      "captionAr": "صورة snowman الأصلية مطلوبة.",
+      "captionEn": "Original snowman radiograph required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A cyanotic infant with cardiomegaly has a classic snowman appearance on chest X-ray. What is the diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 130,
+        "questionNumber": "Cardiology Q18"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Image-based classic sign."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-chd-q19",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "ALCAPA",
+    "yearTags": [
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 2-week-old infant is inconsolable and has an apical systolic murmur radiating to the left axilla from mitral regurgitation. Which congenital coronary anomaly should be considered?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Anomalous left coronary artery from the pulmonary artery"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "ALCAPA قد يسبب myocardial ischemia وpapillary muscle dysfunction وبالتالي mitral regurgitation. لكن العمر هنا مبكر جدًا ويحتاج التحقق من صياغة السؤال الأصلية.",
+    "reasoningEn": "ALCAPA can cause ischemic papillary muscle dysfunction and mitral regurgitation in infancy.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "ALCAPA",
+      "mitral regurgitation",
+      "infant irritability"
+    ],
+    "clinicalPearl": "ALCAPA classically becomes symptomatic when pulmonary arterial pressure and oxygen content fall after birth.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 2-week-old infant is inconsolable and has an apical systolic murmur radiating to the left axilla from mitral regurgitation. Which congenital coronary anomaly should be considered?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2019,
+        "part": "Part II",
+        "page": 132,
+        "questionNumber": "Cardiology Q19"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Age/timing should be checked against full clinical context."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q20",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Tetralogy of Fallot",
+    "yearTags": [
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "During a severe hypercyanotic spell in Tetralogy of Fallot, which auscultatory change may occur?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Oxygen saturation remains above 90%"
+      },
+      {
+        "key": "B",
+        "text": "The systolic murmur may disappear"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "high",
+    "explanationAr": "أثناء tet spell يزداد right-to-left shunt ويقل flow عبر RVOT، لذلك قد يصبح الـmurmur أخف أو يختفي.",
+    "reasoningEn": "Reduced flow across the RV outflow tract during a tet spell can make the murmur softer or absent.",
+    "incorrectOptionsAr": "SpO2 عادة تنخفض أثناء cyanotic spell ولا تبقى >90%.",
+    "keywords": [
+      "tet spell",
+      "murmur disappears",
+      "TOF"
+    ],
+    "clinicalPearl": "A softer murmur during worsening cyanosis suggests less forward flow across the RVOT.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "During a severe hypercyanotic spell in Tetralogy of Fallot, which auscultatory change may occur?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2017,
+        "part": "Part II",
+        "page": 132,
+        "questionNumber": "Cardiology Q20"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "supports",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites UpToDate/Nelson/Park."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q21",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Tetralogy of Fallot",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with Tetralogy of Fallot develops a hypercyanotic spell. Which listed drug is appropriate after positioning and oxygen if the spell persists?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Morphine"
+      },
+      {
+        "key": "B",
+        "text": "Adenosine"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Morphine يقلل hyperpnea ويهدئ الطفل، وهو جزء معروف من stepwise treatment للـtet spell بعد knee-chest position والأكسجين، مع السوائل وbeta-blocker/phenylephrine حسب الحاجة.",
+    "reasoningEn": "Morphine can reduce hyperpnea and agitation during a persistent hypercyanotic spell.",
+    "incorrectOptionsAr": "Adenosine لعلاج SVT وليس لعلاج tet spell نفسه.",
+    "keywords": [
+      "tet spell",
+      "morphine",
+      "knee-chest"
+    ],
+    "clinicalPearl": "Treat the physiology: increase SVR, reduce infundibular spasm, oxygenate and calm the child.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with Tetralogy of Fallot develops a hypercyanotic spell. Which listed drug is appropriate after positioning and oxygen if the spell persists?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 133,
+        "questionNumber": "Cardiology Q21"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q22",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Coarctation of the aorta",
+    "yearTags": [
+      2025
+    ],
+    "examPart": "Part II",
+    "stemEn": "Which chest X-ray finding is classically associated with longstanding coarctation of the aorta in an adolescent?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Rib notching"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Rib notching ينتج عن enlarged collateral intercostal arteries في coarctation المزمن.",
+    "reasoningEn": "Collateral intercostal arterial enlargement can erode the inferior rib margins, causing rib notching.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "coarctation",
+      "rib notching"
+    ],
+    "clinicalPearl": "Rib notching is usually a later finding, not a neonatal feature.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "Which chest X-ray finding is classically associated with longstanding coarctation of the aorta in an adolescent?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 134,
+        "questionNumber": "Cardiology Q22"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Classic radiology finding."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-chd-q23",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Coarctation follow-up",
+    "yearTags": [
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "A girl with previous coarctation repair is found years later to have marked right-arm hypertension. What should be checked next?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Measure blood pressure in all four limbs"
+      },
+      {
+        "key": "B",
+        "text": "Immediate surgical consultation without further assessment"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "بعد إصلاح CoA، ظهور hypertension يثير احتمال recoarctation أو persistent vascular dysfunction. قياس four-limb BP خطوة مباشرة ومهمة للبحث عن gradient بين الطرفين العلوي والسفلي.",
+    "reasoningEn": "Four-limb blood pressure helps identify a recurrent arm-leg pressure gradient after coarctation repair.",
+    "incorrectOptionsAr": "الجراحة قد تُحتاج لاحقًا، لكن يجب أولًا تأكيد وجود gradient وتقييم الحالة.",
+    "keywords": [
+      "recoarctation",
+      "four-limb blood pressure",
+      "hypertension"
+    ],
+    "clinicalPearl": "Hypertension can persist even after anatomically successful coarctation repair.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A girl with previous coarctation repair is found years later to have marked right-arm hypertension. What should be checked next?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2020,
+        "part": "Part II",
+        "page": 134,
+        "questionNumber": "Cardiology Q23"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  }
+]

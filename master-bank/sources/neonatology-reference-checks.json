@@ -1,0 +1,62 @@
+{
+  "accessedOn": "2026-09-06",
+  "scope": "Targeted checks, not independent verification of all records. No subscribed UpToDate content was accessible.",
+  "references": [
+    {
+      "id": "aha-neonatal-2025",
+      "publisher": "AHA / AAP",
+      "title": "2025 Neonatal Resuscitation Guidelines and Algorithm",
+      "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/neonatal-resuscitation",
+      "algorithmUrl": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/1-2-Algorithm-Neonatal-Resuscitation-250129.pdf?sc_lang=en",
+      "accessedOn": "2026-09-06",
+      "accessLevel": "full_text_and_algorithm",
+      "scope": "Supports ventilation-first interpretation for Q1-Q2; qualifications only for Q3-Q4. Does not resolve incomplete recall details."
+    },
+    {
+      "id": "uptodate-access-attempt",
+      "publisher": "UpToDate",
+      "title": "Neonatal immune-mediated thrombocytopenia",
+      "url": "https://www.uptodate.com/contents/neonatal-immune-mediated-thrombocytopenia",
+      "accessedOn": "2026-09-06",
+      "accessLevel": "full_text_unavailable",
+      "scope": "Attempt made for Q8-Q9. Not used as independently reviewed evidence."
+    },
+    {
+      "id": "cdc-congenital-syphilis",
+      "publisher": "CDC",
+      "title": "Congenital Syphilis - STI Treatment Guidelines",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/congenital-syphilis.htm",
+      "accessedOn": "2026-09-06",
+      "accessLevel": "full_text",
+      "scope": "Q19 requires infant findings, relative titer, adequacy/timing of maternal treatment and follow-up. Less-likely scenario uses at least 30 days, not merely four weeks. Does not establish a unique choice."
+    },
+    {
+      "id": "cdc-hbv-pvst",
+      "publisher": "CDC",
+      "title": "Guidelines for Perinatal Post-Vaccination Serologic Testing",
+      "url": "https://www.cdc.gov/hepatitis-b/hcp/perinatal-provider-overview/guidelines-for-post-vaccination-serologic-testing.html",
+      "accessedOn": "2026-09-06",
+      "accessLevel": "full_text",
+      "scope": "Supports Q20: HBsAg and anti-HBs at 9-12 months, or 1-2 months after a delayed series is completed."
+    },
+    {
+      "id": "nih-hiv-diagnosis-2026",
+      "publisher": "NIH ClinicalInfo",
+      "title": "Diagnosis of HIV Infection in Infants and Children",
+      "url": "https://clinicalinfo.hiv.gov/en/guidelines/perinatal/management-infants-diagnosis-hiv-infection-children",
+      "sourceUpdatedOn": "2026-06-25",
+      "accessedOn": "2026-09-06",
+      "accessLevel": "full_text",
+      "scope": "Q21: HIV RNA and HIV DNA NAT are generally equally recommended; the preserved DNA-only key is not uniquely supported."
+    },
+    {
+      "id": "abm-protocol-36-2022",
+      "publisher": "Academy of Breastfeeding Medicine",
+      "title": "Clinical Protocol #36: The Mastitis Spectrum, Revised 2022",
+      "url": "https://www.bfmed.org/assets/ABM%20Protocol%20%2336.pdf",
+      "accessedOn": "2026-09-06",
+      "accessLevel": "full_text",
+      "scope": "Q40: cooling and limited hand expression may be appropriate; heat can aggravate inflammation. Context and technique matter. No automatic replacement answer assigned."
+    }
+  ]
+}

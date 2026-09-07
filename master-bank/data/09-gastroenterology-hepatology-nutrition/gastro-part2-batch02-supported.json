@@ -1,0 +1,41 @@
+{
+  "batchId": "gastro-part2-batch02-supported",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+  "examPart": "Part II",
+  "module": "gastroenterology-hepatology-nutrition",
+  "notes": "Source-derived record. The recalled answer is preserved separately from future independent verification.",
+  "questions": [
+    {
+      "id": "part2-gi-q086-recurrent-pancreatitis-ercp",
+      "module": "gastroenterology-hepatology-nutrition",
+      "specialty": "Gastroenterology",
+      "topic": "Disorders of the Pancreas and Hepatobiliary System",
+      "subtopic": "Recurrent acute pancreatitis",
+      "yearTags": [2023],
+      "examPart": "Part II",
+      "stemEn": "A 12-year-old boy presents with abdominal pain and laboratory findings suggestive of pancreatitis. He has had two previous episodes of acute pancreatitis. What is the best test to diagnose or investigate him?",
+      "options": [
+        {"key": "A", "text": "Endoscopic retrograde cholangiopancreatography (ERCP)"},
+        {"key": "B", "text": "Contrast-enhanced computed tomography"},
+        {"key": "C", "text": "Abdominal ultrasound"},
+        {"key": "D", "text": "Abdominal X-ray"}
+      ],
+      "recalledAnswer": "A",
+      "verifiedAnswer": null,
+      "answerConfidence": "low",
+      "explanationAr": "السؤال يتكلم عن recurrent acute pancreatitis. المصدر يختار ERCP من الخيارات الموجودة، ويذكر في شرحه أن MRCP أو ERCP مع genetic testing من أهم وسائل تقييم recurrent/chronic pancreatitis، كما يذكر أن MRCP وERCP مهمان في recurrent أو non-resolving pancreatitis.",
+      "reasoningEn": "The source key is ERCP. Its explanation states that MRCP or ERCP, together with genetic testing, is useful in recurrent or chronic pancreatitis and that MRCP/ERCP are important in recurrent pancreatitis evaluation.",
+      "incorrectOptionsAr": "CT له دور في تشخيص ومتابعة pancreatitis، وultrasound أكثر حساسية للحصوات الصفراوية بحسب شرح المصدر، لكن السؤال يختبر تقييم recurrent pancreatitis ولذلك اختار المصدر ERCP من الخيارات المتاحة. Abdominal X-ray ليس الاختبار المستهدف هنا.",
+      "keywords": ["recurrent pancreatitis", "two previous episodes", "ERCP", "MRCP"],
+      "clinicalPearl": "The source emphasizes MRCP/ERCP and genetic evaluation in recurrent pancreatitis; MRCP was not among the answer choices.",
+      "managementSteps": [],
+      "diagnosticSteps": ["Evaluate recurrent pancreatitis with pancreaticobiliary imaging", "Consider genetic evaluation as described by the source"],
+      "image": null,
+      "tts": {"enabled": true, "language": "en", "text": "A twelve-year-old boy presents with abdominal pain and laboratory findings suggestive of pancreatitis. He has had two previous episodes of acute pancreatitis. What is the best test to diagnose or investigate him? A. Endoscopic retrograde cholangiopancreatography. B. Contrast-enhanced computed tomography. C. Abdominal ultrasound. D. Abdominal X-ray."},
+      "sourceRefs": [{"sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026", "year": 2023, "part": "Part II", "page": null, "questionNumber": "Gastroenterology Q86", "notes": "Source explanation notes MRCP or ERCP; MRCP is not in the choices."}],
+      "verification": {"upToDate": "not_checked", "nelson": "not_checked", "guideline": "not_checked", "referenceNotes": "The compilation cites Acute recurrent and chronic pancreatitis in children and Nelson. Independent verification remains pending."},
+      "duplicateOf": null,
+      "reviewStatus": "needs_verification"
+    }
+  ]
+}

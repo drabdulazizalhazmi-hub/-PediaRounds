@@ -1,0 +1,521 @@
+[
+  {
+    "id": "part2-nephro-cau-q49",
+    "module": "nephrology-urology",
+    "specialty": "Nephrology and Urologic Disorders",
+    "topic": "Congenital Urogenital Anomalies",
+    "subtopic": "Posterior urethral valves",
+    "yearTags": [
+      2024,
+      2022,
+      2020,
+      2019,
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 3-year-old boy presented with decreased urination. On examination, he had a palpable bladder that was dull to percussion. A VCUG image showed a dilated proximal (posterior) urethra. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Posterior urethral valve (PUV)"
+      },
+      {
+        "key": "B",
+        "text": "Bladder teratoma"
+      },
+      {
+        "key": "C",
+        "text": "Bladder diverticulum"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Poor urinary output/obstructive symptoms مع palpable bladder، ومع VCUG يظهر dilated and elongated posterior urethra؛ هذه hallmark لـposterior urethral valves في المصدر.",
+    "reasoningEn": "The VCUG finding of a dilated posterior urethra in a boy with bladder-outlet obstruction is classic for posterior urethral valves.",
+    "incorrectOptionsAr": "Bladder teratoma أو diverticulum لا يفسران الـclassic posterior urethral dilation pattern في VCUG.",
+    "keywords": [
+      "posterior urethral valve",
+      "VCUG",
+      "dilated posterior urethra",
+      "palpable bladder",
+      "male"
+    ],
+    "clinicalPearl": "PUV is an important congenital cause of lower urinary tract obstruction in boys and may present later with weak stream, UTIs, enuresis, or CKD.",
+    "managementSteps": [],
+    "diagnosticSteps": [
+      "Link original VCUG image before publication",
+      "Assess renal function and upper urinary tract dilation"
+    ],
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026 Q49",
+      "assetPath": null,
+      "captionAr": "صورة VCUG التي تُظهر dilated posterior urethra جزء أساسي من السؤال.",
+      "captionEn": "Original VCUG demonstrating posterior urethral dilation needs linking.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2024,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q49",
+        "notes": "Also recalled 2022, 2020, 2019 and 2018; image-based; source explanation cites UpToDate."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-nephro-cau-q50",
+    "module": "nephrology-urology",
+    "specialty": "Nephrology and Urologic Disorders",
+    "topic": "Congenital Urogenital Anomalies",
+    "subtopic": "Ureteropelvic junction obstruction",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A newborn was found to have left renal hydronephrosis. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Multicystic dysplastic kidney (MCDK)"
+      },
+      {
+        "key": "B",
+        "text": "Polycystic kidney disease (PKD)"
+      },
+      {
+        "key": "C",
+        "text": "Ureteropelvic junction (UPJ) obstruction"
+      },
+      {
+        "key": "D",
+        "text": "Posterior urethral valves (PUV)"
+      }
+    ],
+    "recalledAnswer": "C",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "المصدر يختار UPJ obstruction لأنه أشيع سبب antenatal hydronephrosis، والنمط النموذجي unilateral hydronephrosis مع عدم توسع ureter أو bladder وnormal contralateral kidney.",
+    "reasoningEn": "Isolated unilateral hydronephrosis in a newborn is the recalled classic presentation of UPJ obstruction.",
+    "incorrectOptionsAr": "MCDK يظهر multiple noncommunicating cysts/dysplastic kidney. PKD عادة bilateral cystic/enlarged renal disease. PUV يسبب lower urinary obstruction وغالبًا bilateral hydronephrosis/distended bladder in males.",
+    "keywords": [
+      "newborn",
+      "unilateral hydronephrosis",
+      "UPJ obstruction"
+    ],
+    "clinicalPearl": "UPJ obstruction is a common cause of antenatal hydronephrosis; postnatal ultrasound pattern helps distinguish it from distal obstruction.",
+    "managementSteps": [],
+    "diagnosticSteps": [
+      "Postnatal renal ultrasound",
+      "Further functional imaging as clinically indicated"
+    ],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2023,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q50",
+        "notes": "Similar to PREP 2020 Q217."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-nephro-cau-q51",
+    "module": "nephrology-urology",
+    "specialty": "Nephrology and Urologic Disorders",
+    "topic": "Congenital Urogenital Anomalies",
+    "subtopic": "Vesicoureteral reflux prophylaxis after resistant breakthrough UTI",
+    "yearTags": [
+      2022,
+      2021,
+      2020,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 2-year-old child known to have vesicoureteral reflux (VUR) grade II on cephalexin prophylaxis presented with UTI due to E. coli resistant to cephalexin. He was successfully treated with TMP/SMX. What is your recommendation upon discharge?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Continue cephalexin"
+      },
+      {
+        "key": "B",
+        "text": "Change prophylaxis to TMP/SMX"
+      },
+      {
+        "key": "C",
+        "text": "Discontinue prophylaxis"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "المصدر يختار تغيير prophylaxis إلى TMP/SMX لأن organism resistant للـcephalexin، ويذكر أن للأطفال ≥2 months يمكن استخدام TMP-SMX أو nitrofurantoin كخيارات prophylaxis أقل مقاومة من cephalosporins. لكن indication لاستمرار prophylaxis في grade II VUR نفسها تعتمد على age, toilet training, prior febrile UTI, scarring وbladder/bowel dysfunction، لذلك يحتاج السؤال current verification.",
+    "reasoningEn": "Given breakthrough UTI with cephalexin-resistant E. coli, the source changes prophylaxis to an active agent, TMP/SMX, while modern indications for continuous prophylaxis in low-grade VUR remain risk-factor dependent.",
+    "incorrectOptionsAr": "الاستمرار على cephalexin غير منطقي إذا كان organism المقاوم سبب breakthrough UTI. إيقاف prophylaxis قد يكون مناسبًا لبعض low-risk VUR cases، لكن المصدر لا يختاره هنا بسبب سياق breakthrough infection.",
+    "keywords": [
+      "VUR grade II",
+      "cephalexin resistance",
+      "breakthrough UTI",
+      "TMP-SMX prophylaxis"
+    ],
+    "clinicalPearl": "Continuous antibiotic prophylaxis for VUR is risk-stratified; breakthrough resistance should prompt reassessment of both drug choice and the ongoing need for prophylaxis.",
+    "managementSteps": [
+      "Review culture susceptibilities",
+      "Reassess indication for ongoing prophylaxis and bladder/bowel dysfunction"
+    ],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2022,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q51",
+        "notes": "Also recalled 2021, 2020 and 2019; source explanation cites UpToDate."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Guideline-sensitive: verify current CAP indication for grade II VUR and agent selection."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-nephro-cau-q52",
+    "module": "nephrology-urology",
+    "specialty": "Nephrology and Urologic Disorders",
+    "topic": "Congenital Urogenital Anomalies",
+    "subtopic": "Reflux nephropathy and hypertension",
+    "yearTags": [
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 3-year-old boy known to have vesicoureteral reflux grade IV had a DMSA scan showing two scars in the right kidney while the left kidney is normal. He is asymptomatic with a normal blood pressure. Which statement is correct regarding his condition?",
+    "options": [
+      {
+        "key": "A",
+        "text": "He has very high risk to develop hypertension later in life"
+      },
+      {
+        "key": "B",
+        "text": "You have to consider left nephrectomy if??"
+      },
+      {
+        "key": "C",
+        "text": "He will not develop hypertension if his blood pressure is normal at age 8 years"
+      },
+      {
+        "key": "D",
+        "text": "There is high association between renin level and the development of hypertension"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "low",
+    "explanationAr": "المصدر يختار A ويؤكد أن renal scarring يرتبط بخطر لاحق للhypertension/proteinuria، لكنه يذكر أرقامًا مثل 10–30% في children/young adults وليس بالضرورة 'very high risk' لكل طفل. كما يذكر عدم وجود correlation ثابت بين plasma renin activity وBP. لذا الفكرة الأساسية صحيحة—الندبات ترفع risk—لكن wording يحتاج مراجعة.",
+    "reasoningEn": "The source supports a long-term hypertension risk after reflux nephropathy/renal scarring, but the phrase 'very high risk' appears stronger than the incidence figures quoted in the same explanation.",
+    "incorrectOptionsAr": "Normal BP بعمر 8 سنوات لا يلغي خطر future hypertension. المصدر نفسه يذكر عدم وجود correlation موثوق بين plasma renin activity وBP. Option B ناقص وغير قابل للتفسير كما هو محفوظ.",
+    "keywords": [
+      "VUR",
+      "renal scarring",
+      "DMSA",
+      "hypertension",
+      "reflux nephropathy"
+    ],
+    "clinicalPearl": "Children with reflux nephropathy need long-term BP and proteinuria surveillance because hypertension can appear years later.",
+    "managementSteps": [
+      "Long-term blood-pressure and urine-protein surveillance"
+    ],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2019,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q52",
+        "notes": "Option B is incompletely recalled. Source answer A; explanation quotes 10–30% pediatric/young-adult hypertension and no stable PRA-BP correlation."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Wording conflict/overstatement; option B incomplete."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall",
+    "publishable": false,
+    "blockers": [
+      "incomplete_source_text"
+    ]
+  },
+  {
+    "id": "part2-nephro-cau-q53",
+    "module": "nephrology-urology",
+    "specialty": "Nephrology and Urologic Disorders",
+    "topic": "Congenital Urogenital Anomalies",
+    "subtopic": "Potter sequence",
+    "yearTags": [
+      2020,
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "An infant died after birth. There was a history of severe oligohydramnios and lung hypoplasia, consistent with Potter sequence. What could be the underlying possible cause?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Bilateral dysplastic kidneys"
+      },
+      {
+        "key": "B",
+        "text": "Unilateral renal agenesis"
+      },
+      {
+        "key": "C",
+        "text": "Horseshoe kidney"
+      },
+      {
+        "key": "D",
+        "text": "Posterior urethral valve"
+      }
+    ],
+    "recalledAnswer": "D",
+    "verifiedAnswer": null,
+    "answerConfidence": "low",
+    "explanationAr": "المصدر يضع D (PUV) كمفتاح، لكنه في الشرح يبدأ بأن bilateral renal agenesis هي classic cause لـPotter syndrome، ثم يوضح أيضًا أن severe bilateral CAKUT أو bladder outlet/urethral obstruction مثل PUV يمكن أن تسبب severe oligohydramnios وpulmonary hypoplasia. وبما أن bilateral renal agenesis غير موجودة في الخيارات، قد يكون D مقصودًا، لكن A (bilateral dysplastic kidneys) أيضًا ممكن biologically حسب الشرح. لذلك نضع السؤال conflicting.",
+    "reasoningEn": "PUV can cause severe oligohydramnios and Potter sequence through bladder-outlet obstruction, but the source's explanation also lists bilateral renal dysplasia as a possible cause and identifies bilateral renal agenesis as classic, creating ambiguity among the preserved choices.",
+    "incorrectOptionsAr": "Unilateral renal agenesis أو horseshoe kidney وحدهما لا يسببان عادة severe oligohydramnios/Potter sequence لأن وظيفة renal tissue كافية غالبًا. أما A وD فكلاهما قد يسببان severe bilateral fetal renal dysfunction حسب الشرح، لذا لا نحسم D كverified answer.",
+    "keywords": [
+      "Potter sequence",
+      "oligohydramnios",
+      "pulmonary hypoplasia",
+      "PUV",
+      "bilateral renal dysplasia"
+    ],
+    "clinicalPearl": "Potter sequence results from severe, usually bilateral fetal renal dysfunction or urinary tract obstruction causing prolonged oligohydramnios and pulmonary hypoplasia.",
+    "managementSteps": [],
+    "diagnosticSteps": [],
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2020,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q53",
+        "notes": "Also recalled 2018; source key D but explanation also lists bilateral renal dysplasia as a Potter-sequence cause and classic bilateral renal agenesis is not among options."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "High-priority ambiguity among preserved choices."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting"
+  },
+  {
+    "id": "part2-nephro-cau-q54",
+    "module": "nephrology-urology",
+    "specialty": "Nephrology and Urologic Disorders",
+    "topic": "Congenital Urogenital Anomalies",
+    "subtopic": "Prune belly syndrome prognosis",
+    "yearTags": [
+      2022,
+      2020,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A picture of a newborn with absent abdominal wall muscles was provided, consistent with prune-belly syndrome. Which statement is true regarding prognosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Most of them will die in the first year of life"
+      },
+      {
+        "key": "B",
+        "text": "One third of them will have ESRD"
+      },
+      {
+        "key": "C",
+        "text": "One third of them will have liver failure"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "المصدر يذكر أن نحو one third قد يموتون stillborn/early infancy بسبب pulmonary hypoplasia، بينما up to 30% من long-term survivors قد يطورون ESRD؛ لذلك الخيار B هو الأقرب لصياغة المصدر.",
+    "reasoningEn": "The source states that up to about 30% of long-term survivors develop end-stage renal disease, while early mortality affects a different subgroup with severe pulmonary hypoplasia.",
+    "incorrectOptionsAr": "ليس 'most' المرضى يموتون في السنة الأولى وفق أرقام المصدر؛ وliver failure ليست complication prognosis المميزة المذكورة.",
+    "keywords": [
+      "prune belly syndrome",
+      "absent abdominal muscles",
+      "ESRD",
+      "prognosis"
+    ],
+    "clinicalPearl": "Prune-belly prognosis is driven largely by pulmonary hypoplasia and renal dysplasia/urinary-tract dysfunction.",
+    "managementSteps": [],
+    "diagnosticSteps": [
+      "Link original newborn image before publication"
+    ],
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026 Q54",
+      "assetPath": null,
+      "captionAr": "صورة newborn مع absence of abdominal wall muscles جزء من السؤال.",
+      "captionEn": "Original prune-belly newborn image needs linking.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2022,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q54",
+        "notes": "Also recalled 2020 and 2019; image-based; source cites Nelson."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-nephro-cau-q55",
+    "module": "nephrology-urology",
+    "specialty": "Nephrology and Urologic Disorders",
+    "topic": "Congenital Urogenital Anomalies",
+    "subtopic": "Prune belly syndrome management priority",
+    "yearTags": [
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A newborn was found to have the shown findings, consistent with prune-belly syndrome. What is your priority in managing this patient?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Preserve renal function"
+      },
+      {
+        "key": "B",
+        "text": "[Other options not recalled in source]"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "المصدر يختار preserve renal function كالأولوية، ويشرح أن management يركز على bladder emptying، prevention of UTI، ومعالجة obstruction/reflux للحفاظ على renal function. لكن بقية الخيارات والصورة غير محفوظة هنا، لذلك يبقى incomplete recall/image-dependent.",
+    "reasoningEn": "The source frames preservation of renal function through management of obstruction, bladder emptying, reflux, and infection as the key priority.",
+    "incorrectOptionsAr": "بقية الخيارات غير محفوظة في المصدر، لذلك لم تُختلق.",
+    "keywords": [
+      "prune belly",
+      "renal preservation",
+      "bladder emptying",
+      "UTI prevention"
+    ],
+    "clinicalPearl": "Renal outcome in prune-belly syndrome depends on baseline dysplasia and ongoing urinary obstruction, reflux, and infection.",
+    "managementSteps": [
+      "Optimize bladder emptying",
+      "Prevent and treat UTI",
+      "Address obstruction/reflux as indicated"
+    ],
+    "diagnosticSteps": [
+      "Link original image before publication"
+    ],
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026 Q55",
+      "assetPath": null,
+      "captionAr": "الصورة الأصلية لprune-belly syndrome مطلوبة.",
+      "captionEn": "Original prune-belly syndrome image needs linking.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": null
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Ed 2026",
+        "year": 2017,
+        "part": "Part II",
+        "page": null,
+        "questionNumber": "Q55",
+        "notes": "Image-based; only one substantive option retained."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Incomplete options and missing image; independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall"
+  }
+]

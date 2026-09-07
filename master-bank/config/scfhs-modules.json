@@ -1,0 +1,24 @@
+{
+  "program": "Saudi Postgraduate Diploma in Paediatrics",
+  "modules": [
+    {"order": 1, "slug": "principles-of-paediatrics", "title": "Principles of Paediatrics including child safeguarding"},
+    {"order": 2, "slug": "paediatric-emergency-medicine", "title": "Paediatric Emergency Medicine"},
+    {"order": 3, "slug": "general-paediatrics-acute-inpatient", "title": "General Paediatrics – Acute & Inpatient"},
+    {"order": 4, "slug": "general-paediatrics-outpatients", "title": "General Paediatrics – Outpatients"},
+    {"order": 5, "slug": "child-development-behaviour", "title": "Child Development and Behaviour"},
+    {"order": 6, "slug": "neonatology", "title": "Neonatology"},
+    {"order": 7, "slug": "respiratory-ent", "title": "Respiratory and ENT"},
+    {"order": 8, "slug": "cardiology", "title": "Cardiology"},
+    {"order": 9, "slug": "gastroenterology-hepatology-nutrition", "title": "Gastroenterology, Hepatology & Nutrition"},
+    {"order": 10, "slug": "neurology-neurodisability", "title": "Neurology and Neurodisability"},
+    {"order": 11, "slug": "infectious-diseases", "title": "Infectious Diseases"},
+    {"order": 12, "slug": "allergy-immunology", "title": "Allergy and Immunology"},
+    {"order": 13, "slug": "nephrology-urology", "title": "Nephrology and Urology"},
+    {"order": 14, "slug": "diabetes-endocrinology-metabolic", "title": "Diabetes, Endocrinology and Metabolic Disorders"},
+    {"order": 15, "slug": "genetics-dysmorphology", "title": "Genetics and Dysmorphology"},
+    {"order": 16, "slug": "haematology-oncology", "title": "Haematology and Oncology"},
+    {"order": 17, "slug": "musculoskeletal-rheumatology", "title": "Musculoskeletal and Rheumatology"},
+    {"order": 18, "slug": "paediatric-intensive-care", "title": "Paediatric Intensive Care"},
+    {"order": 19, "slug": "child-adolescent-mental-health", "title": "Child and Adolescent Mental Health"}
+  ]
+}

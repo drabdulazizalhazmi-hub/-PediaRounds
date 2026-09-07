@@ -1,0 +1,931 @@
+[
+  {
+    "id": "part2-cardio-arr-q24",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Arrhythmias",
+    "yearTags": [
+      2025,
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "An adolescent with palpitations has an ECG showing an irregularly irregular rhythm without distinct P waves. What is the diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sinus tachycardia"
+      },
+      {
+        "key": "B",
+        "text": "Atrial fibrillation"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Irregularly irregular rhythm مع غياب P waves الواضحة هو النمط الكلاسيكي لـ atrial fibrillation.",
+    "reasoningEn": "Atrial fibrillation is characterized by an irregularly irregular ventricular response and absent organized P waves.",
+    "incorrectOptionsAr": "Sinus tachycardia تكون منتظمة مع P wave قبل كل QRS.",
+    "keywords": [
+      "irregularly irregular",
+      "no P waves",
+      "atrial fibrillation"
+    ],
+    "clinicalPearl": "AF is uncommon in children and should prompt evaluation for structural disease, surgery, or an accessory pathway.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 135 ECG",
+      "assetPath": null,
+      "captionAr": "صورة ECG الأصلية مطلوبة.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An adolescent with palpitations has an ECG showing an irregularly irregular rhythm without distinct P waves. What is the diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 135,
+        "questionNumber": "Cardiology Q24"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Image-dependent ECG recall."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q25",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "SVT",
+    "yearTags": [
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with ECG-confirmed supraventricular tachycardia is hemodynamically stable. What drug is used if vagal maneuvers fail?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Adenosine"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "في stable narrow-complex SVT، بعد vagal maneuvers يكون adenosine هو العلاج الدوائي الأول عادةً إذا كان IV/IO access متاحًا.",
+    "reasoningEn": "Adenosine transiently blocks AV nodal conduction and is first-line for stable regular narrow-complex SVT after vagal maneuvers.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "stable SVT",
+      "adenosine"
+    ],
+    "clinicalPearl": "Use rapid IV push followed immediately by a flush.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 135 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with ECG-confirmed supraventricular tachycardia is hemodynamically stable. What drug is used if vagal maneuvers fail?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2017,
+        "part": "Part II",
+        "page": 135,
+        "questionNumber": "Cardiology Q25"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Consistent with PALS SVT algorithm."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q26",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "SVT",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with SVT is hemodynamically unstable. What is the preferred immediate rhythm treatment?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Adenosine"
+      },
+      {
+        "key": "B",
+        "text": "Synchronized cardioversion"
+      }
+    ],
+    "recalledAnswer": "A or B depending on immediate IV/IO availability",
+    "verifiedAnswer": "B",
+    "answerConfidence": "moderate",
+    "explanationAr": "في unstable SVT الأولوية هي synchronized cardioversion. بعض الخوارزميات تسمح بمحاولة adenosine بسرعة إذا كان IV/IO access موجودًا ولا يؤخر cardioversion، لكن لا ينبغي أن يؤخر الصدمة المتزامنة.",
+    "reasoningEn": "Unstable SVT requires synchronized cardioversion; adenosine may be attempted only if immediately available and it does not delay cardioversion.",
+    "incorrectOptionsAr": "Adenosine ليس البديل عن cardioversion في shock أو hypotension/altered mental status إذا كان سيؤخر العلاج.",
+    "keywords": [
+      "unstable SVT",
+      "synchronized cardioversion"
+    ],
+    "clinicalPearl": "Treat instability first, not the ECG label alone.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 136 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with SVT is hemodynamically unstable. What is the preferred immediate rhythm treatment?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 136,
+        "questionNumber": "Cardiology Q26",
+        "notes": "Source permits adenosine if IV/IO is immediately available."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "PALS prioritizes synchronized cardioversion for unstable tachycardia with a pulse."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting"
+  },
+  {
+    "id": "part2-cardio-arr-q27",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "SVT in neonate",
+    "yearTags": [
+      2025
+    ],
+    "examPart": "Part II",
+    "stemEn": "A newborn has poor feeding, lethargy, hypotension, cold extremities, and a heart rate of 260/min. What is the best treatment if this is unstable SVT?",
+    "options": [
+      {
+        "key": "A",
+        "text": "IV adenosine"
+      },
+      {
+        "key": "B",
+        "text": "Synchronized cardioversion"
+      },
+      {
+        "key": "C",
+        "text": "IV amiodarone"
+      },
+      {
+        "key": "D",
+        "text": "Oral digoxin"
+      }
+    ],
+    "recalledAnswer": "A if immediate IV/IO access; B if not",
+    "verifiedAnswer": "B",
+    "answerConfidence": "moderate",
+    "explanationAr": "الطفل unstable بسبب hypotension وpoor perfusion. لذلك synchronized cardioversion هي المعالجة المفضلة. Adenosine قد يُعطى فقط إذا كان access جاهزًا ولن يؤخر cardioversion.",
+    "reasoningEn": "Hemodynamic compromise makes synchronized cardioversion the preferred treatment for SVT.",
+    "incorrectOptionsAr": "Amiodarone ليس الخيار الأول هنا؛ digoxin بطيء وغير مناسب للطوارئ.",
+    "keywords": [
+      "neonate",
+      "HR 260",
+      "poor perfusion",
+      "unstable SVT"
+    ],
+    "clinicalPearl": "In neonates, SVT may present with heart failure rather than palpitations.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A newborn has poor feeding, lethargy, hypotension, cold extremities, and a heart rate of 260 per minute. What is the best treatment if this is unstable SVT?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 136,
+        "questionNumber": "Cardiology Q27"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Needs PALS framing in final UI."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting"
+  },
+  {
+    "id": "part2-cardio-arr-q28",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Atrial fibrillation",
+    "yearTags": [
+      2020,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child treated for SVT with adenosine is then found to have atrial fibrillation. What is the definitive rhythm-control treatment among the options?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Amiodarone"
+      },
+      {
+        "key": "B",
+        "text": "Cardioversion"
+      },
+      {
+        "key": "C",
+        "text": "Defibrillation"
+      },
+      {
+        "key": "D",
+        "text": "Repeat adenosine"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "Atrial fibrillation لا تُعالج بالـadenosine. إذا كانت حديثة onset وكان rhythm control مطلوبًا، synchronized cardioversion خيار فعال، مع الانتباه لقضية thrombus إذا كانت المدة غير معروفة أو طويلة.",
+    "reasoningEn": "Synchronized cardioversion reliably terminates atrial fibrillation when indicated and thromboembolic risk has been addressed.",
+    "incorrectOptionsAr": "Defibrillation غير متزامنة وليست الخيار هنا مع نبض؛ adenosine لا ينهي AF؛ amiodarone قد يستخدم دوائيًا لكن ليس الجواب المقصود في هذا الـrecall.",
+    "keywords": [
+      "atrial fibrillation",
+      "cardioversion"
+    ],
+    "clinicalPearl": "Always consider duration of AF and thromboembolic risk before elective cardioversion.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 136 rhythm strip",
+      "assetPath": null,
+      "captionAr": "Rhythm strip الأصلي مطلوب.",
+      "captionEn": "Original rhythm strip required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child treated for SVT with adenosine is then found to have atrial fibrillation. What is the definitive rhythm-control treatment among the options?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2020,
+        "part": "Part II",
+        "page": 136,
+        "questionNumber": "Cardiology Q28"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Needs duration/anticoagulation context."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q29",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Atrial flutter",
+    "yearTags": [
+      2024,
+      2022,
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "A neonate with a regular tachycardia receives adenosine, which unmasks atrial flutter waves. What is the preferred treatment?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cardioversion"
+      },
+      {
+        "key": "B",
+        "text": "Propranolol"
+      },
+      {
+        "key": "C",
+        "text": "Amiodarone"
+      },
+      {
+        "key": "D",
+        "text": "Digoxin"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Adenosine قد يكشف flutter waves عبر زيادة AV block لكنه غالبًا لا ينهي atrial flutter. Electrical cardioversion فعّالة جدًا في neonates.",
+    "reasoningEn": "Adenosine may reveal atrial flutter, but synchronized cardioversion is highly effective for termination.",
+    "incorrectOptionsAr": "الأدوية قد تستخدم في ظروف مختارة، لكنها ليست العلاج الأسرع والأوضح في هذا الـscenario.",
+    "keywords": [
+      "atrial flutter",
+      "adenosine unmasks",
+      "cardioversion"
+    ],
+    "clinicalPearl": "Adenosine is diagnostic, not usually curative, for atrial flutter.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 137 rhythm strip",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A neonate with a regular tachycardia receives adenosine, which unmasks atrial flutter waves. What is the preferred treatment?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 137,
+        "questionNumber": "Cardiology Q29"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Source cites AAP."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q30",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "First-degree AV block",
+    "yearTags": [
+      2022,
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A well neonate has an incidental first-degree AV block on ECG. What is the usual management?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Atropine"
+      },
+      {
+        "key": "B",
+        "text": "Epinephrine"
+      },
+      {
+        "key": "C",
+        "text": "Adenosine"
+      },
+      {
+        "key": "D",
+        "text": "Observation"
+      }
+    ],
+    "recalledAnswer": "Observation",
+    "verifiedAnswer": "D",
+    "answerConfidence": "high",
+    "explanationAr": "First-degree AV block في neonate مستقر وبدون أعراض غالبًا لا يحتاج علاجًا محددًا؛ نبحث عن cause إذا كان السياق غير طبيعي.",
+    "reasoningEn": "Asymptomatic first-degree AV block generally requires observation rather than acute pharmacologic treatment.",
+    "incorrectOptionsAr": "Atropine/epinephrine تُستخدم في symptomatic bradycardia بحسب السبب؛ adenosine يبطئ AV conduction أكثر ولا يفيد.",
+    "keywords": [
+      "first-degree AV block",
+      "asymptomatic",
+      "observation"
+    ],
+    "clinicalPearl": "Treat the patient, not an incidental PR prolongation.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 138 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A well neonate has an incidental first-degree AV block on ECG. What is the usual management?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2022,
+        "part": "Part II",
+        "page": 138,
+        "questionNumber": "Cardiology Q30",
+        "notes": "Source explicitly notes observation is the answer although not listed."
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate and neonatal manual."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q31",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Sinus bradycardia",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "An otherwise healthy infant has asymptomatic sinus bradycardia on ECG. What is the next step?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Atropine"
+      },
+      {
+        "key": "B",
+        "text": "Epinephrine"
+      },
+      {
+        "key": "C",
+        "text": "Observation"
+      }
+    ],
+    "recalledAnswer": "Observation",
+    "verifiedAnswer": "C",
+    "answerConfidence": "high",
+    "explanationAr": "إذا كان الطفل asymptomatic، perfusion جيدة، ولا توجد مشكلة underlying واضحة، فالـsinus bradycardia قد لا تحتاج علاجًا فوريًا.",
+    "reasoningEn": "Healthy asymptomatic children with sinus bradycardia often need no acute treatment.",
+    "incorrectOptionsAr": "Atropine أو epinephrine تُعطى عند symptomatic bradycardia مع poor perfusion بحسب الخوارزمية.",
+    "keywords": [
+      "sinus bradycardia",
+      "asymptomatic"
+    ],
+    "clinicalPearl": "Always assess oxygenation and perfusion before treating a slow heart rate.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 139 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An otherwise healthy infant has asymptomatic sinus bradycardia on ECG. What is the next step?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 139,
+        "questionNumber": "Cardiology Q31"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q32",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Long QT syndrome",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 6-year-old with syncope has a prolonged QT interval. Which associated finding should be sought?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sensorineural deafness"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Long QT مع congenital sensorineural deafness يذكرنا بـ Jervell and Lange-Nielsen syndrome.",
+    "reasoningEn": "Jervell and Lange-Nielsen syndrome combines congenital long QT syndrome with profound sensorineural hearing loss.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "long QT",
+      "deafness",
+      "Jervell Lange-Nielsen"
+    ],
+    "clinicalPearl": "Screen children with congenital deafness for long QT when clinically appropriate.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 139 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 6-year-old with syncope has a prolonged QT interval. Which associated finding should be sought?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 139,
+        "questionNumber": "Cardiology Q32"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q33",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Long QT syndrome",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with recurrent syncope has congenital long QT syndrome. Which listed medication is appropriate chronic therapy?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Propranolol"
+      },
+      {
+        "key": "B",
+        "text": "Amiodarone"
+      },
+      {
+        "key": "C",
+        "text": "Procainamide"
+      },
+      {
+        "key": "D",
+        "text": "Flecainide"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Beta-blocker therapy هي cornerstone في congenital LQTS، خصوصًا nonselective agents مثل propranolol أو nadolol حسب الحالة.",
+    "reasoningEn": "Beta blockers reduce adrenergically triggered ventricular arrhythmias and are standard therapy in congenital LQTS.",
+    "incorrectOptionsAr": "Amiodarone وprocainamide قد يطيلان QT؛ flecainide ليس العلاج الروتيني العام لكل LQTS.",
+    "keywords": [
+      "long QT",
+      "propranolol",
+      "beta blocker"
+    ],
+    "clinicalPearl": "Also avoid QT-prolonging drugs and correct hypokalemia/hypomagnesemia.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 139 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with recurrent syncope has congenital long QT syndrome. Which listed medication is appropriate chronic therapy?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 139,
+        "questionNumber": "Cardiology Q33"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "supports",
+      "referenceNotes": "Source cites AHA/ACC guidance via UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q34",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Wolff-Parkinson-White syndrome",
+    "yearTags": [
+      2022,
+      2021,
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A young patient with palpitations and syncope has a short PR interval and pre-excitation on ECG. What is the diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Wolff-Parkinson-White syndrome"
+      },
+      {
+        "key": "B",
+        "text": "Long QT syndrome"
+      },
+      {
+        "key": "C",
+        "text": "Incomplete heart block"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Short PR + delta wave + widened initial QRS = ventricular pre-excitation بسبب accessory pathway، أي WPW.",
+    "reasoningEn": "The classic pre-excitation pattern identifies Wolff-Parkinson-White syndrome.",
+    "incorrectOptionsAr": "Long QT له QT prolongation؛ heart block يسبب PR prolongation أو dropped beats وليس pre-excitation.",
+    "keywords": [
+      "short PR",
+      "delta wave",
+      "WPW"
+    ],
+    "clinicalPearl": "WPW can predispose to AV re-entrant tachycardia and atrial fibrillation with rapid ventricular response.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 140 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A young patient with palpitations and syncope has a short PR interval and pre-excitation on ECG. What is the diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2022,
+        "part": "Part II",
+        "page": 140,
+        "questionNumber": "Cardiology Q34"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Classic ECG diagnosis."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q35",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "WPW associations",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "Which congenital heart lesion has the strongest association with Wolff-Parkinson-White syndrome?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ebstein anomaly"
+      },
+      {
+        "key": "B",
+        "text": "Ventricular septal defect"
+      },
+      {
+        "key": "C",
+        "text": "Tetralogy of Fallot"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Ebstein anomaly هي أشهر congenital lesion مرتبطة بـ accessory pathways وWPW.",
+    "reasoningEn": "Ebstein anomaly is the congenital lesion most strongly associated with WPW syndrome.",
+    "incorrectOptionsAr": "VSD وTOF ليستا الارتباط الكلاسيكي الأقوى.",
+    "keywords": [
+      "WPW",
+      "Ebstein anomaly"
+    ],
+    "clinicalPearl": "Multiple right-sided accessory pathways may occur in Ebstein anomaly.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 141 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "Which congenital heart lesion has the strongest association with Wolff-Parkinson-White syndrome?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 141,
+        "questionNumber": "Cardiology Q35"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q36",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Premature ventricular contractions",
+    "yearTags": [
+      2021,
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "An otherwise healthy child has isolated premature wide QRS complexes without preceding P waves on ECG. What is the diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Premature ventricular contractions"
+      },
+      {
+        "key": "B",
+        "text": "Premature atrial contractions"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "PVC يظهر مبكرًا، QRS يكون wide/bizarre وغالبًا بلا preceding P wave، وقد يتبعه compensatory pause.",
+    "reasoningEn": "Premature wide ventricular complexes without a preceding P wave are typical PVCs.",
+    "incorrectOptionsAr": "PAC عادة يبدأ بـ premature abnormal P wave وغالبًا QRS ضيق إذا التوصيل طبيعي.",
+    "keywords": [
+      "PVC",
+      "wide premature QRS"
+    ],
+    "clinicalPearl": "Isolated monomorphic PVCs in a normal heart are often benign but context matters.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 141 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي مطلوب.",
+      "captionEn": "Original ECG required.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An otherwise healthy child has isolated premature wide QRS complexes without preceding P waves on ECG. What is the diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2021,
+        "part": "Part II",
+        "page": 141,
+        "questionNumber": "Cardiology Q36"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Image-based ECG diagnosis."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-cardio-arr-q37",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Premature ventricular contractions",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "An ECG demonstrates premature wide QRS complexes consistent with ventricular ectopy. Which interpretation is correct?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The P wave is greater than an unclear threshold"
+      },
+      {
+        "key": "B",
+        "text": "The heart rate is 70/min"
+      },
+      {
+        "key": "C",
+        "text": "The tracing shows typical premature ventricular contractions"
+      }
+    ],
+    "recalledAnswer": "C",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "الـrecall نفسه غير مكتمل في بعض الخيارات، لكن النمط المصور وشرح المصدر يشيران إلى PVCs. يجب إبقاء الصورة الأصلية مع السؤال.",
+    "reasoningEn": "The source identifies the tracing as typical PVCs; the other recalled options are incomplete or nonspecific.",
+    "incorrectOptionsAr": "الخيار A ناقص، ومعدل القلب وحده لا يحدد نوع ectopy.",
+    "keywords": [
+      "PVC",
+      "ECG interpretation",
+      "incomplete options"
+    ],
+    "clinicalPearl": "Do not publish ECG interpretation questions without the original tracing.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 142 ECG",
+      "assetPath": null,
+      "captionAr": "ECG الأصلي إلزامي قبل النشر.",
+      "captionEn": "Original ECG mandatory before publication.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An ECG demonstrates premature wide QRS complexes consistent with ventricular ectopy. Which interpretation is correct?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2018,
+        "part": "Part II",
+        "page": 142,
+        "questionNumber": "Cardiology Q37",
+        "notes": "One recalled option is incomplete."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Requires original ECG and option cleanup."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  }
+]

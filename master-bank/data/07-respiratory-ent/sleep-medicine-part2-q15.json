@@ -1,0 +1,32 @@
+[
+  {
+    "id":"part2-sleep-q15",
+    "module":"respiratory-ent",
+    "specialty":"Sleep Medicine",
+    "topic":"Sleep Medicine",
+    "subtopic":"Obstructive sleep apnea diagnostic testing",
+    "yearTags":[2022,2020],
+    "examPart":"Part II",
+    "stemEn":"A child has habitual snoring and excessive daytime sleepiness, raising concern for obstructive sleep apnea. What is the next diagnostic test?",
+    "options":[{"key":"A","text":"Polysomnography"}],
+    "recalledAnswer":"A",
+    "verifiedAnswer":null,
+    "answerConfidence":"high",
+    "explanationAr":"المصدر يختار Polysomnography، ويذكر أن attended overnight PSG هو الاختبار المرجعي لتشخيص obstructive sleep apnea وتحديد شدة الاضطراب.",
+    "reasoningEn":"The source identifies attended overnight polysomnography as the definitive diagnostic study for suspected pediatric obstructive sleep apnea.",
+    "incorrectOptionsAr":null,
+    "keywords":["snoring","daytime sleepiness","obstructive sleep apnea","polysomnography"],
+    "clinicalPearl":"Habitual snoring plus daytime sleepiness should prompt formal evaluation for pediatric OSA; the source names PSG as the gold standard.",
+    "managementSteps":[],
+    "diagnosticSteps":["Obtain overnight polysomnography"],
+    "image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"captionAr":null,"captionEn":null,"status":"not_required"},
+    "tts":{"enabled":true,"language":"en","text":"A child has habitual snoring and excessive daytime sleepiness, raising concern for obstructive sleep apnea. What is the next diagnostic test? Option A, polysomnography."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","year":null,"part":"Part II","page":18,"questionNumber":"Sleep Medicine Q15","notes":"Part II 2022 and Part II 2020; only one recalled option is preserved in the source."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation states attended overnight PSG is the gold standard."},
+    "duplicateOf":null,
+    "reviewStatus":"incomplete_recall",
+    "publishable":false,
+    "blockers":["fewer_than_two_source_options","clinical_verification_pending"],
+    "contentType":"recall_card"
+  }
+]

@@ -1,0 +1,372 @@
+[
+  {
+    "id": "part2-cardio-murmur-q01",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Heart murmurs",
+    "yearTags": [
+      2024,
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child has a late systolic apical murmur preceded by a midsystolic click. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Mitral valve prolapse"
+      },
+      {
+        "key": "B",
+        "text": "Tricuspid stenosis"
+      },
+      {
+        "key": "C",
+        "text": "Aortic regurgitation"
+      },
+      {
+        "key": "D",
+        "text": "Ventricular septal defect"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "وجود midsystolic click يتبعه late systolic murmur عند apex هو النمط الكلاسيكي لـ Mitral valve prolapse. يتغير توقيت الـ click وطول الـ murmur مع المناورات التي تغيّر حجم البطين الأيسر.",
+    "reasoningEn": "A midsystolic click followed by a late systolic apical murmur is classic for mitral valve prolapse.",
+    "incorrectOptionsAr": "Tricuspid stenosis يعطي diastolic murmur؛ aortic regurgitation يعطي early diastolic murmur؛ VSD غالبًا holosystolic عند left lower sternal border.",
+    "keywords": [
+      "midsystolic click",
+      "late systolic murmur",
+      "apex"
+    ],
+    "clinicalPearl": "MVP click moves earlier with standing/Valsalva and later with squatting.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child has a late systolic apical murmur preceded by a midsystolic click. What is the most likely diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 115,
+        "questionNumber": "Cardiology Q1"
+      },
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2021,
+        "part": "Part II",
+        "page": 115,
+        "questionNumber": "Cardiology Q1"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "supports",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation cites Nelson."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-murmur-q02",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Heart murmurs",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with an intercurrent upper respiratory illness has a grade II systolic murmur radiating to the axilla. What is the safest next step?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Refer for cardiology assessment"
+      },
+      {
+        "key": "B",
+        "text": "Discharge and review in two weeks"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "low",
+    "explanationAr": "الـ murmur الذي يشع إلى axilla قد يشير إلى mitral regurgitation، لكن السؤال ناقص لأن القرار يعتمد على العمر، موضع أعلى شدة للمورمر، وجود أعراض، وخصائص الـ murmur. لذلك لا نعتمد المفتاح مباشرة.",
+    "reasoningEn": "Axillary radiation can suggest mitral regurgitation, but the vignette is incomplete for a definitive disposition decision.",
+    "incorrectOptionsAr": "لا يمكن الجزم بأن المتابعة المنزلية آمنة دون معرفة بقية خصائص الفحص.",
+    "keywords": [
+      "systolic murmur",
+      "radiates to axilla",
+      "incomplete recall"
+    ],
+    "clinicalPearl": "Pathologic features include holosystolic quality, grade ≥3, harsh quality, click, abnormal S2, or symptoms.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with an intercurrent upper respiratory illness has a grade II systolic murmur radiating to the axilla. What is the safest next step?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 116,
+        "questionNumber": "Cardiology Q2",
+        "notes": "Source itself states the answer depends on missing information."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Needs full-stem verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall"
+  },
+  {
+    "id": "part2-cardio-murmur-q03",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Heart murmurs",
+    "yearTags": [
+      2021,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A systolic ejection murmur with an ejection click is heard best at the upper right sternal border. What lesion is most likely?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Aortic stenosis"
+      },
+      {
+        "key": "B",
+        "text": "Pulmonary stenosis"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Upper right sternal border مع ejection click يشير إلى aortic stenosis. أما pulmonary stenosis فالأعلى شدة يكون عادة عند upper left sternal border.",
+    "reasoningEn": "Aortic stenosis produces an ejection murmur maximal at the right upper sternal border, often with an ejection click.",
+    "incorrectOptionsAr": "Pulmonary stenosis يسمع بشكل أوضح في pulmonary area على اليسار.",
+    "keywords": [
+      "ejection click",
+      "right upper sternal border",
+      "aortic stenosis"
+    ],
+    "clinicalPearl": "Aortic stenosis murmur may radiate to the neck.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A systolic ejection murmur with an ejection click is heard best at the upper right sternal border. What lesion is most likely?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2021,
+        "part": "Part II",
+        "page": 117,
+        "questionNumber": "Cardiology Q3"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites pediatric cardiology texts."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-murmur-q04",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Heart murmurs",
+    "yearTags": [
+      2022,
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 2-year-old has a systolic murmur at the pulmonary area, a diastolic murmur along the left sternal border, tall P waves and right-axis deviation. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ebstein anomaly"
+      },
+      {
+        "key": "B",
+        "text": "Tetralogy of Fallot"
+      },
+      {
+        "key": "C",
+        "text": "Tricuspid regurgitation with pulmonary stenosis"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "moderate",
+    "explanationAr": "Ebstein anomaly قد يعطي tricuspid regurgitation murmur، multiple clicks، وقد يصاحبه tall/broad P waves وRBBB أو WPW. الصورة السريرية هنا أقرب له.",
+    "reasoningEn": "The ECG and tricuspid-valve auscultatory pattern are most compatible with Ebstein anomaly.",
+    "incorrectOptionsAr": "TOF لا يفسر هذا النمط من murmur/ECG؛ الجمع العشوائي بين TR وPS لا يفسر الصورة المتلازمية بنفس القوة.",
+    "keywords": [
+      "Ebstein",
+      "tall P waves",
+      "tricuspid murmur"
+    ],
+    "clinicalPearl": "Ebstein anomaly is strongly associated with WPW and SVT.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 2-year-old has a systolic murmur at the pulmonary area, a diastolic murmur along the left sternal border, tall P waves and right-axis deviation. What is the most likely diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2022,
+        "part": "Part II",
+        "page": 117,
+        "questionNumber": "Cardiology Q4"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "supports",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation cites Nelson."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-murmur-q05",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Heart murmurs",
+    "yearTags": [
+      2024
+    ],
+    "examPart": "Part II",
+    "stemEn": "An adolescent has exertional dyspnea and palpitations. A systolic regurgitant murmur is heard between the apex and left lower sternal border. Which lesion is most likely?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Mitral stenosis"
+      },
+      {
+        "key": "B",
+        "text": "Pulmonary stenosis"
+      },
+      {
+        "key": "C",
+        "text": "Aortic regurgitation"
+      },
+      {
+        "key": "D",
+        "text": "Tricuspid regurgitation"
+      },
+      {
+        "key": "E",
+        "text": "ASD"
+      }
+    ],
+    "recalledAnswer": "D",
+    "verifiedAnswer": null,
+    "answerConfidence": "moderate",
+    "explanationAr": "Tricuspid regurgitation يعطي systolic regurgitant murmur عند lower sternal border. مكان السماع هنا أقرب للـ tricuspid area من باقي الخيارات.",
+    "reasoningEn": "A systolic regurgitant murmur near the lower sternal border best fits tricuspid regurgitation.",
+    "incorrectOptionsAr": "Mitral stenosis وaortic regurgitation diastolic؛ pulmonary stenosis ejection murmur أعلى الصدر؛ ASD غالبًا fixed split S2 مع flow murmur.",
+    "keywords": [
+      "lower sternal border",
+      "regurgitant systolic murmur"
+    ],
+    "clinicalPearl": "TR can intensify with inspiration.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An adolescent has exertional dyspnea and palpitations. A systolic regurgitant murmur is heard between the apex and left lower sternal border. Which lesion is most likely?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 118,
+        "questionNumber": "Cardiology Q5"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites Park's Pediatric Cardiology."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-cardio-murmur-q06",
+    "module": "cardiology",
+    "specialty": "Cardiology",
+    "topic": "Heart murmurs",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A healthy school-aged child with fever has a soft, musical grade II systolic ejection murmur at the left parasternal area that changes with position. What is the best next step?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Reassurance"
+      },
+      {
+        "key": "B",
+        "text": "Refer to cardiology"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "هذا وصف Still's innocent murmur: soft, musical/vibratory, systolic ejection، ويتغير مع الوضعية. في طفل سليم بدون red flags يكون reassurance مناسبًا.",
+    "reasoningEn": "A soft musical positional systolic ejection murmur in an otherwise well child is typical of an innocent Still murmur.",
+    "incorrectOptionsAr": "Referral يصبح أهم إذا كان murmur خشنًا، holosystolic، grade ≥3، أو معه أعراض أو abnormal S2/click.",
+    "keywords": [
+      "musical murmur",
+      "changes with position",
+      "Still murmur"
+    ],
+    "clinicalPearl": "Still murmur is usually loudest supine and softer upright.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A healthy school-aged child with fever has a soft, musical grade II systolic ejection murmur at the left parasternal area that changes with position. What is the best next step?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 118,
+        "questionNumber": "Cardiology Q6"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "supports",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites Nelson/AAP."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  }
+]

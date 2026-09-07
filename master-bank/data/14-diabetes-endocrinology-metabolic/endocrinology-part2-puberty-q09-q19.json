@@ -1,0 +1,621 @@
+[
+  {
+    "id": "part2-endo-puberty-q09",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Normal newborn genital findings",
+    "yearTags": [
+      2022,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 1-week-old girl has occasional pinkish vaginal spotting but is otherwise well. What is the most likely cause?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Maternal estrogen withdrawal"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Pseudo-menses في الأيام الأولى بعد الولادة قد تحدث بسبب withdrawal of maternal estrogen وهي finding طبيعي مؤقت إذا الطفل سليم ولا توجد red flags.",
+    "reasoningEn": "Transient neonatal vaginal bleeding is caused by withdrawal from maternal estrogen exposure.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "newborn",
+      "pink vaginal spotting",
+      "estrogen withdrawal"
+    ],
+    "clinicalPearl": "It should resolve spontaneously within a few days.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 1-week-old girl has occasional pinkish vaginal spotting but is otherwise well. What is the most likely cause?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2022,
+        "part": "Part II",
+        "page": 162,
+        "questionNumber": "Endocrinology Q9"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites Gomella."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-puberty-q10",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Primary amenorrhea",
+    "yearTags": [
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 14-year-old girl has primary amenorrhea and short stature. What is the most useful diagnostic test for suspected Turner syndrome?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Karyotype"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Short stature + primary amenorrhea يرفع الشك في Turner syndrome، والتشخيص يُؤكد بـ chromosome analysis/karyotype.",
+    "reasoningEn": "Turner syndrome is confirmed cytogenetically by karyotype or equivalent chromosome analysis.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "short stature",
+      "primary amenorrhea",
+      "Turner",
+      "karyotype"
+    ],
+    "clinicalPearl": "Evaluate associated cardiac, renal, hearing, thyroid and metabolic issues once diagnosed.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 14-year-old girl has primary amenorrhea and short stature. What is the most useful diagnostic test for suspected Turner syndrome?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2020,
+        "part": "Part II",
+        "page": 163,
+        "questionNumber": "Endocrinology Q10"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-puberty-q11",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Functional hypothalamic amenorrhea",
+    "yearTags": [
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 14-year-old with amenorrhea has full secondary sexual characteristics but a low BMI. What is the most appropriate next step?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hormonal evaluation"
+      },
+      {
+        "key": "B",
+        "text": "Pelvic ultrasound only"
+      },
+      {
+        "key": "C",
+        "text": "Karyotype"
+      },
+      {
+        "key": "D",
+        "text": "Surgical hymen assessment"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Low BMI يجعل functional hypothalamic amenorrhea/eating disorder احتمالًا مهمًا. التقييم يشمل pregnancy test وFSH/LH/estradiol وTSH/prolactin حسب السياق، إضافة لتقييم التغذية.",
+    "reasoningEn": "Low energy availability can suppress the hypothalamic-pituitary-ovarian axis, so endocrine evaluation is appropriate.",
+    "incorrectOptionsAr": "Karyotype أقل احتمال مع normal secondary sexual development؛ hymen assessment إذا هناك cyclic pain/obstruction؛ ultrasound قد يكون مساعدًا لكنه ليس التقييم الوحيد.",
+    "keywords": [
+      "amenorrhea",
+      "low BMI",
+      "functional hypothalamic amenorrhea"
+    ],
+    "clinicalPearl": "Always screen for eating disorder behaviors and bone-health risk.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 14-year-old with amenorrhea has full secondary sexual characteristics but a low BMI. What is the most appropriate next step?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2021,
+        "part": "Part II",
+        "page": 163,
+        "questionNumber": "Endocrinology Q11"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-puberty-q12",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Imperforate hymen",
+    "yearTags": [
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 14-year-old girl has primary amenorrhea, monthly cyclic lower abdominal pain, Tanner stage V development and a suprapubic mass. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hematocolpos from an imperforate hymen"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Cyclic pain مع normal secondary sexual characteristics وamenorrhea يوحي بوجود outflow obstruction. Imperforate hymen يؤدي إلى hematocolpos وقد يسبب suprapubic mass.",
+    "reasoningEn": "Normal pubertal development plus cyclic pain and amenorrhea strongly suggests an obstructed menstrual outflow tract.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "cyclic pain",
+      "primary amenorrhea",
+      "hematocolpos",
+      "imperforate hymen"
+    ],
+    "clinicalPearl": "A bulging bluish hymenal membrane may be visible on examination.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 14-year-old girl has primary amenorrhea, monthly cyclic lower abdominal pain, Tanner stage V development and a suprapubic mass. What is the most likely diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2020,
+        "part": "Part II",
+        "page": 164,
+        "questionNumber": "Endocrinology Q12"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate and PREP."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-puberty-q13",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Precocious puberty",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 5-year-old child is being evaluated for central precocious puberty. Which CNS lesion is a classic cause at this young age?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hypothalamic hamartoma"
+      },
+      {
+        "key": "B",
+        "text": "Other CNS tumors"
+      },
+      {
+        "key": "C",
+        "text": "Adrenal tumor"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Hypothalamic hamartoma من أشهر CNS causes للـcentral precocious puberty في الأطفال الصغار، وقد يرتبط أيضًا بـgelastic seizures.",
+    "reasoningEn": "Hypothalamic hamartoma is a classic CNS cause of very early central precocious puberty.",
+    "incorrectOptionsAr": "Adrenal tumor يسبب peripheral precocious puberty؛ CNS tumors أخرى ممكنة لكن hamartoma هو الارتباط الكلاسيكي.",
+    "keywords": [
+      "precocious puberty",
+      "hypothalamic hamartoma"
+    ],
+    "clinicalPearl": "Look for gelastic seizures as an important associated clue.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 5-year-old child is being evaluated for central precocious puberty. Which CNS lesion is a classic cause at this young age?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2018,
+        "part": "Part II",
+        "page": 165,
+        "questionNumber": "Endocrinology Q13"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-puberty-q14",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Hypothalamic hamartoma",
+    "yearTags": [
+      2022,
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child has gelastic seizures together with precocious puberty. What is the most likely underlying lesion?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hypothalamic hamartoma"
+      },
+      {
+        "key": "B",
+        "text": "Craniopharyngioma"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Gelastic seizures هي laughing seizures، ووجودها مع central precocious puberty يعد clue قوي جدًا لـ hypothalamic hamartoma.",
+    "reasoningEn": "The combination of gelastic seizures and precocious puberty is characteristic of hypothalamic hamartoma.",
+    "incorrectOptionsAr": "Craniopharyngioma غالبًا يسبب endocrine deficits/visual symptoms وليس gelastic seizures كعلامة مميزة.",
+    "keywords": [
+      "gelastic seizures",
+      "precocious puberty"
+    ],
+    "clinicalPearl": "This is one of the most classic board associations in pediatric endocrinology/neurology.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child has gelastic seizures together with precocious puberty. What is the most likely underlying lesion?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2022,
+        "part": "Part II",
+        "page": 165,
+        "questionNumber": "Endocrinology Q14"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": "part2-endo-puberty-q13",
+    "reviewStatus": "deduplicated"
+  },
+  {
+    "id": "part2-endo-puberty-q15",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "McCune-Albright syndrome",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with McCune-Albright syndrome has precocious puberty. Which treatment should not be automatically assumed to work if the process is gonadotropin-independent?",
+    "options": [
+      {
+        "key": "A",
+        "text": "GnRH agonist"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "low",
+    "explanationAr": "McCune-Albright classically causes peripheral (gonadotropin-independent) precocious puberty، لذلك GnRH agonist لا يعالج المصدر الأساسي عادةً إلا إذا حدث secondary central activation. مفتاح الملف يحتاج مراجعة حديثة.",
+    "reasoningEn": "GnRH agonists are effective for central precocious puberty, not primary gonadotropin-independent precocity from McCune-Albright syndrome.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى محفوظة، ولذلك لا يمكن اختيار علاج بديل من الـrecall.",
+    "keywords": [
+      "McCune-Albright",
+      "peripheral precocious puberty",
+      "GnRH agonist conflict"
+    ],
+    "clinicalPearl": "Treatment of McCune-Albright precocious puberty is sex- and manifestation-specific and often targets estrogen production/action.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with McCune-Albright syndrome has precocious puberty. Which treatment should not be automatically assumed to work if the process is gonadotropin-independent?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2018,
+        "part": "Part II",
+        "page": 166,
+        "questionNumber": "Endocrinology Q15",
+        "notes": "Source key lists GnRH agonist; this conflicts with standard physiology unless central puberty has developed."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "High-priority verification item."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting"
+  },
+  {
+    "id": "part2-endo-puberty-q16",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Kallmann syndrome",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "An adolescent has hypogonadotropic hypogonadism and loss of smell. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Kallmann syndrome"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Anosmia/hyposmia مع hypogonadotropic hypogonadism هي hallmark لـ Kallmann syndrome بسبب فشل migration للـGnRH neurons والـolfactory structures.",
+    "reasoningEn": "Kallmann syndrome combines congenital GnRH deficiency with anosmia or severe hyposmia.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "hypogonadism",
+      "anosmia",
+      "Kallmann"
+    ],
+    "clinicalPearl": "May also be associated with midline, hearing and renal anomalies.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An adolescent has hypogonadotropic hypogonadism and loss of smell. What is the most likely diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 166,
+        "questionNumber": "Endocrinology Q16"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites MedStudy."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-puberty-q17",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "PCOS",
+    "yearTags": [
+      2025,
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "An adolescent girl has hirsutism and irregular menstrual periods. What diagnosis should be considered?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Polycystic ovary syndrome"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "moderate",
+    "explanationAr": "Hirsutism + persistent menstrual irregularity يرفع احتمال PCOS، لكن في adolescents يجب تطبيق criteria مناسبة للعمر واستبعاد أسباب أخرى للـhyperandrogenism وعدم الإفراط بالتشخيص مبكرًا بعد menarche.",
+    "reasoningEn": "Persistent ovulatory dysfunction plus clinical hyperandrogenism suggests PCOS after excluding mimics.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "hirsutism",
+      "irregular menses",
+      "PCOS"
+    ],
+    "clinicalPearl": "Adolescent PCOS diagnosis should be cautious because normal pubertal anovulation can mimic it.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "source page 167 hirsutism image",
+      "assetPath": null,
+      "captionAr": "الصورة الأصلية مطلوبة إذا كان التعرف البصري جزءًا من السؤال.",
+      "captionEn": "Original image required if visually diagnostic.",
+      "status": "missing"
+    },
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An adolescent girl has hirsutism and irregular menstrual periods. What diagnosis should be considered?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2025,
+        "part": "Part II",
+        "page": 167,
+        "questionNumber": "Endocrinology Q17"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing"
+  },
+  {
+    "id": "part2-endo-puberty-q18",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Adolescent menstrual physiology",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 14-year-old girl had menarche one year ago and now has irregular cycles, with normal growth and examination. What is the most likely explanation?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Anorexia nervosa"
+      },
+      {
+        "key": "B",
+        "text": "Hypothyroidism"
+      },
+      {
+        "key": "C",
+        "text": "Anovulatory cycles from an immature hypothalamic-pituitary-ovarian axis"
+      },
+      {
+        "key": "D",
+        "text": "Polycystic ovary syndrome"
+      }
+    ],
+    "recalledAnswer": "C",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "في أول 1–2 سنوات بعد menarche تكون anovulatory cycles شائعة بسبب عدم نضج HPO axis. إذا لا توجد red flags فهذا غالبًا physiologic.",
+    "reasoningEn": "Irregular anovulatory cycles are common soon after menarche as the HPO axis matures.",
+    "incorrectOptionsAr": "Anorexia/hypothyroidism/PCOS تحتاج دلائل إضافية غير موجودة هنا.",
+    "keywords": [
+      "one year after menarche",
+      "irregular cycles",
+      "anovulatory"
+    ],
+    "clinicalPearl": "Persistent marked irregularity beyond the expected pubertal window warrants evaluation.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 14-year-old girl had menarche one year ago and now has irregular cycles, with normal growth and examination. What is the most likely explanation?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 167,
+        "questionNumber": "Endocrinology Q18"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites MedStudy."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  },
+  {
+    "id": "part2-endo-puberty-q19",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Breast development",
+    "yearTags": [
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 12-year-old girl has asymmetric breast development that began only a few months ago and no concerning mass or skin findings. What is the best management?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Reassurance and follow-up"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "Breast asymmetry شائعة أثناء puberty وغالبًا تتحسن مع اكتمال development. في غياب red flags يكون reassurance والمتابعة مناسبين.",
+    "reasoningEn": "Transient breast asymmetry is common during pubertal development and usually needs reassurance only.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "breast asymmetry",
+      "puberty",
+      "reassurance"
+    ],
+    "clinicalPearl": "Persistent major asymmetry can be reassessed after breast development is complete.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 12-year-old girl has asymmetric breast development that began only a few months ago and no concerning mass or skin findings. What is the best management?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2019,
+        "part": "Part II",
+        "page": 168,
+        "questionNumber": "Endocrinology Q19"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "supports",
+      "guideline": "not_checked",
+      "referenceNotes": "Source cites Nelson/UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification"
+  }
+]

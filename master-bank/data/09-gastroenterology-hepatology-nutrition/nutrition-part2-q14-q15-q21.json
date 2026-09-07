@@ -1,0 +1,39 @@
+[
+  {
+    "id":"part2-nutrition-q014-symmetric-growth-fall","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Growth and nutritional assessment","subtopic":"Symmetric fall in growth parameters","yearTags":[],"examPart":"Part II",
+    "stemEn":"An infant was born with weight, length, and head circumference around the 10th percentile. At 12 months, all three parameters have fallen to about the 5th percentile. Which cause does the source key select for this pattern?",
+    "options":[{"key":"A","text":"Malabsorption disorder"},{"key":"B","text":"Nutritional deficiency"},{"key":"C","text":"Chromosomal abnormality"},{"key":"D","text":"Normal growth variation"}],
+    "recalledAnswer":"C","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يطبع المفتاح C: Chromosomal abnormality، لكن الشرح الذي يليه لا يثبت ذلك؛ بل يناقش أن calorie insufficiency يبدأ غالبًا بانخفاض weight مع sparing للطول ومحيط الرأس، وأن الانخفاض المتناظر في أكثر من growth parameter قد يوحي بمرض مزمن. لذلك حُفظ المفتاح كما هو ووُسم السؤال conflicting بدل تصحيح الإجابة بصمت.",
+    "reasoningEn":"The printed key is C, but the accompanying explanation discusses nutritional/caloric patterns rather than establishing a chromosomal diagnosis. The inconsistency is preserved.",
+    "incorrectOptionsAr":"لا يمكن استبعاد A أو B أو D من النص بثقة لأن شرح المصدر لا يطابق المفتاح المطبوع بصورة كافية.","keywords":["growth faltering","weight length head circumference","symmetric decline"],"clinicalPearl":"Do not convert an internally inconsistent source key into a verified answer.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"An infant was born with weight, length, and head circumference around the tenth percentile. At twelve months, all three parameters have fallen to about the fifth percentile. Which cause does the source key select? A. Malabsorption disorder. B. Nutritional deficiency. C. Chromosomal abnormality. D. Normal growth variation."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":null,"part":"Part II","page":262,"questionNumber":"Nutrition and Malnutrition Q14","notes":"Source prints 'Part II 2035', an impossible/future year relative to this edition; year tag intentionally not normalized. Explanation continues on page 263 and does not clearly support the printed key."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Internal source inconsistency; independent review required."},"duplicateOf":null,"reviewStatus":"conflicting"
+  },
+  {
+    "id":"part2-nutrition-q015-growth-chart-intestinal-biopsy","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Growth and nutritional assessment","subtopic":"Low height and weight","yearTags":[2017],"examPart":"Part II",
+    "stemEn":"A 3-year-old child's growth chart shows both height and weight below the 3rd percentile. What is the next step according to the recalled options?",
+    "options":[{"key":"A","text":"Reassure"},{"key":"B","text":"Send for intestinal biopsy"}],
+    "recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يختار B: intestinal biopsy لكنه يضيف صراحةً أن many tests need to be taken way before this. الشرح يركز على تفسير pattern of growth faltering وعلى أن التقييم المخبري يجب أن يكون موجّهًا بالقصة والفحص. لذلك السؤال غير مناسب للنشر كخطوة تشخيصية قطعية دون مراجعة.",
+    "reasoningEn":"The source key is intestinal biopsy, but the source itself cautions that many tests should precede it; the item is therefore internally problematic.",
+    "incorrectOptionsAr":"Reassurance وحدها لا تتماشى مع وجود both height and weight <3rd percentile، لكن ذلك لا يجعل intestinal biopsy خطوة أولى موثقة تلقائيًا.","keywords":["height below 3rd percentile","weight below 3rd percentile","growth chart","intestinal biopsy"],"clinicalPearl":"The source itself warns that the keyed invasive test is not an early first step.","managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"Nutrition and Malnutrition Q15 growth-chart image","assetPath":null,"captionAr":"صورة growth chart الأصلية مطلوبة قبل النشر.","captionEn":"Original growth-chart image required before publication.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A three-year-old child's growth chart shows both height and weight below the third percentile. What is the next step according to the recalled options? A. Reassure. B. Send for intestinal biopsy."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2017,"part":"Part II","page":263,"questionNumber":"Nutrition and Malnutrition Q15","notes":"Image-dependent; source explicitly notes many tests should precede intestinal biopsy. Explanation continues on page 264."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source key conflicts with its own caution; image missing."},"duplicateOf":null,"reviewStatus":"conflicting"
+  },
+  {
+    "id":"part2-nutrition-q021-anorexia-missed-followup-admit","module":"gastroenterology-hepatology-nutrition","specialty":"Nutrition and Malnutrition","topic":"Eating disorders","subtopic":"Anorexia nervosa and treatment engagement","yearTags":[2021],"examPart":"Part II",
+    "stemEn":"An adolescent with anorexia nervosa misses clinic follow-up, and her family is not interested in treatment. What is the next step according to the source?",
+    "options":[{"key":"A","text":"Admit to the hospital"},{"key":"B","text":"Refer to the child abuse committee"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يختار hospital admission لكنه لا يقدم explanation بعد السؤال. لذلك حُفظ المفتاح كـrecalledAnswer فقط ولم يُرفع إلى verifiedAnswer، خصوصًا أن قرار admission يعتمد عادةً على درجة medical/psychiatric risk التي لا يذكرها هذا الـstem.",
+    "reasoningEn":"The source keys admission but provides no question-specific explanation; the clinical threshold is not established by the recall alone.",
+    "incorrectOptionsAr":"المصدر لا يناقش متى تصبح neglect/safeguarding concerns سببًا لإشراك child protection، لذلك لا نضيف قاعدة غير موجودة في المادة.","keywords":["anorexia nervosa","missed follow-up","family disengagement","admission"],"clinicalPearl":"Source key preserved; disposition needs independent risk-based verification.","managementSteps":[],"diagnosticSteps":[],
+    "image":null,"tts":{"enabled":true,"language":"en","text":"An adolescent with anorexia nervosa misses clinic follow-up, and her family is not interested in treatment. What is the next step according to the source? A. Admit to the hospital. B. Refer to the child abuse committee."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2021,"part":"Part II","page":267,"questionNumber":"Nutrition and Malnutrition Q21","notes":"Source gives answer A but no explanation."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent disposition/safeguarding verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification"
+  }
+]

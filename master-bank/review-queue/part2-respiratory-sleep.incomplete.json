@@ -1,0 +1,54 @@
+{
+  "batchId": "part2-respiratory-sleep-incomplete-001",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "items": [
+    {
+      "sourceQuestion": "Pulmonary Q7",
+      "page": 13,
+      "yearTags": [2018],
+      "topic": "Allergic bronchopulmonary aspergillosis",
+      "stemEn": "A child with asthma has uncontrolled symptoms and a high IgE level. Which test should be requested next?",
+      "availableOptions": ["A. Aspergillus serology"],
+      "sourceAnswer": "A",
+      "reason": "Only one answer option is preserved in the recall source, so this item is not yet suitable for the standard MCQ schema.",
+      "imageStatus": "not_required",
+      "reviewStatus": "incomplete_recall"
+    },
+    {
+      "sourceQuestion": "Pulmonary Q9",
+      "page": 14,
+      "yearTags": [2025,2018,2017],
+      "topic": "Acute eosinophilic pneumonia",
+      "stemEn": "A child with pneumonia has eosinophilia and underwent bronchoalveolar lavage with lung biopsy; a microscopy image was referenced. What is the most likely diagnosis?",
+      "availableOptions": ["A. Acute eosinophilic pneumonia"],
+      "sourceAnswer": "A",
+      "reason": "Only one option is preserved and the referenced microscopy image is not yet linked.",
+      "imageStatus": "missing",
+      "reviewStatus": "image_missing"
+    },
+    {
+      "sourceQuestion": "Pulmonary Q10",
+      "page": 15,
+      "yearTags": [2018],
+      "topic": "Pulmonary alveolar proteinosis",
+      "stemEn": "A child with severe respiratory failure underwent bronchoalveolar lavage with lung biopsy; a microscopy image was referenced. What is the most likely diagnosis?",
+      "availableOptions": ["A. Pulmonary alveolar proteinosis"],
+      "sourceAnswer": "A",
+      "reason": "Only one option is preserved and the original histology/BAL image is not yet linked.",
+      "imageStatus": "missing",
+      "reviewStatus": "image_missing"
+    },
+    {
+      "sourceQuestion": "Sleep Q15",
+      "page": 18,
+      "yearTags": [2022,2020],
+      "topic": "Obstructive sleep apnea",
+      "stemEn": "A child has daytime sleepiness and snoring suggestive of obstructive sleep apnea. What should be done next?",
+      "availableOptions": ["A. Polysomnography"],
+      "sourceAnswer": "A",
+      "reason": "The recall preserves only one option. The clinical point is useful, but the item needs reconstruction or a second source before publication as an MCQ.",
+      "imageStatus": "not_required",
+      "reviewStatus": "incomplete_recall"
+    }
+  ]
+}

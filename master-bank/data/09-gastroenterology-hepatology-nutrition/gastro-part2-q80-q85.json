@@ -1,0 +1,69 @@
+[
+  {
+    "id":"part2-gi-q080","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of the Pancreas and Hepatobiliary System","subtopic":"Biliary atresia","yearTags":[2023],"examPart":"Part II",
+    "stemEn":"A 1-month-old boy is diagnosed with biliary atresia after ultrasound and liver biopsy. What is the best management among the listed choices?",
+    "options":[{"key":"A","text":"Liver transplant"},{"key":"B","text":"Roux-en-Y jejunostomy"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يطبع Liver transplant كالإجابة، لكنه يشرح أن accepted initial surgical intervention بعد تأكيد biliary atresia هو Kasai hepatoportoenterostomy، وهي غير موجودة ضمن الخيارات. لذلك السؤال conflicting.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Biliary atresia is time-sensitive; the source key conflicts with its explanation because Kasai was omitted from the choices.","managementSteps":[],"diagnosticSteps":[],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A 1-month-old boy is diagnosed with biliary atresia after ultrasound and liver biopsy. What is the best management among the listed choices? Option A. Liver transplant. Option B. Roux-en-Y jejunostomy."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2023,"part":"Part II","page":248,"questionNumber":"Gastroenterology Q80","notes":"Kasai/hepatoportoenterostomy was not listed among the answer choices."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"conflicting","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q081","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of the Pancreas and Hepatobiliary System","subtopic":"Alpha-1 antitrypsin deficiency","yearTags":[2017],"examPart":"Part II",
+    "stemEn":"A patient has conjugated hyperbilirubinemia and a liver biopsy image suggestive of a specific disorder. What is the most likely diagnosis?",
+    "options":[{"key":"A","text":"Hereditary hemochromatosis"},{"key":"B","text":"Liver fibrosis"},{"key":"C","text":"Alpha-1 antitrypsin deficiency"}],
+    "recalledAnswer":"C","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Alpha-1 antitrypsin deficiency ويصف neonatal cholestasis كأحد عروض المرض.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Neonatal cholestasis can be a presentation of alpha-1 antitrypsin deficiency.","managementSteps":[],"diagnosticSteps":[],
+    "image":{"requiredForQuestion":true,"sourceRef":"Gastroenterology Q81 original liver-biopsy image","assetPath":null,"captionAr":"الصورة الأصلية مطلوبة قبل النشر.","captionEn":"Original source image required before publication.","status":"missing"},
+    "tts":{"enabled":true,"language":"en","text":"A patient has conjugated hyperbilirubinemia and a liver biopsy image suggestive of a specific disorder. What is the most likely diagnosis? Option A. Hereditary hemochromatosis. Option B. Liver fibrosis. Option C. Alpha-1 antitrypsin deficiency."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2017,"part":"Part II","page":248,"questionNumber":"Gastroenterology Q81","notes":"Image-dependent liver biopsy question."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"image_missing","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q082","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of the Pancreas and Hepatobiliary System","subtopic":"Acute viral hepatitis","yearTags":[2025],"examPart":"Part II",
+    "stemEn":"A patient has an acute illness with diarrhea, ALT/AST around 500, high ammonia and INR 3. What is the most likely diagnosis among the listed choices?",
+    "options":[{"key":"A","text":"Reye syndrome"},{"key":"B","text":"Wilson disease"},{"key":"C","text":"Urea cycle disorder"},{"key":"D","text":"Acute viral hepatitis"}],
+    "recalledAnswer":"D","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Acute viral hepatitis ويربطه بأعراض فيروسية/هضمية وارتفاع aminotransferases. وجود INR 3 وhyperammonemia يجعل الحالة شديدة ويحتاج مفتاح المصدر إلى تحقق مستقل قبل النشر.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"The source keys acute viral hepatitis, but the severe coagulopathy and hyperammonemia make this a high-acuity liver-failure presentation.","managementSteps":[],"diagnosticSteps":[],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A patient has an acute illness with diarrhea, ALT and AST around 500, high ammonia and INR 3. What is the most likely diagnosis among the listed choices? Option A. Reye syndrome. Option B. Wilson disease. Option C. Urea cycle disorder. Option D. Acute viral hepatitis."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2025,"part":"Part II","page":249,"questionNumber":"Gastroenterology Q82","notes":"Source explanation cites hepatitis A clinical presentation."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q083","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of the Pancreas and Hepatobiliary System","subtopic":"Autoimmune hepatitis screening","yearTags":[2018],"examPart":"Part II",
+    "stemEn":"A child has symptoms of viral illness and elevated liver enzymes, but hepatitis virology testing is negative. What test should be ordered next?",
+    "options":[{"key":"A","text":"Anti-smooth muscle antibody (ASMA)"},{"key":"?","text":"Other answer choices were not preserved in the source recall"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يختار ASMA ويشرح أن autoimmune hepatitis ينبغي التفكير فيها بعد استبعاد الأسباب infectious/metabolic وأن autoantibodies مثل ANA وASMA وanti-LKM وSLA قد تدعم التشخيص.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Persistently elevated aminotransferases with negative viral workup should raise consideration of autoimmune hepatitis.","managementSteps":[],"diagnosticSteps":["Autoimmune hepatitis serologic evaluation"],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A child has symptoms of viral illness and elevated liver enzymes, but hepatitis virology testing is negative. What test should be ordered next? Option A. Anti-smooth muscle antibody."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2018,"part":"Part II","page":250,"questionNumber":"Gastroenterology Q83","notes":"Only the recalled correct option was preserved."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"incomplete_recall","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q084","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of the Pancreas and Hepatobiliary System","subtopic":"Autoimmune hepatitis diagnosis","yearTags":[2023],"examPart":"Part II",
+    "stemEn":"A 10-year-old child has findings suggestive of autoimmune hepatitis, negative hepatitis A/B/C serologies, positive ANA and elevated liver enzymes. What is the next step?",
+    "options":[{"key":"A","text":"Liver biopsy"},{"key":"B","text":"Antimitochondrial antibodies"},{"key":"C","text":"ERCP"}],
+    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"moderate",
+    "explanationAr":"المصدر يختار Liver biopsy ويذكر أن biopsy تُستخدم لتثبيت تشخيص autoimmune hepatitis بعد استبعاد الأسباب الأخرى.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"Autoimmune hepatitis diagnosis is supported by autoantibodies and IgG, but histology is important for confirmation.","managementSteps":[],"diagnosticSteps":["Liver biopsy"],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A 10-year-old child has findings suggestive of autoimmune hepatitis, negative hepatitis A, B, and C serologies, positive ANA and elevated liver enzymes. What is the next step? Option A. Liver biopsy. Option B. Antimitochondrial antibodies. Option C. ERCP."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2023,"part":"Part II","page":250,"questionNumber":"Gastroenterology Q84","notes":null}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft"
+  },
+  {
+    "id":"part2-gi-q085","module":"gastroenterology-hepatology-nutrition","specialty":"Gastroenterology","topic":"Disorders of the Pancreas and Hepatobiliary System","subtopic":"Acute pancreatitis imaging","yearTags":[2025],"examPart":"Part II",
+    "stemEn":"A child with inflammatory bowel disease on azathioprine has abdominal pain with high amylase and lipase. Which listed test is most appropriate for diagnosis?",
+    "options":[{"key":"A","text":"Abdominal MRI"},{"key":"B","text":"Abdominal ultrasound"},{"key":"C","text":"Triglyceride levels"}],
+    "recalledAnswer":"B","verifiedAnswer":null,"answerConfidence":"low",
+    "explanationAr":"المصدر يختار Abdominal ultrasound من الخيارات، لكنه يذكر صراحة أن CT scan لو كان ضمن الخيارات لكان الإجابة المفضلة بحسب صياغة التجميع. كما يوضح أن imaging قد لا يكون مطلوبًا إذا كانت القصة والإنزيمات تشخّص acute pancreatitis بالفعل.",
+    "reasoningEn":null,"incorrectOptionsAr":null,"keywords":[],"clinicalPearl":"The source item is imperfect: ultrasound is keyed only because CT was not offered, and imaging may not be necessary when clinical and biochemical criteria already diagnose acute pancreatitis.","managementSteps":[],"diagnosticSteps":[],"image":null,
+    "tts":{"enabled":true,"language":"en","text":"A child with inflammatory bowel disease on azathioprine has abdominal pain with high amylase and lipase. Which listed test is most appropriate for diagnosis? Option A. Abdominal MRI. Option B. Abdominal ultrasound. Option C. Triglyceride levels."},
+    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","year":2025,"part":"Part II","page":251,"questionNumber":"Gastroenterology Q85","notes":"Source says CT would be preferred if offered, while also noting imaging may be unnecessary for diagnosis."}],
+    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source-derived only; independent verification pending."},"duplicateOf":null,"reviewStatus":"conflicting","publishable":false,"contentType":"mcq_draft"
+  }
+]
