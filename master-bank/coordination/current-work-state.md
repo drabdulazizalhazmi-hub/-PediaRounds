@@ -20,17 +20,24 @@ Base: `main`
 4. Preserve conflicting/outdated source keys until independent verification.
 
 ## Latest synchronized work
-- Early Gastro image audit was extended through **Q19/Q20**. Both stems explicitly say a picture was provided, but rendered source page 209 contains no corresponding question image. They are tracked as `source_image_missing`; explanatory figures were not substituted.
-- Existing early Gastro recovered/linkable images remain **Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29**; Q8–Q11, Q14–Q15, Q19–Q20 remain `source_image_missing` where the cited question image is absent.
-- **Nutrition image-reference audit is now complete for Q1–Q23** using the source section pages 254–270. The targeted source-text audit found only one explicit image-dependent item: **Nutrition Q8**.
-- **Nutrition Q8** (`part2-nutrition-q008-abetalipoproteinemia-acanthocytes`) has an actual embedded peripheral-smear image on source page 259. It was extracted directly from the PDF object as `p259-000.jpg` (199×149; SHA-256 `1b394584e1cce65d81490b8754b2e6a120fb38515bfed2c4077f5cf49aaeb4df`).
-- Private Nutrition review bundle remains `PediaRounds_nutrition_source_image_review.zip`, SHA-256 `bdf29e800855897a5a51a0d4abf2b8bb7cc3057ecbb3b42a1e037e1f2423abf7`.
-- Nutrition image metadata/linkage files:
-  - `master-bank/sources/nutrition-source-image-review-20260907.json`
-  - `master-bank/sources/nutrition-question-image-linkage-20260907.json`
-- Nutrition Q8 canonical record path is `master-bank/data/09-gastroenterology-hepatology-nutrition/nutrition-part2-q04-q12.json`.
-- No other Nutrition Q1–Q23 question stem in the indexed source text explicitly references picture/photo/smear/radiograph/X-ray terminology.
-- Previously synchronized later Gastro image-linked questions remain Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81.
+- **Nutrition Q1–Q23 image-reference audit is complete** for source pages 254–270. The only explicit image-dependent item found is **Nutrition Q8**.
+- **Nutrition Q8** (`part2-nutrition-q008-abetalipoproteinemia-acanthocytes`) has the actual acanthocyte smear recovered from source page 259 and linked to `nutrition-part2-q04-q12.json`; no other Nutrition Q1–Q23 question stem explicitly references picture/photo/smear/radiograph/X-ray terminology.
+- Nutrition image manifest was updated to record the full-section audit status: `master-bank/sources/nutrition-source-image-review-20260907.json`.
+- **Infectious Diseases image audit has now started.** A targeted search across pages 270–349 identified multiple image-dependent recalls; the first early viral batch Q8–Q19 was processed.
+- Recovered and privately packaged early Infectious source images:
+  - Q8 papular-purpuric gloves-and-socks syndrome — page 274.
+  - Q9 cold panniculitis of the cheeks — page 275.
+  - Q12 infectious-mononucleosis oropharyngeal image — page 276.
+  - Q17 two measles images: Koplik spots + exanthem — page 279.
+  - Q18 reuses the measles exanthem image referenced immediately after Q17 in the source text.
+  - Q19 chest radiograph in the human-metapneumovirus vignette — page 280.
+- Private Infectious review package: `PediaRounds_infectious_early_source_image_review.zip`, SHA-256 `ce650f6e0df395421a76e0266b5b5f7ff707cabd6b1f24b26f86f2161eaafab6`.
+- New Infectious linkage metadata:
+  - `master-bank/sources/infectious-early-source-image-review-20260907.json`
+  - `master-bank/sources/infectious-question-image-linkage-20260907.json`
+- The source also contains explanatory graphics on pages 277–278; these were explicitly excluded rather than substituted for question images.
+- Early Gastro linkage remains Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29; Gastro Q8–Q11, Q14–Q15, Q19–Q20 remain `source_image_missing` where their referenced question image is absent.
+- Later Gastro image-linked questions remain Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81.
 - Pulmonary source-image review remains Q6, Q9, Q10, Q12; Pulmonary Q14 source image is absent.
 
 ## Known review gates
@@ -38,6 +45,7 @@ Base: `main`
 - Gastro Q35, Q42, Q44–Q45, Q53, Q56–Q57 and selected later GI items retain source conflicts.
 - Gastro Q73/Q74 remain incomplete recalls despite image recovery.
 - Nutrition Q8 image is recovered but remains `image_needs_review` and publication-gated.
+- Infectious Q8/Q9/Q12/Q17/Q18/Q19 images are recovered privately and remain `image_needs_review` until clinical review/publication approval.
 - Pulmonary Q9/Q10 and Sleep Q15 remain incomplete recalls.
 
 ## Coordination rule
