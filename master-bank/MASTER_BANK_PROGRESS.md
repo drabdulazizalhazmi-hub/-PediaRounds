@@ -8,7 +8,7 @@
 - Active working branch: `master-bank/post-merge-audit`
 - Active pull request: `#3 — Continue PediaRounds post-merge audit`
 - Base branch: `main`
-- Last synchronized: `2026-09-07 09:47 +03:00`
+- Last synchronized: `2026-09-07 09:55 +03:00`
 
 ## Mandatory coordination protocol
 1. Before work, read this file and `coordination/current-work-state.md`, then inspect PR #3.
@@ -21,12 +21,13 @@
 8. After each successful batch, update both shared coordination files.
 
 ## Latest batch
-Gastro image recovery advanced:
-- Previously recovered source images for **Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75**.
-- Recovered the original **Gastro Q81 liver-biopsy image** from source page 249.
-- Updated `master-bank/sources/gastro-source-image-review-20260907.json` with Q81 dimensions/hash and refreshed private-review package hash.
-- Q81 remains `image_needs_review`: source text labels the biopsy as suggestive of alpha-1 antitrypsin deficiency, but no independent image interpretation is claimed.
-- Private-review image bytes remain outside the public repository pending publication-rights and clinical review.
+Question/image linkage advanced:
+- Gastro source-image review covers **Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81**.
+- Added `master-bank/sources/question-image-linkage-20260907.json` to explicitly connect recovered source-image metadata to the canonical question IDs and JSON record paths.
+- Canonical question linkage is now explicit for **Q56, Q57, Q64, Q65, Q68, Q70, Q73, Q74, Q75, Q81**.
+- **Q63** image is recovered and hashed, but the exact canonical record path is still pending resolution and is not guessed.
+- Public `assetPath` remains null because the repository is public; original source-image bytes stay in the private review package pending publication-rights and clinical review.
+- Linking an image does not override review gates: Q56/Q57 remain conflicting, Q73/Q74 remain incomplete recalls, and Q81 remains image-needs-review.
 
 ## Strongly represented source ranges already on main
 - Growth & Development Q1–Q21
@@ -54,7 +55,7 @@ Gastro image recovery advanced:
 - Nutrition & Malnutrition Q1–Q23: supported/gap files may overlap.
 - Pulmonary / Sleep / Asthma: canonical and legacy respiratory data overlap; some image and single-option recalls remain.
 - Allergy / Immunology: data exists but canonical deduplication/verification remains.
-- Medical Ethics / Patient Safety: structured records and incomplete-recall records must stay separated.
+- Medical Ethics / Patient Safety: structured records and incomplete-recall records must stay separated correctly.
 
 ## Known source/review gates
 - Gastro Q35 conflicting differential without stool electrolytes.
@@ -68,9 +69,9 @@ Gastro image recovery advanced:
 - Sleep Q15 single-option incomplete recall.
 
 ## Next action
-1. Continue the canonical 1023-ID coverage/duplicate audit on PR #3.
-2. Recover the next high-priority source images/attachments into private review bundles and add hash/source-page manifests.
-3. Resolve recoverable `incomplete_recall` items directly from the source.
+1. Resolve the exact canonical record path for Gastro Q63 and add it to the question-image linkage index.
+2. Continue linking recovered source images to canonical question IDs rather than keeping them only in image manifests.
+3. Recover the next high-priority source images/attachments and resolve source-supported `incomplete_recall` items.
 4. Only after structural integrity is stable, verify conflicting/outdated clinical keys using UpToDate, then Nelson, then current specialty guidance.
 
 ## Style contract
