@@ -1,0 +1,29 @@
+{
+  "sourceFile":"2026 PART Pediatric 3.pdf",
+  "sourceSha256":"c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+  "physicalPageRanges":[[666,681],[683,690]],
+  "recordCount":47,
+  "mcqDraftCount":35,
+  "incompleteMcqRecallCount":12,
+  "sectionCounts":{"Medical Ethics and Patient Safety":{"sourceRecords":34,"mcqDrafts":27,"incompleteMcqRecalls":7},"Research, Biostatistics, and Communication Skills":{"sourceRecords":13,"mcqDrafts":8,"incompleteMcqRecalls":5}},
+  "canonicalDataFiles":[
+    "master-bank/data/01-principles-of-paediatrics/medical-ethics-part2-q01-q11.json",
+    "master-bank/data/01-principles-of-paediatrics/patient-safety-part2-q12-q34.json",
+    "master-bank/data/01-principles-of-paediatrics/research-communication-part2-q01-q13.json"
+  ],
+  "recallFile":"master-bank/review-queue/ethics-research-20260907-incomplete.json",
+  "newRecordIds":["part2-ethics-q01","part2-ethics-q02","part2-ethics-q03","part2-ethics-q04","part2-ethics-q05","part2-ethics-q06","part2-ethics-q07","part2-ethics-q08","part2-ethics-q09","part2-ethics-q10","part2-ethics-q11","part2-ethics-q12","part2-ethics-q13","part2-ethics-q14","part2-ethics-q15","part2-ethics-q16","part2-ethics-q17","part2-ethics-q18","part2-ethics-q19","part2-ethics-q20","part2-ethics-q21","part2-ethics-q22","part2-ethics-q23","part2-ethics-q24","part2-ethics-q25","part2-ethics-q26","part2-ethics-q27","part2-ethics-q28","part2-ethics-q29","part2-ethics-q30","part2-ethics-q31","part2-ethics-q32","part2-ethics-q33","part2-ethics-q34","part2-research-q01","part2-research-q02","part2-research-q03","part2-research-q04","part2-research-q05","part2-research-q06","part2-research-q07","part2-research-q08","part2-research-q09","part2-research-q10","part2-research-q11","part2-research-q12","part2-research-q13"],
+  "deduplicationScope":"47 unique stable IDs in this batch. Existing Dermatology, Ophthalmology and ENT files were read and not re-imported. Full-bank semantic consolidation and older overlapping exports remain pending.",
+  "imageManifest":"master-bank/sources/ethics-research-20260907-image-manifest.json",
+  "referenceChecks":"master-bank/sources/ethics-research-20260907-reference-checks.json",
+  "hydrationTool":"master-bank/tools/hydrate_ethics_research_20260907.py",
+  "imageCount":14,
+  "originalQuestionImageCount":1,
+  "explanationImageCount":13,
+  "imagesUploadedToRepository":false,
+  "imageDelivery":"Extracted originals are included only in the downloadable local review bundle; public redistribution rights are unestablished.",
+  "runtimeNote":"Run the hydration tool before integration. It generates English TTS from the unchanged stem and actual options, resolves image extensions using the canonical image manifest, and preserves all publication gates. Never score from recalledAnswer alone.",
+  "liveSitePublished":false,
+  "clinicalApproval":"pending",
+  "notes":["Original English stems/options retained with whitespace normalization only.","sourceAnswerText retains question marks, X and contradictory keys.","No missing distractors or study counts were fabricated.","Single/zero-option recalls are outside the MCQ schema requiring at least two options.","The original odds-ratio table on page689 has rows [30,20] and [10,40]; direct calculation gives6.","The page688 specificity diagram has no study counts and includes an internal numerator-label inconsistency.","No source PDF, credentials, or font files are committed.","Data import does not update the live ChatGPT Sites project or resolve the open PR's merge conflicts."]
+}
