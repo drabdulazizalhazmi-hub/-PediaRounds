@@ -1,0 +1,21 @@
+{
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "branch": "master-bank/post-merge-audit",
+  "links": [
+    {
+      "questionId": "part2-nutrition-q008-abetalipoproteinemia-acanthocytes",
+      "questionNumber": "Nutrition and Malnutrition Q8",
+      "recordPath": "master-bank/data/09-gastroenterology-hepatology-nutrition/nutrition-part2-q04-q12.json",
+      "sourcePage": 259,
+      "reviewAsset": "p259-000.jpg",
+      "sha256": "1b394584e1cce65d81490b8754b2e6a120fb38515bfed2c4077f5cf49aaeb4df",
+      "status": "image_needs_review",
+      "publicAssetPath": null
+    }
+  ],
+  "rules": [
+    "The source image is linked directly to its canonical question record for private review.",
+    "Original image bytes are not published to the public repository until publication rights are cleared.",
+    "Do not replace the source smear with a generated substitute."
+  ]
+}
