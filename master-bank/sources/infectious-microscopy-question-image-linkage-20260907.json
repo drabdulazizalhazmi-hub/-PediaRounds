@@ -1,0 +1,42 @@
+{
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "branch": "master-bank/post-merge-audit",
+  "links": [
+    {
+      "questionId": "part2-id-gp-q23",
+      "questionNumber": "Infectious Diseases Q23",
+      "recordPath": "master-bank/data/11-infectious-diseases/infectious-part2-gram-positive-batch01-q23-q33.json",
+      "sourcePage": 282,
+      "reviewAsset": "q23-listeria-gram-positive-rods.jpg",
+      "sha256": "09d13ee04753aedc368c4e408adb756f2fb9568a033bf60be973fef75d3f80d7",
+      "status": "image_needs_review",
+      "publicAssetPath": null
+    },
+    {
+      "questionId": "part2-id-gp-q24",
+      "questionNumber": "Infectious Diseases Q24",
+      "recordPath": "master-bank/data/11-infectious-diseases/infectious-part2-gram-positive-batch01-q23-q33.json",
+      "sourcePage": 283,
+      "reviewAsset": "q24-gbs-gram-positive-cocci-chains.jpg",
+      "sha256": "44d043c18a2a0620276e6df80dce83a8be12419fdc245bc83d5d4710724fdd1f",
+      "status": "image_needs_review",
+      "publicAssetPath": null
+    },
+    {
+      "questionId": "part2-id-gp-q25",
+      "questionNumber": "Infectious Diseases Q25",
+      "recordPath": "master-bank/data/11-infectious-diseases/infectious-part2-gram-positive-batch01-q23-q33.json",
+      "sourcePage": 284,
+      "reviewAsset": "q25-pneumococcus-diplococci.jpg",
+      "sha256": "7384a7d3e0ff313ed0b58819901a3f7126f24c8776a93b9b4f5b96f3d60bde3d",
+      "status": "image_needs_review",
+      "publicAssetPath": null
+    }
+  ],
+  "rules": [
+    "Recovered source microscopy images are linked directly to canonical question IDs and record paths.",
+    "Original source-image bytes remain in the private review package until publication rights are cleared.",
+    "Do not replace source microscopy with generated substitutes.",
+    "Clinical image review remains required before publication."
+  ]
+}
