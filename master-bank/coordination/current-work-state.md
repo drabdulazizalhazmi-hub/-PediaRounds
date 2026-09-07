@@ -14,71 +14,74 @@ Base: `main`
 ## Completed quality milestones
 - Sparse recalls: **167/167** directly re-read from source; no missing distractors/calculations invented.
 - Sparse media cues: **48/48** technically reconciled.
-  - 23 questions have exact pre-answer original-image associations (28 embedded image files).
-  - 10 candidates were post-answer/explanation/reference graphics and must not be shown before answering.
-  - Neonatology Q7 has nearby Ballard teaching images but no uniquely identifiable question image.
-  - 8 explicitly media-dependent questions lack the original media in the current PDF extraction.
-  - 6 prior media cues were false positives/text-only.
-- Outdated queue: **9/9** received current clinical review; recalled keys were preserved.
+- Outdated queue: **9/9** received current clinical review; recalled keys preserved.
 
-## Conflicting queue — active
+## Conflicting queue — all 131 assigned
 Baseline `conflicting`: **131** canonical records.
 
-### Batch 1 completed — 30/131 triaged
+### Batch 1 — 30
 File: `review-queue/conflicting-batch01-triage-30-20260907.json`
+- 17 Ethics/Patient Safety policy-sensitive
+- 4 Research/Communication under-specified
+- 9 Trauma/Dermatology/Ophthalmology clinical conflicts
 
-Breakdown:
-- 17 jurisdiction/policy-sensitive Ethics & Patient Safety items.
-- 4 under-specified Research/Communication items.
-- 9 clinical source/option conflicts across Trauma, Dermatology, and Ophthalmology.
-
-Batch outcome:
-- **30 reviewed and conflict-classified**.
-- **0 recalledAnswer values overwritten**.
-- **0 forced verifiedAnswer values** where the retained stem/options cannot support one.
-
-### Batch 2 reserved/triaged — 40 additional conflicts
+### Batch 2 — 40
 File: `review-queue/conflicting-batch02-triage-40-20260907.json`
+- Growth & Development 5
+- Neonatology 5
+- Cardiology 3
+- Gastroenterology 12
+- Neurology 4
+- Infectious Diseases 11
 
-Breakdown:
-- Growth & Development: 5
-- Neonatology: 5
-- Cardiology: 3
-- Gastroenterology: 12
-- Neurology: 4
-- Infectious Diseases: 11
-
-Batch 2 policy:
-- Preserve every recalled answer.
-- Do not assign verified answers from recall text alone.
-- Resolve only where current UpToDate → Nelson → current specialty guidance and the retained options/context support a clean single-best answer.
-- Keep version-sensitive vaccine, image-dependent, and under-specified items unresolved rather than reconstructing context.
+### Batch 3 — final 61
+File: `review-queue/conflicting-batch03-final-61-20260907.json`
+- Respiratory/Asthma/Sleep 3
+- Substances/Toxicology 1
+- Ophthalmology 3
+- Gastroenterology 4
+- Nutrition 2
+- Infectious Diseases 3
+- Allergy 1
+- Nephrology/Urology 9
+- Endocrinology 4
+- Metabolic 1
+- Genetics 3
+- Hematology 9
+- Oncology 3
+- Musculoskeletal/Rheumatology 3
+- Critical Care 6
+- Behavioral/Psychiatry 5
 
 ### Aggregate conflict progress
-- **70/131 conflicting records are now explicitly assigned to coordinated review batches.**
-- **61 conflicting records remain unassigned.**
+- **131/131 conflicting records are now explicitly assigned to coordinated review batches.**
+- **0 conflicting records remain unassigned.**
+- 0 recalledAnswer values overwritten by batch assignment.
+- 0 verifiedAnswer values forced from recall text alone.
 
 ## Important retained gates
 - Ethics Q10/Q11: current Saudi/MOH DNR policy and perioperative DNR handling required.
-- Research Q7/Q9: variable coding/diagnostic-table context is missing; no answer should be forced.
+- Research Q7/Q9: variable coding/diagnostic-table context missing; no answer should be forced.
 - Trauma Q10: source key and explanation disagree on cervical-spine imaging.
 - Dermatology Q12: source key says IV acyclovir while explanation says oral antiviral therapy.
-- Gastro Q35: congenital diarrhea differential remains unresolved without stool electrolytes.
-- Gastro Q56/Q57: original imaging/definitive-study interpretation remains uncertain.
+- Gastro Q35: congenital diarrhea differential unresolved without stool electrolytes.
+- Gastro Q56/Q57: original imaging/definitive-study interpretation uncertain.
 - Neonatology Q36: key and explanation disagree on brachial plexus root level.
 - Cardiology Q26/Q27: first SVT action depends on immediate IV/IO availability.
-- Infectious Q116: answer depends on the version of the Saudi vaccine schedule.
+- Infectious Q116: answer depends on Saudi vaccine-schedule version.
+- Nephrology Q46: image missing and source answer unresolved.
+- Behavioral Q17: source says the preferred stimulant adjustment was absent from original options.
 
 ## Shared execution rules
 - GitHub is the shared memory across chats.
-- Do not restart completed numbered, sparse, media, outdated, conflict-batch01, or conflict-batch02 work.
+- Do not restart completed numbered, sparse, media, outdated, or conflict-assignment batches.
 - Preserve `recalledAnswer` separately from `verifiedAnswer`.
 - Do not invent missing options, calculations, media, years, stems, or keys.
 - Original source images only; no generated substitutes for source-dependent MCQs.
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Resolve clinically resolvable items from Batch 2 in controlled sub-batches, then reserve/triage the final **61 conflicting records**. After the conflicting queue is fully classified/resolved as far as safely possible, move to the `needs_verification` queue.
+All conflicting records are now assigned. Begin **clinical-resolution passes by specialty**, prioritizing complete retained stems/options that can be resolved with current UpToDate → Nelson → specialty guideline. Keep irreducible, image-dependent, version-sensitive, and jurisdiction-sensitive records non-publishable. After conflict resolution, move to the `needs_verification` queue.
 
 ## Coordination rule
 If another chat advances PR #5, refetch this file and `MASTER_BANK_PROGRESS.md` before writing and follow the newest GitHub state.
