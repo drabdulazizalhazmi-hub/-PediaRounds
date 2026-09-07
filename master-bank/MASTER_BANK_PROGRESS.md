@@ -24,26 +24,25 @@
 Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch01-12-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch02-8-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch02-heme-05-20260907.json`
 
 ### Current-guidance resolution progress
-- **20 conflicting records reviewed** in resolution passes.
-- **4 clean modern answers** supported by retained stems/options:
+- **25 conflicting records reviewed** in resolution passes.
+- **5 clean modern answers** supported by retained stems/options:
   - Cardiology Q26 → **B, synchronized cardioversion**.
   - Cardiology Q27 → **B, synchronized cardioversion**.
   - Endocrinology Q55 → **C, both IFG and IGT** under ADA 2026 criteria.
   - Hematology Q48 → **D, factor XII deficiency**.
-- **16 remain non-publishable** because current guidance reveals multiple correct retained choices, missing best action, insufficient severity/risk/volume context, or internally malformed data.
+  - Hematology Q17 → **D, paroxysmal nocturnal hemoglobinuria**.
+- **20 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient severity/risk/volume context, or internally malformed data.
 - **0 recalled answers overwritten**.
 
-### Resolution batch 2 highlights
-- Nephrology Q7: both low FENa and concentrated urine fit prerenal azotemia; invalid SBA.
-- Nephrology Q12: oliguria + respiratory distress in HUS requires volume-status assessment; automatic fluid administration is unsafe to verify.
-- Nephrology Q13: AAP stage-1 HTN pathway requires a third office assessment before ABPM; best next step absent from options.
-- Endocrinology Q28: rickets initial evaluation is a biochemical panel, not a single indispensable test among the retained choices.
-- Critical Care Q12: neonatal shock options do not cleanly match current sepsis/stabilization management.
-- Critical Care Q15: PCWP is not a standard late-sign discriminator in current pediatric septic shock guidance.
-- Critical Care Q17: fibrinogen/FDP do not reliably distinguish DIC from liver failure as a single test.
-- Critical Care Q19: BRUE/apnea discharge recommendations depend on risk stratification; source home pulse-ox key cannot be universally promoted.
+### Latest Hematology resolution pass
+- **Q17**: morning dark urine + low haptoglobin + Coombs-negative intravascular hemolysis supports PNH; modern flow cytometry for GPI-anchor protein deficiency supports **D**.
+- **Q1**: HbA2 7% with predominant HbA fits beta-thalassemia trait/minor better than major; minor is absent from the retained options, so no verified option is forced.
+- **Q5**: `acute CNS crisis` is too vague to choose oxygen versus simple transfusion without oxygenation/stroke/Hb/transfusion context.
+- **Q20**: goat-milk folate deficiency and strict-vegan vitamin B12 deficiency are both plausible causes of megaloblastic anemia; no unique SBA from the retained wording.
+- **Q27**: current CDC guidance supports blood lead testing, with venous confirmation; the retained urinary-porphyrin option is not the modern best diagnostic test.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -58,7 +57,7 @@ These baseline canonical counts do not automatically decrement merely because a 
 
 ## Coordination protocol
 1. GitHub wins over chat memory.
-2. Do not repeat completed numbered/source/sparse/media/outdated/conflict-assignment/resolution-batch01/batch02 work.
+2. Do not repeat completed numbered/source/sparse/media/outdated/conflict-assignment or already committed clinical-resolution work.
 3. Keep `recalledAnswer` separate from `verifiedAnswer`.
 4. Do not invent missing options, images, calculations, years, stems, or answer keys.
 5. Original source images only for source-dependent MCQs.
@@ -66,8 +65,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large **clinical conflict-resolution batches**, prioritizing complete retained stems/options in Hematology, Nephrology/Urology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious Diseases. Resolve only where the retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue large **clinical conflict-resolution batches**, prioritizing complete retained stems/options in remaining Hematology, Nephrology/Urology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious Diseases. Resolve only where the retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **20 clinical conflicts have now been resolution-reviewed**, with **4 clean modern answer resolutions** and **16 correctly retained as invalid/under-specified/context-dependent**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **25 clinical conflicts have now been resolution-reviewed**, with **5 clean modern answer resolutions** and **20 correctly retained as invalid/under-specified/context-dependent**.
