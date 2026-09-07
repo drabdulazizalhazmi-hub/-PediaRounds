@@ -1,0 +1,29 @@
+{
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "purpose": "Private-review mapping for Nutrition and Malnutrition Part II source images. Original image bytes are kept out of the public repository pending publication-rights and clinical review.",
+  "privateReviewPackage": {
+    "filename": "PediaRounds_nutrition_source_image_review.zip",
+    "sha256": "bdf29e800855897a5a51a0d4abf2b8bb7cc3057ecbb3b42a1e037e1f2423abf7"
+  },
+  "assets": [
+    {
+      "question": "Nutrition and Malnutrition Q8",
+      "questionId": "part2-nutrition-q008-abetalipoproteinemia-acanthocytes",
+      "recordPath": "master-bank/data/09-gastroenterology-hepatology-nutrition/nutrition-part2-q04-q12.json",
+      "sourcePage": 259,
+      "asset": "p259-000.jpg",
+      "width": 199,
+      "height": 149,
+      "sha256": "1b394584e1cce65d81490b8754b2e6a120fb38515bfed2c4077f5cf49aaeb4df",
+      "mapping": "peripheral blood smear image showing acanthocytes for the abetalipoproteinemia recall",
+      "status": "image_needs_review",
+      "publicAssetPath": null
+    }
+  ],
+  "sourceNotes": [
+    "The Q8 stem explicitly states that a picture of acanthocytes was provided.",
+    "The corresponding embedded smear image is present at the top-right of source page 259 and was extracted directly from the PDF image object.",
+    "No generated or substitute image was used."
+  ]
+}
