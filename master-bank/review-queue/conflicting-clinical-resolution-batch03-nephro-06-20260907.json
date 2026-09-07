@@ -1,0 +1,80 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch03-nephro-06-20260907",
+  "scope": "Current-guidance resolution pass for six Nephrology/Urology conflicts with retained source wording and options.",
+  "policy": [
+    "Preserve recalledAnswer unchanged.",
+    "Assign verifiedAnswer only when the retained stem/options support a defensible modern single-best answer.",
+    "If current guidance shows the retained item is under-specified or missing the best option, keep verifiedAnswer null and non-publishable.",
+    "Do not invent missing images or option text."
+  ],
+  "items": [
+    {
+      "id": "part2-nephro-proteinuria-q33",
+      "sourceQuestion": "Nephrology Q33",
+      "modernOutcome": "not_resolvable_as_written",
+      "verifiedAnswer": null,
+      "reason": "The retained stem says only that the child has longstanding steroid-treated nephrotic syndrome with FSGS, but it does not establish steroid dependence, frequent relapses, or steroid resistance. Current IPNA guidance differs by phenotype: steroid-sensitive frequent-relapsing/steroid-dependent disease may use steroid-sparing agents, whereas non-genetic steroid-resistant nephrotic syndrome is generally managed with a calcineurin inhibitor as first-line immunosuppression. Because the phenotype is missing, cyclophosphamide cannot be promoted as a unique modern answer.",
+      "references": [
+        "IPNA 2023 clinical practice recommendations for steroid-sensitive nephrotic syndrome",
+        "IPNA 2020 clinical practice recommendations for steroid-resistant nephrotic syndrome"
+      ]
+    },
+    {
+      "id": "part2-nephro-vasculitis-q38",
+      "sourceQuestion": "Nephrology Q38",
+      "modernOutcome": "invalid_complication_wording",
+      "verifiedAnswer": null,
+      "reason": "IgA vasculitis commonly has renal involvement, especially hematuria with or without proteinuria, but renal failure is a minority severe manifestation rather than the most common complication. TTP is not the expected complication either. The retained options therefore do not provide a clean answer to the wording 'most common complication'.",
+      "references": [
+        "Current pediatric IgA vasculitis nephritis framework; renal involvement is common, impaired kidney function is a minority manifestation"
+      ]
+    },
+    {
+      "id": "part2-nephro-cystic-q47",
+      "sourceQuestion": "Nephrology Q47",
+      "modernOutcome": "image_dependent_not_resolvable",
+      "verifiedAnswer": null,
+      "reason": "The source itself marks the ARPKD answer uncertain and notes that X-ray is not the usual diagnostic modality. Modern ARPKD diagnosis depends on the characteristic ultrasound pattern of bilaterally enlarged echogenic kidneys with poor corticomedullary differentiation and tiny cysts. Because the original image is missing/unreviewed and the retained stem only says bilateral kidney masses on X-ray, the diagnosis cannot be safely verified from the retained content.",
+      "references": [
+        "Current pediatric cystic-kidney imaging principles"
+      ]
+    },
+    {
+      "id": "part2-nephro-cau-q53",
+      "sourceQuestion": "Nephrology Q53",
+      "modernOutcome": "multiple_plausible_causes",
+      "verifiedAnswer": null,
+      "reason": "Potter sequence is caused by severe oligohydramnios from markedly reduced fetal urine output. Bilateral renal agenesis is classic, but obstructive uropathy and bilateral renal dysplasia/cystic dysplasia are also established causes. In the retained choices, both posterior urethral valves and bilateral dysplastic kidneys can plausibly produce the sequence, so the source key D cannot be promoted as a unique modern answer without additional prenatal imaging context.",
+      "references": [
+        "NCBI/StatPearls Potter syndrome etiology",
+        "Published Potter-sequence series documenting renal dysplasia and obstructive uropathy as causes"
+      ]
+    },
+    {
+      "id": "PR-NEPH-URO-059",
+      "sourceQuestion": "Nephrology Q59",
+      "modernOutcome": "best_action_absent_from_options",
+      "verifiedAnswer": null,
+      "reason": "At 12 months with persistent cryptorchidism, current AUA guidance supports surgical referral and orchiopexy within the first 18 months; routine ultrasound before referral is not recommended. 'Urgent exploratory laparotomy' is not the standard action for an unspecified undescended testis, while reassurance to 18 months and hormonal treatment are also inappropriate. The correct modern action is absent from the retained choices.",
+      "references": [
+        "AUA Cryptorchidism Guideline, validity confirmed 2025: refer by 6 months, no routine imaging before referral, surgery within the next year"
+      ]
+    },
+    {
+      "id": "PR-NEPH-URO-062",
+      "sourceQuestion": "Nephrology Q62",
+      "modernOutcome": "resolved_for_current_stem",
+      "verifiedAnswer": "A",
+      "reason": "A blue-dot sign is classically associated with torsion of an appendix testis, but the retained vignette also reports decreased perfusion of the affected testis on Doppler after 6 hours of acute pain. Reduced intratesticular perfusion supports testicular torsion, which is a pediatric urologic emergency requiring prompt surgical treatment. Among the retained options, A is the defensible single-best answer for the current stem.",
+      "references": [
+        "EAU Paediatric Urology guideline: acute scrotum/testicular torsion; Doppler is useful but must not delay urgent treatment"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 6,
+    "resolvedToModernVerifiedAnswer": 1,
+    "nonPublishableOrUnderSpecified": 5,
+    "recalledAnswersOverwritten": 0
+  }
+}
