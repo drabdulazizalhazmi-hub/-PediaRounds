@@ -21,6 +21,7 @@ Base: `main`
 Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch01-12-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch02-8-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch02-heme-05-20260907.json`
 
 ### Resolution batch 1 — 12 reviewed
 - 4 clean modern answers supported by retained stems/options:
@@ -41,10 +42,17 @@ This pass focused on removing false certainty from items whose retained options 
 - Critical Care Q17: fibrinogen/FDP do not reliably distinguish DIC from liver failure as a single test; no retained option is safe to verify.
 - Critical Care Q19: lower-risk BRUE supports family education/CPR resources and no home monitoring, but the retained stem lacks risk stratification; no universal single answer can be verified.
 
+### Hematology add-on pass — 5 reviewed
+- Hematology Q17: **resolved to D, paroxysmal nocturnal hemoglobinuria**. Morning dark urine + Coombs-negative intravascular hemolysis fits PNH; modern confirmation is flow cytometry for GPI-anchor protein deficiency.
+- Hematology Q1: modern pattern is most consistent with beta-thalassemia trait/minor, which is absent from the retained options; remains non-publishable.
+- Hematology Q5: `acute CNS crisis` lacks oxygenation/stroke/Hb/transfusion context; oxygen versus simple transfusion cannot be graded safely.
+- Hematology Q20: goat-milk folate deficiency and strict-vegan B12 deficiency are both plausible nutritional causes of megaloblastic anemia; missing context prevents a unique answer.
+- Hematology Q27: CDC supports blood lead testing (venous confirmation) as the diagnostic test; the retained `low urinary porphyrin` option is not the modern best test and the correct choice is absent.
+
 ### Aggregate clinical-resolution progress
-- **20 conflicting records reviewed in current-guidance resolution passes.**
-- **4 resolved to clean modern verified answers in the review overlays.**
-- **16 identified as invalid, under-specified, missing the best option, or context-dependent.**
+- **25 conflicting records reviewed in current-guidance resolution passes.**
+- **5 resolved to clean modern verified answers in the review overlays.**
+- **20 identified as invalid, under-specified, missing the best option, or context-dependent.**
 - **0 recalledAnswer values overwritten.**
 
 ## Important retained gates
@@ -60,14 +68,14 @@ This pass focused on removing false certainty from items whose retained options 
 
 ## Shared execution rules
 - GitHub is the shared memory across chats.
-- Do not restart completed numbered, sparse, media, outdated, conflict-assignment, or clinical-resolution batch01/batch02 work.
+- Do not restart completed numbered, sparse, media, outdated, conflict-assignment, or already committed clinical-resolution work.
 - Preserve `recalledAnswer` separately from `verifiedAnswer`.
 - Do not invent missing options, calculations, media, years, stems, or keys.
 - Original source images only; no generated substitutes for source-dependent MCQs.
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Continue **large clinical-resolution passes** through Hematology, Nephrology/Urology, Endocrinology, Critical Care, Rheumatology, and then Gastro/Infectious conflicts. Favor complete stems/options with a truly defensible modern single-best answer; otherwise keep non-publishable and document why. After conflict-resolution passes, advance the `needs_verification` queue.
+Continue **large clinical-resolution passes** through remaining Hematology, Nephrology/Urology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious conflicts. Favor complete stems/options with a truly defensible modern single-best answer; otherwise keep non-publishable and document why. After conflict-resolution passes, advance the `needs_verification` queue.
 
 ## Coordination rule
 If another chat advances PR #5, refetch this file and `MASTER_BANK_PROGRESS.md` before writing and follow the newest GitHub state.
