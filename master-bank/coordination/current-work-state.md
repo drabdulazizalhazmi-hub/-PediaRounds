@@ -5,101 +5,65 @@ Branch: `master-bank/review-images-verification`
 PR: **#5 — Review images, incomplete recalls, and clinical verification**
 Base: `main`
 
-## Current shared state
+## Structural baseline
 
-- PR #2 merged the initial Master Bank.
-- PR #4 merged the source-coverage closure work.
-- PR #3 was closed as superseded by PR #4.
+- PR #2 merged the initial Master Bank; PR #4 merged source-coverage closure; PR #3 was closed as superseded.
 - Closure QA scanned **1023 records** and confirmed **1022/1022 enumerated source slots covered, 0 missing**.
-- The Genetics 53-vs-Q52 discrepancy is in the source itself; do not fabricate Q53.
-- Exact duplicate IDs: 0; structural section/Q collisions: 0.
+- Genetics source anomaly remains: TOC says 53, actual numbering ends at Q52 before Metabolic Disorders. Do not fabricate Q53.
+- Exact duplicate IDs: 0; section/Q structural collisions: 0.
 
-## Large-batch sparse-recall queue
+## Sparse-recall review — complete
 
-A source-wide scan of the 2026 Part II collection identified **167 source-sparse questions** where the source preserves zero or one answer option:
+Source-wide sparse-recall set: **167 questions** (163 single-option + 4 zero-option).
 
-- 163 single-option recalls
-- 4 zero-option recalls
-- 48 include image/media cues
-- 10 have uncertain/unclear source answer text
+Direct source re-read is complete in four batches:
+- 59: Endocrinology 17, Genetics 15, Infectious 14, Neurology 13.
+- 42: Gastro 10, Hematology 9, Metabolic 9, Nephrology/Urology 7, Ethics/Safety 7.
+- 28: Cardiology 6, Neonatology 6, Trauma 6, Critical Care 5, Immunology 5.
+- 38: all remaining sparse sections.
 
-The grouped queue is committed at `master-bank/review-queue/source-sparse-recalls-20260907.json`.
+**167/167 reviewed; 0 awaiting source re-read.** No missing distractors/calculations were invented and no `verifiedAnswer` was assigned from recall text alone.
 
-## Direct source re-read progress
+## Sparse image/media reconciliation — complete for all 48 cues
 
-### Completed batch 59
-- Endocrinology 17
-- Genetics 15
-- Infectious Diseases 14
-- Neurology 13
+Primary files:
+- `review-queue/sparse-media-triage-48-20260907.json`
+- `review-queue/sparse-image-association-34-20260907.json`
+- `review-queue/sparse-media-missing14-audit-20260907.json`
 
-### Completed batch 42
-- Gastroenterology 10
-- Hematology 9
-- Metabolic Disorders 9
-- Nephrology/Urology 7
-- Medical Ethics/Patient Safety 7
+Results:
+- **48/48** sparse media cues audited.
+- **23 questions** have exact pre-answer original-image associations, representing **28 embedded image files**. Their xrefs, bounding boxes, dimensions and SHA-256 hashes are recorded without committing source image bytes.
+- **10 questions** had embedded raster candidates that are actually post-answer/explanation/reference graphics; these must not be shown before answering.
+- **1 question — Neonatology Q7** has nearby Ballard teaching images but no uniquely identifiable original question image.
+- Of the 14 items with no suitable raster in the question span: **8 explicitly reference media whose original image is absent from the current PDF extraction**, while **6 were false-positive media cues and are actually text-only questions**.
 
-### Completed batch 28
-- Cardiology 6
-- Neonatology 6
-- Trauma and Accidents 6
-- Critical Care Medicine 5
-- Immunology 5
+Explicit-media-but-missing group: Oncology Q15; Cardiology Q32; Endocrinology Q17/Q48; Infectious Q67; Nephrology Q46; Neurology Q14/Q34.
 
-### Completed final batch 38
-- Pulmonary/Sleep 4
-- Allergy 3
-- Oncology 3
-- Nutrition and Malnutrition 3
-- Rheumatology 4
-- Musculoskeletal and Sport Medicine 3
-- Substances Abuse and Toxicology 3
-- Behavioral Medicine and Psychiatric Disorders 4
-- Growth and Development 2
-- Dermatology 2
-- Ophthalmology 1
-- ENT 1
-- Research, Biostatistics, and Communication Skills 5
+Text-only false-positive group: Immunology Q4; Metabolic Q15; Nephrology Q6; Neurology Q8; Trauma Q2/Q29.
 
-Batch files:
-- `review-queue/source-sparse-large-review-59-index-20260907.json`
-- `review-queue/source-sparse-large-review-42-index-20260907.json`
-- `review-queue/source-sparse-large-review-28-index-20260907.json`
-- `review-queue/source-sparse-final-38-index-20260907.json`
+## Important retained gates
 
-## Aggregate status
-
-- **167/167 sparse recalls reviewed directly against the source**.
-- **0 sparse recalls remain awaiting direct source re-read**.
-- No missing distractors were reconstructed.
-- No missing calculations were invented.
-- No source image was replaced by a generated substitute.
-- No `verifiedAnswer` was assigned solely from recall-source text.
-
-## Important retained source gates from final batch
-
-- Allergy Q27: source gives methacholine challenge but explicitly says exercise challenge is more direct/preferred if offered.
-- Dermatology Q12: printed key says IV acyclovir while source explanation says immediate oral antiviral therapy; keep `conflicting` until independently verified.
-- Research Q10: specificity cannot be calculated because the underlying table/numbers are absent; source prints `X`.
-- Research Q12: source preserves odds ratio = 6 but not the underlying numbers; keep non-publishable until inputs are recovered.
-- Image-dependent sparse questions remain blocked pending original-image association/review and publication-rights handling.
+- Allergy Q27: source gives methacholine challenge but says exercise challenge is more direct/preferred if offered.
+- Dermatology Q12: source key says IV acyclovir while source explanation says oral antiviral therapy; keep `conflicting` until independently verified.
+- Research Q10: specificity inputs absent; source prints X.
+- Research Q12: source preserves OR=6 but underlying numbers are absent.
+- Nephrology Q46: original renal ultrasound is absent and source answer is unresolved (`X`).
+- Neonatology Q7: no unique source question image can be established from nearby teaching images.
 
 ## Shared execution rules
 
-- GitHub is the shared memory across chats.
-- Read this file and `MASTER_BANK_PROGRESS.md` before writes.
-- Do not restart completed numbered sections or completed sparse batches.
-- Keep `recalledAnswer` separate from `verifiedAnswer`; independent verification is a separate gate.
-- Do not invent missing options, calculations, images, years, or answers.
-- Original source images only; generated substitutes are not acceptable for image-dependent MCQs.
-- Technical image extraction does not equal publication permission or clinical image approval.
-- Keep English TTS and Arabic explanations with English medical terminology.
-- Source PDFs and secrets must never be committed to the public repository.
+- GitHub is the shared memory across chats; read this file and `MASTER_BANK_PROGRESS.md` before writes.
+- Do not restart completed numbered sections, sparse batches, or sparse-media triage.
+- Keep `recalledAnswer` separate from `verifiedAnswer`.
+- Do not invent missing options, calculations, media, years, stems or answer keys.
+- Original source images only; no generated substitute for source-dependent image questions.
+- Technical image recovery does not equal publication permission or clinical image approval.
+- Source PDFs, credentials and secrets must not be committed.
 
 ## Next shared batch
 
-Move to **large-batch original-image/media reconciliation** across the 48 sparse image/media questions and other existing image manifests. After image-state cleanup, start large controlled batches for `conflicting`, `outdated`, and `needs_verification` records.
+The 167 sparse recalls and their 48 media cues are fully triaged. **Next priority: large controlled review of `conflicting` + `outdated` records**, then advance `needs_verification` using UpToDate → Nelson → current specialty guideline while preserving source keys separately.
 
 ## Coordination rule
 
