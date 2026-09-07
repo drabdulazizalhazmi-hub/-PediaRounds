@@ -1,0 +1,133 @@
+{
+  "batchId": "source-sparse-final-38-20260907",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "reviewType": "direct_source_reread",
+  "questionCount": 38,
+  "policy": "No missing distractor, image, calculation, year, or verified answer is reconstructed. Source keys remain recalled-only until independent verification.",
+  "sections": {
+    "Pulmonary and Sleep Medicine": {
+      "questions": [7,9,10,15],
+      "count": 4,
+      "notes": {
+        "Q7": "Single-option recall: Aspergillus serology; source explanation describes ABPA sensitization testing.",
+        "Q9": "Single-option, microscopy-dependent acute eosinophilic pneumonia; original image remains a separate image-review gate.",
+        "Q10": "Single-option, microscopy-dependent pulmonary alveolar proteinosis; original image remains a separate image-review gate.",
+        "Q15": "Single-option recall: polysomnography for suspected pediatric OSA."
+      }
+    },
+    "Allergy": {
+      "questions": [2,22,27],
+      "count": 3,
+      "notes": {
+        "Q2": "Single-option recall: cefaclor for serum sickness-like reaction.",
+        "Q22": "Single-option recall: methylprednisolone; source frames corticosteroids as blocking the late asthmatic reaction.",
+        "Q27": "Single-option recall gives methacholine challenge; source explicitly notes exercise challenge is more direct/preferred if offered, so preserve source nuance."
+      }
+    },
+    "Oncology": {
+      "questions": [9,14,15],
+      "count": 3,
+      "notes": {
+        "Q9": "Single-option histology-dependent recall: Hodgkin lymphoma and EBV.",
+        "Q14": "Single-option radiograph-dependent recall: Ewing sarcoma.",
+        "Q15": "Single-option radiograph-dependent recall: refer to oncology center."
+      }
+    },
+    "Nutrition and Malnutrition": {
+      "questions": [3,5,8],
+      "count": 3,
+      "notes": {
+        "Q3": "Single-option recall: Vitamin A/retinol deficiency with Bitot spots.",
+        "Q5": "Single-option recall: Vitamin E deficiency in CF with areflexia/ataxia.",
+        "Q8": "Single-option image-dependent recall: abetalipoproteinemia with acanthocytes."
+      }
+    },
+    "Rheumatology": {
+      "questions": [1,5,6,13],
+      "count": 4,
+      "notes": {
+        "Q1": "Single-option recall: growing pains.",
+        "Q5": "Single-option recall: elevated creatine phosphokinase in juvenile dermatomyositis.",
+        "Q6": "Single-option recall: shawl sign with dermatomyositis.",
+        "Q13": "Single-option recall: salmon-pink rash associated with fever in systemic JIA."
+      }
+    },
+    "Musculoskeletal and Sport Medicine": {
+      "questions": [5,13,15],
+      "count": 3,
+      "notes": {
+        "Q5": "Single-option recall: thyroid function testing in SCFE evaluation.",
+        "Q13": "Single-option recall: closed reduction and discharge for nursemaid's elbow.",
+        "Q15": "Single-option image-dependent recall: supracondylar fracture."
+      }
+    },
+    "Substances Abuse and Toxicology": {
+      "questions": [7,9,13],
+      "count": 3,
+      "notes": {
+        "Q7": "Single-option recall: hydrocodone/opioid toxidrome.",
+        "Q9": "Single-option recall: paracetamol/acetaminophen overdose.",
+        "Q13": "Single-option recall: mixed respiratory alkalosis and metabolic acidosis in salicylate toxicity."
+      }
+    },
+    "Behavioral Medicine and Psychiatric Disorders": {
+      "questions": [3,15,29,31],
+      "count": 4,
+      "notes": {
+        "Q3": "Single-option recall: refer to autism clinic; source notes similarity to prior autism question and does not give a separate correct-answer line.",
+        "Q15": "Single-option recall: continue stimulants during quarantine.",
+        "Q29": "Single-option recall: depression.",
+        "Q31": "Single-option recall: postpartum depression."
+      }
+    },
+    "Growth and Development": {
+      "questions": [12,16],
+      "count": 2,
+      "notes": {
+        "Q12": "Single-option recall: ignore thumb sucking at age two; source emphasizes spontaneous resolution and no active treatment before about age four.",
+        "Q16": "Sparse two-option developmental red-flag recall; source key is inability to sit unsupported at 10 months."
+      }
+    },
+    "Dermatology": {
+      "questions": [4,12],
+      "count": 2,
+      "notes": {
+        "Q4": "Single-option image-dependent recall: mucocele.",
+        "Q12": "Single-option image-dependent eczema herpeticum. Preserve conflict: printed key says IV acyclovir while source explanation says immediate oral antiviral therapy."
+      }
+    },
+    "Ophthalmology": {
+      "questions": [5],
+      "count": 1,
+      "notes": {
+        "Q5": "Single-option image-dependent leukocoria/retinoblastoma recall; source key: osteosarcoma risk."
+      }
+    },
+    "ENT": {
+      "questions": [9],
+      "count": 1,
+      "notes": {
+        "Q9": "Single-option recall: thyroglossal duct cyst for an anterior neck mass moving with tongue protrusion."
+      }
+    },
+    "Research, Biostatistics, and Communication Skills": {
+      "questions": [1,3,10,11,12],
+      "count": 5,
+      "notes": {
+        "Q1": "Single-option recall: explain the purpose of the research during consent.",
+        "Q3": "Single-option recall: confounding variables.",
+        "Q10": "Zero-option/incomplete calculation recall: specificity question lacks the contingency-table numbers; source prints answer X. Do not calculate or invent values.",
+        "Q11": "Single-option recall preserves mean=39.5, median=39, mode=38 for the supplied eight numbers.",
+        "Q12": "Single-option recall says odds ratio=6, but the source does not preserve the underlying numbers; keep non-publishable until source data are recovered."
+      }
+    }
+  },
+  "summary": {
+    "reviewedSparseRecalls": 38,
+    "allSparseRecallsReviewedAfterThisBatch": 167,
+    "remainingSparseRecalls": 0,
+    "sourceSparsePolicyStillApplies": true,
+    "nextPhase": "image/media reconciliation and source-supported resolution of incomplete/conflicting records"
+  }
+}
