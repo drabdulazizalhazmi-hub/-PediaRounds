@@ -1,0 +1,26 @@
+{
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "purpose": "Private-review mapping for source images referenced by Gastroenterology Part II questions. Public assetPath remains null until publication-rights and clinical review are complete.",
+  "privateReviewPackage": {
+    "filename": "PediaRounds_gastro_source_image_review.zip",
+    "sha256": "2e4938961377a74bacc75b4b4222b1aba1496842461d019bfd134c9c2b252fa5"
+  },
+  "assets": [
+    {"question":"Gastro Q56","page":235,"asset":"p235-x881.jpeg","width":265,"height":244,"sha256":"10898fadf45bc3a49ee57eee0191f32e1780749a61c6d750a02c66cdebad5e14","mapping":"barium study in PPI-unresponsive vomiting / source-described hiatal-hernia vs achalasia case","status":"image_needs_review"},
+    {"question":"Gastro Q57","page":235,"asset":"p235-x882.jpeg","width":100,"height":120,"sha256":"6e09dc2b48875f6019ac5a1583b70322aa81aa0ea27ab8171e022d8e10cbde9d","mapping":"barium study referenced in vascular-ring vignette","status":"image_needs_review"},
+    {"question":"Gastro Q63","page":238,"asset":"p238-x892.jpeg","width":135,"height":143,"sha256":"60c926a6babe9e1b515cc4c50a51e8d36e9ceeb067bf0e29200f73598d16155e","mapping":"abdominal radiograph used to distinguish small- from large-bowel obstruction","status":"image_needs_review"},
+    {"question":"Gastro Q64","page":239,"asset":"p239-x896.jpeg","width":281,"height":304,"sha256":"c04f35ef5898daf41964ddb98149a75abce8d81f74d3b238358645f53fc7e72a","mapping":"double-bubble radiograph","status":"image_needs_review"},
+    {"question":"Gastro Q65","page":239,"asset":"p239-x897.jpeg","width":323,"height":279,"sha256":"1d31970fa15b7529a2115c79413cab6d92607a051bd1e3561e308ce39cb05cef","mapping":"radiograph referenced for intestinal perforation / free air","status":"image_needs_review"},
+    {"question":"Gastro Q68","page":241,"asset":"p241-x904.jpeg","width":222,"height":273,"sha256":"fd2e75c8c7012a8be1e760f9187aa525cd9b4b63a85ad80b4a9bbde0cf791926","mapping":"upper-GI corkscrew image in malrotation with midgut volvulus","status":"image_needs_review"},
+    {"question":"Gastro Q70","page":242,"asset":"p242-x908.jpeg","width":183,"height":224,"sha256":"48be4624e03293fda3ede02d86650ae32095420131fdc78151ab2bdd69e25992","mapping":"abdominal radiograph referenced in intussusception vignette","status":"image_needs_review"},
+    {"question":"Gastro Q73","page":244,"asset":"p244-x915.jpeg","width":148,"height":178,"sha256":"238f00aa44e5c8429d1f14001458764d7cf492292ffd5366359ed66a9346477a","mapping":"Meckel scan image","status":"image_needs_review"},
+    {"question":"Gastro Q74/Q75","page":245,"asset":"p245-x919.jpeg","width":227,"height":136,"sha256":"d032f2b8cdb967b8e6cd8ade3d4034df18ee85fecda5984ec4c6f4e038678714","mapping":"mucocutaneous pigmentation image used for Peutz-Jeghers questions","status":"image_needs_review"}
+  ],
+  "sourceNotes": [
+    "Source text explicitly references images for Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74 and Q75.",
+    "Q56 source itself says the radiological picture may represent hiatal hernia or may be a wrong achalasia image; preserve this conflict.",
+    "Q57 source key says chest X-ray, while its explanation states CT angiography is the common definitive study; preserve the conflict.",
+    "These extracted image bytes are not committed to this public repository; the manifest records private-review hashes only."
+  ]
+}
