@@ -4,7 +4,7 @@
   "purpose": "Private-review mapping for source images referenced by Gastroenterology Part II questions. Public assetPath remains null until publication-rights and clinical review are complete.",
   "privateReviewPackage": {
     "filename": "PediaRounds_gastro_source_image_review.zip",
-    "sha256": "2e4938961377a74bacc75b4b4222b1aba1496842461d019bfd134c9c2b252fa5"
+    "sha256": "c19d75c65d306df375d57ec8d333c90956c1467661bd0c73936d2f0eb360efb5"
   },
   "assets": [
     {"question":"Gastro Q56","page":235,"asset":"p235-x881.jpeg","width":265,"height":244,"sha256":"10898fadf45bc3a49ee57eee0191f32e1780749a61c6d750a02c66cdebad5e14","mapping":"barium study in PPI-unresponsive vomiting / source-described hiatal-hernia vs achalasia case","status":"image_needs_review"},
@@ -15,12 +15,14 @@
     {"question":"Gastro Q68","page":241,"asset":"p241-x904.jpeg","width":222,"height":273,"sha256":"fd2e75c8c7012a8be1e760f9187aa525cd9b4b63a85ad80b4a9bbde0cf791926","mapping":"upper-GI corkscrew image in malrotation with midgut volvulus","status":"image_needs_review"},
     {"question":"Gastro Q70","page":242,"asset":"p242-x908.jpeg","width":183,"height":224,"sha256":"48be4624e03293fda3ede02d86650ae32095420131fdc78151ab2bdd69e25992","mapping":"abdominal radiograph referenced in intussusception vignette","status":"image_needs_review"},
     {"question":"Gastro Q73","page":244,"asset":"p244-x915.jpeg","width":148,"height":178,"sha256":"238f00aa44e5c8429d1f14001458764d7cf492292ffd5366359ed66a9346477a","mapping":"Meckel scan image","status":"image_needs_review"},
-    {"question":"Gastro Q74/Q75","page":245,"asset":"p245-x919.jpeg","width":227,"height":136,"sha256":"d032f2b8cdb967b8e6cd8ade3d4034df18ee85fecda5984ec4c6f4e038678714","mapping":"mucocutaneous pigmentation image used for Peutz-Jeghers questions","status":"image_needs_review"}
+    {"question":"Gastro Q74/Q75","page":245,"asset":"p245-x919.jpeg","width":227,"height":136,"sha256":"d032f2b8cdb967b8e6cd8ade3d4034df18ee85fecda5984ec4c6f4e038678714","mapping":"mucocutaneous pigmentation image used for Peutz-Jeghers questions","status":"image_needs_review"},
+    {"question":"Gastro Q81","page":249,"asset":"gastro-q81-p249-alpha1-antitrypsin-liver-biopsy.jpeg","width":558,"height":393,"sha256":"f844928bad434256c0c066884c673e6be4ab68e462098075cebde0eb74d6c82d","mapping":"liver biopsy image referenced in conjugated hyperbilirubinemia / alpha-1 antitrypsin deficiency vignette","status":"image_needs_review"}
   ],
   "sourceNotes": [
-    "Source text explicitly references images for Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74 and Q75.",
+    "Source text explicitly references images for Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74, Q75 and Q81.",
     "Q56 source itself says the radiological picture may represent hiatal hernia or may be a wrong achalasia image; preserve this conflict.",
     "Q57 source key says chest X-ray, while its explanation states CT angiography is the common definitive study; preserve the conflict.",
+    "Q81 source text says the liver biopsy is suggestive of alpha-1 antitrypsin deficiency; this manifest records the source mapping only and does not independently interpret the biopsy.",
     "These extracted image bytes are not committed to this public repository; the manifest records private-review hashes only."
   ]
 }
