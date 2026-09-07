@@ -4,17 +4,22 @@
   "purpose": "Private-review mapping for early Gastroenterology Part II question images. Public assetPath remains null until publication-rights and clinical review are complete.",
   "privateReviewPackage": {
     "filename": "PediaRounds_gastro_early_source_image_review.zip",
-    "sha256": "a1a795e03f48d19f5d32f15507eba79523d8be4df5d261d7c7d0c3403ae9b537"
+    "sha256": "f736a9858315d42a81c175b99036819e99c996e92eae0d8687fd28df7e5aa41e"
   },
   "assets": [
-    {"question":"Gastro Q1","page":197,"asset":"p197-x736.jpeg","width":160,"height":224,"sha256":"3a638e2705b3b5fd46b5e8f1369b9a4c6e816fb27c102227c722a6231f135267","mapping":"contrast-enema image showing small left colon","status":"image_needs_review"},
+    {"question":"Gastro Q1/Q2","page":197,"asset":"p197-x736.jpeg","width":160,"height":224,"sha256":"3a638e2705b3b5fd46b5e8f1369b9a4c6e816fb27c102227c722a6231f135267","mapping":"shared contrast-enema image showing small left colon","status":"image_needs_review"},
+    {"question":"Gastro Q3","page":198,"asset":"p198-x740.jpeg","width":151,"height":182,"sha256":"2ea878c9d770044e1500ea065c92a835a21f81443b25f9181188bcbc22feb092","mapping":"contrast-enema image in meconium plug syndrome vignette","status":"image_needs_review"},
     {"question":"Gastro Q23","page":212,"asset":"p212-x793.jpeg","width":270,"height":329,"sha256":"bc4256283992baf57fb7b82b9d37f7ebd21e5ade7f0f8f2c0ee840adfc52ec01","mapping":"abdominal radiograph referenced in functional constipation vignette","status":"image_needs_review"},
-    {"question":"Gastro Q28","page":216,"asset":"p216-x808.jpeg","width":271,"height":215,"sha256":"3fc629e7e98529f78fb760a09433797581385cdb37e907d9aacd662f7d756f3e","mapping":"dermatitis herpetiformis clinical photograph","status":"image_needs_review"}
+    {"question":"Gastro Q28/Q29","page":216,"asset":"p216-x808.jpeg","width":271,"height":215,"sha256":"3fc629e7e98529f78fb760a09433797581385cdb37e907d9aacd662f7d756f3e","mapping":"shared dermatitis herpetiformis clinical photograph","status":"image_needs_review"},
+    {"question":"Gastro Q10","page":204,"asset":null,"mapping":"stem states X-ray showed no stomach gas, but no question image is present on the rendered source page","status":"source_image_missing"},
+    {"question":"Gastro Q11","page":204,"asset":null,"mapping":"stem states X-ray showed tracheoesophageal fistula, but no question image is present on the rendered source page","status":"source_image_missing"}
   ],
   "sourceNotes": [
-    "Q1 source explicitly states that a barium-study image shows a small left colon.",
+    "Q1 and Q2 both refer to the small-left-colon contrast-enema image on source page 197; only one embedded image object is present and it is linked to both questions.",
+    "Q3 has a separate contrast-enema image on source page 198.",
     "Q23 source explicitly states that an abdominal X-ray was provided and was suggestive of functional constipation.",
-    "Q28 source explicitly states that the shown rash is dermatitis herpetiformis in a child with FTT, abdominal pain, diarrhea and anemia.",
+    "Q28 and Q29 use the same dermatitis-herpetiformis photograph on source page 216.",
+    "Q10 and Q11 refer to X-ray pictures in their stems, but the current source page does not actually contain those images; keep them image_missing rather than fabricating substitutes.",
     "These extracted image bytes are not committed to this public repository; only source-page/hash metadata is committed."
   ]
 }
