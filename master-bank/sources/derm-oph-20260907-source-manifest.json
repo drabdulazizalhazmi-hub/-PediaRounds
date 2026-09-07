@@ -1,0 +1,68 @@
+{
+  "sourceFile": "2026 PART Pediatric 3.pdf",
+  "sourceSha256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+  "physicalPageRanges": [
+    [
+      637,
+      650
+    ],
+    [
+      652,
+      657
+    ]
+  ],
+  "questionCount": 32,
+  "addedQuestionIds": [
+    "part2-derm-q07",
+    "part2-derm-q08",
+    "part2-derm-q09",
+    "part2-derm-q10",
+    "part2-derm-q11",
+    "part2-derm-q12",
+    "part2-derm-q13",
+    "part2-derm-q14",
+    "part2-derm-q15",
+    "part2-derm-q16",
+    "part2-derm-q17",
+    "part2-derm-q18",
+    "part2-derm-q19",
+    "part2-derm-q20"
+  ],
+  "updatedExistingQuestionIds": [
+    "part2-derm-q01",
+    "part2-derm-q02",
+    "part2-derm-q03",
+    "part2-derm-q04",
+    "part2-derm-q05",
+    "part2-derm-q06",
+    "part2-derm-q21",
+    "part2-derm-q22",
+    "part2-ophthalmology-q01",
+    "part2-ophthalmology-q02",
+    "part2-ophthalmology-q03",
+    "part2-ophthalmology-q04",
+    "part2-ophthalmology-q05",
+    "part2-ophthalmology-q06",
+    "part2-ophthalmology-q07",
+    "part2-ophthalmology-q08",
+    "part2-ophthalmology-q09",
+    "part2-ophthalmology-q10"
+  ],
+  "canonicalFiles": [
+    "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q01-q06-q21-q22.json",
+    "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+    "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q01-q08.json",
+    "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q09-q10.json"
+  ],
+  "excludeFromThisBatch": [
+    "master-bank/data/03-general-paediatrics-outpatients/ophthalmology-part2-q01-q07.json",
+    "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q01-q07.json",
+    "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q08-q10.json",
+    "master-bank/data/07-respiratory-ent/ophthalmology-part2-q01-q07.json"
+  ],
+  "deduplicationScope": "This 32-record recovery batch only; other overlapping repository exports remain pending full-bank consolidation.",
+  "incompleteRecallFile": "master-bank/review-queue/derm-oph-20260907-incomplete-recalls.json",
+  "mcqDraftCount": 29,
+  "incompleteRecallCount": 3,
+  "scopeNote": "32 source records: 14 newly recovered (13 MCQ drafts + 1 incomplete recall); 18 existing records rebuilt from the original PDF (16 MCQ drafts + 2 incomplete recalls). Single-option recalls are not forced into the MCQ schema."
+}
