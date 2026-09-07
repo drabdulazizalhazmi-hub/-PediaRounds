@@ -1,6 +1,6 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 10:32 +03:00
+Updated: 2026-09-07 10:36 +03:00
 Active branch: `master-bank/post-merge-audit`
 Active PR: #3 — `Continue PediaRounds post-merge audit`
 Base: `main`
@@ -21,27 +21,19 @@ Base: `main`
 
 ## Latest synchronized work
 - Nutrition Q1–Q23 image-reference audit remains complete; only Nutrition Q8 is explicitly image-dependent.
-- Infectious image audit advanced substantially beyond the early viral batch.
-- New committed batch: `master-bank/sources/infectious-mid-source-image-review-20260907.json`.
-- Recovered actual Infectious source images in this batch:
-  - Q27/Q28 shared scarlet-fever rash — page 285.
-  - Q37 splinter hemorrhage — page 292.
-  - Q42 pneumonia chest radiograph — page 294.
-  - Q57 gram-negative coccobacilli Gram stain — page 305.
-  - Q66 erythema-multiforme targetoid lesions — page 311.
-  - Q78 steeple-sign radiograph — page 316.
-  - Q81 retropharyngeal-abscess lateral neck radiograph — page 319.
-  - Q83 thumb-sign radiograph — page 320.
-  - Q94 periorbital-redness photograph — page 329.
-  - Q96 oral-thrush photograph — page 331.
-  - Q97 candidal diaper-rash photograph — page 331.
-  - Q98 perianal-streptococcal dermatitis photograph — page 332.
-  - Q99 hepatic hydatid-cyst CT — page 332.
-  - Q107 slapped-cheek erythema-infectiosum photograph — page 337.
-- New private batch package: `PediaRounds_infectious_mid_source_image_review.zip`, SHA-256 `65120722be6287b65f757ead683a4d8fb17b166c5f8ea3f338fd947e97ee54c2`.
-- Infectious Q30 remains `source_image_missing`: the recall says a picture was provided, but page 287 contains an explanatory table rather than the original question image.
-- Infectious Q67 remains `source_image_missing`: the recall says a chest X-ray was provided, but page 311 contains the Q66 skin image and no matching question radiograph.
-- Earlier Infectious recovered images remain Q8, Q9, Q12, Q17, Q18 and Q19.
+- Infectious image audit advanced through the early viral, mid-section, microscopy, and late immunization ranges.
+- Previously recovered Infectious images remain Q8, Q9, Q12, Q17, Q18, Q19, Q27/Q28, Q37, Q42, Q57, Q66, Q78, Q81, Q83, Q94, Q96, Q97, Q98, Q99 and Q107.
+- Infectious Q30 and Q67 remain `source_image_missing` because the source recalls a picture/X-ray but the actual question asset is absent from the current PDF page.
+- **New microscopy batch Q23-Q25 recovered and linked:**
+  - Q23 neonatal listeriosis CSF image with Gram-positive rods — source page 282.
+  - Q24 Group B Streptococcus CSF image with Gram-positive cocci in chains — source page 283.
+  - Q25 pneumococcal meningitis CSF image with Gram-positive cocci in pairs/short chains — source page 284.
+- New private package: `PediaRounds_infectious_microscopy_source_image_review.zip`, SHA-256 `0b4a9e5938529e18b2113526c99fbb37dbd04a8c72694632464ef9ae2930a4fe`.
+- New committed metadata:
+  - `master-bank/sources/infectious-microscopy-source-image-review-20260907.json`
+  - `master-bank/sources/infectious-microscopy-question-image-linkage-20260907.json`
+- Excluded rather than substituted: the large Gram-positive morphology teaching chart on page 283 and Gram-stain interpretation table on page 284 are explanatory graphics, not the Q24/Q25 question images.
+- **Late Infectious immunization image audit Q108-Q125 is complete:** targeted search across source pages 337-349 found no additional picture/photo/X-ray/smear/image references after Q107. Q108-Q125 therefore require no newly recovered question images from this source range.
 - Early Gastro recovered/linkable images remain Q1/Q2, Q3, Q5, Q13, Q23, Q28/Q29; Gastro Q8–Q11, Q14–Q15, Q19–Q20 remain `source_image_missing` where referenced assets are absent.
 - Later Gastro image-linked questions remain Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81.
 - Pulmonary source-image review remains Q6, Q9, Q10, Q12; Pulmonary Q14 source image is absent.
@@ -51,7 +43,7 @@ Base: `main`
 - Gastro Q35, Q42, Q44–Q45, Q53, Q56–Q57 and selected later GI items retain source conflicts.
 - Gastro Q73/Q74 remain incomplete recalls despite image recovery.
 - Nutrition Q8 image recovered but publication/clinical review remains pending.
-- Infectious recovered images remain `image_needs_review`; Q30/Q67 are `source_image_missing`.
+- Infectious recovered assets including Q23-Q25 remain `image_needs_review`; Q30/Q67 remain `source_image_missing`.
 - Pulmonary Q9/Q10 and Sleep Q15 remain incomplete recalls.
 
 ## Coordination rule
