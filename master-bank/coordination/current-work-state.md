@@ -24,16 +24,26 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch02-heme-05-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch03-nephro-06-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch04-endo-rheum-02-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch05-7-20260907.json`
 
 ### Aggregate clinical-resolution progress
-- **33 conflicting records reviewed in current-guidance resolution passes.**
-- **8 resolved to clean modern verified answers in review overlays.**
-- **25 retained as invalid, under-specified, missing the best option, image-dependent, or context-dependent.**
+- **40 conflicting records reviewed in current-guidance resolution passes.**
+- **11 resolved to clean modern verified answers in review overlays.**
+- **29 retained as invalid, under-specified, missing the best option, image-dependent, or context-dependent.**
 - **0 recalledAnswer values overwritten.**
 
-### Newly completed Endocrinology/Rheumatology pass — 2 reviewed
-- Endocrinology Q15: **resolved to A, GnRH agonist should not be assumed to treat the gonadotropin-independent McCune-Albright precocious-puberty process.** Current MAS guidance uses aromatase/sex-steroid directed therapy for the peripheral process and adds GnRH agonist if secondary central puberty develops.
-- Rheumatology Q12: **resolved to C, 8,000 WBC with 30% PMN**, as the best retained JIA synovial-fluid pattern. This is a best-fit choice, not a diagnostic cutoff; JIA usually has inflammatory fluid below the very high neutrophilic counts typical of acute bacterial arthritis.
+### Latest completed mixed pass — 7 reviewed
+- Hematology Q10: **resolved to A, liver/biliary ultrasound** for acute RUQ pain with bilirubin/liver-test abnormalities in SCD.
+- Hematology Q13: behavioral/neurocognitive referral threshold remains under-specified; both retained concerns can justify assessment depending on context.
+- Critical Care Q38: NIV versus invasive ventilation in SMA depends on airway protection, secretion burden, mental status, hemodynamics, and NIV failure; original radiograph remains unavailable.
+- Critical Care Q45: source thiopental-based TBI RSI teaching is historical; ketamine is no longer contraindicated solely for ICP, and no retained combination cleanly represents a universal modern RSI regimen.
+- Gastro Q79: **resolved to B, pelvic MRI** among retained options for suspected psoas/pelvic abscess in Crohn disease.
+- Gastro Q80: Kasai hepatoportoenterostomy is the modern first-line operation for biliary atresia; it is absent from the retained choices, so the item remains non-publishable.
+- Gastro Q85: **resolved to B, transabdominal ultrasound** as the recommended initial imaging option, with the caveat that imaging may be unnecessary if pediatric acute-pancreatitis diagnostic criteria are already met clinically/biochemically.
+
+### Concurrent cross-chat resolution retained
+- Endocrinology Q15: resolved in `batch04-endo-rheum-02` using current McCune-Albright guidance.
+- Rheumatology Q12: resolved in `batch04-endo-rheum-02` to C as the best retained JIA synovial-fluid pattern; this is a best-fit option, not a diagnostic cutoff.
 
 ## Important retained gates
 - Ethics Q10/Q11: current Saudi/MOH DNR policy and perioperative DNR handling required.
@@ -55,7 +65,7 @@ Resolution files:
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Continue large clinical-resolution passes through remaining Hematology, Endocrinology, Critical Care, Gastroenterology, and Infectious conflicts, then move to the `needs_verification` queue. Favor complete stems/options with a defensible modern single-best answer; otherwise keep non-publishable and document why.
+Continue large clinical-resolution passes through remaining Endocrinology, Critical Care, Gastroenterology, Infectious Diseases, Oncology, Genetics, Respiratory, and Behavioral conflicts. Favor complete stems/options with a defensible modern single-best answer; otherwise keep non-publishable and document why. After conflict-resolution passes, move to the `needs_verification` queue.
 
 ## Coordination rule
 If another chat advances PR #5, refetch this file and `MASTER_BANK_PROGRESS.md` before writing and follow the newest GitHub state.
