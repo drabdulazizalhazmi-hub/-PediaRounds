@@ -1,57 +1,46 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 09:15 +03:00
-Branch: `master-bank/scfhs-merge`
-PR: #2 — `Initialize PediaRounds Master Bank`
-Observed PR head before this sync: `925988c963a532fed9146d2a92e5869ff5f2b432`
-Observed PR size: 264 commits / 206 changed files
+Updated: 2026-09-07
+Branch: `master-bank/review-images-verification`
+Base: `main`
+
+## Current shared state
+
+- PR #2 merged the initial Master Bank.
+- PR #4 merged the source-coverage closure work; PR #3 was closed as superseded.
+- Latest successful closure audit scanned **1023 records**.
+- Canonical enumerated Part II source coverage is **1022/1022 with 0 missing source slots**.
+- The source itself prints Genetics = 53 but actually numbers Genetics only through Q52 before Metabolic Disorders. Never create a fake Q53 to make the printed total fit.
+- Exact duplicate IDs: 0.
+- Structural section/Q collisions: 0.
+
+## Quality phase now active
+
+The project is no longer in bulk-import mode. Current priorities are:
+
+1. Reconcile original source images for the **249 image-dependent questions**.
+2. Resolve **77 incomplete recalls** only when the source provides missing details.
+3. Review **131 conflicting** and **9 outdated** records.
+4. Advance **585 needs_verification** records using independent reference checks, keeping source citations distinct from independent verification.
+5. Preserve all source provenance and year tags while avoiding new overlapping exports.
 
 ## Shared execution rules
-- Use the large Part II 4th Edition (1 May 2026) as the source-of-record for the 1023-question Part II bank.
-- Do not invent missing options, images, answers, or years.
-- Preserve `recalledAnswer` separately from `verifiedAnswer`.
-- Keep `verifiedAnswer: null` until independent verification is recorded.
-- Image-dependent questions remain blocked until the original image/attachment is linked and reviewed.
-- Duplicate questions across years map to one canonical question while retaining all year tags.
-- Prefer UpToDate, then Nelson, then current specialty guidelines for verification.
 
-## Current priority — closure audit, not blind bulk re-import
-1. Build/maintain a comprehensive 1023-question manifest and identify true coverage gaps.
-2. Resolve duplicate/overlapping exports and keep one canonical file per question range.
-3. Recover and link image/media assets already present in source bundles/PDFs.
-4. Resolve recoverable `incomplete_recall` records from the original source before adding new material.
-5. Review clinically conflicting/outdated keys after structural/source integrity is stable.
+- GitHub is the shared memory across chats.
+- Read this file and `MASTER_BANK_PROGRESS.md` before writes.
+- Do not restart completed numbered sections.
+- `recalledAnswer` and `verifiedAnswer` remain separate.
+- `verifiedAnswer` stays null until independent verification evidence is recorded.
+- Do not invent missing options, calculations, images, years, or answers.
+- Original source images only; generated substitutes are not acceptable for image-dependent MCQs.
+- Technical image extraction does not equal publication permission or clinical image approval.
+- Keep English TTS and Arabic explanations with English medical terminology.
+- Source PDFs and secrets must never be committed to the public repository.
 
-## Work synchronized across chats
-- `MASTER_BANK_PROGRESS.md` is the primary handoff file; read it plus the current PR file list before work.
-- QA/normalization automation has been added under `.github/workflows/` and `master-bank/tools/` (audit, manifest, duplicate detection, asset validation, answer normalization).
-- Gastroenterology source coverage has been extended through Q86; Nutrition through Q23. Both still require exact canonical-ID/duplicate audit before a final completion claim.
-- Infectious Diseases source coverage exists through Q125; do not re-import it blindly.
-- Genetics overlapping exports were reduced. Source count discrepancy remains: TOC declares 53 but source numbering reaches Q52 before Metabolic Disorders; do not fabricate Q53.
-- Neurology Q44 source text was recovered and restored.
-- Ophthalmology duplicate exports and stale Q8–Q10 review artifacts were cleaned; canonical Q1–Q10 records remain under `data/04-general-paediatrics-outpatients`, with Q5 retained as an incomplete single-option review card.
-- Sleep duplicate coverage was reduced. Q15 is preserved separately as a single-option incomplete recall; Q16–Q18 remain in the canonical respiratory/sleep batch.
-- ENT canonical file is Q1–Q9; the old Q1–Q2 duplicate was removed.
-- Infectious immunization canonical split is Q101–Q114 + Q115–Q125; older overlapping files were removed.
-- Additional Genetics duplicate range exports were removed; retain only the canonical non-overlapping range files now visible in PR #2.
+## Next batch
 
-## Known structural/clinical gates
-- Image-dependent records remain blocked until original assets are linked; do not substitute generated images for source images.
-- Pulmonary/Sleep/Asthma contains legacy + canonical range overlap and incomplete image/single-option recalls; audit before any new import.
-- Gastro generic `batch*-supported` files overlap newer explicit range files; deduplicate by canonical question ID, not filename alone.
-- Medical Ethics/Patient Safety contains structured records plus incomplete-recall records; keep incomplete records outside normal publishable MCQs.
-- Review statuses `conflicting`, `outdated`, `incomplete_recall`, `image_missing`, `image_needs_review` must survive cleanup until resolved.
-
-## Parallel material not yet considered imported
-- D2 2025 Q37–Q96 preview set (59 items) requires production-schema mapping and deduplication against the live bank before import.
-- Additional local preview sets (including 30-question and 15-question ranges) are not considered published/imported until deduplicated, mapped, reviewed, and committed.
-
-## Next action shared by all chats
-1. Read this file, `MASTER_BANK_PROGRESS.md`, and current PR filenames.
-2. Run/advance the canonical coverage audit and manifest rather than restarting a completed section.
-3. Prioritize recoverable images/attachments and incomplete recalls already present in source material.
-4. Remove only proven duplicate exports; never delete the sole source-backed canonical record.
-5. After each successful batch, update this file with the new PR head/commit and exact completed work.
+Start with recoverable image-linked and incomplete records where source manifests already identify the exact original embedded image or exact missing source wording. Work in large, source-safe batches and update both coordination files after each batch.
 
 ## Coordination rule
-GitHub is the shared memory between chats. Prefer updating canonical records over creating another overlapping export. If another chat has advanced the branch, refetch before writing and merge the newer state rather than overwriting it.
+
+If another chat advances this branch or opens a newer quality-phase PR, refetch before writing and follow the newest GitHub state rather than chat history.
