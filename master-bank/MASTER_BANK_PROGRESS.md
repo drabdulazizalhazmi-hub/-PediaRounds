@@ -21,32 +21,29 @@
 - Conflicting queue assignment: **131/131 assigned; 0 unassigned** across three coordinated batches.
 
 ## Clinical conflict resolution — underway
-New file:
+Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch01-12-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch02-8-20260907.json`
 
-First resolution pass reviewed **12 conflicting records** against current clinical guidance/frameworks while preserving source provenance.
+### Current-guidance resolution progress
+- **20 conflicting records reviewed** in resolution passes.
+- **4 clean modern answers** supported by retained stems/options:
+  - Cardiology Q26 → **B, synchronized cardioversion**.
+  - Cardiology Q27 → **B, synchronized cardioversion**.
+  - Endocrinology Q55 → **C, both IFG and IGT** under ADA 2026 criteria.
+  - Hematology Q48 → **D, factor XII deficiency**.
+- **16 remain non-publishable** because current guidance reveals multiple correct retained choices, missing best action, insufficient severity/risk/volume context, or internally malformed data.
+- **0 recalled answers overwritten**.
 
-### Clean modern answers supported by retained stems/options
-- Cardiology Q26 → **B, synchronized cardioversion** for unstable SVT framing; AHA 2025 still preserves the nuance that adenosine may be used if IV/IO access is already present and does not delay cardioversion.
-- Cardiology Q27 → **B, synchronized cardioversion** for neonatal unstable SVT with hypotension/poor perfusion.
-- Endocrinology Q55 → **C, both impaired fasting glucose and impaired glucose tolerance** under ADA 2026: fasting 100 mg/dL meets IFG and 2-hour OGTT 160 mg/dL meets IGT.
-- Hematology Q48 → **D, factor XII deficiency**: isolated prolonged aPTT with no bleeding history is more compatible with contact-factor deficiency than factor XI deficiency.
-
-### Modern management clarified but item remains non-publishable
-- Trauma Q10: current PECARN pediatric cervical-spine rule allows clinical clearance without imaging when no risk factors are present; `no imaging` is absent from retained choices.
-- Dermatology Q12: prompt systemic antiviral therapy is supported; oral versus IV acyclovir depends on severity/clinical status, which the retained context does not uniquely establish.
-
-### Invalid/under-specified as written
-- Rheumatology Q7: proximal symmetric weakness is supported in JDM, but source ascending/descending labels are not a valid modern discriminator.
-- Hematology Q50: internal factor-assay data conflict cannot be repaired safely.
-- Behavioral Q10/Q17 and Research Q7/Q9 remain multiple-correct, missing-best-option, or under-specified.
-
-Batch summary:
-- **12 reviewed**
-- **4 resolved to a modern verified answer**
-- **2 modern actions clarified but still non-publishable**
-- **6 remain invalid/under-specified**
-- **0 recalled answers overwritten**
+### Resolution batch 2 highlights
+- Nephrology Q7: both low FENa and concentrated urine fit prerenal azotemia; invalid SBA.
+- Nephrology Q12: oliguria + respiratory distress in HUS requires volume-status assessment; automatic fluid administration is unsafe to verify.
+- Nephrology Q13: AAP stage-1 HTN pathway requires a third office assessment before ABPM; best next step absent from options.
+- Endocrinology Q28: rickets initial evaluation is a biochemical panel, not a single indispensable test among the retained choices.
+- Critical Care Q12: neonatal shock options do not cleanly match current sepsis/stabilization management.
+- Critical Care Q15: PCWP is not a standard late-sign discriminator in current pediatric septic shock guidance.
+- Critical Care Q17: fibrinogen/FDP do not reliably distinguish DIC from liver failure as a single test.
+- Critical Care Q19: BRUE/apnea discharge recommendations depend on risk stratification; source home pulse-ox key cannot be universally promoted.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -61,7 +58,7 @@ These baseline canonical counts do not automatically decrement merely because a 
 
 ## Coordination protocol
 1. GitHub wins over chat memory.
-2. Do not repeat completed numbered/source/sparse/media/outdated/conflict-assignment/resolution-batch01 work.
+2. Do not repeat completed numbered/source/sparse/media/outdated/conflict-assignment/resolution-batch01/batch02 work.
 3. Keep `recalledAnswer` separate from `verifiedAnswer`.
 4. Do not invent missing options, images, calculations, years, stems, or answer keys.
 5. Original source images only for source-dependent MCQs.
@@ -69,8 +66,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large **clinical conflict-resolution batches**, prioritizing Hematology, Endocrinology, Nephrology/Urology, Critical Care, and Rheumatology records with complete retained stems/options. After conflict resolution, move to large `needs_verification` batches.
+Continue large **clinical conflict-resolution batches**, prioritizing complete retained stems/options in Hematology, Nephrology/Urology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious Diseases. Resolve only where the retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; the first **12-item clinical-resolution pass** is now committed with **4 clean modern answer resolutions**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **20 clinical conflicts have now been resolution-reviewed**, with **4 clean modern answer resolutions** and **16 correctly retained as invalid/under-specified/context-dependent**.
