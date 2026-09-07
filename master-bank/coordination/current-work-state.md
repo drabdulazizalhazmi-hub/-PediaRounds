@@ -41,44 +41,49 @@ The grouped queue is committed at `master-bank/review-queue/source-sparse-recall
 - Medical Ethics/Patient Safety 7
 
 ### Completed batch 28
-- Cardiology 6 — Q7, Q12, Q19, Q22, Q25, Q32
-- Neonatology 6 — Q7, Q17, Q25, Q29, Q33, Q42
-- Trauma and Accidents 6 — Q2, Q12, Q20, Q29, Q37, Q39
-- Critical Care Medicine 5 — Q22, Q33, Q34, Q43, Q55
-- Immunology 5 — Q4, Q5, Q14, Q18, Q20
+- Cardiology 6
+- Neonatology 6
+- Trauma and Accidents 6
+- Critical Care Medicine 5
+- Immunology 5
+
+### Completed final batch 38
+- Pulmonary/Sleep 4
+- Allergy 3
+- Oncology 3
+- Nutrition and Malnutrition 3
+- Rheumatology 4
+- Musculoskeletal and Sport Medicine 3
+- Substances Abuse and Toxicology 3
+- Behavioral Medicine and Psychiatric Disorders 4
+- Growth and Development 2
+- Dermatology 2
+- Ophthalmology 1
+- ENT 1
+- Research, Biostatistics, and Communication Skills 5
 
 Batch files:
 - `review-queue/source-sparse-large-review-59-index-20260907.json`
 - `review-queue/source-sparse-large-review-42-index-20260907.json`
 - `review-queue/source-sparse-large-review-28-index-20260907.json`
-
-Handoffs:
-- `coordination/20260907-sparse-batch-42-handoff.md`
-- `coordination/20260907-sparse-batch-28-handoff.md`
+- `review-queue/source-sparse-final-38-index-20260907.json`
 
 ## Aggregate status
 
-- **129/167 sparse recalls reviewed directly against the source**.
-- **38 sparse recalls remain**.
+- **167/167 sparse recalls reviewed directly against the source**.
+- **0 sparse recalls remain awaiting direct source re-read**.
 - No missing distractors were reconstructed.
+- No missing calculations were invented.
 - No source image was replaced by a generated substitute.
 - No `verifiedAnswer` was assigned solely from recall-source text.
 
-## Remaining 38 sparse recalls
+## Important retained source gates from final batch
 
-- Pulmonary/Sleep: 4
-- Allergy: 3
-- Oncology: 3
-- Nutrition and Malnutrition: 3
-- Rheumatology: 4
-- Musculoskeletal and Sport Medicine: 3
-- Substances Abuse and Toxicology: 3
-- Behavioral Medicine and Psychiatric Disorders: 4
-- Growth and Development: 2
-- Dermatology: 2
-- Ophthalmology: 1
-- ENT: 1
-- Research, Biostatistics, and Communication Skills: 5
+- Allergy Q27: source gives methacholine challenge but explicitly says exercise challenge is more direct/preferred if offered.
+- Dermatology Q12: printed key says IV acyclovir while source explanation says immediate oral antiviral therapy; keep `conflicting` until independently verified.
+- Research Q10: specificity cannot be calculated because the underlying table/numbers are absent; source prints `X`.
+- Research Q12: source preserves odds ratio = 6 but not the underlying numbers; keep non-publishable until inputs are recovered.
+- Image-dependent sparse questions remain blocked pending original-image association/review and publication-rights handling.
 
 ## Shared execution rules
 
@@ -92,9 +97,9 @@ Handoffs:
 - Keep English TTS and Arabic explanations with English medical terminology.
 - Source PDFs and secrets must never be committed to the public repository.
 
-## Next batch shared by all chats
+## Next shared batch
 
-Finish the **remaining 38 sparse recalls in one large source re-read batch** if source quality permits. Then shift the shared priority to original-image reconciliation and clinical verification of conflicting/outdated/high-yield records.
+Move to **large-batch original-image/media reconciliation** across the 48 sparse image/media questions and other existing image manifests. After image-state cleanup, start large controlled batches for `conflicting`, `outdated`, and `needs_verification` records.
 
 ## Coordination rule
 
