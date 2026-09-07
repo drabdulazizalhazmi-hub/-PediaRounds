@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""Audit Part II source-number coverage for the PediaRounds master bank.
+"""Audit numbered Part II source coverage for the PediaRounds master bank.
 
-This tool answers a different question from ``audit_master_bank.py``: not whether
-records are structurally valid, but whether every numbered slot in the 2026 Part II
-source collection has at least one structured record in the Master Bank.
+Unlike ``audit_master_bank.py`` (structural integrity), this tool asks whether each
+numbered slot in the 2026 Part II source collection is represented by at least one
+structured record. File paths are the primary classifier because question topics can
+overlap specialties (for example Critical Care neurological questions or metabolic
+questions stored in the Endocrinology/Metabolic module).
 
-The source table of contents prints 1023 questions. Genetics is a known numbering
-anomaly in the source: its table says 53, but the actual Genetics sequence ends at
-Q52 immediately before Metabolic Disorders. This audit therefore treats Genetics
-Q1-Q52 as the enumerated source range and reports the printed-count discrepancy.
+The source table of contents prints 1023 questions. Genetics is a known source
+numbering anomaly: the table says 53, but the actual Genetics sequence ends at Q52
+immediately before Metabolic Disorders. This audit therefore treats Q1-Q52 as the
+enumerated Genetics source range and reports the printed-count discrepancy.
 """
 from __future__ import annotations
 
@@ -22,7 +24,6 @@ ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "master-bank" / "data"
 QNUM_RE = re.compile(r"(?:^|\b)(?:Q|Question\s*)(\d{1,4})(?:\b|$)", re.I)
 
-# Canonical source sections. Counts/ranges follow the 2026 Part II collection.
 EXPECTED: dict[str, range] = {
     "Pulmonary and Sleep Medicine": range(1, 19),
     "Allergy": range(1, 30),
@@ -34,7 +35,7 @@ EXPECTED: dict[str, range] = {
     "Gastroenterology": range(1, 87),
     "Nutrition and Malnutrition": range(1, 24),
     "Infectious Diseases": range(1, 126),
-    "Genetics": range(1, 53),  # source enumerates through Q52; printed TOC says 53
+    "Genetics": range(1, 53),  # actual numbered sequence ends at Q52
     "Metabolic Disorders": range(1, 24),
     "Nephrology and Urologic Disorders": range(1, 64),
     "Rheumatology": range(1, 17),
@@ -71,14 +72,15 @@ def iter_questions(obj: Any) -> Iterable[dict[str, Any]]:
                 yield from iter_questions(item)
 
 
-def load_questions() -> list[dict[str, Any]]:
-    out: list[dict[str, Any]] = []
+def load_questions() -> list[tuple[Path, dict[str, Any]]]:
+    out: list[tuple[Path, dict[str, Any]]] = []
     for path in sorted(DATA.rglob("*.json")):
         try:
             obj = json.loads(path.read_text(encoding="utf-8"))
         except Exception:
             continue
-        out.extend(iter_questions(obj))
+        for q in iter_questions(obj):
+            out.append((path, q))
     return out
 
 
@@ -92,38 +94,94 @@ def qnum(q: dict[str, Any]) -> int | None:
     return int(m.group(1)) if m else None
 
 
-def canonical_section(q: dict[str, Any]) -> str | None:
-    s = " ".join(
-        str(q.get(k) or "")
-        for k in ("specialty", "topic", "module")
-    ).lower()
+def section_from_path(path: Path) -> str | None:
+    rel = path.relative_to(DATA).as_posix().lower()
+    name = path.name.lower()
 
-    # Order matters for combined/overlapping labels.
-    if any(x in s for x in ("pulmonary medicine", "sleep medicine", "respiratory-sleep")):
+    if rel.startswith("part2-2017-2025/"):
+        return "Pulmonary and Sleep Medicine" if "respiratory-sleep" in name else None
+
+    if rel.startswith("01-principles-of-paediatrics/"):
+        if "research" in name or "communication" in name:
+            return "Research, Biostatistics, and Communication Skills"
+        if "ethics" in name or "patient-safety" in name:
+            return "Medical Ethics and Patient Safety"
+    if rel.startswith("02-paediatric-emergency-medicine/"):
+        if "trauma" in name:
+            return "Trauma and Accidents"
+        if "substances" in name or "toxicology" in name:
+            return "Substances Abuse and Toxicology"
+    if rel.startswith("04-general-paediatrics-outpatients/"):
+        if "dermatology" in name:
+            return "Dermatology"
+        if "ophthalmology" in name:
+            return "Ophthalmology"
+    if rel.startswith("05-child-development-behaviour/"):
+        return "Growth and Development"
+    if rel.startswith("06-neonatology/"):
+        return "Neonatology"
+    if rel.startswith("07-respiratory-ent/"):
+        if name.startswith("ent-") or "ent-part" in name:
+            return "ENT"
+        if "sleep" in name:
+            return "Pulmonary and Sleep Medicine"
+        if "asthma" in name:
+            return "Allergy"
+    if rel.startswith("08-cardiology/"):
+        return "Cardiology"
+    if rel.startswith("09-gastroenterology-hepatology-nutrition/"):
+        return "Nutrition and Malnutrition" if "nutrition" in name else "Gastroenterology"
+    if rel.startswith("10-neurology-neurodisability/"):
+        return "Neurology"
+    if rel.startswith("11-infectious-diseases/"):
+        return "Infectious Diseases"
+    if rel.startswith("12-allergy-immunology/"):
+        return "Immunology" if "immunology" in name else "Allergy"
+    if rel.startswith("13-nephrology-urology/"):
+        return "Nephrology and Urologic Disorders"
+    if rel.startswith("14-diabetes-endocrinology-metabolic/"):
+        return "Metabolic Disorders" if name.startswith("metabolic-") else "Endocrinology"
+    if rel.startswith("15-genetics-dysmorphology/"):
+        return "Genetics"
+    if rel.startswith("16-haematology-oncology/"):
+        return "Oncology" if "oncology" in name else "Hematology"
+    if rel.startswith("17-musculoskeletal-rheumatology/"):
+        return "Rheumatology" if name.startswith("rheumatology-") else "Musculoskeletal and Sport Medicine"
+    if rel.startswith("18-paediatric-intensive-care/") or rel.startswith("18-pediatric-intensive-care/"):
+        return "Critical Care Medicine"
+    if rel.startswith("19-child-adolescent-mental-health/"):
+        return "Behavioral Medicine and Psychiatric Disorders"
+    return None
+
+
+def fallback_section(q: dict[str, Any]) -> str | None:
+    s = " ".join(str(q.get(k) or "") for k in ("specialty", "topic", "module")).lower()
+    # Fallback only; path mapping above is authoritative for overlapping topics.
+    if "pulmonary medicine" in s or "sleep medicine" in s:
         return "Pulmonary and Sleep Medicine"
+    if "immunology" in s and "allergy" not in s:
+        return "Immunology"
     if "asthma" in s or re.search(r"\ballergy\b", s):
         return "Allergy"
-    if "immunology" in s:
-        return "Immunology"
-    if "hematology" in s or "haematology" in s:
-        return "Hematology"
     if "oncology" in s:
         return "Oncology"
+    if "hematology" in s or "haematology" in s:
+        return "Hematology"
     if "cardiology" in s:
         return "Cardiology"
-    if "endocrinology" in s:
-        return "Endocrinology"
     if "nutrition and malnutrition" in s:
         return "Nutrition and Malnutrition"
     if "gastroenterology" in s:
         return "Gastroenterology"
     if "infectious" in s:
         return "Infectious Diseases"
-    if "metabolic disorders" in s or "amino acid metabolism" in s or "urea cycle" in s or "energy utilization" in s or "complex-molecule" in s:
+    if "metabolic disorders" in s:
         return "Metabolic Disorders"
     if "genetics" in s or "dysmorphology" in s or "aneuploidy" in s:
         return "Genetics"
-    if "nephrology" in s or "urologic" in s or "urogenital" in s:
+    if "endocrinology" in s:
+        return "Endocrinology"
+    if "nephrology" in s or "urologic" in s:
         return "Nephrology and Urologic Disorders"
     if "rheumatology" in s:
         return "Rheumatology"
@@ -139,9 +197,9 @@ def canonical_section(q: dict[str, Any]) -> str | None:
         return "Trauma and Accidents"
     if "substances abuse" in s or "toxicology" in s:
         return "Substances Abuse and Toxicology"
-    if "behavioral medicine" in s or "psychiatric disorders" in s or "mental health" in s:
+    if "behavioral medicine" in s or "psychiatric" in s or "mental health" in s:
         return "Behavioral Medicine and Psychiatric Disorders"
-    if "growth and development" in s or "normal development" in s or "abnormal development" in s:
+    if "growth and development" in s:
         return "Growth and Development"
     if "dermatology" in s:
         return "Dermatology"
@@ -157,17 +215,17 @@ def canonical_section(q: dict[str, Any]) -> str | None:
 
 
 def main() -> int:
-    questions = load_questions()
+    rows = load_questions()
     found: defaultdict[str, set[int]] = defaultdict(set)
     unmapped: defaultdict[str, int] = defaultdict(int)
 
-    for q in questions:
+    for path, q in rows:
         n = qnum(q)
-        sec = canonical_section(q)
+        sec = section_from_path(path) or fallback_section(q)
         if sec and n is not None:
             found[sec].add(n)
         elif n is not None:
-            label = str(q.get("specialty") or q.get("topic") or q.get("module") or "unknown")
+            label = f"{path.relative_to(DATA)} :: {q.get('specialty') or q.get('topic') or 'unknown'}"
             unmapped[label] += 1
 
     print("PediaRounds Part II source coverage audit")
@@ -196,11 +254,11 @@ def main() -> int:
     print("NOTE Genetics: source TOC prints 53, but the source sequence ends at Q52 before Metabolic Disorders.")
 
     if unmapped:
-        print("Unmapped numbered records by label:")
+        print("Unmapped numbered records:")
         for label, count in sorted(unmapped.items()):
             print(f"  {label}: {count}")
 
-    # Report-only tool: findings do not fail CI while the bank is being completed.
+    # Report-only while the bank is still being completed.
     return 0
 
 
