@@ -26,26 +26,21 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch04-endo-rheum-02-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch05-7-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch06-12-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch07-6-20260907.json`
 
 ### Aggregate clinical-resolution progress
-- **52 conflicting records reviewed in current-guidance resolution passes.**
-- **14 resolved to clean modern verified answers in review overlays.**
-- **38 retained as invalid, under-specified, missing the best option, image-dependent, or context-dependent.**
+- **58 conflicting records reviewed in current-guidance resolution passes.**
+- **16 resolved to clean modern verified answers in review overlays.**
+- **42 retained as invalid, under-specified, missing the best option, image-dependent, or context-dependent.**
 - **0 recalledAnswer values overwritten.**
 
-### Latest completed mixed pass — 12 reviewed
-- Sleep Q17: **resolved to A, nightmares** because the event occurs late in the sleep period when REM predominates; sleep terrors/confusional arousals are usually early-night NREM events.
-- Pulmonary Q6 (ABPA): **resolved to D, productive cough with brown mucus plugs** as the strongest current supporting feature among the retained choices under 2024 ISHAM framing; the original radiograph remains a separate publication blocker.
-- Asthma Q28: modern GINA severity is treatment-intensity based and cannot be determined by one baseline spirometric measure; item remains invalid as a modern SBA.
-- Infectious Q80 (bacterial tracheitis): modern empiric therapy requires broad combination coverage including MRSA; no single retained option represents the full regimen.
-- Infectious Q100 (malaria): treatment requires species, severity, and geographic susceptibility; the retained artemether/arterolane monotherapy wording is not a complete modern regimen.
-- Genetics Q19 (Noonan): neither retained option is correct; molecular testing rather than routine karyotype is used and severe intellectual disability is not present in 90%.
-- Genetics Q24: neural tube defect and anencephaly overlap because anencephaly is an open NTD; retained options are not mutually exclusive.
-- Genetics Q25: both advanced maternal and advanced paternal age can justify genetic counseling depending on context; no unique SBA.
-- Oncology Q2 (Fanconi anemia): **resolved to D, myelodysplastic syndrome** as the best retained answer; FA also carries major AML risk.
-- Oncology Q8: diagnosis is not established in the retained post-induction cytopenia/respiratory vignette, so eculizumab cannot be verified.
-- Behavioral Q12: ADHD diagnosis/management depends on impairment across settings; the retained setting information is missing, so methylphenidate versus psychoeducational assessment cannot be graded safely.
-- Psychiatry Q33: current agitation care prioritizes environmental safety/verbal de-escalation and least-restrictive measures; restraint is reserved for imminent danger/failed alternatives, so the retained stem cannot make B universally first.
+### Latest completed batch07 — 6 reviewed
+- Endocrinology Q7: **resolved to A**. A low IGF-1 alone is insufficient to establish GH deficiency; appropriate GH-axis evaluation/stimulation testing should precede committing to GH treatment when indicated.
+- Gastroenterology Q57: **resolved to C, CT angiography** as the best retained anatomic confirmation of a vascular ring; chest X-ray may be suggestive but does not define the vascular anatomy. Original source image remains a separate publication blocker.
+- Gastroenterology Q58: retained **unresolved**. Normal growth plus infant regurgitation is compatible with physiologic GER, but modern pediatric GERD guidance does not support attributing recurrent wheeze to reflux from this stem alone.
+- Gastroenterology Q59: retained **unresolved**. The retained PPI option is only 2 weeks, while current NASPGHAN/ESPGHAN guidance uses a 4–8 week trial for typical symptoms; do not silently rewrite the option.
+- Oncology Q20: retained **unresolved**. Post-radiation bowel injury can cause true obstruction or dysmotility/pseudo-obstruction, and the retained radiograph description does not distinguish the mechanism; original image is missing.
+- Metabolic Q21: retained **unresolved**. Type 2 Gaucher disease requires active supportive multidisciplinary care; `offer no treatment` is not acceptable, while BMT/HSCT and liver transplant are not appropriate retained alternatives.
 
 ## Important retained gates
 - Ethics Q10/Q11: current Saudi/MOH DNR policy and perioperative DNR handling required.
@@ -53,7 +48,8 @@ Resolution files:
 - Trauma Q10: modern low-risk action is absent from retained options.
 - Dermatology Q12: route depends on severity; source key/explanation conflict remains.
 - Gastro Q35: congenital diarrhea differential unresolved without stool electrolytes.
-- Gastro Q56/Q57: original imaging/definitive-study interpretation uncertain.
+- Gastro Q56: original imaging interpretation remains uncertain.
+- Gastro Q57: modern answer now resolved to CT angiography, but original image/publication review remains a separate gate.
 - Neonatology Q36: key and explanation disagree on brachial plexus root level.
 - Infectious Q116: answer depends on Saudi vaccine-schedule version.
 - Nephrology Q46: image missing and source answer unresolved.
@@ -67,7 +63,7 @@ Resolution files:
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Continue large clinical-resolution passes through remaining Endocrinology, Critical Care, Gastroenterology, Infectious Diseases, Oncology, Genetics, Respiratory, and Behavioral conflicts that are not already in resolution overlays. Favor complete stems/options with a defensible modern single-best answer; otherwise keep non-publishable and document why. After conflict-resolution passes, move to the `needs_verification` queue.
+Continue large clinical-resolution passes through remaining Critical Care, Gastroenterology, Infectious Diseases, Endocrinology, Hematology/Oncology, Genetics, Respiratory, Behavioral/Psychiatry, and other conflicts not already in resolution overlays. Favor complete stems/options with a defensible modern single-best answer; otherwise keep non-publishable and document why. After conflict-resolution passes, move to the `needs_verification` queue.
 
 ## Coordination rule
 If another chat advances PR #5, refetch this file and `MASTER_BANK_PROGRESS.md` before writing and follow the newest GitHub state.
