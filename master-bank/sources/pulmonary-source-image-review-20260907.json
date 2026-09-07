@@ -1,0 +1,81 @@
+{
+  "source": "2026 PART Pediatric 2.pdf",
+  "sourceRole": "user-provided Part II source-of-record",
+  "generated": "2026-09-07",
+  "repositoryVisibility": "public",
+  "policy": "Source image bytes were extracted for private review but are not committed to this public repository pending copyright/publication and clinical review. Do not replace source images with generated substitutes for image-dependent questions.",
+  "assets": [
+    {
+      "question": "Pulmonary Q6",
+      "sourcePdfPage": 11,
+      "topic": "Allergic bronchopulmonary aspergillosis",
+      "assetType": "chest radiograph / finger-in-glove teaching image",
+      "privateReviewFilename": "pulmonary-q6.png",
+      "sha256": "dbd7922d3bfec2f84c8dadc2a36bd68addf69e16eb711b985eca1274a4dfc0f1",
+      "width": 549,
+      "height": 274,
+      "sourceAssetRecovered": true,
+      "publicAssetPath": null,
+      "status": "image_needs_review",
+      "blockers": ["copyright_publication_review_pending", "clinical_image_review_pending"]
+    },
+    {
+      "question": "Pulmonary Q9",
+      "sourcePdfPage": 14,
+      "topic": "Acute eosinophilic pneumonia",
+      "assetType": "microscopy image",
+      "privateReviewFilename": "pulmonary-q9.png",
+      "sha256": "e1229c416d97110f6747f4d850f6891d9b29eea5b4d73aa388504c631642c10d",
+      "width": 324,
+      "height": 172,
+      "sourceAssetRecovered": true,
+      "publicAssetPath": null,
+      "status": "image_needs_review",
+      "blockers": ["copyright_publication_review_pending", "clinical_image_review_pending", "source_options_incomplete"]
+    },
+    {
+      "question": "Pulmonary Q10",
+      "sourcePdfPage": 15,
+      "topic": "Pulmonary alveolar proteinosis",
+      "assetType": "lung biopsy histology image",
+      "privateReviewFilename": "pulmonary-q10.png",
+      "sha256": "b0d56d691ce1d17181ae3eb87fe2344d0272fcff1095d9105402252f630d8907",
+      "width": 240,
+      "height": 160,
+      "sourceAssetRecovered": true,
+      "publicAssetPath": null,
+      "status": "image_needs_review",
+      "blockers": ["copyright_publication_review_pending", "clinical_image_review_pending", "source_options_incomplete"]
+    },
+    {
+      "question": "Pulmonary Q12",
+      "sourcePdfPage": 16,
+      "topic": "Subglottic stenosis",
+      "assetType": "upper-airway endoscopic image",
+      "privateReviewFilename": "pulmonary-q12.png",
+      "sha256": "73621f0de5a27690e46cc336e669183dae0b1de4f7635abaf1ab7888bd2f3b82",
+      "width": 238,
+      "height": 230,
+      "sourceAssetRecovered": true,
+      "publicAssetPath": null,
+      "status": "image_needs_review",
+      "blockers": ["copyright_publication_review_pending", "clinical_image_review_pending"]
+    },
+    {
+      "question": "Pulmonary Q14",
+      "sourcePdfPage": 18,
+      "topic": "Osseous sarcoidosis",
+      "assetType": "referenced lytic-lesion radiograph",
+      "sourceAssetRecovered": false,
+      "publicAssetPath": null,
+      "status": "image_missing",
+      "notes": "The stem states that an X-ray was provided, but the current source PDF page contains no embedded/raster question image. Do not fabricate or substitute an image.",
+      "blockers": ["original_question_image_missing"]
+    }
+  ],
+  "privateReviewBundle": {
+    "filename": "PediaRounds_pulmonary_source_image_review.zip",
+    "contents": ["pulmonary-q6.png", "pulmonary-q9.png", "pulmonary-q10.png", "pulmonary-q12.png", "manifest.json"],
+    "repositoryCommitted": false
+  }
+}

@@ -1,0 +1,1 @@
+PR #2 is merged. Any branch commits after its merge must be coordinated through the next open closure PR. Do not report post-merge branch work as being inside PR #2.
