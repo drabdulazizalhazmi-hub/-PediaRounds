@@ -30,11 +30,12 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch05-7-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch06-12-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch07-6-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch08-12-20260907.json`
 
 ### Current-guidance resolution progress
-- **58 conflicting records reviewed** in resolution passes.
-- **16 clean modern answers** supported by retained stems/options.
-- **42 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient clinical context, missing original media, or internally malformed data.
+- **70 conflicting records reviewed** in resolution passes.
+- **19 clean modern answers** supported by retained stems/options.
+- **51 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient clinical context, missing original media, or internally malformed data.
 - **0 recalled answers overwritten**.
 
 ### Clean modern answers currently supported in review overlays
@@ -54,14 +55,21 @@ Resolution files:
 - Oncology Q2 (Fanconi anemia) → **D, myelodysplastic syndrome** as the best retained hematologic-risk answer, with major AML risk also acknowledged.
 - Endocrinology Q7 → **A, confirm GH-axis diagnosis before committing to GH treatment**; low IGF-1 alone is insufficient.
 - Gastroenterology Q57 → **C, CT angiography** as the best retained confirmatory/anatomic study for a suspected vascular ring; source image remains a separate publication gate.
+- Growth & Development Q2 → **B, 7 years** for U/L segment ratio approaching 1:1 under current anthropometry references.
+- Growth & Development Q6 → **B, 9 months** as the best retained option; CDC 2026 lists sitting without support by 9 months.
+- Ophthalmology Q8 → **A, infantile/congenital nystagmus** for onset at four months with normal eye examination and normal MRI.
 
-### Latest batch07 — 6 reviewed
-- Endocrinology Q7 resolved to A using Pediatric Endocrine Society diagnostic framing.
-- Gastroenterology Q57 resolved to CT angiography; source printed chest-X-ray key conflicts with its own explanation and modern cross-sectional imaging practice.
-- Gastroenterology Q58 remains unresolved: infant regurgitation may be physiologic GER, but recurrent wheeze should not be attributed to GERD without additional evidence.
-- Gastroenterology Q59 remains unresolved because the retained 2-week PPI option does not match the current 4–8 week empiric trial used for typical symptoms in older children.
-- Oncology Q20 remains unresolved because post-radiation bowel injury can produce true obstruction or pseudo-obstruction and the missing image prevents reliable mechanism assignment.
-- Metabolic Q21 remains unresolved because type 2 Gaucher disease requires active supportive multidisciplinary care; none of the retained choices represents that modern management.
+### Latest batch08 — 12 reviewed
+- Growth Q2 and Q6 plus Ophthalmology Q8 were cleanly resolved as above.
+- Gastro Q71 remains invalid as an SBA because viral illness, HSP/IgA vasculitis, and Meckel diverticulum are recognized intussusception associations/lead-point contexts.
+- Nutrition Q14 remains under-specified; the symmetric percentile pattern does not establish one cause under current faltering-weight criteria.
+- Nutrition Q15 remains non-publishable because routine initial intestinal biopsy is not recommended and the modern initial evaluation is absent from the choices.
+- Allergy Q12 remains non-publishable because loratadine and cetirizine are both acceptable second-generation oral antihistamines and ARIA-EAACI does not recommend one specific agent for children from this generic stem.
+- Substances Q8 remains non-publishable because the toxidrome is opioid-like but opioid exposure is absent from the options.
+- Ophthalmology Q3 remains non-publishable because urgent ophthalmology evaluation for leukocoria is absent from the choices; image review remains a separate gate.
+- Ophthalmology Q10 remains malformed because chalazion and hordeolum/stye are conflated/duplicated.
+- Musculoskeletal Q16 remains non-publishable because occult-fracture immobilization/follow-up is absent from the choices and the radiograph is still a publication gate.
+- Behavioral Q21 remains context-dependent because frequent head banging requires severity, injury, developmental, and persistence context before choosing behavioral coaching versus specialty referral.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -84,8 +92,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large clinical conflict-resolution batches through remaining Critical Care, Gastroenterology, Infectious Diseases, Endocrinology, Hematology/Oncology, Genetics, Respiratory, and Behavioral/Psychiatry conflicts not yet covered by resolution overlays. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue large clinical conflict-resolution batches through remaining Critical Care, Gastroenterology, Infectious Diseases, Endocrinology, Hematology/Oncology, Genetics, Respiratory, Behavioral/Psychiatry, Neonatology, and other conflicts not yet covered by resolution overlays. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **58 clinical conflicts have now been resolution-reviewed**, with **16 clean modern answer resolutions** and **42 correctly retained as invalid/under-specified/context-dependent**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **70 clinical conflicts have now been resolution-reviewed**, with **19 clean modern answer resolutions** and **51 correctly retained as invalid/under-specified/context-dependent**.
