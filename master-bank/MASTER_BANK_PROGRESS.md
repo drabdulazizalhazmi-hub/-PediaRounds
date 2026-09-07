@@ -22,28 +22,22 @@
 
 ## Clinical conflict resolution — underway
 Latest resolution files include:
-- `review-queue/conflicting-clinical-resolution-batch10-6-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch11-12-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch12-gastro-trauma-8-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch13-trauma-derm-4-20260907.json`
 
 ### Current-guidance resolution progress
-- **107 / 131 conflicting records resolution-reviewed**.
+- **111 / 131 conflicting records resolution-reviewed**.
 - **29 clean modern answers** supported by retained stems/options in review overlays.
-- **78 retained non-publishable** because of under-specification, missing best option, image dependence, version sensitivity, multiple plausible answers, or internal source defects.
-- **24 conflicts remain not yet resolution-reviewed**.
+- **82 retained non-publishable** because of under-specification, missing best option, image dependence, version sensitivity, multiple plausible answers, or internal source defects.
+- **20 conflicts remain not yet resolution-reviewed**.
 - **0 recalledAnswer values overwritten**.
 
-### Newly resolved in batch12
-- Gastroenterology Q7 → **A, insert an orogastric tube** as the initial bedside diagnostic step for suspected esophageal atresia; radiography follows to confirm the proximal pouch/abdominal gas pattern.
-- Trauma Q5 → **A, avoid hypotension** as a core secondary-brain-injury prevention measure after pediatric TBI.
-
-### Batch12 items intentionally retained as non-publishable
-- Gastro Q17: best immediate ETT confirmation is exhaled CO2/capnography, absent from retained choices.
-- Gastro Q35: low stool osmotic gap confirms a secretory pattern but does not distinguish congenital chloride diarrhea from other congenital secretory diarrheas without stool electrolytes.
-- Gastro Q42: duplicate option labels plus infant-specific invasive-Salmonella risk prevent a clean single answer.
-- Research Q5: study design is under-specified; cohort versus case-control cannot be established from the retained wording.
-- Research Q13: all retained choices are malformed for the open-ended versus closed-ended distinction.
-- Ophthalmology Q2: urgent ophthalmology referral/examination is the best action but is absent from the retained choices.
+### Latest batch13
+- Trauma Q16: EDH diagnosis supported, but evacuation versus observation/referral depends on omitted CT and neurologic severity details; original image remains missing.
+- Trauma Q22: CT versus surgery depends on hemodynamic response after resuscitation; retained stem does not provide it.
+- Dermatology Q10: original lesion image/diagnosis is uncertain; current HSV gingivostomatitis management emphasizes hydration and analgesia, so no retained option is a clean universal treatment.
+- Dermatology Q20: current CDC guidance favors permethrin 5% for infants/young children; oral ivermectin safety is not established below 15 kg and permethrin is absent from the retained choices.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -54,7 +48,7 @@ Latest resolution files include:
 - `outdated`: 9
 - `deduplicated`: 13
 
-These baseline canonical counts do not automatically decrement when review-overlay files are added; canonical record changes require an explicit safe update pass.
+Baseline canonical counts do not automatically decrement when review-overlay files are added; canonical record changes require an explicit safe update pass.
 
 ## Coordination protocol
 1. GitHub wins over chat memory.
@@ -66,8 +60,8 @@ These baseline canonical counts do not automatically decrement when review-overl
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large clinical-resolution batches through the **remaining 24 / 131 conflicts not yet resolution-reviewed**. Prioritize complete retained stems/options, and defer policy-sensitive Saudi items until the appropriate current national/institutional source is available. Resolve only where retained choices and current evidence support a clean single-best answer; otherwise document the blocker. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue through the **remaining 20 / 131 conflicts**. Prioritize complete retained stems/options and defer jurisdiction-sensitive items until the appropriate current Saudi source is available. Resolve only where retained choices and current evidence support a clean single-best answer; otherwise document the blocker. After all conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **107 clinical conflicts have now been resolution-reviewed**, with **29 clean modern answer resolutions**, **78 correctly retained as non-publishable**, and **24 remaining for resolution review**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **111 clinical conflicts have now been resolution-reviewed**, with **29 clean modern answer resolutions**, **82 correctly retained as non-publishable**, and **20 remaining for resolution review**.
