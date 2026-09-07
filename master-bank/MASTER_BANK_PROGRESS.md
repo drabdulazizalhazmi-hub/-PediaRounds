@@ -49,19 +49,31 @@ Breakdown:
 - **4** under-specified Research/Communication records.
 - **9** clinical source/option conflicts across Trauma, Dermatology, Ophthalmology.
 
-Outcome:
-- **30/131 conflict records reviewed and classified**.
-- **101 remaining** for controlled conflict review.
-- 0 recalled answers overwritten.
-- 0 verified answers forced when source/options are insufficient.
-- All 30 retain non-publishable status until the recorded verification action is completed.
+### Conflict Batch 2 — 40 reserved/triaged
+File: `review-queue/conflicting-batch02-triage-40-20260907.json`
 
-Important examples:
-- Ethics Q6–Q11: confidentiality, sponsored education, DNR and perioperative DNR depend on current Saudi policy; compilation alone is insufficient.
-- Research Q5/Q7/Q9/Q13: study design/statistical metric/options are under-specified; missing data must not be inferred.
-- Trauma Q10: source key selects CT but source explanation says CT is not indicated in the retained low-risk scenario.
-- Dermatology Q12: IV-vs-oral acyclovir conflict is preserved.
-- Ophthalmology Q2: best next step is absent from retained choices.
+Breakdown:
+- Growth & Development **5**
+- Neonatology **5**
+- Cardiology **3**
+- Gastroenterology **12**
+- Neurology **4**
+- Infectious Diseases **11**
+
+Batch 2 includes source/reference conflicts such as:
+- Growth Q2/Q6 milestone/reference mismatch.
+- Neonatology Q36 root-level key-versus-explanation mismatch.
+- Cardiology Q26/Q27 SVT first-action dependency on immediate IV/IO access.
+- Gastro Q35 under-specified congenital diarrhea differential; Q56/Q57 image/definitive-study uncertainty; Q58/Q59 GER/PPI framing.
+- Neurology Q6 source uncertainty and Q18 missing etiologic clue.
+- Infectious Q116 Saudi vaccination-schedule version dependency.
+
+### Aggregate conflict progress
+- **70/131 records now assigned to coordinated conflict-review batches.**
+- **61 remaining unassigned**.
+- Recalled answers remain unchanged.
+- No verified answer is assigned solely because a recall key exists.
+- Under-specified, image-dependent, or jurisdiction/version-sensitive questions remain non-publishable until appropriately resolved.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -84,8 +96,8 @@ These baseline counts are not automatically decremented by review-index work; ca
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue the remaining **101 conflicting records** in large batches. Prefer clinically resolvable conflicts first with UpToDate → Nelson → current specialty guideline; keep policy-sensitive and under-specified items non-publishable when a clean modern answer cannot be supported.
+Resolve the clinically resolvable items in Conflict Batch 2 where the retained choices/context allow a defensible answer using current UpToDate → Nelson → specialty guidance. Then reserve/triage the final **61 conflicting records** and move into the `needs_verification` queue.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; conflicting queue is now **30/131 reviewed**, with **101 remaining**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; conflicting queue is now **70/131 assigned to coordinated review**, with **61 remaining unassigned**.
