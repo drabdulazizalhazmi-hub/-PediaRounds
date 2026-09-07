@@ -4,84 +4,64 @@
 
 ## Repository / active work
 - Repository: `drabdulazizalhazmi-hub/-PediaRounds`
-- PR #2 has been merged into `main`.
-- Active working branch: `master-bank/post-merge-audit`
-- Active pull request: `#3 — Continue PediaRounds post-merge audit`
-- Base branch: `main`
-- Last synchronized: `2026-09-07 10:08 +03:00`
+- PR #2 merged into `main`; active continuation is PR #3.
+- Working branch: `master-bank/post-merge-audit`
+- Active PR: `#3 — Continue PediaRounds post-merge audit`
+- Last synchronized: `2026-09-07 10:15 +03:00`
 
-## Mandatory coordination protocol
-1. Before work, read this file and `coordination/current-work-state.md`, then inspect PR #3.
-2. Do not rely on old chat question pointers if GitHub is newer.
-3. Use PR #3 for continued closure-audit work.
-4. Do not create overlapping question-range exports without checking the branch first.
-5. Preserve `recalledAnswer` separately from `verifiedAnswer`; do not silently repair source conflicts.
-6. Image-dependent questions remain blocked until the original asset is linked and reviewed.
-7. The repository is public: extracted copyrighted source images/PDFs are not committed until publication rights are cleared. Record source page/hash and keep private-review bundles separate.
-8. After each successful batch, update both shared coordination files.
+## Mandatory protocol
+1. Read this file, `coordination/current-work-state.md`, and PR #3 before writes.
+2. Do not invent source text, distractors, answers, years, or images.
+3. Keep `recalledAnswer` separate from `verifiedAnswer`.
+4. Image-dependent questions stay non-publishable until source asset recovery + clinical review + publication approval.
+5. Public repo must not contain source PDF/image bytes; use private review bundles and committed linkage/hash metadata.
+6. Update both handoff files after a successful batch.
 
-## Latest batch
-Early Gastro source-image recovery and canonical linkage advanced:
-- Recovered and linked **Gastro Q1/Q2** to the shared small-left-colon contrast-enema image from source page 197.
-- Recovered and linked **Gastro Q3** to its separate contrast-enema image from source page 198.
-- Recovered and linked **Gastro Q23** to the abdominal radiograph on source page 212.
-- Recovered and linked **Gastro Q28/Q29** to the shared dermatitis-herpetiformis photo on source page 216.
-- Created/expanded `master-bank/sources/gastro-early-source-image-review-20260907.json` with source page, dimensions, SHA-256 and shared-image mappings.
-- Updated `master-bank/sources/question-image-linkage-20260907.json` with canonical IDs and record paths for Q1, Q2, Q3, Q23, Q28 and Q29.
-- **Gastro Q10 and Q11** explicitly reference X-ray pictures in the source stems, but no matching image is present on rendered source page 204; both are preserved as `source_image_missing` rather than receiving invented substitutes.
-- Current private early-Gastro review package: `PediaRounds_gastro_early_source_image_review.zip`, SHA-256 `f736a9858315d42a81c175b99036819e99c996e92eae0d8687fd28df7e5aa41e`.
-- Previously linked Gastro source images remain Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75 and Q81.
-- Public `assetPath` remains null because the repository is public; source-image bytes stay in private review packages pending publication-rights and clinical review.
+## Latest completed batch — early Gastro images
+Recovered and canonically linked:
+- **Q1/Q2** shared small-left-colon contrast enema — page 197.
+- **Q3** meconium-plug contrast enema — page 198.
+- **Q5** Hirschsprung contrast-enema image — page 200; `p200-x748.jpeg`, SHA-256 `6bf2067646ae077ae5e7f1e06d270821d4a0f06b6ca9f7e2a02a1c4e29653f8f`.
+- **Q13** left congenital diaphragmatic hernia chest radiograph — page 205; `p205-x766.jpeg`, SHA-256 `439b7b9fb7aaca79ac1db041ece5feab7002be8c3b9afde0d706b8f924266386`.
+- **Q23** functional-constipation abdominal radiograph — page 212.
+- **Q28/Q29** shared dermatitis-herpetiformis photo — page 216.
+
+Audited but source question radiograph absent:
+- **Q8** page 202 — only explanatory TEF classification table visible.
+- **Q9** page 203 — only explanatory TEF anatomy illustration visible.
+- **Q10/Q11** page 204 — no embedded question radiograph.
+- **Q14/Q15** page 206 — explanatory Bochdalek/Morgagni graphics, not the referenced question X-ray.
+These remain `source_image_missing`; no explanatory image was substituted as the question image.
+
+Updated files:
+- `master-bank/sources/gastro-early-source-image-review-20260907.json`
+- `master-bank/sources/question-image-linkage-20260907.json`
+
+Private early-Gastro review ZIP now contains six recovered source images:
+`PediaRounds_gastro_early_source_image_review.zip`
+SHA-256: `6d75c470486323c655b578389ab9fa7d5beadd0184a499c0474dce9a3611d942`
+
+Previously linked later Gastro images remain Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75 and Q81. Pulmonary source-image recovery remains Q6, Q9, Q10 and Q12.
 
 ## Strongly represented source ranges already on main
-- Growth & Development Q1–Q21
-- Dermatology Q1–Q22
-- Ophthalmology Q1–Q10
-- ENT Q1–Q9
-- Neonatology Q1–Q43
-- Neurology Q1–Q50
-- Nephrology & Urologic Disorders Q1–Q63
-- Rheumatology Q1–Q16
-- Musculoskeletal & Sport Medicine Q1–Q19
-- Critical Care Q1–Q55
-- Trauma & Accidents Q1–Q44
-- Substances Abuse & Toxicology Q1–Q15
-- Behavioral Medicine & Psychiatric Disorders Q1–Q33
-- Cardiology Q1–Q57
-- Endocrinology Q1–Q65
-- Hematology Q1–Q57; Oncology Q1–Q20
-- Infectious Diseases through Q125
-- Genetics Q1–Q52; do not fabricate Q53 because the source numbering ends at Q52 before Metabolic Disorders
-- Metabolic Disorders Q1–Q23
+Growth Q1–Q21; Dermatology Q1–Q22; Ophthalmology Q1–Q10; ENT Q1–Q9; Neonatology Q1–Q43; Neurology Q1–Q50; Nephrology/Urology Q1–Q63; Rheumatology Q1–Q16; Musculoskeletal Q1–Q19; Critical Care Q1–Q55; Trauma Q1–Q44; Toxicology Q1–Q15; Behavioral/Psych Q1–Q33; Cardiology Q1–Q57; Endocrinology Q1–Q65; Hematology Q1–Q57; Oncology Q1–Q20; Infectious Diseases through Q125; Genetics Q1–Q52 with source Q53 discrepancy; Metabolic Q1–Q23.
 
-## Requires exact canonical closure audit
-- Gastroenterology Q1–Q86: explicit range files overlap older supported batches.
-- Nutrition & Malnutrition Q1–Q23: supported/gap files may overlap.
-- Pulmonary / Sleep / Asthma: canonical and legacy respiratory data overlap; some image and single-option recalls remain.
-- Allergy / Immunology: data exists but canonical deduplication/verification remains.
-- Medical Ethics / Patient Safety: structured records and incomplete-recall records must stay separated correctly.
+## Still requires canonical closure audit
+- Gastroenterology Q1–Q86 (overlap between explicit ranges and older supported batches).
+- Nutrition Q1–Q23 (supported/gap overlap).
+- Pulmonary/Sleep/Asthma legacy + canonical overlap.
+- Allergy/Immunology canonical deduplication/verification.
+- Medical Ethics/Patient Safety separation of structured MCQs vs incomplete recalls.
 
-## Known source/review gates
-- Gastro Q10/Q11: stem references X-ray images, but source image is absent from current source page; keep `source_image_missing`.
-- Gastro Q35 conflicting differential without stool electrolytes.
-- Gastro Q42 duplicate option label in source.
-- Gastro Q44–Q45 sodium/cerebral-edema assumptions incomplete.
-- Gastro Q53 achalasia vs eosinophilic esophagitis overlap.
-- Gastro Q56–Q57 source image recovered privately; source itself questions interpretation/definitive study.
-- Gastro Q1/Q2, Q3, Q23, Q28/Q29, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75, Q81 source images are recovered privately and linked to canonical question records; they remain publication/clinical-review gated.
-- Pulmonary Q6/Q9/Q10/Q12 source images recovered privately; public publication and clinical-image review remain blocked.
-- Pulmonary Q14 original image not present in current source file.
-- Sleep Q15 single-option incomplete recall.
+## Key review gates
+- Gastro Q8–Q11, Q14–Q15: source image referenced but absent from current source page.
+- Gastro Q35/Q42/Q44–Q45/Q53/Q56–Q57 and selected later items retain source conflicts.
+- Gastro Q73/Q74: incomplete recall despite recovered images.
+- Pulmonary Q9/Q10 and Sleep Q15: incomplete recalls.
+- Pulmonary Q14: source image absent.
 
 ## Next action
-1. Continue inspecting early Gastro image-dependent questions (notably Q5, Q8, Q9 and nearby congenital-GI items) and link recoverable source images to canonical records.
-2. Preserve source-image-missing status when the stem references a picture but no picture is present in the PDF page.
-3. Continue resolving source-supported `incomplete_recall` records without inventing distractors.
-4. Continue the canonical 1023-ID duplicate/coverage audit.
-5. Only after structural integrity is stable, verify conflicting/outdated clinical keys using UpToDate, then Nelson, then current specialty guidance.
-
-## Style contract
-- Work in large batches where source quality permits.
-- Report only what was actually committed.
-- Never claim completion from filenames alone; exact ID coverage and review gates control completion.
-- Preserve source gaps rather than inventing wording.
+1. Continue through Gastro congenital images after Q15 (Q19 and nearby source-image items), recovering only actual question assets.
+2. Then proceed through other Gastro/ Nutrition image-dependent records and remaining `incomplete_recall` items.
+3. Continue canonical 1023-ID dedup/coverage audit in larger batches.
+4. Independently verify clinical conflicts only after structural/source integrity is stable.
