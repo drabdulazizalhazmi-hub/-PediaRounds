@@ -25,24 +25,27 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch01-12-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch02-8-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch02-heme-05-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch03-nephro-06-20260907.json`
 
 ### Current-guidance resolution progress
-- **25 conflicting records reviewed** in resolution passes.
-- **5 clean modern answers** supported by retained stems/options:
+- **31 conflicting records reviewed** in resolution passes.
+- **6 clean modern answers** supported by retained stems/options:
   - Cardiology Q26 → **B, synchronized cardioversion**.
   - Cardiology Q27 → **B, synchronized cardioversion**.
   - Endocrinology Q55 → **C, both IFG and IGT** under ADA 2026 criteria.
   - Hematology Q48 → **D, factor XII deficiency**.
   - Hematology Q17 → **D, paroxysmal nocturnal hemoglobinuria**.
-- **20 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient severity/risk/volume context, or internally malformed data.
+  - Nephrology/Urology Q62 → **A, testicular torsion** for the retained stem with reduced Doppler perfusion.
+- **25 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient severity/risk/volume context, missing original media, or internally malformed data.
 - **0 recalled answers overwritten**.
 
-### Latest Hematology resolution pass
-- **Q17**: morning dark urine + low haptoglobin + Coombs-negative intravascular hemolysis supports PNH; modern flow cytometry for GPI-anchor protein deficiency supports **D**.
-- **Q1**: HbA2 7% with predominant HbA fits beta-thalassemia trait/minor better than major; minor is absent from the retained options, so no verified option is forced.
-- **Q5**: `acute CNS crisis` is too vague to choose oxygen versus simple transfusion without oxygenation/stroke/Hb/transfusion context.
-- **Q20**: goat-milk folate deficiency and strict-vegan vitamin B12 deficiency are both plausible causes of megaloblastic anemia; no unique SBA from the retained wording.
-- **Q27**: current CDC guidance supports blood lead testing, with venous confirmation; the retained urinary-porphyrin option is not the modern best diagnostic test.
+### Latest Nephrology/Urology resolution pass
+- Q33 FSGS: steroid phenotype is missing; current treatment differs between steroid-sensitive/dependent and steroid-resistant disease, so cyclophosphamide cannot be promoted as a unique answer.
+- Q38 IgA vasculitis: renal involvement is common, but renal failure is not the most common complication; the retained options make the SBA invalid.
+- Q47 cystic kidney disease: original image is missing/unreviewed and X-ray alone cannot establish ARPKD; remains non-publishable.
+- Q53 Potter sequence: both renal dysplasia and obstructive uropathy can cause severe oligohydramnios/Potter sequence, so the retained choices are not uniquely gradable.
+- Q59 cryptorchidism at 12 months: current AUA guidance supports surgical referral/orchiopexy and no routine pre-referral ultrasound; the best modern action is absent from the options.
+- Q62 acute scrotum: despite a blue-dot clue, decreased intratesticular Doppler perfusion supports **testicular torsion (A)** and urgent management.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -65,8 +68,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large **clinical conflict-resolution batches**, prioritizing complete retained stems/options in remaining Hematology, Nephrology/Urology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious Diseases. Resolve only where the retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue large clinical conflict-resolution batches through remaining Hematology, Endocrinology, Critical Care, Rheumatology, Gastroenterology, and Infectious Diseases. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **25 clinical conflicts have now been resolution-reviewed**, with **5 clean modern answer resolutions** and **20 correctly retained as invalid/under-specified/context-dependent**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **31 clinical conflicts have now been resolution-reviewed**, with **6 clean modern answer resolutions** and **25 correctly retained as invalid/under-specified/context-dependent**.
