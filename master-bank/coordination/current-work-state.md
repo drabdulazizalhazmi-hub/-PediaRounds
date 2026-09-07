@@ -53,12 +53,22 @@ Known duplicate passes remain: Trauma Q10; Research Q7/Q9; Hematology Q50; Behav
 - `part2-ethics-q31`
 - `part2-ethics-q33`
 
+## Active cross-chat claim — batch16A
+To prevent duplicate work across the three conversations, this conversation is actively resolving only these five records:
+- `part2-ethics-q06`
+- `part2-ethics-q07`
+- `part2-ethics-q08`
+- `part2-ethics-q10`
+- `part2-ethics-q11`
+
+Other conversations should take only the remaining 12 until batch16A is committed or this claim is cleared.
+
 ## Newly completed non-policy batch 15
 The 10 clinical/source conflicts previously listed as remaining have all received overlays. Six support a clean modern answer and four remain deliberately non-publishable. See `review-queue/conflicting-clinical-resolution-batch15-clinical-10-20260907.json`.
 
 ## Shared execution rules
 - GitHub + the CI unique-ID audit are shared memory across chats.
-- Before a new conflict batch, refetch this file and ensure the ID is in the exact remaining list.
+- Before a new conflict batch, refetch this file and ensure the ID is in the exact remaining list and not claimed by another chat.
 - Preserve `recalledAnswer` separately from `verifiedAnswer`.
 - Do not invent missing options, calculations, images, years, stems, or keys.
 - Original source images only for source-dependent MCQs.
@@ -66,7 +76,7 @@ The 10 clinical/source conflicts previously listed as remaining have all receive
 - Source PDFs, credentials, and secrets must not be committed.
 
 ## Next shared batch
-Resolve/document the **17 Saudi/policy-sensitive Ethics & Patient Safety records** using current jurisdiction-specific sources. Do not force a verified answer where the retained wording is institution-dependent, legally ambiguous, or lacks a current authoritative Saudi source. After the unique counter reaches 131/131, move to large `needs_verification` batches.
+Resolve/document the **17 Saudi/policy-sensitive Ethics & Patient Safety records** using current jurisdiction-specific sources, respecting active claims. Do not force a verified answer where the retained wording is institution-dependent, legally ambiguous, or lacks a current authoritative Saudi source. After the unique counter reaches 131/131, move to large `needs_verification` batches.
 
 ## Parallel Part I stream
 PR #6 (`master-bank/part1-2025-batch01`) is separately importing Part I 2025 and is currently through Q30. Keep PR #5 quality work and PR #6 Part I import logically separate; coordinate through GitHub before overlapping writes.
