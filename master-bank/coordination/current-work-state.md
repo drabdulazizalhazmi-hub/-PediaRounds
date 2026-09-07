@@ -77,3 +77,24 @@ The user confirmed all other conversations have stopped updates and this continu
 
 ### Remaining work, without re-importing completed ranges
 The Site integration is published; independent clinical verification and missing original-image resolution remain governed by the queues above. The 60 additional review records require final equivalence/completeness checks before any promotion into scored sessions. No claim is made that the medical verification queues are closed. Continue Part I only after the committed Q1–Q30 range; use the integration mapping in the Site source (`data/import-audit/github-integration.json`) before adding records. D2 Q37–Q96 from prior bundles was not imported by this deployment.
+
+## Published continuation — 2026-09-07, version 18
+
+This receipt supersedes the version 17 remaining-work note for the 60 retained GitHub review records and the D2 bundle. The same continuation remains the sole Site integration owner per the user's handoff; earlier parallel claims are historical.
+
+- Existing Site: [PediaRounds](https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site); deployment status: **succeeded**.
+- Project: `appgprj_6a9b542a7a7c81919e2e97f30ed411bd`; deployment: `appgdep_6a9e92463d0c8191b18206ac6ed353fd`.
+- Site source commit: `9600e1df1bab92cbe9c380df421a914981546eab` (Sites source repository).
+- **18 new complete scored questions published** with corroborated answers: 4 restored GitHub records and 14 D2 2025 records. Each has a source-bound Arabic pre-answer scenario, post-answer rationale, explanation of the wrong options, high-yield points, and recorded verification basis.
+- The previous **60 GitHub review records** were checked against their exact original PDF ranges: **4 promoted**, **56 retained for review**. Missing source choices were not invented; unsupported paraphrase choices were removed where the original had fewer choices.
+- All **59 supplied D2 records** in the Q37–Q96 range are accounted for: **14 new bank questions**, **37 review records**, **8 duplicates linked to existing canonical records**. Q43 is absent from the supplied bundle and was not fabricated. Q93 links to the retained Q38 review record.
+- **1851 original bank records preserved unchanged**; **1869 stored bank questions** including the 18 additions. Existing missing-source-image filters continue to withhold 33 original records, leaving **1836 available bank questions**.
+- **134 saved Arabic scenarios**. Review inventory: **473 records**, with **471 visible** after two existing image-source filters. Incomplete, image-dependent, ambiguous, and conflicting records retain their review gates.
+- The homepage now uses the requested two-line verse: “إذا لم يكن عَوْنٌ من الله للفتى ...” / “فأولُ ما يجني عليه اجتهادُهُ 👌🏻”. The heading is “Paediatric board review Part 1, Part 2 MCQs”; the description is “مراجعة مركّزة لتجميعات Part 1, Part 2 مع إجابات مشروحة وتتبّع لتقدّمك.”
+- Added a direct entry to the newly added questions. Review items now support English reading controls and save completed review activity to the existing account progress store. Stable question IDs, DONE/checkpoints, original figures, authentication, and database schema are preserved.
+- Validation: **29 relevant tests passed**, the production build including the final homepage copy succeeded, and the deployment archive was validated. No browser QA was performed.
+- Verification scope is the **18 newly published questions only**. Current primary guidelines, academic publications and clinical protocols were consulted where applicable; Q49 records dose arithmetic. Nelson/UpToDate references supplied in source commentary are preserved as source citations; no independent live access to those books/services is claimed.
+
+### Continue without duplicating published work
+
+Use the Site-source mappings `data/import-audit/github-integration.json`, `data/import-audit/remaining-publication.json`, and `data/import-audit/remaining-clinical-review.json` before adding any source records. Do not re-import these D2 IDs or the 60 already-accounted GitHub review IDs. Unresolved clinical/policy conflicts and missing original images remain open; this publication does not close the Master Bank's medical verification queues. Part I coverage beyond the committed Q1–Q30 range must still be checked against canonical mappings before any further import.
