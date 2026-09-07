@@ -1,0 +1,68 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch14-research-trauma-nephro-4-20260907",
+  "scope": "Four non-overlapping conflict records after batch13, focused on Research/Biostatistics, Trauma, and Nephrology/Urology.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options and current evidence support a defensible single-best answer.",
+    "Do not invent missing variable coding, diagnostic-test denominators, imaging findings, or answer choices.",
+    "If the preferred modern action is absent from the retained choices, keep verifiedAnswer null and the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-research-q07",
+      "sourceQuestion": "Research/Communication Q7",
+      "modernOutcome": "statistical_test_depends_on_unreported_variable_coding",
+      "verifiedAnswer": null,
+      "reason": "The retained stem asks for a test of association between maternal education level and birth weight but does not state how either variable was coded. A t-test requires a continuous outcome compared across two groups, whereas chi-square evaluates association between categorical variables. Because birth weight and education could each have been entered as continuous/ordinal values or categories, neither retained option can be uniquely verified.",
+      "references": [
+        "Source explicitly states that the answer depends on whether the variables were entered as numbers or categories and on the number of categories"
+      ]
+    },
+    {
+      "id": "part2-research-q09",
+      "sourceQuestion": "Research/Communication Q9",
+      "modernOutcome": "diagnostic_metric_denominator_not_defined",
+      "verifiedAnswer": null,
+      "reason": "The statement that 23 of 30 patients have disease does not define what the denominator of 30 represents. Positive predictive value requires the denominator to be all test-positive patients; sensitivity requires all truly diseased patients; specificity requires all truly non-diseased patients. Because the test-result structure is absent, the 23/30 fraction cannot be labeled PPV, sensitivity, specificity, or accuracy from the retained wording.",
+      "references": [
+        "Standard diagnostic-test definitions; source itself flags PPV only with a question mark because the denominator is not defined"
+      ]
+    },
+    {
+      "id": "part2-trauma-q10",
+      "sourceQuestion": "Trauma Q10",
+      "modernOutcome": "low_risk_clinical_clearance_absent_from_choices",
+      "verifiedAnswer": null,
+      "reason": "The retained child is stable after a low-height fall with normal examination and no reported neurologic or neck findings. The validated 2024 PECARN cervical-spine injury rule places children with no high-risk or intermediate-risk factors in a group for whom clinical clearance without imaging is appropriate. CT is therefore not supported, and even plain radiographs are not required by the modern rule in a truly no-risk-factor child. Because clinical clearance/no imaging is absent from the retained options, no answer should be forced.",
+      "references": [
+        "Leonard JC et al. PECARN prediction rule for cervical spine imaging of children after blunt trauma. Lancet Child Adolesc Health. 2024",
+        "PECARN C-Spine Imaging Rule: no risk factors -> consider clinical clearance"
+      ]
+    },
+    {
+      "id": "part2-nephro-cystic-q46",
+      "sourceQuestion": "Nephrology Q46",
+      "modernOutcome": "image_and_option_set_incomplete_source_has_no_answer",
+      "verifiedAnswer": null,
+      "reason": "The original ultrasound is essential to distinguish the cystic-kidney pattern, yet it is not linked for review and the source itself is uncertain whether the image represents ARPKD or ADPKD. Only one option is preserved and the source explicitly records no correct answer. Age, family history, liver findings, cyst distribution, and the complete option set are all missing. The item must remain non-publishable until the original image and choices are recovered.",
+      "references": [
+        "Canonical source record explicitly states Correct answer: X and requires recovery of the original ultrasound and option set"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 4,
+    "resolvedToModernVerifiedAnswer": 0,
+    "retainedNonPublishable": 4,
+    "recalledAnswersOverwritten": 0,
+    "aggregateFromPriorSharedState": {
+      "startingResolutionReviewed": 111,
+      "startingCleanModernAnswers": 29,
+      "startingRetainedNonPublishable": 82,
+      "resolutionReviewedAfterThisBatch": 115,
+      "cleanModernAnswersAfterThisBatch": 29,
+      "retainedNonPublishableAfterThisBatch": 86,
+      "remainingConflictsNotYetResolutionReviewed": 16
+    }
+  }
+}
