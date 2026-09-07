@@ -27,24 +27,33 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch02-heme-05-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch03-nephro-06-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch04-endo-rheum-02-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch05-7-20260907.json`
 
 ### Current-guidance resolution progress
-- **33 conflicting records reviewed** in resolution passes.
-- **8 clean modern answers** supported by retained stems/options:
+- **40 conflicting records reviewed** in resolution passes.
+- **11 clean modern answers** supported by retained stems/options:
   - Cardiology Q26 → **B, synchronized cardioversion**.
   - Cardiology Q27 → **B, synchronized cardioversion**.
   - Endocrinology Q55 → **C, both IFG and IGT** under ADA 2026 criteria.
   - Hematology Q48 → **D, factor XII deficiency**.
   - Hematology Q17 → **D, paroxysmal nocturnal hemoglobinuria**.
   - Nephrology/Urology Q62 → **A, testicular torsion** for the retained stem with reduced Doppler perfusion.
-  - Endocrinology Q15 → **A, GnRH agonist is not the treatment to assume for gonadotropin-independent McCune-Albright precocious puberty**.
-  - Rheumatology Q12 → **C, 8,000 WBC with 30% PMN**, best fit among retained choices for inflammatory JIA synovial fluid.
-- **25 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient severity/risk/volume context, missing original media, or internally malformed data.
+  - Endocrinology Q15 → **A**, based on modern McCune-Albright peripheral-precocious-puberty management framing.
+  - Rheumatology Q12 → **C, 8,000 WBC with 30% PMN**, best retained fit for inflammatory JIA synovial fluid; not a diagnostic cutoff.
+  - Hematology Q10 → **A, liver/biliary ultrasound** for acute RUQ pain with bilirubin/liver-test abnormalities in SCD.
+  - Gastroenterology Q79 → **B, pelvic MRI** among retained options for suspected psoas/pelvic abscess in Crohn disease.
+  - Gastroenterology Q85 → **B, transabdominal ultrasound** as the recommended initial imaging option, with the caveat that imaging may be unnecessary when pediatric acute-pancreatitis criteria are already met clinically/biochemically.
+- **29 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient severity/risk/volume context, missing original media, or internally malformed data.
 - **0 recalled answers overwritten**.
 
-### Latest Endocrinology/Rheumatology resolution pass
-- Endocrinology Q15: McCune-Albright peripheral precocious puberty is gonadotropin-independent. Current MAS guidance treats the autonomous sex-steroid process with peripheral-directed therapy; GnRH agonist is added if secondary central puberty develops. The retained negative-framing option A is therefore valid.
-- Rheumatology Q12: published JIA synovial-fluid series show inflammatory counts with a wide range, commonly well below the very high neutrophilic counts of acute bacterial arthritis. Option C is the best retained fit, but the exact numeric pattern is not a diagnostic cutoff.
+### Latest mixed resolution pass — 7 reviewed
+- Hematology Q10: resolved to liver/biliary ultrasound.
+- Hematology Q13: behavioral/neurocognitive referral threshold remains under-specified; both retained concerns can justify assessment depending on context.
+- Critical Care Q38: NIV versus invasive ventilation in SMA depends on airway protection, secretion burden, mental status, hemodynamics, and NIV failure; original radiograph remains unavailable.
+- Critical Care Q45: thiopental-based TBI RSI framing is historical; ketamine is no longer contraindicated solely for ICP, and no retained combination cleanly represents a universal modern regimen.
+- Gastro Q79: resolved to pelvic MRI among retained options.
+- Gastro Q80: Kasai hepatoportoenterostomy is the modern first-line operation for biliary atresia; it is absent from retained choices, so the item remains non-publishable.
+- Gastro Q85: resolved to transabdominal ultrasound as initial imaging if imaging is requested; diagnostic imaging may be unnecessary when two pancreatitis criteria are already present.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -67,8 +76,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large clinical conflict-resolution batches through remaining Hematology, Endocrinology, Critical Care, Gastroenterology, and Infectious Diseases. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue large clinical conflict-resolution batches through remaining Endocrinology, Critical Care, Gastroenterology, Infectious Diseases, Oncology, Genetics, Respiratory, and Behavioral/Psychiatry conflicts. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **33 clinical conflicts have now been resolution-reviewed**, with **8 clean modern answer resolutions** and **25 correctly retained as invalid/under-specified/context-dependent**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **40 clinical conflicts have now been resolution-reviewed**, with **11 clean modern answer resolutions** and **29 correctly retained as invalid/under-specified/context-dependent**.
