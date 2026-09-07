@@ -1,0 +1,103 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch04-8-20260907",
+  "scope": "Next current-guidance conflict-resolution pass across Hematology, Critical Care, Rheumatology, and Gastroenterology after 31 prior resolution-reviewed conflicts.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options support a defensible current single-best answer.",
+    "Do not invent missing options, severity features, images, or management context.",
+    "If modern guidance shows that the best action is absent or the answer is context-dependent, retain verifiedAnswer=null and keep the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-heme-q10-scd-ruq-ultrasound",
+      "modernOutcome": "resolved",
+      "verifiedAnswer": "A",
+      "reason": "In a child with sickle cell disease who has acute right-upper-quadrant pain with abnormal bilirubin/liver tests, hepatobiliary disease and gallstone complications are important causes. Pediatric SCD hepatobiliary literature recommends urgent abdominal ultrasonography in this acute setting to assess gallstones/biliary complications. Among the retained options, liver/biliary ultrasound is the defensible first investigation.",
+      "references": [
+        "Hepatobiliary complications in children with sickle cell disease: acute abdominal pain plus abnormal liver tests should prompt ultrasonography",
+        "Clinical management of sickle cell liver disease in children and young adults"
+      ]
+    },
+    {
+      "id": "part2-heme-q13-scd-psych-referral",
+      "modernOutcome": "under_specified_behavioral_referral_question",
+      "verifiedAnswer": null,
+      "reason": "Sickle cell disease can be associated with neurocognitive, behavioral, attention, school-performance, anxiety, and mood concerns. Both an unexplained panic episode and concentration problems may justify further psychological/neurocognitive assessment depending on severity and persistence. The retained stem does not establish a unique threshold that makes A versus B a safe single-best answer.",
+      "references": [
+        "Current SCD neurocognitive/behavioral care principles"
+      ]
+    },
+    {
+      "id": "PR-RHEUM-012",
+      "modernOutcome": "best_pattern_suggestive_but_not_verifiable_as_precise_cutoff",
+      "verifiedAnswer": null,
+      "reason": "Pediatric JIA commonly produces inflammatory synovial fluid and can overlap substantially with septic arthritis. Published pediatric cohorts show broad overlap in synovial WBC and PMN percentages; values above 50,000 are more suggestive of septic arthritis but are not exclusive, and lower counts occur in both groups. Option C is more plausible than A/B and less septic-appearing than D, but the precise 8,000 WBC/30% PMN pattern is not a validated JIA-defining cutoff. Because the source itself marks C as uncertain, do not promote it to verifiedAnswer.",
+      "references": [
+        "Acute Arthritis in Children: How to Discern between Septic and Non-Septic Arthritis?",
+        "Pediatric synovial-fluid studies showing substantial JIA/septic-arthritis overlap"
+      ]
+    },
+    {
+      "id": "part2-cc-q38",
+      "modernOutcome": "respiratory_support_depends_on_airway_and_failure_context",
+      "verifiedAnswer": null,
+      "reason": "Noninvasive ventilation is an established respiratory-support strategy in children with SMA and respiratory muscle weakness, but acute severe respiratory failure may require invasive ventilation when NIV fails or when airway protection, secretion burden, altered consciousness, or hemodynamic instability make NIV inappropriate. The retained stem lacks these decisive features and the original radiograph remains unavailable, so NIV versus intubation cannot be safely graded as a universal answer.",
+      "references": [
+        "Respiratory management of children with spinal muscular atrophy",
+        "SMA standards of care pulmonary and acute-care recommendations"
+      ]
+    },
+    {
+      "id": "part2-cc-q45",
+      "modernOutcome": "historical_rsi_combination_not_cleanly_supported",
+      "verifiedAnswer": null,
+      "reason": "Modern trauma/TBI literature no longer treats ketamine as contraindicated solely because of intracranial-pressure concerns; ketamine is considered acceptable in TBI, and contemporary RSI practice commonly favors hemodynamically stable induction with agents such as ketamine or etomidate plus a rapid neuromuscular blocker such as rocuronium. The source's thiopental-based option A reflects older teaching, while none of the retained multi-drug combinations cleanly represents a universal modern pediatric TBI RSI regimen. Keep non-publishable.",
+      "references": [
+        "Brain Trauma Foundation pediatric/pre-hospital TBI airway guidance",
+        "Recent trauma critical-care guidance supporting ketamine safety in TBI"
+      ]
+    },
+    {
+      "id": "part2-gi-q079",
+      "modernOutcome": "resolved_among_retained_options",
+      "verifiedAnswer": "B",
+      "reason": "Crohn disease with lower abdominal/hip pain worsened by hip extension raises concern for a psoas or pelvic abscess. CT is often used for abdominal abscess evaluation, but pediatric Crohn imaging literature specifically supports pelvic MRI for extraintestinal complications including psoas/presacral abscesses and avoids radiation. Between the retained ultrasound and pelvic MRI options, MRI is the stronger diagnostic choice.",
+      "references": [
+        "MRI in children and adolescents with chronic inflammatory bowel disease: pelvic MRI recommended for psoas/presacral abscess",
+        "Pediatric psoas abscess series confirming diagnosis with MRI or CT"
+      ]
+    },
+    {
+      "id": "part2-gi-q080",
+      "modernOutcome": "best_modern_operation_absent_from_choices",
+      "verifiedAnswer": null,
+      "reason": "For a 1-month-old infant with confirmed biliary atresia, Kasai hepatoportoenterostomy remains the primary/first-line surgical treatment aimed at restoring bile flow and preserving the native liver. Liver transplantation is used when Kasai fails, is not feasible, or advanced disease makes it necessary. Because Kasai is absent from the retained choices, neither A nor the nonspecific Roux-en-Y jejunostomy option should be promoted as the modern answer.",
+      "references": [
+        "2025 biliary-atresia outcomes review: Kasai portoenterostomy remains first-line",
+        "Saudi national biliary-atresia study: Kasai portoenterostomy is the standard initial surgical intervention",
+        "Position paper on initial treatment of biliary atresia"
+      ]
+    },
+    {
+      "id": "part2-gi-q085",
+      "modernOutcome": "resolved_to_initial_imaging_option_with_diagnostic_caveat",
+      "verifiedAnswer": "B",
+      "reason": "NASPGHAN criteria diagnose pediatric acute pancreatitis when at least two of three elements are present: compatible pain, amylase/lipase at least three times the upper limit of normal, or compatible imaging. Early imaging is often unnecessary when clinical and biochemical criteria already establish the diagnosis. If an imaging test is requested among the retained options, transabdominal ultrasound is the recommended initial study, with CT/MRI reserved for more complicated or uncertain cases. Therefore B is the best retained option, but the UI should note that imaging may not be required for diagnosis when two criteria are already met.",
+      "references": [
+        "NASPGHAN Pancreas Committee clinical report on pediatric acute pancreatitis",
+        "NASPGHAN recommendation: initial imaging may be transabdominal ultrasound; CT/MRI for selected complicated cases"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 8,
+    "resolvedToModernVerifiedAnswer": 3,
+    "retainedNonPublishable": 5,
+    "recalledAnswersOverwritten": 0,
+    "aggregateAfterThisBatch": {
+      "resolutionReviewed": 39,
+      "cleanModernAnswersInOverlays": 9,
+      "retainedInvalidUnderSpecifiedOrContextDependent": 30
+    }
+  }
+}
