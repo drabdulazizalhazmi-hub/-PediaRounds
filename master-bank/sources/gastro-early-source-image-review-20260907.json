@@ -17,6 +17,8 @@
     {"question":"Gastro Q13","page":205,"asset":"p205-x766.jpeg","width":176,"height":222,"sha256":"439b7b9fb7aaca79ac1db041ece5feab7002be8c3b9afde0d706b8f924266386","mapping":"chest radiograph showing left-sided congenital diaphragmatic hernia","status":"image_needs_review"},
     {"question":"Gastro Q14","page":206,"asset":null,"mapping":"stem refers to an X-ray finding of left-sided CDH, but page 206 contains explanatory Bochdalek/Morgagni graphics rather than the question radiograph","status":"source_image_missing"},
     {"question":"Gastro Q15","page":206,"asset":null,"mapping":"stem refers to an X-ray finding of CDH, but page 206 contains explanatory graphics rather than the question radiograph","status":"source_image_missing"},
+    {"question":"Gastro Q19","page":209,"asset":null,"mapping":"stem says a picture of congenital diaphragmatic hernia was provided, but rendered page 209 contains no corresponding question image","status":"source_image_missing"},
+    {"question":"Gastro Q20","page":209,"asset":null,"mapping":"stem says a gastroschisis picture was provided, but rendered page 209 contains no corresponding question image; page 210 only contains explanatory comparison graphics","status":"source_image_missing"},
     {"question":"Gastro Q23","page":212,"asset":"p212-x793.jpeg","width":270,"height":329,"sha256":"bc4256283992baf57fb7b82b9d37f7ebd21e5ade7f0f8f2c0ee840adfc52ec01","mapping":"abdominal radiograph referenced in functional constipation vignette","status":"image_needs_review"},
     {"question":"Gastro Q28/Q29","page":216,"asset":"p216-x808.jpeg","width":271,"height":215,"sha256":"3fc629e7e98529f78fb760a09433797581385cdb37e907d9aacd662f7d756f3e","mapping":"shared dermatitis herpetiformis clinical photograph","status":"image_needs_review"}
   ],
@@ -26,6 +28,7 @@
     "Q8 and Q9 stems mention X-rays, but the actual radiographs are absent from the rendered pages; the visible images are explanatory tables/illustrations and are not substituted for the missing question radiographs.",
     "Q10 and Q11 likewise reference X-rays that are absent from current source page 204.",
     "Q13 has an actual chest radiograph on page 205. Q14 and Q15 mention X-ray findings, but page 206 contains only explanatory graphics, so their question radiographs remain missing.",
+    "Q19 and Q20 explicitly say a picture was provided, but no question image is present on rendered source page 209; page 210 contains only an explanatory omphalocele-versus-gastroschisis comparison graphic.",
     "Q23 source explicitly states that an abdominal X-ray was provided and was suggestive of functional constipation.",
     "Q28 and Q29 use the same dermatitis-herpetiformis photograph on source page 216.",
     "These extracted image bytes are not committed to this public repository; only source-page/hash metadata is committed."
