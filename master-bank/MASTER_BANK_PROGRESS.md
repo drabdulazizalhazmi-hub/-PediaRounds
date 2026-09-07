@@ -117,3 +117,32 @@ This receipt supersedes the version 17 remaining-work note for the 60 retained G
 ### Continue without duplicating published work
 
 Use the Site-source mappings `data/import-audit/github-integration.json`, `data/import-audit/remaining-publication.json`, and `data/import-audit/remaining-clinical-review.json` before adding any source records. Do not re-import these D2 IDs or the 60 already-accounted GitHub review IDs. Unresolved clinical/policy conflicts and missing original images remain open; this publication does not close the Master Bank's medical verification queues. Part I coverage beyond the committed Q1–Q30 range must still be checked against canonical mappings before any further import.
+
+
+## Publisher receipt — 2026-09-07 — Site versions 19 and 20
+
+This receipt supersedes earlier remaining-work statements only for the items explicitly reconciled below. The existing PediaRounds Site was continued; no replacement project was created.
+
+### Published question reconciliation (version 19)
+
+- Source handoff: review/images branch at `2d5b224d374451f25edd2f97c523891ebd630115`; Part I batch at `1159e45650ed6ce1536884e3d77e188e8ff9c4a8`.
+- All 1,053 delivered GitHub source IDs have one canonical Site mapping, including the previously accounted 59 D2 records. Consult `data/import-audit/clinical-handoff.json` and the prior integration/publication audits before adding questions.
+- All 131 Part II conflicts have received overlays, including the 17 new Saudi-policy overlays. Of 44 candidate resolved keys, 30 passed exact Site stem/choice matching: 29 existing question updates and one promoted review question (`part2-trauma-q09`). The other 14 candidates remain in review. This does not certify all 131 conflicts as resolved.
+- Three confirmed duplicates were merged with preserved original variants, source years, aliases and study-progress compatibility: `2022-review-22 -> 2025-28`, `2022-review-10 -> 2025-87`, `2026-918 -> 2026-907`. Similar stems with different choices/images were preserved.
+- The mismatched `part2-gi-q085` source variant is retained in review instead of changing the answer to the different Site question `2026-342`.
+- 32 image-dependent bank records with unavailable original figures are now accessible in source review; they are not graded. Two previously hidden review records are also visible.
+- Current inventory: **1,867 canonical bank records, 1,835 available in the quiz, 505 visible review records, 2,340 unique learning records across bank/review**. Review records include incomplete materials and are not all complete MCQs.
+- Added 28 saved Arabic explanations/scenarios, bringing the saved total to **162**. On-demand Arabic generation for unsaved questions remains unconfigured; no API key was created and no universal Arabic fix is claimed.
+- Version 19 source: `26e57d018e4180a77d9060b58d845ce85d2df21a`; production deployment `appgdep_6a9e9a5227b48191b2ca21852bf32934` succeeded. Its 27 targeted regression checks passed.
+
+### Personal timed exam (version 20)
+
+- Replaced visible install-app buttons with **الاختبار التجريبي** at `/exam`.
+- Each user's attempt independently samples 120 complete eligible questions without repeated canonical IDs or normalized stems. Starting again generates a new random selection; no promise of zero overlap across separate attempts is made.
+- 90 active minutes; forward-only navigation, with previous answers locked on advancing. One optional break of up to 10 minutes is offered after question 60. It pauses the exam clock and resumes automatically at its limit, including when the page is closed.
+- Explicit final departure/submission ends the attempt and immediately returns the score out of 120 and percentage. Unanswered questions remain in the denominator. Answers and explanations are withheld by the server until completion or timeout.
+- Attempts use authenticated account-scoped D1 storage with revision checks, independent of existing study checkpoints and DONE records. Only the additive `0002_giant_ma_gnuci.sql` migration was generated; prior migration history was preserved.
+- User-selected practice parameters are implemented; this is not a claim that every official SCFHS exam uses 120 questions/90 minutes.
+- Validation: production build succeeded; 18 targeted exam, study-session and reconciliation tests passed, including real SQLite persistence and actual HTTP-route authorization/origin handling. TypeScript reports the same 12 diagnostics as the committed baseline, with no new diagnostics. No browser or visual QA was performed.
+- Version 20 source: `2edb2292b5b0b267735ac06d75916531147b3baa`.
+- Production deployment `appgdep_6a9e9d8c08c88191b1ad4372bf4b8ece` **succeeded**. Live exam: https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site/exam
