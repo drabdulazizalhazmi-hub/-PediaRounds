@@ -1,6 +1,6 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 10:00 +03:00
+Updated: 2026-09-07 10:08 +03:00
 Active branch: `master-bank/post-merge-audit`
 Active PR: #3 — `Continue PediaRounds post-merge audit`
 Base: `main`
@@ -24,12 +24,14 @@ Previous PR #2 was merged into `main` on 2026-09-07.
 5. Review clinically conflicting/outdated keys after structural/source integrity is stable.
 
 ## Latest synchronized work
-- PR #2 merged; all earlier Master Bank work is now on `main`.
-- Active continuation branch/PR: `master-bank/post-merge-audit` / PR #3.
+- Active continuation branch/PR remains `master-bank/post-merge-audit` / PR #3.
 - Pulmonary source-image review completed for Q6, Q9, Q10, Q12.
-- Gastro source-image review covers Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75 and Q81.
-- `master-bank/sources/question-image-linkage-20260907.json` explicitly ties recovered Gastro source-image metadata to canonical question IDs and record paths.
-- **Gastro Q63 canonical linkage is now resolved** as `part2-gi-q063-small-bowel-obstruction` in `master-bank/data/09-gastroenterology-hepatology-nutrition/gastro-part2-batch01-supported.json`; its recovered image `p238-x892.jpeg` is linked with status `image_needs_review`.
+- Gastro source-image review now includes Q1/Q2, Q3, Q23, Q28/Q29, Q56, Q57, Q63, Q64, Q65, Q68, Q70, Q73, Q74/Q75 and Q81.
+- New private review package `PediaRounds_gastro_early_source_image_review.zip` contains recovered early Gastro assets; current package hash is `f736a9858315d42a81c175b99036819e99c996e92eae0d8687fd28df7e5aa41e`.
+- Q1 and Q2 share the single small-left-colon contrast-enema image on source page 197; Q3 has its own contrast-enema image on page 198.
+- Q28 and Q29 share the dermatitis-herpetiformis photo on source page 216.
+- `master-bank/sources/question-image-linkage-20260907.json` now links canonical IDs for Q1, Q2, Q3, Q23, Q28, Q29 plus the previously linked later Gastro questions.
+- Gastro Q10 and Q11 explicitly reference X-ray pictures in the source stems, but no corresponding image is present on rendered source page 204; both are tracked as `source_image_missing` rather than fabricated.
 - Gastro Q56/Q57 remain conflicting because the source itself questions image interpretation/definitive testing.
 - Gastro Q73/Q74 remain incomplete recalls because missing distractors were not preserved; source images are linked but no options were invented.
 - Pulmonary Q14 still references an X-ray not present as an embedded/raster asset in the current source page and remains `image_missing`.
