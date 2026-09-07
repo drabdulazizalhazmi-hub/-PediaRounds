@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
-"""Detect exact and near-duplicate PediaRounds questions without deleting anything."""
+"""Detect exact and near-duplicate PediaRounds questions without deleting anything.
+
+The near-duplicate pass is optimized without weakening the requested similarity
+threshold: rows are sorted by stem length, pairs that cannot mathematically reach the
+threshold are skipped, and ``SequenceMatcher.quick_ratio()`` is used as a safe upper-
+bound prefilter before the more expensive full ratio.
+"""
 from __future__ import annotations
+
 import argparse
 import hashlib
 import json
@@ -38,10 +45,26 @@ def norm(text: str) -> str:
 
 def signature(q: dict[str, Any]) -> str:
     opts = "|".join(
-        f"{o.get('key','')}:{o.get('text','')}" for o in (q.get("options") or []) if isinstance(o, dict)
+        f"{o.get('key','')}:{o.get('text','')}"
+        for o in (q.get("options") or [])
+        if isinstance(o, dict)
     )
     raw = norm(str(q.get("stemEn") or "") + "|" + opts)
     return hashlib.sha256(raw.encode()).hexdigest()
+
+
+def minimum_length_ratio_for_similarity(threshold: float) -> float:
+    """Return the minimum shorter/longer length ratio that can reach threshold.
+
+    SequenceMatcher's ratio is ``2*M/(len(a)+len(b))``. Even in the best possible
+    case M cannot exceed the shorter length. Therefore a pair with length ratio r
+    cannot reach threshold t unless ``2r/(1+r) >= t``, or ``r >= t/(2-t)``.
+    """
+    if threshold <= 0:
+        return 0.0
+    if threshold >= 1:
+        return 1.0
+    return threshold / (2.0 - threshold)
 
 
 def main() -> int:
@@ -49,27 +72,25 @@ def main() -> int:
     ap.add_argument("--fail-exact", action="store_true")
     ap.add_argument("--near-threshold", type=float, default=0.94)
     args = ap.parse_args()
+    if not 0.0 <= args.near_threshold <= 1.0:
+        ap.error("--near-threshold must be between 0 and 1")
 
     rows: list[tuple[str, str, str]] = []
-    for path in DATA.rglob("*.json"):
-        try:
-            obj = json.loads(path.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        for q in iter_questions(obj):
-            rows.append((str(q.get("id") or ""), norm(str(q.get("stemEn") or "")), str(path.relative_to(ROOT))))
+    exact: defaultdict[str, list[tuple[str, str]]] = defaultdict(list)
 
-    exact = defaultdict(list)
-    sig_to_q = {}
+    # Parse each JSON file once and build both the near-duplicate rows and exact
+    # signature table in the same pass.
     for path in DATA.rglob("*.json"):
         try:
             obj = json.loads(path.read_text(encoding="utf-8"))
         except Exception:
             continue
+        rel = str(path.relative_to(ROOT))
         for q in iter_questions(obj):
-            s = signature(q)
-            exact[s].append((str(q.get("id") or ""), str(path.relative_to(ROOT))))
-            sig_to_q[s] = q
+            qid = str(q.get("id") or "")
+            stem = norm(str(q.get("stemEn") or ""))
+            rows.append((qid, stem, rel))
+            exact[signature(q)].append((qid, rel))
 
     exact_groups = [v for v in exact.values() if len(v) > 1]
     print(f"Questions scanned: {len(rows)}")
@@ -77,20 +98,30 @@ def main() -> int:
     for group in exact_groups:
         print("EXACT", " | ".join(f"{qid}@{path}" for qid, path in group))
 
-    near = []
-    # Restrict O(n^2) comparison to stems with similar lengths.
-    for i, (id1, s1, p1) in enumerate(rows):
-        if not s1:
-            continue
-        for id2, s2, p2 in rows[i+1:]:
-            if not s2 or id1 == id2:
+    near: list[tuple[float, str, str, str, str]] = []
+    nonempty = sorted((row for row in rows if row[1]), key=lambda row: len(row[1]))
+    min_len_ratio = minimum_length_ratio_for_similarity(args.near_threshold)
+
+    for i, (id1, s1, p1) in enumerate(nonempty):
+        len1 = len(s1)
+        max_len = float("inf") if min_len_ratio == 0 else len1 / min_len_ratio
+
+        for id2, s2, p2 in nonempty[i + 1 :]:
+            len2 = len(s2)  # len2 >= len1 because rows are length-sorted
+            if len2 > max_len:
+                break
+            if id1 == id2:
                 continue
-            ratio_len = min(len(s1), len(s2)) / max(len(s1), len(s2))
-            if ratio_len < 0.75:
+
+            matcher = SequenceMatcher(None, s1, s2)
+            # quick_ratio() is an upper bound on ratio(), so rejecting a pair here
+            # cannot hide a true match at or above the requested threshold.
+            if matcher.quick_ratio() < args.near_threshold:
                 continue
-            score = SequenceMatcher(None, s1, s2).ratio()
+            score = matcher.ratio()
             if score >= args.near_threshold:
                 near.append((score, id1, p1, id2, p2))
+
     near.sort(reverse=True)
     print(f"Near-duplicate pairs >= {args.near_threshold:.2f}: {len(near)}")
     for score, id1, p1, id2, p2 in near[:200]:
