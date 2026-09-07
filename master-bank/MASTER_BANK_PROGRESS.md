@@ -28,32 +28,43 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch03-nephro-06-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch04-endo-rheum-02-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch05-7-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch06-12-20260907.json`
 
 ### Current-guidance resolution progress
-- **40 conflicting records reviewed** in resolution passes.
-- **11 clean modern answers** supported by retained stems/options:
-  - Cardiology Q26 → **B, synchronized cardioversion**.
-  - Cardiology Q27 → **B, synchronized cardioversion**.
-  - Endocrinology Q55 → **C, both IFG and IGT** under ADA 2026 criteria.
-  - Hematology Q48 → **D, factor XII deficiency**.
-  - Hematology Q17 → **D, paroxysmal nocturnal hemoglobinuria**.
-  - Nephrology/Urology Q62 → **A, testicular torsion** for the retained stem with reduced Doppler perfusion.
-  - Endocrinology Q15 → **A**, based on modern McCune-Albright peripheral-precocious-puberty management framing.
-  - Rheumatology Q12 → **C, 8,000 WBC with 30% PMN**, best retained fit for inflammatory JIA synovial fluid; not a diagnostic cutoff.
-  - Hematology Q10 → **A, liver/biliary ultrasound** for acute RUQ pain with bilirubin/liver-test abnormalities in SCD.
-  - Gastroenterology Q79 → **B, pelvic MRI** among retained options for suspected psoas/pelvic abscess in Crohn disease.
-  - Gastroenterology Q85 → **B, transabdominal ultrasound** as the recommended initial imaging option, with the caveat that imaging may be unnecessary when pediatric acute-pancreatitis criteria are already met clinically/biochemically.
-- **29 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient severity/risk/volume context, missing original media, or internally malformed data.
+- **52 conflicting records reviewed** in resolution passes.
+- **14 clean modern answers** supported by retained stems/options.
+- **38 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient severity/risk/volume context, missing original media, or internally malformed data.
 - **0 recalled answers overwritten**.
 
-### Latest mixed resolution pass — 7 reviewed
-- Hematology Q10: resolved to liver/biliary ultrasound.
-- Hematology Q13: behavioral/neurocognitive referral threshold remains under-specified; both retained concerns can justify assessment depending on context.
-- Critical Care Q38: NIV versus invasive ventilation in SMA depends on airway protection, secretion burden, mental status, hemodynamics, and NIV failure; original radiograph remains unavailable.
-- Critical Care Q45: thiopental-based TBI RSI framing is historical; ketamine is no longer contraindicated solely for ICP, and no retained combination cleanly represents a universal modern regimen.
-- Gastro Q79: resolved to pelvic MRI among retained options.
-- Gastro Q80: Kasai hepatoportoenterostomy is the modern first-line operation for biliary atresia; it is absent from retained choices, so the item remains non-publishable.
-- Gastro Q85: resolved to transabdominal ultrasound as initial imaging if imaging is requested; diagnostic imaging may be unnecessary when two pancreatitis criteria are already present.
+### Clean modern answers currently supported in review overlays
+- Cardiology Q26 → **B, synchronized cardioversion**.
+- Cardiology Q27 → **B, synchronized cardioversion**.
+- Endocrinology Q55 → **C, both IFG and IGT** under ADA 2026 criteria.
+- Hematology Q48 → **D, factor XII deficiency**.
+- Hematology Q17 → **D, paroxysmal nocturnal hemoglobinuria**.
+- Nephrology/Urology Q62 → **A, testicular torsion** for the retained stem with reduced Doppler perfusion.
+- Endocrinology Q15 → **A**, based on current McCune-Albright peripheral-precocious-puberty management framing.
+- Rheumatology Q12 → **C, 8,000 WBC with 30% PMN**, best retained fit for inflammatory JIA synovial fluid; not a diagnostic cutoff.
+- Hematology Q10 → **A, liver/biliary ultrasound** for acute RUQ pain with bilirubin/liver-test abnormalities in SCD.
+- Gastroenterology Q79 → **B, pelvic MRI** among retained options for suspected psoas/pelvic abscess in Crohn disease.
+- Gastroenterology Q85 → **B, transabdominal ultrasound** as the recommended initial imaging option when imaging is requested.
+- Sleep Q17 → **A, nightmares** based on late-night REM timing.
+- Pulmonary Q6 (ABPA) → **D, productive cough with brown mucus plugs** as the strongest current supporting feature among retained choices under revised ISHAM criteria.
+- Oncology Q2 (Fanconi anemia) → **D, myelodysplastic syndrome** as the best retained hematologic-risk answer, with major AML risk also acknowledged.
+
+### Latest mixed resolution pass — 12 reviewed
+- Sleep Q17 resolved to nightmares based on timing.
+- Pulmonary Q6 resolved to brown mucus plugs as the strongest current ABPA supporting feature; image publication gate remains.
+- Asthma Q28 remains invalid because GINA 2026 severity is treatment-intensity based rather than one spirometric variable.
+- Infectious Q80 bacterial tracheitis remains invalid because modern empiric treatment is combination broad-spectrum/MRSA coverage absent from the single-choice options.
+- Infectious Q100 malaria remains invalid because species, severity and acquisition/resistance context are missing and artemisinin monotherapy wording is inadequate.
+- Genetics Q19 remains no-correct-option Noonan recall.
+- Genetics Q24 remains invalid because anencephaly is a subtype of open neural tube defect, overlapping A and C.
+- Genetics Q25 remains multiple-valid-context because both advanced maternal and paternal age can prompt genetic counseling.
+- Oncology Q2 resolved to MDS as the best retained answer.
+- Oncology Q8 remains unresolved because the diagnosis needed to justify eculizumab is not established.
+- Behavioral Q12 remains context-dependent because ADHD diagnosis/management requires setting/impairment information.
+- Psychiatry Q33 remains non-publishable because current agitation care uses environmental safety/verbal de-escalation and restraint only when necessary after less restrictive measures fail.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -76,8 +87,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large clinical conflict-resolution batches through remaining Endocrinology, Critical Care, Gastroenterology, Infectious Diseases, Oncology, Genetics, Respiratory, and Behavioral/Psychiatry conflicts. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue large clinical conflict-resolution batches through remaining Endocrinology, Critical Care, Gastroenterology, Infectious Diseases, Oncology, Genetics, Respiratory, and Behavioral/Psychiatry conflicts not yet covered by resolution overlays. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **40 clinical conflicts have now been resolution-reviewed**, with **11 clean modern answer resolutions** and **29 correctly retained as invalid/under-specified/context-dependent**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **52 clinical conflicts have now been resolution-reviewed**, with **14 clean modern answer resolutions** and **38 correctly retained as invalid/under-specified/context-dependent**.
