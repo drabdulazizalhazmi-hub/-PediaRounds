@@ -100,3 +100,24 @@ The initial Part II Master Bank has been merged. Part I 2025 import is now under
 ---
 
 **Handoff rule:** GitHub wins over chat memory. Work forward from the current branch and leave the next conversation a clean state.
+
+## Published Site integration — 2026-09-07, version 17
+
+The user confirmed all other conversations have stopped updates and this continuation owns the Site integration. The previous active batch claims are retained above as history, not authorization for parallel work. Do not restart source extraction or create another Site.
+
+- Existing Site: [PediaRounds](https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site)
+- Project: `appgprj_6a9b542a7a7c81919e2e97f30ed411bd`
+- Published version: **17**; deployment status: **succeeded**.
+- Site source commit: `61a630836df5da91013b47a86a2a837cb8c704e7` (Sites source repository).
+- Source snapshots used: PR #5 content commit `9160263aa5de9851f8558ddf6bb33959ca61be5d`; Part I 2025 Q1–Q30 commit `a814696035376e64a6b89b0e9c43c351df2da55d`.
+- **1053 source records accounted for**: **993 linked records**, **60 new non-scoring source-review records**. Linked count includes canonical duplicate resolution; it is not a new-question count.
+- **1851 original bank questions preserved unchanged**, including stable UIDs, stems, choices, source keys and protected original figures. No progress schema migration or DONE/checkpoint reset.
+- **889 existing main-bank questions** receive supplemental source reviews; **960 existing records** are enriched when existing review items are included.
+- Source-review total is now **440 records** before existing hidden-image filters. This includes incomplete recalls and is not a count of complete scored MCQs.
+- Saved Arabic pre-answer scenarios increased from **50 to 116**, each tied to an exact original bank stem. Existing curated explanations retain priority.
+- **0 new scored questions**. Source-only keys without existing verified/corroborated/corrected status are displayed as unscored source review. Clinical overlay notes are shown explicitly; imported source keys are not silently promoted to verified answers.
+- New review UI supports source options, saved Arabic scenarios, submission before key reveal, counters, filters, and visible conflict-resolution notes. Original source options remain with their own review wording.
+- Validation: production build succeeded; 17 scenario, media, navigation and DONE regression checks passed; original-bank equality, unique IDs, complete source accounting, and clean Git diff checks passed. No browser QA was performed in this run.
+
+### Remaining work, without re-importing completed ranges
+The Site integration is published; independent clinical verification and missing original-image resolution remain governed by the queues above. The 60 additional review records require final equivalence/completeness checks before any promotion into scored sessions. No claim is made that the medical verification queues are closed. Continue Part I only after the committed Q1–Q30 range; use the integration mapping in the Site source (`data/import-audit/github-integration.json`) before adding records. D2 Q37–Q96 from prior bundles was not imported by this deployment.
