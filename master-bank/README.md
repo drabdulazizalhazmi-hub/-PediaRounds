@@ -2,6 +2,10 @@
 
 This directory defines the merge workflow for the PediaRounds pediatric question bank.
 
+## Cross-chat coordination
+
+All ChatGPT conversations working on this Master Bank must treat `master-bank/MASTER_BANK_PROGRESS.md` as the shared handoff and coordination file. Before starting a batch, read that file and the current PR #2 changed-file list; after a successful batch, update the progress file using its latest blob SHA. GitHub state takes precedence over stale chat memory.
+
 ## Core rules
 
 1. Organize questions using the 19 SCFHS Saudi Postgraduate Diploma in Paediatrics modules.
