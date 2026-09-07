@@ -1,0 +1,18 @@
+{
+  "purpose": "Canonical linkage between early Infectious Diseases source-derived question records and recovered original source images for private review.",
+  "branch": "master-bank/post-merge-audit",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "links": [
+    {"questionId":"part2-id-viral-q08","questionNumber":"Infectious Diseases Q8","recordPath":"master-bank/data/11-infectious-diseases/infectious-part2-other-viral-q08-q16.json","sourcePage":274,"reviewAsset":"q08-gloves-socks.jpg","sha256":"c641aa3fa4570e448f1933392d82d376fad56217947d8d03c1732c0296be3574","status":"image_needs_review","publicAssetPath":null},
+    {"questionId":"part2-id-viral-q09","questionNumber":"Infectious Diseases Q9","recordPath":"master-bank/data/11-infectious-diseases/infectious-part2-other-viral-q08-q16.json","sourcePage":275,"reviewAsset":"q09-cold-panniculitis.jpg","sha256":"9ff536b5ff2934491a5dff4ef5d17226546182b2678410b1df085a050994ffba","status":"image_needs_review","publicAssetPath":null},
+    {"questionId":"part2-id-viral-q12","questionNumber":"Infectious Diseases Q12","recordPath":"master-bank/data/11-infectious-diseases/infectious-part2-other-viral-q08-q16.json","sourcePage":276,"reviewAsset":"q12-infectious-mononucleosis.jpg","sha256":"f9f0ac42985c0533a38ee65139d497b0482d90741eadeb9fa838cc34889428d3","status":"image_needs_review","publicAssetPath":null},
+    {"questionId":"part2-id-viral-q17","questionNumber":"Infectious Diseases Q17","recordPath":"master-bank/data/11-infectious-diseases/infectious-part2-other-viral-q17-q22.json","sourcePage":279,"reviewAssets":[{"asset":"q17-koplik-spots.jpg","sha256":"82e1d9a938882c9370044008d8e59113d3765c6b434cffe9dde521312e3d638b"},{"asset":"q17-q18-measles-rash.jpg","sha256":"9aca1bfd8fb4f1a13c7c47f6d2222ad0cc6ebb04c7a7db5ac7555f4940154921"}],"status":"image_needs_review","publicAssetPath":null},
+    {"questionId":"part2-id-viral-q18","questionNumber":"Infectious Diseases Q18","recordPath":"master-bank/data/11-infectious-diseases/infectious-part2-other-viral-q17-q22.json","sourcePage":279,"reviewAsset":"q17-q18-measles-rash.jpg","sha256":"9aca1bfd8fb4f1a13c7c47f6d2222ad0cc6ebb04c7a7db5ac7555f4940154921","status":"image_needs_review","publicAssetPath":null,"note":"Source Q18 immediately refers to 'this skin rash' after Q17's two-image measles item; the rash image is therefore linked for review rather than treated as not-required."},
+    {"questionId":"part2-id-viral-q19","questionNumber":"Infectious Diseases Q19","recordPath":"master-bank/data/11-infectious-diseases/infectious-part2-other-viral-q17-q22.json","sourcePage":280,"reviewAsset":"q19-hmpv-cxr.jpg","sha256":"3358b2fec76b5d630e4d76b9c4538101a41a5157c2312b3e64a02a5e46eeb449","status":"image_needs_review","publicAssetPath":null}
+  ],
+  "rules": [
+    "Question records and recovered image metadata are linked by canonical questionId and recordPath.",
+    "Original image bytes stay in private review bundles until publication rights are cleared.",
+    "Image-dependent questions remain blocked until clinical image review and public-asset approval are complete."
+  ]
+}
