@@ -31,11 +31,12 @@ Resolution files:
 - `review-queue/conflicting-clinical-resolution-batch06-12-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch07-6-20260907.json`
 - `review-queue/conflicting-clinical-resolution-batch08-12-20260907.json`
+- `review-queue/conflicting-clinical-resolution-batch09-11-20260907.json`
 
 ### Current-guidance resolution progress
-- **70 conflicting records reviewed** in resolution passes.
-- **19 clean modern answers** supported by retained stems/options.
-- **51 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient clinical context, missing original media, or internally malformed data.
+- **81 conflicting records reviewed** in resolution passes.
+- **21 clean modern answers** supported by retained stems/options.
+- **60 remain non-publishable** because current guidance reveals multiple plausible answers, missing best action/test, insufficient clinical context, missing original media, version-sensitive content, or internally malformed data.
 - **0 recalled answers overwritten**.
 
 ### Clean modern answers currently supported in review overlays
@@ -58,18 +59,20 @@ Resolution files:
 - Growth & Development Q2 → **B, 7 years** for U/L segment ratio approaching 1:1 under current anthropometry references.
 - Growth & Development Q6 → **B, 9 months** as the best retained option; CDC 2026 lists sitting without support by 9 months.
 - Ophthalmology Q8 → **A, infantile/congenital nystagmus** for onset at four months with normal eye examination and normal MRI.
+- Growth & Development Q18 → **C, absent stranger anxiety at 12 months** as the clearly delayed retained social finding under CDC 2026 milestone ages.
+- Growth & Development Q21 → **A, language delay** as the best retained diagnosis, with corrected-age and audiology assessment caveats.
 
-### Latest batch08 — 12 reviewed
-- Growth Q2 and Q6 plus Ophthalmology Q8 were cleanly resolved as above.
-- Gastro Q71 remains invalid as an SBA because viral illness, HSP/IgA vasculitis, and Meckel diverticulum are recognized intussusception associations/lead-point contexts.
-- Nutrition Q14 remains under-specified; the symmetric percentile pattern does not establish one cause under current faltering-weight criteria.
-- Nutrition Q15 remains non-publishable because routine initial intestinal biopsy is not recommended and the modern initial evaluation is absent from the choices.
-- Allergy Q12 remains non-publishable because loratadine and cetirizine are both acceptable second-generation oral antihistamines and ARIA-EAACI does not recommend one specific agent for children from this generic stem.
-- Substances Q8 remains non-publishable because the toxidrome is opioid-like but opioid exposure is absent from the options.
-- Ophthalmology Q3 remains non-publishable because urgent ophthalmology evaluation for leukocoria is absent from the choices; image review remains a separate gate.
-- Ophthalmology Q10 remains malformed because chalazion and hordeolum/stye are conflated/duplicated.
-- Musculoskeletal Q16 remains non-publishable because occult-fracture immobilization/follow-up is absent from the choices and the radiograph is still a publication gate.
-- Behavioral Q21 remains context-dependent because frequent head banging requires severity, injury, developmental, and persistence context before choosing behavioral coaching versus specialty referral.
+### Latest batch09 — 11 reviewed
+- Growth Q18 and Q21 were cleanly resolved as above.
+- Growth Q15 remains under-supported because the source itself marks the caregiver/calming examination choice uncertain.
+- Neonatology Q11 remains invalid because Rh antigen inheritance probability is not hemolytic-disease risk and key sensitization/genotype context is missing.
+- Neonatology Q19 remains unresolved because congenital-syphilis treatment depends on a >=30-day maternal-treatment threshold, regimen adequacy, neonatal titers/evaluation, and follow-up; the retained `4 weeks` is 28 days.
+- Neonatology Q21 remains invalid as a single-best-answer item because current NIH guidance accepts both HIV RNA and DNA NATs in exposed infants.
+- Neonatology Q23 remains context-dependent because persistent candidemia can require fundoscopy, LP, echocardiography and abdominal imaging as part of dissemination evaluation.
+- Neonatology Q36 remains non-publishable because the waiter-tip upper-plexus pattern does not justify the retained C5-T1 option as the precise root-level answer.
+- Critical Care Q17 remains non-publishable; newer evidence shows factor VIII is not a reliable DIC-versus-liver-disease discriminator and neither retained fibrinogen nor FDP is uniquely reliable.
+- Infectious Viral Q13 remains unresolved because EBV itself can cause rash and no amoxicillin exposure was stated.
+- Infectious Immunization Q116 remains historical/version-sensitive because the 2020 question does not define which Saudi schedule revisions are being compared.
 
 ## Baseline review-status inventory from closure
 - `needs_verification`: 585
@@ -92,8 +95,8 @@ These baseline canonical counts do not automatically decrement merely because a 
 7. Source PDFs and secrets must not be committed.
 
 ## Highest-priority next work
-Continue large clinical conflict-resolution batches through remaining Critical Care, Gastroenterology, Infectious Diseases, Endocrinology, Hematology/Oncology, Genetics, Respiratory, Behavioral/Psychiatry, Neonatology, and other conflicts not yet covered by resolution overlays. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
+Continue large clinical conflict-resolution batches through the **remaining 50/131 conflicts not yet resolution-reviewed**, prioritizing complete stems/options in Critical Care, Gastroenterology, Infectious Diseases, Endocrinology, Hematology/Oncology, Genetics, Respiratory, Behavioral/Psychiatry, Neonatology, and other sections. Resolve only where retained choices support a clean current answer; otherwise document why the item remains non-publishable. After conflict-resolution passes, move to large `needs_verification` batches.
 
 ---
 
-**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **70 clinical conflicts have now been resolution-reviewed**, with **19 clean modern answer resolutions** and **51 correctly retained as invalid/under-specified/context-dependent**.
+**Handoff rule:** source coverage is complete; sparse/media/outdated work is complete; all 131 conflicting records are assigned; **81 clinical conflicts have now been resolution-reviewed**, with **21 clean modern answer resolutions** and **60 correctly retained as invalid/under-specified/context-dependent/version-sensitive**.
