@@ -1,0 +1,20 @@
+{
+  "source": "7 Sep backup AFTER applying the original 11 Sep remaining-fixes patch",
+  "files": [
+    {
+      "path": "public/app.js",
+      "before": "b57a5e5be29547fdc37016bfe0d5668b966b3a465be3703cd4fb91548175f238",
+      "after": "79e26dac04f1d7dd75efec64b4850d6cee24e2aec1532ce13e6ee1bd0ee5bf3b"
+    },
+    {
+      "path": "public/question-reader.js",
+      "before": "295c8e0a89ea83c4baa43257897bf8fd07239f733a37dff9847f865e6e90ec8c",
+      "after": "2d3c7ffd525829279e8b28484af5ede8b8fdb36809e62828545e05deddc1e5d5"
+    },
+    {
+      "path": "public/study-session.js",
+      "before": "b747ebd83f845f20e02a2ea9436b3a275c0a361f91ba02dfaa60e4c319d6b2e0",
+      "after": "a3154f73fa285f162ea55228952bf5f710ccf3a46f90fdeaf7b728d999e87199"
+    }
+  ]
+}
