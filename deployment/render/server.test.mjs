@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createProbeServer, parsePort } from './server.mjs';
+import './external-backend.test.mjs';
 
 async function running(t) {
   const server = createProbeServer();
@@ -8,59 +9,52 @@ async function running(t) {
   t.after(() => new Promise(resolve => { server.close(resolve); server.closeAllConnections(); }));
   return `http://127.0.0.1:${server.address().port}`;
 }
-test('health is explicitly probe-only', async t => {
-  const base = await running(t);
-  const response = await fetch(base + '/healthz');
-  assert.equal(response.status, 200);
-  assert.equal((await response.json()).scope, 'deployment-probe-only');
+test('health is explicitly process-only', async t => {
+  const base = await running(t); const response = await fetch(base + '/healthz');
+  assert.equal(response.status, 200); assert.equal((await response.json()).scope, 'external-backend-process-only');
 });
 test('application readiness fails closed', async t => {
-  const base = await running(t);
-  const response = await fetch(base + '/readyz');
-  assert.equal(response.status, 503);
-  const status = await response.json();
+  const base = await running(t); const response = await fetch(base + '/readyz');
+  assert.equal(response.status, 503); const status = await response.json();
   for (const field of ['applicationReady','questionsMigrated','accountsMigrated','progressMigrated']) assert.equal(status[field], false);
 });
 test('home is labelled setup-only, with restrictive headers', async t => {
-  const base = await running(t);
-  const response = await fetch(base);
-  const html = await response.text();
-  assert.match(html, /ليست منصة الأسئلة/);
-  assert.match(html, /Hosting setup only/);
+  const base = await running(t); const response = await fetch(base); const html = await response.text();
+  assert.match(html, /ليست منصة الأسئلة/); assert.match(html, /Hosting setup only/);
   assert.doesNotMatch(html, /<form|<script|type="password"/i);
   assert.match(response.headers.get('content-security-policy'), /frame-ancestors 'none'/);
-  assert.match(response.headers.get('x-robots-tag'), /noindex/);
-  assert.equal(response.headers.get('cache-control'), 'no-store');
+  assert.match(response.headers.get('x-robots-tag'), /noindex/); assert.equal(response.headers.get('cache-control'), 'no-store');
 });
 test('spoofed legacy identity headers cannot unlock data', async t => {
   const base = await running(t);
   for (const path of ['/api/questions', '/api/progress', '/api/source-documents/test', '/quiz', '/login', '/signin-with-chatgpt']) {
     const response = await fetch(base + path, { headers: { 'oai-authenticated-user-id':'spoof', 'oai-authenticated-user-email':'spoof@example.test' } });
-    assert.equal(response.status, 503, path);
-    assert.equal(response.headers.get('set-cookie'), null);
+    assert.equal(response.status, 503, path); assert.equal(response.headers.get('set-cookie'), null);
   }
 });
 test('repository files and secrets are not served', async t => {
   const base = await running(t);
-  for (const path of ['/master-bank/data/test.json', '/.env', '/.git/config', '/README.md', '/server.mjs']) {
-    assert.equal((await fetch(base + path)).status, 404, path);
-  }
+  for (const path of ['/master-bank/data/test.json', '/.env', '/.git/config', '/README.md', '/server.mjs']) assert.equal((await fetch(base + path)).status, 404, path);
 });
-test('writes are rejected without recording personal data', async t => {
-  const base = await running(t);
-  const response = await fetch(base + '/login', { method:'POST', body:'password=not-stored' });
-  assert.equal(response.status, 405);
-  assert.equal(response.headers.get('allow'), 'GET, HEAD');
+test('legacy writes are rejected without recording personal data', async t => {
+  const base = await running(t); const response = await fetch(base + '/login', { method:'POST', body:'password=not-stored' });
+  assert.equal(response.status, 405); assert.equal(response.headers.get('allow'), 'GET, HEAD');
 });
 test('HEAD has no body and robots disables indexing', async t => {
-  const base = await running(t);
-  const response = await fetch(base, { method:'HEAD' });
-  assert.equal(response.status, 200);
-  assert.equal(await response.text(), '');
+  const base = await running(t); const response = await fetch(base, { method:'HEAD' });
+  assert.equal(response.status, 200); assert.equal(await response.text(), '');
   assert.match(await (await fetch(base + '/robots.txt')).text(), /Disallow: \//);
 });
 test('port validation rejects invalid bind values', () => {
-  assert.equal(parsePort(undefined), 10000);
-  assert.equal(parsePort('12345'), 12345);
+  assert.equal(parsePort(undefined), 10000); assert.equal(parsePort('12345'), 12345);
   for (const port of ['','0','65536','-1','1.5','abc','10x']) assert.throws(() => parsePort(port));
+});
+test('external routes are wired into the deployed entrypoint and reject anonymous access',async t=>{
+ const base=await running(t);
+ for(const endpoint of ['session','progress','checkpoint']) assert.equal((await fetch(base+'/api/external/'+endpoint)).status,401);
+});
+test('backend status never implies full migration or browser login success',async t=>{
+ const base=await running(t);const status=await(await fetch(base+'/external-backend-status')).json();
+ for(const key of ['frontendIntegrated','endToEndLoginTested','existingDataMigrated'])assert.equal(status[key],false);
+ assert.doesNotMatch(JSON.stringify(status),/sb_publishable_|sb_secret_|eyJ/);
 });
