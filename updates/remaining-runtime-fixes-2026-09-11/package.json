@@ -1,0 +1,9 @@
+{
+  "name": "pediarounds-remaining-runtime-fixes",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs ../english-source-explanations-2026-09-11/tests/*.test.mjs"
+  }
+}
