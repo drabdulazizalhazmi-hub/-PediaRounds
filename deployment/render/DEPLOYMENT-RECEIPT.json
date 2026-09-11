@@ -1,24 +1,63 @@
 {
-  "verified_at_utc": "2026-09-11T16:34:35Z",
+  "verified_at_utc": "2026-09-11T18:08:06.676Z",
+  "initial_receipt_verified_at_utc": "2026-09-11T16:34:35Z",
   "scope": "hosting_probe_only_not_full_application",
+  "workspace_name": "My Workspace",
+  "workspace_id": "tea-dai2i16q1p3s73aqk43g",
   "service_id": "srv-dai2qhuq1p3s73arsa2g",
   "service_url": "https://pediarounds-render-staging.onrender.com",
   "dashboard_url": "https://dashboard.render.com/web/srv-dai2qhuq1p3s73arsa2g",
+  "repository": "drabdulazizalhazmi-hub/-PediaRounds",
+  "branch": "main",
   "initial_deploy_id": "dep-dai2qimq1p3s73arsdkg",
   "initial_deploy_commit": "b036b1d1972301c84b9b194a3abfe30940a5c247",
   "render_reported_initial_deploy_status": "live",
+  "latest_observed_deploy": {
+    "id": "dep-dai41s0ae00c73baacog",
+    "commit": "c22cf33b4ab6079529b78815d06271e03635b0d7",
+    "status": "live",
+    "trigger": "new_commit",
+    "finished_at_utc": "2026-09-11T17:57:32.182355Z"
+  },
+  "previous_observed_automatic_deploy": {
+    "id": "dep-dai41l6417fc73flasv0",
+    "commit": "493294c487e600d6dfc79a0e6c70a3a0de413cba",
+    "status": "deactivated",
+    "trigger": "new_commit",
+    "finished_at_utc": "2026-09-11T17:57:03.082844Z",
+    "interpretation": "Successfully replaced by the newer deployment, not a failed deployment."
+  },
   "render_build_tests_passed": 8,
   "render_build_tests_failed": 0,
+  "render_build_test_scope": "Deployment probe only; not the medical content, current study application, production login, or real-device audio.",
   "render_reported_compute_plan": "free",
   "configured_auto_deploy": true,
   "configured_auto_deploy_trigger": "commit",
   "auto_deploy_end_to_end_verified_at_receipt_creation": false,
-  "external_http_probe": "Not verified: the execution container could not resolve the new hostname and the web reader refused this newly created URL.",
+  "auto_deploy_end_to_end_verified": true,
+  "external_http_probe": "Verified from an independent cloud runtime: GET /healthz=200, /deployment-status=200, /=200; /readyz=503 with applicationReady=false. The local execution container still could not resolve the hostname; that local DNS failure is not evidence of a site outage.",
+  "external_http_verification": {
+    "checked_at_utc": "2026-09-11T18:08:06.676Z",
+    "method": "GET",
+    "verified": true,
+    "routes": [
+      { "path": "/healthz", "status": 200, "scope": "deployment-probe-only" },
+      { "path": "/deployment-status", "status": 200, "applicationReady": false },
+      { "path": "/readyz", "status": 503, "applicationReady": false },
+      { "path": "/", "status": 200, "page": "Hosting setup only, not the question platform" }
+    ],
+    "robots_header_on_all_checked_routes": "noindex, nofollow, noarchive"
+  },
+  "live_start_command": "node deployment/render/server.mjs",
   "application_ready": false,
   "accounts_migrated": false,
   "questions_migrated": false,
   "progress_migrated": false,
   "existing_site_modified": false,
   "private_source_or_secrets_uploaded": false,
-  "note": "This receipt records the Render control-plane result, not a full application deployment. The commit adding this file is also an automatic-deploy check; inspect the Render deploy trigger before claiming GitHub webhook verification."
+  "application_code_changed_in_this_verification": false,
+  "new_services_or_databases_created_in_this_verification": false,
+  "source_integration_status": "Latest complete runnable application source was not located in the connected repository or the available backup project. Merged repair packages are not a complete application export.",
+  "next_required_step": "Integrate the repair packages against the latest authorized application source and verify independent authentication and persistent storage before deploying the full app. Preserve existing accounts, progress and the original platform; do not replace it with an older backup.",
+  "note": "This receipt verifies GitHub-to-Render auto-deploy and direct HTTP reachability of the hosting probe only. PR #10 was already merged when this check ran; its merge does not mean the current application was repaired or published. This documentation-only update uses [skip render] to avoid an unnecessary redeploy."
 }
