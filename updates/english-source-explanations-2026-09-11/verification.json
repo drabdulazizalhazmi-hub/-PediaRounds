@@ -1,0 +1,14 @@
+{
+  "prepared_on": "2026-09-11",
+  "base_backup_commit": "6f2e93930db2a57d81971accaa3cbf3f5271f52a",
+  "base_source_commit": "fe5fa4c72090b317861dc48c8c246a443f342a14",
+  "target_behavior": "original English source explanation only",
+  "targeted_tests_passed": 7,
+  "targeted_tests_failed": 0,
+  "merged_bank_questions_scanned": 2014,
+  "english_source_explanation_available": 1463,
+  "missing_english_source_explanation": 551,
+  "arabic_leaks_in_selected_explanation": 0,
+  "live_deployed": false,
+  "reason_not_live_deployed": "current 2026-09-10 Sites checkout is newer than the available complete backup and the connected GitHub repository has no deployment workflow for the existing chatgpt.site project"
+}
