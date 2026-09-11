@@ -1,57 +1,129 @@
 # PediaRounds cross-chat coordination state
 
-Updated: 2026-09-07 09:15 +03:00
-Branch: `master-bank/scfhs-merge`
-PR: #2 — `Initialize PediaRounds Master Bank`
-Observed PR head before this sync: `925988c963a532fed9146d2a92e5869ff5f2b432`
-Observed PR size: 264 commits / 206 changed files
+Updated: 2026-09-07 12:38 +03:00
+Repository: `drabdulazizalhazmi-hub/-PediaRounds`
+PR #2: merged into `main` (merge commit `8d73d387f4fe57410f10f4ec46c10ab6dd059765`)
+Current continuation branch: `master-bank/part1-2025-batch01`
+Current continuation PR: `#6 — Import Part I 2025 Q1–Q30`
+Current Part I 2025 imported range: `Q1–Q30`
 
 ## Shared execution rules
 - Use the large Part II 4th Edition (1 May 2026) as the source-of-record for the 1023-question Part II bank.
-- Do not invent missing options, images, answers, or years.
+- Use uploaded Part I yearly Rapid Review files as the source for Part I imports.
+- Do not invent missing options, images, answers, years, or question IDs.
 - Preserve `recalledAnswer` separately from `verifiedAnswer`.
 - Keep `verifiedAnswer: null` until independent verification is recorded.
 - Image-dependent questions remain blocked until the original image/attachment is linked and reviewed.
-- Duplicate questions across years map to one canonical question while retaining all year tags.
-- Prefer UpToDate, then Nelson, then current specialty guidelines for verification.
+- Keep English TTS and Arabic explanation with English medical terminology.
+- Do not commit source PDFs or secrets.
 
-## Current priority — closure audit, not blind bulk re-import
-1. Build/maintain a comprehensive 1023-question manifest and identify true coverage gaps.
-2. Resolve duplicate/overlapping exports and keep one canonical file per question range.
-3. Recover and link image/media assets already present in source bundles/PDFs.
-4. Resolve recoverable `incomplete_recall` records from the original source before adding new material.
-5. Review clinically conflicting/outdated keys after structural/source integrity is stable.
+## Latest successful work
+- Added Part I 2025 `Q1–Q15` dataset + review queue.
+- Added Part I 2025 `Q16–Q30` dataset + review queue.
+- All 30 imported records remain unverified (`verifiedAnswer: null`).
+- Stems are transformed/paraphrased for public-repository use.
+- Q16, Q28, and Q29 add new source-image gates in the second batch.
+- Q18, Q19, Q25, and Q29 are specifically flagged for source/clinical conflict review.
 
-## Work synchronized across chats
-- `MASTER_BANK_PROGRESS.md` is the primary handoff file; read it plus the current PR file list before work.
-- QA/normalization automation has been added under `.github/workflows/` and `master-bank/tools/` (audit, manifest, duplicate detection, asset validation, answer normalization).
-- Gastroenterology source coverage has been extended through Q86; Nutrition through Q23. Both still require exact canonical-ID/duplicate audit before a final completion claim.
-- Infectious Diseases source coverage exists through Q125; do not re-import it blindly.
-- Genetics overlapping exports were reduced. Source count discrepancy remains: TOC declares 53 but source numbering reaches Q52 before Metabolic Disorders; do not fabricate Q53.
-- Neurology Q44 source text was recovered and restored.
-- Ophthalmology duplicate exports and stale Q8–Q10 review artifacts were cleaned; canonical Q1–Q10 records remain under `data/04-general-paediatrics-outpatients`, with Q5 retained as an incomplete single-option review card.
-- Sleep duplicate coverage was reduced. Q15 is preserved separately as a single-option incomplete recall; Q16–Q18 remain in the canonical respiratory/sleep batch.
-- ENT canonical file is Q1–Q9; the old Q1–Q2 duplicate was removed.
-- Infectious immunization canonical split is Q101–Q114 + Q115–Q125; older overlapping files were removed.
-- Additional Genetics duplicate range exports were removed; retain only the canonical non-overlapping range files now visible in PR #2.
+## Current priority
+1. Continue Part I 2025 after Q30 in large source-backed batches.
+2. Because the source PDF is organized by specialty rather than numeric order, search exact question IDs before writing.
+3. Retrieve full stem/options from the source; do not infer missing text.
+4. Keep all source images as publication gates until original assets are linked.
+5. Verify medically only after structural/source integrity is preserved, prioritizing UpToDate, Nelson, then current specialty guidelines.
 
-## Known structural/clinical gates
-- Image-dependent records remain blocked until original assets are linked; do not substitute generated images for source images.
-- Pulmonary/Sleep/Asthma contains legacy + canonical range overlap and incomplete image/single-option recalls; audit before any new import.
-- Gastro generic `batch*-supported` files overlap newer explicit range files; deduplicate by canonical question ID, not filename alone.
-- Medical Ethics/Patient Safety contains structured records plus incomplete-recall records; keep incomplete records outside normal publishable MCQs.
-- Review statuses `conflicting`, `outdated`, `incomplete_recall`, `image_missing`, `image_needs_review` must survive cleanup until resolved.
-
-## Parallel material not yet considered imported
-- D2 2025 Q37–Q96 preview set (59 items) requires production-schema mapping and deduplication against the live bank before import.
-- Additional local preview sets (including 30-question and 15-question ranges) are not considered published/imported until deduplicated, mapped, reviewed, and committed.
+## Existing Part II state inherited from main
+- Dermatology Q1–Q22 and Ophthalmology Q1–Q10 already exist; do not re-import.
+- ENT Q1–Q9 exists.
+- Neonatology Q1–Q43 exists.
+- Neurology Q1–Q50 exists by source-backed files.
+- Critical Care Q1–Q55, Trauma Q1–Q44, Substances/Toxicology Q1–Q15, Behavioral/Psych Q1–Q33 exist.
+- Cardiology, Endocrinology, Hematology/Oncology, Nephrology/Urology, Rheumatology, Musculoskeletal and Infectious major ranges are represented.
+- Gastro/Nutrition and Pulmonary/Sleep/Asthma still need canonical overlap audits rather than blind re-import.
+- Genetics source numbering reaches Q52 although TOC says 53; do not fabricate Q53.
+- Pulmonary Q7/Q9/Q10 and Sleep Q15 incomplete recalls are already preserved in review/canonical incomplete-recall files; do not duplicate them as normal MCQs.
 
 ## Next action shared by all chats
-1. Read this file, `MASTER_BANK_PROGRESS.md`, and current PR filenames.
-2. Run/advance the canonical coverage audit and manifest rather than restarting a completed section.
-3. Prioritize recoverable images/attachments and incomplete recalls already present in source material.
-4. Remove only proven duplicate exports; never delete the sole source-backed canonical record.
-5. After each successful batch, update this file with the new PR head/commit and exact completed work.
+1. Continue Part I 2025 with exact source IDs beginning at Q31.
+2. Prefer a large next batch when full source data is recoverable.
+3. Update PR #6 rather than opening another overlapping continuation PR.
+4. After the batch, update this file and `MASTER_BANK_PROGRESS.md`.
 
 ## Coordination rule
-GitHub is the shared memory between chats. Prefer updating canonical records over creating another overlapping export. If another chat has advanced the branch, refetch before writing and merge the newer state rather than overwriting it.
+GitHub is the shared memory between chats. If another chat advances PR #6 or the branch, refetch before writing and merge the newer state rather than overwriting it.
+
+## Current Site integration owner — user handoff, 2026-09-07
+The user asked one continuation conversation to take over, avoid restarting, stop parallel work, and finish the existing Site quickly. This conversation cannot technically stop other conversations. Please do not begin another source import, rewrite question ranges, or deploy the Site concurrently. Continue from the committed records; preserve any work already completed.
+
+Active work: connect the current Master Bank and Part I 2025 Q1–Q30 to the existing PediaRounds Site (`appgprj_6a9b542a7a7c81919e2e97f30ed411bd`). The original Site source is now accessible; integration uses existing Site question UIDs, keeps DONE/checkpoints, preserves original images and source keys, and separates unresolved source reviews from scored questions. No source re-extraction is being restarted. Publishing and the final receipt will be handled by the current continuation conversation.
+
+## Published Site integration — 2026-09-07, version 17
+
+The user confirmed all other conversations have stopped updates and this continuation owns the Site integration. The previous active batch claims are retained above as history, not authorization for parallel work. Do not restart source extraction or create another Site.
+
+- Existing Site: [PediaRounds](https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site)
+- Project: `appgprj_6a9b542a7a7c81919e2e97f30ed411bd`
+- Published version: **17**; deployment status: **succeeded**.
+- Site source commit: `61a630836df5da91013b47a86a2a837cb8c704e7` (Sites source repository).
+- Source snapshots used: PR #5 content commit `9160263aa5de9851f8558ddf6bb33959ca61be5d`; Part I 2025 Q1–Q30 commit `a814696035376e64a6b89b0e9c43c351df2da55d`.
+- **1053 source records accounted for**: **993 linked records**, **60 new non-scoring source-review records**. Linked count includes canonical duplicate resolution; it is not a new-question count.
+- **1851 original bank questions preserved unchanged**, including stable UIDs, stems, choices, source keys and protected original figures. No progress schema migration or DONE/checkpoint reset.
+- **889 existing main-bank questions** receive supplemental source reviews; **960 existing records** are enriched when existing review items are included.
+- Source-review total is now **440 records** before existing hidden-image filters. This includes incomplete recalls and is not a count of complete scored MCQs.
+- Saved Arabic pre-answer scenarios increased from **50 to 116**, each tied to an exact original bank stem. Existing curated explanations retain priority.
+- **0 new scored questions**. Source-only keys without existing verified/corroborated/corrected status are displayed as unscored source review. Clinical overlay notes are shown explicitly; imported source keys are not silently promoted to verified answers.
+- New review UI supports source options, saved Arabic scenarios, submission before key reveal, counters, filters, and visible conflict-resolution notes. Original source options remain with their own review wording.
+- Validation: production build succeeded; 17 scenario, media, navigation and DONE regression checks passed; original-bank equality, unique IDs, complete source accounting, and clean Git diff checks passed. No browser QA was performed in this run.
+
+### Remaining work, without re-importing completed ranges
+The Site integration is published; independent clinical verification and missing original-image resolution remain governed by the queues above. The 60 additional review records require final equivalence/completeness checks before any promotion into scored sessions. No claim is made that the medical verification queues are closed. Continue Part I only after the committed Q1–Q30 range; use the integration mapping in the Site source (`data/import-audit/github-integration.json`) before adding records. D2 Q37–Q96 from prior bundles was not imported by this deployment.
+
+## Published continuation — 2026-09-07, version 18
+
+This receipt supersedes the version 17 remaining-work note for the 60 retained GitHub review records and the D2 bundle. The same continuation remains the sole Site integration owner per the user's handoff; earlier parallel claims are historical.
+
+- Existing Site: [PediaRounds](https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site); deployment status: **succeeded**.
+- Project: `appgprj_6a9b542a7a7c81919e2e97f30ed411bd`; deployment: `appgdep_6a9e92463d0c8191b18206ac6ed353fd`.
+- Site source commit: `9600e1df1bab92cbe9c380df421a914981546eab` (Sites source repository).
+- **18 new complete scored questions published** with corroborated answers: 4 restored GitHub records and 14 D2 2025 records. Each has a source-bound Arabic pre-answer scenario, post-answer rationale, explanation of the wrong options, high-yield points, and recorded verification basis.
+- The previous **60 GitHub review records** were checked against their exact original PDF ranges: **4 promoted**, **56 retained for review**. Missing source choices were not invented; unsupported paraphrase choices were removed where the original had fewer choices.
+- All **59 supplied D2 records** in the Q37–Q96 range are accounted for: **14 new bank questions**, **37 review records**, **8 duplicates linked to existing canonical records**. Q43 is absent from the supplied bundle and was not fabricated. Q93 links to the retained Q38 review record.
+- **1851 original bank records preserved unchanged**; **1869 stored bank questions** including the 18 additions. Existing missing-source-image filters continue to withhold 33 original records, leaving **1836 available bank questions**.
+- **134 saved Arabic scenarios**. Review inventory: **473 records**, with **471 visible** after two existing image-source filters. Incomplete, image-dependent, ambiguous, and conflicting records retain their review gates.
+- The homepage now uses the requested two-line verse: “إذا لم يكن عَوْنٌ من الله للفتى ...” / “فأولُ ما يجني عليه اجتهادُهُ 👌🏻”. The heading is “Paediatric board review Part 1, Part 2 MCQs”; the description is “مراجعة مركّزة لتجميعات Part 1, Part 2 مع إجابات مشروحة وتتبّع لتقدّمك.”
+- Added a direct entry to the newly added questions. Review items now support English reading controls and save completed review activity to the existing account progress store. Stable question IDs, DONE/checkpoints, original figures, authentication, and database schema are preserved.
+- Validation: **29 relevant tests passed**, the production build including the final homepage copy succeeded, and the deployment archive was validated. No browser QA was performed.
+- Verification scope is the **18 newly published questions only**. Current primary guidelines, academic publications and clinical protocols were consulted where applicable; Q49 records dose arithmetic. Nelson/UpToDate references supplied in source commentary are preserved as source citations; no independent live access to those books/services is claimed.
+
+### Continue without duplicating published work
+
+Use the Site-source mappings `data/import-audit/github-integration.json`, `data/import-audit/remaining-publication.json`, and `data/import-audit/remaining-clinical-review.json` before adding any source records. Do not re-import these D2 IDs or the 60 already-accounted GitHub review IDs. Unresolved clinical/policy conflicts and missing original images remain open; this publication does not close the Master Bank's medical verification queues. Part I coverage beyond the committed Q1–Q30 range must still be checked against canonical mappings before any further import.
+
+
+## Publisher receipt — 2026-09-07 — Site versions 19 and 20
+
+This receipt supersedes earlier remaining-work statements only for the items explicitly reconciled below. The existing PediaRounds Site was continued; no replacement project was created.
+
+### Published question reconciliation (version 19)
+
+- Source handoff: review/images branch at `2d5b224d374451f25edd2f97c523891ebd630115`; Part I batch at `1159e45650ed6ce1536884e3d77e188e8ff9c4a8`.
+- All 1,053 delivered GitHub source IDs have one canonical Site mapping, including the previously accounted 59 D2 records. Consult `data/import-audit/clinical-handoff.json` and the prior integration/publication audits before adding questions.
+- All 131 Part II conflicts have received overlays, including the 17 new Saudi-policy overlays. Of 44 candidate resolved keys, 30 passed exact Site stem/choice matching: 29 existing question updates and one promoted review question (`part2-trauma-q09`). The other 14 candidates remain in review. This does not certify all 131 conflicts as resolved.
+- Three confirmed duplicates were merged with preserved original variants, source years, aliases and study-progress compatibility: `2022-review-22 -> 2025-28`, `2022-review-10 -> 2025-87`, `2026-918 -> 2026-907`. Similar stems with different choices/images were preserved.
+- The mismatched `part2-gi-q085` source variant is retained in review instead of changing the answer to the different Site question `2026-342`.
+- 32 image-dependent bank records with unavailable original figures are now accessible in source review; they are not graded. Two previously hidden review records are also visible.
+- Current inventory: **1,867 canonical bank records, 1,835 available in the quiz, 505 visible review records, 2,340 unique learning records across bank/review**. Review records include incomplete materials and are not all complete MCQs.
+- Added 28 saved Arabic explanations/scenarios, bringing the saved total to **162**. On-demand Arabic generation for unsaved questions remains unconfigured; no API key was created and no universal Arabic fix is claimed.
+- Version 19 source: `26e57d018e4180a77d9060b58d845ce85d2df21a`; production deployment `appgdep_6a9e9a5227b48191b2ca21852bf32934` succeeded. Its 27 targeted regression checks passed.
+
+### Personal timed exam (version 20)
+
+- Replaced visible install-app buttons with **الاختبار التجريبي** at `/exam`.
+- Each user's attempt independently samples 120 complete eligible questions without repeated canonical IDs or normalized stems. Starting again generates a new random selection; no promise of zero overlap across separate attempts is made.
+- 90 active minutes; forward-only navigation, with previous answers locked on advancing. One optional break of up to 10 minutes is offered after question 60. It pauses the exam clock and resumes automatically at its limit, including when the page is closed.
+- Explicit final departure/submission ends the attempt and immediately returns the score out of 120 and percentage. Unanswered questions remain in the denominator. Answers and explanations are withheld by the server until completion or timeout.
+- Attempts use authenticated account-scoped D1 storage with revision checks, independent of existing study checkpoints and DONE records. Only the additive `0002_giant_ma_gnuci.sql` migration was generated; prior migration history was preserved.
+- User-selected practice parameters are implemented; this is not a claim that every official SCFHS exam uses 120 questions/90 minutes.
+- Validation: production build succeeded; 18 targeted exam, study-session and reconciliation tests passed, including real SQLite persistence and actual HTTP-route authorization/origin handling. TypeScript reports the same 12 diagnostics as the committed baseline, with no new diagnostics. No browser or visual QA was performed.
+- Version 20 source: `2edb2292b5b0b267735ac06d75916531147b3baa`.
+- Production deployment `appgdep_6a9e9d8c08c88191b1ad4372bf4b8ece` **succeeded**. Live exam: https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site/exam
