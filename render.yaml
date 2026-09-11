@@ -1,0 +1,15 @@
+# Deployment probe only; not a migration of the PediaRounds application.
+services:
+  - type: web
+    name: pediarounds-render-staging
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: node --test deployment/render/server.test.mjs
+    startCommand: node deployment/render/server.mjs
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
