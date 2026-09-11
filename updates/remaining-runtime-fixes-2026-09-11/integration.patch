@@ -1,0 +1,412 @@
+diff --git a/public/app.js b/public/app.js
+index c416eaf..1e52d40 100644
+--- a/public/app.js
++++ b/public/app.js
+@@ -49,6 +49,7 @@ const state = {
+   correctIds: readStorageArray("pediaCorrectV1"),
+   recentIds: readStorageArray("pediaRecentV1"),
+   seenIds: readStorageArray("pediaSeenV1"),
++  wrongIds: readStorageArray("pediaWrongV1"),
+   marked: readStorageArray("pediaMarkedV2"),
+   theme: readStorage("pediaTheme", "light")
+ };
+@@ -602,7 +603,8 @@ function prefetchNextQuestion(epoch) {
+   prefetchTimer = setTimeout(() => {
+     if (epoch !== questionRenderEpoch || els.quizView.hidden) return;
+     const excluded = new Set([...state.seenIds, ...state.correctIds]);
+-    const next = state.visible.slice(state.index + 1).find(q => !excluded.has(q.uid));
++    const pendingWrong = new Set(state.wrongIds || []);
++    const next = state.visible.slice(state.index + 1).find(q => pendingWrong.has(questionKey(q)) || !excluded.has(questionKey(q)));
+     if (next) questionStore.load(next.uid).catch(() => {});
+   }, 200);
+ }
+@@ -634,7 +636,11 @@ function renderLoadedQuestion() {
+   els.difficultyChip.textContent = q.difficulty;
+   els.questionNumber.textContent = `QUESTION ${String(q.number || q.id).padStart(2,"0")}`;
+   els.questionText.textContent = explanationTools.questionDisplayText(q.text);
+-  $("readQuestion").disabled = !questionReader;
++  const readAloudText = [q.text, ...(q.options || [])].join(" ");
++  const mixedReadAloud = /[\u0600-\u06FF]/u.test(readAloudText) && /[A-Za-z]/.test(readAloudText);
++  $("readQuestion").hidden = mixedReadAloud;
++  $("readQuestion").disabled = mixedReadAloud || !questionReader;
++  $("readingSpeed").closest("label")?.toggleAttribute("hidden", mixedReadAloud);
+   $("explainScenario").disabled = !scenarioPanel;
+   renderSourceFigures($("questionFigures"), questionFigures, ready => {
+     if (imageEpoch !== state.imageEpoch) return;
+@@ -642,8 +648,20 @@ function renderLoadedQuestion() {
+     els.submitButton.disabled = !ready || state.selected === null || state.answered;
+     els.submitButton.textContent = ready ? "تأكيد الإجابة" : "الصورة مطلوبة قبل تأكيد الإجابة";
+   });
+-  els.options.innerHTML = q.options.map((option, i) => `<button class="option" data-index="${i}" role="radio" aria-checked="false"><span class="letter">${letters(i)}</span><span>${escapeHtml(explanationTools.questionDisplayText(option))}</span></button>`).join("");
+-  [...els.options.children].forEach(button => button.addEventListener("click", () => selectOption(Number(button.dataset.index))));
++  const isMissingOption = value => {
++    const text = explanationTools.questionDisplayText(value);
++    return !text || /^(?:\?|؟|\.{2,3}|…)$/.test(text);
++  };
++  const hasOptionGap = !Array.isArray(q.options) || q.options.length < 2 || q.options.some(isMissingOption);
++  els.options.innerHTML = (q.options || []).map((option, i) => {
++    const missing = isMissingOption(option);
++    const text = missing ? "Original option missing from source — not scored" : explanationTools.questionDisplayText(option);
++    return `<button class="option${missing ? " option-source-gap" : ""}" data-index="${i}" role="radio" aria-checked="false" ${missing ? "disabled aria-disabled=\"true\"" : ""}><span class="letter">${letters(i)}</span><span>${escapeHtml(text)}</span></button>`;
++  }).join("");
++  [...els.options.children].forEach(button => { if (!button.disabled) button.addEventListener("click", () => selectOption(Number(button.dataset.index))); });
++  if (hasOptionGap) {
++    $("readingStatus").textContent = "Original answer choices are incomplete in the archived source. This question remains review-only and is not scored.";
++  }
+   els.submitButton.disabled = true;
+   els.submitButton.textContent = state.imageReady ? "تأكيد الإجابة" : "جارٍ تحميل صورة السؤال…";
+   const hintCount = q.hints?.length || 0;
+@@ -659,7 +677,9 @@ function renderLoadedQuestion() {
+   els.markButton.classList.toggle("active", state.marked.includes(key));
+   els.markButton.setAttribute("aria-pressed", state.marked.includes(key));
+   els.markButton.textContent = state.marked.includes(key) ? "★ معلّم للمراجعة" : "☆ علّم للمراجعة";
+-  els.prevButton.disabled = !state.visible.slice(0, state.index).some(item => !state.seenIds.includes(questionKey(item)) && !state.correctIds.includes(questionKey(item)));
++  // Previous is intentionally manual navigation: an accidental Next before answering
++  // must always be reversible inside the current round.
++  els.prevButton.disabled = state.index === 0;
+   els.nextButton.disabled = false;
+   els.nextButton.textContent = state.index === state.visible.length - 1 ? "إنهاء الجولة" : "السؤال التالي ←";
+   updateProgress();
+@@ -705,13 +725,22 @@ function submitAnswer() {
+   state.answered = true;
+   const q = current();
+   questionReader?.stop();
+-  const correct = state.selected === q.answer;
++  const sourceKeyValid = Number.isInteger(q.sourceAnswer) && q.sourceAnswer >= 0 && q.sourceAnswer < (q.options?.length || 0);
++  const gradingAnswer = sourceKeyValid ? q.sourceAnswer : q.answer;
++  // Product rule: when the learner selects the same option recorded by the source,
++  // that selection is treated as correct. Clinical-review notes can still flag a
++  // conflict, but they do not silently mark a source-matching learner wrong.
++  const correct = state.selected === gradingAnswer;
+   const sourceReviews = q.githubReviews || [];
+   const hasVerifiedKey = ["verified", "corroborated", "corrected"].includes(q.verification?.status);
+-  const nonScoring = !Number.isInteger(q.answer) || ["ambiguous", "needs-review"].includes(q.verification?.status) || (sourceReviews.length > 0 && !hasVerifiedKey);
++  const hasOptionGap = !Array.isArray(q.options) || q.options.length < 2 || q.options.some(option => {
++    const text = explanationTools.questionDisplayText(option);
++    return !text || /^(?:\?|؟|\.{2,3}|…)$/.test(text);
++  });
++  const nonScoring = hasOptionGap || (!sourceKeyValid && (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= (q.options?.length || 0) || ["ambiguous", "needs-review"].includes(q.verification?.status) || (sourceReviews.length > 0 && !hasVerifiedKey)));
+   [...els.options.children].forEach((button, i) => {
+     button.disabled = true;
+-    if (i === q.answer) button.classList.add(nonScoring ? "review-key" : "correct");
++    if (i === gradingAnswer) button.classList.add(nonScoring ? "review-key" : "correct");
+     if (i === state.selected && !correct && !nonScoring) button.classList.add("wrong");
+   });
+   const key = questionKey(q);
+@@ -720,6 +749,7 @@ function submitAnswer() {
+     state.answeredIds.push(key);
+     writeStorage("pediaAnsweredV2", JSON.stringify(state.answeredIds));
+   }
++  const wasWrong = (state.wrongIds || []).includes(key);
+   const newlyCorrect = correct && !nonScoring && !state.correctIds.includes(key);
+   if (newlyCorrect) {
+     state.correctIds.push(key);
+@@ -727,8 +757,16 @@ function submitAnswer() {
+     writeStorage("pediaCorrectV1", JSON.stringify(state.correctIds));
+     writeStorage("pediaScoreV2", state.score);
+   }
++  if (!nonScoring && correct && wasWrong) {
++    state.wrongIds = (state.wrongIds || []).filter(id => id !== key);
++    writeStorage("pediaWrongV1", JSON.stringify(state.wrongIds));
++  } else if (!nonScoring && !correct && !(state.wrongIds || []).includes(key)) {
++    state.wrongIds ||= [];
++    state.wrongIds.push(key);
++    writeStorage("pediaWrongV1", JSON.stringify(state.wrongIds));
++  }
+   // A successful retry must upgrade an earlier wrong/unknown result.
+-  if (firstAttempt || newlyCorrect) saveDoneProgress([{ questionId: key, correct: nonScoring ? null : correct }]);
++  if (firstAttempt || newlyCorrect || (!nonScoring && !correct)) saveDoneProgress([{ questionId: key, correct: nonScoring ? null : correct }]);
+   els.resultBanner.classList.toggle("incorrect", !correct && !nonScoring);
+   if (nonScoring) {
+     els.resultKicker.textContent = "مراجعة مفتاح المصدر";
+@@ -736,8 +774,8 @@ function submitAnswer() {
+     els.resultPoints.textContent = "لا يدخل في الدرجة";
+   } else {
+     els.resultKicker.textContent = correct ? "إجابة صحيحة" : "نقطة مراجعة";
+-    els.resultTitle.textContent = correct ? "التقطت الـ clinical clue." : `الإجابة الصحيحة: ${q.options[q.answer]}`;
+-    els.resultPoints.textContent = correct ? (newlyCorrect ? "+1 نقطة" : "تمت المراجعة") : "ثبّتها للمرة القادمة";
++    els.resultTitle.textContent = correct && wasWrong ? "ممتاز إجابتك صحيحة لقد صححت معلومتك" : correct ? "التقطت الـ clinical clue." : `الإجابة الصحيحة: ${q.options[gradingAnswer]}`;
++    els.resultPoints.textContent = correct ? (newlyCorrect ? "+1 نقطة" : "تمت المراجعة") : "سيعود السؤال بعد عدد متغيّر من الأسئلة لتثبيت المعلومة";
+   }
+   const pearl = q.arabicTeaching?.keyIssue ? "" : q.highYield || (q.teachingStatus ? "" : (q.management || q.explanationAr || q.explanation || "").split(/(?<=[.!?])\s+/).find(s => s.length > 35 && !/^https?:|^The answer|^Answer:/i.test(s))) || "";
+   $("highYieldTitle").textContent = q.teachingStatus === "source-only" ? "High-yield من شرح الملف — قيد التدقيق" : "High-yield pearl";
+@@ -870,13 +908,32 @@ function revealHint() {
+ 
+ function move(delta) {
+   if (guardQuestionChangeDuringRecording()) return;
++  if (delta < 0) {
++    if (state.index <= 0) return;
++    state.index -= 1; renderQuestion(); window.scrollTo({top: 0, behavior: "smooth"});
++    return;
++  }
++  const currentId = current() ? questionKey(current()) : null;
++  // A wrong answer is moved forward in the same round, rather than visibly
++  // marked as a review item. The randomized 3–5 gap is re-sampled after
++  // each wrong attempt.
++  if (state.answered && currentId && (state.wrongIds || []).includes(currentId) && sessionTools?.deferRetryQuestion) {
++    const deferred = sessionTools.deferRetryQuestion(state.visible, state.index);
++    if (deferred.moved) {
++      state.index = deferred.nextIndex;
++      renderQuestion(); rememberStudyPosition();
++      window.scrollTo({top: 0, behavior: "smooth"});
++      return;
++    }
++  }
+   let next = state.index + delta;
+   const excluded = new Set([...state.seenIds, ...state.correctIds]);
+-  while (next >= 0 && next < state.visible.length && excluded.has(questionKey(state.visible[next]))) next += delta;
++  const pendingWrong = new Set(state.wrongIds || []);
++  while (next >= 0 && next < state.visible.length && excluded.has(questionKey(state.visible[next])) && !pendingWrong.has(questionKey(state.visible[next]))) next += delta;
+   if (next < 0) return;
+   if (next >= state.visible.length) {
+     if (!state.answered) { showToast("أكد إجابة السؤال الأخير لإكمال الجولة."); return; }
+-    rememberStudyPosition(); showHome(); showToast("وصلت إلى نهاية الجولة."); return;
++    rememberStudyPosition(); showHome(); showToast(state.wrongIds.length ? "انتهت الأسئلة الجديدة؛ الأسئلة الخاطئة ستعود في الجولة التالية." : "وصلت إلى نهاية الجولة."); return;
+   }
+   state.index = next; renderQuestion(); window.scrollTo({top: 0, behavior: "smooth"});
+ }
+@@ -900,10 +957,10 @@ function updateProgress() {
+   els.doneCount.textContent = doneTotal;
+   els.accountDoneCount.textContent = doneTotal;
+   els.homeDoneCount.textContent = doneTotal;
+-  const answered = new Set(state.answeredIds), correct = new Set(state.correctIds), seen = new Set([...state.seenIds, ...state.correctIds]);
++  const answered = new Set(state.answeredIds), correct = new Set(state.correctIds), seen = new Set([...state.seenIds, ...state.correctIds]), wrong = new Set(state.wrongIds || []);
+   $("personalReviewed").textContent = progressReady ? questions.filter(q => answered.has(questionKey(q))).length.toLocaleString('en-US') : '—';
+   $("personalCorrect").textContent = progressReady ? questions.filter(q => correct.has(questionKey(q))).length.toLocaleString('en-US') : '—';
+-  $("personalRemaining").textContent = progressReady ? questions.filter(q => !seen.has(questionKey(q))).length.toLocaleString('en-US') : '—';
++  $("personalRemaining").textContent = progressReady ? questions.filter(q => wrong.has(questionKey(q)) || !seen.has(questionKey(q))).length.toLocaleString('en-US') : '—';
+ }
+ 
+ function toggleMark() {
+@@ -925,7 +982,7 @@ function canStartReview() {
+ }
+ 
+ function newReviewRound(pool) {
+-  return sessionTools.buildReviewRound(pool, state.correctIds, state.seenIds);
++  return sessionTools.buildReviewRound(pool, state.correctIds, state.seenIds, state.wrongIds || []);
+ }
+ 
+ function applyFilters() {
+@@ -999,11 +1056,15 @@ async function loadSavedProgress(preloaded) {
+     const serverIds = canonicalQuestionIds(serverRows.map(item => String(item.questionId)));
+     const serverSeen = canonicalQuestionIds(Array.isArray(progress.seen) ? progress.seen : []);
+     const serverCorrect = canonicalQuestionIds(serverRows.filter(item => item.correct === true).map(item => String(item.questionId)));
++    const serverWrong = canonicalQuestionIds(serverRows.filter(item => item.correct === false).map(item => String(item.questionId)));
+     const localIds = [...state.answeredIds];
+     state.correctIds = canonicalQuestionIds([...serverCorrect, ...state.correctIds]);
+-    state.answeredIds = canonicalQuestionIds([...serverIds, ...localIds, ...state.correctIds]);
++    const correctSetAfterMerge = new Set(state.correctIds);
++    state.wrongIds = canonicalQuestionIds([...serverWrong, ...(state.wrongIds || [])]).filter(id => !correctSetAfterMerge.has(id));
++    state.answeredIds = canonicalQuestionIds([...serverIds, ...localIds, ...state.correctIds, ...state.wrongIds]);
+     state.seenIds = canonicalQuestionIds([...serverSeen, ...state.seenIds, ...state.answeredIds]);
+     writeStorage("pediaSeenV1", JSON.stringify(state.seenIds));
++    writeStorage("pediaWrongV1", JSON.stringify(state.wrongIds));
+     const serverSeenSet = new Set(serverSeen), serverIdSet = new Set(serverIds);
+     const correctSet = new Set(state.correctIds), serverCorrectSet = new Set(serverCorrect);
+     const missingSeen = state.seenIds.filter(id => !serverSeenSet.has(id));
+@@ -1012,8 +1073,9 @@ async function loadSavedProgress(preloaded) {
+     writeStorage("pediaAnsweredV2", JSON.stringify(state.answeredIds));
+     writeStorage("pediaCorrectV1", JSON.stringify(state.correctIds));
+     writeStorage("pediaScoreV2", state.score);
++    const wrongSet = new Set(state.wrongIds);
+     const missing = state.answeredIds.filter(id => !serverIdSet.has(id) || correctSet.has(id) && !serverCorrectSet.has(id))
+-      .map(questionId => ({ questionId, correct: correctSet.has(questionId) ? true : null }));
++      .map(questionId => ({ questionId, correct: correctSet.has(questionId) ? true : wrongSet.has(questionId) ? false : null }));
+     if (missing.length) saveDoneProgress(missing);
+     progressReady = true;
+     $("personalProgressStatus").textContent = 'تقدّمك محفوظ في حسابك';
+@@ -1038,11 +1100,11 @@ function updateResumeButton() {
+     return;
+   }
+   const module = moduleAliases[sessionSnapshot?.module] || sessionSnapshot?.module;
+-  const resolved = sessionTools?.resolveStudySnapshot(sessionSnapshot, questions, [...state.correctIds, ...state.seenIds]);
++  const resolved = sessionTools?.resolveStudySnapshot(sessionSnapshot, questions, [...state.correctIds, ...state.seenIds], state.wrongIds || []);
+   const year = sessionSnapshot?.filter || 'all';
+   const fresh = !resolved && sessionSnapshot && !sessionSnapshot.query ? sessionTools?.remainingReviewQuestions(questions.filter(q =>
+     (module === 'all' || q.module === module) && (year === 'all' || (q.years || [q.year]).includes(Number(year)))
+-  ), [...state.correctIds, ...state.seenIds]) : [];
++  ), [...state.correctIds, ...state.seenIds], state.wrongIds || []) : [];
+   const remaining = resolved ? resolved.visible.length - resolved.index : fresh?.length || 0;
+   button.hidden = !progressReady || !sessionSnapshot || !remaining;
+   if (!button.hidden) {
+@@ -1069,7 +1131,7 @@ function restoreStudySession() {
+     if (target.origin === window.location.origin && target.pathname === '/nelson') { window.location.assign(target.href); return true; }
+     return false;
+   }
+-  const resolved = sessionTools?.resolveStudySnapshot(sessionSnapshot, questions, [...state.correctIds, ...state.seenIds]);
++  const resolved = sessionTools?.resolveStudySnapshot(sessionSnapshot, questions, [...state.correctIds, ...state.seenIds], state.wrongIds || []);
+   if (!resolved) return false;
+   sessionActive = true; sessionMode = resolved.mode;
+   Object.assign(state, { visible: resolved.visible, index: resolved.index, module: resolved.module, filter: resolved.filter, query: resolved.query });
+@@ -1129,7 +1191,7 @@ function populateHome() {
+   const modules = moduleCatalog.map(m => m.title);
+   els.bankTotal.textContent = questions.length.toLocaleString("en-US");
+   els.categorySummary.textContent = `${modules.length} تخصصًا • اختر بطاقة لبدء المراجعة`;
+-  const counts = summarizeModules?.(questions, state.answeredIds, state.correctIds, state.seenIds) || new Map();
++  const counts = summarizeModules?.(questions, state.answeredIds, state.correctIds, state.seenIds, state.wrongIds || []) || new Map();
+   els.categoryGrid.innerHTML = modules.map(module => {
+     const { remaining: count = 0, total = 0, answered = 0 } = counts.get(module) || {};
+     const progress = total ? Math.round(answered / total * 100) : 0;
+@@ -1172,6 +1234,7 @@ async function loadQuestionBank() {
+     state.correctIds = canonicalQuestionIds(state.correctIds);
+     state.recentIds = canonicalQuestionIds(state.recentIds);
+     state.seenIds = canonicalQuestionIds([...state.seenIds, ...state.recentIds, ...state.answeredIds, ...state.correctIds]);
++    state.wrongIds = canonicalQuestionIds(state.wrongIds || []).filter(id => !state.correctIds.includes(id));
+     state.marked = canonicalQuestionIds(state.marked);
+     questions = data.questions.filter(q => q.imageStatus !== "missing-source");
+     state.visible = [...questions];
+diff --git a/public/question-store.js b/public/question-store.js
+index c0a570e..4523508 100644
+--- a/public/question-store.js
++++ b/public/question-store.js
+@@ -30,15 +30,15 @@ export function createQuestionStore({ fetcher = fetch, capacity = 24, onUnauthor
+   return { peek, load };
+ }
+ 
+-export function summarizeModules(questions, answeredIds, correctIds, seenIds) {
+-  const answered = new Set(answeredIds), excluded = new Set([...correctIds, ...seenIds]);
++export function summarizeModules(questions, answeredIds, correctIds, seenIds, wrongIds = []) {
++  const answered = new Set(answeredIds), excluded = new Set([...correctIds, ...seenIds]), wrong = new Set(wrongIds);
+   const modules = new Map();
+   for (const q of questions) {
+     const counts = modules.get(q.module) || { total: 0, answered: 0, remaining: 0 };
+     const id = String(q.uid || q.id);
+     counts.total++;
+     if (answered.has(id)) counts.answered++;
+-    if (!excluded.has(id)) counts.remaining++;
++    if (wrong.has(id) || !excluded.has(id)) counts.remaining++;
+     modules.set(q.module, counts);
+   }
+   return modules;
+diff --git a/public/study-session.js b/public/study-session.js
+index ee02c92..3f948f0 100644
+--- a/public/study-session.js
++++ b/public/study-session.js
+@@ -1,13 +1,20 @@
+ import { canonicalModule } from './module-categories.js';
+ 
+ const questionId = q => String(q.uid || q.id);
+-export function remainingReviewQuestions(questions, correctIds = []) {
+-  const correct = new Set(correctIds.map(String));
+-  return [...new Map(questions.filter(q => !correct.has(questionId(q)) && !(q.duplicateIds || []).some(id => correct.has(String(id)))).map(q => [questionId(q), q])).values()];
++const uniqueQuestions = questions => [...new Map(questions.map(q => [questionId(q), q])).values()];
++
++export function remainingReviewQuestions(questions, excludedIds = [], retryIds = []) {
++  const excluded = new Set(excludedIds.map(String));
++  const retries = new Set(retryIds.map(String));
++  return uniqueQuestions(questions.filter(q => retries.has(questionId(q)) || (!excluded.has(questionId(q)) && !(q.duplicateIds || []).some(id => excluded.has(String(id))))));
++}
++
++export function retryGap(random = Math.random) {
++  const sample = Math.max(0, Math.min(0.999999, Number(random()) || 0));
++  return 3 + Math.floor(sample * 3);
+ }
+ 
+-export function buildReviewRound(questions, correctIds = [], seenIds = [], random = Math.random) {
+-  const pool = remainingReviewQuestions(questions, [...correctIds, ...seenIds]);
++function shuffle(pool, random) {
+   for (let i = pool.length - 1; i > 0; i--) {
+     const j = Math.floor(random() * (i + 1));
+     [pool[i], pool[j]] = [pool[j], pool[i]];
+@@ -15,10 +22,47 @@ export function buildReviewRound(questions, correctIds = [], seenIds = [], rando
+   return pool;
+ }
+ 
++export function buildReviewRound(questions, correctIds = [], seenIds = [], retryIdsOrRandom = [], random = Math.random) {
++  // Keep the historical 4th-argument random callback working for old callers/tests.
++  let retryIds = retryIdsOrRandom;
++  if (typeof retryIdsOrRandom === 'function') {
++    random = retryIdsOrRandom;
++    retryIds = [];
++  }
++  const correct = new Set(correctIds.map(String));
++  const retries = new Set((retryIds || []).map(String).filter(id => !correct.has(id)));
++  const fresh = shuffle(remainingReviewQuestions(questions, [...correctIds, ...seenIds]).filter(q => !retries.has(questionId(q))), random);
++  const retry = shuffle(uniqueQuestions(questions.filter(q => retries.has(questionId(q)))), random);
++  if (!retry.length) return fresh;
++
++  // Retried questions are deliberately blended back in after 3–5 other items.
++  // They carry no visual label, so the learner meets them as ordinary questions.
++  const round = [];
++  let freshIndex = 0;
++  for (const question of retry) {
++    const gap = retryGap(random);
++    const take = Math.min(gap, fresh.length - freshIndex);
++    round.push(...fresh.slice(freshIndex, freshIndex + take));
++    freshIndex += take;
++    round.push(question);
++  }
++  round.push(...fresh.slice(freshIndex));
++  return uniqueQuestions(round);
++}
++
++export function deferRetryQuestion(questions, index, random = Math.random) {
++  if (!Array.isArray(questions) || index < 0 || index >= questions.length) return { moved: false, nextIndex: index, retryIndex: index, gap: 0 };
++  const [question] = questions.splice(index, 1);
++  const gap = retryGap(random);
++  const retryIndex = Math.min(index + gap, questions.length);
++  questions.splice(retryIndex, 0, question);
++  return { moved: retryIndex !== index, nextIndex: Math.min(index, questions.length - 1), retryIndex, gap };
++}
++
+ export function makeStudySnapshot(state, mode = 'category') {
+   if (!state.visible.length) return null;
+   const currentIndex = Math.min(state.index, state.visible.length - 1);
+-  const pending = remainingReviewQuestions(state.visible, [...(state.correctIds || []), ...(state.seenIds || [])]);
++  const pending = remainingReviewQuestions(state.visible, [...(state.correctIds || []), ...(state.seenIds || [])], state.wrongIds || []);
+   const allowed = new Set(pending.map(questionId));
+   const next = state.visible.slice(currentIndex).find(q => allowed.has(questionId(q))) || pending[0];
+   return { mode, module: canonicalModule(state.module), filter: state.filter, query: state.query,
+@@ -27,9 +71,9 @@ export function makeStudySnapshot(state, mode = 'category') {
+     currentQuestionId: next ? questionId(next) : null, completed: !next };
+ }
+ 
+-export function resolveStudySnapshot(snapshot, questions, correctIds = []) {
++export function resolveStudySnapshot(snapshot, questions, excludedIds = [], retryIds = []) {
+   if (!snapshot || snapshot.completed || !Array.isArray(snapshot.questionIds)) return null;
+-  const remaining = remainingReviewQuestions(questions, correctIds);
++  const remaining = remainingReviewQuestions(questions, excludedIds, retryIds);
+   const bank = new Map(remaining.map(q => [questionId(q), q]));
+   for (const q of remaining) for (const id of q.duplicateIds || []) bank.set(id, q);
+   const currentId = snapshot.currentQuestionId;
+diff --git a/server/mock-exam.mjs b/server/mock-exam.mjs
+index e309a95..56ca79f 100644
+--- a/server/mock-exam.mjs
++++ b/server/mock-exam.mjs
+@@ -6,11 +6,26 @@ export const EXAM_DURATION = 90 * 60 * 1000;
+ export const BREAK_DURATION = 10 * 60 * 1000;
+ const VERIFIED = new Set(['verified','corroborated','corrected']);
+ 
++function hasCompleteOptions(options) {
++  const list = Array.isArray(options) ? options : [];
++  const missing = value => {
++    const text = questionDisplayText(value);
++    return !text || /^(?:\?|؟|\.{2,3}|…)$/.test(text);
++  };
++  return list.length >= 2 && list.every(option => !missing(option));
++}
++
++function gradingAnswer(q) {
++  const length = Array.isArray(q?.options) ? q.options.length : 0;
++  if (Number.isInteger(q?.sourceAnswer) && q.sourceAnswer >= 0 && q.sourceAnswer < length) return q.sourceAnswer;
++  return q?.answer;
++}
++
+ export function examPool(questions) {
+   const seen = new Set(), ids = new Set();
+   return questions.filter(q => {
+     const stem = q.text.toLowerCase().replace(/[^a-z0-9]/g,'');
+-    if (!stem || seen.has(stem) || ids.has(q.uid) || q.imageStatus === 'missing-source' || q.options.length < 2 || !Number.isInteger(q.answer) || q.answer < 0 || q.answer >= q.options.length) return false;
++    if (!stem || seen.has(stem) || ids.has(q.uid) || q.imageStatus === 'missing-source' || !hasCompleteOptions(q.options) || !Number.isInteger(gradingAnswer(q)) || gradingAnswer(q) < 0 || gradingAnswer(q) >= q.options.length) return false;
+     if (['ambiguous','needs-review'].includes(q.verification?.status) || q.githubReviews?.length && !VERIFIED.has(q.verification?.status)) return false;
+     if (q.imageRequired && !q.figures?.some(f => f.phase === 'question')) return false;
+     if (!answerExplanation(q).text) return false;
+@@ -30,7 +45,7 @@ export function createExamAttempt(questions, now, duration = EXAM_DURATION) {
+   // Pin the actual question, answer and explanation for this attempt across future bank updates.
+   const selected = questions.map(q => ({
+     uid:q.uid, text:q.text, options:q.options, module:q.module, source:q.source || q.collection,
+-    figures:q.figures || [], answer:q.answer,
++    figures:q.figures || [], answer:gradingAnswer(q),
+     explanation:answerExplanation(q).text,
+     explanationLanguage:answerExplanation(q).language,
+     distractors:q.distractors || [], management:q.management || '', highYield:q.highYield || '',

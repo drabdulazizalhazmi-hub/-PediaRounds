@@ -1,0 +1,36 @@
+name: PediaRounds runtime handoff tests
+on:
+  pull_request:
+    paths:
+      - 'updates/remaining-runtime-fixes-2026-09-11/**'
+      - 'updates/english-source-explanations-2026-09-11/**'
+      - '.github/workflows/runtime-fixes.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'updates/remaining-runtime-fixes-2026-09-11/**'
+      - 'updates/english-source-explanations-2026-09-11/**'
+      - '.github/workflows/runtime-fixes.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: runtime-handoff-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  runtime-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Standalone runtime and English explanation regressions
+        run: npm --prefix updates/remaining-runtime-fixes-2026-09-11 test
+      - name: Validate integration patch structure and digest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git apply --stat updates/remaining-runtime-fixes-2026-09-11/integration.patch
+          echo '0c314aa93f0c123c02e3a5db41d0f1ab6b7f30814e6696b41f524af3adc70531  updates/remaining-runtime-fixes-2026-09-11/integration.patch' | sha256sum --check

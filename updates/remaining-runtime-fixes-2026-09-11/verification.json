@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-11",
+  "referenceSourceCommit": "6f2e93930db2a57d81971accaa3cbf3f5271f52a",
+  "repositoryBaseCommit": "6badf51e51ffac34049c5367d9ae705d0d665357",
+  "nodeVersionLocal": "v22.16.0",
+  "referenceSourceRegression": {
+    "passed": 32,
+    "failed": 0,
+    "skipped": 0,
+    "command": "node --test tests/question-reader.test.mjs tests/review-rotation.test.mjs tests/source-answer-markers.test.mjs tests/study-session.test.mjs tests/done-regressions.test.mjs tests/figure-loading.test.mjs tests/progress-sync.test.mjs",
+    "scope": "7 Sep source with the prior remaining-fixes patch and this hardening; not the current production source"
+  },
+  "standaloneRuntimeRegression": { "passed": 14, "failed": 0, "skipped": 0 },
+  "integrationPatchSha256": "0c314aa93f0c123c02e3a5db41d0f1ab6b7f30814e6696b41f524af3adc70531",
+  "productionDeployed": false,
+  "currentProductionFullBuildVerified": false,
+  "realIphoneAudioVerified": false,
+  "authenticationChanged": false,
+  "databaseChanged": false,
+  "questionContentChanged": false,
+  "ciResult": "See the commit's GitHub Actions run; this file records local evidence only."
+}
