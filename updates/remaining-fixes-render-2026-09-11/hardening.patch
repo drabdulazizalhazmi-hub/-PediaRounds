@@ -1,0 +1,89 @@
+diff --git a/public/app.js b/public/app.js
+--- a/public/app.js
++++ b/public/app.js
+@@ -726,6 +726,7 @@
+   questionReader?.stop();
+   const sourceKeyValid = Number.isInteger(q.sourceAnswer) && q.sourceAnswer >= 0 && q.sourceAnswer < (q.options?.length || 0);
+   const gradingAnswer = sourceKeyValid ? q.sourceAnswer : q.answer;
++  const gradingKeyValid = Number.isInteger(gradingAnswer) && gradingAnswer >= 0 && gradingAnswer < (q.options?.length || 0);
+   // Product rule: when the learner selects the same option recorded by the source,
+   // that selection is treated as correct. Clinical-review notes can still flag a
+   // conflict, but they do not silently mark a source-matching learner wrong.
+@@ -736,7 +737,7 @@
+     const text = explanationTools.questionDisplayText(option);
+     return !text || /^(?:\?|؟|\.{2,3}|…)$/.test(text);
+   });
+-  const nonScoring = hasOptionGap || (!sourceKeyValid && (!Number.isInteger(q.answer) || ["ambiguous", "needs-review"].includes(q.verification?.status) || (sourceReviews.length > 0 && !hasVerifiedKey)));
++  const nonScoring = hasOptionGap || !gradingKeyValid || (!sourceKeyValid && (["ambiguous", "needs-review"].includes(q.verification?.status) || (sourceReviews.length > 0 && !hasVerifiedKey)));
+   [...els.options.children].forEach((button, i) => {
+     button.disabled = true;
+     if (i === gradingAnswer) button.classList.add(nonScoring ? "review-key" : "correct");
+@@ -759,21 +760,21 @@
+   if (!nonScoring && correct && wasWrong) {
+     state.wrongIds = (state.wrongIds || []).filter(id => id !== key);
+     writeStorage("pediaWrongV1", JSON.stringify(state.wrongIds));
+-  } else if (!nonScoring && !correct && !(state.wrongIds || []).includes(key)) {
++  } else if (!nonScoring && !correct && !state.correctIds.includes(key) && !(state.wrongIds || []).includes(key)) {
+     state.wrongIds ||= [];
+     state.wrongIds.push(key);
+     writeStorage("pediaWrongV1", JSON.stringify(state.wrongIds));
+   }
+   // A successful retry must upgrade an earlier wrong/unknown result.
+-  if (firstAttempt || newlyCorrect || (!nonScoring && !correct)) saveDoneProgress([{ questionId: key, correct: nonScoring ? null : correct }]);
++  if (firstAttempt || newlyCorrect || (!nonScoring && !correct && !state.correctIds.includes(key))) saveDoneProgress([{ questionId: key, correct: nonScoring ? null : correct }]);
+   els.resultBanner.classList.toggle("incorrect", !correct && !nonScoring);
+   if (nonScoring) {
+     els.resultKicker.textContent = "مراجعة مفتاح المصدر";
+-    els.resultTitle.textContent = Number.isInteger(q.answer) ? `مفتاح التجميعة: ${q.options[q.answer]}` : "لا يوجد مفتاح مكتمل في المصدر";
++    els.resultTitle.textContent = gradingKeyValid && !hasOptionGap ? `مفتاح التجميعة: ${explanationTools.questionDisplayText(q.options[gradingAnswer])}` : "المصدر غير مكتمل؛ السؤال للمراجعة فقط";
+     els.resultPoints.textContent = "لا يدخل في الدرجة";
+   } else {
+     els.resultKicker.textContent = correct ? "إجابة صحيحة" : "نقطة مراجعة";
+-    els.resultTitle.textContent = correct && wasWrong ? "ممتاز إجابتك صحيحة لقد صححت معلومتك" : correct ? "التقطت الـ clinical clue." : `الإجابة الصحيحة: ${q.options[q.answer]}`;
++    els.resultTitle.textContent = correct && wasWrong ? "ممتاز إجابتك صحيحة لقد صححت معلومتك" : correct ? "التقطت الـ clinical clue." : `الإجابة الصحيحة: ${explanationTools.questionDisplayText(q.options[gradingAnswer])}`;
+     els.resultPoints.textContent = correct ? (newlyCorrect ? "+1 نقطة" : "تمت المراجعة") : "سيعود السؤال بعد عدد متغيّر من الأسئلة لتثبيت المعلومة";
+   }
+   const pearl = q.arabicTeaching?.keyIssue ? "" : q.highYield || (q.teachingStatus ? "" : (q.management || q.explanationAr || q.explanation || "").split(/(?<=[.!?])\s+/).find(s => s.length > 35 && !/^https?:|^The answer|^Answer:/i.test(s))) || "";
+diff --git a/public/question-reader.js b/public/question-reader.js
+--- a/public/question-reader.js
++++ b/public/question-reader.js
+@@ -54,6 +54,9 @@
+   function retryCurrent(token) {
+     if (token !== generation || retryCount >= 1) return false;
+     retryCount += 1;
++    // Retire the failed utterance before cancel(), which may synchronously emit end/error.
++    // Those callbacks must not advance the chunk or stop its replacement.
++    utterance = null;
+     cancelEngine();
+     notify("speaking", "جارٍ إعادة تهيئة الصوت…");
+     scheduleNext(90);
+@@ -73,10 +76,15 @@
+       retryCount = 0; index++; utterance = null; speakNext();
+     };
+     u.onerror = event => {
+-      if (token !== generation || ["canceled", "interrupted"].includes(event?.error)) return;
++      if (token !== generation || utterance !== u) return;
++      if (["canceled", "interrupted"].includes(event?.error)) {
++        active = false; paused = false; utterance = null; clearRestart();
++        notify("idle", "توقفت القراءة؛ اضغط زر القراءة للبدء مجددًا.");
++        return;
++      }
+       const transient = ["audio-busy", "network", "synthesis-failed"].includes(event?.error);
+       if (transient && retryCurrent(token)) return;
+-      active = false; paused = false; utterance = null;
++      active = false; paused = false; utterance = null; clearRestart();
+       notify("error", event?.error === "not-allowed"
+         ? "لم يسمح الجهاز ببدء الصوت. اضغط Read in English مرة أخرى بعد لمس الصفحة."
+         : "تعذرت القراءة. جرّب مرة أخرى وتحقق من الصوت في جهازك.");
+diff --git a/public/study-session.js b/public/study-session.js
+--- a/public/study-session.js
++++ b/public/study-session.js
+@@ -32,7 +32,7 @@
+   const correct = new Set(correctIds.map(String));
+   const retries = new Set((retryIds || []).map(String).filter(id => !correct.has(id)));
+   const fresh = shuffle(remainingReviewQuestions(questions, [...correctIds, ...seenIds]).filter(q => !retries.has(questionId(q))), random);
+-  const retry = shuffle(uniqueQuestions(questions.filter(q => retries.has(questionId(q)))), random);
++  const retry = shuffle(uniqueQuestions(questions.filter(q => retries.has(questionId(q)) && !correct.has(questionId(q)) && !(q.duplicateIds || []).some(id => correct.has(String(id))))), random);
+   if (!retry.length) return fresh;
+ 
+   // Retried questions are deliberately blended back in after 3–5 other items.

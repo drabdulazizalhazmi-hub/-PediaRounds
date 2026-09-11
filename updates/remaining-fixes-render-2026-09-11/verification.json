@@ -1,0 +1,28 @@
+{
+  "status": "LOCAL_BACKUP_TESTS_PASSED_NOT_DEPLOYED",
+  "date": "2026-09-11",
+  "nodeVersion": "v22.16.0",
+  "backupCommit": "6f2e93930db2a57d81971accaa3cbf3f5271f52a",
+  "originalPatchSHA256": "e023c198cb980e79a37e8168e84983fc1439891f3c0e84be27afbebb01ba15b1",
+  "originalBundleSHA256": "d4e1b7441e374c31fdfafed73a400a3acd2370a44aaf3b598cd753aeea56c306",
+  "command": "node --test tests/question-reader.test.mjs tests/review-rotation.test.mjs tests/source-answer-markers.test.mjs tests/remaining-fixes-hardening.test.mjs",
+  "tests": 33,
+  "passed": 33,
+  "failed": 0,
+  "skipped": 0,
+  "newFocusedTests": 14,
+  "newTestsBeforeFix": {
+    "total": 13,
+    "failed": 8
+  },
+  "limitations": [
+    "Not the latest production source",
+    "No full application build",
+    "No live login or production database test",
+    "No real iPhone/Safari test",
+    "This repair session did not select, create, modify or deploy a Render service; a concurrent GitHub receipt describes a hosting probe only",
+    "Original patch is a prerequisite, not included here",
+    "This does not complete the original-image or English-explanation content audit"
+  ],
+  "dataPolicy": "Code, synthetic tests and checksums only. No source PDFs, question-bank export, user rows, secrets, recordings or gap CSVs uploaded."
+}
