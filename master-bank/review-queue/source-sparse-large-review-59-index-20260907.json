@@ -1,0 +1,50 @@
+{
+  "batchId": "source-sparse-large-review-59-index-20260907",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "reviewedQuestionCount": 59,
+  "reviewMethod": "Direct re-read of the uploaded source PDF. This index records only source slots and review flags; it does not reconstruct missing distractors or replace original images.",
+  "sections": {
+    "Endocrinology": {
+      "count": 17,
+      "questions": [1,7,9,10,12,15,16,17,19,20,25,38,40,44,47,48,50],
+      "imageOrMedia": [1,10,17,25,44,47,48],
+      "zeroOptions": [],
+      "uncertainAnswer": []
+    },
+    "Genetics": {
+      "count": 15,
+      "questions": [1,3,10,17,26,27,29,30,31,33,37,42,44,45,50],
+      "imageOrMedia": [1,27,31,33,45],
+      "zeroOptions": [10],
+      "uncertainAnswer": [10]
+    },
+    "Infectious Diseases": {
+      "count": 14,
+      "questions": [7,15,17,20,22,66,67,73,74,75,86,88,105,107],
+      "imageOrMedia": [66,67,86,107],
+      "zeroOptions": [],
+      "uncertainAnswer": []
+    },
+    "Neurology": {
+      "count": 13,
+      "questions": [5,8,10,14,16,17,19,20,27,34,36,38,49],
+      "imageOrMedia": [8,10,14,34,38],
+      "zeroOptions": [],
+      "uncertainAnswer": []
+    }
+  },
+  "totals": {
+    "imageOrMedia": 21,
+    "zeroOptions": 1,
+    "uncertainAnswer": 1
+  },
+  "decisions": [
+    "Missing distractors were not invented.",
+    "No verifiedAnswer was assigned from source review alone.",
+    "Image-dependent items remain blocked until the original source asset is linked and clinically reviewed.",
+    "Genetics Q10 remains an incomplete zero-option recall and is not publishable.",
+    "This 59-question batch is now reserved for the next source-restoration and clinical-verification passes so other chats do not duplicate it."
+  ],
+  "status": "source_reviewed_pending_restoration_or_verification"
+}

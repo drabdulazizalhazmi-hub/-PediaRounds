@@ -1,0 +1,137 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch15-clinical-10-20260907",
+  "scope": "The exact 10 non-policy clinical/source conflicts listed as remaining by the CI-audited cross-chat coordination state after 104/131 unique canonical conflicts had at least one resolution overlay.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options and current evidence support a defensible single-best answer.",
+    "Do not invent missing images, exposure history, severity details, prosthetic-material details, option wording, or organism-specific epidemiology.",
+    "When the correct modern approach is context-dependent or more than one retained option is defensible, keep verifiedAnswer null and the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-gi-q051-eosinophilic-esophagitis",
+      "sourceQuestion": "Gastroenterology Q51",
+      "modernOutcome": "resolved_to_valid_first_line_pharmacologic_option",
+      "verifiedAnswer": "A",
+      "reason": "Current ACG guidance no longer requires failure of a proton-pump-inhibitor trial to diagnose eosinophilic esophagitis. First-line treatment may be dietary elimination or pharmacologic therapy with a PPI or swallowed topical corticosteroid. Among the retained options, 'Start steroid' is therefore a valid first-line pharmacologic answer when interpreted as swallowed topical corticosteroid; switching to another PPI is not required after only two weeks, and adding an antibiotic has no role in routine EoE treatment.",
+      "references": [
+        "American College of Gastroenterology Clinical Guideline: Diagnosis and Management of Eosinophilic Esophagitis, 2025",
+        "ACG 2025 EoE guideline highlights: first-line PPI or swallowed topical steroid or dietary elimination"
+      ]
+    },
+    {
+      "id": "part2-id-gp-q37",
+      "sourceQuestion": "Infectious Diseases Q37",
+      "modernOutcome": "resolved_to_blood_cultures_as_immediate_microbiologic_step",
+      "verifiedAnswer": "A",
+      "reason": "The retained patient has fever plus physical findings strongly suspicious for infective endocarditis. Pediatric AHA guidance recommends obtaining blood cultures in patients with fever and a pathologic murmur/history suggesting IE, with multiple cultures obtained before antimicrobial therapy when possible. Transthoracic echocardiography is also a core part of the diagnostic pathway, but when no cultures have yet been obtained, blood cultures are the defensible immediate next step among the retained choices. A changing murmur alone is not equivalent to echocardiographic proof of new regurgitation, so the source's Duke-criteria wording should not be overinterpreted.",
+      "references": [
+        "American Heart Association Scientific Statement: Infective Endocarditis in Childhood, 2015 Update",
+        "2023 ESC Guidelines for the management of endocarditis"
+      ]
+    },
+    {
+      "id": "part2-id-gp-q38",
+      "sourceQuestion": "Infectious Diseases Q38",
+      "modernOutcome": "resolved_to_best_early_postoperative_staphylococcal_option",
+      "verifiedAnswer": "A",
+      "reason": "For infective endocarditis involving prosthetic cardiac material within the first year after cardiac surgery, the pediatric AHA statement notes that coagulase-negative staphylococci are a usual cause, particularly methicillin-resistant strains. A child only two months after VSD repair is in the early postoperative/prosthetic-material risk window; among the retained organisms, Staphylococcus epidermidis is therefore the best supported answer. The record should still retain that exact microbiology depends on the repair material and healthcare exposure.",
+      "references": [
+        "American Heart Association Scientific Statement: Infective Endocarditis in Childhood, 2015 Update — prosthetic material IE within 1 year commonly due to coagulase-negative staphylococci",
+        "Contemporary pediatric IE series showing coagulase-negative staphylococci as a major organism in prosthetic-graft IE"
+      ]
+    },
+    {
+      "id": "part2-id-gp-q40",
+      "sourceQuestion": "Infectious Diseases Q40",
+      "modernOutcome": "sickle_cell_specific_ie_pathogen_ranking_not_established",
+      "verifiedAnswer": null,
+      "reason": "Staphylococcus aureus is one of the leading causes of pediatric infective endocarditis overall, while children with sickle cell disease remain at risk for several invasive bacterial pathogens, including pneumococcus and S. aureus. The retained stem provides no device, valve, healthcare-exposure, blood-culture, or other feature that makes S. aureus uniquely most likely specifically because the child has sickle cell disease. Current evidence does not support teaching a disease-specific universal IE organism ranking from this stem, so the source key should remain unverified.",
+      "references": [
+        "Contemporary pediatric infective-endocarditis reviews/series: S. aureus and viridans streptococci are leading organisms",
+        "Pediatrics 2023: invasive bacterial infections in children with sickle cell disease show multiple important pathogens rather than an IE-specific single organism"
+      ]
+    },
+    {
+      "id": "part2-id-gp-q43",
+      "sourceQuestion": "Infectious Diseases Q43",
+      "modernOutcome": "resolved_to_narrow_spectrum_inpatient_beta_lactam",
+      "verifiedAnswer": "A",
+      "reason": "For a fully immunized child hospitalized with uncomplicated community-acquired pneumonia and without a stated high-resistance, MRSA, or life-threatening/complicated feature, current pediatric antimicrobial guidance favors narrow-spectrum ampicillin rather than routine broad-spectrum ceftriaxone. The word 'ill-looking' alone does not establish empyema, necrotizing pneumonia, shock, or another complication in the retained stem. Therefore IV ampicillin is the best retained answer, with the caveat that broader therapy is appropriate when severe/complicated disease or local resistance requires it.",
+      "references": [
+        "AAP Red Book 2024-2027 Systems-Based Treatment Table: amoxicillin/ampicillin/penicillin for fully immunized CAP; ceftriaxone for selected high-resistance hospitalized settings",
+        "AAP antimicrobial stewardship guidance: do not treat uncomplicated CAP in otherwise healthy immunized hospitalized children with therapy broader than ampicillin",
+        "IDSA/PIDS 2026 pediatric CAP guideline update"
+      ]
+    },
+    {
+      "id": "part2-id-gp-q45",
+      "sourceQuestion": "Infectious Diseases Q45",
+      "modernOutcome": "blunt_trauma_does_not_select_one_pneumonia_pathogen",
+      "verifiedAnswer": null,
+      "reason": "Pediatric pneumonia with pleural effusion can be caused by Streptococcus pneumoniae, Staphylococcus aureus, and other organisms. A remote blunt chest injury does not by itself establish a pathogen, and the source's own rationale partially relies on penetrating trauma rather than the retained blunt-trauma mechanism. With no culture data, influenza/MRSA clue, penetrating injury, hospital-acquired exposure, or other discriminator, S. aureus versus pneumococcus cannot be safely reduced to one answer.",
+      "references": [
+        "IDSA/PIDS 2026 pediatric CAP guideline update",
+        "AAP Red Book 2024-2027 CAP treatment table recognizing pneumococcus and S. aureus among important bacterial pathogens"
+      ]
+    },
+    {
+      "id": "part2-id-gramneg-q57",
+      "sourceQuestion": "Infectious Diseases Q57",
+      "modernOutcome": "brucellosis_not_established_and_both_serology_and_culture_are_valid_tests",
+      "verifiedAnswer": null,
+      "reason": "CDC guidance emphasizes that brucellosis cannot be diagnosed from nonspecific symptoms alone and that exposure history helps determine whether serology or culture is appropriate. Both serology and culture, including culture of joint fluid, can confirm Brucella in suitable cases. The retained child has no livestock/unpasteurized-dairy/travel exposure and the original Gram-stain image is missing; gram-negative coccobacilli plus knee swelling also does not uniquely establish Brucella over other pediatric osteoarticular pathogens. Therefore Brucella titer versus synovial culture cannot be uniquely verified from the retained stem.",
+      "references": [
+        "CDC Clinical Overview of Brucellosis, 2026: exposure history guides testing; serology and culture are both used for confirmation"
+      ]
+    },
+    {
+      "id": "part2-id-imm-q103",
+      "sourceQuestion": "Infectious Diseases Q103",
+      "modernOutcome": "resolved_to_no_hpv_specific_breastfeeding_precaution",
+      "verifiedAnswer": "B",
+      "reason": "The retained stem states maternal genital warts/HPV, whereas the source explanation discusses herpes simplex and is therefore mismatched. Current AAP/CDC breastfeeding guidance lists only a small number of infectious contraindications and does not identify maternal HPV/genital warts as a reason to interrupt breastfeeding or impose an HPV-specific breastfeeding precaution. Accordingly, 'Nothing' is the best retained answer if interpreted as no special HPV-specific precaution; normal routine hand hygiene still applies to all caregivers and is not an HPV-specific intervention.",
+      "references": [
+        "AAP Contraindications to Breastfeeding, updated April 2026",
+        "CDC Contraindications to Breastfeeding, December 2025",
+        "CDC HPV Infection guidance: transmission is primarily anogenital/contact; rare perinatal transmission may occur"
+      ]
+    },
+    {
+      "id": "part2-neo-q40",
+      "sourceQuestion": "Neonatology Q40",
+      "modernOutcome": "warm_and_cold_compress_options_both_defensible_engorgement_care",
+      "verifiedAnswer": null,
+      "reason": "Contemporary engorgement guidance supports continued responsive breastfeeding, optimizing latch/position, limited milk expression when needed for comfort or latch, and use of warm or cold compresses according to symptoms and preference. Cold compresses are commonly used to reduce swelling and pain; brief warmth may help some patients around feeding. Because A and B each contain a potentially appropriate nonpharmacologic measure and the stem does not define a true plugged duct, neither can be promoted as the unique single-best answer. Topical antibiotics and stopping breastfeeding are not supported by the retained findings.",
+      "references": [
+        "Academy of Breastfeeding Medicine Clinical Protocol #36: The Mastitis Spectrum, Revised 2022",
+        "WHO 2022 postnatal-care recommendation for breast engorgement: responsive breastfeeding, expression, and warm or cold compresses based on preference",
+        "ACOG Breastfeeding Challenges: engorgement management and minimal expression for symptom relief"
+      ]
+    },
+    {
+      "id": "part2-trauma-q09",
+      "sourceQuestion": "Trauma Q9",
+      "modernOutcome": "resolved_to_tissue_diagnosis_for_suspected_lch_lytic_skull_lesion",
+      "verifiedAnswer": "A",
+      "reason": "A tender/swollen lytic skull lesion in a young child is compatible with osseous Langerhans cell histiocytosis among the differential diagnoses. NCI guidance states that a pathologic diagnosis is required for definitive LCH diagnosis and that lytic bone lesions are among the sites most frequently biopsied. MRI can be useful for staging or evaluating associated soft-tissue/CNS involvement but does not replace tissue diagnosis of an isolated suspicious skull lesion. Among the retained choices, biopsy is the defensible diagnostic answer.",
+      "references": [
+        "NCI Langerhans Cell Histiocytosis Treatment (PDQ): pathological diagnosis is required; lytic bone lesions are frequently biopsied for diagnosis"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewedUniqueCanonicalConflicts": 10,
+    "resolvedToModernVerifiedAnswer": 6,
+    "retainedNonPublishable": 4,
+    "recalledAnswersOverwritten": 0,
+    "expectedUniqueAuditAfterThisBatch": {
+      "canonicalConflicting": 131,
+      "uniqueResolutionReviewed": 114,
+      "cleanModernAnswersInOverlays": 35,
+      "uniqueReviewedRetainedNonPublishable": 79,
+      "remainingWithoutResolutionOverlay": 17
+    },
+    "next": "Run the CI unique-ID coverage audit. If it confirms only the 17 Saudi/policy-sensitive Ethics/Patient-Safety conflicts remain, review those against current Saudi MOH/SCFHS/SPSC/SFDA/institutional sources."
+  }
+}

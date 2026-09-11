@@ -25,6 +25,16 @@ jobs:
         run: python master-bank/tools/audit_source_coverage.py
       - name: Source representation audit
         run: python master-bank/tools/audit_source_representation.py
+      - name: Review status audit
+        run: python master-bank/tools/audit_review_status.py
+      - name: Conflict-resolution coverage audit
+        run: python master-bank/tools/audit_conflict_resolution_coverage.py --output master-bank/reports/conflict-resolution-coverage.json
+      - name: Upload conflict-resolution coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: conflict-resolution-coverage
+          path: master-bank/reports/conflict-resolution-coverage.json
+          retention-days: 1
       - name: Duplicate report
         continue-on-error: true
         run: python master-bank/tools/detect_duplicate_questions.py

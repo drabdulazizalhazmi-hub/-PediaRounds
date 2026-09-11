@@ -1,0 +1,110 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch12-gastro-trauma-8-20260907",
+  "scope": "Eight non-overlapping current-guidance conflict-resolution records after the cross-chat state reached 99/131 reviewed. Covers Gastroenterology, Research/Communication, Trauma, and Ophthalmology.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options and current evidence support a defensible single-best answer.",
+    "Do not invent missing clinical context, options, images, or source assumptions.",
+    "When the best current action is absent, labels are malformed, or more than one diagnosis remains plausible, keep verifiedAnswer null and the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-gi-q007",
+      "sourceQuestion": "Gastroenterology Q7",
+      "modernOutcome": "resolved_to_initial_bedside_step",
+      "verifiedAnswer": "A",
+      "reason": "A newborn with frothy secretions and feeding-related choking should first have an oro/nasogastric tube gently passed as a bedside diagnostic step for suspected esophageal atresia. Failure to pass the tube is the classic bedside clue; a chest/abdominal radiograph is then used to demonstrate the tube coiled in the proximal pouch and assess abdominal gas. Among the retained options, A is the defensible next step.",
+      "references": [
+        "Preoperative management of children with esophageal atresia: current perspectives — failure to pass an NG tube is the classical sign; radiography then confirms the catheter in the proximal pouch"
+      ]
+    },
+    {
+      "id": "part2-gi-q017",
+      "sourceQuestion": "Gastroenterology Q17",
+      "modernOutcome": "best_immediate_airway_confirmation_method_absent",
+      "verifiedAnswer": null,
+      "reason": "In a perfusing infant or child after intubation, exhaled CO2 detection/capnography is recommended to confirm tracheal ETT placement; clinical assessment alone and chest radiography are not the most reliable initial confirmation method. A chest radiograph may assess tube depth and other thoracic complications but should not substitute for immediate CO2 confirmation, while blindly pulling and reinserting the tube is not justified from the retained stem. The best current action is absent from the choices.",
+      "references": [
+        "American Heart Association 2025 Pediatric Advanced Life Support: exhaled CO2 detection or capnography should be used to confirm ETT placement in infants and children with a perfusing rhythm"
+      ]
+    },
+    {
+      "id": "part2-gi-q035",
+      "sourceQuestion": "Gastroenterology Q35",
+      "modernOutcome": "secretory_diarrhea_confirmed_but_specific_cause_not_distinguishable",
+      "verifiedAnswer": null,
+      "reason": "A stool osmotic gap around 40 supports secretory diarrhea, but it does not distinguish congenital chloride diarrhea from congenital sodium diarrhea or congenital enteropathies such as tufting enteropathy. Congenital chloride diarrhea requires characteristic fecal electrolyte findings, particularly high stool chloride, which are not retained. The source itself says stool electrolytes are needed, so A versus B cannot be verified safely.",
+      "references": [
+        "Current congenital diarrheal-disorder diagnostic approach: low stool osmotic gap indicates secretory diarrhea; fecal electrolyte pattern is required to distinguish congenital electrolyte diarrheas from enteropathies"
+      ]
+    },
+    {
+      "id": "part2-gi-q042",
+      "sourceQuestion": "Gastroenterology Q42",
+      "modernOutcome": "age_risk_and_duplicate_option_labels_prevent_clean_single_answer",
+      "verifiedAnswer": null,
+      "reason": "Most uncomplicated nontyphoidal Salmonella gastroenteritis is treated supportively, but current CDC guidance lists infants among groups at increased risk for invasive disease in whom antibiotics should be considered. The retained child is 10 months old and the stem gives no bacteremia/severity/risk-stratification details. In addition, the source contains duplicate B labels for supportive care and IV ceftriaxone. The clinical and labeling ambiguities make the item non-publishable as a single-best-answer question.",
+      "references": [
+        "CDC Clinical Overview of Salmonellosis, 2024: most patients need supportive care; antibiotics are considered for severe disease and patients at risk for invasive disease, including infants"
+      ]
+    },
+    {
+      "id": "part2-research-q05",
+      "sourceQuestion": "Research/Communication Q5",
+      "modernOutcome": "study_design_under_specified",
+      "verifiedAnswer": null,
+      "reason": "The retained wording states only that a study was designed to examine the effect of exercise on mortality in patients with prior myocardial infarction. It does not state whether exposure was assigned, how participants were sampled, whether follow-up was prospective or retrospective, or whether cases and controls were selected by outcome. Therefore cohort versus case-control cannot be verified solely from the retained stem.",
+      "references": [
+        "Standard epidemiologic study-design definitions: cohort classification requires grouping by exposure with outcome follow-up; case-control classification requires sampling by outcome"
+      ]
+    },
+    {
+      "id": "part2-research-q13",
+      "sourceQuestion": "Research/Communication Q13",
+      "modernOutcome": "all_retained_options_malformed",
+      "verifiedAnswer": null,
+      "reason": "Open-ended questions allow respondents to answer in their own words, whereas closed-ended questions constrain responses to predefined choices. The retained options mix these concepts with incorrect quantitative/qualitative labels, so none cleanly expresses the distinction. The source key should not be promoted until the original option set is reconstructed or the item is explicitly rewritten.",
+      "references": [
+        "Standard survey-methodology definitions of open-ended and closed-ended questions",
+        "Source explanation table retained with the canonical record"
+      ]
+    },
+    {
+      "id": "part2-trauma-q05",
+      "sourceQuestion": "Trauma Q5",
+      "modernOutcome": "resolved_to_secondary_injury_prevention",
+      "verifiedAnswer": "A",
+      "reason": "Avoiding hypotension is a core component of preventing secondary brain injury after pediatric TBI because cerebral perfusion must be maintained. Current pediatric TBI guidance and recent pediatric trauma recommendations emphasize prevention and treatment of hypotension. Routine profound hypocapnia is not protective, and heavy sedation is a context-dependent ICU intervention rather than the universal protective measure asked for here. Among the retained options, A is the clean current answer.",
+      "references": [
+        "Brain Trauma Foundation Guidelines for the Management of Pediatric Severe TBI, 3rd Edition",
+        "NAEMSP Prehospital Trauma Compendium: Pediatric Severe and Inflicted Trauma, 2025 — prevention of hypoxia and hypotension especially in pediatric TBI"
+      ]
+    },
+    {
+      "id": "part2-ophthalmology-q02",
+      "sourceQuestion": "Ophthalmology Q2",
+      "modernOutcome": "urgent_ophthalmology_referral_absent_from_choices",
+      "verifiedAnswer": null,
+      "reason": "An infant with strabismus and an abnormal red reflex requires prompt ophthalmologic assessment. AAPOS referral criteria specifically call for referral of infants with an abnormal red reflex, and retinoblastoma evaluation is based on a detailed dilated eye examination, often under anesthesia in young children. Neither routine CT nor TORCH screening is the universal best next step in this retained option set; the correct referral/examination action is absent.",
+      "references": [
+        "AAPOS Vision Screening Recommendations: refer infants with an abnormal red reflex and children with strabismus",
+        "NCI Retinoblastoma PDQ: diagnostic evaluation includes detailed eye examination; young children may require examination under anesthesia"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 8,
+    "resolvedToModernVerifiedAnswer": 2,
+    "retainedNonPublishable": 6,
+    "recalledAnswersOverwritten": 0,
+    "aggregateFromCrossChatStartingPoint": {
+      "startingResolutionReviewed": 99,
+      "startingCleanModernAnswers": 27,
+      "startingRetainedNonPublishable": 72,
+      "resolutionReviewedAfterThisBatch": 107,
+      "cleanModernAnswersAfterThisBatch": 29,
+      "retainedNonPublishableAfterThisBatch": 78,
+      "remainingConflictsNotYetResolutionReviewed": 24
+    }
+  }
+}

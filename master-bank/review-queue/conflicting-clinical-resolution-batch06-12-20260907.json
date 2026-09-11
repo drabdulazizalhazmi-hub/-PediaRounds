@@ -1,0 +1,135 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch06-12-20260907",
+  "scope": "Next current-guidance conflict-resolution pass across Respiratory/Sleep, Asthma, Infectious Diseases, Genetics, Oncology, and Behavioral/Psychiatry after 40 prior resolution-reviewed conflicts.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when retained stem/options and current guidance support a defensible single-best answer.",
+    "Do not invent missing options, species, severity, images, diagnostic context, or policy details.",
+    "If current guidance shows more than one retained option is plausible or the correct modern answer is absent, keep verifiedAnswer null and the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "PR-P2-SLEEP-017",
+      "modernOutcome": "resolved",
+      "verifiedAnswer": "A",
+      "reason": "The event occurs at approximately 4–5 a.m. after an 8 p.m. bedtime, i.e. late in the sleep period when REM sleep is more prominent. Nightmares are REM parasomnias that typically occur in the second half/last third of the night, whereas sleep terrors and confusional arousals are NREM disorders of arousal that usually occur in the first third/first half of sleep.",
+      "references": [
+        "Sleep physiology and sleep disorders in childhood: nightmares occur in the last half of the night; sleep terrors occur in the first third",
+        "Sleep Terrors: An Updated Review"
+      ]
+    },
+    {
+      "id": "PR-P2-RESP-006",
+      "modernOutcome": "resolved_to_best_modern_supporting_feature",
+      "verifiedAnswer": "D",
+      "reason": "The 2024 revised ISHAM-ABPA criteria explicitly list expectoration of mucus plugs and finger-in-glove opacities as compatible clinico-radiological features. Frequent bronchial obstruction is nonspecific asthma behavior and is not a current defining diagnostic component. Among the retained options, productive cough with brown mucus plugs is the strongest modern supporting feature. The missing original radiograph remains a separate publication blocker.",
+      "references": [
+        "2024 revised ISHAM-ABPA working group clinical practice guideline: mucus plugs/finger-in-glove compatible features; specific IgE + total IgE essential components"
+      ]
+    },
+    {
+      "id": "PR-RESP-ASTH-028",
+      "modernOutcome": "question_not_valid_for_current_asthma_severity_definition",
+      "verifiedAnswer": null,
+      "reason": "GINA 2026 defines asthma severity retrospectively by the intensity of treatment required to achieve control after several months, not by one baseline spirometric variable. FEV1, FEV1/FVC, and bronchodilator response each have diagnostic/risk roles, so the retained stem asking for one spirometric measure to determine asthma severity is not a valid modern single-best-answer question.",
+      "references": [
+        "GINA Strategy Report 2026: asthma severity is retrospective and treatment-intensity based",
+        "GINA 2025/2026 lung-function framework"
+      ]
+    },
+    {
+      "id": "part2-id-urt-q80",
+      "modernOutcome": "best_current_empiric_regimen_absent_from_choices",
+      "verifiedAnswer": null,
+      "reason": "Bacterial tracheitis requires prompt broad-spectrum therapy that includes Staphylococcus aureus/MRSA coverage plus broader beta-lactam coverage. Current references list regimens such as ceftriaxone plus nafcillin/vancomycin, clindamycin plus a third-generation cephalosporin, or ampicillin-sulbactam. Vancomycin alone is therefore not a complete empiric regimen, while ceftriaxone alone lacks MRSA coverage. No retained single option represents the modern regimen.",
+      "references": [
+        "NCBI StatPearls Bacterial Tracheitis: broad-spectrum therapy including MRSA; suggested combination regimens"
+      ]
+    },
+    {
+      "id": "part2-id-other-q100",
+      "modernOutcome": "malaria_treatment_under_specified_and_recalled_monotherapy_inadequate",
+      "verifiedAnswer": null,
+      "reason": "Current malaria treatment depends on clinical severity, Plasmodium species, and expected susceptibility based on where infection was acquired. CDC guidance generally uses artemisinin-based combination therapy for uncomplicated falciparum/unknown-species malaria rather than artemisinin monotherapy. The retained stem does not specify species or severity, and option A is written as arterolane or artemether rather than a complete combination regimen, so no retained option can be verified safely.",
+      "references": [
+        "CDC Treatment of Uncomplicated Malaria, 2026: regimen chosen by species, severity and geographic susceptibility; artemisinin-based combination therapy preferred"
+      ]
+    },
+    {
+      "id": "part2-genetics-aneuploidy-q19",
+      "modernOutcome": "no_correct_retained_option",
+      "verifiedAnswer": null,
+      "reason": "The phenotype is compatible with Noonan syndrome, but neither retained option is correct. Noonan syndrome is a RAS/MAPK disorder typically evaluated with molecular genetic testing rather than routine karyotyping, and most affected individuals do not have intellectual disability; when present, it is often mild. The source's own conclusion that none of the choices is correct is supported by current GeneReviews.",
+      "references": [
+        "GeneReviews Noonan Syndrome, updated 2025: molecular multigene testing; mild intellectual disability in a minority"
+      ]
+    },
+    {
+      "id": "part2-genetics-aneuploidy-q24",
+      "modernOutcome": "overlapping_answer_options_invalid_single_best_answer",
+      "verifiedAnswer": null,
+      "reason": "Elevated maternal serum AFP is a screening marker for open neural tube defects. Anencephaly is itself an open neural tube defect and is strongly associated with elevated maternal AFP. Therefore A (neural tube defect) and C (anencephaly) overlap rather than function as mutually exclusive answer choices; the item cannot be cleanly graded without reconstruction.",
+      "references": [
+        "ACMG technical standard for open neural tube defect screening: open NTDs include open spina bifida and anencephaly; maternal serum AFP is elevated"
+      ]
+    },
+    {
+      "id": "part2-genetics-aneuploidy-q25",
+      "modernOutcome": "more_than_one_retained_counseling_indication",
+      "verifiedAnswer": null,
+      "reason": "Advanced maternal age is a recognized reason to discuss age-related aneuploidy risk and prenatal testing options. Advanced paternal age, often historically defined around age 40 or older, is also a recognized genetic-counseling topic because of increased de-novo dominant and other reproductive risks. Since both A and B can justify counseling depending on context, the retained single-best-answer format is invalid.",
+      "references": [
+        "ACOG Pregnancy at Age 35 Years or Older",
+        "ACMG Statement on Guidance for Genetic Counseling in Advanced Paternal Age"
+      ]
+    },
+    {
+      "id": "part2-onc-q02-fanconi-mds",
+      "modernOutcome": "resolved_best_retained_answer",
+      "verifiedAnswer": "D",
+      "reason": "Fanconi anemia markedly predisposes to both myelodysplastic syndrome and AML. Current GeneReviews reports a substantially greater relative risk for MDS than AML compared with the general population and recognizes MDS as a major clonal marrow complication in FA. Among the retained choices, MDS is the best single answer while retaining the note that AML risk is also high.",
+      "references": [
+        "GeneReviews Fanconi Anemia, updated 2026: relative risk approximately 6000-fold for MDS and 700-fold for AML; combined MDS/AML cumulative incidence about 35% by age 40"
+      ]
+    },
+    {
+      "id": "part2-onc-q08-eculizumab-unclear",
+      "modernOutcome": "diagnosis_not_established_cannot_verify_targeted_therapy",
+      "verifiedAnswer": null,
+      "reason": "Eculizumab is diagnosis-specific therapy for complement-mediated thrombotic microangiopathy/aHUS in appropriate contexts, but the retained vignette does not establish TMA/aHUS and the source itself lists more than one possible diagnosis. Progressive respiratory symptoms with cytopenias after leukemia induction are insufficient to justify eculizumab without hemolysis, renal, complement/TMA, or other defining data.",
+      "references": [
+        "Source integrity requirement: treatment cannot be verified when the recalled diagnosis is unresolved"
+      ]
+    },
+    {
+      "id": "part2-beh-q12",
+      "modernOutcome": "setting_and_diagnostic_context_required",
+      "verifiedAnswer": null,
+      "reason": "AAP ADHD guidance requires symptoms/impairment in more than one major setting for diagnosis. For a 6-year-old with confirmed ADHD, medication plus parent/teacher behavioral interventions are recommended, while school-specific difficulty may instead require educational/psychoeducational assessment. Because the retained stem omits whether ADHD diagnostic criteria are met across settings, A versus C cannot be safely graded.",
+      "references": [
+        "AAP ADHD Clinical Practice Guideline: diagnosis requires impairment in more than one setting; age 6–11 treatment includes FDA-approved medication plus behavioral/educational interventions"
+      ]
+    },
+    {
+      "id": "part2-psych-q33",
+      "modernOutcome": "least_restrictive_safety_sequence_missing",
+      "verifiedAnswer": null,
+      "reason": "Current pediatric agitation guidance prioritizes environmental safety and verbal de-escalation, with removal of dangerous objects and least-restrictive measures before medication or physical restraint when feasible. Physical restraint is reserved for situations in which other measures fail and restraint is necessary to prevent imminent harm. The retained stem does not state that de-escalation/environmental measures failed or that immediate physical restraint is unavoidable, so B cannot be verified as the universal first intervention; D is also a legitimate immediate safety measure.",
+      "references": [
+        "AAP/Pediatric Emergency Care agitation pathways: environmental safety and verbal de-escalation first; physical restraint only when necessary after less restrictive measures fail",
+        "Best Practices for Evaluation and Treatment of Agitated Children and Adolescents (BETA)"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "resolvedToModernVerifiedAnswer": 3,
+    "retainedNonPublishable": 9,
+    "recalledAnswersOverwritten": 0,
+    "aggregateAfterThisBatch": {
+      "resolutionReviewed": 52,
+      "cleanModernAnswersInOverlays": 14,
+      "retainedInvalidUnderSpecifiedOrContextDependent": 38
+    }
+  }
+}

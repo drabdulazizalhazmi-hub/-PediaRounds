@@ -1,0 +1,75 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch02-8-20260907",
+  "scope": "Second current-guidance resolution pass across selected conflicting records with complete retained stems/options.",
+  "policy": [
+    "Preserve recalledAnswer as source provenance.",
+    "Do not invent a missing option or clinical detail.",
+    "Assign verifiedAnswer only when the retained stem/options support a current single-best answer.",
+    "When current guidance shows the item is multi-answer, under-specified, or missing the best action, keep verifiedAnswer null and non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-nephro-aki-q07",
+      "modernOutcome": "multiple_correct_options_invalid_single_best_answer",
+      "verifiedAnswer": null,
+      "reason": "Prerenal volume depletion can produce both FENa <1% and concentrated urine/high specific gravity. The source already states both A and B are compatible. The retained single-best-answer structure is therefore invalid without rewriting.",
+      "references": ["Standard pediatric prerenal AKI physiology and urinary-index interpretation"]
+    },
+    {
+      "id": "part2-nephro-aki-q12",
+      "modernOutcome": "volume_status_required_no_safe_single_answer",
+      "verifiedAnswer": null,
+      "reason": "Once HUS with oligoanuria is present, fluid therapy must be individualized. Respiratory distress can represent fluid overload, in which case additional fluid may be harmful; volume expansion is appropriate only for true hypovolemia. The retained stem does not establish intravascular volume status, so A cannot be verified as a universal next step.",
+      "references": ["Management of hemolytic-uremic syndrome in children: careful restriction after oligoanuria/fluid overload"]
+    },
+    {
+      "id": "part2-nephro-htn-q13",
+      "modernOutcome": "best_next_step_absent_from_choices_for_stage1_pathway",
+      "verifiedAnswer": null,
+      "reason": "For asymptomatic stage 1 hypertension, the AAP pathway calls for repeat auscultatory BP in 1-2 weeks; if still stage 1 at the second visit, check upper/lower-extremity BP and repeat in 3 months. ABPM is used after persistent stage 1 hypertension over 3 visits. Because the retained stem describes the second high reading two weeks later and the next recommended step is not among the choices, option A should not be forced.",
+      "references": ["AAP Clinical Practice Guideline for Screening and Management of High Blood Pressure in Children and Adolescents"]
+    },
+    {
+      "id": "part2-endo-calcium-q28",
+      "modernOutcome": "initial_rickets_evaluation_is_a_panel_not_one_test",
+      "verifiedAnswer": null,
+      "reason": "Current rickets guidance recommends an initial biochemical panel including calcium, phosphate, ALP, PTH, creatinine and 25-hydroxyvitamin D. Several retained choices are therefore essential components, while 1,25-dihydroxyvitamin D is not a routine first-line screening test. The question cannot support one unique answer as written.",
+      "references": ["Diagnostic approach to rickets consensus 2024", "Rickets guidance diagnostic workup"]
+    },
+    {
+      "id": "part2-cc-q12",
+      "modernOutcome": "no_retained_option_matches_current_neonatal_shock_management",
+      "verifiedAnswer": null,
+      "reason": "A shocked neonate requires rapid stabilization with ongoing reassessment and, when sepsis is suspected, prompt empiric antimicrobials. Fluids are titrated to hemodynamic status and stopped if overload develops; bicarbonate and prostaglandin are context-specific rather than routine. None of the retained choices cleanly represents this approach, and 'IV fluid only' is not adequate.",
+      "references": ["Surviving Sepsis Campaign pediatric guidelines 2026"]
+    },
+    {
+      "id": "part2-cc-q15",
+      "modernOutcome": "outdated_or_malformed_hemodynamic_sign_question",
+      "verifiedAnswer": null,
+      "reason": "Current pediatric septic-shock guidance emphasizes heart rate, blood pressure, capillary refill, extremity temperature, pulse quality, mental status and urine output, with POCUS/advanced monitoring when available. Pulmonary capillary wedge pressure is not used as a standard 'late sign' discriminator. The retained options do not contain the clinically important late sign of hypotension and should not be modern-graded.",
+      "references": ["Surviving Sepsis Campaign pediatric guidelines 2026"]
+    },
+    {
+      "id": "part2-cc-q17",
+      "modernOutcome": "retained_tests_do_not_reliably_distinguish_dic_from_liver_failure",
+      "verifiedAnswer": null,
+      "reason": "Fibrinogen and fibrin-degradation products can both be abnormal in DIC and in advanced liver disease and are not reliable single discriminators. The source itself notes a missing factor-VIII framing, and modern interpretation requires the entire clinical/laboratory pattern. No retained option can be promoted safely.",
+      "references": ["Modern DIC/liver-disease coagulation interpretation principles"]
+    },
+    {
+      "id": "part2-cc-q19",
+      "modernOutcome": "risk_stratification_missing",
+      "verifiedAnswer": null,
+      "reason": "For a lower-risk BRUE, AAP guidance supports discharge after appropriate observation with family education and CPR resources and recommends against initiating home cardiorespiratory monitoring. Home monitoring may be appropriate in selected higher-risk infants or persistent apnea conditions. Because the retained stem does not define BRUE risk or the underlying apnea disorder, no single discharge option can be verified for all cases; the recalled home pulse-oximetry answer should not be promoted.",
+      "references": ["AAP BRUE guideline and Pediatric Care Online BRUE guidance"]
+    }
+  ],
+  "summary": {
+    "reviewed": 8,
+    "resolvedToModernVerifiedAnswer": 0,
+    "identifiedInvalidOrMissingBestOption": 8,
+    "recalledAnswersOverwritten": 0,
+    "note": "This batch primarily removes false certainty: current guidance shows these eight items cannot be safely graded as retained."
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch16-saudi-ethics-safety-17-20260907",
+  "scope": "All 17 Saudi/policy-sensitive Medical Ethics and Patient Safety canonical conflicts listed as remaining by the CI-audited coordination state after the non-policy clinical batch was completed.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Prefer current or latest-located official Saudi sources: MOH, Saudi Health Council, Saudi Patient Safety Center, SFDA, and SCFHS.",
+    "Assign verifiedAnswer only when the retained stem/options and Saudi policy support a defensible single-best answer.",
+    "Do not invent missing urgency, guardianship, institutional escalation, industry-disclosure, or consent details.",
+    "If the official policy action is absent from the choices or more than one option remains plausible, keep verifiedAnswer null and the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-ethics-q06",
+      "sourceQuestion": "Ethics/Safety Q6",
+      "modernOutcome": "confidentiality_question_has_multiple_policy_exceptions_and_ambiguous_recipient",
+      "verifiedAnswer": null,
+      "reason": "Saudi MOH patient-rights guidance protects confidentiality generally, but the Saudi AIDS Prevention Law creates specific lawful HIV disclosure/reporting pathways, including spouse notification, and communicable diseases may be reported to public-health authorities. The stem does not specify to whom disclosure is contemplated or for what purpose. Ordinary pneumonia and childbirth information are also protected health information absent a lawful reason to disclose. Therefore the retained options do not support one unique answer.",
+      "references": [
+        "Saudi MOH Patients' Rights / confidentiality guidance, 2025-2026",
+        "Saudi AIDS Prevention Law and Executive Regulations: Articles 16-17 on confidentiality and spouse/contact notification",
+        "Saudi MOH List of Notifiable Diseases/Events, 2023"
+      ]
+    },
+    {
+      "id": "part2-ethics-q07",
+      "sourceQuestion": "Ethics/Safety Q7",
+      "modernOutcome": "none_of_the_retained_options_represents_nondiscriminatory_professional_management",
+      "verifiedAnswer": null,
+      "reason": "The SCFHS official healthcare-practitioner oath requires safe healthcare without discrimination while preserving confidentiality. A nurse's refusal to care for a patient solely because of HIV status should be addressed as a professionalism/infection-control issue while ensuring uninterrupted patient care. 'Force her', conceal clinically relevant information from future nurses, shift the complaint burden to the patient, or simply substitute another nurse without addressing the discriminatory refusal are not a clean professional-management answer set. No retained option should be verified.",
+      "references": [
+        "SCFHS Official Oath of the Healthcare Practitioner, 2025-2026: safe healthcare without discrimination and confidentiality",
+        "Saudi AIDS Prevention Law: rights and confidentiality of people living with HIV"
+      ]
+    },
+    {
+      "id": "part2-ethics-q08",
+      "sourceQuestion": "Ethics/Safety Q8",
+      "modernOutcome": "sfda_industry_disclosure_rule_not_represented_cleanly_by_options",
+      "verifiedAnswer": null,
+      "reason": "The Saudi Code of Pharmaceutical Promotional Practices permits scientific lecturers to be selected on qualifications and allows reasonable expense compensation, while requiring the pharmaceutical company to disclose its relationship with the lecturer and sponsorship of the activity. The retained options instead ask about refusing the money, donating it, independent-panel approval, or the lecturer disclosing to the audience. None cleanly states the SFDA rule, and the source's older monetary-threshold discussion is not reliable enough to repair the choices.",
+      "references": [
+        "SFDA Saudi Code of Pharmaceutical Promotional Practices, Article 9 Lecturer",
+        "SFDA Saudi Code of Conduct for Promotional Practices of Pharmaceutical and Herbal Products, current regulations listing"
+      ]
+    },
+    {
+      "id": "part2-ethics-q10",
+      "sourceQuestion": "Ethics/Safety Q10",
+      "modernOutcome": "closest_option_uses_wrong_physician_titles",
+      "verifiedAnswer": null,
+      "reason": "The latest official national DNR policy located in the Saudi MOH repository states that DNR orders are signed by the attending consultant plus two other specialist physicians, total three. The retained option D says 'three consultants including the treating physician', which is not the same requirement; none of the other choices matches either. Preserve the recalled D but do not promote it as an exact policy answer.",
+      "references": [
+        "Saudi Health Council National Policy and Procedure for DNR Status, MOH-hosted official document: attending consultant + two specialist physicians"
+      ]
+    },
+    {
+      "id": "part2-ethics-q11",
+      "sourceQuestion": "Ethics/Safety Q11",
+      "modernOutcome": "resolved_under_official_saudi_national_dnr_policy",
+      "verifiedAnswer": "D",
+      "reason": "The official Saudi national DNR policy located in the MOH repository states that when a patient with a written DNR undergoes surgery, the DNR order is automatically reversed for the surgery and automatically reactivated 48 hours after the surgical procedure. This matches retained option D more directly than the procedure-specific-order option.",
+      "references": [
+        "Saudi Health Council National Policy and Procedure for DNR Status, procedure item 7: automatic reversal for surgery and reactivation after 48 hours"
+      ]
+    },
+    {
+      "id": "part2-ethics-q12",
+      "sourceQuestion": "Ethics/Safety Q12",
+      "modernOutcome": "resolved_to_saudi_patient_safety_center",
+      "verifiedAnswer": "D",
+      "reason": "The Saudi Patient Safety Center is the national body whose ordinance and published mandate center on governing patient-safety practices, issuing patient-safety standards, building measurement/learning systems, and establishing national reporting frameworks for sentinel events. Among MOH, SFDA, SCFHS, and SPSC, option D is the best retained answer to a generic authority question specifically about patient safety.",
+      "references": [
+        "Saudi Patient Safety Center — Who We Are / mandate, 2026",
+        "SPSC Patient Safety Standards, 2024-2026",
+        "SPSC Saudi Healthcare Sentinel Events Manual"
+      ]
+    },
+    {
+      "id": "part2-ethics-q16",
+      "sourceQuestion": "Ethics/Safety Q16",
+      "modernOutcome": "resolved_to_document_and_report_adverse_drug_reaction",
+      "verifiedAnswer": "C",
+      "reason": "A vancomycin infusion reaction should be documented in the medical record so future administration can be managed safely. Separately, SFDA pharmacovigilance guidance advises healthcare professionals to report suspected adverse drug reactions to the Saudi Vigilance/National Pharmacovigilance system and does not restrict reporting only to fatal or serious reactions. Therefore 'report on both' is the best retained answer.",
+      "references": [
+        "SFDA Guidance on Adverse Drug Events Reporting for Healthcare Professionals, updated 2025",
+        "SFDA Saudi Vigilance electronic reporting service"
+      ]
+    },
+    {
+      "id": "part2-ethics-q17",
+      "sourceQuestion": "Ethics/Safety Q17",
+      "modernOutcome": "resolved_to_patient_safety_incident_reporting",
+      "verifiedAnswer": "A",
+      "reason": "After immediate clinical treatment of the hypoglycemia, a wrong-drug medication error should enter the patient-safety reporting/learning process. SPSC national policy emphasizes transparent reporting, system-factor analysis, and a just culture rather than limiting reports to fatal events or reducing the response to punishment of one nurse. Among the retained reporting choices, A best matches the Saudi patient-safety framework.",
+      "references": [
+        "SPSC Just Culture Policy and toolkit, 2022-2026",
+        "SPSC national patient-safety reporting/learning framework and Sentinel Events resources"
+      ]
+    },
+    {
+      "id": "part2-ethics-q18",
+      "sourceQuestion": "Ethics/Safety Q18",
+      "modernOutcome": "resolved_to_direct_professional_speak_up_with_escalation_if_needed",
+      "verifiedAnswer": "A",
+      "reason": "Saudi patient-safety and just-culture principles favor transparency, professional accountability, and speaking up about safety concerns rather than ignoring an error or secretly changing an order. For a dose concern without a stated immediate catastrophic hazard, direct discussion with the prescribing consultant is the best retained first step; if the concern is not resolved or the patient is at imminent risk, escalation through the institutional chain and immediate protection of the patient remain necessary.",
+      "references": [
+        "SPSC Just Culture Policy and toolkit: transparency, accountability, and system learning",
+        "SCFHS Official Oath: provide safe healthcare and uphold professional standards"
+      ]
+    },
+    {
+      "id": "part2-ethics-q20",
+      "sourceQuestion": "Ethics/Safety Q20",
+      "modernOutcome": "resolved_to_exposure_incident_reporting_with_clinical_followup_caveat",
+      "verifiedAnswer": "A",
+      "reason": "MOH occupational-exposure guidance requires prompt reporting/documentation of a needlestick exposure and immediate medical risk assessment. Source-patient HBV/HCV/HIV testing, exposed-worker baseline testing, and PEP when indicated are also essential, but they do not replace incident reporting. Because the vignette specifically highlights refusal to file the incident report, A is the best retained action, with the explicit caveat that reporting alone is not the complete post-exposure protocol.",
+      "references": [
+        "Saudi MOH Management of Occupational Exposures to Blood and Other Body Fluids",
+        "MOH infection-prevention guidance: report needlestick immediately, seek medical assessment, evaluate source patient and PEP"
+      ]
+    },
+    {
+      "id": "part2-ethics-q22",
+      "sourceQuestion": "Ethics/Safety Q22",
+      "modernOutcome": "resolved_to_systematic_process_and_policy",
+      "verifiedAnswer": "B",
+      "reason": "The SPSC patient-safety framework emphasizes safe-system design, standardized processes, policy, measurement, and learning from system failures. A six-month delay because a trauma pathway failed to ensure device-specific assessment/follow-up is most directly prevented by a reliable systematic process/policy rather than depending only on one physician's memory. Safety culture remains important but is broader than the process defect described.",
+      "references": [
+        "SPSC Patient Safety Standards Book: national framework for safe systems and standardized patient-safety practices",
+        "SPSC Sentinel Events/Just Culture resources: focus on system failures and process variability"
+      ]
+    },
+    {
+      "id": "part2-ethics-q23",
+      "sourceQuestion": "Ethics/Safety Q23",
+      "modernOutcome": "resolved_to_timely_disclosure_of_vaccination_error",
+      "verifiedAnswer": "A",
+      "reason": "SPSC national disclosure policy states that when a patient-safety incident occurs, patients/families need timely and full disclosure including what happened, acknowledgment, apology/sympathy as appropriate, and discussion of prevention. After discovering that an unnecessary extra vaccine dose was given, timely disclosure to the mother is therefore the best retained action; blaming her and doing nothing conflicts with the disclosure/just-culture framework.",
+      "references": [
+        "SPSC National Patient Safety Disclosure Policy",
+        "SPSC Just Culture Policy"
+      ]
+    },
+    {
+      "id": "part2-ethics-q25",
+      "sourceQuestion": "Ethics/Safety Q25",
+      "modernOutcome": "dialysis_urgency_and_guardian_refusal_pathway_not_defined",
+      "verifiedAnswer": null,
+      "reason": "Saudi informed-consent guidance makes the guardian responsible for decisions serving the minor's benefit, states that harmful guardian action can shift authority to another guardian and then a judge, and permits lifesaving/organ-saving intervention without guardian consent in defined urgent circumstances. The retained stem merely says AKI requiring dialysis and parental refusal; it does not state hyperkalemia, pulmonary edema, severe acidosis, uremic complications, or another non-postponable life/organ threat. Therefore neither routine respect, direct override, nor court referral can be uniquely graded from the retained data.",
+      "references": [
+        "Saudi Guidelines for Informed Consent: guardianship of minors, harmful guardian action, and lifesaving/organ-saving exceptions"
+      ]
+    },
+    {
+      "id": "part2-ethics-q26",
+      "sourceQuestion": "Ethics/Safety Q26",
+      "modernOutcome": "correct_consent_committee_or_emergency_pathway_absent_from_choices",
+      "verifiedAnswer": null,
+      "reason": "For a minor whose guardian is absent, Saudi informed-consent guidance provides a healthcare-facility committee pathway when the guardian cannot be reached or cannot wait, and also allows treatment without consent for defined life/organ-saving emergencies. 'Appendicitis' alone does not establish that delay is immediately life-threatening, while 'wait two hours' is not a policy rule. The correct pathway depends on urgency and is not represented by the two retained choices.",
+      "references": [
+        "Saudi Guidelines for Informed Consent: absent guardian committee and emergency exceptions"
+      ]
+    },
+    {
+      "id": "part2-ethics-q28",
+      "sourceQuestion": "Ethics/Safety Q28",
+      "modernOutcome": "epidural_hematoma_severity_missing_for_guardian_refusal_override",
+      "verifiedAnswer": null,
+      "reason": "Saudi consent guidance permits lifesaving/organ-saving intervention without guardian approval when intervention cannot safely be postponed, and also states that a guardian action harmful to the minor may shift decision authority. However, the retained epidural-hematoma stem omits GCS, focal deficit, hematoma size, mass effect, or other findings establishing an immediate operative indication. Proceeding directly to the OR cannot be verified for every epidural hematoma, while merely contacting the mother does not by itself express the full guardian/escalation pathway.",
+      "references": [
+        "Saudi Guidelines for Informed Consent: minor guardianship, harmful guardian decisions, and emergency lifesaving exception"
+      ]
+    },
+    {
+      "id": "part2-ethics-q31",
+      "sourceQuestion": "Ethics/Safety Q31",
+      "modernOutcome": "experimental_treatment_refusal_does_not_justify_punitive_discharge_and_best_action_absent",
+      "verifiedAnswer": null,
+      "reason": "An experimental chemotherapy intervention requires valid informed consent from the appropriate guardian/patient according to age and capacity. Refusal of an experimental intervention does not by itself justify discharge as a punitive response, and the stem gives no information about standard-care alternatives, current stability, research protocol, or the need for protective/legal intervention. None of the retained choices cleanly represents continued care, counseling, and respect for informed refusal while offering appropriate standard options.",
+      "references": [
+        "Saudi Guidelines for Informed Consent: consent for minors, right to refuse within regulatory limits, and prohibition on neglecting care after refusal",
+        "Saudi MOH Patients' Rights: informed decision-making and refusal rights"
+      ]
+    },
+    {
+      "id": "part2-ethics-q33",
+      "sourceQuestion": "Ethics/Safety Q33",
+      "modernOutcome": "resolved_to_information_to_father_at_mothers_request",
+      "verifiedAnswer": "A",
+      "reason": "The mother explicitly asks that information about the child be given to the father. Saudi informed-consent guidance identifies the father as the first-order legal guardian for a minor, and patient/family communication should use the authorized guardian/representative rather than withholding or altering facts. Among the retained options, giving the information accurately to the father is therefore the best answer; waiting indefinitely or lessening the facts is not supported.",
+      "references": [
+        "Saudi Guidelines for Informed Consent: guardianship order for minors identifies father first, followed by other guardians",
+        "Saudi MOH Patients' Rights: clear and accurate information and confidentiality"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewedUniqueCanonicalConflicts": 17,
+    "resolvedToModernVerifiedAnswer": 9,
+    "retainedNonPublishable": 8,
+    "recalledAnswersOverwritten": 0,
+    "expectedUniqueAuditAfterBatch15AndBatch16": {
+      "canonicalConflicting": 131,
+      "uniqueResolutionReviewed": 131,
+      "cleanModernAnswersInOverlays": 44,
+      "uniqueReviewedRetainedNonPublishable": 87,
+      "remainingWithoutResolutionOverlay": 0
+    },
+    "next": "Run the CI unique-ID conflict-resolution coverage audit. If 131/131 is confirmed, update the cross-chat coordination files and move to large needs_verification batches; do not decrement canonical status counts solely from overlays."
+  }
+}

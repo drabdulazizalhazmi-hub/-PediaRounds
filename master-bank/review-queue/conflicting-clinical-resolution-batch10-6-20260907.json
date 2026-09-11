@@ -1,0 +1,80 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch10-6-20260907",
+  "scope": "Six additional current-guidance conflict-resolution records after 81 prior conflicts were resolution-reviewed. This batch covers Critical Care, Behavioral Medicine, and Hematology.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options and current evidence support a defensible modern single-best answer.",
+    "Do not invent missing neonatal-shock context, original answer choices, or factor-assay data.",
+    "When the correct modern action is absent or more than one retained feature is correct, keep verifiedAnswer null and the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-cc-q12",
+      "modernOutcome": "no_complete_retained_stabilization_option",
+      "verifiedAnswer": null,
+      "reason": "The retained neonatal-shock options do not cleanly represent a complete modern stabilization pathway. Fluid resuscitation alone is not a universal answer in a shocked neonate, while bicarbonate, prostaglandin E1, and corticosteroid use are indication-dependent. Management must be driven by airway/breathing/circulation, likely etiology, infection risk, and possible ductal-dependent congenital heart disease. Because the stem omits the context needed to select among these interventions and the source itself rejects IV fluid only, no retained option can be safely verified.",
+      "references": [
+        "Surviving Sepsis Campaign international guidelines for management of sepsis and septic shock in children, 2026",
+        "Current neonatal stabilization principles for possible ductal-dependent congenital heart disease"
+      ]
+    },
+    {
+      "id": "part2-cc-q15",
+      "modernOutcome": "outdated_malformed_pcwp_late_sign_question",
+      "verifiedAnswer": null,
+      "reason": "Current pediatric septic-shock guidance does not define high pulmonary capillary wedge pressure as a universal late sign. Resuscitation is guided by serial clinical hemodynamic markers including heart rate, blood pressure, capillary refill, extremity temperature, pulse quality, consciousness, and urine output, with no requirement for a PCWP-based late-sign framework. The retained item is therefore outdated/malformed as a modern single-best-answer question.",
+      "references": [
+        "Surviving Sepsis Campaign international guidelines for management of sepsis and septic shock in children, 2026"
+      ]
+    },
+    {
+      "id": "part2-cc-q19",
+      "modernOutcome": "resolved_to_family_cpr_training_for_discharge_ready_lower_risk_event",
+      "verifiedAnswer": "C",
+      "reason": "Assuming the retained stem represents a discharge-ready lower-risk BRUE after appropriate evaluation, AAP guidance advises against initiating home cardiorespiratory monitoring and recommends caregiver education plus resources for CPR training. Routine home pulse oximetry is not the recommended discharge strategy. Among the retained options, caregiver CPR training/resources is the best current recommendation.",
+      "references": [
+        "AAP Clinical Practice Guideline: Brief Resolved Unexplained Events, lower-risk infants",
+        "AAP Pediatric Care Online: Brief Resolved Unexplained Event"
+      ]
+    },
+    {
+      "id": "part2-beh-q10",
+      "modernOutcome": "two_retained_diagnostic_criteria_are_correct",
+      "verifiedAnswer": null,
+      "reason": "Current ADHD diagnostic criteria require symptoms to persist for at least six months and to be present in at least two settings. Therefore both retained options A and B are correct supporting diagnostic-history features, while C is incorrect. The item is not a valid single-best-answer question unless reformatted as multiple-select or reconstructed.",
+      "references": [
+        "AAP Pediatric Care Online: Inattention, Impulsivity, and Hyperactivity",
+        "AAP ADHD clinical practice guidance"
+      ]
+    },
+    {
+      "id": "part2-beh-q17",
+      "modernOutcome": "correct_medication_adjustment_absent_from_original_options",
+      "verifiedAnswer": null,
+      "reason": "When an ADHD medication clearly worsens aggression or emotional lability, AACAP guidance supports discontinuing that medication and considering a different agent. The source says reducing/stopping the stimulant was the intended action but also states that this action was not present in the original options. A reconstructed choice must not be treated as an original answer, so the item remains non-publishable until the original options are recovered or the question is explicitly rewritten.",
+      "references": [
+        "AACAP Practice Parameter for the Assessment and Treatment of Children and Adolescents With ADHD"
+      ]
+    },
+    {
+      "id": "part2-heme-q50-factor-assay-conflict",
+      "modernOutcome": "factor_assay_pattern_internally_inconsistent_no_single_retained_diagnosis",
+      "verifiedAnswer": null,
+      "reason": "A prolonged aPTT with normal PT can occur in factor VIII or IX deficiency, but factor XIII deficiency characteristically has normal PT and aPTT. Simultaneously reported low activities of factors VIII, IX, and XIII therefore do not form a coherent isolated hemophilia A, hemophilia B, hemophilia C, or von Willebrand disease pattern. The source itself records no valid key. No retained diagnosis should be forced.",
+      "references": [
+        "Merck Manual Professional: screening laboratory test results for inherited coagulation deficiencies"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 6,
+    "resolvedToModernVerifiedAnswer": 1,
+    "retainedNonPublishable": 5,
+    "recalledAnswersOverwritten": 0,
+    "aggregateAfterThisBatch": {
+      "resolutionReviewed": 87,
+      "cleanModernAnswersInOverlays": 22,
+      "retainedInvalidUnderSpecifiedOrContextDependent": 65
+    }
+  }
+}

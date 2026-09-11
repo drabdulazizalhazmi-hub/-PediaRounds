@@ -1,0 +1,100 @@
+{
+  "batchId": "source-sparse-large-review-42-20260907",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "reviewType": "direct_source_reread",
+  "questionCount": 42,
+  "policy": "No missing distractors, images, calculations, years, or answer keys were invented. recalledAnswer remains separate from verifiedAnswer. Image/media dependencies remain publication-gated.",
+  "sections": {
+    "Gastroenterology": {
+      "questions": [5,22,29,30,32,48,52,55,73,74],
+      "count": 10,
+      "imageOrMedia": [5,73,74],
+      "uncertainSourceAnswer": [],
+      "sourceNotes": {
+        "5": "Barium enema image referenced; source answer Rectal biopsy.",
+        "22": "Single preserved option: Functional constipation.",
+        "29": "Dermatitis herpetiformis image/context; source answer Celiac disease.",
+        "30": "Single preserved option: Dermatitis herpetiformis.",
+        "32": "Single preserved option: lactose-free formula for postinfectious secondary lactose intolerance.",
+        "48": "Single preserved option: thrombosis after severe dehydration with acute neurologic deficit.",
+        "52": "Single preserved option: videofluoroscopic swallowing study for recurrent pneumonia with feeding-related cough.",
+        "55": "Single preserved option: esophageal manometry after bird-beak achalasia finding.",
+        "73": "Meckel scan image referenced; source answer Meckel diverticulum.",
+        "74": "Pigmentation image referenced; source answer Peutz-Jeghers syndrome."
+      }
+    },
+    "Hematology": {
+      "questions": [1,23,27,28,30,37,39,44,55],
+      "count": 9,
+      "imageOrMedia": [30],
+      "uncertainSourceAnswer": [27],
+      "sourceNotes": {
+        "1": "Hemoglobin electrophoresis recall is internally inconsistent; printed key B but source commentary says beta-thalassemia minor is most probable. Preserve conflict.",
+        "23": "Single preserved option: low reticulocyte count in iron deficiency risk context.",
+        "27": "Printed answer A? low urinary porphyrin; source commentary says best answer should be blood lead level. Preserve conflicting.",
+        "28": "Single preserved option: lead poisoning after move to new house with cognitive/GI symptoms.",
+        "30": "Long-bone radiograph referenced; source asks for lead level.",
+        "37": "Single preserved option: Bernard-Soulier syndrome; source notes MYH9-related disease could also fit. Preserve ambiguity for verification.",
+        "39": "Single preserved option: Wiskott-Aldrich syndrome with eczema, infections, thrombocytopenia, low MPV.",
+        "44": "Single preserved option: IVIG in recalled ITP management item; clinical context requires later verification.",
+        "55": "Single preserved option: Kasabach-Merritt syndrome/phenomenon in vascular tumor with consumptive coagulopathy."
+      }
+    },
+    "Metabolic Disorders": {
+      "questions": [2,4,9,11,12,13,14,15,22],
+      "count": 9,
+      "imageOrMedia": [12,15,22],
+      "uncertainSourceAnswer": [],
+      "sourceNotes": {
+        "2": "Single preserved option: Maple syrup urine disease with elevated leucine/isoleucine/valine.",
+        "4": "Single preserved option: Phenylketonuria with developmental delay/hyperactivity/mousy odor.",
+        "9": "Single preserved option: Von Gierke disease/GSD I with hepatomegaly, enlarged kidneys, hypoglycemia and lactic acidosis.",
+        "11": "Single preserved option: Pompe disease with hypotonia, hepatomegaly and hypertrophic cardiomyopathy.",
+        "12": "Muscle biopsy image referenced; source answer Pompe disease.",
+        "13": "Single preserved option: GALT deficiency with hypoglycemia/acidosis/bilateral cataracts.",
+        "14": "Single preserved option: GALT deficiency in neonate with jaundice/hepatomegaly/E. coli infection.",
+        "15": "Single preserved option: Galactosemia with sepsis-like presentation and E. coli bacteremia.",
+        "22": "Cherry-red-spot image referenced; source answer Tay-Sachs disease."
+      }
+    },
+    "Nephrology and Urologic Disorders": {
+      "questions": [6,22,24,27,39,46,55],
+      "count": 7,
+      "imageOrMedia": [6,46],
+      "uncertainSourceAnswer": [46],
+      "sourceNotes": {
+        "6": "Single preserved option: MRI brain and spine in enuresis with recurrent falls and weak anal sphincter tone; source explanation points back to occult neurologic lesion evaluation.",
+        "22": "Single preserved option: hypercalciuria in preterm infant on furosemide with hematuria.",
+        "24": "Single preserved option: nephrotic syndrome with edema and 3+ proteinuria.",
+        "27": "Single preserved option: renal vein thrombosis in nephrotic relapse with dark urine and abdominal pain.",
+        "39": "Single preserved option: microscopic hematuria in IgA vasculitis/HSP presentation.",
+        "46": "Kidney ultrasound image referenced; source prints answer X and explicitly states no answer found. Keep unresolved and image-dependent.",
+        "55": "Single preserved option: preserve renal function as priority in prune-belly syndrome."
+      }
+    },
+    "Medical Ethics and Patient Safety": {
+      "questions": [1,3,4,15,21,24,34],
+      "count": 7,
+      "imageOrMedia": [],
+      "uncertainSourceAnswer": [15,21,24,34],
+      "zeroOptions": [34],
+      "sourceNotes": {
+        "1": "Single preserved option lists the four principles: beneficence, autonomy, nonmaleficence, justice.",
+        "3": "Single preserved option: beneficence defined as interest/best interest of patient.",
+        "4": "Single preserved option: patient confidentiality breached by discussing diagnosis in cafeteria.",
+        "15": "Printed answer A? improve quality of care; source says it did not find an answer. Preserve uncertainty.",
+        "21": "Only recalled option is Report?; printed answer X and source says no answer found. Preserve unresolved.",
+        "24": "Printed answer A? permission always needed except unstable ER patient; source discussion supports autonomy but does not independently settle all exceptions. Preserve uncertainty.",
+        "34": "Stem itself is unclear and no answer options are preserved; printed source says question is not clear. Keep zero-option incomplete recall."
+      }
+    }
+  },
+  "totals": {
+    "directlyReread": 42,
+    "imageOrMedia": 9,
+    "uncertainOrConflictingSourceAnswer": 8,
+    "zeroOption": 1
+  },
+  "reviewStatus": "source_reread_complete_clinical_verification_pending"
+}

@@ -1,0 +1,73 @@
+{
+  "batchId": "part2-source-sparse-large-review-28-20260907",
+  "source": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+  "sourceFile": "2026 PART Pediatric 2.pdf",
+  "questionCount": 28,
+  "purpose": "Direct source re-read of the next large sparse-recall batch. Missing distractors are not reconstructed; recalled source keys remain separate from any future verifiedAnswer.",
+  "sections": {
+    "Cardiology": {
+      "questions": [7,12,19,22,25,32],
+      "sourceAnswerLabels": {"7":"A","12":"A","19":"A","22":"A","25":"A","32":"A"},
+      "imageOrMedia": [25,32],
+      "notes": {
+        "25":"ECG-dependent SVT item; only adenosine is preserved as the recalled option.",
+        "32":"Long-QT association item; ECG is part of the recalled scenario and the source key is deafness."
+      }
+    },
+    "Neonatology": {
+      "questions": [7,17,25,29,33,42],
+      "sourceAnswerLabels": {"7":"source-dependent image identification","17":"A","25":"A","29":"A","33":"A","42":"A"},
+      "imageOrMedia": [7,25,42],
+      "uncertainAnswer": [7],
+      "zeroOptions": [7],
+      "notes": {
+        "7":"Image-only gestational-age examination item; source explicitly says the answer depends on which examination is shown. Do not invent an answer or options.",
+        "25":"Original abdominal radiograph is required; source identifies meconium peritonitis.",
+        "42":"Source describes sebaceous hyperplasia and selects reassurance; image association still requires review."
+      }
+    },
+    "Trauma and Accidents": {
+      "questions": [2,12,20,29,37,39],
+      "sourceAnswerLabels": {"2":"A","12":"A","20":"A","29":"A","37":"A","39":"A"},
+      "imageOrMedia": [12,20,39],
+      "notes": {
+        "12":"Crescentic intracranial lesion image; source key subdural hemorrhage.",
+        "20":"Fluorescein image-dependent corneal abrasion item.",
+        "37":"Source key is sodium thiosulfate but the source note states it should not be used alone and only if hydroxocobalamin is unavailable; retain clinical review flag.",
+        "39":"Foreign-body aspiration radiograph required."
+      }
+    },
+    "Critical Care Medicine": {
+      "questions": [22,33,34,43,55],
+      "sourceAnswerLabels": {"22":"A","33":"A","34":"A","43":"A","55":"A"},
+      "imageOrMedia": [34],
+      "notes": {
+        "22":"Persistent convulsion after multiple benzodiazepine doses; source preserves phenytoin as the single option/key.",
+        "34":"Papilledema finding is image-referenced; source key says check vital signs and refers back to the previous question.",
+        "43":"Rapid-sequence intubation in asthma; source key ketamine.",
+        "55":"Post-anesthesia rigidity/hyperthermia after succinylcholine; source key malignant hyperthermia."
+      }
+    },
+    "Immunology": {
+      "questions": [4,5,14,18,20],
+      "sourceAnswerLabels": {"4":"A","5":"A","14":"A","18":"A","20":"A"},
+      "imageOrMedia": [20],
+      "uncertainAnswer": [4],
+      "notes": {
+        "4":"Source wording says late complement gain-of-function mutation and explicitly questions whether that wording/key is correct; keep conflicting/incomplete rather than silently correcting it.",
+        "5":"Recurrent Staphylococcus abscesses; source key CGD.",
+        "14":"Severe reaction during IVIG; source key selective IgA deficiency.",
+        "18":"Source preserves low IgM with high IgA/high IgE as the expected lab pattern; no additional distractors are available.",
+        "20":"DiGeorge phenotype image; source key hypoparathyroidism. Original image remains an image-review gate."
+      }
+    }
+  },
+  "summary": {
+    "imageOrMediaQuestions": 9,
+    "uncertainOrSourceConflictQuestions": 3,
+    "zeroOptionQuestions": 1,
+    "verifiedAnswersAdded": 0,
+    "inventedDistractors": 0
+  },
+  "status": "source_re_read_complete_review_pending"
+}

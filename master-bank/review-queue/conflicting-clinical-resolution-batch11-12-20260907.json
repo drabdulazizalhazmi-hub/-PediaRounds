@@ -1,0 +1,138 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch11-12-20260907",
+  "scope": "Twelve additional current-guidance conflict-resolution records after 87 prior conflicts were resolution-reviewed. This batch covers Cardiology, Gastroenterology, Neurology, and Infectious Diseases.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when the retained stem/options and current evidence support a defensible modern single-best answer.",
+    "For Saudi Board items with jurisdiction-sensitive thresholds, prefer current Saudi MOH/national-program guidance over generic foreign thresholds when an applicable Saudi source is available.",
+    "Do not invent missing imaging, exposure history, trauma history, etiologic clues, or treatment choices.",
+    "If the best modern diagnosis/action is absent or the retained stem remains under-specified, keep verifiedAnswer null and the item non-publishable."
+  ],
+  "items": [
+    {
+      "id": "part2-cardio-acq-q54",
+      "modernOutcome": "viral_etiology_not_uniquely_determined",
+      "verifiedAnswer": null,
+      "reason": "Contemporary pediatric myocarditis literature recognizes multiple viral associations, including enteroviruses, adenovirus, parvovirus B19, HHV-6 and others, with pathogen patterns shifting over time. A preceding upper-respiratory illness does not identify one specific virus, and the source itself reports conflicting collections. The item should not teach a single universal 'most common virus' from this stem.",
+      "references": [
+        "American Heart Association Scientific Statement: Diagnosis and Management of Myocarditis in Children",
+        "Circulation Research 2024 review: Clinical Characteristics and Mechanisms of Acute Myocarditis"
+      ]
+    },
+    {
+      "id": "part2-gi-q044",
+      "modernOutcome": "diarrheal_dehydration_sodium_pattern_under_specified",
+      "verifiedAnswer": null,
+      "reason": "Diarrheal dehydration may be isotonic, hyponatremic, or hypernatremic depending on water/sodium losses and replacement. Persistent diarrhea, dehydration and poor skin turgor alone do not force serum sodium to 120 mmol/L rather than a hypernatremic or near-isotonic pattern. No unique retained electrolyte value can be verified from the stem.",
+      "references": [
+        "Current pediatric dehydration/dysnatremia principles; sodium trajectory depends on losses and replacement"
+      ]
+    },
+    {
+      "id": "part2-gi-q045",
+      "modernOutcome": "resolved_to_hyponatremic_cerebral_edema",
+      "verifiedAnswer": "B",
+      "reason": "A child who becomes stuporous with serum sodium 121 mmol/L after fluid therapy has symptomatic moderate-to-severe hyponatremia. Pediatric hyponatremia guidance states that acute hyponatremia can cause cerebral edema and neurologic symptoms including obtundation and seizures. Osmotic demyelination is associated with overly rapid correction of chronic hyponatremia rather than the low sodium state itself. Among the retained options, cerebral edema is the defensible answer.",
+      "references": [
+        "Royal Children's Hospital Clinical Practice Guideline: Hyponatraemia"
+      ]
+    },
+    {
+      "id": "part2-gi-q053",
+      "modernOutcome": "resolved_to_EoE_pattern_among_retained_options",
+      "verifiedAnswer": "C",
+      "reason": "The retained pattern is solid-food dysphagia with a compensatory behavior of drinking water with meals. Current pediatric EoE guidance specifically describes dysphagia/food sticking with solid meals and adaptive behaviors such as drinking frequently during meals. Atopy is a risk factor but is not required. In contrast, achalasia classically causes progressive dysphagia to both solids and liquids. Therefore eosinophilic esophagitis is the stronger retained modern answer.",
+      "references": [
+        "American Academy of Pediatrics: Diagnosis of Eosinophilic Esophagitis",
+        "American College of Gastroenterology: Eosinophilic Esophagitis in Pediatric and Adolescent Patients",
+        "Merck Manual Professional 2026: Achalasia"
+      ]
+    },
+    {
+      "id": "part2-gi-q056",
+      "modernOutcome": "source_image_diagnosis_uncertain_management_cannot_be_resolved",
+      "verifiedAnswer": null,
+      "reason": "The management choice depends on whether the source image actually represents hiatal hernia, achalasia, or another esophageal abnormality. The source itself questions the image/diagnosis and the original image is not linked for definitive review. Continuing acid suppression, prokinetic therapy, or surgical referral cannot be selected safely without first establishing the diagnosis.",
+      "references": [
+        "Source explicitly flags hiatal-hernia versus achalasia/image mismatch; original image remains a publication gate"
+      ]
+    },
+    {
+      "id": "part2-neuro-cn-q39",
+      "modernOutcome": "functional_neurologic_disorder_requires_positive_diagnosis_and_interdisciplinary_care",
+      "verifiedAnswer": null,
+      "reason": "Inconsistent or distractible neurologic findings can support functional neurologic disorder, but FND is not synonymous with factitious disorder and symptoms are not assumed to be intentional. AAP guidance emphasizes positive examination findings and interdisciplinary treatment. The retained stem does not establish that organic disease has been adequately excluded, so automatic psychiatry referral versus MRI cannot be reduced to a universal single next step.",
+      "references": [
+        "AAP Pediatric Care Online: Functional Neurologic Disorder, 2024"
+      ]
+    },
+    {
+      "id": "part2-neuro-neurocutaneous-q24",
+      "modernOutcome": "developmental_regression_non_specific_no_NF1_features",
+      "verifiedAnswer": null,
+      "reason": "Loss of previously acquired gross-motor milestones at age one is a red flag requiring urgent etiologic evaluation, but the retained stem has no NF1-defining features and regression is not specific for NF1. Chronic subdural hematoma can cause regression but the stem also lacks trauma, macrocephaly, imaging or other supporting clues. Fragile X and fetal alcohol syndrome more typically produce developmental delay rather than this isolated regression pattern. No retained diagnosis is sufficiently supported.",
+      "references": [
+        "Current pediatric developmental-regression principles; source lacks disease-specific discriminators"
+      ]
+    },
+    {
+      "id": "part2-neuro-q06",
+      "modernOutcome": "oversimplified_neurotransmitter_binary",
+      "verifiedAnswer": null,
+      "reason": "Seizures arise from network-level imbalance between excitation and inhibition, and glutamatergic excitation and GABAergic inhibition are central mechanisms. However, a seizure cannot be universally defined by simultaneous measurable 'increased glutamate and decreased GABA' in every patient or event. The source itself marks the absolute formulation uncertain, so the item should not be upgraded to a verified biochemical rule.",
+      "references": [
+        "Modern epilepsy pathophysiology recognizes network excitation/inhibition imbalance rather than one universal transmitter concentration pattern"
+      ]
+    },
+    {
+      "id": "part2-neuro-q18",
+      "modernOutcome": "modern_first_line_regimen_missing_etiology_context",
+      "verifiedAnswer": null,
+      "reason": "Current infantile-spasm guidance supports prompt hormonal therapy and vigabatrin, with vigabatrin particularly favored when tuberous sclerosis is present; recent ILAE emergency guidance describes combined steroid plus vigabatrin therapy as treatment of choice unless TSC is apparent. The retained stem does not mention TSC and omits hormonal therapy from the options. Therefore C should not be promoted as a universal first-line answer from this version of the item.",
+      "references": [
+        "International League Against Epilepsy guidance on infantile spasms, 2026"
+      ]
+    },
+    {
+      "id": "part2-atypical-q61",
+      "modernOutcome": "resolved_to_latent_TB_treatment_option_under_Saudi_guidance",
+      "verifiedAnswer": "C",
+      "reason": "Saudi national TB guidance treats TST >10 mm as positive in children other than the high-risk >5 mm group, regardless of BCG status; current MOH public guidance also uses >=10 mm as positive. This healthy 6-year-old with 12 mm TST, no symptoms and normal chest radiograph therefore fits TB infection without active disease. Saudi National TB Program guidance includes isoniazid monotherapy for 6 months as preferred and 9-month isoniazid as an accepted alternative in low-incidence settings; among the retained INH-only durations, 9 months is the valid option. Four months is a rifampicin regimen, not a standard INH-alone regimen.",
+      "references": [
+        "Saudi Ministry of Health National Tuberculosis Program: TST interpretation in children and LTBI treatment options",
+        "Saudi MOH Tuberculosis guidance, current page updated 2026"
+      ]
+    },
+    {
+      "id": "part2-atypical-q63",
+      "modernOutcome": "resolved_to_TB_infection_under_Saudi_threshold",
+      "verifiedAnswer": "B",
+      "reason": "Under Saudi national pediatric TB guidance, a TST >10 mm is positive in children outside the special >5 mm high-risk group. An asymptomatic child with an 11 mm positive TST and normal chest radiograph has evidence of TB infection without evidence of active TB disease. This is TB infection/latent TB infection rather than mere exposure or TB disease.",
+      "references": [
+        "Saudi Ministry of Health National Tuberculosis Program: Tuberculosis in Children",
+        "Saudi MOH Tuberculosis guidance, current 2026 page"
+      ]
+    },
+    {
+      "id": "part2-id-cns-q89",
+      "modernOutcome": "resolved_to_HSV_PCR_among_retained_tests",
+      "verifiedAnswer": "A",
+      "reason": "For a child with meningoencephalitis and seizures, CSF molecular testing is preferred over viral culture. Infectious-disease laboratory guidance lists HSV-1/2 NAAT on CSF for suspected viral encephalitis, and pediatric HSV guidance identifies CSF HSV DNA PCR as the preferred diagnostic method for suspected HSV meningoencephalitis. Other viral PCRs may also be appropriate depending on syndrome, but they are not retained choices. Among the listed tests, HSV PCR is the defensible answer.",
+      "references": [
+        "IDSA/ASM Guide to Utilization of the Microbiology Laboratory: laboratory diagnosis of encephalitis",
+        "Pediatric infectious-disease guidance: CSF HSV PCR for suspected HSV meningoencephalitis"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "resolvedToModernVerifiedAnswer": 5,
+    "retainedNonPublishable": 7,
+    "recalledAnswersOverwritten": 0,
+    "aggregateAfterThisBatch": {
+      "resolutionReviewed": 99,
+      "cleanModernAnswersInOverlays": 27,
+      "retainedInvalidUnderSpecifiedOrContextDependent": 72
+    }
+  }
+}

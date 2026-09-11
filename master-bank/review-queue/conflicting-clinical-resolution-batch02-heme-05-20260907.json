@@ -1,0 +1,68 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch02-heme-05-20260907",
+  "scope": "Second current-guidance conflict-resolution pass, focused on five Hematology records with complete enough retained stems/options for modern review or explicit invalidation.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign verifiedAnswer only when current guidance and the retained options support a defensible single-best answer.",
+    "If the modern best diagnosis/test/action is absent from the retained choices, keep verifiedAnswer null and the item non-publishable.",
+    "Do not repair missing context or invent distractors."
+  ],
+  "items": [
+    {
+      "id": "part2-heme-q17-dark-urine-pnh-conflict",
+      "modernOutcome": "resolved",
+      "verifiedAnswer": "D",
+      "reason": "The retained vignette has morning-predominant dark urine, low haptoglobin, Coombs-negative intravascular hemolysis, and the source explanation itself describes PNH. Current PNH guidance supports flow-cytometric confirmation of GPI-anchor protein deficiency; among the retained options, paroxysmal nocturnal hemoglobinuria is the defensible single-best diagnosis.",
+      "references": [
+        "Clinical Cytometry Society guideline: flow cytometry is the method of choice for PNH diagnosis",
+        "2024 PNH diagnosis/management guideline: high-sensitivity flow cytometry for CD55/CD59/FLAER abnormalities"
+      ]
+    },
+    {
+      "id": "part2-heme-q01-beta-thal-electrophoresis",
+      "modernOutcome": "best_modern_phenotype_absent_from_retained_options",
+      "verifiedAnswer": null,
+      "reason": "HbA2 7% with HbA remaining predominant is characteristic of beta-thalassemia trait/minor rather than major. Major/intermedia distinction is clinical, and the retained choices omit beta-thalassemia minor. Therefore neither A nor B can be promoted as a clean modern single-best answer solely from the electrophoresis pattern.",
+      "references": [
+        "NCBI/StatPearls Beta Thalassemia: beta-thalassemia minor typically has HbA2 4-8% with HbA predominance; major has markedly elevated HbF",
+        "Saudi hemoglobin-electrophoresis study: HbA2 >3.5% used as beta-thalassemia trait threshold"
+      ]
+    },
+    {
+      "id": "part2-heme-q05-scd-cns-crisis",
+      "modernOutcome": "under_specified_emergency_stem",
+      "verifiedAnswer": null,
+      "reason": "Current sickle-cell cerebrovascular guidance treats acute neurologic deficit/stroke as a time-critical event requiring urgent transfusion therapy and neurologic evaluation. Oxygen is supportive when hypoxemia is present, while simple transfusion may be used as part of an urgent transfusion strategy depending on hemoglobin and exchange availability. The retained phrase 'acute CNS crisis' does not define oxygenation, stroke findings, hemoglobin, or transfusion context, so A versus B cannot be graded safely.",
+      "references": [
+        "American Society of Hematology SCD cerebrovascular disease guideline",
+        "American Society of Hematology SCD transfusion-support guideline"
+      ]
+    },
+    {
+      "id": "part2-heme-q20-megaloblastic-risk",
+      "modernOutcome": "multiple_plausible_nutritional_risks",
+      "verifiedAnswer": null,
+      "reason": "Both retained histories can cause megaloblastic anemia through different deficiencies: unfortified goat milk is a recognized folate-deficiency risk in infants, while a strict vegan diet is a vitamin B12-deficiency risk. Without the missing age/diet-duration or folate-versus-B12 laboratory context, the stem does not support a unique answer.",
+      "references": [
+        "Current pediatric megaloblastic-anemia principles: folate and vitamin B12 deficiencies are the principal nutritional causes"
+      ]
+    },
+    {
+      "id": "part2-heme-q27-lead-vs-ida-conflict",
+      "modernOutcome": "modern_best_test_absent_from_retained_options",
+      "verifiedAnswer": null,
+      "reason": "Current CDC guidance states that a blood lead test is the best way to identify lead poisoning/exposure, with venous testing used for confirmation. The retained option 'low urinary porphyrin' is not the modern diagnostic discriminator and the correct test is absent, so the item remains non-publishable.",
+      "references": [
+        "CDC Childhood Lead Poisoning Prevention: Testing for Lead Poisoning in Children (2026)",
+        "CDC Recommended Actions Based on Blood Lead Level (2025)"
+      ]
+    }
+  ],
+  "summary": {
+    "reviewed": 5,
+    "resolvedToModernVerifiedAnswer": 1,
+    "bestModernAnswerAbsentFromOptions": 2,
+    "underSpecifiedOrMultiplePlausible": 2,
+    "recalledAnswersOverwritten": 0
+  }
+}

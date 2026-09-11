@@ -1,0 +1,103 @@
+{
+  "batchId": "conflicting-clinical-resolution-batch01-12-20260907",
+  "scope": "First current-guidance resolution pass after all 131 conflicting records were assigned to coordinated batches.",
+  "policy": [
+    "Preserve recalledAnswer exactly as source provenance.",
+    "Assign a modern verifiedAnswer only when retained stem/options and current guidance support a defensible single-best answer.",
+    "If current guidance shows that no retained option is adequate, keep the item non-publishable rather than inventing an option.",
+    "Image- and policy-dependent gaps remain separate blockers."
+  ],
+  "items": [
+    {
+      "id": "part2-cardio-arr-q26",
+      "modernOutcome": "resolved_for_current_stem",
+      "verifiedAnswer": "B",
+      "reason": "For SVT with cardiopulmonary compromise, synchronized cardioversion is an appropriate immediate treatment. The 2025 AHA PALS algorithm also permits adenosine when IV/IO access is already present, so the provenance nuance is retained, but the stem's 'preferred immediate rhythm treatment' supports B.",
+      "references": ["American Heart Association/AAP 2025 Pediatric Tachyarrhythmia With a Pulse Algorithm"]
+    },
+    {
+      "id": "part2-cardio-arr-q27",
+      "modernOutcome": "resolved_for_current_stem",
+      "verifiedAnswer": "B",
+      "reason": "The neonate is hypotensive with poor perfusion, meeting cardiopulmonary compromise criteria. Synchronized cardioversion is supported; adenosine may be used only when access is immediately available and it does not delay cardioversion.",
+      "references": ["American Heart Association/AAP 2025 Pediatric Tachyarrhythmia With a Pulse Algorithm"]
+    },
+    {
+      "id": "part2-endo-dm-q55",
+      "modernOutcome": "resolved_under_current_ADA_definition",
+      "verifiedAnswer": "C",
+      "reason": "ADA Standards of Care 2026 define impaired fasting glucose as FPG 100-125 mg/dL and impaired glucose tolerance as 2-hour OGTT 140-199 mg/dL. FPG 100 plus 2-hour glucose 160 therefore meets both IFG and IGT under the ADA definition.",
+      "references": ["American Diabetes Association Standards of Care in Diabetes 2026, Diagnosis and Classification"]
+    },
+    {
+      "id": "part2-heme-q48-factor12-vs11",
+      "modernOutcome": "resolved",
+      "verifiedAnswer": "D",
+      "reason": "An isolated prolonged aPTT discovered preoperatively in a patient with no bleeding history is classically compatible with a contact-factor deficiency such as factor XII. Factor XI deficiency can cause postoperative or post-traumatic bleeding, making factor XII the better single answer among the retained options.",
+      "references": ["Merck Manual Professional: inherited coagulation deficiencies", "PubMed 2026 factor XII deficiency preoperative prolonged aPTT without bleeding"]
+    },
+    {
+      "id": "part2-trauma-q10",
+      "modernOutcome": "modern_action_clarified_but_no_valid_retained_option",
+      "verifiedAnswer": null,
+      "reason": "The retained child is alert, neurologically normal and has no documented PECARN cervical-spine risk factor. Contemporary PECARN CSI guidance supports clinical clearance without imaging in low-risk children. 'No imaging' is absent from the retained options, so the question remains non-publishable rather than forcing CT or radiography.",
+      "references": ["PECARN pediatric cervical spine injury prediction rule, Lancet Child & Adolescent Health 2024"]
+    },
+    {
+      "id": "PR-RHEUM-007",
+      "modernOutcome": "not_resolvable_as_written",
+      "verifiedAnswer": null,
+      "reason": "Current JDM criteria support symmetric proximal muscle weakness. The retained choices append nonstandard 'ascending' or 'descending' labels to proximal/distal weakness, so none can be promoted cleanly as a modern single-best answer without rewriting the options.",
+      "references": ["EULAR/ACR idiopathic inflammatory myopathy classification criteria", "JDM review describing symmetric proximal weakness"]
+    },
+    {
+      "id": "part2-heme-q50-factor-assay-conflict",
+      "modernOutcome": "irreducible_internal_source_conflict",
+      "verifiedAnswer": null,
+      "reason": "The retained factor activities are internally inconsistent with a single isolated hemophilia diagnosis. Current guidance cannot repair missing or erroneous source laboratory values, so the item remains non-publishable.",
+      "references": ["Current coagulation-factor interpretation principles"]
+    },
+    {
+      "id": "part2-derm-q12",
+      "modernOutcome": "severity_dependent_not_single_route",
+      "verifiedAnswer": null,
+      "reason": "Current eczema-herpeticum guidance supports prompt systemic antiviral therapy. Oral acyclovir/valacyclovir is appropriate for patients who are not severely ill and can take oral therapy, whereas IV acyclovir is used for severe illness, inability to take oral therapy, or deterioration. Because retained severity/context does not uniquely establish route, the IV-versus-oral conflict remains unresolved.",
+      "references": ["DermNet eczema herpeticum guidance", "AAFP eczema herpeticum review"]
+    },
+    {
+      "id": "part2-beh-q10",
+      "modernOutcome": "multiple_correct_options",
+      "verifiedAnswer": null,
+      "reason": "ADHD diagnosis requires persistent symptoms and impairment across more than one setting, and the source itself retains both 'multiple settings' and 'at least 6 months' as true features. The single-best-answer format is invalid without rewriting.",
+      "references": ["Current ADHD diagnostic criteria framework"]
+    },
+    {
+      "id": "part2-beh-q17",
+      "modernOutcome": "best_action_absent_from_original_options",
+      "verifiedAnswer": null,
+      "reason": "The source itself states that dose reduction or stopping the stimulant is the intended medication adjustment but that this action was absent from the original choices. Do not manufacture a new distractor set; keep non-publishable.",
+      "references": ["Source integrity rule; medication adverse-effect reassessment required"]
+    },
+    {
+      "id": "part2-research-q07",
+      "modernOutcome": "under_specified",
+      "verifiedAnswer": null,
+      "reason": "The correct statistical test depends on the coding and distribution of maternal education and birth weight. Those details are missing, so neither t-test nor chi-square can be verified from the retained stem.",
+      "references": ["Standard biostatistical test-selection principles"]
+    },
+    {
+      "id": "part2-research-q09",
+      "modernOutcome": "under_specified",
+      "verifiedAnswer": null,
+      "reason": "A numerator of 23 out of 30 does not define PPV, sensitivity, specificity or accuracy unless the denominator population/test-result table is specified. No metric can be verified from the retained wording.",
+      "references": ["Standard diagnostic-test 2x2 table definitions"]
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "resolvedToModernVerifiedAnswer": 4,
+    "modernActionClarifiedButStillNonPublishable": 2,
+    "underSpecifiedOrInvalidAsWritten": 6,
+    "recalledAnswersOverwritten": 0
+  }
+}
