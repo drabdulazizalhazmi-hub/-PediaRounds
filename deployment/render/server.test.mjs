@@ -72,3 +72,14 @@ test('deployed entrypoint serves the new beta and keeps question API protected',
 import './study-oauth.test.mjs';
 import './study-oauth.http.test.mjs';
 import './study-client-reliability.test.mjs';
+
+import './study-reader.test.mjs';
+import './study-client.test.mjs';
+
+test('study reader is served as a same-origin script without weakening data guards',async t=>{
+ const base=await running(t);const response=await fetch(base+'/study/reader.mjs');
+ assert.equal(response.status,200);assert.match(response.headers.get('content-type'),/javascript/);
+ assert.match(response.headers.get('content-security-policy'),/script-src 'self'/);
+ assert.match(await response.text(),/createEnglishReader/);
+ assert.equal((await fetch(base+'/api/study/catalog')).status,401);
+});

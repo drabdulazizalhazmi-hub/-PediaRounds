@@ -1,7 +1,8 @@
+import {createEnglishReader,canReadEnglish,englishVoices} from './reader.mjs';
 const $=id=>document.getElementById(id);
 const IDLE=600000;
 let user=null,epoch=0,catalog=null,progress={done:[],seen:[]},checkpointRevision=0,checkpointBlocked=false;
-let history=[],position=-1,pool=[],cursor=0,freshCount=0,reviews=[],currentQuestion=null,loading=false;
+let history=[],position=-1,pool=[],cursor=0,freshCount=0,reviews=[],currentQuestion=null,loading=false,atEnd=false,viewVersion=0;
 let lastActivity=Date.now(),lastRefresh=Date.now(),refreshPromise=null,checkpointTask=null,pendingCheckpoint=null,persistTask=null,checkpointFailed=false;
 const pendingSaves=new Map(),controllers=new Set();
 const messages={sign_in_required:'Please sign in.',authentication_failed:'Sign-in was not accepted. Check your email/password and email confirmation.',email_confirmation_required:'Confirm your email, then return here and sign in.',invalid_signup:'Enter a valid email and a password of at least 10 characters.',invalid_credentials:'Enter your email and password.',external_backend_not_configured:'The external authentication service is not configured.',auth_unavailable:'The sign-in service is unavailable. Please retry.',rate_limited:'Too many requests. Please wait a minute and retry.',same_origin_required:'This request was blocked. Open this page directly and retry.',checkpoint_conflict:'Another session saved a newer position. Reload the saved position before continuing to save.',backend_unavailable:'Account storage is unavailable. Your progress has not been confirmed as saved.'};
@@ -26,12 +27,23 @@ async function api(action,method='GET',body){
   await refresh();if(ownEpoch!==epoch)throw e;return raw(action,method,body);
  }
 }
-function stopReading(){globalThis.speechSynthesis?.cancel();}
+const reader=createEnglishReader({onError:code=>{
+ if(!user)return;
+ notice(code==='not-allowed'?'Tap Read again to allow audio on this device.':'Reading stopped. Tap Read to try again, or choose another English voice.');
+}});
+function stopReading(){reader.stop();}
+function updateReadControls(){
+ const reply=history[position]?.reply;
+ for(const [id,text] of [['read-question',currentQuestion?.text],['read-explanation',reply?.originalExplanationAvailable?reply.explanation:'']]){
+  const eligible=canReadEnglish(text);$(id).hidden=!eligible;
+  $(id).disabled=!eligible||!reader.supported||!user||loading||atEnd||!currentQuestion;
+ }
+}
 function clearWorkspace(){
- epoch++;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;progress={done:[],seen:[]};history=[];reviews=[];pool=[];position=-1;currentQuestion=null;loading=false;pendingSaves.clear();pendingCheckpoint=null;checkpointTask=null;persistTask=null;checkpointFailed=false;checkpointBlocked=false;checkpointRevision=0;
+ epoch++;viewVersion++;atEnd=false;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;progress={done:[],seen:[]};history=[];reviews=[];pool=[];position=-1;currentQuestion=null;loading=false;pendingSaves.clear();pendingCheckpoint=null;checkpointTask=null;persistTask=null;checkpointFailed=false;checkpointBlocked=false;checkpointRevision=0;
  $('workspace').hidden=true;$('logout').hidden=true;$('login').hidden=false;
  for(const id of ['stem','explanation','source-key','result','validation-note','coverage','progress-count','save-status'])$(id).textContent='';
- $('options').replaceChildren();$('references').replaceChildren();$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;
+ $('options').replaceChildren();$('references').replaceChildren();$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;updateReadControls();
 }
 async function signOut(message='Signed out.'){
  try{await refreshPromise;}catch{}clearWorkspace();
@@ -49,9 +61,9 @@ function updateCounters(){
  // The set index is stable; revisiting a wrong answer must not exceed the bank total.
  $('counter').textContent='Question '+current+' / '+items.length+' in this set · Session item '+Math.max(0,position+1);
  $('progress-count').textContent=items.filter(q=>!done.has(q.id)).length+' not yet correct · '+(catalog?.summary.questionCount||0)+' repository records';
- $('previous').disabled=loading||position<=0;$('next').disabled=loading;
+ $('previous').disabled=loading||history.length===0||(!atEnd&&position<=0);$('next').disabled=loading||atEnd;
 }
-function lock(value){loading=value;for(const id of ['submit','module','mode','restart'])$(id).disabled=value;updateCounters();}
+function lock(value){loading=value;for(const id of ['submit','module','mode','restart'])$(id).disabled=value;updateCounters();updateReadControls();}
 function updateSaveControls(){
  $('retry-save').hidden=!(pendingSaves.size||checkpointFailed);
 }
@@ -73,29 +85,30 @@ async function savePosition(retryOnly=false){
  }}finally{if(checkpointTask===task){checkpointTask=null;updateSaveControls();}}
 }
 function showFeedback(slot){
- const reply=slot.reply;$('feedback').hidden=!reply;if(!reply)return;
+ const reply=slot.reply;$('feedback').hidden=!reply;updateReadControls();if(!reply)return;
  $('result').dataset.state=reply.correct===true?'correct':reply.correct===false?'incorrect':'review';
  $('result').textContent=reply.correct===null?'Review only — not scored':reply.correct?(slot.wasWrong?'ممتاز إجابتك صحيحة لقد صححت معلومتك':'Matches the recorded source key.'):'Does not match the recorded source key.';
  $('source-key').textContent=reply.sourceKey?'Recorded source key: '+reply.sourceKey:'No definite source key is available.';
  $('validation-note').textContent=reply.notice;$('explanation').textContent=reply.explanation;
- $('read-explanation').disabled=!reply.originalExplanationAvailable||!globalThis.speechSynthesis;
  $('references').replaceChildren();for(const ref of reply.references||[]){const p=document.createElement('p');p.textContent=[ref.sourceName,ref.part,ref.page!=null?'Page '+ref.page:'',ref.questionNumber].filter(Boolean).join(' · ');$('references').append(p);}
  $('save-status').textContent=slot.saved?'Progress saved to your external account.':'Progress has not yet been confirmed as saved.';
 }
 async function display(){
- stopReading();const slot=history[position],ownEpoch=epoch;if(!slot)return;currentQuestion=null;
+ stopReading();const slot=history[position],ownEpoch=epoch,ownView=++viewVersion;if(!slot)return;
+ atEnd=false;currentQuestion=null;
  lock(true);$('question-card').hidden=true;$('empty').hidden=true;$('feedback').hidden=true;notice('Loading question…');
- try{const q=await api('question?id='+encodeURIComponent(slot.id));if(ownEpoch!==epoch)return;
+ try{const q=await api('question?id='+encodeURIComponent(slot.id));if(ownEpoch!==epoch||ownView!==viewVersion)return;
+  if(!q||q.id!==slot.id)throw Object.assign(Error('invalid_response'),{code:'invalid_response'});
   currentQuestion=q;$('category').textContent=q.module;$('stem').textContent=q.text;$('question-notice').textContent=q.notice;
   const options=$('options');options.replaceChildren();
   q.options.forEach((o,i)=>{const label=document.createElement('label');label.className='option';const input=document.createElement('input');input.type='radio';input.name='answer';input.value=String(i);input.checked=slot.selected===i;input.disabled=!!slot.reply;input.addEventListener('change',()=>{slot.selected=i;});const key=document.createElement('strong');key.textContent=o.key+'.';const text=document.createElement('span');text.textContent=o.text;label.append(input,key,text);options.append(label);});
   $('submit').textContent=q.reviewOnly?'Reveal source (not scored)':'Submit answer';$('question-card').hidden=false;showFeedback(slot);notice('');
- }catch(e){if(ownEpoch===epoch){notice(errorMessage(e)+' Select Next to retry this question.');if(e.status===401)clearWorkspace();}}
- finally{if(ownEpoch===epoch&&user){lock(false);$('submit').disabled=!currentQuestion||!!slot.reply;$('read-question').disabled=!currentQuestion||!globalThis.speechSynthesis||/\p{Script=Arabic}/u.test(currentQuestion?.text||'');}}
- if(ownEpoch===epoch&&user&&currentQuestion)void savePosition();
+ }catch(e){if(ownEpoch===epoch&&ownView===viewVersion){notice(errorMessage(e)+' Select Next to retry this question.');if(e.status===401)clearWorkspace();}}
+ finally{if(ownEpoch===epoch&&ownView===viewVersion&&user){lock(false);$('submit').disabled=!currentQuestion||!!slot.reply;}}
+ if(ownEpoch===epoch&&ownView===viewVersion&&user&&currentQuestion)void savePosition();
 }
 async function next(){
- if(loading)return;
+ if(loading||atEnd)return;
  if(history[position]&&!currentQuestion)return display();
  if(position+1<history.length){position++;return display();}
  const done=correctIDs();reviews=reviews.filter(r=>!done.has(r.id));
@@ -103,11 +116,11 @@ async function next(){
  if(due>=0){id=reviews.splice(due,1)[0].id;}
  else{while(cursor<pool.length&&!id){const candidate=pool[cursor++];if(!done.has(candidate)){id=candidate;freshCount++;}}}
  if(!id&&reviews.length)id=reviews.shift().id;
- if(!id){$('question-card').hidden=true;$('empty').hidden=false;$('next').disabled=true;return;}
+ if(!id){stopReading();atEnd=true;currentQuestion=null;$('question-card').hidden=true;$('empty').hidden=false;$('feedback').hidden=true;updateCounters();updateReadControls();return;}
  history.push({id,selected:null,reply:null,saved:false});position=history.length-1;return display();
 }
 async function start(saved=null){
- stopReading();history=[];position=-1;cursor=0;freshCount=0;reviews=[];
+ stopReading();viewVersion++;loading=false;atEnd=false;currentQuestion=null;history=[];position=-1;cursor=0;freshCount=0;reviews=[];
  const done=correctIDs();pool=shuffle(filtered().filter(q=>!done.has(q.id)).map(q=>q.id));
  if(saved?.schema==='render-study-v1'){
   freshCount=Number.isSafeInteger(saved.freshCount)&&saved.freshCount>=0?saved.freshCount:0;
@@ -164,16 +177,16 @@ $('signup').addEventListener('click',async()=>{
 });
 $('logout').addEventListener('click',()=>void signOut());
 $('submit').addEventListener('click',async()=>{
- const slot=history[position];if(loading||!slot||slot.reply||!currentQuestion)return;
+ const slot=history[position];if(loading||atEnd||!slot||slot.reply||!currentQuestion||currentQuestion.id!==slot.id)return;
  if(slot.selected===null&&!currentQuestion.reviewOnly){notice('Select an answer before submitting.');return;}
  const ownEpoch=epoch;lock(true);
- try{slot.wasWrong=(progress.done||[]).some(r=>r.questionId===slot.id&&r.correct===false);const reply=await api('answer','POST',{id:slot.id,selectedIndex:slot.selected});if(ownEpoch!==epoch)return;slot.reply=reply;
+ try{slot.wasWrong=pendingSaves.get(slot.id)===false||(progress.done||[]).some(r=>r.questionId===slot.id&&r.correct===false)||history.some(r=>r.id===slot.id&&r.reply?.correct===false);const reply=await api('answer','POST',{id:slot.id,selectedIndex:slot.selected});if(ownEpoch!==epoch)return;slot.reply=reply;
   if(reply.correct===false&&!reviews.some(r=>r.id===slot.id))reviews.push({id:slot.id,after:freshCount+3+Math.floor(Math.random()*3)});
   pendingSaves.set(slot.id,reply.correct);showFeedback(slot);$('options').querySelectorAll('input').forEach(input=>input.disabled=true);await persist();
   if(ownEpoch===epoch)void savePosition();
  }catch(e){if(ownEpoch===epoch)notice(errorMessage(e));}finally{if(ownEpoch===epoch&&user){lock(false);$('submit').disabled=!!slot.reply;}}
 });
-$('next').addEventListener('click',()=>void next());$('previous').addEventListener('click',()=>{if(!loading&&position>0){position--;void display();}});
+$('next').addEventListener('click',()=>void next());$('previous').addEventListener('click',()=>{if(!loading&&history.length&&(atEnd||position>0)){if(atEnd)atEnd=false;else position--;void display();}});
 for(const id of ['module','mode'])$(id).addEventListener('change',()=>void start());$('restart').addEventListener('click',()=>void start());
 $('retry-save').textContent='Retry saving';
 $('retry-save').addEventListener('click',()=>void retrySaving());$('reload-position').addEventListener('click',()=>void reloadSavedPosition());
@@ -181,10 +194,10 @@ window.addEventListener('online',()=>{if(user)void retrySaving();});
 window.addEventListener('beforeunload',event=>{
  if(user&&(pendingSaves.size||pendingCheckpoint||checkpointTask)){event.preventDefault();event.returnValue='';}
 });
-function loadVoices(){const selected=$('voice').value;const voices=globalThis.speechSynthesis?.getVoices()||[];$('voice').replaceChildren();const def=document.createElement('option');def.value='';def.textContent='System English voice';$('voice').append(def);for(const voice of voices.filter(v=>/^en(?:-|_)/i.test(v.lang))){const opt=document.createElement('option');opt.value=voice.voiceURI;opt.textContent=voice.name+' · '+voice.lang;$('voice').append(opt);}if([...$('voice').options].some(o=>o.value===selected))$('voice').value=selected;}
-function read(text){if(!globalThis.speechSynthesis||!text||/\p{Script=Arabic}/u.test(text))return;stopReading();const voice=speechSynthesis.getVoices().find(v=>v.voiceURI===$('voice').value)||speechSynthesis.getVoices().find(v=>/^en[-_]/i.test(v.lang));const utterance=new SpeechSynthesisUtterance(text);utterance.lang=voice?.lang||'en-US';if(voice)utterance.voice=voice;utterance.onerror=()=>notice('Reading stopped or is unavailable on this device.');speechSynthesis.speak(utterance);}
+function loadVoices(){const selected=$('voice').value;const voices=englishVoices();$('voice').replaceChildren();const def=document.createElement('option');def.value='';def.textContent='System English voice';$('voice').append(def);for(const voice of voices.filter(v=>/^en(?:-|_)/i.test(v.lang))){const opt=document.createElement('option');opt.value=voice.voiceURI;opt.textContent=voice.name+' · '+voice.lang;$('voice').append(opt);}if([...$('voice').options].some(o=>o.value===selected))$('voice').value=selected;}
+function read(text){if(!user||loading||atEnd||!currentQuestion)return;reader.speak(text,{voiceURI:$('voice').value});}
 $('read-question').addEventListener('click',()=>read(currentQuestion?.text));$('read-explanation').addEventListener('click',()=>read(history[position]?.reply?.originalExplanationAvailable?history[position].reply.explanation:''));$('stop-reading').addEventListener('click',stopReading);
-globalThis.speechSynthesis?.addEventListener('voiceschanged',loadVoices);loadVoices();
+globalThis.speechSynthesis?.addEventListener?.('voiceschanged',loadVoices);loadVoices();updateReadControls();
 for(const event of ['pointerdown','keydown','scroll'])window.addEventListener(event,()=>{lastActivity=Date.now();},{passive:true});
 setInterval(()=>{if(!user)return;if(Date.now()-lastActivity>=IDLE){void signOut('Signed out after 10 minutes of inactivity.');return;}if(Date.now()-lastRefresh>240000&&Date.now()-lastActivity<60000)void refresh().catch(()=>{});},20000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&user&&Date.now()-lastActivity>=IDLE)void signOut('Session expired after inactivity.');});

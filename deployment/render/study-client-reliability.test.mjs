@@ -3,10 +3,11 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {runInNewContext} from 'node:vm';
 import {webcrypto} from 'node:crypto';
+import {createEnglishReader,canReadEnglish,englishVoices} from './study-reader.mjs';
 
 // Execute the shipped browser script with a small DOM and fictional transport.
 // No production identity, cookies, account rows or database credentials are used.
-const source=readFileSync(new URL('./study-client.mjs',import.meta.url),'utf8');
+const source=readFileSync(new URL('./study-client.mjs',import.meta.url),'utf8').replace(/^import .* from '\.\/reader\.mjs';\n/,'');
 const response=(data,status=200)=>({ok:status>=200&&status<300,status,json:async()=>data});
 function deferred(){let resolve;const promise=new Promise(r=>{resolve=r;});return {promise,resolve};}
 function client(fetcher=async()=>response({})){
@@ -15,7 +16,7 @@ function client(fetcher=async()=>response({})){
   addEventListener(name,fn){this.listeners.set(name,fn);},replaceChildren(...children){this.children=children;},append(...children){this.children.push(...children);},get options(){return this.children;},querySelectorAll(){return [];},reportValidity(){return true;}});
  const get=id=>{if(!elements.has(id))elements.set(id,element());return elements.get(id);};
  get('mode').value='practice';
- const context={console,AbortController,setTimeout,clearTimeout,setInterval:()=>0,crypto:webcrypto,URL,Uint32Array,
+ const context={createEnglishReader,canReadEnglish,englishVoices,console,AbortController,setTimeout,clearTimeout,setInterval:()=>0,crypto:webcrypto,URL,Uint32Array,
   fetch:fetcher,location:{hash:''},document:{getElementById:get,createElement:element,addEventListener(){}},
   window:{addEventListener(name,fn){events.set(name,fn);}}};
  runInNewContext(source.replace(/void initialize\(\);\s*$/,'')+`\n;globalThis.testClient={api,persist,savePosition,display,next,clearWorkspace,
