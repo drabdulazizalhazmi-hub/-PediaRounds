@@ -102,7 +102,13 @@ function showFeedback(slot){
  $('result').textContent=reply.correct===null?'Review only — not scored':reply.correct?(slot.wasWrong?'ممتاز إجابتك صحيحة لقد صححت معلومتك':'Matches the recorded source key.'):'Does not match the recorded source key.';
  $('source-key').textContent=reply.sourceKey?'Recorded source key: '+reply.sourceKey:'No definite source key is available.';
  $('validation-note').textContent=reply.notice;$('explanation').textContent=reply.explanation;
- $('references').replaceChildren();for(const ref of reply.references||[]){const p=document.createElement('p');p.textContent=[ref.sourceName,ref.part,ref.page!=null?'Page '+ref.page:'',ref.questionNumber].filter(Boolean).join(' · ');$('references').append(p);}
+ $('references').replaceChildren();for(const ref of reply.references||[]){
+  const p=document.createElement('p');p.textContent=[ref.sourceName,ref.part,ref.page!=null?'Page '+ref.page:'',ref.questionNumber].filter(Boolean).join(' · ');
+  try{const url=new URL(ref.url);if(url.protocol==='https:'&&!url.username&&!url.password&&['www.rch.org.au','rch.org.au','hospitalhandbook.ucsf.edu'].includes(url.hostname)){
+   const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open clinical reference';p.append(' · ',link);
+  }}catch{ /* Missing or unapproved links remain plain source citations. */ }
+  $('references').append(p);
+ }
  $('save-status').textContent=slot.saved?'Progress saved to your external account.':'Progress has not yet been confirmed as saved.';
 }
 async function display(){
@@ -113,6 +119,14 @@ async function display(){
   if(!q||q.id!==slot.id)throw Object.assign(Error('invalid_response'),{code:'invalid_response'});
   currentQuestion=q;$('category').textContent=q.module;$('stem').textContent=q.text;$('question-notice').textContent=q.notice;
   const options=$('options');options.replaceChildren();
+  const media=q.sourceImage;
+  if(media && typeof media.dataUrl==='string' && media.dataUrl.length<100000 && /^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(media.dataUrl)){
+   const figure=document.createElement('figure'),image=document.createElement('img'),caption=document.createElement('figcaption');
+   image.src=media.dataUrl;image.alt=typeof media.alt==='string'?media.alt:'Original source question image';image.width=191;image.height=228;
+   caption.className='muted';caption.textContent=typeof media.caption==='string'?media.caption:'';
+   image.addEventListener('error',()=>{caption.textContent='The original source image could not be displayed. This item remains under review.';});
+   figure.append(image,caption);options.append(figure);
+  }
   q.options.forEach((o,i)=>{const label=document.createElement('label');label.className='option';const input=document.createElement('input');input.type='radio';input.name='answer';input.value=String(i);input.checked=slot.selected===i;input.disabled=!!slot.reply;input.addEventListener('change',()=>{slot.selected=i;});const key=document.createElement('strong');key.textContent=o.key+'.';const text=document.createElement('span');text.textContent=o.text;label.append(input,key,text);options.append(label);});
   $('submit').textContent=q.reviewOnly?'Reveal source (not scored)':'Submit answer';$('question-card').hidden=false;showFeedback(slot);notice('');
  }catch(e){if(ownEpoch===epoch&&ownView===viewVersion){notice(errorMessage(e)+' Select Next to retry this question.');if(e.status===401)clearWorkspace();}}
