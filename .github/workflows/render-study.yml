@@ -17,6 +17,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -25,3 +27,15 @@ jobs:
       - name: Syntax check all study modules
         run: |
           for file in deployment/render/study-*.mjs; do node --check "$file"; done
+      - name: Chromium browser flow with fictional identity provider
+        env:
+          STUDY_BROWSER_OUTPUT: ${{ runner.temp }}/study-browser-results
+        run: node deployment/render/study-browser-check.mjs
+      - name: Save browser verification and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: study-browser-verification
+          path: ${{ runner.temp }}/study-browser-results
+          if-no-files-found: warn
+          retention-days: 7
