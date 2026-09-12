@@ -71,3 +71,4 @@ test('deployed entrypoint serves the new beta and keeps question API protected',
 
 import './study-oauth.test.mjs';
 import './study-oauth.http.test.mjs';
+import './study-client-reliability.test.mjs';
