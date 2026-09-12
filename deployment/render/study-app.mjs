@@ -7,6 +7,7 @@ const assets=new Map([
   ['/study',['study.html','text/html; charset=utf-8']],
   ['/study/',['study.html','text/html; charset=utf-8']],
   ['/study/app.mjs',['study-client.mjs','text/javascript; charset=utf-8']],
+  ['/study/reader.mjs',['study-reader.mjs','text/javascript; charset=utf-8']],
   ['/study/social.mjs',['study-social.mjs','text/javascript; charset=utf-8']],
   ['/study/social.css',['study-social.css','text/css; charset=utf-8']],
   ['/study/style.css',['study.css','text/css; charset=utf-8']]
