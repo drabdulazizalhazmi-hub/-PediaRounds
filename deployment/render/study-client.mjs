@@ -66,16 +66,39 @@ function correctIDs(){
  for(const [id,correct] of pendingSaves)if(correct===true)ids.add(id);
  return ids;
 }
+function excludedFromSet(){return $('mode').value==='review'?new Set():correctIDs();}
 function filtered(){const module=$('module').value,review=$('mode').value==='review';return (catalog?.items||[]).filter(q=>(!module||q.module===module)&&q.reviewOnly===review);}
+function updateSetControls(){
+ const selected=$('module').value,review=$('mode').value==='review',items=catalog?.items||[],counts=new Map();
+ for(const q of items.filter(q=>q.reviewOnly===review))counts.set(q.module,(counts.get(q.module)||0)+1);
+ $('module').replaceChildren();const all=document.createElement('option');all.value='';all.textContent='All modules ('+[...counts.values()].reduce((a,b)=>a+b,0)+')';$('module').append(all);
+ for(const [name,count] of counts){const option=document.createElement('option');option.value=name;option.textContent=name+' ('+count+')';$('module').append(option);}
+ $('module').value=counts.has(selected)?selected:'';
+ const ready=items.filter(q=>q.reviewOnly===false).length,pending=items.filter(q=>q.reviewOnly===true).length;
+ $('ready-option').textContent='Ready questions ('+ready+')';$('review-option').textContent='تحت المراجعة · Under review ('+pending+')';
+ $('open-review').hidden=review||pending===0;
+}
+function updateEmptyState(){
+ const review=$('mode').value==='review',total=filtered().length;
+ $('empty-title').textContent=total?'No remaining questions in this set.':review?'No questions under review in this set.':'No ready questions in this set.';
+ $('empty-description').textContent=total?(review?'You have reached the end of this under-review set. No scores are assigned here.':'Choose another module. Questions already answered correctly are not repeated.'):review?'This list contains only questions awaiting completion or source review.':'Incomplete questions are kept separately under «تحت المراجعة». They are not substituted for ready questions.';
+}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const n=new Uint32Array(1);crypto.getRandomValues(n);const j=n[0]%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+function previousPosition(){
+ const allowed=new Set(filtered().map(q=>q.id));
+ for(let index=atEnd?position:position-1;index>=0;index--){
+  if(allowed.has(history[index]?.id)&&!history[index].unavailable)return index;
+ }
+ return -1;
+}
 function updateCounters(){
  const done=correctIDs(),items=filtered(),current=items.findIndex(q=>q.id===history[position]?.id)+1;
  // The set index is stable; revisiting a wrong answer must not exceed the bank total.
  $('counter').textContent='Question '+current+' / '+items.length+' in this set · Session item '+Math.max(0,position+1);
- $('progress-count').textContent=items.filter(q=>!done.has(q.id)).length+' not yet correct · '+(catalog?.summary.questionCount||0)+' repository records';
- $('previous').disabled=loading||history.length===0||(!atEnd&&position<=0);$('next').disabled=loading||atEnd;
+ $('progress-count').textContent=($('mode').value==='review'?items.length+' records under review · Not scored':items.filter(q=>!done.has(q.id)).length+' not yet correct')+' · '+(catalog?.summary.questionCount||0)+' repository records';
+ $('previous').disabled=loading||previousPosition()<0;$('next').disabled=loading||atEnd;
 }
-function lock(value){loading=value;for(const id of ['submit','module','mode','restart'])$(id).disabled=value;updateCounters();updateReadControls();}
+function lock(value){loading=value;for(const id of ['submit','module','mode','restart','open-review'])$(id).disabled=value;updateCounters();updateReadControls();}
 function updateSaveControls(){
  $('retry-save').hidden=!(pendingSaves.size||checkpointFailed);
 }
@@ -109,31 +132,40 @@ async function display(){
  stopReading();const slot=history[position],ownEpoch=epoch,ownView=++viewVersion;if(!slot)return;
  atEnd=false;currentQuestion=null;
  lock(true);$('question-card').hidden=true;$('empty').hidden=true;$('feedback').hidden=true;notice('Loading question…');
- try{const q=await api('question?id='+encodeURIComponent(slot.id));if(ownEpoch!==epoch||ownView!==viewVersion)return;
+ try{const q=await api('question?id='+encodeURIComponent(slot.id)+'&mode='+($('mode').value==='review'?'review':'practice'));if(ownEpoch!==epoch||ownView!==viewVersion)return;
   if(!q||q.id!==slot.id)throw Object.assign(Error('invalid_response'),{code:'invalid_response'});
   currentQuestion=q;$('category').textContent=q.module;$('stem').textContent=q.text;$('question-notice').textContent=q.notice;
   const options=$('options');options.replaceChildren();
   q.options.forEach((o,i)=>{const label=document.createElement('label');label.className='option';const input=document.createElement('input');input.type='radio';input.name='answer';input.value=String(i);input.checked=slot.selected===i;input.disabled=!!slot.reply;input.addEventListener('change',()=>{slot.selected=i;});const key=document.createElement('strong');key.textContent=o.key+'.';const text=document.createElement('span');text.textContent=o.text;label.append(input,key,text);options.append(label);});
   $('submit').textContent=q.reviewOnly?'Reveal source (not scored)':'Submit answer';$('question-card').hidden=false;showFeedback(slot);notice('');
- }catch(e){if(ownEpoch===epoch&&ownView===viewVersion){notice(errorMessage(e)+' Select Next to retry this question.');if(e.status===401)clearWorkspace();}}
+ }catch(e){if(ownEpoch===epoch&&ownView===viewVersion){
+  if(['question_under_review','question_not_under_review'].includes(e.code)){
+   slot.unavailable=true;
+   const item=catalog?.items?.find(q=>q.id===slot.id);if(item)item.reviewOnly=e.code==='question_under_review';
+   try{const bank=await api('catalog');if(ownEpoch!==epoch||ownView!==viewVersion)return;catalog=bank;}catch{}
+   if(ownEpoch!==epoch||ownView!==viewVersion)return;
+   updateSetControls();notice('The review status of this question changed. Select Next to continue in this set, or choose the separate Under review list.');
+  }else{notice(errorMessage(e)+' Select Next to retry this question.');if(e.status===401)clearWorkspace();}
+ }}
  finally{if(ownEpoch===epoch&&ownView===viewVersion&&user){lock(false);$('submit').disabled=!currentQuestion||!!slot.reply;}}
  if(ownEpoch===epoch&&ownView===viewVersion&&user&&currentQuestion)void savePosition();
 }
 async function next(){
  if(loading||atEnd)return;
- if(history[position]&&!currentQuestion)return display();
- if(position+1<history.length){position++;return display();}
- const done=correctIDs();reviews=reviews.filter(r=>!done.has(r.id));
+ if(history[position]&&!currentQuestion&&!history[position].unavailable)return display();
+ const allowed=new Set(filtered().map(q=>q.id));
+ while(position+1<history.length){position++;if(allowed.has(history[position].id)&&!history[position].unavailable)return display();}
+ const done=excludedFromSet();reviews=reviews.filter(r=>allowed.has(r.id)&&!done.has(r.id));
  let id;const due=reviews.findIndex(r=>r.after<=freshCount);
  if(due>=0){id=reviews.splice(due,1)[0].id;}
- else{while(cursor<pool.length&&!id){const candidate=pool[cursor++];if(!done.has(candidate)){id=candidate;freshCount++;}}}
+ else{while(cursor<pool.length&&!id){const candidate=pool[cursor++];if(allowed.has(candidate)&&!done.has(candidate)){id=candidate;freshCount++;}}}
  if(!id&&reviews.length)id=reviews.shift().id;
- if(!id){stopReading();atEnd=true;currentQuestion=null;$('question-card').hidden=true;$('empty').hidden=false;$('feedback').hidden=true;updateCounters();updateReadControls();return;}
+ if(!id){stopReading();atEnd=true;currentQuestion=null;$('question-card').hidden=true;$('empty').hidden=false;$('feedback').hidden=true;updateEmptyState();updateCounters();updateReadControls();return;}
  history.push({id,selected:null,reply:null,saved:false});position=history.length-1;return display();
 }
 async function start(saved=null){
  stopReading();viewVersion++;loading=false;atEnd=false;currentQuestion=null;history=[];position=-1;cursor=0;freshCount=0;reviews=[];
- const done=correctIDs();pool=shuffle(filtered().filter(q=>!done.has(q.id)).map(q=>q.id));
+ const done=excludedFromSet();pool=shuffle(filtered().filter(q=>!done.has(q.id)).map(q=>q.id));
  if(saved?.schema==='render-study-v1'){
   freshCount=Number.isSafeInteger(saved.freshCount)&&saved.freshCount>=0?saved.freshCount:0;
   const allowed=new Set(pool),queued=new Set();
@@ -145,18 +177,18 @@ async function start(saved=null){
   pool=pool.filter(id=>!queued.has(id));
   if(pool.includes(saved.questionId)){pool=pool.filter(id=>id!==saved.questionId);pool.unshift(saved.questionId);}
  }
- $('empty').hidden=true;await next();updateCounters();
+ $('empty').hidden=true;lock(false);await next();updateCounters();
 }
 async function initialize(){
  const ownEpoch=epoch;
  try{const session=await api('session');if(ownEpoch!==epoch)return;
   const [bank,stored,saved]=await Promise.all([api('catalog'),api('progress'),api('checkpoint')]);if(ownEpoch!==epoch)return;
   user=session.user;catalog=bank;progress=stored;checkpointRevision=saved.revision;checkpointBlocked=false;$('reload-position').hidden=true;lastActivity=lastRefresh=Date.now();
-  $('module').replaceChildren();const all=document.createElement('option');all.value='';all.textContent='All modules';$('module').append(all);
-  for(const m of bank.modules){const option=document.createElement('option');option.value=m.name;option.textContent=m.name+' ('+m.count+')';$('module').append(option);}
   const state=saved.state?.schema==='render-study-v1'?saved.state:null;
-  $('module').value=bank.modules.some(m=>m.name===state?.module)?state.module:'';
-  $('mode').value=state?.mode==='review'||bank.summary.practiceCount===0?'review':'practice';
+  // Only an explicitly saved review session may reopen that list. An empty ready set is not consent.
+  $('mode').value=state?.mode==='review'?'review':'practice';
+  updateSetControls();
+  $('module').value=[...$('module').options].some(m=>m.value===state?.module)?state.module:'';
   $('coverage').textContent=bank.summary.questionCount+' records from the current GitHub bank only. '+bank.summary.originalEnglishCount+' have attached original English explanation text; '+bank.summary.missingOriginalEnglishCount+' do not. This is not the complete legacy platform.';
   $('login').hidden=true;$('workspace').hidden=false;$('logout').hidden=false;await start(state);
  }catch(e){if(ownEpoch!==epoch)return;clearWorkspace();notice(e.status===401?'Sign in to begin.':errorMessage(e));}
@@ -204,8 +236,11 @@ $('submit').addEventListener('click',async()=>{
   if(ownEpoch===epoch)void savePosition();
  }catch(e){if(ownEpoch===epoch)notice(errorMessage(e));}finally{if(ownEpoch===epoch&&user){lock(false);$('submit').disabled=!!slot.reply;}}
 });
-$('next').addEventListener('click',()=>void next());$('previous').addEventListener('click',()=>{if(!loading&&history.length&&(atEnd||position>0)){if(atEnd)atEnd=false;else position--;void display();}});
-for(const id of ['module','mode'])$(id).addEventListener('change',()=>void start());$('restart').addEventListener('click',()=>void start());
+$('next').addEventListener('click',()=>void next());$('previous').addEventListener('click',()=>{if(loading)return;const index=previousPosition();if(index<0)return;position=index;atEnd=false;void display();});
+$('module').addEventListener('change',()=>void start());
+$('mode').addEventListener('change',()=>{updateSetControls();void start();});
+$('open-review').addEventListener('click',()=>{if(loading)return;$('mode').value='review';updateSetControls();void start();});
+$('restart').addEventListener('click',()=>void start());
 $('retry-save').textContent='Retry saving';
 $('retry-save').addEventListener('click',()=>void retrySaving());$('reload-position').addEventListener('click',()=>void reloadSavedPosition());
 window.addEventListener('online',()=>{if(user)void retrySaving();});

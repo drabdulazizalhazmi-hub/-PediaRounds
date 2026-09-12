@@ -10,7 +10,7 @@ const ORIGIN='https://pediarounds-render-staging.onrender.com';
 const env={RENDER_EXTERNAL_URL:ORIGIN,PEDIAROUNDS_EXTERNAL_BACKEND:'enabled',PEDIAROUNDS_SUPABASE_URL:'https://abcdefghijklmnopqrst.supabase.co',PEDIAROUNDS_SUPABASE_PUBLISHABLE_KEY:'sb_publishable_test'};
 const TOKEN='test-access-token-for-fixtures-only',RT='shorttoken12';
 const USER={id:'00000000-0000-4000-8000-000000000001',email:'reader@example.test',role:'authenticated',email_confirmed_at:'2026-09-01T00:00:00Z'};
-const fixture=(extra={})=>({id:'source-q1',module:'principles',stemEn:'Which option is recorded in this test fixture?',options:[{key:'A',text:'First option'},{key:'B',text:'Second option'}],recalledAnswer:'B',publishable:true,reviewStatus:'ready_for_publish',originalExplanation:'  Original attached wording.\nSecond source line.  ',sourceRefs:[{sourceName:'Test source',page:1,questionNumber:'1'}],...extra});
+const fixture=(extra={})=>({id:'source-q1',module:'principles',stemEn:'Which option is recorded in this test fixture?',options:[{key:'A',text:'First option'},{key:'B',text:'Second option'}],recalledAnswer:'B',verifiedAnswer:'B',verification:{guideline:'supports',referenceNotes:'Fictional verification fixture; not real medical evidence.'},publishable:true,reviewStatus:'ready_for_publish',originalExplanation:'  Original attached wording.\nSecond source line.  ',sourceRefs:[{sourceName:'Test source',page:1,questionNumber:'1'}],...extra});
 function provider({unconfirmed=false,failLogout=false}={}) {
  const calls=[];
  return {calls,fetcher:async(url,options)=>{

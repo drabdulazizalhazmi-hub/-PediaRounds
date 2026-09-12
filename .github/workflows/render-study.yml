@@ -39,13 +39,3 @@ jobs:
           path: ${{ runner.temp }}/study-browser-results
           if-no-files-found: warn
           retention-days: 7
-      - name: Save exact public Render source for reproducible integration
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: render-study-source
-          path: |
-            deployment/render/
-            master-bank/data/
-          if-no-files-found: error
-          retention-days: 1

@@ -89,3 +89,5 @@ import './study-client-continuity.test.mjs';
 import './study-clinical-review.test.mjs';
 
 import './study-options.test.mjs';
+
+import './study-readiness.test.mjs';
