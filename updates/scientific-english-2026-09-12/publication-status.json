@@ -8,8 +8,8 @@
   "newVersionSaved": false,
   "sourceArchiveValidated": true,
   "archiveSizeBytes": 260146852,
-  "uploadAttempts": 2,
-  "blocker": "The native Sites archive upload timed out after 60 seconds on both attempts. Version history was reconciled after the failures; no new version was created.",
+  "uploadAttempts": 4,
+  "blocker": "The native Sites archive upload timed out after 60 seconds on all four attempts. Following the user's explicit publication request, two additional attempts used the validated gzip archive and then an equivalent validated uncompressed tar. Both failed during file upload. Version history was reconciled after each failure; no new version was created.",
   "validation": {
     "targetedTestsPassed": 22,
     "typeScriptPassed": true,
@@ -26,5 +26,16 @@
   "remaining": "Whole-platform language completion and supplemental discussions remain unfinished. See the private source audit for exact remaining record IDs.",
   "renderChanged": false,
   "githubPR": 25,
-  "nextStep": "Resume native publication of the exact pushed Site source when archive upload is available. Do not deploy an older version or remove protected media to reduce the upload."
+  "nextStep": "Resume native publication of the exact pushed Site source when archive upload is available. Preserve the complete source media and the current live deployment.",
+  "retryArchives": [
+    {
+      "format": "tar.gz",
+      "sizeBytes": 260146852
+    },
+    {
+      "format": "tar",
+      "sizeBytes": 264826880,
+      "identicalMembers": true
+    }
+  ]
 }
