@@ -86,3 +86,4 @@ test('study reader is served as a same-origin script without weakening data guar
 });
 
 import './study-client-continuity.test.mjs';
+import './study-clinical-review.test.mjs';
