@@ -3,6 +3,7 @@ import {readFileSync,readdirSync,statSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {clinicalReviewFor,clinicalFeedbackNotice} from './study-clinical-review.mjs';
+import {toxicologySourceImageFor} from './study-toxicology-content.mjs';
 import {normalizeSourceOptions} from './study-options.mjs';
 const str = v => typeof v === 'string' ? v : '';
 const list = v => Array.isArray(v) ? v : [];
@@ -27,12 +28,13 @@ function normalized(q) {
   const optionKeys = options.map(o => o.key.trim().toUpperCase());
   const keyValid = /^[A-Z]$/.test(key) && optionKeys.filter(k=>k===key).length === 1;
   const incomplete = optionIssues.length > 0;
-  const imageRequired = q.imageRequired === true || q.image?.requiredForQuestion === true;
+  const sourceImage = toxicologySourceImageFor({id,stem,options,key});
+  const imageRequired = (q.imageRequired === true || q.image?.requiredForQuestion === true) && !sourceImage;
   const conflicting = ['conflicting','outdated','incomplete_recall','image_missing','image_needs_review'].includes(q.reviewStatus) || (verified && key && verified !== key);
   const clinicalReview = clinicalReviewFor({id,stem,options,key});
   const reviewOnly = q.publishable === false || incomplete || imageRequired || conflicting || !keyValid || clinicalReview?.reviewOnly === true;
   return {id,module:str(q.module || q.specialty) || 'Unclassified',number:q.number ?? null,stem,options,key,rawKey,
-    reviewOnly,imageRequired,clinicalReview,optionIssues,reviewStatus:str(q.reviewStatus) || 'needs_verification',
+    reviewOnly,imageRequired,sourceImage,clinicalReview,optionIssues,reviewStatus:str(q.reviewStatus) || 'needs_verification',
     explanation:originalEnglish(q),duplicateOf:validID(q.duplicateOf) ? q.duplicateOf : null,
     references:list(q.sourceRefs).map(r=>({sourceName:str(r?.sourceName),part:str(r?.part),page:r?.page ?? null,questionNumber:r?.questionNumber ?? null})),
     notice:imageRequired ? 'Original question image has not been migrated. Review only; no score is assigned.' : optionIssues.includes('separated_labels_require_review') ? 'Joined option labels were separated for display. Source layout needs review; no score is assigned.' : incomplete ? 'Missing, duplicated or ambiguous source options. Review only; no score is assigned.' : reviewOnly ? 'Incomplete or pending-review source record. No score is assigned.' : 'Feedback compares your selection with the recorded source key; it is not a new clinical validation.'};
@@ -67,6 +69,8 @@ export function createBank(records,{fileCount=0,errors=[]}={}) {
     sourceRecords:records.length,questionCount:questions.length,practiceCount:questions.filter(q=>!q.reviewOnly).length,
     reviewOnlyCount:questions.filter(q=>q.reviewOnly).length,originalEnglishCount:questions.filter(q=>!!q.explanation).length,
     missingOriginalEnglishCount:questions.filter(q=>!q.explanation).length,imageRequiredCount:questions.filter(q=>q.imageRequired).length,
+    restoredSourceImageCount:questions.filter(q=>!!q.sourceImage).length,
+    targetedClinicalReviewCount:questions.filter(q=>q.clinicalReview?.status==='targeted_reasoning_review').length,
     separatedOptionLayoutCount:questions.filter(q=>q.optionIssues.includes('separated_labels_require_review')).length,
     incompleteOptionRecordCount:questions.filter(q=>q.optionIssues.length>0).length,
     duplicateOptionTextCount:questions.filter(q=>q.optionIssues.includes('duplicate_option_text')).length,
@@ -97,7 +101,7 @@ export function loadRepositoryBank(root=fileURLToPath(new URL('../../master-bank
   return createBank(records,{fileCount,errors});
 }
 export function beforeAnswer(q) {
-  return {id:q.id,module:q.module,number:q.number,text:q.stem,options:q.options.map(o=>({...o})),reviewOnly:q.reviewOnly,imageRequired:q.imageRequired,notice:q.notice};
+  return {id:q.id,module:q.module,number:q.number,text:q.stem,options:q.options.map(o=>({...o})),reviewOnly:q.reviewOnly,imageRequired:q.imageRequired,notice:q.notice,...(q.sourceImage?{sourceImage:{...q.sourceImage}}:{})};
 }
 export function answerFeedback(q,selectedIndex) {
   if(selectedIndex !== null && (!Number.isInteger(selectedIndex)||selectedIndex<0||selectedIndex>=q.options.length)) throw Object.assign(Error('invalid_selection'),{status:400,code:'invalid_selection'});
