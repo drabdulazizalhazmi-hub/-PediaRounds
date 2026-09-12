@@ -1,0 +1,70 @@
+name: Verified content recovery 2026-09-12
+
+on:
+  push:
+    branches: ['updates/content-recovery-2026-09-12']
+    paths:
+      - '.github/workflows/content-recovery-20260912.yml'
+      - 'updates/content-recovery-2026-09-12/recover.py'
+      - 'updates/content-recovery-2026-09-12/test_recover.py'
+      - 'updates/content-recovery-2026-09-12/source-selector.test.mjs'
+      - 'updates/english-source-explanations-2026-09-11/public/answer-explanation.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-recovery-20260912
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/updates/content-recovery-2026-09-12'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: updates/content-recovery-2026-09-12
+          fetch-depth: 1
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Install hash-pinned PDF reader
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' 'pypdf==6.18.1 --hash=sha256:ee93a2665670ecf57ee81d197a4ca548f3dc15f9cefc56e59b8140866aaa3de5' > /tmp/content-recovery-requirements.txt
+          python -m pip install --no-deps --require-hashes -r /tmp/content-recovery-requirements.txt
+      - name: Recover exact source content and test protected fields
+        shell: bash
+        run: |
+          set -euo pipefail
+          python updates/content-recovery-2026-09-12/test_recover.py 2>&1 | tee updates/content-recovery-2026-09-12/python-tests.txt
+          node --test updates/english-source-explanations-2026-09-11/tests/answer-explanation.test.mjs updates/content-recovery-2026-09-12/source-selector.test.mjs | tee updates/content-recovery-2026-09-12/node-tests.txt
+          git diff --check
+      - name: Persist generated content on the isolated recovery branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${GITHUB_REF}" = 'refs/heads/updates/content-recovery-2026-09-12'
+          git add -- master-bank/assets/derm-oph-20260907 master-bank/data/04-general-paediatrics-outpatients updates/content-recovery-2026-09-12/verification.json
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Recover 28 checksum-matched source images and English explanations for 32-record batch'
+            git push origin HEAD:refs/heads/updates/content-recovery-2026-09-12
+          fi
+      - name: Save recovery evidence without the source PDF or user data
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: PediaRounds-verified-content-recovery-20260912
+          retention-days: 14
+          if-no-files-found: error
+          path: |
+            master-bank/assets/derm-oph-20260907/
+            master-bank/data/04-general-paediatrics-outpatients/
+            updates/content-recovery-2026-09-12/verification.json
+            updates/content-recovery-2026-09-12/python-tests.txt
+            updates/content-recovery-2026-09-12/node-tests.txt
