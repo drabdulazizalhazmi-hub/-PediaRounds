@@ -1,10 +1,12 @@
 /** Targeted clinical errata, not original-source explanations or a whole-bank validation. */
+import {toxicologyReviewEntries} from './study-toxicology-content.mjs';
 const reviewedOn = '2026-09-12';
 const referenceTemplates = [
   {sourceName:'UCSF Hospital Handbook: Algorithm for Acid-Base Disorders',part:'Clinical review reference',page:null,questionNumber:null,url:'https://hospitalhandbook.ucsf.edu/01-algorithm-acid-base-disorders/01-algorithm-acid-base-disorders'},
   {sourceName:'Royal Children\'s Hospital: Salicylates poisoning',part:'Clinical review reference',page:null,questionNumber:null,url:'https://www.rch.org.au/clinicalguide/guideline_index/Salicylates_Posioning/'}
 ];
 const corrections = new Map([
+  ...toxicologyReviewEntries,
   ['part2-toxicology-q14', {
     stem:'Which arterial blood gas pattern best matches aspirin toxicity among the listed options?',
     options:[['A','pH 7.25, pCO2 20, HCO3 8'],['B','pH 7.20, pCO2 45, HCO3 20'],['C','pH 7.50, pCO2 40, HCO3 30'],['D','pH 7.60, pCO2 40, HCO3 40']],
@@ -27,7 +29,7 @@ export function clinicalReviewFor({id,stem,options,key}) {
       note:'This previously flagged recall has changed since its clinical review. The earlier correction is not applied to this version. Review only; no score is assigned until the revised record is checked.'};
   }
   return {reviewedOn,reviewOnly:correction.reviewOnly,status:'targeted_reasoning_review',note:correction.note,
-    references:[...referenceTemplates.map(r=>({...r})),{sourceName:'Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026',part:'Source cross-check; PDF page index',page:599,questionNumber:id.endsWith('q14')?'Toxicology Q14':'Toxicology Q15'}]};
+    references:[...(correction.references || referenceTemplates).map(r=>({...r})),{sourceName:'Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026',part:'Source cross-check; PDF page index',page:correction.sourcePage || 599,questionNumber:correction.sourceQuestion || (id.endsWith('q14')?'Toxicology Q14':'Toxicology Q15')}]};
 }
 export function clinicalFeedbackNotice(q) {
   if(!q.clinicalReview)return q.notice;

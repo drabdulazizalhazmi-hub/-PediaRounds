@@ -89,3 +89,18 @@ import './study-client-continuity.test.mjs';
 import './study-clinical-review.test.mjs';
 
 import './study-options.test.mjs';
+import './study-toxicology-content.test.mjs';
+
+test('source image question remains protected from anonymous requests and guessed static paths',async t=>{
+ const base=await running(t);
+ const response=await fetch(base+'/api/study/question?id=part2-toxicology-q11');
+ assert.equal(response.status,401);assert.doesNotMatch(await response.text(),/data:image|base64|deferoxamine/i);
+ const image=await fetch(base+'/study/source-media/toxicology-q11-original.jpg');
+ assert.equal(image.status,404);
+});
+test('public status never includes configured image bytes or keys',async t=>{
+ const base=await running(t);const response=await fetch(base+'/study/status');
+ assert.equal(response.status,200);const body=await response.text();
+ assert.doesNotMatch(body,/data:image|base64|PEDIA_Q11_SOURCE_IMAGE/);
+ if(process.env.PEDIA_Q11_SOURCE_IMAGE_BASE64)assert.equal(body.includes(process.env.PEDIA_Q11_SOURCE_IMAGE_BASE64),false);
+});
