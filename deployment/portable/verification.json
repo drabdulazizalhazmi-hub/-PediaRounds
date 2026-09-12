@@ -1,0 +1,23 @@
+{
+  "sourceCommit": "84de28f7c4b1ffe4eef99ae1d65d22f7f92b6983",
+  "sourceVersion": 86,
+  "patchSha256": "c402e2b97ed41a32fac6fab9fb6aec4da5e4b8a046b8e7f8b83794c461088b7b",
+  "contentFilesCompared": 936,
+  "contentFilesChanged": 0,
+  "nativeBuildPassed": true,
+  "typecheckPassed": true,
+  "isolatedAuthTestsPassed": 4,
+  "unauthenticatedHttpSmokePassed": true,
+  "databaseAdapterTestPassed": true,
+  "offlineApplicationRestoreTestPassed": true,
+  "realDataExported": false,
+  "realDataImported": false,
+  "realLoginVerified": false,
+  "productionChanged": false,
+  "cutoverReady": false,
+  "isolatedCopyReproductionPassed": true,
+  "latestObservedPublishedVersion": 87,
+  "latestObservedSourceCommit": "293eea34ffaf7f260b35004af6710c534796ded1",
+  "latestVersionReconciled": false,
+  "latestVersionSourceReadError": "HTTP 500"
+}

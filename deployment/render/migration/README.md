@@ -4,11 +4,11 @@ This is an offline migration gate and private archive generator. It is not a com
 
 ## Findings on 12 September 2026
 
-- Current Sites publication: version 86, source commit `84de28f7c4b1ffe4eef99ae1d65d22f7f92b6983`.
+- Initial audited Sites publication: version 86, source commit `84de28f7c4b1ffe4eef99ae1d65d22f7f92b6983`. A separate operation published v87 during this work; its source reconciliation remains blocked by HTTP 500. See the portability draft for exact status.
 - D1 binding `DB` has eight tables, all represented in `snapshot.mjs`. Four contain long JSON payloads for study sessions, spaced review and both exam modes.
 - The database viewer returned **truncated cell values** for all four payload tables. Concatenating its pages cannot reconstruct a full database backup. Its previews must not be imported.
 - Read-only verification of the connected external Supabase database found zero Auth users, zero external progress rows and zero checkpoints. Existing Render code implements an external study beta; it does not link legacy identities.
-- Cloning the current Sites source failed twice with HTTP 500. The publication archive could not be materialized through Library ownership validation. No older source snapshot was substituted.
+- The initial source clones failed twice with HTTP 500. A subsequent authorized Git clone using protocol v0 recovered the exact current v86 commit. Its separate native Node port and verification results are preserved in [`../../portable/README.md`](../../portable/README.md). No older source snapshot was substituted. The full native database export remains unavailable.
 
 ## Input contract and workflow
 

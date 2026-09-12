@@ -3,11 +3,13 @@ on:
   pull_request:
     paths:
       - 'deployment/render/migration/**'
+      - 'deployment/portable/**'
       - '.github/workflows/sites-data-preservation.yml'
   push:
     branches: [main]
     paths:
       - 'deployment/render/migration/**'
+      - 'deployment/portable/**'
       - '.github/workflows/sites-data-preservation.yml'
 permissions:
   contents: read
@@ -29,3 +31,7 @@ jobs:
         env:
           PEDIAROUNDS_PGLITE_MODULE: ${{ runner.temp }}/pediarounds-migration-test/node_modules/@electric-sql/pglite/dist/index.js
         run: node deployment/render/migration/snapshot.postgres-check.mjs
+      - name: Verify additive application import and full rollback on conflict
+        env:
+          PEDIAROUNDS_PGLITE_MODULE: ${{ runner.temp }}/pediarounds-migration-test/node_modules/@electric-sql/pglite/dist/index.js
+        run: node deployment/portable/import.postgres-check.mjs
