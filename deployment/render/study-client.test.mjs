@@ -92,3 +92,18 @@ test('restarting while an old view loads does not leave the new session locked',
  f.run("history=[{id:'q1',selected:null,reply:null}];position=0;");const old=f.run('display()');await f.run('start()');release();await old;
  assert.equal(f.element('stem').textContent,'Fictional question q2');assert.equal(f.element('next').disabled,false);assert.equal(f.run('loading'),false);
 });
+test('source figures preserve their stage and clear on logout or a question change',async()=>{
+ const f=fixture();await f.run('start()');
+ const before={id:'question-image',url:'/api/study/image?id=question-image',width:320,height:220,phase:'question'};
+ const after={id:'answer-image',url:'/api/study/image?id=answer-image&grant=fixture',width:600,height:250,phase:'explanation'};
+ f.run(`renderFigures('question-figures',[${JSON.stringify(before)}]);`);
+ assert.equal(f.element('question-figures').querySelectorAll('img').length,1);
+ assert.equal(f.element('explanation-figures').querySelectorAll('img').length,0);
+ f.run(`history[0].reply={figures:[${JSON.stringify(after)}],references:[]};showFeedback(history[0]);`);
+ assert.equal(f.element('explanation-figures').querySelectorAll('img').length,1);
+ const img=f.element('explanation-figures').querySelectorAll('img')[0];
+ img.events.get('error')();assert.equal(f.element('explanation-figures').querySelectorAll('button')[0].hidden,false);
+ f.run('clearWorkspace()');
+ assert.equal(f.element('question-figures').querySelectorAll('img').length,0);
+ assert.equal(f.element('explanation-figures').querySelectorAll('img').length,0);
+});

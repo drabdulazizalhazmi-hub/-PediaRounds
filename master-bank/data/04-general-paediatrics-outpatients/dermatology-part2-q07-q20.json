@@ -1,15 +1,1341 @@
 [
-{"id":"part2-derm-q07","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2018],"examPart":"Part II","stemEn":"A patient presented with the showing skin rash (erythema multiforme). He has history of pneumonia 1 week ago. For which, he received treatment and the child has no symptoms now other that this skin rash. Which of the following is the most likely causative organism?","options":[{"key":"A","text":"Herpes simplex virus (HSV)"},{"key":"B","text":"Mycoplasma pneumoniae"},{"key":"C","text":"Varicella"},{"key":"D","text":"Measles"}],"recalledAnswer":"B","sourceAnswerText":"B","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":640,"questionNumber":"Dermatology Q7","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 640-641; whitespace normalized."}],"sourcePages":[640,641],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"image_needs_review","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","images_not_uploaded_to_repository","image_publication_rights_pending"],"tts":{"enabled":true,"language":"en","text":"A patient presented with the showing skin rash (erythema multiforme). He has history of pneumonia 1 week ago. For which, he received treatment and the child has no symptoms now other that this skin rash. Which of the following is the most likely causative organism? Option A. Herpes simplex virus (HSV). Option B. Mycoplasma pneumoniae. Option C. Varicella. Option D. Measles."},"image":{"requiredForQuestion":true,"sourceRef":"Dermatology Q7; sourcePages","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p640-x4918.jpeg","master-bank/assets/derm-oph-20260907/p640-x4919.jpeg"],"status":"needs_review","captionAr":"صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.","captionEn":"Original source question image; independent clinical review pending."},"assetIds":["part2-derm-q07-p640-x4918","part2-derm-q07-p640-x4919"],"subtopic":"Post-pneumonia erythema multiforme","scenarioAr":"طفل تعافى من pneumonia قبل أسبوع وبقي لديه الطفح المصوّر؛ المطلوب الميكروب الأرجح.","explanationAr":"المفتاح B: Mycoplasma pneumoniae. شرح المصدر يربط الطفح الذي يسميه erythema multiforme بمرض تنفسي سبقه cough وcongestion وlow-grade fever. هذه التفاصيل الإضافية واردة في الشرح المرجعي وليست كلها في الـstem. حُفظ التصنيف كما ورد ولم يُستبدل تلقائيًا بتسمية أحدث.","incorrectOptionsAr":"A: لم يختَر المصدر HSV رغم كونه ضمن الخيارات؛ قرينة الترجيح التي يذكرها هي المرض التنفسي السابق. C وD: لا يناقش المصدر استبعادهما تفصيليًا، فلا نختلق تاريخ تطعيم أوعلامات غير واردة.","clinicalPearl":"The source links an erythema-multiforme-labelled eruption after pneumonia to Mycoplasma pneumoniae.","keywords":["Post-pneumonia erythema multiforme"],"externalChecks":[]},
-{"id":"part2-derm-q08","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2024],"examPart":"Part II","stemEn":"A child presented with fever and the showing skin lesion (herpetic whitlow). Which of the following is true regarding the most likely causative organism?","options":[{"key":"A","text":"The cause is a DNA virus"},{"key":"B","text":"The cause is an RNA virus"},{"key":"C","text":"The cause is a Gram-negative bacteria"},{"key":"D","text":"The cause is a Gram-positive bacteria"}],"recalledAnswer":"A","sourceAnswerText":"A","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":641,"questionNumber":"Dermatology Q8","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 641-641; whitespace normalized."}],"sourcePages":[641],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"image_needs_review","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","images_not_uploaded_to_repository","image_publication_rights_pending"],"tts":{"enabled":true,"language":"en","text":"A child presented with fever and the showing skin lesion (herpetic whitlow). Which of the following is true regarding the most likely causative organism? Option A. The cause is a DNA virus. Option B. The cause is an RNA virus. Option C. The cause is a Gram-negative bacteria. Option D. The cause is a Gram-positive bacteria."},"image":{"requiredForQuestion":true,"sourceRef":"Dermatology Q8; sourcePages","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p641-x4925.jpeg"],"status":"needs_review","captionAr":"صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.","captionEn":"Original source question image; independent clinical review pending."},"assetIds":["part2-derm-q08-p641-x4925","part2-derm-q08-p641-x4924"],"subtopic":"Herpetic whitlow viral classification","scenarioAr":"طفل لديه fever وآفة إصبع مصوّرة يسميها النص herpetic whitlow؛ المطلوب تصنيف العامل المسبب.","explanationAr":"المصدر يختار A: DNA virus. يشرح أن HSV قد يُلقّح عبر break in the skin barrier ويسبب herpetic whitlow مع قابلية النكس. الرسم الموجود في الشرح يصنف Herpesviruses تحت enveloped double-stranded DNA viruses؛ هذا الرسم يظهر بعد الإجابة فقط.","incorrectOptionsAr":"B: يخالف تصنيف HSV كـDNA virus في الرسم. C وD: كلاهما تصنيف bacteria، بينما المسبب المحدد في شرح المصدر HSV.","clinicalPearl":"The source classification diagram places herpesviruses among double-stranded DNA viruses.","keywords":["Herpetic whitlow viral classification"],"explanationAssetPaths":["master-bank/assets/derm-oph-20260907/p641-x4924.jpeg"],"externalChecks":[]},
-{"id":"part2-derm-q09","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2025],"examPart":"Part II","stemEn":"A child presented with painful lesions on tongue, lips, and gingivae. What is the most likely diagnosis","options":[{"key":"A","text":"Herpangina"},{"key":"B","text":"Herpetic gingivostomatitis"}],"recalledAnswer":"B","sourceAnswerText":"B","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":641,"questionNumber":"Dermatology Q9","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 641-642; whitespace normalized."}],"sourcePages":[641,642],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending"],"tts":{"enabled":true,"language":"en","text":"A child presented with painful lesions on tongue, lips, and gingivae. What is the most likely diagnosis Option A. Herpangina. Option B. Herpetic gingivostomatitis."},"image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"status":"not_required"},"assetIds":[],"subtopic":"Herpetic gingivostomatitis","scenarioAr":"طفل لديه آفات مؤلمة على tongue وlips وgingivae؛ المطلوب التشخيص.","explanationAr":"المفتاح B: Herpetic gingivostomatitis. يذكر الشرح vesicles مؤلمة تتحول إلى shallow ulcers مع gingivae ملتهبة قابلة للنزف وآفات حول الفم. ضعف تناول السوائل قد يؤدي إلى dehydration؛ لا يكفي التركيز على الطفح وإهمال الترطيب.","incorrectOptionsAr":"A: المصدر يختار gingivostomatitis اعتمادًا على توزيع الآفات وإصابة اللثة، لكنه لا يقدم في هذه الفقرة وصفًا مقارنًا كاملًا لـherpangina؛ لا نضيف علامات غير موجودة في السؤال.","clinicalPearl":"Painful gingival and oral lesions may lead to poor intake and dehydration in the source explanation.","keywords":["Herpetic gingivostomatitis"],"externalChecks":[]},
-{"id":"part2-derm-q10","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2018],"examPart":"Part II","stemEn":"A child presented with pain while brushing his teeth. A picture was provided for mouth lesion (? stomatitis). How you will manage him (? herpetic gingivostomatitis case)?","options":[{"key":"A","text":"Start iron supplementation"},{"key":"B","text":"Give magic mouthwash"},{"key":"C","text":"Give nystatin"}],"recalledAnswer":"B","sourceAnswerText":"B?","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":642,"questionNumber":"Dermatology Q10","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 642-643; whitespace normalized."}],"sourcePages":[642,643],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"conflicting","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","original_question_image_missing","source_key_conflicts_with_explanation"],"tts":{"enabled":true,"language":"en","text":"A child presented with pain while brushing his teeth. A picture was provided for mouth lesion (? stomatitis). How you will manage him (? herpetic gingivostomatitis case)? Option A. Start iron supplementation. Option B. Give magic mouthwash. Option C. Give nystatin."},"image":{"requiredForQuestion":true,"sourceRef":"Dermatology Q10; sourcePages","assetPath":null,"bundleAssetPaths":[],"status":"missing","captionAr":"صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.","captionEn":"Original source question image; independent clinical review pending."},"assetIds":[],"subtopic":"Uncertain stomatitis management","scenarioAr":"طفل يتألم عند تنظيف الأسنان؛ ذُكرت صورة stomatitis محتملة وسُئل عن التدبير.","explanationAr":"المفتاح مطبوع B? أي غير جازم، ثم ينص الشرح على عدم اقتراح magic mouthwash بصورة روتينية لقلة دليل الفائدة واحتمال الضرر وصعوبة التطبيق عند الصغار. التشخيص نفسه مسبوق بعلامة استفهام، ولا توجد الصورة المذكورة فعليًا في صفحة 642. بقي السؤال conflicting، ولم تُعتمد B كعلاج موثّق.","incorrectOptionsAr":"A: لا يوجد تشخيص مثبت لنقص iron في السؤال. C: لا يذكر المصدر candidiasis. B: يتعارض اعتماده الروتيني مع شرح المصدر نفسه. لا تمثل هذه الخيارات خطة تدبير كاملة موثوقة.","clinicalPearl":"An uncertain answer key must not override the source explanation that cautions against routine magic mouthwash.","keywords":["Uncertain stomatitis management"],"externalChecks":["rch-hsv-20260907"]},
-{"id":"part2-derm-q11","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2024],"examPart":"Part II","stemEn":"A child who’s known to have Crohn's disease on infliximab presented with new onset vesicular skin rash on posterior rip distribution that is itching and associated with burning sensation. What would you do next?","options":[{"key":"A","text":"Give IV acyclovir"},{"key":"B","text":"Give IV valganciclovir"},{"key":"C","text":"Give Oral Augmentin"}],"recalledAnswer":"A","sourceAnswerText":"A","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":643,"questionNumber":"Dermatology Q11","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 643-644; whitespace normalized."}],"sourcePages":[643,644],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","source_drug_route_typo_requires_review"],"tts":{"enabled":true,"language":"en","text":"A child who’s known to have Crohn's disease on infliximab presented with new onset vesicular skin rash on posterior rip distribution that is itching and associated with burning sensation. What would you do next? Option A. Give IV acyclovir. Option B. Give IV valganciclovir. Option C. Give Oral Augmentin."},"image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"status":"not_required"},"assetIds":["part2-derm-q11-p643-x4933","part2-derm-q11-p644-x4937"],"subtopic":"Herpes zoster during infliximab therapy","scenarioAr":"طفل لديه Crohn disease ويستخدم infliximab، وظهر طفح vesicular حاكّ وحارق بتوزع posterior rib؛ المطلوب الخطوة التالية.","explanationAr":"المفتاح A: IV acyclovir. يصف المصدر VZV reactivation كطفح vesicular أحادي الجانب ضمن sensory-nerve distribution، ويذكر أن immunocompromised patients أكثر عرضة للنكس. الجداول المرفقة هنا صور شرح فقط، وليست صورًا سريرية كانت مطلوبة في السؤال. لم تُضف جرعة علاج جديدة.","incorrectOptionsAr":"B وC: المصدر يحدد acyclovir للحالة الموصوفة ولا يوصي فيهما. أبقيت عبارة IV valganciclovir كما طُبعت للتدقيق، دون تصحيح صامت أوتقديمها كنظام علاجي مقبول.","clinicalPearl":"The source connects immunosuppression plus a dermatomal vesicular eruption with VZV reactivation.","keywords":["Herpes zoster during infliximab therapy"],"explanationAssetPaths":["master-bank/assets/derm-oph-20260907/p643-x4933.jpeg","master-bank/assets/derm-oph-20260907/p644-x4937.jpeg"],"externalChecks":[]},
-{"id":"part2-derm-q13","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2023],"examPart":"Part II","stemEn":"A girl presented with asymptomatic perianal warts. What will you do next?","options":[{"key":"A","text":"Take detailed history"},{"key":"B","text":"Reassure"}],"recalledAnswer":"A","sourceAnswerText":"A","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":644,"questionNumber":"Dermatology Q13","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 644-645; whitespace normalized."}],"sourcePages":[644,645],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending"],"tts":{"enabled":true,"language":"en","text":"A girl presented with asymptomatic perianal warts. What will you do next? Option A. Take detailed history. Option B. Reassure."},"image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"status":"not_required"},"assetIds":[],"subtopic":"Perianal warts assessment","scenarioAr":"طفلة لديها asymptomatic perianal warts؛ المطلوب الخطوة التالية.","explanationAr":"المفتاح A: Take detailed history. يوضح المصدر أن HPV قد ينتقل بطرق غير جنسية، منها autoinoculation وheteroinoculation، وأن احتمال sexual abuse يستحق النظر ضمن التقييم. وجود الثآليل وحده لا يثبت الاعتداء، كما أن reassurance وحدها لا تستبدل أخذ التاريخ والتقييم.","incorrectOptionsAr":"B: reassurance دون detailed history تتجاوز خطوة التقييم التي اختارها المصدر؛ لا يُفترض نمط انتقال بعينه من الآفات وحدها.","clinicalPearl":"Perianal warts warrant a careful history; the source acknowledges both nonsexual transmission and safeguarding concerns.","keywords":["Perianal warts assessment"],"externalChecks":[]},
-{"id":"part2-derm-q14","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2025],"examPart":"Part II","stemEn":"An adolescent female was treated with topical antibiotic for acne. She now presented with worsen skin lesions and itching. The skin lesions are showing in the provided picture. Gram stain of the lesions came negative for any growth. What is the most likely cause?","options":[{"key":"A","text":"Herpes simplex virus (HSV) infection"},{"key":"B","text":"Pustular melanosis"},{"key":"C","text":"Fungal folliculitis"}],"recalledAnswer":"C","sourceAnswerText":"C","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":645,"questionNumber":"Dermatology Q14","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 645-645; whitespace normalized."}],"sourcePages":[645],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"image_needs_review","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","images_not_uploaded_to_repository","image_publication_rights_pending","source_gram_stain_growth_wording_error"],"tts":{"enabled":true,"language":"en","text":"An adolescent female was treated with topical antibiotic for acne. She now presented with worsen skin lesions and itching. The skin lesions are showing in the provided picture. Gram stain of the lesions came negative for any growth. What is the most likely cause? Option A. Herpes simplex virus (HSV) infection. Option B. Pustular melanosis. Option C. Fungal folliculitis."},"image":{"requiredForQuestion":true,"sourceRef":"Dermatology Q14; sourcePages","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p645-x4945.png"],"status":"needs_review","captionAr":"صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.","captionEn":"Original source question image; independent clinical review pending."},"assetIds":["part2-derm-q14-p645-x4945"],"subtopic":"Fungal folliculitis","scenarioAr":"مراهقة ساءت آفات acne لديها مع itching بعد topical antibiotic؛ الصورة مرفقة ويذكر النص Gram stain سلبيًا؛ المطلوب السبب.","explanationAr":"المفتاح C: Fungal folliculitis. يشرح المصدر أن Pityrosporum/Malassezia folliculitis تسبب papules وpustules حاكّة في مناطق غنية بالزهم، وقد تُخطأ باعتبارها acne ولا تتحسن مع antibiotics. عبارة Gram stain negative for any growth غير دقيقة في الأصل؛ حُفظت كما هي ووُسمت للمراجعة، ولم تُحوَّل إلى نتيجة culture مخترعة.","incorrectOptionsAr":"A وB: لا يقدم المصدر مقارنة تفصيلية معهما؛ ترجيحه لـC مبني على pruritus والمظهر acneiform وعدم الاستجابة لعلاج acne المعتاد. النتيجة السلبية المذكورة لا تؤكد الفطريات وحدها.","clinicalPearl":"Pruritic acneiform lesions resistant to conventional acne therapy prompt consideration of Malassezia folliculitis in the source.","keywords":["Fungal folliculitis"],"externalChecks":[]},
-{"id":"part2-derm-q15","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2019],"examPart":"Part II","stemEn":"A child presented with band of hair loss with no scaring (alopecia areata case). What will you do for her?","options":[{"key":"A","text":"Reassurance"},{"key":"B","text":"Oral griseofulvin"},{"key":"C","text":"Topical griseofulvin"}],"recalledAnswer":"A","sourceAnswerText":"A","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":645,"questionNumber":"Dermatology Q15","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 645-646; whitespace normalized."}],"sourcePages":[645,646],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","reassurance_depends_on_details_only_in_explanation"],"tts":{"enabled":true,"language":"en","text":"A child presented with band of hair loss with no scaring (alopecia areata case). What will you do for her? Option A. Reassurance. Option B. Oral griseofulvin. Option C. Topical griseofulvin."},"image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"status":"not_required"},"assetIds":[],"subtopic":"Alopecia areata","scenarioAr":"طفل لديه band of hair loss دون scarring ويسمي النص الحالة alopecia areata؛ المطلوب التدبير.","explanationAr":"المفتاح A: Reassurance. الشرح المرجعي يضيف أن البقعة صغيرة وتتحسن وأن scalp طبيعي، وهي تفاصيل ليست مكتملة في الـstem المختصر. لذلك لا تُعمم reassurance على كل alopecia areata؛ بقيت الحاجة لتأكيد السياق واضحة.","incorrectOptionsAr":"B وC: المصدر لا يرى دليل tinea capitis عند غياب scale وinflammation وblack-dot hairs، ولذلك لا يختار griseofulvin. هذه علامات من الشرح المرجعي ولا تُضاف كوقائع غير مذكورة إلى الـstem.","clinicalPearl":"The reassurance answer is tied to a small improving alopecia-areata patch in the source explanation.","keywords":["Alopecia areata"],"externalChecks":[]},
-{"id":"part2-derm-q16","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2020],"examPart":"Part II","stemEn":"A child presented with areas of hair loss. On examinations, black dots were seen at hair follicles (tinea capitis case). Which of the following is true regarding his condition?","options":[{"key":"A","text":"Topical treatment is enough"},{"key":"B","text":"The cause is direct contact with infected animal or person"},{"key":"C","text":"All contacts need to be treated"}],"recalledAnswer":"B","sourceAnswerText":"B","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":646,"questionNumber":"Dermatology Q16","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 646-646; whitespace normalized."}],"sourcePages":[646],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending"],"tts":{"enabled":true,"language":"en","text":"A child presented with areas of hair loss. On examinations, black dots were seen at hair follicles (tinea capitis case). Which of the following is true regarding his condition? Option A. Topical treatment is enough. Option B. The cause is direct contact with infected animal or person. Option C. All contacts need to be treated."},"image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"status":"not_required"},"assetIds":[],"subtopic":"Tinea capitis transmission","scenarioAr":"طفل لديه hair loss مع black dots عند hair follicles؛ المطلوب العبارة الصحيحة.","explanationAr":"المفتاح B: direct contact with infected animal or person. يشرح المصدر أيضًا إمكان الانتقال عبر أدوات ملوثة. يحتاج tinea capitis إلى oral antifungal لأن topical therapy لا تصل جيدًا إلى hair follicles. يُفحص أفراد المنزل ويُعالج المصاب، ويذكر الشرح antifungal shampoo للمخالطين؛ وهذا غير إعطاء علاج فموي لكل شخص تلقائيًا.","incorrectOptionsAr":"A: يخالف حاجة الإصابة داخل hair follicles إلى systemic treatment بحسب الشرح. C: صياغة all contacts need to be treated أوسع من التفصيل الوارد؛ المصدر يفرق بين علاج الإصابة المثبتة واستخدام shampoo للمخالطين.","clinicalPearl":"Distinguish treatment of proven tinea capitis from preventive shampoo use for household contacts.","keywords":["Tinea capitis transmission"],"externalChecks":[]},
-{"id":"part2-derm-q17","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2025,2022,2017],"examPart":"Part II","stemEn":"A child presented with areas of hair loss and itching. A picture was provided for tinea capitis (? kerion). Which of the following treatment you will give him?","options":[{"key":"A","text":"Oral Griseofulvin"},{"key":"B","text":"Topical miconazole"}],"recalledAnswer":"A","sourceAnswerText":"A","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":646,"questionNumber":"Dermatology Q17","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 646-647; whitespace normalized."}],"sourcePages":[646,647],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"image_missing","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","original_question_image_missing","available_comparison_image_contains_diagnostic_labels"],"tts":{"enabled":true,"language":"en","text":"A child presented with areas of hair loss and itching. A picture was provided for tinea capitis (? kerion). Which of the following treatment you will give him? Option A. Oral Griseofulvin. Option B. Topical miconazole."},"image":{"requiredForQuestion":true,"sourceRef":"Dermatology Q17; sourcePages","assetPath":null,"bundleAssetPaths":[],"status":"missing","captionAr":"صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.","captionEn":"Original source question image; independent clinical review pending."},"assetIds":["part2-derm-q17-p647-x4958"],"subtopic":"Tinea capitis / kerion treatment","scenarioAr":"طفل لديه مناطق hair loss وحكة وصورة يُشار إليها كـtinea capitis أوkerion؛ المطلوب العلاج.","explanationAr":"المفتاح A: Oral griseofulvin. يشرح المصدر أن oral antifungal هو أساس علاج tinea capitis وkerion، وأن topical therapy وحدها غير كافية. الصورة الوحيدة المتاحة لهذا السؤال في صفحة 647 رسم سريري مقارن ضمن الشرح، ويحمل أسماء التشخيصات؛ استُخرجت للشرح ولم تُقدَّم كصورة امتحان خالية من الإجابة.","incorrectOptionsAr":"B: topical miconazole وحده لا يحقق اختراقًا كافيًا لـhair follicles بحسب المصدر. لا يثبت الشرح فائدة إضافة systemic glucocorticoid بصورة روتينية في kerion.","clinicalPearl":"Use the labelled kerion/tinea image after answering; an unlabelled question image remains unavailable.","keywords":["Tinea capitis / kerion treatment"],"explanationAssetPaths":["master-bank/assets/derm-oph-20260907/p647-x4958.jpeg"],"externalChecks":[]},
-{"id":"part2-derm-q18","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2021,2017],"examPart":"Part II","stemEn":"A child presented with head itching. A picture was provided for head lice. What is the treatment of choice?","options":[{"key":"A","text":"Permethrin 1%"},{"key":"B","text":"Lindane"}],"recalledAnswer":"A","sourceAnswerText":"A","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":648,"questionNumber":"Dermatology Q18","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 648-648; whitespace normalized."}],"sourcePages":[648],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"image_needs_review","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","images_not_uploaded_to_repository","image_publication_rights_pending"],"tts":{"enabled":true,"language":"en","text":"A child presented with head itching. A picture was provided for head lice. What is the treatment of choice? Option A. Permethrin 1%. Option B. Lindane."},"image":{"requiredForQuestion":true,"sourceRef":"Dermatology Q18; sourcePages","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p648-x4962.jpeg"],"status":"needs_review","captionAr":"صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.","captionEn":"Original source question image; independent clinical review pending."},"assetIds":["part2-derm-q18-p648-x4962"],"subtopic":"Head lice treatment","scenarioAr":"طفل لديه itching بالرأس مع صورة head lice؛ المطلوب العلاج.","explanationAr":"المفتاح A: Permethrin 1%. يذكر المصدر الاستعمال لمن أعمارهم شهران فأكثر وإعادة العلاج بعد 7–10 أيام، ويحذر من lindane بسبب السلامة. الفحص الخارجي المحدود من CDC مؤيد لهذه النقاط العامة، مع التنبيه إلى resistance وعدم تعميم ترتيب العلاج على كل منطقة أوكل حالة.","incorrectOptionsAr":"B: المصدر لا يوصي بـlindane كخيار أول بسبب safety concerns. هذا السؤال يقارن خيارين محددين ولا يحصر جميع علاجات head lice المتاحة.","clinicalPearl":"Keep 1% permethrin for head lice distinct from 5% permethrin used for scabies.","keywords":["Head lice treatment"],"externalChecks":["cdc-headlice-20260907"]},
-{"id":"part2-derm-q19","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2024,2023,2020],"examPart":"Part II","stemEn":"You received a call from an anxious father as his 6-year-old daughter was just diagnosed with head lice. The father has several questions for you regarding the lice. Which of the following you will tell him?","options":[{"key":"A","text":"Any person that shared a bed with his daughter should be treated even if no live lice are found"},{"key":"B","text":"No nit policies for return to school have been effective in reducing the transmission of lice"},{"key":"C","text":"Treatment with permethrin should be repeated in 3-5 days if live lice are seen"}],"recalledAnswer":"A","sourceAnswerText":"A","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":648,"questionNumber":"Dermatology Q19","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 648-649; whitespace normalized."}],"sourcePages":[648,649],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending"],"tts":{"enabled":true,"language":"en","text":"You received a call from an anxious father as his 6-year-old daughter was just diagnosed with head lice. The father has several questions for you regarding the lice. Which of the following you will tell him? Option A. Any person that shared a bed with his daughter should be treated even if no live lice are found. Option B. No nit policies for return to school have been effective in reducing the transmission of lice. Option C. Treatment with permethrin should be repeated in 3-5 days if live lice are seen."},"image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"status":"not_required"},"assetIds":[],"subtopic":"Head lice contacts and school attendance","scenarioAr":"أب لطفلة عمرها 6 سنوات شُخصت بـhead lice يسأل عن المخالطين والمدرسة وتوقيت إعادة العلاج.","explanationAr":"المفتاح A يتعلق بمعالجة bedmates بالتزامن مع المصابين. المصدر يوصي بفحص household contacts، ويرفض no-nit policies، ويذكر أن إعادة permethrin تكون عادةً في اليوم التاسع وليس بعد 3–5 أيام. هذه التوصيات لا تعني علاج كل المخالطين عشوائيًا دون التفريق بين المصاب ومشارك السرير.","incorrectOptionsAr":"B: يناقض موقف المصدر الذي يدعو إلى إلغاء no-nit policies. C: لا يطابق توقيت إعادة permethrin الذي يذكره المصدر، وهو عادةً day 9.","clinicalPearl":"Treat affected individuals and bedmates together, and avoid unnecessary exclusion based on nits alone, as discussed in the source.","keywords":["Head lice contacts and school attendance"],"externalChecks":["cdc-headlice-20260907","cdc-lice-school-20260907"]},
-{"id":"part2-derm-q20","module":"general-paediatrics-outpatients","specialty":"Dermatology","topic":"Dermatology","yearTags":[2021,2019],"examPart":"Part II","stemEn":"A 6-month-old boy presented with history of an itching rash. His sibling at home also has itching. He has papules on hands and legs. Scraping of the rash was done. Picture of the result under microscope was provided. How you will treat her?","options":[{"key":"A","text":"Ivermectin"},{"key":"B","text":"Lindane"},{"key":"C","text":"Nizoral Shampoo"}],"recalledAnswer":"A","sourceAnswerText":"A Permethrin could be the answer if it was in provided choices. See explanation below.","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":649,"questionNumber":"Dermatology Q20","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 649-649; whitespace normalized."}],"sourcePages":[649],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"conflicting","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","images_not_uploaded_to_repository","image_publication_rights_pending","infant_treatment_safety_and_missing_preferred_option"],"tts":{"enabled":true,"language":"en","text":"A 6-month-old boy presented with history of an itching rash. His sibling at home also has itching. He has papules on hands and legs. Scraping of the rash was done. Picture of the result under microscope was provided. How you will treat her? Option A. Ivermectin. Option B. Lindane. Option C. Nizoral Shampoo."},"image":{"requiredForQuestion":true,"sourceRef":"Dermatology Q20; sourcePages","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p649-x4967.jpeg","master-bank/assets/derm-oph-20260907/p649-x4968.jpeg"],"status":"needs_review","captionAr":"صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.","captionEn":"Original source question image; independent clinical review pending."},"assetIds":["part2-derm-q20-p649-x4967","part2-derm-q20-p649-x4968"],"subtopic":"Scabies treatment in an infant","scenarioAr":"رضيع عمره 6 أشهر لديه طفح حاكّ مع إصابة أحد إخوته وصور skin scraping؛ المطلوب العلاج.","explanationAr":"المفتاح A: Ivermectin، لكن المصدر نفسه يقول إن permethrin سيكون الاختيار لو وُجد، وينبه إلى عدم ثبوت أمان ivermectin لمن يقل وزنهم عن 15 kg. لم يحدد الخيار route أوالوزن. لذلك بقي السؤال conflicting وغير صالح لاعتماد إجابة علاجية نهائية؛ لا يُفسَّر المفتاح كوصفة لرضيع.","incorrectOptionsAr":"B: لا يقدم المصدر lindane كبديل مفضل وآمن لهذا العمر. C: Nizoral shampoo ليس الاختيار الذي يحدده شرح scabies. A: لا يمكن اعتماده دون route وweight ومراجعة السلامة؛ الخيار الأنسب الذي يناقشه المصدر غير موجود.","clinicalPearl":"Do not turn a flawed infant-scabies option set into a verified ivermectin recommendation.","keywords":["Scabies treatment in an infant"],"externalChecks":["cdc-scabies-20260907"]}
+  {
+    "id": "part2-derm-q07",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A patient presented with the showing skin rash (erythema multiforme). He has history of pneumonia 1 week ago. For which, he received treatment and the child has no symptoms now other that this skin rash. Which of the following is the most likely causative organism?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Herpes simplex virus (HSV)"
+      },
+      {
+        "key": "B",
+        "text": "Mycoplasma pneumoniae"
+      },
+      {
+        "key": "C",
+        "text": "Varicella"
+      },
+      {
+        "key": "D",
+        "text": "Measles"
+      }
+    ],
+    "recalledAnswer": "B",
+    "sourceAnswerText": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 640,
+        "questionNumber": "Dermatology Q7",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 640-641; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      640,
+      641
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_needs_review",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "image_publication_rights_pending"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A patient presented with the showing skin rash (erythema multiforme). He has history of pneumonia 1 week ago. For which, he received treatment and the child has no symptoms now other that this skin rash. Which of the following is the most likely causative organism? Option A. Herpes simplex virus (HSV). Option B. Mycoplasma pneumoniae. Option C. Varicella. Option D. Measles."
+    },
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Dermatology Q7; sourcePages",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p640-x4918.jpeg",
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p640-x4918.jpeg",
+        "master-bank/assets/derm-oph-20260907/p640-x4919.jpeg"
+      ],
+      "status": "needs_review",
+      "captionAr": "صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.",
+      "captionEn": "Original source image for this question.",
+      "assetPaths": [
+        "master-bank/assets/derm-oph-20260907/p640-x4918.jpeg",
+        "master-bank/assets/derm-oph-20260907/p640-x4919.jpeg"
+      ],
+      "restorationVerifiedBySha256": true,
+      "publicationRights": "not_verified"
+    },
+    "assetIds": [
+      "part2-derm-q07-p640-x4918",
+      "part2-derm-q07-p640-x4919"
+    ],
+    "subtopic": "Post-pneumonia erythema multiforme",
+    "scenarioAr": "طفل تعافى من pneumonia قبل أسبوع وبقي لديه الطفح المصوّر؛ المطلوب الميكروب الأرجح.",
+    "explanationAr": "المفتاح B: Mycoplasma pneumoniae. شرح المصدر يربط الطفح الذي يسميه erythema multiforme بمرض تنفسي سبقه cough وcongestion وlow-grade fever. هذه التفاصيل الإضافية واردة في الشرح المرجعي وليست كلها في الـstem. حُفظ التصنيف كما ورد ولم يُستبدل تلقائيًا بتسمية أحدث.",
+    "incorrectOptionsAr": "A: لم يختَر المصدر HSV رغم كونه ضمن الخيارات؛ قرينة الترجيح التي يذكرها هي المرض التنفسي السابق. C وD: لا يناقش المصدر استبعادهما تفصيليًا، فلا نختلق تاريخ تطعيم أوعلامات غير واردة.",
+    "clinicalPearl": "The source links an erythema-multiforme-labelled eruption after pneumonia to Mycoplasma pneumoniae.",
+    "keywords": [
+      "Post-pneumonia erythema multiforme"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "The boy described in the vignette has facial swelling and a rash consistent with erythema multiforme that \ndeveloped shortly after the onset of an illness characterized by nonproductive cough and congestion with \nlow-grade fever. The most likely cause of the se findings is infection due to Mycoplasma pneumoniae. \nMycoplasma is a common cause of upper respiratory tract infection and bronchitis in school-aged children. \n\nThe fever associated with Mycoplasma infection is usually low grade, and the cough is nonproductive. \nOtitis media, pharyngitis, malaise, and headache also can occur. [Question 73 in PREP 2014]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        640,
+        641
+      ],
+      "sourceQuestionId": "part2-derm-q07",
+      "independentlyClinicallyVerified": false,
+      "sha256": "58016834fc8868c851e17c684b222ebb89acecf606a80d9318946d4d969210d9"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p640-x4918.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "c28f98ec50cda06cc30084e8419f674b3582fcef4ae7aebed13639c573373e25",
+        "sourcePage": 640
+      },
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p640-x4919.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "52183c1acef7755e6a9d15ec873e8a6870bfa038baf9ed1cdd23ba965a04cbd1",
+        "sourcePage": 640
+      }
+    ]
+  },
+  {
+    "id": "part2-derm-q08",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2024
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presented with fever and the showing skin lesion (herpetic whitlow). Which of the following is true regarding the most likely causative organism?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The cause is a DNA virus"
+      },
+      {
+        "key": "B",
+        "text": "The cause is an RNA virus"
+      },
+      {
+        "key": "C",
+        "text": "The cause is a Gram-negative bacteria"
+      },
+      {
+        "key": "D",
+        "text": "The cause is a Gram-positive bacteria"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 641,
+        "questionNumber": "Dermatology Q8",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 641-641; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      641
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_needs_review",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "image_publication_rights_pending"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presented with fever and the showing skin lesion (herpetic whitlow). Which of the following is true regarding the most likely causative organism? Option A. The cause is a DNA virus. Option B. The cause is an RNA virus. Option C. The cause is a Gram-negative bacteria. Option D. The cause is a Gram-positive bacteria."
+    },
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Dermatology Q8; sourcePages",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p641-x4925.jpeg",
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p641-x4925.jpeg"
+      ],
+      "status": "needs_review",
+      "captionAr": "صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.",
+      "captionEn": "Original source image for this question.",
+      "assetPaths": [
+        "master-bank/assets/derm-oph-20260907/p641-x4925.jpeg"
+      ],
+      "restorationVerifiedBySha256": true,
+      "publicationRights": "not_verified"
+    },
+    "assetIds": [
+      "part2-derm-q08-p641-x4925",
+      "part2-derm-q08-p641-x4924"
+    ],
+    "subtopic": "Herpetic whitlow viral classification",
+    "scenarioAr": "طفل لديه fever وآفة إصبع مصوّرة يسميها النص herpetic whitlow؛ المطلوب تصنيف العامل المسبب.",
+    "explanationAr": "المصدر يختار A: DNA virus. يشرح أن HSV قد يُلقّح عبر break in the skin barrier ويسبب herpetic whitlow مع قابلية النكس. الرسم الموجود في الشرح يصنف Herpesviruses تحت enveloped double-stranded DNA viruses؛ هذا الرسم يظهر بعد الإجابة فقط.",
+    "incorrectOptionsAr": "B: يخالف تصنيف HSV كـDNA virus في الرسم. C وD: كلاهما تصنيف bacteria، بينما المسبب المحدد في شرح المصدر HSV.",
+    "clinicalPearl": "The source classification diagram places herpesviruses among double-stranded DNA viruses.",
+    "keywords": [
+      "Herpetic whitlow viral classification"
+    ],
+    "explanationAssetPaths": [
+      "master-bank/assets/derm-oph-20260907/p641-x4924.jpeg"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "HSV infection of the finger, known as herpetic whitlow, can occur by inoculation of the virus through a \nbreak in the skin barrier. Untreated, these infections gradually heal over two to three weeks, but similar to \noral HSV-1 infection, they can recur. [UpToDate]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        641
+      ],
+      "sourceQuestionId": "part2-derm-q08",
+      "independentlyClinicallyVerified": false,
+      "sha256": "6c2f04898e039d568f19116b1df18051b4e474db5494d73ce08ff33edf4fea72"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p641-x4925.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "64b17e06eb6c7e3b11a3ec878e80417dec16fe07f48751cca0544d26fb2b3999",
+        "sourcePage": 641
+      },
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p641-x4924.jpeg",
+        "role": "explanation",
+        "displayBeforeAnswer": false,
+        "sha256": "9a7e8ba3430b5ac696f7ebbb572b26c728be3d974d25578ca623f8b1506e7924",
+        "sourcePage": 641
+      }
+    ]
+  },
+  {
+    "id": "part2-derm-q09",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2025
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presented with painful lesions on tongue, lips, and gingivae. What is the most likely diagnosis",
+    "options": [
+      {
+        "key": "A",
+        "text": "Herpangina"
+      },
+      {
+        "key": "B",
+        "text": "Herpetic gingivostomatitis"
+      }
+    ],
+    "recalledAnswer": "B",
+    "sourceAnswerText": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 641,
+        "questionNumber": "Dermatology Q9",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 641-642; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      641,
+      642
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presented with painful lesions on tongue, lips, and gingivae. What is the most likely diagnosis Option A. Herpangina. Option B. Herpetic gingivostomatitis."
+    },
+    "image": {
+      "requiredForQuestion": false,
+      "sourceRef": null,
+      "assetPath": null,
+      "status": "not_required"
+    },
+    "assetIds": [],
+    "subtopic": "Herpetic gingivostomatitis",
+    "scenarioAr": "طفل لديه آفات مؤلمة على tongue وlips وgingivae؛ المطلوب التشخيص.",
+    "explanationAr": "المفتاح B: Herpetic gingivostomatitis. يذكر الشرح vesicles مؤلمة تتحول إلى shallow ulcers مع gingivae ملتهبة قابلة للنزف وآفات حول الفم. ضعف تناول السوائل قد يؤدي إلى dehydration؛ لا يكفي التركيز على الطفح وإهمال الترطيب.",
+    "incorrectOptionsAr": "A: المصدر يختار gingivostomatitis اعتمادًا على توزيع الآفات وإصابة اللثة، لكنه لا يقدم في هذه الفقرة وصفًا مقارنًا كاملًا لـherpangina؛ لا نضيف علامات غير موجودة في السؤال.",
+    "clinicalPearl": "Painful gingival and oral lesions may lead to poor intake and dehydration in the source explanation.",
+    "keywords": [
+      "Herpetic gingivostomatitis"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "The boy in the vignette exhibits the common features of primary herpetic gingivostomatitis. This condition \npresents most often in children younger than 5 years of age, though it may occur at any age with the first \nbout of herpes simplex virus. On physical examination, numerous small  vesicles on an erythematous base \nwill be noted  on the anterior palate, tongue, buccal mucosa, and gingivae. These lesions are painful and \nevolve into shallow ulcers. The gingivae may be erythematous, inflamed, and friable. Perioral lesions on \nthe lips and nearby cheeks or chin may be present as well. The enanthem frequently follows several days \nof high fever, irritability, and malaise. As the lesions progress, many patients develop poor oral intake, \ndrooling, and foul-smelling breath; some may be quite ill-appearing and are at risk for dehydration. Herpetic \ngingivostomatitis is self-limited and will resolve in 1 to 2 weeks. [Question 195 in PREP 2017]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        641,
+        642
+      ],
+      "sourceQuestionId": "part2-derm-q09",
+      "independentlyClinicallyVerified": false,
+      "sha256": "258e5fdf849111e210e8cf4cf5eeee16772b1ac0bd00ce85f27beebf8a397289"
+    }
+  },
+  {
+    "id": "part2-derm-q10",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presented with pain while brushing his teeth. A picture was provided for mouth lesion (? stomatitis). How you will manage him (? herpetic gingivostomatitis case)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Start iron supplementation"
+      },
+      {
+        "key": "B",
+        "text": "Give magic mouthwash"
+      },
+      {
+        "key": "C",
+        "text": "Give nystatin"
+      }
+    ],
+    "recalledAnswer": "B",
+    "sourceAnswerText": "B?",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 642,
+        "questionNumber": "Dermatology Q10",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 642-643; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      642,
+      643
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "original_question_image_missing",
+      "source_key_conflicts_with_explanation"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presented with pain while brushing his teeth. A picture was provided for mouth lesion (? stomatitis). How you will manage him (? herpetic gingivostomatitis case)? Option A. Start iron supplementation. Option B. Give magic mouthwash. Option C. Give nystatin."
+    },
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Dermatology Q10; sourcePages",
+      "assetPath": null,
+      "bundleAssetPaths": [],
+      "status": "missing",
+      "captionAr": "صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.",
+      "captionEn": "Original source question image; independent clinical review pending."
+    },
+    "assetIds": [],
+    "subtopic": "Uncertain stomatitis management",
+    "scenarioAr": "طفل يتألم عند تنظيف الأسنان؛ ذُكرت صورة stomatitis محتملة وسُئل عن التدبير.",
+    "explanationAr": "المفتاح مطبوع B? أي غير جازم، ثم ينص الشرح على عدم اقتراح magic mouthwash بصورة روتينية لقلة دليل الفائدة واحتمال الضرر وصعوبة التطبيق عند الصغار. التشخيص نفسه مسبوق بعلامة استفهام، ولا توجد الصورة المذكورة فعليًا في صفحة 642. بقي السؤال conflicting، ولم تُعتمد B كعلاج موثّق.",
+    "incorrectOptionsAr": "A: لا يوجد تشخيص مثبت لنقص iron في السؤال. C: لا يذكر المصدر candidiasis. B: يتعارض اعتماده الروتيني مع شرح المصدر نفسه. لا تمثل هذه الخيارات خطة تدبير كاملة موثوقة.",
+    "clinicalPearl": "An uncertain answer key must not override the source explanation that cautions against routine magic mouthwash.",
+    "keywords": [
+      "Uncertain stomatitis management"
+    ],
+    "externalChecks": [
+      "rch-hsv-20260907"
+    ],
+    "sourceExplanationEn": "Primary herpetic gingivostomatitis is characterized by ulcerative lesions of the gingiva and mucous \nmembranes of the mouth (picture 1), often with perioral vesicular lesions. It generally begins with a \nprodrome that lasts approximately four days and may in clude fever, anorexia, irritability, malaise, \nsleeplessness, and headache. Caregivers may attribute these symptoms to teething in children whose \nprimary teeth are erupting, but children who are teething do not have oropharyngeal lesions. Associated \nsymptoms and signs may include bad breath, refusal to drink, anorexia, fever, arthralgia, headache, and \nsubmandibular or cervical lymphadenitis. Refusal to drink may result in dehydration, which is the most \nfrequent complication. [UpToDate] \n \nWe do not routinely suggest \"magic mouthwash\" to coat lesions and/or soothe pain given the lack of \nevidence of benefit from clinical trials, the potential for harm (e.g., toxicity from systemic absorption, \nallergic reaction), and difficulty of application in young children. [UpToDate]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        642,
+        643
+      ],
+      "sourceQuestionId": "part2-derm-q10",
+      "independentlyClinicallyVerified": false,
+      "sha256": "9614e5971dd79d182d0c399509c0ed9efd565ea4559f6b515708fecccf331aad"
+    }
+  },
+  {
+    "id": "part2-derm-q11",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2024
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child who’s known to have Crohn's disease on infliximab presented with new onset vesicular skin rash on posterior rip distribution that is itching and associated with burning sensation. What would you do next?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Give IV acyclovir"
+      },
+      {
+        "key": "B",
+        "text": "Give IV valganciclovir"
+      },
+      {
+        "key": "C",
+        "text": "Give Oral Augmentin"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 643,
+        "questionNumber": "Dermatology Q11",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 643-644; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      643,
+      644
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "source_drug_route_typo_requires_review"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child who’s known to have Crohn's disease on infliximab presented with new onset vesicular skin rash on posterior rip distribution that is itching and associated with burning sensation. What would you do next? Option A. Give IV acyclovir. Option B. Give IV valganciclovir. Option C. Give Oral Augmentin."
+    },
+    "image": {
+      "requiredForQuestion": false,
+      "sourceRef": null,
+      "assetPath": null,
+      "status": "not_required"
+    },
+    "assetIds": [
+      "part2-derm-q11-p643-x4933",
+      "part2-derm-q11-p644-x4937"
+    ],
+    "subtopic": "Herpes zoster during infliximab therapy",
+    "scenarioAr": "طفل لديه Crohn disease ويستخدم infliximab، وظهر طفح vesicular حاكّ وحارق بتوزع posterior rib؛ المطلوب الخطوة التالية.",
+    "explanationAr": "المفتاح A: IV acyclovir. يصف المصدر VZV reactivation كطفح vesicular أحادي الجانب ضمن sensory-nerve distribution، ويذكر أن immunocompromised patients أكثر عرضة للنكس. الجداول المرفقة هنا صور شرح فقط، وليست صورًا سريرية كانت مطلوبة في السؤال. لم تُضف جرعة علاج جديدة.",
+    "incorrectOptionsAr": "B وC: المصدر يحدد acyclovir للحالة الموصوفة ولا يوصي فيهما. أبقيت عبارة IV valganciclovir كما طُبعت للتدقيق، دون تصحيح صامت أوتقديمها كنظام علاجي مقبول.",
+    "clinicalPearl": "The source connects immunosuppression plus a dermatomal vesicular eruption with VZV reactivation.",
+    "keywords": [
+      "Herpes zoster during infliximab therapy"
+    ],
+    "explanationAssetPaths": [
+      "master-bank/assets/derm-oph-20260907/p643-x4933.jpeg",
+      "master-bank/assets/derm-oph-20260907/p644-x4937.jpeg"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "Varicella zoster (shingles) results from reactivation of dormant virus. Since this occurs several years after \nthe initial infection, herpes zoster is rarely seen in children. The disease manifests as a localized, one-sided \nvesicular rash, usually restricted to the skin distribution of a single sensory nerve. It is most often seen on \nthe trunk, face, or head, and less frequently on the limbs. Vesicles resembling chickenpox appear in this \ndelimited area, and progress and coalesce. The person may have pain, itching, and hyperesthesia. The acute \nskin lesions of herpes zoster subside by crusting in about 2 weeks. The most troublesome manifestation is \npostherpetic neuralgia, which causes persistent pain and discomfort. Herpes zoster can be treated with \nacyclovir (IV, 30 mg/ kg/day in three divided doses). [IAP Textbook of Pediatric Infectious Diseases 2023] \n \nImmunocompromised patients are at increased risk of Varicella-zoster virus (VZV) reactivation because of \nreduced T cell -mediated immunity. This includes transplant recipients, patients receiving selected \nimmunomodulator therapies, patients treated with che motherapy and/or corticosteroids, and patients with \nhuman immunodeficiency virus (HIV). [UpToDate]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        643,
+        644
+      ],
+      "sourceQuestionId": "part2-derm-q11",
+      "independentlyClinicallyVerified": false,
+      "sha256": "2d3b5981f538a242881ece7a078e750bcfbf5cbd8747b38e91911e815925e2da"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p643-x4933.jpeg",
+        "role": "explanation",
+        "displayBeforeAnswer": false,
+        "sha256": "8969a166a48f4fa407c29b7f70bda876431b8dbae904f2decd7f59184c21a5c3",
+        "sourcePage": 643
+      },
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p644-x4937.jpeg",
+        "role": "explanation",
+        "displayBeforeAnswer": false,
+        "sha256": "ff0a9199e1abdbf2d497e0088e0276852aacd63911c421fbf9b11a9cceb3c8ca",
+        "sourcePage": 644
+      }
+    ]
+  },
+  {
+    "id": "part2-derm-q13",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A girl presented with asymptomatic perianal warts. What will you do next?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Take detailed history"
+      },
+      {
+        "key": "B",
+        "text": "Reassure"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 644,
+        "questionNumber": "Dermatology Q13",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 644-645; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      644,
+      645
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A girl presented with asymptomatic perianal warts. What will you do next? Option A. Take detailed history. Option B. Reassure."
+    },
+    "image": {
+      "requiredForQuestion": false,
+      "sourceRef": null,
+      "assetPath": null,
+      "status": "not_required"
+    },
+    "assetIds": [],
+    "subtopic": "Perianal warts assessment",
+    "scenarioAr": "طفلة لديها asymptomatic perianal warts؛ المطلوب الخطوة التالية.",
+    "explanationAr": "المفتاح A: Take detailed history. يوضح المصدر أن HPV قد ينتقل بطرق غير جنسية، منها autoinoculation وheteroinoculation، وأن احتمال sexual abuse يستحق النظر ضمن التقييم. وجود الثآليل وحده لا يثبت الاعتداء، كما أن reassurance وحدها لا تستبدل أخذ التاريخ والتقييم.",
+    "incorrectOptionsAr": "B: reassurance دون detailed history تتجاوز خطوة التقييم التي اختارها المصدر؛ لا يُفترض نمط انتقال بعينه من الآفات وحدها.",
+    "clinicalPearl": "Perianal warts warrant a careful history; the source acknowledges both nonsexual transmission and safeguarding concerns.",
+    "keywords": [
+      "Perianal warts assessment"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "The child described in the vignette has condylomata acuminata (genital warts) as a result of human \npapillomavirus (HPV) infection. These lesions often present as 1 to 5 mm flesh-colored, verrucous papules, \nwhich may coalesce into large plaques. While children can potentially autoinoculate (spread of HPV from \nother sites on the patient) or heteroinoculate (spread by nonsexual contact with lesions of a caregiver or \nothers), condylomata acuminata have been associated with childhood sexual abuse. Therefore, \n\nconsideration of sexual abuse is warranted in the evaluation of the prepubescent child in this vignette.  \n[Question 62 in PREP 2016]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        644,
+        645
+      ],
+      "sourceQuestionId": "part2-derm-q13",
+      "independentlyClinicallyVerified": false,
+      "sha256": "5f93a5df5ba9f0ddb8b8a6ebcc7e456b4dbfaac1b8183045fa427dd105e56eb6"
+    }
+  },
+  {
+    "id": "part2-derm-q14",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2025
+    ],
+    "examPart": "Part II",
+    "stemEn": "An adolescent female was treated with topical antibiotic for acne. She now presented with worsen skin lesions and itching. The skin lesions are showing in the provided picture. Gram stain of the lesions came negative for any growth. What is the most likely cause?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Herpes simplex virus (HSV) infection"
+      },
+      {
+        "key": "B",
+        "text": "Pustular melanosis"
+      },
+      {
+        "key": "C",
+        "text": "Fungal folliculitis"
+      }
+    ],
+    "recalledAnswer": "C",
+    "sourceAnswerText": "C",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 645,
+        "questionNumber": "Dermatology Q14",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 645-645; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      645
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_needs_review",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "images_not_uploaded_to_repository",
+      "image_publication_rights_pending",
+      "source_gram_stain_growth_wording_error"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "An adolescent female was treated with topical antibiotic for acne. She now presented with worsen skin lesions and itching. The skin lesions are showing in the provided picture. Gram stain of the lesions came negative for any growth. What is the most likely cause? Option A. Herpes simplex virus (HSV) infection. Option B. Pustular melanosis. Option C. Fungal folliculitis."
+    },
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Dermatology Q14; sourcePages",
+      "assetPath": null,
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p645-x4945.png"
+      ],
+      "status": "needs_review",
+      "captionAr": "صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.",
+      "captionEn": "Original source question image; independent clinical review pending."
+    },
+    "assetIds": [
+      "part2-derm-q14-p645-x4945"
+    ],
+    "subtopic": "Fungal folliculitis",
+    "scenarioAr": "مراهقة ساءت آفات acne لديها مع itching بعد topical antibiotic؛ الصورة مرفقة ويذكر النص Gram stain سلبيًا؛ المطلوب السبب.",
+    "explanationAr": "المفتاح C: Fungal folliculitis. يشرح المصدر أن Pityrosporum/Malassezia folliculitis تسبب papules وpustules حاكّة في مناطق غنية بالزهم، وقد تُخطأ باعتبارها acne ولا تتحسن مع antibiotics. عبارة Gram stain negative for any growth غير دقيقة في الأصل؛ حُفظت كما هي ووُسمت للمراجعة، ولم تُحوَّل إلى نتيجة culture مخترعة.",
+    "incorrectOptionsAr": "A وB: لا يقدم المصدر مقارنة تفصيلية معهما؛ ترجيحه لـC مبني على pruritus والمظهر acneiform وعدم الاستجابة لعلاج acne المعتاد. النتيجة السلبية المذكورة لا تؤكد الفطريات وحدها.",
+    "clinicalPearl": "Pruritic acneiform lesions resistant to conventional acne therapy prompt consideration of Malassezia folliculitis in the source.",
+    "keywords": [
+      "Fungal folliculitis"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "Pityrosporum folliculitis (PF) is fungal acneiform disease of the hair follicles that presents with papules \nand pustules often associated with pruritus. PF lesions most commonly present on the chest, shoulders, \nback or face most often appear during the second and third decades of life. PF and acne vulgaris have very \nsimilar presentations, and PF is often misdiagnosed as acne vulgaris (AV). Malassezia spp. fungi require a \nlipid source for survival and reproduction which leads these species to overgrow in sebum-rich areas of the \nbody, where AV often occurs. Both PF and AV can present with papules and pustules and occur in similar \nlocations across the body: face, chest, and back. Patients with PF are often incorrectly managed with \ntraditional AV treatments, such as antibiotics, with little to no improvement. Thus, in cases of AV resistant \nto traditional management strategies, the diagnosis of PF should be considered. [Clinical characteristics and \ntreatment outcomes of Pityrosporum folliculitis in immunocompetent patients]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        645
+      ],
+      "sourceQuestionId": "part2-derm-q14",
+      "independentlyClinicallyVerified": false,
+      "sha256": "4aa561148fb66c1b1a402a98e8acb7e7862e1680ba0fedcc56d90404a92a1427"
+    }
+  },
+  {
+    "id": "part2-derm-q15",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presented with band of hair loss with no scaring (alopecia areata case). What will you do for her?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Reassurance"
+      },
+      {
+        "key": "B",
+        "text": "Oral griseofulvin"
+      },
+      {
+        "key": "C",
+        "text": "Topical griseofulvin"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 645,
+        "questionNumber": "Dermatology Q15",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 645-646; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      645,
+      646
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "reassurance_depends_on_details_only_in_explanation"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presented with band of hair loss with no scaring (alopecia areata case). What will you do for her? Option A. Reassurance. Option B. Oral griseofulvin. Option C. Topical griseofulvin."
+    },
+    "image": {
+      "requiredForQuestion": false,
+      "sourceRef": null,
+      "assetPath": null,
+      "status": "not_required"
+    },
+    "assetIds": [],
+    "subtopic": "Alopecia areata",
+    "scenarioAr": "طفل لديه band of hair loss دون scarring ويسمي النص الحالة alopecia areata؛ المطلوب التدبير.",
+    "explanationAr": "المفتاح A: Reassurance. الشرح المرجعي يضيف أن البقعة صغيرة وتتحسن وأن scalp طبيعي، وهي تفاصيل ليست مكتملة في الـstem المختصر. لذلك لا تُعمم reassurance على كل alopecia areata؛ بقيت الحاجة لتأكيد السياق واضحة.",
+    "incorrectOptionsAr": "B وC: المصدر لا يرى دليل tinea capitis عند غياب scale وinflammation وblack-dot hairs، ولذلك لا يختار griseofulvin. هذه علامات من الشرح المرجعي ولا تُضاف كوقائع غير مذكورة إلى الـstem.",
+    "clinicalPearl": "The reassurance answer is tied to a small improving alopecia-areata patch in the source explanation.",
+    "keywords": [
+      "Alopecia areata"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "The girl in the vignette has a round patch of nearly complete hair loss and a normal-appearing scalp. These \nfindings suggest the diagnosis of alopecia areata. Since the patch is small and improving, no therapy is \nnecessary. In the absence of scale, evidenc e of inflammation (erythema or pustule formation), or “black -\n\ndot” hairs (the remnants of broken hairs within follicles), tinea capitis is unlikely and antifungal therapy is \nnot indicated. [Question 62 in PREP 2016] \n \nFor more information, please read the following [Hair Loss - AAP]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        645,
+        646
+      ],
+      "sourceQuestionId": "part2-derm-q15",
+      "independentlyClinicallyVerified": false,
+      "sha256": "f597534bb9084a1d6409ac83852df2be4f73985138fd3f7eb8d903f6c91504c7"
+    }
+  },
+  {
+    "id": "part2-derm-q16",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presented with areas of hair loss. On examinations, black dots were seen at hair follicles (tinea capitis case). Which of the following is true regarding his condition?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Topical treatment is enough"
+      },
+      {
+        "key": "B",
+        "text": "The cause is direct contact with infected animal or person"
+      },
+      {
+        "key": "C",
+        "text": "All contacts need to be treated"
+      }
+    ],
+    "recalledAnswer": "B",
+    "sourceAnswerText": "B",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 646,
+        "questionNumber": "Dermatology Q16",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 646-646; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      646
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presented with areas of hair loss. On examinations, black dots were seen at hair follicles (tinea capitis case). Which of the following is true regarding his condition? Option A. Topical treatment is enough. Option B. The cause is direct contact with infected animal or person. Option C. All contacts need to be treated."
+    },
+    "image": {
+      "requiredForQuestion": false,
+      "sourceRef": null,
+      "assetPath": null,
+      "status": "not_required"
+    },
+    "assetIds": [],
+    "subtopic": "Tinea capitis transmission",
+    "scenarioAr": "طفل لديه hair loss مع black dots عند hair follicles؛ المطلوب العبارة الصحيحة.",
+    "explanationAr": "المفتاح B: direct contact with infected animal or person. يشرح المصدر أيضًا إمكان الانتقال عبر أدوات ملوثة. يحتاج tinea capitis إلى oral antifungal لأن topical therapy لا تصل جيدًا إلى hair follicles. يُفحص أفراد المنزل ويُعالج المصاب، ويذكر الشرح antifungal shampoo للمخالطين؛ وهذا غير إعطاء علاج فموي لكل شخص تلقائيًا.",
+    "incorrectOptionsAr": "A: يخالف حاجة الإصابة داخل hair follicles إلى systemic treatment بحسب الشرح. C: صياغة all contacts need to be treated أوسع من التفصيل الوارد؛ المصدر يفرق بين علاج الإصابة المثبتة واستخدام shampoo للمخالطين.",
+    "clinicalPearl": "Distinguish treatment of proven tinea capitis from preventive shampoo use for household contacts.",
+    "keywords": [
+      "Tinea capitis transmission"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "Tinea capitis primarily occurs in children. The most common clinical findings are single or multiple scaly \npatches with alopecia and patches of alopecia with black dots at follicular orifices that represent broken \nhairs. Other presentations include widespr ead scaling with subtle hair loss, a boggy edematous painful \nplaque called a kerion, and favus, which characteristically exhibits multiple cup -shaped, yellow crusts \n(scutula). [UpToDate] \n \nTinea capitis is acquired through contact of the scalp with the causative dermatophyte. Acquisition of the \nfungus may result from direct contact with an infected individual or animal or from contact with a \ncontaminated object (e.g., comb, brush, or hat). [UpToDate] \n \nTreatment should involve an oral antifungal agent that has demonstrated efficacy for tinea capitis. Topical \nantifungal therapy is unlikely to be effective because topical treatments have inadequate penetration of hair \nfollicles and may miss sites of subcli nical infection. Griseofulvin has a long history of use for childhood \ntinea capitis and is a well-accepted first-line therapy. [UpToDate] \n \nHousehold members of an individual diagnosed with tinea capitis should be physically examined for signs \nof tinea capitis and should be treated simultaneously if tinea capitis is detected. Asymptomatic carriers of \ndermatophytes may serve as reservoirs for r ecurrent infection. Because of this possibility, we suggest use \nof an antifungal shampoo by all household members for two to four weeks. [UpToDate]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        646
+      ],
+      "sourceQuestionId": "part2-derm-q16",
+      "independentlyClinicallyVerified": false,
+      "sha256": "3c6f729311e6dae29874a492c60c2ab1e8c19b0935c9b67093c1f49250aaa477"
+    }
+  },
+  {
+    "id": "part2-derm-q17",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2025,
+      2022,
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presented with areas of hair loss and itching. A picture was provided for tinea capitis (? kerion). Which of the following treatment you will give him?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Oral Griseofulvin"
+      },
+      {
+        "key": "B",
+        "text": "Topical miconazole"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 646,
+        "questionNumber": "Dermatology Q17",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 646-647; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      646,
+      647
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_missing",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "original_question_image_missing",
+      "available_comparison_image_contains_diagnostic_labels"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presented with areas of hair loss and itching. A picture was provided for tinea capitis (? kerion). Which of the following treatment you will give him? Option A. Oral Griseofulvin. Option B. Topical miconazole."
+    },
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Dermatology Q17; sourcePages",
+      "assetPath": null,
+      "bundleAssetPaths": [],
+      "status": "missing",
+      "captionAr": "صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.",
+      "captionEn": "Original source question image; independent clinical review pending."
+    },
+    "assetIds": [
+      "part2-derm-q17-p647-x4958"
+    ],
+    "subtopic": "Tinea capitis / kerion treatment",
+    "scenarioAr": "طفل لديه مناطق hair loss وحكة وصورة يُشار إليها كـtinea capitis أوkerion؛ المطلوب العلاج.",
+    "explanationAr": "المفتاح A: Oral griseofulvin. يشرح المصدر أن oral antifungal هو أساس علاج tinea capitis وkerion، وأن topical therapy وحدها غير كافية. الصورة الوحيدة المتاحة لهذا السؤال في صفحة 647 رسم سريري مقارن ضمن الشرح، ويحمل أسماء التشخيصات؛ استُخرجت للشرح ولم تُقدَّم كصورة امتحان خالية من الإجابة.",
+    "incorrectOptionsAr": "B: topical miconazole وحده لا يحقق اختراقًا كافيًا لـhair follicles بحسب المصدر. لا يثبت الشرح فائدة إضافة systemic glucocorticoid بصورة روتينية في kerion.",
+    "clinicalPearl": "Use the labelled kerion/tinea image after answering; an unlabelled question image remains unavailable.",
+    "keywords": [
+      "Tinea capitis / kerion treatment"
+    ],
+    "explanationAssetPaths": [
+      "master-bank/assets/derm-oph-20260907/p647-x4958.jpeg"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "The most common clinical manifestations of tinea capitis are the development of scaly patches with \nalopecia and patches of alopecia with visible black dots. Diffuse scalp scaling with subtle hair loss, kerion, \nand favus are additional clinical variants. Pr uritus is a common associated symptom in the various \npresentations of tinea capitis. Kerion is a severe manifestation of tinea capitis resulting from an intense \nimmune response to the infection. Kerion is characterized by the development of an inflammatory  plaque \nwith pustules, thick crusting, and/or drainage. A suppurative folliculitis may be the initial presentation. \nTenderness or pain is often present. [UpToDate] \n \nTreatment should involve an oral antifungal agent that has demonstrated efficacy for tinea capitis. Topical \nantifungal therapy is unlikely to be effective because topical treatments have inadequate penetration of hair \nfollicles and may miss sites of subcli nical infection. Griseofulvin has a long history of use for childhood \ntinea capitis and is a well-accepted first-line therapy. [UpToDate] \n \nOral antifungal therapy is the mainstay of treatment for kerion. Treatment regimens are similar to treatment \nfor other forms of tinea capitis. Systemic glucocorticoids are occasionally used in conjunction with \nantifungal therapy for patients with severe inflammation. However, it is unclear if the addition of a systemic \nglucocorticoid accelerates improvement or improves outcome. [UpToDate]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        646,
+        647
+      ],
+      "sourceQuestionId": "part2-derm-q17",
+      "independentlyClinicallyVerified": false,
+      "sha256": "708d8a0b1c9f95ce6cecee05f711de3f5a4d7b502ed2dab281f36ff6a3a48563"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p647-x4958.jpeg",
+        "role": "explanation",
+        "displayBeforeAnswer": false,
+        "sha256": "4dc569afb4eb8cbe2fce76a4c9634997bb3a5b64d1c0f9ab8563531351a95a2e",
+        "sourcePage": 647
+      }
+    ]
+  },
+  {
+    "id": "part2-derm-q18",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2021,
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presented with head itching. A picture was provided for head lice. What is the treatment of choice?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Permethrin 1%"
+      },
+      {
+        "key": "B",
+        "text": "Lindane"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 648,
+        "questionNumber": "Dermatology Q18",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 648-648; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      648
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "image_needs_review",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "image_publication_rights_pending"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presented with head itching. A picture was provided for head lice. What is the treatment of choice? Option A. Permethrin 1%. Option B. Lindane."
+    },
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Dermatology Q18; sourcePages",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p648-x4962.jpeg",
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p648-x4962.jpeg"
+      ],
+      "status": "needs_review",
+      "captionAr": "صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.",
+      "captionEn": "Original source image for this question.",
+      "assetPaths": [
+        "master-bank/assets/derm-oph-20260907/p648-x4962.jpeg"
+      ],
+      "restorationVerifiedBySha256": true,
+      "publicationRights": "not_verified"
+    },
+    "assetIds": [
+      "part2-derm-q18-p648-x4962"
+    ],
+    "subtopic": "Head lice treatment",
+    "scenarioAr": "طفل لديه itching بالرأس مع صورة head lice؛ المطلوب العلاج.",
+    "explanationAr": "المفتاح A: Permethrin 1%. يذكر المصدر الاستعمال لمن أعمارهم شهران فأكثر وإعادة العلاج بعد 7–10 أيام، ويحذر من lindane بسبب السلامة. الفحص الخارجي المحدود من CDC مؤيد لهذه النقاط العامة، مع التنبيه إلى resistance وعدم تعميم ترتيب العلاج على كل منطقة أوكل حالة.",
+    "incorrectOptionsAr": "B: المصدر لا يوصي بـlindane كخيار أول بسبب safety concerns. هذا السؤال يقارن خيارين محددين ولا يحصر جميع علاجات head lice المتاحة.",
+    "clinicalPearl": "Keep 1% permethrin for head lice distinct from 5% permethrin used for scabies.",
+    "keywords": [
+      "Head lice treatment"
+    ],
+    "externalChecks": [
+      "cdc-headlice-20260907"
+    ],
+    "sourceExplanationEn": "Permethrin 1% cream rinse, available over the counter; first -line therapy; applied to hair that has been \nshampooed and towel dried; left on for 10 minutes and then rinsed; repeat treatment in 7 to 10 days; \napproved in infants 2 months and older. Topical li ndane is not recommended as a first -line treatment for \npediculosis capitis because of safety concerns.",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        648
+      ],
+      "sourceQuestionId": "part2-derm-q18",
+      "independentlyClinicallyVerified": false,
+      "sha256": "64a1953d297594b9ce52864a429a0e214635a86b313bb9f36cf7355e303f0e3d"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p648-x4962.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "8ef09e5861f80f494e6be3a7853283b14df7ffeb45f38fa24a9872c56fa715fe",
+        "sourcePage": 648
+      }
+    ]
+  },
+  {
+    "id": "part2-derm-q19",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2024,
+      2023,
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "You received a call from an anxious father as his 6-year-old daughter was just diagnosed with head lice. The father has several questions for you regarding the lice. Which of the following you will tell him?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Any person that shared a bed with his daughter should be treated even if no live lice are found"
+      },
+      {
+        "key": "B",
+        "text": "No nit policies for return to school have been effective in reducing the transmission of lice"
+      },
+      {
+        "key": "C",
+        "text": "Treatment with permethrin should be repeated in 3-5 days if live lice are seen"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 648,
+        "questionNumber": "Dermatology Q19",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 648-649; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      648,
+      649
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "You received a call from an anxious father as his 6-year-old daughter was just diagnosed with head lice. The father has several questions for you regarding the lice. Which of the following you will tell him? Option A. Any person that shared a bed with his daughter should be treated even if no live lice are found. Option B. No nit policies for return to school have been effective in reducing the transmission of lice. Option C. Treatment with permethrin should be repeated in 3-5 days if live lice are seen."
+    },
+    "image": {
+      "requiredForQuestion": false,
+      "sourceRef": null,
+      "assetPath": null,
+      "status": "not_required"
+    },
+    "assetIds": [],
+    "subtopic": "Head lice contacts and school attendance",
+    "scenarioAr": "أب لطفلة عمرها 6 سنوات شُخصت بـhead lice يسأل عن المخالطين والمدرسة وتوقيت إعادة العلاج.",
+    "explanationAr": "المفتاح A يتعلق بمعالجة bedmates بالتزامن مع المصابين. المصدر يوصي بفحص household contacts، ويرفض no-nit policies، ويذكر أن إعادة permethrin تكون عادةً في اليوم التاسع وليس بعد 3–5 أيام. هذه التوصيات لا تعني علاج كل المخالطين عشوائيًا دون التفريق بين المصاب ومشارك السرير.",
+    "incorrectOptionsAr": "B: يناقض موقف المصدر الذي يدعو إلى إلغاء no-nit policies. C: لا يطابق توقيت إعادة permethrin الذي يذكره المصدر، وهو عادةً day 9.",
+    "clinicalPearl": "Treat affected individuals and bedmates together, and avoid unnecessary exclusion based on nits alone, as discussed in the source.",
+    "keywords": [
+      "Head lice contacts and school attendance"
+    ],
+    "externalChecks": [
+      "cdc-headlice-20260907",
+      "cdc-lice-school-20260907"
+    ],
+    "sourceExplanationEn": "Treatment for head lice is recommended for persons diagnosed with an active infestation. All household \nmembers and other close contacts should be checked; those persons with evidence of an active infestation \nshould be treated. Some experts believe prophylactic treatment is prudent for persons who share the same \nbed with actively-infested individuals. All infested persons (household members and close contacts) and \ntheir bedmates should be treated at the same time. [CDC]  \n \nPermethrin may continue to kill newly hatched lice for several days after treatment. A second treatment \noften is necessary on day 9 to kill any newly hatched lice before they can produce new eggs. [CDC] \n \nBoth the American Academy of Pediatrics (AAP) and the National Association of School Nurses (NASN) \nadvocate that “no-nit” policies should be discontinued. “No -nit” policies that require a child to be free of \nnits before they can return to schools should be discontinued for the following reasons: [CDC] \n\n• Many nits are more than ¼ inch from the scalp. Such nits are usually not viable and very unlikely \nto hatch to become crawling lice, or may in fact be empty shells, also known as ‘casings’. \n• Nits are cemented to hair shafts and are very unlikely to be transferred successfully to other people. \n• The burden of unnecessary absenteeism to the students, families and communities far outweighs the \nrisks associated with head lice. \n• Misdiagnosis of nits is very common during nit checks conducted by nonmedical personnel.",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        648,
+        649
+      ],
+      "sourceQuestionId": "part2-derm-q19",
+      "independentlyClinicallyVerified": false,
+      "sha256": "08761bd7fcc2233f41727a85cae6346d9e84037cc50f76937ad05ee5a23ca80c"
+    }
+  },
+  {
+    "id": "part2-derm-q20",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "yearTags": [
+      2021,
+      2019
+    ],
+    "examPart": "Part II",
+    "stemEn": "A 6-month-old boy presented with history of an itching rash. His sibling at home also has itching. He has papules on hands and legs. Scraping of the rash was done. Picture of the result under microscope was provided. How you will treat her?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Ivermectin"
+      },
+      {
+        "key": "B",
+        "text": "Lindane"
+      },
+      {
+        "key": "C",
+        "text": "Nizoral Shampoo"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A Permethrin could be the answer if it was in provided choices. See explanation below.",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 649,
+        "questionNumber": "Dermatology Q20",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 649-649; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      649
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "image_publication_rights_pending",
+      "infant_treatment_safety_and_missing_preferred_option"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A 6-month-old boy presented with history of an itching rash. His sibling at home also has itching. He has papules on hands and legs. Scraping of the rash was done. Picture of the result under microscope was provided. How you will treat her? Option A. Ivermectin. Option B. Lindane. Option C. Nizoral Shampoo."
+    },
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Dermatology Q20; sourcePages",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p649-x4967.jpeg",
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p649-x4967.jpeg",
+        "master-bank/assets/derm-oph-20260907/p649-x4968.jpeg"
+      ],
+      "status": "needs_review",
+      "captionAr": "صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.",
+      "captionEn": "Original source image for this question.",
+      "assetPaths": [
+        "master-bank/assets/derm-oph-20260907/p649-x4967.jpeg",
+        "master-bank/assets/derm-oph-20260907/p649-x4968.jpeg"
+      ],
+      "restorationVerifiedBySha256": true,
+      "publicationRights": "not_verified"
+    },
+    "assetIds": [
+      "part2-derm-q20-p649-x4967",
+      "part2-derm-q20-p649-x4968"
+    ],
+    "subtopic": "Scabies treatment in an infant",
+    "scenarioAr": "رضيع عمره 6 أشهر لديه طفح حاكّ مع إصابة أحد إخوته وصور skin scraping؛ المطلوب العلاج.",
+    "explanationAr": "المفتاح A: Ivermectin، لكن المصدر نفسه يقول إن permethrin سيكون الاختيار لو وُجد، وينبه إلى عدم ثبوت أمان ivermectin لمن يقل وزنهم عن 15 kg. لم يحدد الخيار route أوالوزن. لذلك بقي السؤال conflicting وغير صالح لاعتماد إجابة علاجية نهائية؛ لا يُفسَّر المفتاح كوصفة لرضيع.",
+    "incorrectOptionsAr": "B: لا يقدم المصدر lindane كبديل مفضل وآمن لهذا العمر. C: Nizoral shampoo ليس الاختيار الذي يحدده شرح scabies. A: لا يمكن اعتماده دون route وweight ومراجعة السلامة؛ الخيار الأنسب الذي يناقشه المصدر غير موجود.",
+    "clinicalPearl": "Do not turn a flawed infant-scabies option set into a verified ivermectin recommendation.",
+    "keywords": [
+      "Scabies treatment in an infant"
+    ],
+    "externalChecks": [
+      "cdc-scabies-20260907"
+    ],
+    "sourceExplanationEn": "Given its high efficacy and safety, permethrin is our preferred therapy for children. However, topical sulfur, \nwhich is considered safe in infants, is typically used for the treatment of infants under the age of two months \nbecause of lack of regulatory app roval for permethrin use in infants in this age group. Single -dose \nivermectin (200 mcg/kg per dose) has been used (off -label) for crusted scabies or disease in \nimmunocompromised patients; its safety in children weighing less than 15 kg has not been establi shed. \nTopical ivermectin is reportedly effective.",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        649
+      ],
+      "sourceQuestionId": "part2-derm-q20",
+      "independentlyClinicallyVerified": false,
+      "sha256": "70cf622ae550faa487617a48201218053e51e5b96943935be13cbf4c5073b82a"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p649-x4967.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "80ee640fea9df51f1c92608052c953580f991107bbe782cb1d181018d5efabce",
+        "sourcePage": 649
+      },
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p649-x4968.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "07ea2309e906afc1922b32a4cac92471b345e9333ce6761e81fac6a1f58e0b4a",
+        "sourcePage": 649
+      }
+    ]
+  }
 ]

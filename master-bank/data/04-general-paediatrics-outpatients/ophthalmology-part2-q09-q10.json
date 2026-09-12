@@ -1,4 +1,212 @@
 [
-{"id":"part2-ophthalmology-q09","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Ophthalmology","yearTags":[2020],"examPart":"Part II","stemEn":"A child found to have amblyopia. Optometry done and was normal. What will you do next?","options":[{"key":"A","text":"Brain CT"},{"key":"B","text":"Reassurance"},{"key":"C","text":"Refer for eye patching"}],"recalledAnswer":"C","sourceAnswerText":"C","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":656,"questionNumber":"Ophthalmology Q9","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 656-656; whitespace normalized."}],"sourcePages":[656],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"needs_verification","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending"],"tts":{"enabled":true,"language":"en","text":"A child found to have amblyopia. Optometry done and was normal. What will you do next? Option A. Brain CT. Option B. Reassurance. Option C. Refer for eye patching."},"image":{"requiredForQuestion":false,"sourceRef":null,"assetPath":null,"status":"not_required"},"assetIds":[],"subtopic":"Amblyopia referral","scenarioAr":"طفل شُخص بـamblyopia ويذكر النص أن optometry طبيعي؛ المطلوب الخطوة التالية.","explanationAr":"المفتاح C: Refer for eye patching. يشرح المصدر أن suppression المستمر للعين المنحرفة خلال نمو الرؤية قد يؤدي إلى amblyopia، وأن الكشف والإحالة المبكرين يسمحان بالعلاج مثل patching. لا يعني النص بدء patching عشوائيًا قبل تقييم مختص أوتحديد العين والمدة.","incorrectOptionsAr":"A: لا يقدمه المصدر علاجًا للـamblyopia المعزولة. B: reassurance وحدها تتجاوز الإحالة والعلاج المبكر اللذين يؤكد عليهما الشرح.","clinicalPearl":"Referral for age-appropriate amblyopia assessment precedes an individualized patching regimen.","keywords":["Amblyopia referral"],"externalChecks":[]},
-{"id":"part2-ophthalmology-q10","module":"general-paediatrics-outpatients","specialty":"Ophthalmology","topic":"Ophthalmology","yearTags":[2024,2023],"examPart":"Part II","stemEn":"A child presented with this new eyelid swelling. Chalazion picture was provided asking about the diagnosis.","options":[{"key":"A","text":"Chalazion (Hordeolum)"},{"key":"B","text":"Stye"},{"key":"C","text":"Infected nasolacrimal duct obstruction"}],"recalledAnswer":"A","sourceAnswerText":"A","verifiedAnswer":null,"answerConfidence":"unknown","sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026","part":"Part II","page":656,"questionNumber":"Ophthalmology Q10","notes":"2026 PART Pediatric 3.pdf; physical PDF pages 656-657; whitespace normalized."}],"sourcePages":[656,657],"verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source summary only; externalChecks are limited checks, not full verification."},"duplicateOf":null,"reviewStatus":"conflicting","publishable":false,"contentType":"mcq_draft","blockers":["clinical_verification_pending","images_not_uploaded_to_repository","image_publication_rights_pending","source_option_conflates_chalazion_and_hordeolum"],"tts":{"enabled":true,"language":"en","text":"A child presented with this new eyelid swelling. Chalazion picture was provided asking about the diagnosis. Option A. Chalazion (Hordeolum). Option B. Stye. Option C. Infected nasolacrimal duct obstruction."},"image":{"requiredForQuestion":true,"sourceRef":"Ophthalmology Q10; sourcePages","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p656-x5003.jpeg"],"status":"needs_review","captionAr":"صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.","captionEn":"Original source question image; independent clinical review pending."},"assetIds":["part2-ophthalmology-q10-p656-x5003","part2-ophthalmology-q10-p657-x5008","part2-ophthalmology-q10-p657-x5009"],"subtopic":"Chalazion versus hordeolum","scenarioAr":"طفل لديه eyelid swelling جديدة مع صورة مرفقة؛ المطلوب التشخيص.","explanationAr":"المفتاح A، لكن نصه الأصلي Chalazion (Hordeolum) يخلط اسمين، بينما الخيار B هو Stye. الرسم والجدول في صفحة 657 يميزان Chalazion عن Hordeolum؛ لذلك أُعيد النص الأصلي مع flag للتعارض بدل تصحيحه بصمت. صورتا الشرح منفصلتان عن صورة السؤال.","incorrectOptionsAr":"B: وفق جدول المصدر Hordeolum/Stye غالبًا مؤلم ومرتبط بعدوى، بخلاف Chalazion المرتبط بانسداد gland. C: لا يقدم المصدر مقارنة تفصيلية معه. يبقى خلل صياغة A مانعًا لاعتماد سؤال محسوم قبل التحرير.","clinicalPearl":"Chalazion and hordeolum are not synonyms; retain and flag the source option error.","keywords":["Chalazion versus hordeolum"],"explanationAssetPaths":["master-bank/assets/derm-oph-20260907/p657-x5008.jpeg","master-bank/assets/derm-oph-20260907/p657-x5009.jpeg"],"externalChecks":["aapos-chalazion-20260907"]}
+  {
+    "id": "part2-ophthalmology-q09",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Ophthalmology",
+    "topic": "Ophthalmology",
+    "yearTags": [
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child found to have amblyopia. Optometry done and was normal. What will you do next?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Brain CT"
+      },
+      {
+        "key": "B",
+        "text": "Reassurance"
+      },
+      {
+        "key": "C",
+        "text": "Refer for eye patching"
+      }
+    ],
+    "recalledAnswer": "C",
+    "sourceAnswerText": "C",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 656,
+        "questionNumber": "Ophthalmology Q9",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 656-656; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      656
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child found to have amblyopia. Optometry done and was normal. What will you do next? Option A. Brain CT. Option B. Reassurance. Option C. Refer for eye patching."
+    },
+    "image": {
+      "requiredForQuestion": false,
+      "sourceRef": null,
+      "assetPath": null,
+      "status": "not_required"
+    },
+    "assetIds": [],
+    "subtopic": "Amblyopia referral",
+    "scenarioAr": "طفل شُخص بـamblyopia ويذكر النص أن optometry طبيعي؛ المطلوب الخطوة التالية.",
+    "explanationAr": "المفتاح C: Refer for eye patching. يشرح المصدر أن suppression المستمر للعين المنحرفة خلال نمو الرؤية قد يؤدي إلى amblyopia، وأن الكشف والإحالة المبكرين يسمحان بالعلاج مثل patching. لا يعني النص بدء patching عشوائيًا قبل تقييم مختص أوتحديد العين والمدة.",
+    "incorrectOptionsAr": "A: لا يقدمه المصدر علاجًا للـamblyopia المعزولة. B: reassurance وحدها تتجاوز الإحالة والعلاج المبكر اللذين يؤكد عليهما الشرح.",
+    "clinicalPearl": "Referral for age-appropriate amblyopia assessment precedes an individualized patching regimen.",
+    "keywords": [
+      "Amblyopia referral"
+    ],
+    "externalChecks": [],
+    "sourceExplanationEn": "Early detection of strabismus or ocular misalignment is essential for the prevention or treatment of \namblyopia and allows the possibility of saving binocular vision. If the misalignment is constant, a child’s \ndeveloping brain will ignore the visual input f rom the misaligned eye to avoid diplopia. If this situation \npersists, the eye will become “lazy” or amblyopic. If detected and referred early enough, treatment of the \namblyopia by using penalization techniques such as patching may improve or resolve the di fference in \nvision between the two eyes. As children get older, treatment is not as effective. [AAP] \n \nChildren with suspected amblyopia should be referred to an ophthalmologist or optometrist who is \nappropriately trained and experienced in evaluating children. Indications for referral include: [UpToDate] \n• Visual acuity worse than 20/40 in a child 3 to 5 years of age or worse than 20/30 in a child ≥6 years. \n• Visual acuity difference of ≥2 lines between eyes on a standard vision chart (e.g., 20/30 in the left \neye and 20/40 in the right). \n• Abnormal ocular alignment (i.e., strabismus). \n• Abnormal red reflex. \n• Asymmetry of vision (eye preference). \n• Unilateral ptosis or other lesions that threaten the visual axis (e.g., eyelid hemangioma).",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        656
+      ],
+      "sourceQuestionId": "part2-ophthalmology-q09",
+      "independentlyClinicallyVerified": false,
+      "sha256": "5cfa9a7e09673961976609ef0013926a77a0953084447d460952a1c2e30837d4"
+    }
+  },
+  {
+    "id": "part2-ophthalmology-q10",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Ophthalmology",
+    "topic": "Ophthalmology",
+    "yearTags": [
+      2024,
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presented with this new eyelid swelling. Chalazion picture was provided asking about the diagnosis.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chalazion (Hordeolum)"
+      },
+      {
+        "key": "B",
+        "text": "Stye"
+      },
+      {
+        "key": "C",
+        "text": "Infected nasolacrimal duct obstruction"
+      }
+    ],
+    "recalledAnswer": "A",
+    "sourceAnswerText": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1/May/2026",
+        "part": "Part II",
+        "page": 656,
+        "questionNumber": "Ophthalmology Q10",
+        "notes": "2026 PART Pediatric 3.pdf; physical PDF pages 656-657; whitespace normalized."
+      }
+    ],
+    "sourcePages": [
+      656,
+      657
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source summary only; externalChecks are limited checks, not full verification."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting",
+    "publishable": false,
+    "contentType": "mcq_draft",
+    "blockers": [
+      "clinical_verification_pending",
+      "image_publication_rights_pending",
+      "source_option_conflates_chalazion_and_hordeolum"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presented with this new eyelid swelling. Chalazion picture was provided asking about the diagnosis. Option A. Chalazion (Hordeolum). Option B. Stye. Option C. Infected nasolacrimal duct obstruction."
+    },
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Ophthalmology Q10; sourcePages",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p656-x5003.jpeg",
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p656-x5003.jpeg"
+      ],
+      "status": "needs_review",
+      "captionAr": "صورة السؤال الأصلية من الملف المرفوع؛ ليست تشخيصًا معتمدًا.",
+      "captionEn": "Original source image for this question.",
+      "assetPaths": [
+        "master-bank/assets/derm-oph-20260907/p656-x5003.jpeg"
+      ],
+      "restorationVerifiedBySha256": true,
+      "publicationRights": "not_verified"
+    },
+    "assetIds": [
+      "part2-ophthalmology-q10-p656-x5003",
+      "part2-ophthalmology-q10-p657-x5008",
+      "part2-ophthalmology-q10-p657-x5009"
+    ],
+    "subtopic": "Chalazion versus hordeolum",
+    "scenarioAr": "طفل لديه eyelid swelling جديدة مع صورة مرفقة؛ المطلوب التشخيص.",
+    "explanationAr": "المفتاح A، لكن نصه الأصلي Chalazion (Hordeolum) يخلط اسمين، بينما الخيار B هو Stye. الرسم والجدول في صفحة 657 يميزان Chalazion عن Hordeolum؛ لذلك أُعيد النص الأصلي مع flag للتعارض بدل تصحيحه بصمت. صورتا الشرح منفصلتان عن صورة السؤال.",
+    "incorrectOptionsAr": "B: وفق جدول المصدر Hordeolum/Stye غالبًا مؤلم ومرتبط بعدوى، بخلاف Chalazion المرتبط بانسداد gland. C: لا يقدم المصدر مقارنة تفصيلية معه. يبقى خلل صياغة A مانعًا لاعتماد سؤال محسوم قبل التحرير.",
+    "clinicalPearl": "Chalazion and hordeolum are not synonyms; retain and flag the source option error.",
+    "keywords": [
+      "Chalazion versus hordeolum"
+    ],
+    "explanationAssetPaths": [
+      "master-bank/assets/derm-oph-20260907/p657-x5008.jpeg",
+      "master-bank/assets/derm-oph-20260907/p657-x5009.jpeg"
+    ],
+    "externalChecks": [
+      "aapos-chalazion-20260907"
+    ],
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p656-x5003.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "805d55785de98e21c97235f7c8da72586c89a8f721fe9fef1c6cc9397cf38667",
+        "sourcePage": 656
+      },
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p657-x5008.jpeg",
+        "role": "explanation",
+        "displayBeforeAnswer": false,
+        "sha256": "89c38c79ff8e3631ecfe2a0ec2572a964dc0598726e7389950ec59d6474a364d",
+        "sourcePage": 657
+      },
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p657-x5009.jpeg",
+        "role": "explanation",
+        "displayBeforeAnswer": false,
+        "sha256": "562ca925229f6e88980de38f9b328dc33bffabf7f2aa9be2f3938ec71f85cfbf",
+        "sourcePage": 657
+      }
+    ]
+  }
 ]

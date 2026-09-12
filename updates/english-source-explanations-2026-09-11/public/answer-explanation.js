@@ -1,5 +1,6 @@
 const text = value => typeof value === 'string' ? value.trim() : '';
-const ARABIC = /[\u0621-\u064a]/u;
+const ARABIC = /\p{Script=Arabic}/u;
+const array = value => Array.isArray(value) ? value : [];
 
 export function explanationText(value) {
   let result = text(value).split(/\s*~\*~/)[0];
@@ -12,32 +13,33 @@ export function explanationText(value) {
   return result.trim();
 }
 
-function englishSourceText(value) {
-  const result = explanationText(value);
-  return result && !ARABIC.test(result) ? result : '';
+function englishSourceText(value, legacy = false) {
+  const result = legacy ? explanationText(value) : text(value);
+  if (!/[A-Za-z]/.test(result) || ARABIC.test(result)) return '';
+  if (/^Similar question\b/i.test(result)) return '';
+  if (/^(?:See (?:the )?previous questions?\.?|Didn't find an answer for this question\.?|Original source explanation is not available for this question\.?)$/i.test(result)) return '';
+  if (/^Review developmental milestones\.?(?:\s*\[Developmental Milestones - (?:AAP|Nelson)\])?$/i.test(result)) return '';
+  return result;
 }
 
 /**
- * Return only an English explanation that is already attached to the source
- * question. Do not translate, paraphrase, or promote Arabic teaching text.
- *
- * Priority:
- *  1. originalExplanation: verbatim explanation imported with this question.
- *  2. explanation: legacy imports where the source explanation lived here.
- *  3. source-review sourceExplanation: original English text recovered in review.
- *  4. linkedSourceExplanation: explicit linked source discussion.
- *  5. duplicate/source-variant originalExplanation.
+ * Return only an English explanation already attached to the source question.
+ * Priority: original, explicit recovered source, legacy source field, reviewed
+ * source discussion, explicit linked source, then a source variant.
+ * Do not translate, paraphrase, or promote Arabic teaching text.
  */
 export function sourceExplanation(question) {
-  const direct = englishSourceText(question?.originalExplanation);
-  if (direct) return { text: direct, language: 'en', sourceReview: false, status: 'text' };
+  for (const value of [question?.originalExplanation, question?.sourceExplanationEn, question?.source_explanation_en, question?.sourceExplanation]) {
+    const direct = englishSourceText(value);
+    if (direct) return { text: direct, language: 'en', sourceReview: false, status: 'text' };
+  }
 
-  const legacy = englishSourceText(question?.explanation);
+  const legacy = englishSourceText(question?.explanation, true);
   if (legacy) return { text: legacy, language: 'en', sourceReview: false, status: 'text' };
 
-  const recovered = question?.githubReviews?.find(review =>
-    !['conflicting', 'outdated', 'incomplete_recall'].includes(review.reviewStatus) &&
-    englishSourceText(review.sourceExplanation));
+  const recovered = array(question?.githubReviews).find(review =>
+    !['conflicting', 'outdated', 'incomplete_recall'].includes(review?.reviewStatus) &&
+    englishSourceText(review?.sourceExplanation));
   if (recovered) return {
     text: englishSourceText(recovered.sourceExplanation),
     language: 'en', sourceReview: true, status: 'linked-text'
@@ -46,7 +48,7 @@ export function sourceExplanation(question) {
   const linked = englishSourceText(question?.linkedSourceExplanation);
   if (linked) return { text: linked, language: 'en', sourceReview: true, status: 'linked-text' };
 
-  const variants = [...(question?.sourceVariants || []), ...(question?.additionalSourceVariants || [])];
+  const variants = [...array(question?.sourceVariants), ...array(question?.additionalSourceVariants)];
   const variant = variants.find(item => englishSourceText(item?.originalExplanation));
   if (variant) return {
     text: englishSourceText(variant.originalExplanation),
@@ -56,7 +58,6 @@ export function sourceExplanation(question) {
   return { text: '', language: 'en', sourceReview: false, status: 'unavailable' };
 }
 
-// Main post-answer explanation is source-first and English-only.
 export function answerExplanation(question) {
   return sourceExplanation(question);
 }

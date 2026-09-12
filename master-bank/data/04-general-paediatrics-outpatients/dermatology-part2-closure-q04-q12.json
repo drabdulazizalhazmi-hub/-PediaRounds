@@ -1,56 +1,203 @@
 [
   {
-    "id":"part2-derm-q04",
-    "module":"general-paediatrics-outpatients",
-    "specialty":"Dermatology",
-    "topic":"Dermatology",
-    "subtopic":"Mucocele",
-    "yearTags":[2017],
-    "examPart":"Part II",
-    "stemEn":"A child presents with the pictured oral lesion described by the source as a mucocele. What is the most likely diagnosis?",
-    "options":[{"key":"A","text":"Mucocele"}],
-    "recalledAnswer":"A",
-    "verifiedAnswer":null,
-    "answerConfidence":"low",
-    "explanationAr":"مفتاح المصدر A: Mucocele. يصف الشرح mucus retention cyst بأنها آفة painless وfluctuant وقد تكون bluish، ويتغير حجمها وقد تختفي مؤقتًا بعد rupture.",
-    "incorrectOptionsAr":"لم يحفظ المصدر خيارات أخرى لهذا السؤال.",
-    "clinicalPearl":"Fluctuation in size is part of the source description of a mucocele.",
-    "image":{"requiredForQuestion":true,"sourceRef":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026; Dermatology Q4; physical PDF page 638","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p638-x4903.jpeg","master-bank/assets/derm-oph-20260907/p638-x4904.jpeg"],"status":"needs_review","captionEn":"Original mucocele images are in the source bundle; rights/clinical review pending.","captionAr":"صور الـ mucocele الأصلية موجودة في حزمة المصدر وتنتظر مراجعة الحقوق والمراجعة السريرية."},
-    "assetIds":["part2-derm-q04-p638-x4903","part2-derm-q04-p638-x4904"],
-    "tts":{"enabled":true,"language":"en","text":"A child presents with the pictured oral lesion described by the source as a mucocele. What is the most likely diagnosis? Option A. Mucocele."},
-    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","page":638,"questionNumber":"Dermatology Q4","notes":"Part II 2017; only one option preserved; original image assets identified in source bundle."}],
-    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Recall book cites Nelson; independent verification pending."},
-    "duplicateOf":null,
-    "reviewStatus":"incomplete_recall",
-    "publishable":false,
-    "blockers":["incomplete_recall","clinical_verification_pending","image_in_bundle_not_repository","image_rights_and_clinical_review_pending"],
-    "contentType":"mcq_draft"
+    "id": "part2-derm-q04",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "subtopic": "Mucocele",
+    "yearTags": [
+      2017
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child presents with the pictured oral lesion described by the source as a mucocele. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Mucocele"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "low",
+    "explanationAr": "مفتاح المصدر A: Mucocele. يصف الشرح mucus retention cyst بأنها آفة painless وfluctuant وقد تكون bluish، ويتغير حجمها وقد تختفي مؤقتًا بعد rupture.",
+    "incorrectOptionsAr": "لم يحفظ المصدر خيارات أخرى لهذا السؤال.",
+    "clinicalPearl": "Fluctuation in size is part of the source description of a mucocele.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026; Dermatology Q4; physical PDF page 638",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p638-x4903.jpeg",
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p638-x4903.jpeg",
+        "master-bank/assets/derm-oph-20260907/p638-x4904.jpeg"
+      ],
+      "status": "needs_review",
+      "captionEn": "Original source image for this question.",
+      "captionAr": "صور الـ mucocele الأصلية موجودة في حزمة المصدر وتنتظر مراجعة الحقوق والمراجعة السريرية.",
+      "assetPaths": [
+        "master-bank/assets/derm-oph-20260907/p638-x4903.jpeg",
+        "master-bank/assets/derm-oph-20260907/p638-x4904.jpeg"
+      ],
+      "restorationVerifiedBySha256": true,
+      "publicationRights": "not_verified"
+    },
+    "assetIds": [
+      "part2-derm-q04-p638-x4903",
+      "part2-derm-q04-p638-x4904"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child presents with the pictured oral lesion described by the source as a mucocele. What is the most likely diagnosis? Option A. Mucocele."
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+        "part": "Part II",
+        "page": 638,
+        "questionNumber": "Dermatology Q4",
+        "notes": "Part II 2017; only one option preserved; original image assets identified in source bundle."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Recall book cites Nelson; independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall",
+    "publishable": false,
+    "blockers": [
+      "incomplete_recall",
+      "clinical_verification_pending",
+      "image_in_bundle_not_repository",
+      "image_rights_and_clinical_review_pending"
+    ],
+    "contentType": "mcq_draft",
+    "sourceExplanationEn": "Mucus retention cysts are painless, fluctuant, tense, 2-10 mm, bluish papules on the lips, tongue, palate, or \nbuccal mucosa. Lesions on the floor of the mouth are known as ranulas when the sublingual or \nsubmandibular salivary gland ducts are involved. Fluc tuations in size are typical, and the lesions may \ndisappear temporarily after traumatic rupture. Recurrence is prevented by surgical excision of the mucus \ndeposit and associated salivary gland(s). [Nelson]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        638
+      ],
+      "sourceQuestionId": "part2-derm-q04",
+      "independentlyClinicallyVerified": false,
+      "sha256": "5c54daae1402aac080be4f3f6eb31fe1e77d8b45f45637ca6378bb911d7bf217"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p638-x4903.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "6908efea8bc8fdbdde3caad352a0e58405ab45ef1aaa77a9c3df4c80e14cb79f",
+        "sourcePage": 638
+      },
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p638-x4904.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "eab2a39d731c97eb9ee82290e3f3585427f6d3f422dc56ef9d099524c7276ce4",
+        "sourcePage": 638
+      }
+    ]
   },
   {
-    "id":"part2-derm-q12",
-    "module":"general-paediatrics-outpatients",
-    "specialty":"Dermatology",
-    "topic":"Dermatology",
-    "subtopic":"Eczema herpeticum",
-    "yearTags":[2022],
-    "examPart":"Part II",
-    "stemEn":"A child with atopic dermatitis develops fever, irritability, and a rapidly progressive burning rash; the source image is described as eczema herpeticum. What is the treatment?",
-    "options":[{"key":"A","text":"Intravenous acyclovir"}],
-    "recalledAnswer":"A",
-    "verifiedAnswer":null,
-    "answerConfidence":"unknown",
-    "explanationAr":"المفتاح المطبوع A: intravenous acyclovir. لكن شرح المصدر نفسه يقول إن multifocal HSV infection في atopic dermatitis should be treated immediately with oral antiviral therapy. لذلك حُفظ السؤال conflicting بدل توحيد route العلاج بصمت.",
-    "incorrectOptionsAr":"لم يحفظ المصدر خيارات أخرى، كما أن تعارض route بين المفتاح والشرح يحتاج تحققًا مرجعيًا مستقلًا.",
-    "clinicalPearl":"Source key and source explanation disagree on antiviral route; preserve the conflict.",
-    "image":{"requiredForQuestion":true,"sourceRef":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026; Dermatology Q12; physical PDF page 644","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p644-x4938.jpeg"],"status":"needs_review","captionEn":"Original eczema-herpeticum image is in the source bundle; rights/clinical review pending.","captionAr":"صورة eczema herpeticum الأصلية موجودة في الحزمة وتنتظر مراجعة الحقوق والمراجعة السريرية."},
-    "assetIds":["part2-derm-q12-p644-x4938"],
-    "tts":{"enabled":true,"language":"en","text":"A child with atopic dermatitis develops fever, irritability, and a rapidly progressive burning rash; the source image is described as eczema herpeticum. What is the treatment? Option A. Intravenous acyclovir."},
-    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","page":644,"questionNumber":"Dermatology Q12","notes":"Part II 2022. Source key says IV acyclovir; its own explanation says immediate oral antiviral therapy."}],
-    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Independent antiviral-route verification pending."},
-    "duplicateOf":null,
-    "reviewStatus":"conflicting",
-    "publishable":false,
-    "blockers":["conflicting","clinical_verification_pending","source_key_vs_explanation_route_conflict","image_in_bundle_not_repository","image_rights_and_clinical_review_pending"],
-    "contentType":"mcq_draft"
+    "id": "part2-derm-q12",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Dermatology",
+    "topic": "Dermatology",
+    "subtopic": "Eczema herpeticum",
+    "yearTags": [
+      2022
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with atopic dermatitis develops fever, irritability, and a rapidly progressive burning rash; the source image is described as eczema herpeticum. What is the treatment?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Intravenous acyclovir"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "unknown",
+    "explanationAr": "المفتاح المطبوع A: intravenous acyclovir. لكن شرح المصدر نفسه يقول إن multifocal HSV infection في atopic dermatitis should be treated immediately with oral antiviral therapy. لذلك حُفظ السؤال conflicting بدل توحيد route العلاج بصمت.",
+    "incorrectOptionsAr": "لم يحفظ المصدر خيارات أخرى، كما أن تعارض route بين المفتاح والشرح يحتاج تحققًا مرجعيًا مستقلًا.",
+    "clinicalPearl": "Source key and source explanation disagree on antiviral route; preserve the conflict.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026; Dermatology Q12; physical PDF page 644",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p644-x4938.jpeg",
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p644-x4938.jpeg"
+      ],
+      "status": "needs_review",
+      "captionEn": "Original source image for this question.",
+      "captionAr": "صورة eczema herpeticum الأصلية موجودة في الحزمة وتنتظر مراجعة الحقوق والمراجعة السريرية.",
+      "assetPaths": [
+        "master-bank/assets/derm-oph-20260907/p644-x4938.jpeg"
+      ],
+      "restorationVerifiedBySha256": true,
+      "publicationRights": "not_verified"
+    },
+    "assetIds": [
+      "part2-derm-q12-p644-x4938"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with atopic dermatitis develops fever, irritability, and a rapidly progressive burning rash; the source image is described as eczema herpeticum. What is the treatment? Option A. Intravenous acyclovir."
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+        "part": "Part II",
+        "page": 644,
+        "questionNumber": "Dermatology Q12",
+        "notes": "Part II 2022. Source key says IV acyclovir; its own explanation says immediate oral antiviral therapy."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Independent antiviral-route verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "conflicting",
+    "publishable": false,
+    "blockers": [
+      "conflicting",
+      "clinical_verification_pending",
+      "source_key_vs_explanation_route_conflict",
+      "image_in_bundle_not_repository",
+      "image_rights_and_clinical_review_pending"
+    ],
+    "contentType": "mcq_draft",
+    "sourceExplanationEn": "Patients with atopic dermatitis are at increased risk for cutaneous bacterial, viral, and fungal infections. \nClinical signs of bacterial superinfection, most often from S. aureus, include weeping, pustules, honey -\ncolored crusting, worsening of dermatitis, or failure to respond to therapy. The presence of vesicles and \npunched-out erosions may be a sign of eczema herpeticum.  \n \nPatients with atopic dermatitis and multifocal lesions that are infected with herpes simplex (called eczema \nherpeticum or Kaposi varicelliform eruption) should be treated immediately with oral antiviral therapy. \nExamination reveals skin with punched -out erosions, hemorrhagic crusts, and/or vesicles. Involved skin \nmay be pruritic or painful, and lesions may be widespread. [UpToDate]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        644
+      ],
+      "sourceQuestionId": "part2-derm-q12",
+      "independentlyClinicallyVerified": false,
+      "sha256": "b31cc16d7b8c2b85790eef46722c9490131340e5b5d20d57f227e748643824c3"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p644-x4938.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "50536268b6ffe8b1b16adb0a32225d84a47473bebc8f2e211fa6d616ffceb6e1",
+        "sourcePage": 644
+      }
+    ]
   }
 ]
