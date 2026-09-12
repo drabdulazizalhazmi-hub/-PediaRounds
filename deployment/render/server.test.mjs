@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createProbeServer, parsePort } from './server.mjs';
 import './external-backend.test.mjs';
+import './study.test.mjs';
 
 async function running(t) {
   const server = createProbeServer();
@@ -56,5 +57,10 @@ test('external routes are wired into the deployed entrypoint and reject anonymou
 test('backend status never implies full migration or browser login success',async t=>{
  const base=await running(t);const status=await(await fetch(base+'/external-backend-status')).json();
  for(const key of ['frontendIntegrated','endToEndLoginTested','existingDataMigrated'])assert.equal(status[key],false);
+ assert.equal(status.studyBetaIntegrated,true);
  assert.doesNotMatch(JSON.stringify(status),/sb_publishable_|sb_secret_|eyJ/);
+});
+test('deployed entrypoint serves the new beta and keeps question API protected',async t=>{
+ const base=await running(t);assert.match(await(await fetch(base+'/study')).text(),/id="login-form"/);
+ assert.equal((await fetch(base+'/api/study/catalog')).status,401);
 });
