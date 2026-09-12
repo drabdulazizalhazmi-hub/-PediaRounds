@@ -82,6 +82,7 @@ try{
  await wait('!document.getElementById("workspace").hidden && !document.getElementById("empty").hidden','ready-empty state');
  await check('zero-ready sign-in never substitutes or downloads pending questions',async()=>{
   assert.equal(await evaluate('document.getElementById("mode").value'),'practice');
+  assert.equal(await evaluate('document.getElementById("status").textContent'),'');
   assert.equal(requests.slice(requestBoundary).includes('/api/study/question'),false);
   assert.equal(await evaluate('document.getElementById("question-card").hidden'),true);
   assert.match(await evaluate('document.getElementById("empty-title").textContent'),/No ready questions/);

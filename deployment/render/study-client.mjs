@@ -190,7 +190,7 @@ async function initialize(){
   updateSetControls();
   $('module').value=[...$('module').options].some(m=>m.value===state?.module)?state.module:'';
   $('coverage').textContent=bank.summary.questionCount+' records from the current GitHub bank only. '+bank.summary.originalEnglishCount+' have attached original English explanation text; '+bank.summary.missingOriginalEnglishCount+' do not. This is not the complete legacy platform.';
-  $('login').hidden=true;$('workspace').hidden=false;$('logout').hidden=false;await start(state);
+  $('login').hidden=true;$('workspace').hidden=false;$('logout').hidden=false;notice('');await start(state);
  }catch(e){if(ownEpoch!==epoch)return;clearWorkspace();notice(e.status===401?'Sign in to begin.':errorMessage(e));}
 }
 async function persist(){
