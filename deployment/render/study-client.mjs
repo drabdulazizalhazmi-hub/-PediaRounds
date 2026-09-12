@@ -2,7 +2,7 @@ import {createEnglishReader,canReadEnglish,englishVoices} from './reader.mjs';
 const $=id=>document.getElementById(id);
 const IDLE=600000;
 let user=null,epoch=0,catalog=null,progress={done:[],seen:[]},checkpointRevision=0,checkpointBlocked=false;
-let history=[],position=-1,pool=[],cursor=0,freshCount=0,reviews=[],currentQuestion=null,loading=false,atEnd=false,viewVersion=0;
+let history=[],position=-1,pool=[],cursor=0,freshCount=0,reviews=[],currentQuestion=null,loading=false,atEnd=false,viewVersion=0,signingOut=false;
 let lastActivity=Date.now(),lastRefresh=Date.now(),refreshPromise=null,checkpointTask=null,pendingCheckpoint=null,persistTask=null,checkpointFailed=false;
 const pendingSaves=new Map(),controllers=new Set();
 const messages={sign_in_required:'Please sign in.',authentication_failed:'Sign-in was not accepted. Check your email/password and email confirmation.',email_confirmation_required:'Confirm your email, then return here and sign in.',invalid_signup:'Enter a valid email and a password of at least 10 characters.',invalid_credentials:'Enter your email and password.',external_backend_not_configured:'The external authentication service is not configured.',auth_unavailable:'The sign-in service is unavailable. Please retry.',rate_limited:'Too many requests. Please wait a minute and retry.',same_origin_required:'This request was blocked. Open this page directly and retry.',checkpoint_conflict:'Another session saved a newer position. Reload the saved position before continuing to save.',backend_unavailable:'Account storage is unavailable. Your progress has not been confirmed as saved.'};
@@ -45,9 +45,21 @@ function clearWorkspace(){
  for(const id of ['stem','explanation','source-key','result','validation-note','coverage','progress-count','save-status'])$(id).textContent='';
  $('options').replaceChildren();$('references').replaceChildren();$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;updateReadControls();
 }
-async function signOut(message='Signed out.'){
- try{await refreshPromise;}catch{}clearWorkspace();
- try{await raw('signout','POST',{});}catch{}notice(message);
+async function signOut(message='Signed out.',{automatic=false}={}){
+ if(signingOut)return;
+ const unsaved=!!(user&&(pendingSaves.size||pendingCheckpoint||checkpointTask));
+ // Manual departure needs consent before discarding an unconfirmed save.
+ // Idle expiry must still clear private data without waiting for a dialog.
+ if(unsaved&&!automatic&&(typeof globalThis.confirm!=='function'||!globalThis.confirm('Some answers or your current position have not been saved. Sign out anyway and discard these unsaved changes?'))){
+  notice('Sign-out cancelled. Use Retry saving before leaving.');return;
+ }
+ signingOut=true;
+ try{
+  try{await refreshPromise;}catch{}clearWorkspace();
+  $('signin').disabled=$('signup').disabled=true;
+  try{await raw('signout','POST',{});notice(message+(automatic&&unsaved?' Unsaved progress was not confirmed.':''));}
+  catch{notice('This page has been cleared, but server sign-out could not be confirmed. Retry signing out when connected before using a shared device.');$('logout').hidden=false;}
+ }finally{signingOut=false;$('signin').disabled=$('signup').disabled=false;}
 }
 function correctIDs(){
  const ids=new Set((progress.done||[]).filter(r=>r.correct===true).map(r=>r.questionId));
@@ -124,7 +136,13 @@ async function start(saved=null){
  const done=correctIDs();pool=shuffle(filtered().filter(q=>!done.has(q.id)).map(q=>q.id));
  if(saved?.schema==='render-study-v1'){
   freshCount=Number.isSafeInteger(saved.freshCount)&&saved.freshCount>=0?saved.freshCount:0;
-  reviews=Array.isArray(saved.reviewQueue)?saved.reviewQueue.filter(r=>r&&typeof r.id==='string'&&Number.isSafeInteger(r.after)&&r.after>=0&&pool.includes(r.id)&&!done.has(r.id)).slice(0,40):[];
+  const allowed=new Set(pool),queued=new Set();
+  for(const r of Array.isArray(saved.reviewQueue)?saved.reviewQueue:[]){
+   if(!r||typeof r.id!=='string'||!Number.isSafeInteger(r.after)||r.after<0||!allowed.has(r.id)||queued.has(r.id))continue;
+   queued.add(r.id);reviews.push({id:r.id,after:r.after});if(reviews.length===40)break;
+  }
+  // A delayed review cannot also appear early as an unseen fresh question.
+  pool=pool.filter(id=>!queued.has(id));
   if(pool.includes(saved.questionId)){pool=pool.filter(id=>id!==saved.questionId);pool.unshift(saved.questionId);}
  }
  $('empty').hidden=true;await next();updateCounters();
@@ -199,8 +217,8 @@ function read(text){if(!user||loading||atEnd||!currentQuestion)return;reader.spe
 $('read-question').addEventListener('click',()=>read(currentQuestion?.text));$('read-explanation').addEventListener('click',()=>read(history[position]?.reply?.originalExplanationAvailable?history[position].reply.explanation:''));$('stop-reading').addEventListener('click',stopReading);
 globalThis.speechSynthesis?.addEventListener?.('voiceschanged',loadVoices);loadVoices();updateReadControls();
 for(const event of ['pointerdown','keydown','scroll'])window.addEventListener(event,()=>{lastActivity=Date.now();},{passive:true});
-setInterval(()=>{if(!user)return;if(Date.now()-lastActivity>=IDLE){void signOut('Signed out after 10 minutes of inactivity.');return;}if(Date.now()-lastRefresh>240000&&Date.now()-lastActivity<60000)void refresh().catch(()=>{});},20000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&user&&Date.now()-lastActivity>=IDLE)void signOut('Session expired after inactivity.');});
+setInterval(()=>{if(!user)return;if(Date.now()-lastActivity>=IDLE){void signOut('Signed out after 10 minutes of inactivity.',{automatic:true});return;}if(Date.now()-lastRefresh>240000&&Date.now()-lastActivity<60000)void refresh().catch(()=>{});},20000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&user&&Date.now()-lastActivity>=IDLE)void signOut('Session expired after inactivity.',{automatic:true});});
 // Confirmation links may contain provider tokens. Never store or echo the fragment.
 if(location.hash){globalThis.history.replaceState(null,'','/study');notice('After confirming your email, sign in below.');}
 void initialize();

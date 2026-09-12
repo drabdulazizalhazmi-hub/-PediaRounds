@@ -37,7 +37,8 @@ test('spoofed legacy identity headers cannot unlock data', async t => {
 });
 test('repository files and secrets are not served', async t => {
   const base = await running(t);
-  for (const path of ['/master-bank/data/test.json', '/.env', '/.git/config', '/README.md', '/server.mjs']) assert.equal((await fetch(base + path)).status, 404, path);
+  for (const path of ['/.env', '/.git/config', '/README.md', '/server.mjs']) assert.equal((await fetch(base + path)).status, 404, path);
+  assert.equal((await fetch(base + '/master-bank/data/test.json')).status, 404);
 });
 test('legacy writes are rejected without recording personal data', async t => {
   const base = await running(t); const response = await fetch(base + '/login', { method:'POST', body:'password=not-stored' });
@@ -83,3 +84,5 @@ test('study reader is served as a same-origin script without weakening data guar
  assert.match(await response.text(),/createEnglishReader/);
  assert.equal((await fetch(base+'/api/study/catalog')).status,401);
 });
+
+import './study-client-continuity.test.mjs';
