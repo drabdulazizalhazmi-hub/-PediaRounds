@@ -1,5 +1,54 @@
 # PediaRounds content recovery — 12 September 2026
 
+## Source-image continuation
+
+The image continuation restores **71 files for 50 existing questions** (72 associations):
+**34 question figures and 37 explanation figures**. This includes the previous 28 files
+and **43 additional recovered files**. All files match the original manifest's SHA-256,
+page and dimensions. Both image entries listed as unresolved in the historical receipt
+below are now recovered, including the PNG image from Dermatology Q14. The source is
+the uploaded `2026 PART Pediatric 3.pdf`, SHA-256
+`c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632`.
+The source PDF itself is not added or changed by this continuation.
+
+`master-bank/sources/recovered-study-images.json` is the additive runtime attachment
+registry. It covers all 71 assets in the existing Dermatology/Ophthalmology,
+Neonatology/Neurology, and Ethics/Research manifests. Earlier question-level recovery
+metadata and `verification.json` describe the first 28-image pass; use
+`remaining-images-verification.json` for the complete image continuation.
+
+The Render study interface now renders the mapped figures with neutral English
+captions, aspect-ratio preservation, full-size links, and an image retry control.
+Image bytes require verified sign-in. Explanation-image URLs are issued only after
+answer submission/reveal and require expiring signatures bound to the authenticated
+session. Direct guesses, altered signatures, and other-session requests are rejected.
+Figures are removed from the DOM during question changes and logout. Existing question
+text, options, answer keys, review state, account data and progress remain unchanged.
+Attaching an image does not promote an unreviewed question into scored practice.
+
+The 71 assets and their placement roles were visually inspected. Automated checks cover
+asset integrity, canonical mappings, image authentication, pre-answer data separation,
+expiry/tampering, binary MIME/HEAD responses, invalid paths, and client image cleanup.
+The existing Render build gate includes the image checks. Local browser navigation was
+blocked by the browser runtime (`ERR_BLOCKED_BY_CLIENT`), so a new real-browser or
+iPhone visual verification is not claimed.
+
+This is **not** restoration of every missing original examination image on the full
+Sites platform. The inspected v87 export's 67-record missing-original list remains
+unresolved; earlier source-variant checks document missing originals and explanation-only
+figures. The separate GitHub bank contains 1,053 records, not the complete v87 application.
+No replacement diagnostic image is fabricated and no original-image-missing flag is
+cleared by this continuation. No deployment, account migration or traffic switch occurs.
+
+Reproduce the additional extraction from the already supplied source file:
+
+```sh
+python updates/content-recovery-2026-09-12/recover_remaining_images.py --pdf '/path/to/2026 PART Pediatric 3.pdf' --apply
+node --test deployment/render/server.test.mjs
+```
+
+The original extraction description below is retained as the historical first pass.
+
 Status: scoped recovery and integration repair on an isolated GitHub branch. NOT a deployment to the existing ChatGPT Sites website. Do not restore the September 7 backup over the current live source.
 
 ## What was actually inspected

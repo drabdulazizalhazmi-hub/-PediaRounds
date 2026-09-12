@@ -1,0 +1,28 @@
+{
+  "sourceAssetCount": 71,
+  "recoveredFiles": 71,
+  "questionAssociations": 72,
+  "questionsWithFigures": 50,
+  "phases": {
+    "question": 34,
+    "explanation": 37
+  },
+  "unresolved": [],
+  "sourceHashes": [
+    "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632"
+  ],
+  "exactPriorChecksumAndDimensions": true,
+  "questionDataModified": false,
+  "fullPlatformOriginalGapsResolved": false,
+  "liveDeployment": false,
+  "validation": {
+    "renderBuildGate": {
+      "command": "node --test deployment/render/server.test.mjs",
+      "passed": 258,
+      "failed": 0
+    },
+    "visualAssetContactSheets": "All 71 images inspected; original bytes preserved",
+    "localBrowser": "Blocked: ERR_BLOCKED_BY_CLIENT; real-browser display not verified",
+    "existingQuestionDataPreserved": true
+  }
+}

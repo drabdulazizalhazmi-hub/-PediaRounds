@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { createProbeServer, parsePort } from './server.mjs';
 import './external-backend.test.mjs';
 import './study.test.mjs';
+import './service-diagnostics.test.mjs';
+import './service-diagnostics.http.test.mjs';
 
 async function running(t) {
   const server = createProbeServer();
@@ -28,14 +30,15 @@ test('home is labelled setup-only, with restrictive headers', async t => {
 });
 test('spoofed legacy identity headers cannot unlock data', async t => {
   const base = await running(t);
-  for (const path of ['/api/questions', '/api/progress', '/api/source-documents/test', '/quiz', '/login', '/signin-with-chatgpt']) {
+  for (const path of ['/api/questions', '/api/progress', '/api/source-documents/test', '/quiz', '/signin-with-chatgpt']) {
     const response = await fetch(base + path, { headers: { 'oai-authenticated-user-id':'spoof', 'oai-authenticated-user-email':'spoof@example.test' } });
     assert.equal(response.status, 503, path); assert.equal(response.headers.get('set-cookie'), null);
   }
 });
 test('repository files and secrets are not served', async t => {
   const base = await running(t);
-  for (const path of ['/master-bank/data/test.json', '/.env', '/.git/config', '/README.md', '/server.mjs']) assert.equal((await fetch(base + path)).status, 404, path);
+  for (const path of ['/.env', '/.git/config', '/README.md', '/server.mjs']) assert.equal((await fetch(base + path)).status, 404, path);
+  assert.equal((await fetch(base + '/master-bank/data/test.json')).status, 404);
 });
 test('legacy writes are rejected without recording personal data', async t => {
   const base = await running(t); const response = await fetch(base + '/login', { method:'POST', body:'password=not-stored' });
@@ -62,5 +65,28 @@ test('backend status never implies full migration or browser login success',asyn
 });
 test('deployed entrypoint serves the new beta and keeps question API protected',async t=>{
  const base=await running(t);assert.match(await(await fetch(base+'/study')).text(),/id="login-form"/);
+ const login=await fetch(base+'/login',{redirect:'manual',headers:{'oai-authenticated-user-id':'spoof'}});
+ assert.equal(login.status,302);assert.equal(login.headers.get('location'),'/study');assert.equal(login.headers.get('set-cookie'),null);
  assert.equal((await fetch(base+'/api/study/catalog')).status,401);
 });
+
+import './study-oauth.test.mjs';
+import './study-oauth.http.test.mjs';
+import './study-client-reliability.test.mjs';
+
+import './study-reader.test.mjs';
+import './study-client.test.mjs';
+
+test('study reader is served as a same-origin script without weakening data guards',async t=>{
+ const base=await running(t);const response=await fetch(base+'/study/reader.mjs');
+ assert.equal(response.status,200);assert.match(response.headers.get('content-type'),/javascript/);
+ assert.match(response.headers.get('content-security-policy'),/script-src 'self'/);
+ assert.match(await response.text(),/createEnglishReader/);
+ assert.equal((await fetch(base+'/api/study/catalog')).status,401);
+});
+
+import './study-client-continuity.test.mjs';
+import './study-clinical-review.test.mjs';
+
+import './study-options.test.mjs';
+import './study-images.test.mjs';

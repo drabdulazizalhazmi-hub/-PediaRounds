@@ -1,5 +1,6 @@
 /** Supabase browser sessions. Tokens stay in short-lived HttpOnly cookies. */
 import {createHash} from 'node:crypto';
+import {createStudyOAuth} from './study-oauth.mjs';
 export const ACCESS='__Host-pediarounds_access', REFRESH='__Host-pediarounds_refresh';
 const TOKEN=/^[A-Za-z0-9_.-]{16,3500}$/;
 const REFRESH_VALUE=/^[A-Za-z0-9_.-]{8,3500}$/;
@@ -77,7 +78,9 @@ export function createStudyAuth({env=process.env,fetcher=globalThis.fetch,now=Da
     const allowed=['email','password'];if(Object.keys(data).some(k=>!allowed.includes(k)))throw failure(400,'invalid_input');
     if(typeof data.email!=='string'||data.email.length>254||!/^\S+@\S+\.\S+$/.test(data.email)||typeof data.password!=='string'||data.password.length<1||data.password.length>1024)throw failure(400,'invalid_credentials');
     limit(req,data.email);
-    return establish(res,await remote('/token?grant_type=password',undefined,{email:data.email.trim(),password:data.password}));
+    const result=await establish(res,await remote('/token?grant_type=password',undefined,{email:data.email.trim(),password:data.password}));
+    if(oauth.hasPending(req))oauth.clear(res);
+    return result;
   }
   async function signUp(req,data) {
     if(Object.keys(data).some(k=>!['email','password'].includes(k))||typeof data.email!=='string'||data.email.length>254||!/^\S+@\S+\.\S+$/.test(data.email)||typeof data.password!=='string'||data.password.length<10||data.password.length>1024)throw failure(400,'invalid_signup');
@@ -94,8 +97,9 @@ export function createStudyAuth({env=process.env,fetcher=globalThis.fetch,now=Da
   }
   async function signOut(req,res) {
     const token=cookie(req,ACCESS);let remoteRevoked=false;
-    try{if(token){await remote('/logout?scope=local',token,{});remoteRevoked=true;}}catch{}finally{clear(res);}
+    try{if(token){await remote('/logout?scope=local',token,{});remoteRevoked=true;}}catch{}finally{clear(res);oauth.clear(res);}
     return {signedOut:true,remoteRevoked};
   }
-  return {configured,guard,current,signIn,signUp,refresh,signOut,clear};
+  const oauth=createStudyOAuth({origin,url,configured,remote,establish,guard,limit,now});
+  return {configured,guard,current,signIn,signUp,refresh,signOut,clear,oauth};
 }

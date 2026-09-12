@@ -1,0 +1,12 @@
+.social-login { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+.social-login .social-button { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 12px 18px; border: 1px solid; border-radius: 8px; font-family: Arial, sans-serif; font-size: 16px; font-weight: 600; letter-spacing: normal; text-transform: none; cursor: pointer; }
+.social-login .social-google { color: #1f1f1f; background: #fff; border-color: #747775; }
+.social-login .social-apple { color: #fff; background: #000; border-color: #000; }
+.social-login .social-button:focus-visible { outline: 3px solid #1675d1; outline-offset: 3px; }
+.social-login .social-button:disabled { opacity: .55; cursor: not-allowed; }
+#social-status { margin: 12px 0; min-height: 1.5em; }
+#social-retry { margin-bottom: 10px; }
+.social-account-note { font-size: .85rem; line-height: 1.6; }
+.sign-in-divider { display: flex; align-items: center; gap: 14px; margin: 22px 0; color: #596678; font-size: .9rem; }
+.sign-in-divider::before, .sign-in-divider::after { content: ''; height: 1px; flex: 1; background: #ccd3dc; }
+@media (prefers-reduced-motion: reduce) { .social-button { transition: none; } }
