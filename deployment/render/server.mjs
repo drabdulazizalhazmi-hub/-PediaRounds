@@ -84,6 +84,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   server.listen(port, '0.0.0.0', () => {
     console.log(`External staging process listening on ${port}; applicationReady=false; studyBeta=/study`);
     console.log('Repository study beta:',JSON.stringify(study.status()));
+    void study.oauthProviders().then(result=>console.log('Social sign-in providers:',JSON.stringify({configured:result.configured,...result.providers}))).catch(()=>console.log('Social sign-in providers: settings unavailable; no credentials logged.'));
     void backend.probe().then(result => {
       Object.assign(backendState,result);
       console.log('External backend dependency check:',JSON.stringify(result));

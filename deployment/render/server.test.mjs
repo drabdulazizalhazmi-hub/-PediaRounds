@@ -64,3 +64,6 @@ test('deployed entrypoint serves the new beta and keeps question API protected',
  const base=await running(t);assert.match(await(await fetch(base+'/study')).text(),/id="login-form"/);
  assert.equal((await fetch(base+'/api/study/catalog')).status,401);
 });
+
+import './study-oauth.test.mjs';
+import './study-oauth.http.test.mjs';
