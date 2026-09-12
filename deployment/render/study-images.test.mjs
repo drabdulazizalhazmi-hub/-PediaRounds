@@ -52,7 +52,7 @@ test('source question images are served only after server-verified sign-in',asyn
 });
 test('question payload and guessed image URL cannot disclose explanation images',async t=>{
  const {request}=await serverFixture(t);
- const response=await request('/api/study/question?id='+questionID),q=await response.json();
+ const response=await request('/api/study/question?id='+questionID+'&mode=review'),q=await response.json();
  assert.equal(q.figures.length,2);assert.ok(q.figures.every(f=>f.phase==='question'&&!f.url.includes('grant=')));
  assert.equal(q.reviewOnly,true);assert.doesNotMatch(JSON.stringify(q),/sourceKey|explanation-figure|x4909|grant=/);
  assert.equal((await request('/api/study/image?id='+explanationImage)).status,404);

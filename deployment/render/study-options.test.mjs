@@ -4,7 +4,7 @@ import {normalizeSourceOptions,missingOption} from './study-options.mjs';
 import {createBank,beforeAnswer,answerFeedback,originalEnglish,MISSING_EXPLANATION} from './study-bank.mjs';
 const fixture = extra => ({id:'layout-fixture',module:'fixtures',stemEn:'Select the recorded fixture option.',
   options:[{key:'A',text:'First option'},{key:'B',text:'Second option'},{key:'C',text:'Third option'},{key:'D',text:'Fourth option'}],
-  recalledAnswer:'B',publishable:true,reviewStatus:'ready_for_publish',...extra});
+  recalledAnswer:'B',verifiedAnswer:'B',verification:{guideline:'supports',referenceNotes:'Fictional verification fixture; not real medical evidence.'},publishable:true,reviewStatus:'ready_for_publish',originalExplanation:'Fictional source explanation.',sourceRefs:[{sourceName:'Fictional source'}],...extra});
 const question = extra => createBank([fixture(extra)]).get('layout-fixture');
 const joined = 'A. First option B. Second option C. Third option D. Fourth option';
 

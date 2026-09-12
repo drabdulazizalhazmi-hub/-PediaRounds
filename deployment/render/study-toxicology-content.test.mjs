@@ -42,10 +42,12 @@ test('incomplete Q9/Q13 and treatment-ambiguous Q11 remain unscored',()=>{
   for(const selected of [null,...q.options.map((_,i)=>i)])assert.equal(answerFeedback(q,selected).correct,null);
  }
 });
-test('Q10/Q12 retain their recorded A/C keys and do not invent a new key',()=>{
- assert.equal(answerFeedback(get(10),0).correct,true);assert.equal(answerFeedback(get(10),1).correct,false);
- assert.equal(answerFeedback(get(12),2).correct,true);assert.equal(answerFeedback(get(12),0).correct,false);
- assert.equal(answerFeedback(get(12),2).sourceKey,'C');
+test('Q10/Q12 retain their recorded A/C keys but await complete publication before scoring',()=>{
+ for(const n of [10,12]){
+  const q=get(n);assert.equal(q.reviewOnly,true);
+  for(const selected of [null,...q.options.map((_,i)=>i)])assert.equal(answerFeedback(q,selected).correct,null);
+ }
+ assert.equal(answerFeedback(get(10),0).sourceKey,'A');assert.equal(answerFeedback(get(12),2).sourceKey,'C');
 });
 test('iron treatment note rejects automatic chelation from visible tablets alone',()=>{
  const note=get(11).clinicalReview.note;assert.match(note,/Visible tablets alone do not establish a need for chelation/);

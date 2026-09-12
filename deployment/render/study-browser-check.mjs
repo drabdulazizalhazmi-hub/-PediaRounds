@@ -14,7 +14,7 @@ const ACCESS='fixture-access-token-never-a-real-account',REFRESH='fixture-refres
 const user={id:'00000000-0000-4000-8000-000000000001',email:'browser@example.test',role:'authenticated',email_confirmed_at:'2026-09-01T00:00:00Z'};
 const rows=new Map();let revision=0,state=null,conflict=false,app,chrome,ws,server,sequence=0;
 const sourceText='  This is the original source explanation in a fictional test fixture.\nIts whitespace must remain unchanged.  ';
-const bank=createBank(Array.from({length:7},(_,i)=>({id:'fixture-'+i,module:'Fixture module',stemEn:'Fictional interface test question '+i+'. Which option is recorded?',options:[{key:'A',text:'Recorded choice'},{key:'B',text:'Other choice'}],recalledAnswer:'A',reviewStatus:'ready_for_publish',publishable:true,originalExplanation:sourceText,sourceRefs:[{sourceName:'Fictional browser fixture',page:i+1}]})));
+const bank=createBank(Array.from({length:7},(_,i)=>({id:'fixture-'+i,module:'Fixture module',stemEn:'Fictional interface test question '+i+'. Which option is recorded?',options:[{key:'A',text:'Recorded choice'},{key:'B',text:'Other choice'}],recalledAnswer:'A',verifiedAnswer:'A',verification:{guideline:'supports',referenceNotes:'Fictional verification fixture; not real medical evidence.'},reviewStatus:'ready_for_publish',publishable:true,originalExplanation:sourceText,sourceRefs:[{sourceName:'Fictional browser fixture',page:i+1}]})));
 const progress=()=>({reviewedCount:rows.size,done:[...rows].map(([questionId,correct])=>({questionId,correct,completedAt:Date.now()})),seen:[...rows.keys()]});
 const backend={handle:async(req,res,pathname)=>{
  let body={};if(req.method==='POST'){let text='';for await(const chunk of req)text+=chunk;body=JSON.parse(text);}
@@ -51,6 +51,7 @@ try{
  await new Promise((resolve,reject)=>{ws.addEventListener('open',resolve,{once:true});ws.addEventListener('error',reject,{once:true});});
  ws.addEventListener('message',event=>{const data=JSON.parse(event.data);if(data.id&&pending.has(data.id)){const e=pending.get(data.id);pending.delete(data.id);clearTimeout(e.timeout);data.error?e.reject(Error(JSON.stringify(data.error))):e.resolve(data.result);}else if(data.method==='Runtime.exceptionThrown')errors.push(data.params.exceptionDetails);});
  await call('Runtime.enable');await call('Page.enable');await call('Page.navigate',{url:origin+'/study'});
+ await wait('document.readyState==="complete" && !!document.getElementById("status")','study document ready');
  await wait('!document.getElementById("login")?.hidden && document.getElementById("status").textContent.includes("Sign in")','initial sign-in');
  await check('unauthenticated screen does not request questions',async()=>{assert.equal(requests.includes('/api/study/catalog'),false);assert.equal(await evaluate('document.getElementById("workspace").hidden'),true);});
  await evaluate('document.getElementById("email").value="browser@example.test";document.getElementById("password").value="fictional-password";document.getElementById("login-form").requestSubmit()');await wait(qReady,'first question');
@@ -72,6 +73,49 @@ try{
  await check('stale checkpoint asks for reload and does not overwrite',async()=>assert.equal(revision,initialRevision));
  await click('logout');await wait('!document.getElementById("login").hidden && document.getElementById("status").textContent==="Signed out."','logout');
  await check('logout clears question content and denies protected API access',async()=>{assert.equal(await evaluate('document.getElementById("stem").textContent'),'');assert.equal(await evaluate('fetch("/api/study/catalog").then(r=>r.status)'),401);});
+ // Exercise the no-ready boundary using fictional pending content and preserved fictional history.
+ const pendingRows=[{id:'pending-fixture',module:'Pending-only module',stemEn:'Fictional pending item. No score may be assigned.',options:[{key:'A',text:'First pending choice'},{key:'B',text:'Second pending choice'}],recalledAnswer:'A',reviewStatus:'needs_verification'}];
+ const pendingBank=createBank(pendingRows);state=null;conflict=false;rows.set('pending-fixture',true);
+ app=createStudyApp({env:{RENDER_EXTERNAL_URL:origin,PEDIAROUNDS_EXTERNAL_BACKEND:'enabled',PEDIAROUNDS_SUPABASE_URL:'https://abcdefghijklmnopqrst.supabase.co',PEDIAROUNDS_SUPABASE_PUBLISHABLE_KEY:'sb_publishable_fixture'},fetcher:provider,backend,bank:pendingBank});
+ const requestBoundary=requests.length;
+ await evaluate('document.getElementById("email").value="browser@example.test";document.getElementById("password").value="fictional-password";document.getElementById("login-form").requestSubmit()');
+ await wait('!document.getElementById("workspace").hidden && !document.getElementById("empty").hidden','ready-empty state');
+ await check('zero-ready sign-in never substitutes or downloads pending questions',async()=>{
+  assert.equal(await evaluate('document.getElementById("mode").value'),'practice');
+  assert.equal(await evaluate('document.getElementById("status").textContent'),'');
+  assert.equal(requests.slice(requestBoundary).includes('/api/study/question'),false);
+  assert.equal(await evaluate('document.getElementById("question-card").hidden'),true);
+  assert.match(await evaluate('document.getElementById("empty-title").textContent'),/No ready questions/);
+  assert.equal(await evaluate('document.getElementById("next").disabled && document.getElementById("previous").disabled'),true);
+ });
+ await check('ready module menu omits pending-only modules and has truthful zero count',async()=>{
+  assert.equal(await evaluate('document.getElementById("module").options.length'),1);
+  assert.equal(await evaluate('document.getElementById("ready-option").textContent'),'Ready questions (0)');
+  assert.equal(await evaluate('document.getElementById("open-review").hidden'),false);
+ });
+ let gateImage=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:true});writeFileSync(path.join(output,'ready-empty-mobile.png'),Buffer.from(gateImage.data,'base64'));
+ await check('server prevents pending question fetch through the default practice route',async()=>{
+  assert.equal(await evaluate('fetch("/api/study/question?id=pending-fixture").then(r=>r.status)'),409);
+ });
+ await click('open-review');await wait(qReady,'explicit under-review list');
+ await check('explicit under-review choice displays pending content despite historical correct state',async()=>{
+  assert.equal(await evaluate('document.getElementById("mode").value'),'review');
+  assert.equal(await evaluate('document.getElementById("stem").textContent'),pendingRows[0].stemEn);
+  assert.match(await evaluate('document.getElementById("progress-count").textContent'),/Not scored/);
+  assert.match(await evaluate('document.getElementById("review-option").textContent'),/تحت المراجعة/);
+  assert.equal(await evaluate('document.getElementById("module").options.length'),2);
+ });
+ await click('submit');await wait(savedReply,'under-review source reveal');
+ await check('review reveal has no grade and cannot erase historical correct progress',async()=>{
+  assert.equal(await evaluate('document.getElementById("result").dataset.state'),'review');
+  assert.equal(rows.get('pending-fixture'),true);
+  assert.equal(await evaluate('document.getElementById("read-explanation").hidden'),true);
+ });
+ await check('under-review layout remains usable at 390px',async()=>assert.equal(await evaluate('document.documentElement.scrollWidth<=window.innerWidth'),true));
+ gateImage=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:true});writeFileSync(path.join(output,'under-review-mobile.png'),Buffer.from(gateImage.data,'base64'));
+ await click('next');await wait('!document.getElementById("empty").hidden','review set end');await click('previous');await wait(qReady,'previous review item');
+ await check('Previous from review-list end restores its final pending item',async()=>assert.equal(await evaluate('document.getElementById("stem").textContent'),pendingRows[0].stemEn));
+ await click('logout');await wait('!document.getElementById("login").hidden','final logout');
  await check('no uncaught browser JavaScript exceptions',async()=>assert.deepEqual(errors,[]));
  writeFileSync(path.join(output,'browser-verification.json'),JSON.stringify({testedAt:new Date().toISOString(),scope:'real Chromium; fictional provider and in-memory persistence; not live Supabase',checks,passed:checks.length,realUserTested:false,liveEmailDeliveryTested:false,actualIOSAudioTested:false},null,2));
  console.log('BROWSER_CHECK_SUMMARY',JSON.stringify({passed:checks.length,failed:0,scope:'real Chromium with mocked provider/storage'}));

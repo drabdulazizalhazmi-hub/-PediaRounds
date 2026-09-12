@@ -5,6 +5,7 @@ import path from 'node:path';
 import {clinicalReviewFor,clinicalFeedbackNotice} from './study-clinical-review.mjs';
 import {toxicologySourceImageFor} from './study-toxicology-content.mjs';
 import {normalizeSourceOptions} from './study-options.mjs';
+import {publicationIssues,PUBLICATION_MESSAGES} from './study-readiness.mjs';
 const str = v => typeof v === 'string' ? v : '';
 const list = v => Array.isArray(v) ? v : [];
 const validID = v => typeof v === 'string' && v.length > 0 && v.length <= 200 && !/\p{Cc}/u.test(v);
@@ -32,12 +33,14 @@ function normalized(q) {
   const imageRequired = (q.imageRequired === true || q.image?.requiredForQuestion === true) && !sourceImage;
   const conflicting = ['conflicting','outdated','incomplete_recall','image_missing','image_needs_review'].includes(q.reviewStatus) || (verified && key && verified !== key);
   const clinicalReview = clinicalReviewFor({id,stem,options,key});
-  const reviewOnly = q.publishable === false || incomplete || imageRequired || conflicting || !keyValid || clinicalReview?.reviewOnly === true;
+  const explanation = originalEnglish(q);
+  const publicationBlockers = publicationIssues(q,{key,explanation});
+  const reviewOnly = publicationBlockers.length > 0 || q.publishable === false || incomplete || imageRequired || conflicting || !keyValid || clinicalReview?.reviewOnly === true;
   return {id,module:str(q.module || q.specialty) || 'Unclassified',number:q.number ?? null,stem,options,key,rawKey,
-    reviewOnly,imageRequired,sourceImage,clinicalReview,optionIssues,reviewStatus:str(q.reviewStatus) || 'needs_verification',
-    explanation:originalEnglish(q),duplicateOf:validID(q.duplicateOf) ? q.duplicateOf : null,
+    reviewOnly,imageRequired,sourceImage,clinicalReview,optionIssues,publicationBlockers,reviewStatus:str(q.reviewStatus) || 'needs_verification',
+    explanation,duplicateOf:validID(q.duplicateOf) ? q.duplicateOf : null,
     references:list(q.sourceRefs).map(r=>({sourceName:str(r?.sourceName),part:str(r?.part),page:r?.page ?? null,questionNumber:r?.questionNumber ?? null})),
-    notice:imageRequired ? 'Original question image has not been migrated. Review only; no score is assigned.' : optionIssues.includes('separated_labels_require_review') ? 'Joined option labels were separated for display. Source layout needs review; no score is assigned.' : incomplete ? 'Missing, duplicated or ambiguous source options. Review only; no score is assigned.' : reviewOnly ? 'Incomplete or pending-review source record. No score is assigned.' : 'Feedback compares your selection with the recorded source key; it is not a new clinical validation.'};
+    notice:imageRequired ? 'Original question image has not been migrated. Review only; no score is assigned.' : optionIssues.includes('separated_labels_require_review') ? 'Joined option labels were separated for display. Source layout needs review; no score is assigned.' : incomplete ? 'Missing, duplicated or ambiguous source options. Review only; no score is assigned.' : publicationBlockers.length ? 'Under review; no score is assigned. '+publicationBlockers.map(code=>PUBLICATION_MESSAGES[code]).join(' ') : reviewOnly ? 'Incomplete or pending-review source record. No score is assigned.' : 'Feedback compares your selection with the recorded source key; it is not a new clinical validation.'};
 }
 export function createBank(records,{fileCount=0,errors=[]}={}) {
   const all = new Map(); let skipped = 0, duplicateIDs = 0;
@@ -63,9 +66,14 @@ export function createBank(records,{fileCount=0,errors=[]}={}) {
     else if(q.duplicateOf) {q.reviewOnly=true;q.notice='Duplicate linkage needs review. No score is assigned.';}
   }
   const questions = [...all.values()].filter(q=>!aliases.has(q.id));
-  const moduleCounts = new Map();
-  for(const q of questions) moduleCounts.set(q.module,(moduleCounts.get(q.module)||0)+1);
+  const moduleCounts = new Map(), publicationBlockerCounts = {};
+  for(const q of questions) {
+    const counts=moduleCounts.get(q.module)||{name:q.module,count:0,readyCount:0,reviewOnlyCount:0};
+    counts.count++;counts[q.reviewOnly?'reviewOnlyCount':'readyCount']++;moduleCounts.set(q.module,counts);
+    for(const code of q.publicationBlockers) publicationBlockerCounts[code]=(publicationBlockerCounts[code]||0)+1;
+  }
   const summary = Object.freeze({scope:'current-github-master-bank-only',fullSiteMigrated:false,fileCount,
+    readinessPolicy:'explicit-publication-approval-and-complete-source-v1',publicationBlockerCounts:Object.freeze(publicationBlockerCounts),
     sourceRecords:records.length,questionCount:questions.length,practiceCount:questions.filter(q=>!q.reviewOnly).length,
     reviewOnlyCount:questions.filter(q=>q.reviewOnly).length,originalEnglishCount:questions.filter(q=>!!q.explanation).length,
     missingOriginalEnglishCount:questions.filter(q=>!q.explanation).length,imageRequiredCount:questions.filter(q=>q.imageRequired).length,
@@ -76,7 +84,7 @@ export function createBank(records,{fileCount=0,errors=[]}={}) {
     duplicateOptionTextCount:questions.filter(q=>q.optionIssues.includes('duplicate_option_text')).length,
     duplicateIDs,declaredDuplicateAliases:aliases.size,skippedRecords:skipped,fileErrors:errors.length});
   return {summary,questions,aliases,
-    catalog:()=>({summary,modules:[...moduleCounts].map(([name,count])=>({name,count})),items:questions.map(q=>({id:q.id,module:q.module,reviewOnly:q.reviewOnly}))}),
+    catalog:()=>({summary,modules:[...moduleCounts.values()].map(counts=>({...counts})),items:questions.map(q=>({id:q.id,module:q.module,reviewOnly:q.reviewOnly}))}),
     get:id=>all.get(aliases.get(id)||id) || null};
 }
 export function loadRepositoryBank(root=fileURLToPath(new URL('../../master-bank/data/',import.meta.url))) {

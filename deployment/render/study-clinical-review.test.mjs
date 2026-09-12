@@ -9,8 +9,8 @@ test('Q14 explains appropriate compensation rather than an unsupported mixed dis
  const reply=answerFeedback(get(q14()),0);
  assert.match(reply.notice,/20 \+\/- 2 mmHg/);assert.match(reply.notice,/does not establish an additional primary respiratory alkalosis/);
 });
-test('Q14 keeps source-key matching without claiming new clinical validation',()=>{
- const q=get(q14());assert.equal(q.reviewOnly,false);assert.equal(answerFeedback(q,0).correct,true);assert.equal(answerFeedback(q,1).correct,false);assert.equal(answerFeedback(q,0).sourceKey,'A');
+test('Q14 retains source key and clinical erratum but remains unscored until publication is complete',()=>{
+ const q=get(q14());assert.equal(q.reviewOnly,true);assert.equal(answerFeedback(q,0).correct,null);assert.equal(answerFeedback(q,1).correct,null);assert.equal(answerFeedback(q,0).sourceKey,'A');
 });
 test('Q15 remains present but cannot assign a correct or incorrect score',()=>{
  const q=get(q15());assert.equal(q.reviewOnly,true);
@@ -43,10 +43,10 @@ test('invalid selection guards continue to apply to review-only questions',()=>{
  const q=get(q15());for(const selected of [-1,2,0.5])assert.throws(()=>answerFeedback(q,selected),e=>e.code==='invalid_selection');
 });
 test('source records, IDs, options and keys are not mutated by the adapter',()=>{
- const rows=[q14(),q15()],snapshot=JSON.stringify(rows);const bank=createBank(rows);assert.equal(JSON.stringify(rows),snapshot);assert.equal(bank.summary.questionCount,2);assert.equal(bank.summary.practiceCount,1);assert.equal(bank.summary.reviewOnlyCount,1);
+ const rows=[q14(),q15()],snapshot=JSON.stringify(rows);const bank=createBank(rows);assert.equal(JSON.stringify(rows),snapshot);assert.equal(bank.summary.questionCount,2);assert.equal(bank.summary.practiceCount,0);assert.equal(bank.summary.reviewOnlyCount,2);
 });
 test('unrelated questions retain their source grading and have no clinical note',()=>{
- const raw={...q14(),id:'fictional-unrelated'};const q=get(raw);assert.equal(q.clinicalReview,null);assert.equal(answerFeedback(q,0).correct,true);assert.equal(answerFeedback(q,0).notice,q.notice);
+ const raw={...q14(),id:'fictional-unrelated',reviewStatus:'ready_for_publish',verifiedAnswer:'A',verification:{guideline:'supports',referenceNotes:'Fictional verification metadata, not medical evidence.'},originalExplanation:'Fictional source explanation.',sourceRefs:[{sourceName:'Fictional source'}]};const q=get(raw);assert.equal(q.clinicalReview,null);assert.equal(answerFeedback(q,0).correct,true);assert.equal(answerFeedback(q,0).notice,q.notice);
 });
 const repositoryRoot=new URL('../../master-bank/data/',import.meta.url);
 test('current repository records receive both corrections without losing IDs',{skip:!existsSync(repositoryRoot)},()=>{

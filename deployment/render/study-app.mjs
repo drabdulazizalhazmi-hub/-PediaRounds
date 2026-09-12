@@ -77,8 +77,12 @@ export function createStudyApp({backend,env=process.env,fetcher=globalThis.fetch
       }
       if(action==='question') {
         if(req.method!=='GET')throw failure(405,'method_not_allowed');
-        const id=new URL(req.url,'http://localhost').searchParams.get('id');
+        const params=new URL(req.url,'http://localhost').searchParams;
+        const id=params.get('id'),mode=params.get('mode')||'practice';
+        if(!['practice','review'].includes(mode))throw failure(400,'invalid_study_mode');
         const q=bank.get(id);if(!q)throw failure(404,'question_not_found');
+        if(q.reviewOnly && mode!=='review')throw failure(409,'question_under_review');
+        if(!q.reviewOnly && mode==='review')throw failure(409,'question_not_under_review');
         const payload=beforeAnswer(q),figures=images.descriptors(q.id,'question',imageIdentity);
         if(figures.length){payload.figures=figures;if(q.imageRequired)payload.notice='Source figures are attached. This record remains under review and is not scored.';}
         return send(200,payload);
