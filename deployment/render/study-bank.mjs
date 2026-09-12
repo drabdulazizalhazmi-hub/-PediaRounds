@@ -2,6 +2,7 @@
 import {readFileSync,readdirSync,statSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
+import {clinicalReviewFor,clinicalFeedbackNotice} from './study-clinical-review.mjs';
 const str = v => typeof v === 'string' ? v : '';
 const list = v => Array.isArray(v) ? v : [];
 const validID = v => typeof v === 'string' && v.length > 0 && v.length <= 200 && !/\p{Cc}/u.test(v);
@@ -31,9 +32,10 @@ function normalized(q) {
   const incomplete = options.length < 2 || options.some(o=>absent(o.text)) || new Set(optionKeys).size !== options.length;
   const imageRequired = q.imageRequired === true || q.image?.requiredForQuestion === true;
   const conflicting = ['conflicting','outdated','incomplete_recall','image_missing','image_needs_review'].includes(q.reviewStatus) || (verified && key && verified !== key);
-  const reviewOnly = q.publishable === false || incomplete || imageRequired || conflicting || !keyValid;
+  const clinicalReview = clinicalReviewFor({id,stem,options,key});
+  const reviewOnly = q.publishable === false || incomplete || imageRequired || conflicting || !keyValid || clinicalReview?.reviewOnly === true;
   return {id,module:str(q.module || q.specialty) || 'Unclassified',number:q.number ?? null,stem,options,key,rawKey,
-    reviewOnly,imageRequired,reviewStatus:str(q.reviewStatus) || 'needs_verification',
+    reviewOnly,imageRequired,clinicalReview,reviewStatus:str(q.reviewStatus) || 'needs_verification',
     explanation:originalEnglish(q),duplicateOf:validID(q.duplicateOf) ? q.duplicateOf : null,
     references:list(q.sourceRefs).map(r=>({sourceName:str(r?.sourceName),part:str(r?.part),page:r?.page ?? null,questionNumber:r?.questionNumber ?? null})),
     notice:imageRequired ? 'Original question image has not been migrated. Review only; no score is assigned.' : reviewOnly ? 'Incomplete or pending-review source record. No score is assigned.' : 'Feedback compares your selection with the recorded source key; it is not a new clinical validation.'};
@@ -101,6 +103,6 @@ export function answerFeedback(q,selectedIndex) {
   if(selectedIndex !== null && (!Number.isInteger(selectedIndex)||selectedIndex<0||selectedIndex>=q.options.length)) throw Object.assign(Error('invalid_selection'),{status:400,code:'invalid_selection'});
   if(selectedIndex===null && !q.reviewOnly) throw Object.assign(Error('selection_required'),{status:400,code:'selection_required'});
   const correct=q.reviewOnly?null:q.options[selectedIndex].key.trim().toUpperCase()===q.key;
-  return {id:q.id,correct,sourceKey:q.rawKey||null,reviewOnly:q.reviewOnly,notice:q.notice,
-    explanation:q.explanation||MISSING_EXPLANATION,originalExplanationAvailable:!!q.explanation,references:q.references};
+  return {id:q.id,correct,sourceKey:q.rawKey||null,reviewOnly:q.reviewOnly,notice:clinicalFeedbackNotice(q),
+    explanation:q.explanation||MISSING_EXPLANATION,originalExplanationAvailable:!!q.explanation,references:[...q.references,...(q.clinicalReview?.references||[])]};
 }
