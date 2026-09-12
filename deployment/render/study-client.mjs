@@ -2,7 +2,7 @@ const $=id=>document.getElementById(id);
 const IDLE=600000;
 let user=null,epoch=0,catalog=null,progress={done:[],seen:[]},checkpointRevision=0,checkpointBlocked=false;
 let history=[],position=-1,pool=[],cursor=0,freshCount=0,reviews=[],currentQuestion=null,loading=false;
-let lastActivity=Date.now(),lastRefresh=Date.now(),refreshPromise=null,checkpointTask=null,pendingCheckpoint=null;
+let lastActivity=Date.now(),lastRefresh=Date.now(),refreshPromise=null,checkpointTask=null,pendingCheckpoint=null,persistTask=null,checkpointFailed=false;
 const pendingSaves=new Map(),controllers=new Set();
 const messages={sign_in_required:'Please sign in.',authentication_failed:'Sign-in was not accepted. Check your email/password and email confirmation.',email_confirmation_required:'Confirm your email, then return here and sign in.',invalid_signup:'Enter a valid email and a password of at least 10 characters.',invalid_credentials:'Enter your email and password.',external_backend_not_configured:'The external authentication service is not configured.',auth_unavailable:'The sign-in service is unavailable. Please retry.',rate_limited:'Too many requests. Please wait a minute and retry.',same_origin_required:'This request was blocked. Open this page directly and retry.',checkpoint_conflict:'Another session saved a newer position. Reload the saved position before continuing to save.',backend_unavailable:'Account storage is unavailable. Your progress has not been confirmed as saved.'};
 const notice=text=>{$('status').textContent=text;};
@@ -20,14 +20,15 @@ async function refresh(){
  return refreshPromise;
 }
 async function api(action,method='GET',body){
+ const ownEpoch=epoch;
  try{return await raw(action,method,body);}catch(e){
-  if(e.status!==401||['signin','signup','refresh','signout'].includes(action))throw e;
-  await refresh();return raw(action,method,body);
+  if(ownEpoch!==epoch||e.status!==401||['signin','signup','refresh','signout'].includes(action))throw e;
+  await refresh();if(ownEpoch!==epoch)throw e;return raw(action,method,body);
  }
 }
 function stopReading(){globalThis.speechSynthesis?.cancel();}
 function clearWorkspace(){
- epoch++;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;progress={done:[],seen:[]};history=[];reviews=[];pool=[];position=-1;currentQuestion=null;loading=false;pendingSaves.clear();pendingCheckpoint=null;checkpointTask=null;checkpointBlocked=false;checkpointRevision=0;
+ epoch++;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;progress={done:[],seen:[]};history=[];reviews=[];pool=[];position=-1;currentQuestion=null;loading=false;pendingSaves.clear();pendingCheckpoint=null;checkpointTask=null;persistTask=null;checkpointFailed=false;checkpointBlocked=false;checkpointRevision=0;
  $('workspace').hidden=true;$('logout').hidden=true;$('login').hidden=false;
  for(const id of ['stem','explanation','source-key','result','validation-note','coverage','progress-count','save-status'])$(id).textContent='';
  $('options').replaceChildren();$('references').replaceChildren();$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;
@@ -51,15 +52,25 @@ function updateCounters(){
  $('previous').disabled=loading||position<=0;$('next').disabled=loading;
 }
 function lock(value){loading=value;for(const id of ['submit','module','mode','restart'])$(id).disabled=value;updateCounters();}
-async function savePosition(){
- if(!user||position<0||checkpointBlocked)return;
- pendingCheckpoint={schema:'render-study-v1',module:$('module').value,mode:$('mode').value,questionId:history[position].id,freshCount,reviewQueue:reviews.slice(0,40)};
- if(checkpointTask)return;
- const task=Symbol('checkpoint'),ownEpoch=epoch;checkpointTask=task;
+function updateSaveControls(){
+ $('retry-save').hidden=!(pendingSaves.size||checkpointFailed);
+}
+async function savePosition(retryOnly=false){
+ if(!user||checkpointBlocked)return;
+ if(!retryOnly){
+  if(position<0||!history[position])return;
+  pendingCheckpoint={schema:'render-study-v1',module:$('module').value,mode:$('mode').value,questionId:history[position].id,freshCount,reviewQueue:reviews.slice(0,40)};
+ }
+ if(!pendingCheckpoint||checkpointTask)return;
+ const task=Symbol('checkpoint'),ownEpoch=epoch;checkpointTask=task;checkpointFailed=false;
  try{while(pendingCheckpoint&&ownEpoch===epoch&&checkpointTask===task&&!checkpointBlocked){const state=pendingCheckpoint;pendingCheckpoint=null;
   try{const saved=await api('checkpoint','POST',{expectedRevision:checkpointRevision,state});if(ownEpoch!==epoch||checkpointTask!==task)return;checkpointRevision=saved.revision;}
-  catch(e){if(ownEpoch!==epoch||checkpointTask!==task)return;pendingCheckpoint=null;if(e.status===409){checkpointBlocked=true;$('reload-position').hidden=false;}notice(errorMessage(e));break;}
- }}finally{if(checkpointTask===task)checkpointTask=null;}
+  catch(e){if(ownEpoch!==epoch||checkpointTask!==task)return;
+   if(e.status===409){pendingCheckpoint=null;checkpointBlocked=true;$('reload-position').hidden=false;}
+   else{pendingCheckpoint=pendingCheckpoint||state;checkpointFailed=true;}
+   notice(errorMessage(e));break;
+  }
+ }}finally{if(checkpointTask===task){checkpointTask=null;updateSaveControls();}}
 }
 function showFeedback(slot){
  const reply=slot.reply;$('feedback').hidden=!reply;if(!reply)return;
@@ -72,19 +83,20 @@ function showFeedback(slot){
  $('save-status').textContent=slot.saved?'Progress saved to your external account.':'Progress has not yet been confirmed as saved.';
 }
 async function display(){
- stopReading();const slot=history[position],ownEpoch=epoch;if(!slot)return;
+ stopReading();const slot=history[position],ownEpoch=epoch;if(!slot)return;currentQuestion=null;
  lock(true);$('question-card').hidden=true;$('empty').hidden=true;$('feedback').hidden=true;notice('Loading question…');
  try{const q=await api('question?id='+encodeURIComponent(slot.id));if(ownEpoch!==epoch)return;
   currentQuestion=q;$('category').textContent=q.module;$('stem').textContent=q.text;$('question-notice').textContent=q.notice;
   const options=$('options');options.replaceChildren();
   q.options.forEach((o,i)=>{const label=document.createElement('label');label.className='option';const input=document.createElement('input');input.type='radio';input.name='answer';input.value=String(i);input.checked=slot.selected===i;input.disabled=!!slot.reply;input.addEventListener('change',()=>{slot.selected=i;});const key=document.createElement('strong');key.textContent=o.key+'.';const text=document.createElement('span');text.textContent=o.text;label.append(input,key,text);options.append(label);});
   $('submit').textContent=q.reviewOnly?'Reveal source (not scored)':'Submit answer';$('question-card').hidden=false;showFeedback(slot);notice('');
- }catch(e){if(ownEpoch===epoch){notice(errorMessage(e));if(e.status===401)clearWorkspace();}}
- finally{if(ownEpoch===epoch&&user){lock(false);$('submit').disabled=!!slot.reply;$('read-question').disabled=!globalThis.speechSynthesis||/\p{Script=Arabic}/u.test(currentQuestion?.text||'');}}
- if(ownEpoch===epoch&&user)void savePosition();
+ }catch(e){if(ownEpoch===epoch){notice(errorMessage(e)+' Select Next to retry this question.');if(e.status===401)clearWorkspace();}}
+ finally{if(ownEpoch===epoch&&user){lock(false);$('submit').disabled=!currentQuestion||!!slot.reply;$('read-question').disabled=!currentQuestion||!globalThis.speechSynthesis||/\p{Script=Arabic}/u.test(currentQuestion?.text||'');}}
+ if(ownEpoch===epoch&&user&&currentQuestion)void savePosition();
 }
 async function next(){
  if(loading)return;
+ if(history[position]&&!currentQuestion)return display();
  if(position+1<history.length){position++;return display();}
  const done=correctIDs();reviews=reviews.filter(r=>!done.has(r.id));
  let id;const due=reviews.findIndex(r=>r.after<=freshCount);
@@ -119,12 +131,28 @@ async function initialize(){
  }catch(e){if(ownEpoch!==epoch)return;clearWorkspace();notice(e.status===401?'Sign in to begin.':errorMessage(e));}
 }
 async function persist(){
- if(!pendingSaves.size)return;const ownEpoch=epoch,rows=[...pendingSaves].slice(0,500).map(([questionId,correct])=>({questionId,correct}));
- try{const stored=await api('progress','POST',{completed:rows,seen:rows.map(r=>r.questionId)});if(ownEpoch!==epoch)return;
-  progress=stored;for(const row of rows)if(pendingSaves.get(row.questionId)===row.correct)pendingSaves.delete(row.questionId);
-  for(const slot of history)if(slot.reply&&!pendingSaves.has(slot.id))slot.saved=true;
-  if(history[position]?.reply)showFeedback(history[position]);updateCounters();
- }catch(e){if(ownEpoch===epoch)notice(errorMessage(e));}finally{if(ownEpoch===epoch)$('retry-save').hidden=!pendingSaves.size;}
+ if(persistTask)return persistTask.promise;
+ if(!user||!pendingSaves.size)return;
+ const ownEpoch=epoch,task={promise:null};persistTask=task;
+ task.promise=(async()=>{
+  try{while(pendingSaves.size&&ownEpoch===epoch&&persistTask===task){
+   const rows=[...pendingSaves].slice(0,500).map(([questionId,correct])=>({questionId,correct}));
+   const stored=await api('progress','POST',{completed:rows,seen:rows.map(r=>r.questionId)});if(ownEpoch!==epoch||persistTask!==task)return;
+   progress=stored;for(const row of rows)if(pendingSaves.get(row.questionId)===row.correct)pendingSaves.delete(row.questionId);
+   for(const slot of history)if(slot.reply&&!pendingSaves.has(slot.id))slot.saved=true;
+   if(history[position]?.reply)showFeedback(history[position]);updateCounters();
+  }}catch(e){if(ownEpoch===epoch)notice(errorMessage(e));}
+  finally{if(persistTask===task){persistTask=null;updateSaveControls();}}
+ })();
+ return task.promise;
+}
+async function retrySaving(){
+ const ownEpoch=epoch;await persist();if(ownEpoch===epoch&&user)await savePosition(true);
+}
+async function reloadSavedPosition(){
+ const ownEpoch=epoch;await persist();if(ownEpoch!==epoch||!user)return;
+ if(pendingSaves.size){notice('Save your pending answers before reloading the saved position.');return;}
+ pendingCheckpoint=null;checkpointFailed=false;await initialize();
 }
 $('login-form').addEventListener('submit',async event=>{
  event.preventDefault();$('signin').disabled=$('signup').disabled=true;notice('Signing in…');
@@ -136,7 +164,7 @@ $('signup').addEventListener('click',async()=>{
 });
 $('logout').addEventListener('click',()=>void signOut());
 $('submit').addEventListener('click',async()=>{
- const slot=history[position];if(loading||!slot||slot.reply)return;
+ const slot=history[position];if(loading||!slot||slot.reply||!currentQuestion)return;
  if(slot.selected===null&&!currentQuestion.reviewOnly){notice('Select an answer before submitting.');return;}
  const ownEpoch=epoch;lock(true);
  try{slot.wasWrong=(progress.done||[]).some(r=>r.questionId===slot.id&&r.correct===false);const reply=await api('answer','POST',{id:slot.id,selectedIndex:slot.selected});if(ownEpoch!==epoch)return;slot.reply=reply;
@@ -147,8 +175,13 @@ $('submit').addEventListener('click',async()=>{
 });
 $('next').addEventListener('click',()=>void next());$('previous').addEventListener('click',()=>{if(!loading&&position>0){position--;void display();}});
 for(const id of ['module','mode'])$(id).addEventListener('change',()=>void start());$('restart').addEventListener('click',()=>void start());
-$('retry-save').addEventListener('click',()=>void persist());$('reload-position').addEventListener('click',()=>void initialize());
-function loadVoices(){const selected=$('voice').value;const voices=globalThis.speechSynthesis?.getVoices()||[];$('voice').replaceChildren();const def=document.createElement('option');def.value='';def.textContent='System English voice';$('voice').append(def);for(const voice of voices.filter(v=>/^en(?:-|_)/i.test(v.lang))){const opt=document.createElement('option');opt.value=voice.voiceURI;opt.textContent=voice.name+' · '+voice.lang;$('voice').append(opt);}if([...$('voice').options].some(o=>o.value===selected))$('voice').value=selected;}
+$('retry-save').textContent='Retry saving';
+$('retry-save').addEventListener('click',()=>void retrySaving());$('reload-position').addEventListener('click',()=>void reloadSavedPosition());
+window.addEventListener('online',()=>{if(user)void retrySaving();});
+window.addEventListener('beforeunload',event=>{
+ if(user&&(pendingSaves.size||pendingCheckpoint||checkpointTask)){event.preventDefault();event.returnValue='';}
+});
+function loadVoices(){const selected=$('voice').value;const voices=globalThis.speechSynthesis?.getVoices().length?globalThis.speechSynthesis.getVoices():[];$('voice').replaceChildren();const def=document.createElement('option');def.value='';def.textContent='System English voice';$('voice').append(def);for(const voice of voices.filter(v=>/^en(?:-|_)/i.test(v.lang))){const opt=document.createElement('option');opt.value=voice.voiceURI;opt.textContent=voice.name+' · '+voice.lang;$('voice').append(opt);}if([...$('voice').options].some(o=>o.value===selected))$('voice').value=selected;}
 function read(text){if(!globalThis.speechSynthesis||!text||/\p{Script=Arabic}/u.test(text))return;stopReading();const voice=speechSynthesis.getVoices().find(v=>v.voiceURI===$('voice').value)||speechSynthesis.getVoices().find(v=>/^en[-_]/i.test(v.lang));const utterance=new SpeechSynthesisUtterance(text);utterance.lang=voice?.lang||'en-US';if(voice)utterance.voice=voice;utterance.onerror=()=>notice('Reading stopped or is unavailable on this device.');speechSynthesis.speak(utterance);}
 $('read-question').addEventListener('click',()=>read(currentQuestion?.text));$('read-explanation').addEventListener('click',()=>read(history[position]?.reply?.originalExplanationAvailable?history[position].reply.explanation:''));$('stop-reading').addEventListener('click',stopReading);
 globalThis.speechSynthesis?.addEventListener('voiceschanged',loadVoices);loadVoices();
