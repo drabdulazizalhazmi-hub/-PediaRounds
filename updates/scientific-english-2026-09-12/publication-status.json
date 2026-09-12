@@ -1,0 +1,30 @@
+{
+  "status": "source_saved_publication_blocked",
+  "checkedOn": "2026-09-12",
+  "site": "https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site",
+  "siteSourceCommit": "2a7a6f140ed4b816270044e6d1a6ca31f023ead6",
+  "lastObservedPublishedVersion": 89,
+  "lastObservedPublishedCommit": "d684093bcca0593b31d4a86616344ed03fe45858",
+  "newVersionSaved": false,
+  "sourceArchiveValidated": true,
+  "archiveSizeBytes": 260146852,
+  "uploadAttempts": 2,
+  "blocker": "The native Sites archive upload timed out after 60 seconds on both attempts. Version history was reconciled after the failures; no new version was created.",
+  "validation": {
+    "targetedTestsPassed": 22,
+    "typeScriptPassed": true,
+    "productionBuildPassed": true,
+    "githubAuditPassed": true
+  },
+  "languageScope": {
+    "newExactTranslations": 76,
+    "totalTranslationEntries": 131,
+    "primary2024and2025EnglishQuestions": 277,
+    "newlyTranslatedPrimary2024and2025": 64,
+    "pdfSodiumQuestionRecords": 5
+  },
+  "remaining": "Whole-platform language completion and supplemental discussions remain unfinished. See the private source audit for exact remaining record IDs.",
+  "renderChanged": false,
+  "githubPR": 25,
+  "nextStep": "Resume native publication of the exact pushed Site source when archive upload is available. Do not deploy an older version or remove protected media to reduce the upload."
+}
