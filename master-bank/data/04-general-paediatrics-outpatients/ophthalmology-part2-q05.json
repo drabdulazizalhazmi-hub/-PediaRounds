@@ -1,29 +1,98 @@
 [
   {
-    "id":"part2-ophthalmology-q05",
-    "module":"general-paediatrics-outpatients",
-    "specialty":"Ophthalmology",
-    "topic":"Ophthalmology",
-    "subtopic":"Retinoblastoma and second malignancy risk",
-    "yearTags":[2018],
-    "examPart":"Part II",
-    "stemEn":"A source image shows leukocoria, most likely retinoblastoma. This patient is at increased risk of developing which other tumor?",
-    "options":[{"key":"A","text":"Osteosarcoma"}],
-    "recalledAnswer":"A",
-    "verifiedAnswer":null,
-    "answerConfidence":"low",
-    "explanationAr":"مفتاح المصدر A: Osteosarcoma. يشرح أن hereditary retinoblastoma المرتبط بـ germline RB1 variants يزيد خطر subsequent primary tumors، ومنها soft-tissue sarcomas وosteosarcoma.",
-    "incorrectOptionsAr":"لم يحفظ المصدر خيارات أخرى لهذا السؤال، لذلك لم تُختلق بدائل.",
-    "clinicalPearl":"Hereditary retinoblastoma carries a source-described risk of second primary sarcomas including osteosarcoma.",
-    "image":{"requiredForQuestion":true,"sourceRef":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026; Ophthalmology Q5; physical PDF page 653","assetPath":null,"bundleAssetPaths":["master-bank/assets/derm-oph-20260907/p653-x4993.jpeg"],"status":"needs_review","captionEn":"Original leukocoria image is in the source bundle; rights/clinical review pending.","captionAr":"صورة leukocoria الأصلية موجودة في الحزمة وتنتظر مراجعة الحقوق والمراجعة السريرية."},
-    "assetIds":["part2-ophthalmology-q05-p653-x4993"],
-    "tts":{"enabled":true,"language":"en","text":"A source image shows leukocoria, most likely retinoblastoma. This patient is at increased risk of developing which other tumor? Option A. Osteosarcoma."},
-    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026","part":"Part II","page":653,"questionNumber":"Ophthalmology Q5","notes":"Part II 2018. Only one option is preserved; original image asset identified in source bundle."}],
-    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Recall book cites UpToDate; independent verification pending."},
-    "duplicateOf":null,
-    "reviewStatus":"incomplete_recall",
-    "publishable":false,
-    "blockers":["incomplete_recall","clinical_verification_pending","image_in_bundle_not_repository","image_rights_and_clinical_review_pending"],
-    "contentType":"mcq_draft"
+    "id": "part2-ophthalmology-q05",
+    "module": "general-paediatrics-outpatients",
+    "specialty": "Ophthalmology",
+    "topic": "Ophthalmology",
+    "subtopic": "Retinoblastoma and second malignancy risk",
+    "yearTags": [
+      2018
+    ],
+    "examPart": "Part II",
+    "stemEn": "A source image shows leukocoria, most likely retinoblastoma. This patient is at increased risk of developing which other tumor?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Osteosarcoma"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "low",
+    "explanationAr": "مفتاح المصدر A: Osteosarcoma. يشرح أن hereditary retinoblastoma المرتبط بـ germline RB1 variants يزيد خطر subsequent primary tumors، ومنها soft-tissue sarcomas وosteosarcoma.",
+    "incorrectOptionsAr": "لم يحفظ المصدر خيارات أخرى لهذا السؤال، لذلك لم تُختلق بدائل.",
+    "clinicalPearl": "Hereditary retinoblastoma carries a source-described risk of second primary sarcomas including osteosarcoma.",
+    "image": {
+      "requiredForQuestion": true,
+      "sourceRef": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026; Ophthalmology Q5; physical PDF page 653",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p653-x4993.jpeg",
+      "bundleAssetPaths": [
+        "master-bank/assets/derm-oph-20260907/p653-x4993.jpeg"
+      ],
+      "status": "needs_review",
+      "captionEn": "Original source image for this question.",
+      "captionAr": "صورة leukocoria الأصلية موجودة في الحزمة وتنتظر مراجعة الحقوق والمراجعة السريرية.",
+      "assetPaths": [
+        "master-bank/assets/derm-oph-20260907/p653-x4993.jpeg"
+      ],
+      "restorationVerifiedBySha256": true,
+      "publicationRights": "not_verified"
+    },
+    "assetIds": [
+      "part2-ophthalmology-q05-p653-x4993"
+    ],
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A source image shows leukocoria, most likely retinoblastoma. This patient is at increased risk of developing which other tumor? Option A. Osteosarcoma."
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection, 4th Edition, 1 May 2026",
+        "part": "Part II",
+        "page": 653,
+        "questionNumber": "Ophthalmology Q5",
+        "notes": "Part II 2018. Only one option is preserved; original image asset identified in source bundle."
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Recall book cites UpToDate; independent verification pending."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "incomplete_recall",
+    "publishable": false,
+    "blockers": [
+      "incomplete_recall",
+      "clinical_verification_pending",
+      "image_in_bundle_not_repository",
+      "image_rights_and_clinical_review_pending"
+    ],
+    "contentType": "mcq_draft",
+    "sourceExplanationEn": "The genetic abnormality that causes hereditary retinoblastoma (germline pathogenic variants of the RB1 \ngene) is also associated with an increased risk of developing subsequent primary tumors. Among these \ntumors, approximately 60 percent are soft tissue sarcomas and osteosarcoma. [UpToDate]",
+    "sourceExplanationProvenance": {
+      "type": "extracted_original_source",
+      "sourcePdf": "master-bank/sources/original-pdfs/Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourcePages": [
+        653,
+        654
+      ],
+      "sourceQuestionId": "part2-ophthalmology-q05",
+      "independentlyClinicallyVerified": false,
+      "sha256": "7093facfb2c4a3bda069c3c0360652b219308bcc49094adee1faa13cd9c30780"
+    },
+    "unrestoredSourceAssetIds": [],
+    "restoredSourceAssets": [
+      {
+        "path": "master-bank/assets/derm-oph-20260907/p653-x4993.jpeg",
+        "role": "question",
+        "displayBeforeAnswer": true,
+        "sha256": "fed46d5356d603cfcb5aaa2fe6700f12f61a4e065472fbc2e52ef4b4fa96ffaf",
+        "sourcePage": 653
+      }
+    ]
   }
 ]
