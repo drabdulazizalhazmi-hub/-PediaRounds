@@ -1,0 +1,28 @@
+name: Read-only readiness source snapshot
+on:
+  push:
+    branches: ['chore/readiness-source-sync-2026-09-12']
+    paths: ['.github/workflows/readiness-source-snapshot.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: effd2ab2ac57a55da451ffb2797e21d74fa0202a
+          persist-credentials: false
+      - name: Record exact checked-out revision
+        run: git rev-parse HEAD > deployment/render/source-snapshot-revision.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: readiness-sync-source-effd2ab
+          retention-days: 1
+          if-no-files-found: error
+          path: |
+            deployment/render/
+            master-bank/data/
+            master-bank/assets/
+            master-bank/sources/recovered-study-images.json
