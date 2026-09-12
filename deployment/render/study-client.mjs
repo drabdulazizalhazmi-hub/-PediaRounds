@@ -2,7 +2,7 @@ const $=id=>document.getElementById(id);
 const IDLE=600000;
 let user=null,epoch=0,catalog=null,progress={done:[],seen:[]},checkpointRevision=0,checkpointBlocked=false;
 let history=[],position=-1,pool=[],cursor=0,freshCount=0,reviews=[],currentQuestion=null,loading=false;
-let lastActivity=Date.now(),lastRefresh=Date.now(),refreshPromise=null,checkpointBusy=false,pendingCheckpoint=null;
+let lastActivity=Date.now(),lastRefresh=Date.now(),refreshPromise=null,checkpointTask=null,pendingCheckpoint=null;
 const pendingSaves=new Map(),controllers=new Set();
 const messages={sign_in_required:'Please sign in.',authentication_failed:'Sign-in was not accepted. Check your email/password and email confirmation.',email_confirmation_required:'Confirm your email, then return here and sign in.',invalid_signup:'Enter a valid email and a password of at least 10 characters.',invalid_credentials:'Enter your email and password.',external_backend_not_configured:'The external authentication service is not configured.',auth_unavailable:'The sign-in service is unavailable. Please retry.',rate_limited:'Too many requests. Please wait a minute and retry.',same_origin_required:'This request was blocked. Open this page directly and retry.',checkpoint_conflict:'Another session saved a newer position. Reload the saved position before continuing to save.',backend_unavailable:'Account storage is unavailable. Your progress has not been confirmed as saved.'};
 const notice=text=>{$('status').textContent=text;};
@@ -27,30 +27,39 @@ async function api(action,method='GET',body){
 }
 function stopReading(){globalThis.speechSynthesis?.cancel();}
 function clearWorkspace(){
- epoch++;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;history=[];reviews=[];pool=[];position=-1;currentQuestion=null;pendingSaves.clear();pendingCheckpoint=null;checkpointBlocked=false;checkpointRevision=0;
- $('workspace').hidden=true;$('logout').hidden=true;$('login').hidden=false;$('stem').textContent='';$('explanation').textContent='';$('options').replaceChildren();$('references').replaceChildren();$('password').value='';
+ epoch++;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;progress={done:[],seen:[]};history=[];reviews=[];pool=[];position=-1;currentQuestion=null;loading=false;pendingSaves.clear();pendingCheckpoint=null;checkpointTask=null;checkpointBlocked=false;checkpointRevision=0;
+ $('workspace').hidden=true;$('logout').hidden=true;$('login').hidden=false;
+ for(const id of ['stem','explanation','source-key','result','validation-note','coverage','progress-count','save-status'])$(id).textContent='';
+ $('options').replaceChildren();$('references').replaceChildren();$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;
 }
 async function signOut(message='Signed out.'){
  try{await refreshPromise;}catch{}clearWorkspace();
  try{await raw('signout','POST',{});}catch{}notice(message);
 }
-function correctIDs(){return new Set((progress.done||[]).filter(r=>r.correct===true).map(r=>r.questionId));}
+function correctIDs(){
+ const ids=new Set((progress.done||[]).filter(r=>r.correct===true).map(r=>r.questionId));
+ for(const [id,correct] of pendingSaves)if(correct===true)ids.add(id);
+ return ids;
+}
 function filtered(){const module=$('module').value,review=$('mode').value==='review';return (catalog?.items||[]).filter(q=>(!module||q.module===module)&&q.reviewOnly===review);}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const n=new Uint32Array(1);crypto.getRandomValues(n);const j=n[0]%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
 function updateCounters(){
- const done=correctIDs(),items=filtered();$('counter').textContent='Question '+(position+1)+' / '+items.length+' in this set';
- $('progress-count').textContent=items.filter(q=>!done.has(q.id)).length+' not yet correct · '+catalog.summary.questionCount+' repository records';
+ const done=correctIDs(),items=filtered(),current=items.findIndex(q=>q.id===history[position]?.id)+1;
+ // The set index is stable; revisiting a wrong answer must not exceed the bank total.
+ $('counter').textContent='Question '+current+' / '+items.length+' in this set · Session item '+Math.max(0,position+1);
+ $('progress-count').textContent=items.filter(q=>!done.has(q.id)).length+' not yet correct · '+(catalog?.summary.questionCount||0)+' repository records';
  $('previous').disabled=loading||position<=0;$('next').disabled=loading;
 }
 function lock(value){loading=value;for(const id of ['submit','module','mode','restart'])$(id).disabled=value;updateCounters();}
 async function savePosition(){
  if(!user||position<0||checkpointBlocked)return;
  pendingCheckpoint={schema:'render-study-v1',module:$('module').value,mode:$('mode').value,questionId:history[position].id,freshCount,reviewQueue:reviews.slice(0,40)};
- if(checkpointBusy)return;checkpointBusy=true;const ownEpoch=epoch;
- try{while(pendingCheckpoint&&ownEpoch===epoch&&!checkpointBlocked){const state=pendingCheckpoint;pendingCheckpoint=null;
-  try{const saved=await api('checkpoint','POST',{expectedRevision:checkpointRevision,state});if(ownEpoch!==epoch)return;checkpointRevision=saved.revision;}
-  catch(e){if(ownEpoch!==epoch)return;pendingCheckpoint=null;if(e.status===409){checkpointBlocked=true;$('reload-position').hidden=false;}notice(errorMessage(e));break;}
- }}finally{checkpointBusy=false;}
+ if(checkpointTask)return;
+ const task=Symbol('checkpoint'),ownEpoch=epoch;checkpointTask=task;
+ try{while(pendingCheckpoint&&ownEpoch===epoch&&checkpointTask===task&&!checkpointBlocked){const state=pendingCheckpoint;pendingCheckpoint=null;
+  try{const saved=await api('checkpoint','POST',{expectedRevision:checkpointRevision,state});if(ownEpoch!==epoch||checkpointTask!==task)return;checkpointRevision=saved.revision;}
+  catch(e){if(ownEpoch!==epoch||checkpointTask!==task)return;pendingCheckpoint=null;if(e.status===409){checkpointBlocked=true;$('reload-position').hidden=false;}notice(errorMessage(e));break;}
+ }}finally{if(checkpointTask===task)checkpointTask=null;}
 }
 function showFeedback(slot){
  const reply=slot.reply;$('feedback').hidden=!reply;if(!reply)return;
@@ -133,6 +142,7 @@ $('submit').addEventListener('click',async()=>{
  try{slot.wasWrong=(progress.done||[]).some(r=>r.questionId===slot.id&&r.correct===false);const reply=await api('answer','POST',{id:slot.id,selectedIndex:slot.selected});if(ownEpoch!==epoch)return;slot.reply=reply;
   if(reply.correct===false&&!reviews.some(r=>r.id===slot.id))reviews.push({id:slot.id,after:freshCount+3+Math.floor(Math.random()*3)});
   pendingSaves.set(slot.id,reply.correct);showFeedback(slot);$('options').querySelectorAll('input').forEach(input=>input.disabled=true);await persist();
+  if(ownEpoch===epoch)void savePosition();
  }catch(e){if(ownEpoch===epoch)notice(errorMessage(e));}finally{if(ownEpoch===epoch&&user){lock(false);$('submit').disabled=!!slot.reply;}}
 });
 $('next').addEventListener('click',()=>void next());$('previous').addEventListener('click',()=>{if(!loading&&position>0){position--;void display();}});
