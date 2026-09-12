@@ -1,0 +1,1356 @@
+{
+  "schemaVersion": 1,
+  "figures": [
+    {
+      "id": "part2-derm-q01-p637-x4895",
+      "questionIds": [
+        "part2-derm-q01"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p637-x4895.jpeg",
+      "sha256": "0f03a48c7c2410e713cf0ba51c95573d02afb240e31fbb2639936ddb25bbecb5",
+      "width": 392,
+      "height": 185,
+      "mimeType": "image/jpeg",
+      "sourcePage": 637,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4895,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 637",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q03-p638-x4902",
+      "questionIds": [
+        "part2-derm-q03"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p638-x4902.jpeg",
+      "sha256": "aeccc38f8c6e625cc7aef9f84500cb8966f9e497df517e06c31cdc5c9e629a30",
+      "width": 258,
+      "height": 195,
+      "mimeType": "image/jpeg",
+      "sourcePage": 638,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4902,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 638",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q04-p638-x4903",
+      "questionIds": [
+        "part2-derm-q04"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p638-x4903.jpeg",
+      "sha256": "6908efea8bc8fdbdde3caad352a0e58405ab45ef1aaa77a9c3df4c80e14cb79f",
+      "width": 102,
+      "height": 72,
+      "mimeType": "image/jpeg",
+      "sourcePage": 638,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4903,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 638",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q04-p638-x4904",
+      "questionIds": [
+        "part2-derm-q04"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p638-x4904.jpeg",
+      "sha256": "eab2a39d731c97eb9ee82290e3f3585427f6d3f422dc56ef9d099524c7276ce4",
+      "width": 185,
+      "height": 153,
+      "mimeType": "image/jpeg",
+      "sourcePage": 638,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4904,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 638",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q05-p639-x4910",
+      "questionIds": [
+        "part2-derm-q05"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p639-x4910.jpeg",
+      "sha256": "2c7dcc753872e974a3c4b68b0e966ee2aaccc71687c5a1454b64dac17e360395",
+      "width": 304,
+      "height": 166,
+      "mimeType": "image/jpeg",
+      "sourcePage": 639,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4910,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 639",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q05-p639-x4911",
+      "questionIds": [
+        "part2-derm-q05"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p639-x4911.jpeg",
+      "sha256": "a6efbd52e30f3c0f41d80a565f960b3110f2dd564b2a34925b7acaa4e4908b34",
+      "width": 296,
+      "height": 203,
+      "mimeType": "image/jpeg",
+      "sourcePage": 639,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4911,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 639",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q05-p639-x4908",
+      "questionIds": [
+        "part2-derm-q05"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p639-x4908.jpeg",
+      "sha256": "019b57365d08c1e9a8ae358b6af152ae9427cecab77271a8ff8874a47ba7755e",
+      "width": 874,
+      "height": 383,
+      "mimeType": "image/jpeg",
+      "sourcePage": 639,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4908,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 639",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q05-p639-x4909",
+      "questionIds": [
+        "part2-derm-q05"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p639-x4909.png",
+      "sha256": "43412205c4f1d8b790fe5134da46b521190d4d5553a9f7c131dcccf3fd0f6353",
+      "width": 1132,
+      "height": 452,
+      "mimeType": "image/png",
+      "sourcePage": 639,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4909,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 639",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q06-p640-x4917",
+      "questionIds": [
+        "part2-derm-q06"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p640-x4917.jpeg",
+      "sha256": "c088f13675526d3297249e2005467fc97726a331ae5ff10f23370b2f4ff068d2",
+      "width": 162,
+      "height": 219,
+      "mimeType": "image/jpeg",
+      "sourcePage": 640,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4917,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 640",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q07-p640-x4918",
+      "questionIds": [
+        "part2-derm-q07"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p640-x4918.jpeg",
+      "sha256": "c28f98ec50cda06cc30084e8419f674b3582fcef4ae7aebed13639c573373e25",
+      "width": 308,
+      "height": 173,
+      "mimeType": "image/jpeg",
+      "sourcePage": 640,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4918,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 640",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q07-p640-x4919",
+      "questionIds": [
+        "part2-derm-q07"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p640-x4919.jpeg",
+      "sha256": "52183c1acef7755e6a9d15ec873e8a6870bfa038baf9ed1cdd23ba965a04cbd1",
+      "width": 154,
+      "height": 92,
+      "mimeType": "image/jpeg",
+      "sourcePage": 640,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4919,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 640",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q08-p641-x4925",
+      "questionIds": [
+        "part2-derm-q08"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p641-x4925.jpeg",
+      "sha256": "64b17e06eb6c7e3b11a3ec878e80417dec16fe07f48751cca0544d26fb2b3999",
+      "width": 180,
+      "height": 120,
+      "mimeType": "image/jpeg",
+      "sourcePage": 641,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4925,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 641",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q08-p641-x4924",
+      "questionIds": [
+        "part2-derm-q08"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p641-x4924.jpeg",
+      "sha256": "9a7e8ba3430b5ac696f7ebbb572b26c728be3d974d25578ca623f8b1506e7924",
+      "width": 621,
+      "height": 403,
+      "mimeType": "image/jpeg",
+      "sourcePage": 641,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4924,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 641",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q11-p643-x4933",
+      "questionIds": [
+        "part2-derm-q11"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p643-x4933.jpeg",
+      "sha256": "8969a166a48f4fa407c29b7f70bda876431b8dbae904f2decd7f59184c21a5c3",
+      "width": 701,
+      "height": 279,
+      "mimeType": "image/jpeg",
+      "sourcePage": 643,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4933,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 643",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q11-p644-x4937",
+      "questionIds": [
+        "part2-derm-q11"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p644-x4937.jpeg",
+      "sha256": "ff0a9199e1abdbf2d497e0088e0276852aacd63911c421fbf9b11a9cceb3c8ca",
+      "width": 719,
+      "height": 146,
+      "mimeType": "image/jpeg",
+      "sourcePage": 644,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4937,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 644",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q12-p644-x4938",
+      "questionIds": [
+        "part2-derm-q12"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p644-x4938.jpeg",
+      "sha256": "50536268b6ffe8b1b16adb0a32225d84a47473bebc8f2e211fa6d616ffceb6e1",
+      "width": 282,
+      "height": 176,
+      "mimeType": "image/jpeg",
+      "sourcePage": 644,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4938,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 644",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q14-p645-x4945",
+      "questionIds": [
+        "part2-derm-q14"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p645-x4945.png",
+      "sha256": "c6bcb2f83e2c92dd52b1cf97094a0ff2ae8b8245b6587402b6abcb4ea5a5aff0",
+      "width": 319,
+      "height": 237,
+      "mimeType": "image/png",
+      "sourcePage": 645,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4945,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 645",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q17-p647-x4958",
+      "questionIds": [
+        "part2-derm-q17"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p647-x4958.jpeg",
+      "sha256": "4dc569afb4eb8cbe2fce76a4c9634997bb3a5b64d1c0f9ab8563531351a95a2e",
+      "width": 745,
+      "height": 315,
+      "mimeType": "image/jpeg",
+      "sourcePage": 647,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4958,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 647",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q18-p648-x4962",
+      "questionIds": [
+        "part2-derm-q18"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p648-x4962.jpeg",
+      "sha256": "8ef09e5861f80f494e6be3a7853283b14df7ffeb45f38fa24a9872c56fa715fe",
+      "width": 220,
+      "height": 184,
+      "mimeType": "image/jpeg",
+      "sourcePage": 648,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4962,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 648",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q20-p649-x4967",
+      "questionIds": [
+        "part2-derm-q20"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p649-x4967.jpeg",
+      "sha256": "80ee640fea9df51f1c92608052c953580f991107bbe782cb1d181018d5efabce",
+      "width": 132,
+      "height": 124,
+      "mimeType": "image/jpeg",
+      "sourcePage": 649,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4967,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 649",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q20-p649-x4968",
+      "questionIds": [
+        "part2-derm-q20"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p649-x4968.jpeg",
+      "sha256": "07ea2309e906afc1922b32a4cac92471b345e9333ce6761e81fac6a1f58e0b4a",
+      "width": 171,
+      "height": 174,
+      "mimeType": "image/jpeg",
+      "sourcePage": 649,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4968,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 649",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q21-p649-x4969",
+      "questionIds": [
+        "part2-derm-q21"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p649-x4969.jpeg",
+      "sha256": "6c09d59c65c9c84341a71b3d10bd80a012012a2ffaaa247f9795448a115fae71",
+      "width": 251,
+      "height": 162,
+      "mimeType": "image/jpeg",
+      "sourcePage": 649,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4969,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 649",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q21-p649-x4970",
+      "questionIds": [
+        "part2-derm-q21"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p649-x4970.jpeg",
+      "sha256": "fce91af683e8d041f977a5dc0b2ad0a43530baef2d4e569562549b6c902a5447",
+      "width": 148,
+      "height": 119,
+      "mimeType": "image/jpeg",
+      "sourcePage": 649,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4970,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 649",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q22-p650-x4974",
+      "questionIds": [
+        "part2-derm-q22"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p650-x4974.jpeg",
+      "sha256": "4e7cbe116b5df7f9b6d345524aa2e22fa8232cfdc5f7a5dfb2d25c1c549d4b92",
+      "width": 124,
+      "height": 102,
+      "mimeType": "image/jpeg",
+      "sourcePage": 650,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4974,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 650",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-derm-q22-p650-x4975",
+      "questionIds": [
+        "part2-derm-q22"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p650-x4975.jpeg",
+      "sha256": "735b2c235cf09b418c4e8b65b7435a7ff7ac51d1272bfaa4be6d4075a6487a31",
+      "width": 73,
+      "height": 63,
+      "mimeType": "image/jpeg",
+      "sourcePage": 650,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4975,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 650",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ophthalmology-q03-p653-x4992",
+      "questionIds": [
+        "part2-ophthalmology-q03"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p653-x4992.jpeg",
+      "sha256": "4c4dcbbd4614802461335f78bb39dff87d7f006fc2b5eb51210abf2158c67569",
+      "width": 341,
+      "height": 137,
+      "mimeType": "image/jpeg",
+      "sourcePage": 653,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4992,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 653",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ophthalmology-q05-p653-x4993",
+      "questionIds": [
+        "part2-ophthalmology-q05"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p653-x4993.jpeg",
+      "sha256": "fed46d5356d603cfcb5aaa2fe6700f12f61a4e065472fbc2e52ef4b4fa96ffaf",
+      "width": 363,
+      "height": 97,
+      "mimeType": "image/jpeg",
+      "sourcePage": 653,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4993,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 653",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ophthalmology-q10-p656-x5003",
+      "questionIds": [
+        "part2-ophthalmology-q10"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p656-x5003.jpeg",
+      "sha256": "805d55785de98e21c97235f7c8da72586c89a8f721fe9fef1c6cc9397cf38667",
+      "width": 153,
+      "height": 159,
+      "mimeType": "image/jpeg",
+      "sourcePage": 656,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5003,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 656",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ophthalmology-q10-p657-x5008",
+      "questionIds": [
+        "part2-ophthalmology-q10"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p657-x5008.jpeg",
+      "sha256": "89c38c79ff8e3631ecfe2a0ec2572a964dc0598726e7389950ec59d6474a364d",
+      "width": 956,
+      "height": 299,
+      "mimeType": "image/jpeg",
+      "sourcePage": 657,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5008,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 657",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ophthalmology-q10-p657-x5009",
+      "questionIds": [
+        "part2-ophthalmology-q10"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/derm-oph-20260907/p657-x5009.jpeg",
+      "sha256": "562ca925229f6e88980de38f9b328dc33bffabf7f2aa9be2f3938ec71f85cfbf",
+      "width": 887,
+      "height": 227,
+      "mimeType": "image/jpeg",
+      "sourcePage": 657,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5009,
+      "priorManifest": "derm-oph-20260907-image-manifest.json",
+      "caption": "Original source figure - page 657",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p458-x3894",
+      "questionIds": [
+        "part2-neo-q05"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0458-x3894.jpeg",
+      "sha256": "c9bdde58267b59cc4a0f66a840e01ac53e956b3cdd11b5a6742f79098e16beab",
+      "width": 600,
+      "height": 600,
+      "mimeType": "image/jpeg",
+      "sourcePage": 458,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3894,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 458",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p459-x3899",
+      "questionIds": [
+        "part2-neo-q06"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0459-x3899.png",
+      "sha256": "0cfca9fedc3b223a136007504b9576657a3cc931955a2153fc38ef72ca2e904f",
+      "width": 770,
+      "height": 204,
+      "mimeType": "image/png",
+      "sourcePage": 459,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3899,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 459",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p460-x3903",
+      "questionIds": [
+        "part2-neo-q07"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0460-x3903.jpeg",
+      "sha256": "f9da723494660c0e23229e438e18d05fae7ec146f22ca5b3cb31d0eaf23d84ed",
+      "width": 604,
+      "height": 389,
+      "mimeType": "image/jpeg",
+      "sourcePage": 460,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3903,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 460",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p460-x3904",
+      "questionIds": [
+        "part2-neo-q07"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0460-x3904.jpeg",
+      "sha256": "ff32e15dfac97cdc3d18eb0d2e035e1812ae799786edba59b6270072558b698c",
+      "width": 288,
+      "height": 216,
+      "mimeType": "image/jpeg",
+      "sourcePage": 460,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3904,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 460",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p460-x3905",
+      "questionIds": [
+        "part2-neo-q07"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0460-x3905.jpeg",
+      "sha256": "e083a4b23f549a98edc7446f3aa339a7f75199a508b15ce370cfc82b14589607",
+      "width": 210,
+      "height": 173,
+      "mimeType": "image/jpeg",
+      "sourcePage": 460,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3905,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 460",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p460-x3906",
+      "questionIds": [
+        "part2-neo-q07"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0460-x3906.jpeg",
+      "sha256": "097fa23010a40dda306b6946a722704d7a13d6b6293716c203c96ae314867f22",
+      "width": 179,
+      "height": 151,
+      "mimeType": "image/jpeg",
+      "sourcePage": 460,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3906,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 460",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p460-x3907",
+      "questionIds": [
+        "part2-neo-q07"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0460-x3907.jpeg",
+      "sha256": "c3ad7553a68dadd9513f37315fca820a9b4a6f13e5499430720603a23eef3eff",
+      "width": 131,
+      "height": 101,
+      "mimeType": "image/jpeg",
+      "sourcePage": 460,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3907,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 460",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p460-x3908",
+      "questionIds": [
+        "part2-neo-q07"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0460-x3908.jpeg",
+      "sha256": "a14218c5b58ee0c7e8d0a138bff3a8b7c5e3a2844fc302a46aa24964c969cc1c",
+      "width": 152,
+      "height": 138,
+      "mimeType": "image/jpeg",
+      "sourcePage": 460,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3908,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 460",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p464-x3923",
+      "questionIds": [
+        "part2-neo-q14"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0464-x3923.jpeg",
+      "sha256": "e97b7d666911a50a7fd71d6dcc2c690ffbade8e411a5e784b5059e1a5d617dfd",
+      "width": 148,
+      "height": 184,
+      "mimeType": "image/jpeg",
+      "sourcePage": 464,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3923,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 464",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p465-x3931",
+      "questionIds": [
+        "part2-neo-q16"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0465-x3931.jpeg",
+      "sha256": "26c5b02f817c15e1991272820cc9a53e3f88cf7b39577bf0c39d7d827dbf4f76",
+      "width": 174,
+      "height": 250,
+      "mimeType": "image/jpeg",
+      "sourcePage": 465,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3931,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 465",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p466-x3938",
+      "questionIds": [
+        "part2-neo-q18"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0466-x3938.jpeg",
+      "sha256": "6cd0d34313c22fce79ec989a3aad1209ed1d117d39c9284c88d42e19272f8489",
+      "width": 216,
+      "height": 199,
+      "mimeType": "image/jpeg",
+      "sourcePage": 466,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3938,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 466",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p466-x3937",
+      "questionIds": [
+        "part2-neo-q19"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0466-x3937.png",
+      "sha256": "f3bd95100e976b99878c9f03606ed74256d79e3c65720d1240432034992abb9f",
+      "width": 1520,
+      "height": 744,
+      "mimeType": "image/png",
+      "sourcePage": 466,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3937,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 466",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p468-x3951",
+      "questionIds": [
+        "part2-neo-q21"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0468-x3951.png",
+      "sha256": "72e4d64dbc149cb46f4a13887a411defcb322d39a235f934d31f3cf8222d7e26",
+      "width": 825,
+      "height": 342,
+      "mimeType": "image/png",
+      "sourcePage": 468,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3951,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 468",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p468-x3952",
+      "questionIds": [
+        "part2-neo-q21"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0468-x3952.png",
+      "sha256": "f74f00c15cbea047a2d3241c881046587c84ea5adb85543cf98d9038cfcedf01",
+      "width": 1008,
+      "height": 551,
+      "mimeType": "image/png",
+      "sourcePage": 468,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3952,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 468",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p470-x3959",
+      "questionIds": [
+        "part2-neo-q24"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0470-x3959.jpeg",
+      "sha256": "0c2705fa1ccaf2bd2e56c00eb74c90247727ab9cd88a6cb2f7084e72aab3bfd2",
+      "width": 248,
+      "height": 135,
+      "mimeType": "image/jpeg",
+      "sourcePage": 470,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3959,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 470",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p471-x3963",
+      "questionIds": [
+        "part2-neo-q25"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0471-x3963.jpeg",
+      "sha256": "258081e8096c727af7df65ab9f00593b62fadbe20d5300baba89f3adc4770ab8",
+      "width": 264,
+      "height": 286,
+      "mimeType": "image/jpeg",
+      "sourcePage": 471,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3963,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 471",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p471-x3964",
+      "questionIds": [
+        "part2-neo-q25"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0471-x3964.jpeg",
+      "sha256": "1bb365b3564db64d70b4ee0070585d031974722012ac8e9b061b2fd7f97af153",
+      "width": 288,
+      "height": 287,
+      "mimeType": "image/jpeg",
+      "sourcePage": 471,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3964,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 471",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p471-x3965",
+      "questionIds": [
+        "part2-neo-q25"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0471-x3965.jpeg",
+      "sha256": "b4cdb0da81fde3a04291908327ab358cbbe1f9a5e4e45a1f2c7c5bd2b07f84bd",
+      "width": 222,
+      "height": 286,
+      "mimeType": "image/jpeg",
+      "sourcePage": 471,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3965,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 471",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p475-x3984",
+      "questionIds": [
+        "part2-neo-q33"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0475-x3984.jpeg",
+      "sha256": "fc9d2fd7d33ec648c8ede564b781643b1d8bd2136c418f9d92aba6dc8c2510d7",
+      "width": 1153,
+      "height": 955,
+      "mimeType": "image/jpeg",
+      "sourcePage": 475,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3984,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 475",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p476-x3988",
+      "questionIds": [
+        "part2-neo-q34"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0476-x3988.jpeg",
+      "sha256": "0d65d062befb3dbb0964838ffd9086106d6c2e0daed1964d1ff34f198919b666",
+      "width": 720,
+      "height": 541,
+      "mimeType": "image/jpeg",
+      "sourcePage": 476,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3988,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 476",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p477-x3992",
+      "questionIds": [
+        "part2-neo-q35"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0477-x3992.jpeg",
+      "sha256": "45dd0a0cd8958b553355752debf2c7ec6149889e48043c79db15709fc4b3763c",
+      "width": 171,
+      "height": 188,
+      "mimeType": "image/jpeg",
+      "sourcePage": 477,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3992,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 477",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p478-x3996",
+      "questionIds": [
+        "part2-neo-q37"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0478-x3996.jpeg",
+      "sha256": "e3f60087cdd979a57af77824bf2736d53c57a540c15763361c2ac53a56e4a266",
+      "width": 183,
+      "height": 275,
+      "mimeType": "image/jpeg",
+      "sourcePage": 478,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 3996,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 478",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p479-x4000",
+      "questionIds": [
+        "part2-neo-q39"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neonatology/p0479-x4000.jpeg",
+      "sha256": "e72230dc64a6a80c4c4c1b35019ceda7e0611ec54b47798e07ca02ee70b77dc9",
+      "width": 444,
+      "height": 309,
+      "mimeType": "image/jpeg",
+      "sourcePage": 479,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4000,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 479",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p481-x4008",
+      "questionIds": [
+        "part2-neo-q42"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0481-x4008.jpeg",
+      "sha256": "2bcbacea4be38cf9c1ee63cfdbaa87bfcf66912ab36180935ab5aecc27ca67f4",
+      "width": 110,
+      "height": 72,
+      "mimeType": "image/jpeg",
+      "sourcePage": 481,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4008,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 481",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neo-p481-x4009",
+      "questionIds": [
+        "part2-neo-q43"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/neonatology/p0481-x4009.jpeg",
+      "sha256": "1338325519b1e93d26cab10cee61a7f720c97f4ba4e89b857eaec814035af95e",
+      "width": 280,
+      "height": 163,
+      "mimeType": "image/jpeg",
+      "sourcePage": 481,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4009,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 481",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neuro-p483-x4028",
+      "questionIds": [
+        "part2-neuro-q01"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neurology/p0483-x4028.png",
+      "sha256": "a69c93352e26e3fee3a76ed04f0432f622cda7d4e0cb27defc2faf2976e036b8",
+      "width": 550,
+      "height": 355,
+      "mimeType": "image/png",
+      "sourcePage": 483,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4028,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 483",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "neuro-p484-x4032",
+      "questionIds": [
+        "part2-neuro-q02",
+        "part2-neuro-q03"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/neurology/p0484-x4032.png",
+      "sha256": "a4ed847f465f257da8a6566552996f76b61f5b9be3eea29a648952049917849d",
+      "width": 551,
+      "height": 375,
+      "mimeType": "image/png",
+      "sourcePage": 484,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 4032,
+      "priorManifest": "neonatology-neurology-image-manifest.json",
+      "caption": "Original source figure - page 484",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ethics-q01-p666-x5083",
+      "questionIds": [
+        "part2-ethics-q01"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p666-x5083.png",
+      "sha256": "8634bbf84e28e1af75a168129df6dd8c55ab7fbb26de299221d2be7cdf48d181",
+      "width": 1098,
+      "height": 478,
+      "mimeType": "image/png",
+      "sourcePage": 666,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5083,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 666",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ethics-q09-p670-x5108",
+      "questionIds": [
+        "part2-ethics-q09"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p670-x5108.jpeg",
+      "sha256": "b347dd207d91b1ccd29c92ce344e6a54818761ff6147decd0eddf8acfefc2166",
+      "width": 1555,
+      "height": 781,
+      "mimeType": "image/jpeg",
+      "sourcePage": 670,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5108,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 670",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ethics-q11-p671-x5115",
+      "questionIds": [
+        "part2-ethics-q11"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p671-x5115.png",
+      "sha256": "9e9831d6dbff6a0664a1a4ed00865d74cdbcb365d8e5a99c26e9a4c2d2dc8fc4",
+      "width": 892,
+      "height": 252,
+      "mimeType": "image/png",
+      "sourcePage": 671,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5115,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 671",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-ethics-q29-p679-x5168",
+      "questionIds": [
+        "part2-ethics-q29"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p679-x5168.png",
+      "sha256": "cbd6272f8dcaa9180b7bf6dd3966ff82c95fd87e4dca30054fb62cdd8c123b40",
+      "width": 898,
+      "height": 286,
+      "mimeType": "image/png",
+      "sourcePage": 679,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5168,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 679",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q02-p684-x5200",
+      "questionIds": [
+        "part2-research-q02"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p684-x5200.png",
+      "sha256": "71f934b8713bff1bea5cee687b69386cc71d2c63cca5e5d7f839aff7270d2142",
+      "width": 630,
+      "height": 406,
+      "mimeType": "image/png",
+      "sourcePage": 684,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5200,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 684",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q04-p684-x5201",
+      "questionIds": [
+        "part2-research-q04"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p684-x5201.jpeg",
+      "sha256": "0c4e656c9c7368bd8765e98bcaace47b441d99310de03a80626d08fb93838abb",
+      "width": 898,
+      "height": 635,
+      "mimeType": "image/jpeg",
+      "sourcePage": 684,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5201,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 684",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q06-p686-x5212",
+      "questionIds": [
+        "part2-research-q06"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p686-x5212.png",
+      "sha256": "dc6a1c2f31df4a1a8518c8516754af273a60a5236a128641f84571496e62d0df",
+      "width": 814,
+      "height": 374,
+      "mimeType": "image/png",
+      "sourcePage": 686,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5212,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 686",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q06-p686-x5213",
+      "questionIds": [
+        "part2-research-q06"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p686-x5213.jpeg",
+      "sha256": "a4635954374db3110efd87f97258b7818c53c20423cc71badad7106be02772b4",
+      "width": 1114,
+      "height": 632,
+      "mimeType": "image/jpeg",
+      "sourcePage": 686,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5213,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 686",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q07-p687-x5217",
+      "questionIds": [
+        "part2-research-q07"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p687-x5217.png",
+      "sha256": "58b5ba49ea8f43a4ec49cfe27b4b9a4e96c909b24c60d2abae667f75a6e03565",
+      "width": 806,
+      "height": 521,
+      "mimeType": "image/png",
+      "sourcePage": 687,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5217,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 687",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q10-p688-x5223",
+      "questionIds": [
+        "part2-research-q10"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p688-x5223.png",
+      "sha256": "89699475abb7e8c78691303b3e4337a1dfa746ebc558561db82213ac09f7b564",
+      "width": 530,
+      "height": 325,
+      "mimeType": "image/png",
+      "sourcePage": 688,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5223,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 688",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q11-p689-x5228",
+      "questionIds": [
+        "part2-research-q11"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p689-x5228.png",
+      "sha256": "ec3cfc9bb8d57b3174b3db3b748292c778d37ccab811606499d1ed50d794e29c",
+      "width": 1380,
+      "height": 330,
+      "mimeType": "image/png",
+      "sourcePage": 689,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5228,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 689",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q12-p689-x5229",
+      "questionIds": [
+        "part2-research-q12"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p689-x5229.png",
+      "sha256": "ae3861270f918b93b993772386c1d624196788b1c256e847d6c165590fb2ac42",
+      "width": 924,
+      "height": 276,
+      "mimeType": "image/png",
+      "sourcePage": 689,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5229,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 689",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q12-p689-x5230",
+      "questionIds": [
+        "part2-research-q12"
+      ],
+      "phase": "question",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p689-x5230.png",
+      "sha256": "4d7f6c0bc3d38b70b77c062ec5da90a0e56c16a5a229b76551e4fab111c7c5a4",
+      "width": 185,
+      "height": 105,
+      "mimeType": "image/png",
+      "sourcePage": 689,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5230,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 689",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    },
+    {
+      "id": "part2-research-q13-p690-x5234",
+      "questionIds": [
+        "part2-research-q13"
+      ],
+      "phase": "explanation",
+      "assetPath": "master-bank/assets/ethics-research-20260907/p690-x5234.jpeg",
+      "sha256": "2917edc1abf601fa483732bf5bf58efd841f6e392c8f12fb0c60e12e3356219d",
+      "width": 822,
+      "height": 600,
+      "mimeType": "image/jpeg",
+      "sourcePage": 690,
+      "sourceSHA256": "c27467c9992a5fb480fcaeb3d0b05b516678724f16999b03aa93e5773480e632",
+      "sourceXref": 5234,
+      "priorManifest": "ethics-research-20260907-image-manifest.json",
+      "caption": "Original source figure - page 690",
+      "clinicalValidation": "not_claimed",
+      "scoringStatus": "unchanged"
+    }
+  ],
+  "unresolved": []
+}

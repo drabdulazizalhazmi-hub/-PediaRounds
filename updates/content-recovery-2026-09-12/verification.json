@@ -1,0 +1,877 @@
+{
+  "scope": "32 dermatology/ophthalmology records in current GitHub master bank; not the full live bank",
+  "liveSiteModified": false,
+  "clinicalVerificationPerformed": false,
+  "sourcePdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+  "repositoryRecordCount": 1053,
+  "questionIdsPreserved": true,
+  "answerKeysAndReviewStatesPreserved": true,
+  "sourceExplanationsRecovered": [
+    {
+      "id": "part2-derm-q01",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q01-q06-q21-q22.json",
+      "pages": [
+        637
+      ],
+      "characters": 283,
+      "sha256": "530b5e02c7ec35325fe0dba34ab71e7552b4e2d7f733f19bcd86c4adab55766f"
+    },
+    {
+      "id": "part2-derm-q02",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q01-q06-q21-q22.json",
+      "pages": [
+        637
+      ],
+      "characters": 1016,
+      "sha256": "49e1cb043dcf2996c25e015056589dc73b00140899fbb592ab9c3fb437fec0af"
+    },
+    {
+      "id": "part2-derm-q03",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q01-q06-q21-q22.json",
+      "pages": [
+        638
+      ],
+      "characters": 896,
+      "sha256": "c6f53d144288f8028dc3c791feba9a85f54c8a88599784b3aaf572e9f61aed8e"
+    },
+    {
+      "id": "part2-derm-q04",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-closure-q04-q12.json",
+      "pages": [
+        638
+      ],
+      "characters": 466,
+      "sha256": "5c54daae1402aac080be4f3f6eb31fe1e77d8b45f45637ca6378bb911d7bf217"
+    },
+    {
+      "id": "part2-derm-q06",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q01-q06-q21-q22.json",
+      "pages": [
+        639,
+        640
+      ],
+      "characters": 854,
+      "sha256": "871d09b303b9cb01e066dce37c29572330657c8a58267b1184a83bb9af5395de"
+    },
+    {
+      "id": "part2-derm-q07",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        640,
+        641
+      ],
+      "characters": 616,
+      "sha256": "58016834fc8868c851e17c684b222ebb89acecf606a80d9318946d4d969210d9"
+    },
+    {
+      "id": "part2-derm-q08",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        641
+      ],
+      "characters": 264,
+      "sha256": "6c2f04898e039d568f19116b1df18051b4e474db5494d73ce08ff33edf4fea72"
+    },
+    {
+      "id": "part2-derm-q09",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        641,
+        642
+      ],
+      "characters": 953,
+      "sha256": "258e5fdf849111e210e8cf4cf5eeee16772b1ac0bd00ce85f27beebf8a397289"
+    },
+    {
+      "id": "part2-derm-q10",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        642,
+        643
+      ],
+      "characters": 1044,
+      "sha256": "9614e5971dd79d182d0c399509c0ed9efd565ea4559f6b515708fecccf331aad"
+    },
+    {
+      "id": "part2-derm-q11",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        643,
+        644
+      ],
+      "characters": 1233,
+      "sha256": "2d3b5981f538a242881ece7a078e750bcfbf5cbd8747b38e91911e815925e2da"
+    },
+    {
+      "id": "part2-derm-q12",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-closure-q04-q12.json",
+      "pages": [
+        644
+      ],
+      "characters": 772,
+      "sha256": "b31cc16d7b8c2b85790eef46722c9490131340e5b5d20d57f227e748643824c3"
+    },
+    {
+      "id": "part2-derm-q13",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        644,
+        645
+      ],
+      "characters": 648,
+      "sha256": "5f93a5df5ba9f0ddb8b8a6ebcc7e456b4dbfaac1b8183045fa427dd105e56eb6"
+    },
+    {
+      "id": "part2-derm-q14",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        645
+      ],
+      "characters": 1043,
+      "sha256": "4aa561148fb66c1b1a402a98e8acb7e7862e1680ba0fedcc56d90404a92a1427"
+    },
+    {
+      "id": "part2-derm-q15",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        645,
+        646
+      ],
+      "characters": 546,
+      "sha256": "f597534bb9084a1d6409ac83852df2be4f73985138fd3f7eb8d903f6c91504c7"
+    },
+    {
+      "id": "part2-derm-q16",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        646
+      ],
+      "characters": 1531,
+      "sha256": "3c6f729311e6dae29874a492c60c2ab1e8c19b0935c9b67093c1f49250aaa477"
+    },
+    {
+      "id": "part2-derm-q17",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        646,
+        647
+      ],
+      "characters": 1482,
+      "sha256": "708d8a0b1c9f95ce6cecee05f711de3f5a4d7b502ed2dab281f36ff6a3a48563"
+    },
+    {
+      "id": "part2-derm-q18",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        648
+      ],
+      "characters": 364,
+      "sha256": "64a1953d297594b9ce52864a429a0e214635a86b313bb9f36cf7355e303f0e3d"
+    },
+    {
+      "id": "part2-derm-q19",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        648,
+        649
+      ],
+      "characters": 1521,
+      "sha256": "08761bd7fcc2233f41727a85cae6346d9e84037cc50f76937ad05ee5a23ca80c"
+    },
+    {
+      "id": "part2-derm-q20",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+      "pages": [
+        649
+      ],
+      "characters": 570,
+      "sha256": "70cf622ae550faa487617a48201218053e51e5b96943935be13cbf4c5073b82a"
+    },
+    {
+      "id": "part2-derm-q21",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q01-q06-q21-q22.json",
+      "pages": [
+        649,
+        650
+      ],
+      "characters": 413,
+      "sha256": "a8d4491b79cfc79c275defc247941180c9ca1f57cda0f4d7add4848cb1a92409"
+    },
+    {
+      "id": "part2-derm-q22",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q01-q06-q21-q22.json",
+      "pages": [
+        650
+      ],
+      "characters": 572,
+      "sha256": "fbab0be49004962a60f73c3978285a7d04bb8237702b53f818943312aa513030"
+    },
+    {
+      "id": "part2-ophthalmology-q02",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q01-q08.json",
+      "pages": [
+        652,
+        653
+      ],
+      "characters": 1590,
+      "sha256": "ae872bc2f72fae3f7568a0ab74ad57d0a02d298e266ee8d6be9c90f954acbbd1"
+    },
+    {
+      "id": "part2-ophthalmology-q05",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q05.json",
+      "pages": [
+        653,
+        654
+      ],
+      "characters": 292,
+      "sha256": "7093facfb2c4a3bda069c3c0360652b219308bcc49094adee1faa13cd9c30780"
+    },
+    {
+      "id": "part2-ophthalmology-q06",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q01-q08.json",
+      "pages": [
+        654
+      ],
+      "characters": 290,
+      "sha256": "4e6eb43fd35dc89407aa60e223bd0387c82da02a6ee19171a6d7be5ad6df3209"
+    },
+    {
+      "id": "part2-ophthalmology-q07",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q01-q08.json",
+      "pages": [
+        654,
+        655
+      ],
+      "characters": 937,
+      "sha256": "706efd639149d8b638e403092f63ce51be3ea2e1c6bb75913b0199ddc18f695a"
+    },
+    {
+      "id": "part2-ophthalmology-q08",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q01-q08.json",
+      "pages": [
+        655,
+        656
+      ],
+      "characters": 2152,
+      "sha256": "ec85af346f4bf18ecc9e689f8dde6efd10604bc764c3b67a4b708088e5a996ad"
+    },
+    {
+      "id": "part2-ophthalmology-q09",
+      "path": "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q09-q10.json",
+      "pages": [
+        656
+      ],
+      "characters": 1277,
+      "sha256": "5cfa9a7e09673961976609ef0013926a77a0953084447d460952a1c2e30837d4"
+    }
+  ],
+  "linkedSourceExplanationsRecovered": [
+    "part2-ophthalmology-q03"
+  ],
+  "sourceExplanationsStillMissing": [
+    {
+      "id": "part2-derm-q05",
+      "reason": "source_text_missing_or_graphical",
+      "pages": [
+        639
+      ]
+    },
+    {
+      "id": "part2-ophthalmology-q01",
+      "reason": "source_text_missing_or_graphical",
+      "pages": [
+        652
+      ]
+    },
+    {
+      "id": "part2-ophthalmology-q04",
+      "reason": "source_text_missing_or_graphical",
+      "pages": [
+        653
+      ]
+    },
+    {
+      "id": "part2-ophthalmology-q10",
+      "reason": "source_text_missing_or_graphical",
+      "pages": [
+        656,
+        657
+      ]
+    }
+  ],
+  "imagesRecovered": [
+    {
+      "id": "part2-derm-q01-p637-x4895",
+      "questionId": "part2-derm-q01",
+      "role": "question",
+      "sourcePage": 637,
+      "sourceXref": 4895,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p637-x4895.jpeg",
+      "repositoryPath": null,
+      "sha256": "0f03a48c7c2410e713cf0ba51c95573d02afb240e31fbb2639936ddb25bbecb5",
+      "width": 392,
+      "height": 185,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p637-x4895.jpeg",
+      "actualSourceXref": 2406,
+      "bytes": 8962,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q03-p638-x4902",
+      "questionId": "part2-derm-q03",
+      "role": "question",
+      "sourcePage": 638,
+      "sourceXref": 4902,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p638-x4902.jpeg",
+      "repositoryPath": null,
+      "sha256": "aeccc38f8c6e625cc7aef9f84500cb8966f9e497df517e06c31cdc5c9e629a30",
+      "width": 258,
+      "height": 195,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p638-x4902.jpeg",
+      "actualSourceXref": 2410,
+      "bytes": 9782,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q04-p638-x4903",
+      "questionId": "part2-derm-q04",
+      "role": "question",
+      "sourcePage": 638,
+      "sourceXref": 4903,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p638-x4903.jpeg",
+      "repositoryPath": null,
+      "sha256": "6908efea8bc8fdbdde3caad352a0e58405ab45ef1aaa77a9c3df4c80e14cb79f",
+      "width": 102,
+      "height": 72,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p638-x4903.jpeg",
+      "actualSourceXref": 2411,
+      "bytes": 2230,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q04-p638-x4904",
+      "questionId": "part2-derm-q04",
+      "role": "question",
+      "sourcePage": 638,
+      "sourceXref": 4904,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p638-x4904.jpeg",
+      "repositoryPath": null,
+      "sha256": "eab2a39d731c97eb9ee82290e3f3585427f6d3f422dc56ef9d099524c7276ce4",
+      "width": 185,
+      "height": 153,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p638-x4904.jpeg",
+      "actualSourceXref": 2412,
+      "bytes": 4703,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q05-p639-x4910",
+      "questionId": "part2-derm-q05",
+      "role": "question",
+      "sourcePage": 639,
+      "sourceXref": 4910,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p639-x4910.jpeg",
+      "repositoryPath": null,
+      "sha256": "2c7dcc753872e974a3c4b68b0e966ee2aaccc71687c5a1454b64dac17e360395",
+      "width": 304,
+      "height": 166,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p639-x4910.jpeg",
+      "actualSourceXref": 2418,
+      "bytes": 5843,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q05-p639-x4911",
+      "questionId": "part2-derm-q05",
+      "role": "question",
+      "sourcePage": 639,
+      "sourceXref": 4911,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p639-x4911.jpeg",
+      "repositoryPath": null,
+      "sha256": "a6efbd52e30f3c0f41d80a565f960b3110f2dd564b2a34925b7acaa4e4908b34",
+      "width": 296,
+      "height": 203,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p639-x4911.jpeg",
+      "actualSourceXref": 2419,
+      "bytes": 10630,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q05-p639-x4908",
+      "questionId": "part2-derm-q05",
+      "role": "explanation",
+      "sourcePage": 639,
+      "sourceXref": 4908,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p639-x4908.jpeg",
+      "repositoryPath": null,
+      "sha256": "019b57365d08c1e9a8ae358b6af152ae9427cecab77271a8ff8874a47ba7755e",
+      "width": 874,
+      "height": 383,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": false,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p639-x4908.jpeg",
+      "actualSourceXref": 2416,
+      "bytes": 40667,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q06-p640-x4917",
+      "questionId": "part2-derm-q06",
+      "role": "question",
+      "sourcePage": 640,
+      "sourceXref": 4917,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p640-x4917.jpeg",
+      "repositoryPath": null,
+      "sha256": "c088f13675526d3297249e2005467fc97726a331ae5ff10f23370b2f4ff068d2",
+      "width": 162,
+      "height": 219,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p640-x4917.jpeg",
+      "actualSourceXref": 2423,
+      "bytes": 5723,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q07-p640-x4918",
+      "questionId": "part2-derm-q07",
+      "role": "question",
+      "sourcePage": 640,
+      "sourceXref": 4918,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p640-x4918.jpeg",
+      "repositoryPath": null,
+      "sha256": "c28f98ec50cda06cc30084e8419f674b3582fcef4ae7aebed13639c573373e25",
+      "width": 308,
+      "height": 173,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p640-x4918.jpeg",
+      "actualSourceXref": 2424,
+      "bytes": 3954,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q07-p640-x4919",
+      "questionId": "part2-derm-q07",
+      "role": "question",
+      "sourcePage": 640,
+      "sourceXref": 4919,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p640-x4919.jpeg",
+      "repositoryPath": null,
+      "sha256": "52183c1acef7755e6a9d15ec873e8a6870bfa038baf9ed1cdd23ba965a04cbd1",
+      "width": 154,
+      "height": 92,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p640-x4919.jpeg",
+      "actualSourceXref": 2425,
+      "bytes": 3644,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q08-p641-x4925",
+      "questionId": "part2-derm-q08",
+      "role": "question",
+      "sourcePage": 641,
+      "sourceXref": 4925,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p641-x4925.jpeg",
+      "repositoryPath": null,
+      "sha256": "64b17e06eb6c7e3b11a3ec878e80417dec16fe07f48751cca0544d26fb2b3999",
+      "width": 180,
+      "height": 120,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p641-x4925.jpeg",
+      "actualSourceXref": 2430,
+      "bytes": 4484,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q08-p641-x4924",
+      "questionId": "part2-derm-q08",
+      "role": "explanation",
+      "sourcePage": 641,
+      "sourceXref": 4924,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p641-x4924.jpeg",
+      "repositoryPath": null,
+      "sha256": "9a7e8ba3430b5ac696f7ebbb572b26c728be3d974d25578ca623f8b1506e7924",
+      "width": 621,
+      "height": 403,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": false,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p641-x4924.jpeg",
+      "actualSourceXref": 2429,
+      "bytes": 37100,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q11-p643-x4933",
+      "questionId": "part2-derm-q11",
+      "role": "explanation",
+      "sourcePage": 643,
+      "sourceXref": 4933,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p643-x4933.jpeg",
+      "repositoryPath": null,
+      "sha256": "8969a166a48f4fa407c29b7f70bda876431b8dbae904f2decd7f59184c21a5c3",
+      "width": 701,
+      "height": 279,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": false,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p643-x4933.jpeg",
+      "actualSourceXref": 2437,
+      "bytes": 48214,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q11-p644-x4937",
+      "questionId": "part2-derm-q11",
+      "role": "explanation",
+      "sourcePage": 644,
+      "sourceXref": 4937,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p644-x4937.jpeg",
+      "repositoryPath": null,
+      "sha256": "ff0a9199e1abdbf2d497e0088e0276852aacd63911c421fbf9b11a9cceb3c8ca",
+      "width": 719,
+      "height": 146,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": false,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p644-x4937.jpeg",
+      "actualSourceXref": 2441,
+      "bytes": 26553,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q12-p644-x4938",
+      "questionId": "part2-derm-q12",
+      "role": "question",
+      "sourcePage": 644,
+      "sourceXref": 4938,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p644-x4938.jpeg",
+      "repositoryPath": null,
+      "sha256": "50536268b6ffe8b1b16adb0a32225d84a47473bebc8f2e211fa6d616ffceb6e1",
+      "width": 282,
+      "height": 176,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p644-x4938.jpeg",
+      "actualSourceXref": 2442,
+      "bytes": 5512,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q17-p647-x4958",
+      "questionId": "part2-derm-q17",
+      "role": "explanation",
+      "sourcePage": 647,
+      "sourceXref": 4958,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p647-x4958.jpeg",
+      "repositoryPath": null,
+      "sha256": "4dc569afb4eb8cbe2fce76a4c9634997bb3a5b64d1c0f9ab8563531351a95a2e",
+      "width": 745,
+      "height": 315,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": false,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p647-x4958.jpeg",
+      "actualSourceXref": 2454,
+      "bytes": 61338,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q18-p648-x4962",
+      "questionId": "part2-derm-q18",
+      "role": "question",
+      "sourcePage": 648,
+      "sourceXref": 4962,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p648-x4962.jpeg",
+      "repositoryPath": null,
+      "sha256": "8ef09e5861f80f494e6be3a7853283b14df7ffeb45f38fa24a9872c56fa715fe",
+      "width": 220,
+      "height": 184,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p648-x4962.jpeg",
+      "actualSourceXref": 2458,
+      "bytes": 7899,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q20-p649-x4967",
+      "questionId": "part2-derm-q20",
+      "role": "question",
+      "sourcePage": 649,
+      "sourceXref": 4967,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p649-x4967.jpeg",
+      "repositoryPath": null,
+      "sha256": "80ee640fea9df51f1c92608052c953580f991107bbe782cb1d181018d5efabce",
+      "width": 132,
+      "height": 124,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p649-x4967.jpeg",
+      "actualSourceXref": 2462,
+      "bytes": 3685,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q20-p649-x4968",
+      "questionId": "part2-derm-q20",
+      "role": "question",
+      "sourcePage": 649,
+      "sourceXref": 4968,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p649-x4968.jpeg",
+      "repositoryPath": null,
+      "sha256": "07ea2309e906afc1922b32a4cac92471b345e9333ce6761e81fac6a1f58e0b4a",
+      "width": 171,
+      "height": 174,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p649-x4968.jpeg",
+      "actualSourceXref": 2463,
+      "bytes": 6117,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q21-p649-x4969",
+      "questionId": "part2-derm-q21",
+      "role": "question",
+      "sourcePage": 649,
+      "sourceXref": 4969,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p649-x4969.jpeg",
+      "repositoryPath": null,
+      "sha256": "6c09d59c65c9c84341a71b3d10bd80a012012a2ffaaa247f9795448a115fae71",
+      "width": 251,
+      "height": 162,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p649-x4969.jpeg",
+      "actualSourceXref": 2464,
+      "bytes": 13508,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q21-p649-x4970",
+      "questionId": "part2-derm-q21",
+      "role": "question",
+      "sourcePage": 649,
+      "sourceXref": 4970,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p649-x4970.jpeg",
+      "repositoryPath": null,
+      "sha256": "fce91af683e8d041f977a5dc0b2ad0a43530baef2d4e569562549b6c902a5447",
+      "width": 148,
+      "height": 119,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p649-x4970.jpeg",
+      "actualSourceXref": 2465,
+      "bytes": 5050,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q22-p650-x4974",
+      "questionId": "part2-derm-q22",
+      "role": "question",
+      "sourcePage": 650,
+      "sourceXref": 4974,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p650-x4974.jpeg",
+      "repositoryPath": null,
+      "sha256": "4e7cbe116b5df7f9b6d345524aa2e22fa8232cfdc5f7a5dfb2d25c1c549d4b92",
+      "width": 124,
+      "height": 102,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p650-x4974.jpeg",
+      "actualSourceXref": 2469,
+      "bytes": 3534,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-derm-q22-p650-x4975",
+      "questionId": "part2-derm-q22",
+      "role": "question",
+      "sourcePage": 650,
+      "sourceXref": 4975,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p650-x4975.jpeg",
+      "repositoryPath": null,
+      "sha256": "735b2c235cf09b418c4e8b65b7435a7ff7ac51d1272bfaa4be6d4075a6487a31",
+      "width": 73,
+      "height": 63,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p650-x4975.jpeg",
+      "actualSourceXref": 2470,
+      "bytes": 1317,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-ophthalmology-q03-p653-x4992",
+      "questionId": "part2-ophthalmology-q03",
+      "role": "question",
+      "sourcePage": 653,
+      "sourceXref": 4992,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p653-x4992.jpeg",
+      "repositoryPath": null,
+      "sha256": "4c4dcbbd4614802461335f78bb39dff87d7f006fc2b5eb51210abf2158c67569",
+      "width": 341,
+      "height": 137,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p653-x4992.jpeg",
+      "actualSourceXref": 2480,
+      "bytes": 7585,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-ophthalmology-q05-p653-x4993",
+      "questionId": "part2-ophthalmology-q05",
+      "role": "question",
+      "sourcePage": 653,
+      "sourceXref": 4993,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p653-x4993.jpeg",
+      "repositoryPath": null,
+      "sha256": "fed46d5356d603cfcb5aaa2fe6700f12f61a4e065472fbc2e52ef4b4fa96ffaf",
+      "width": 363,
+      "height": 97,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p653-x4993.jpeg",
+      "actualSourceXref": 2481,
+      "bytes": 4857,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-ophthalmology-q10-p656-x5003",
+      "questionId": "part2-ophthalmology-q10",
+      "role": "question",
+      "sourcePage": 656,
+      "sourceXref": 5003,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p656-x5003.jpeg",
+      "repositoryPath": null,
+      "sha256": "805d55785de98e21c97235f7c8da72586c89a8f721fe9fef1c6cc9397cf38667",
+      "width": 153,
+      "height": 159,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": true,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p656-x5003.jpeg",
+      "actualSourceXref": 2491,
+      "bytes": 3489,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-ophthalmology-q10-p657-x5008",
+      "questionId": "part2-ophthalmology-q10",
+      "role": "explanation",
+      "sourcePage": 657,
+      "sourceXref": 5008,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p657-x5008.jpeg",
+      "repositoryPath": null,
+      "sha256": "89c38c79ff8e3631ecfe2a0ec2572a964dc0598726e7389950ec59d6474a364d",
+      "width": 956,
+      "height": 299,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": false,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p657-x5008.jpeg",
+      "actualSourceXref": 2495,
+      "bytes": 42500,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    },
+    {
+      "id": "part2-ophthalmology-q10-p657-x5009",
+      "questionId": "part2-ophthalmology-q10",
+      "role": "explanation",
+      "sourcePage": 657,
+      "sourceXref": 5009,
+      "bundlePath": "master-bank/assets/derm-oph-20260907/p657-x5009.jpeg",
+      "repositoryPath": null,
+      "sha256": "562ca925229f6e88980de38f9b328dc33bffabf7f2aa9be2f3938ec71f85cfbf",
+      "width": 887,
+      "height": 227,
+      "status": "extracted_original_in_bundle",
+      "displayBeforeAnswer": false,
+      "publicationRights": "not_verified",
+      "visualAssociationChecked": true,
+      "path": "master-bank/assets/derm-oph-20260907/p657-x5009.jpeg",
+      "actualSourceXref": 2496,
+      "bytes": 38885,
+      "restoredFromPdfSha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3"
+    }
+  ],
+  "imageManifestEntriesStillMissing": [
+    "part2-derm-q05-p639-x4909",
+    "part2-derm-q14-p645-x4945"
+  ],
+  "imagePublicationRightsVerified": false,
+  "changedDataFiles": [
+    "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-closure-q04-q12.json",
+    "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q01-q06-q21-q22.json",
+    "master-bank/data/04-general-paediatrics-outpatients/dermatology-part2-q07-q20.json",
+    "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q01-q08.json",
+    "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q05.json",
+    "master-bank/data/04-general-paediatrics-outpatients/ophthalmology-part2-q09-q10.json"
+  ]
+}

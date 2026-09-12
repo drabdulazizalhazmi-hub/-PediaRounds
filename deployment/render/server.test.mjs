@@ -104,3 +104,4 @@ test('public status never includes configured image bytes or keys',async t=>{
  assert.doesNotMatch(body,/data:image|base64|PEDIA_Q11_SOURCE_IMAGE/);
  if(process.env.PEDIA_Q11_SOURCE_IMAGE_BASE64)assert.equal(body.includes(process.env.PEDIA_Q11_SOURCE_IMAGE_BASE64),false);
 });
+import './study-images.test.mjs';

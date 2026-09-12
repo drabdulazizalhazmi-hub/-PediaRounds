@@ -32,6 +32,32 @@ const reader=createEnglishReader({onError:code=>{
  notice(code==='not-allowed'?'Tap Read again to allow audio on this device.':'Reading stopped. Tap Read to try again, or choose another English voice.');
 }});
 function stopReading(){reader.stop();}
+function renderFigures(containerID,figures=[]){
+ const container=$(containerID);container.replaceChildren();
+ for(const f of figures){
+  if(!f||typeof f.url!=='string'||!f.url.startsWith('/api/study/image?'))continue;
+  const figure=document.createElement('figure');figure.className='source-figure';
+  const link=document.createElement('a');link.href=f.url;link.target='_blank';link.rel='noopener noreferrer';link.title='Open source figure at full size';
+  const img=document.createElement('img');img.alt=f.alt||'Source figure';img.width=f.width;img.height=f.height;img.decoding='async';img.src=f.url;
+  const caption=document.createElement('figcaption');caption.textContent=(f.caption||'Source figure')+' · Tap to enlarge';
+  const retry=document.createElement('button');retry.type='button';retry.className='secondary compact';retry.textContent='Retry image';retry.hidden=true;
+  img.addEventListener('error',()=>{caption.textContent='Image could not load. Check your connection and retry.';retry.hidden=false;});
+  img.addEventListener('load',()=>{caption.textContent=(f.caption||'Source figure')+' · Tap to enlarge';retry.hidden=true;});
+  retry.addEventListener('click',async()=>{
+   const ownEpoch=epoch,ownView=viewVersion,slot=history[position];if(!user||!slot)return;retry.disabled=true;
+   try{
+    if(f.phase==='explanation'&&slot.reply){
+     const refreshed=await api('answer','POST',{id:slot.id,selectedIndex:slot.selected});
+     if(ownEpoch!==epoch||ownView!==viewVersion)return;
+     slot.reply={...slot.reply,figures:refreshed.figures||[]};showFeedback(slot);
+    }else{img.src=f.url;}
+   }catch(e){if(ownEpoch===epoch&&ownView===viewVersion)notice(errorMessage(e));}
+   finally{retry.disabled=false;}
+  });
+  link.append(img);figure.append(link,caption,retry);container.append(figure);
+ }
+ container.hidden=!container.children.length;
+}
 function updateReadControls(){
  const reply=history[position]?.reply;
  for(const [id,text] of [['read-question',currentQuestion?.text],['read-explanation',reply?.originalExplanationAvailable?reply.explanation:'']]){
@@ -43,7 +69,7 @@ function clearWorkspace(){
  epoch++;viewVersion++;atEnd=false;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;progress={done:[],seen:[]};history=[];reviews=[];pool=[];position=-1;currentQuestion=null;loading=false;pendingSaves.clear();pendingCheckpoint=null;checkpointTask=null;persistTask=null;checkpointFailed=false;checkpointBlocked=false;checkpointRevision=0;
  $('workspace').hidden=true;$('logout').hidden=true;$('login').hidden=false;
  for(const id of ['stem','explanation','source-key','result','validation-note','coverage','progress-count','save-status'])$(id).textContent='';
- $('options').replaceChildren();$('references').replaceChildren();$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;updateReadControls();
+ $('options').replaceChildren();$('references').replaceChildren();renderFigures('question-figures');renderFigures('explanation-figures');$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;updateReadControls();
 }
 async function signOut(message='Signed out.',{automatic=false}={}){
  if(signingOut)return;
@@ -97,7 +123,7 @@ async function savePosition(retryOnly=false){
  }}finally{if(checkpointTask===task){checkpointTask=null;updateSaveControls();}}
 }
 function showFeedback(slot){
- const reply=slot.reply;$('feedback').hidden=!reply;updateReadControls();if(!reply)return;
+ const reply=slot.reply;$('feedback').hidden=!reply;renderFigures('explanation-figures',reply?.figures||[]);updateReadControls();if(!reply)return;
  $('result').dataset.state=reply.correct===true?'correct':reply.correct===false?'incorrect':'review';
  $('result').textContent=reply.correct===null?'Review only — not scored':reply.correct?(slot.wasWrong?'ممتاز إجابتك صحيحة لقد صححت معلومتك':'Matches the recorded source key.'):'Does not match the recorded source key.';
  $('source-key').textContent=reply.sourceKey?'Recorded source key: '+reply.sourceKey:'No definite source key is available.';
@@ -113,11 +139,11 @@ function showFeedback(slot){
 }
 async function display(){
  stopReading();const slot=history[position],ownEpoch=epoch,ownView=++viewVersion;if(!slot)return;
- atEnd=false;currentQuestion=null;
+ atEnd=false;currentQuestion=null;renderFigures('question-figures');renderFigures('explanation-figures');
  lock(true);$('question-card').hidden=true;$('empty').hidden=true;$('feedback').hidden=true;notice('Loading question…');
  try{const q=await api('question?id='+encodeURIComponent(slot.id));if(ownEpoch!==epoch||ownView!==viewVersion)return;
   if(!q||q.id!==slot.id)throw Object.assign(Error('invalid_response'),{code:'invalid_response'});
-  currentQuestion=q;$('category').textContent=q.module;$('stem').textContent=q.text;$('question-notice').textContent=q.notice;
+  currentQuestion=q;$('category').textContent=q.module;$('stem').textContent=q.text;$('question-notice').textContent=q.notice;renderFigures('question-figures',q.figures||[]);
   const options=$('options');options.replaceChildren();
   const media=q.sourceImage;
   if(media && typeof media.dataUrl==='string' && media.dataUrl.length<100000 && /^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(media.dataUrl)){
