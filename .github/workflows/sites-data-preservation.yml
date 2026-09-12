@@ -1,0 +1,31 @@
+name: Sites data preservation checks
+on:
+  pull_request:
+    paths:
+      - 'deployment/render/migration/**'
+      - '.github/workflows/sites-data-preservation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'deployment/render/migration/**'
+      - '.github/workflows/sites-data-preservation.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test deployment/render/migration/snapshot.test.mjs
+      - name: Install isolated PostgreSQL test engine
+        run: npm install --prefix "$RUNNER_TEMP/pediarounds-migration-test" --no-save --ignore-scripts @electric-sql/pglite@0.5.8
+      - name: Verify exact restore, retry safety and private access in memory
+        env:
+          PEDIAROUNDS_PGLITE_MODULE: ${{ runner.temp }}/pediarounds-migration-test/node_modules/@electric-sql/pglite/dist/index.js
+        run: node deployment/render/migration/snapshot.postgres-check.mjs
