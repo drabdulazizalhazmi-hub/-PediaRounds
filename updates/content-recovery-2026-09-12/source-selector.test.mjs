@@ -1,0 +1,14 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {answerExplanation} from '../english-source-explanations-2026-09-11/public/answer-explanation.js';
+test('recovered English field is selected',()=>assert.equal(answerExplanation({sourceExplanationEn:'Recovered source explanation.'}).text,'Recovered source explanation.'));
+test('alternate explicit English field is selected',()=>assert.equal(answerExplanation({source_explanation_en:'Recovered source explanation.'}).text,'Recovered source explanation.'));
+test('direct source explanation is selected',()=>assert.equal(answerExplanation({sourceExplanation:'Recovered source explanation.'}).text,'Recovered source explanation.'));
+test('original source wins over recovered and legacy fields',()=>assert.equal(answerExplanation({originalExplanation:'Original source text.',sourceExplanationEn:'Recovered source text.',explanation:'Legacy text.'}).text,'Original source text.'));
+test('Arabic presentation forms are rejected',()=>assert.equal(answerExplanation({originalExplanation:'Clinical text ﺍ'}).status,'unavailable'));
+test('extended Arabic script is rejected',()=>assert.equal(answerExplanation({originalExplanation:'Clinical text ڤ'}).status,'unavailable'));
+test('numeric placeholders are rejected',()=>assert.equal(answerExplanation({sourceExplanationEn:'1234'}).status,'unavailable'));
+test('cross-reference alone is not a recovered explanation',()=>assert.equal(answerExplanation({sourceExplanationEn:'Similar question (question 188) in volume collection.'}).status,'unavailable'));
+test('malformed review arrays do not crash the panel',()=>assert.equal(answerExplanation({githubReviews:{},sourceVariants:'bad',additionalSourceVariants:null}).status,'unavailable'));
+test('null review entries do not crash the panel',()=>assert.equal(answerExplanation({githubReviews:[null]}).status,'unavailable'));
+test('explicit full English source is not truncated by separator',()=>assert.equal(answerExplanation({sourceExplanationEn:'First paragraph. ~*~ Second source paragraph.'}).text,'First paragraph. ~*~ Second source paragraph.'));
