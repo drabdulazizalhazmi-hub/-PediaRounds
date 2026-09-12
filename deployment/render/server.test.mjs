@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { createProbeServer, parsePort } from './server.mjs';
 import './external-backend.test.mjs';
 import './study.test.mjs';
+import './service-diagnostics.test.mjs';
+import './service-diagnostics.http.test.mjs';
 
 async function running(t) {
   const server = createProbeServer();
@@ -28,7 +30,7 @@ test('home is labelled setup-only, with restrictive headers', async t => {
 });
 test('spoofed legacy identity headers cannot unlock data', async t => {
   const base = await running(t);
-  for (const path of ['/api/questions', '/api/progress', '/api/source-documents/test', '/quiz', '/login', '/signin-with-chatgpt']) {
+  for (const path of ['/api/questions', '/api/progress', '/api/source-documents/test', '/quiz', '/signin-with-chatgpt']) {
     const response = await fetch(base + path, { headers: { 'oai-authenticated-user-id':'spoof', 'oai-authenticated-user-email':'spoof@example.test' } });
     assert.equal(response.status, 503, path); assert.equal(response.headers.get('set-cookie'), null);
   }
@@ -62,6 +64,8 @@ test('backend status never implies full migration or browser login success',asyn
 });
 test('deployed entrypoint serves the new beta and keeps question API protected',async t=>{
  const base=await running(t);assert.match(await(await fetch(base+'/study')).text(),/id="login-form"/);
+ const login=await fetch(base+'/login',{redirect:'manual',headers:{'oai-authenticated-user-id':'spoof'}});
+ assert.equal(login.status,302);assert.equal(login.headers.get('location'),'/study');assert.equal(login.headers.get('set-cookie'),null);
  assert.equal((await fetch(base+'/api/study/catalog')).status,401);
 });
 
