@@ -1,9 +1,10 @@
-/** External staging foundation. Full app and legacy data remain unavailable. */
+/** External staging foundation with an additive authenticated /study beta. */
 import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { createExternalBackend } from './external-backend.mjs';
+import { createStudyApp } from './study-app.mjs';
 
 const html = readFileSync(new URL('./status.html', import.meta.url), 'utf8');
 const css = html.match(/<style>([\s\S]*?)<\/style>/)?.[1] || '';
@@ -19,13 +20,14 @@ const headers = {
 };
 export const deploymentStatus = Object.freeze({
   service: 'PediaRounds Render external backend foundation',
-  stage: 'external-backend-foundation-only',
+  stage: 'external-backend-with-repository-study-beta',
   applicationReady: false,
+  studyBetaPath: '/study',
   questionsMigrated: false,
   accountsMigrated: false,
   progressMigrated: false,
 });
-export function createProbeServer({backend = createExternalBackend(), backendState = {configured:backend.configured,authReachable:null,anonymousDatabaseDenied:null}} = {}) {
+export function createProbeServer({backend = createExternalBackend(), backendState = {configured:backend.configured,authReachable:null,anonymousDatabaseDenied:null}, study = createStudyApp({backend})} = {}) {
   const server = createServer(async (req, res) => {
     const send = (status, body, type = 'application/json; charset=utf-8', extra = {}) => {
       const output = typeof body === 'string' ? body : JSON.stringify(body);
@@ -36,6 +38,7 @@ export function createProbeServer({backend = createExternalBackend(), backendSta
     try { pathname = new URL(req.url || '/', 'http://localhost').pathname; }
     catch { return send(400, { error: 'Invalid request.' }); }
     try {
+      if (study && await study.handle(req,res,pathname)) return;
       if (await backend.handle(req, res, pathname)) return;
     } catch {
       req.resume();
@@ -46,11 +49,11 @@ export function createProbeServer({backend = createExternalBackend(), backendSta
       req.resume();
       return send(405, { error: 'The full application is not available.' }, undefined, { Allow: 'GET, HEAD' });
     }
-    // Liveness is not a claim that the migrated study application is ready.
+    // Full migration readiness remains distinct from the additive study beta.
     if (pathname === '/healthz') return send(200, { status: 'ok', scope: 'external-backend-process-only' });
     if (pathname === '/readyz') return send(503, deploymentStatus);
-    if (pathname === '/deployment-status') return send(200, {...deploymentStatus,backend:backendState});
-    if (pathname === '/external-backend-status') return send(200, {...backendState, frontendIntegrated:false,endToEndLoginTested:false,existingDataMigrated:false});
+    if (pathname === '/deployment-status') return send(200, {...deploymentStatus,backend:backendState,studyBeta:study?.status()});
+    if (pathname === '/external-backend-status') return send(200, {...backendState, frontendIntegrated:false,studyBetaIntegrated:!!study,endToEndLoginTested:false,existingDataMigrated:false});
     if (pathname === '/robots.txt') return send(200, 'User-agent: *\nDisallow: /\n', 'text/plain; charset=utf-8');
     if (pathname === '/') return send(200, html, 'text/html; charset=utf-8');
     if (pathname.startsWith('/api/') || ['/quiz', '/exam', '/nelson', '/login', '/signin-with-chatgpt'].includes(pathname)) {
@@ -75,10 +78,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const port = parsePort(process.env.PORT);
   const backend = createExternalBackend();
   const backendState = {configured:backend.configured,authReachable:null,anonymousDatabaseDenied:null};
-  const server = createProbeServer({backend,backendState});
+  const study=createStudyApp({backend});
+  const server = createProbeServer({backend,backendState,study});
   server.on('error', error => { console.error('External staging process failed:', error.code || 'unknown'); process.exit(1); });
   server.listen(port, '0.0.0.0', () => {
-    console.log(`External staging process listening on ${port}; applicationReady=false`);
+    console.log(`External staging process listening on ${port}; applicationReady=false; studyBeta=/study`);
+    console.log('Repository study beta:',JSON.stringify(study.status()));
     void backend.probe().then(result => {
       Object.assign(backendState,result);
       console.log('External backend dependency check:',JSON.stringify(result));
