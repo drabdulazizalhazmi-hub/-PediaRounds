@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { createExternalBackend } from './external-backend.mjs';
 import { createStudyApp } from './study-app.mjs';
+import { createDependencyMonitor, studyInfrastructureStatus } from './service-diagnostics.mjs';
 
 const html = readFileSync(new URL('./status.html', import.meta.url), 'utf8');
 const css = html.match(/<style>([\s\S]*?)<\/style>/)?.[1] || '';
@@ -27,8 +28,10 @@ export const deploymentStatus = Object.freeze({
   accountsMigrated: false,
   progressMigrated: false,
 });
-export function createProbeServer({backend = createExternalBackend(), backendState = {configured:backend.configured,authReachable:null,anonymousDatabaseDenied:null}, study = createStudyApp({backend})} = {}) {
+export function createProbeServer({backend = createExternalBackend(), study = createStudyApp({backend}), monitor = createDependencyMonitor({backend})} = {}) {
   const server = createServer(async (req, res) => {
+    // Host-only HTTPS policy applies to delegated routes too; no preload/subdomain lock-in.
+    res.setHeader('Strict-Transport-Security', 'max-age=86400');
     const send = (status, body, type = 'application/json; charset=utf-8', extra = {}) => {
       const output = typeof body === 'string' ? body : JSON.stringify(body);
       res.writeHead(status, { ...headers, ...extra, 'Content-Type': type, 'Content-Length': Buffer.byteLength(output) });
@@ -52,8 +55,24 @@ export function createProbeServer({backend = createExternalBackend(), backendSta
     // Full migration readiness remains distinct from the additive study beta.
     if (pathname === '/healthz') return send(200, { status: 'ok', scope: 'external-backend-process-only' });
     if (pathname === '/readyz') return send(503, deploymentStatus);
-    if (pathname === '/deployment-status') return send(200, {...deploymentStatus,backend:backendState,studyBeta:study?.status()});
-    if (pathname === '/external-backend-status') return send(200, {...backendState, frontendIntegrated:false,studyBetaIntegrated:!!study,endToEndLoginTested:false,existingDataMigrated:false});
+    if (pathname === '/login' || pathname === '/login/') {
+      if (study) return send(302, '', 'text/plain; charset=utf-8', {Location:'/study'});
+      return send(503, {error:'study_unavailable'});
+    }
+    if (['/study/readyz', '/deployment-status', '/external-backend-status'].includes(pathname)) {
+      try {
+        const backendStatus = await monitor.check();
+        const studyStatus = study?.status();
+        if (pathname === '/study/readyz') {
+          const readiness = studyInfrastructureStatus(backendStatus, studyStatus);
+          return send(readiness.infrastructureReady ? 200 : 503, readiness);
+        }
+        if (pathname === '/deployment-status') return send(200, {...deploymentStatus,backend:backendStatus,studyBeta:studyStatus});
+        return send(200, {...backendStatus,frontendIntegrated:false,studyBetaIntegrated:!!study,endToEndLoginTested:false,existingDataMigrated:false});
+      } catch {
+        return send(503, {error:'diagnostics_unavailable',applicationReady:false});
+      }
+    }
     if (pathname === '/robots.txt') return send(200, 'User-agent: *\nDisallow: /\n', 'text/plain; charset=utf-8');
     if (pathname === '/') return send(200, html, 'text/html; charset=utf-8');
     if (pathname.startsWith('/api/') || ['/quiz', '/exam', '/nelson', '/login', '/signin-with-chatgpt'].includes(pathname)) {
@@ -77,16 +96,15 @@ export function parsePort(value) {
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const port = parsePort(process.env.PORT);
   const backend = createExternalBackend();
-  const backendState = {configured:backend.configured,authReachable:null,anonymousDatabaseDenied:null};
+  const monitor = createDependencyMonitor({backend});
   const study=createStudyApp({backend});
-  const server = createProbeServer({backend,backendState,study});
+  const server = createProbeServer({backend,study,monitor});
   server.on('error', error => { console.error('External staging process failed:', error.code || 'unknown'); process.exit(1); });
   server.listen(port, '0.0.0.0', () => {
     console.log(`External staging process listening on ${port}; applicationReady=false; studyBeta=/study`);
     console.log('Repository study beta:',JSON.stringify(study.status()));
     void study.oauthProviders().then(result=>console.log('Social sign-in providers:',JSON.stringify({configured:result.configured,...result.providers}))).catch(()=>console.log('Social sign-in providers: settings unavailable; no credentials logged.'));
-    void backend.probe().then(result => {
-      Object.assign(backendState,result);
+    void monitor.check().then(result => {
       console.log('External backend dependency check:',JSON.stringify(result));
     }).catch(()=>console.error('External backend dependency check failed; no credentials logged.'));
   });
