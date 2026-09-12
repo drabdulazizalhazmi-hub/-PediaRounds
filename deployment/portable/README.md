@@ -1,14 +1,14 @@
 # Independent copy of the current PediaRounds application
 
-The current Sites v86 application has been ported locally to native Next.js/Node with independent Supabase authentication and PostgreSQL storage. The public Render study beta is a different, smaller application. This directory preserves a reproducible patch for the full private source; it intentionally contains no question bank, encrypted media, learner records, database URLs, or secret keys.
+The current Sites v87 application has been ported locally to native Next.js/Node with independent Supabase authentication and PostgreSQL storage. The public Render study beta is a different, smaller application. This directory preserves a reproducible patch for the full private source; it intentionally contains no question bank, encrypted media, learner records, database URLs, or secret keys.
 
 **Draft only. No production change or completed migration.** Nothing was pushed to the Sites source repository. This work did not change the existing Render service or Supabase database. The user requires the current platform to remain unaffected.
 
-During final read-only verification, Sites **v87** was found successfully published by a separate operation, at source commit `293eea34ffaf7f260b35004af6710c534796ded1`. Both an authorized fetch and a fresh clone returned HTTP 500. This patch therefore remains explicitly pinned to the fully tested **v86** source. The v87 delta must be recovered, reconciled and tested before deployment; this draft does not claim parity with v87. Separately, public GitHub main advanced through PR #16; its staging diagnostic changes are preserved in this draft's base and were not authored or deployed by this migration work.
+The earlier v87 source-read blocker is resolved. An existing authorized clean local checkout matches the published Sites **v87** source commit `293eea34ffaf7f260b35004af6710c534796ded1`. The isolated copy now includes all 14 files changed since v86, each byte-identical to v87, including the reviewed English teaching changes. All 938 tracked content/media files are also byte-identical. The portability patch remains limited to the independent runtime. The existing public Render staging service follows `main` with automatic deployment enabled, so this work updates only this draft branch and must not be merged for a traffic switch.
 
 ## Prepare the full private copy
 
-Required source commit: `84de28f7c4b1ffe4eef99ae1d65d22f7f92b6983`. The complete source was recovered through the authorized Sites Git repository after the earlier clone failure. Do not use the September 7 recovery archive or apply this patch to the smaller public Render beta.
+Required source commit: `293eea34ffaf7f260b35004af6710c534796ded1`. The complete source was recovered from the authorized local checkout and verified against the current Sites saved-version metadata. Do not use the September 7 recovery archive or apply this patch to the smaller public Render beta.
 
 ```sh
 node deployment/portable/prepare-private-copy.mjs /private/current-sites-checkout /private/new-independent-copy
@@ -19,7 +19,7 @@ node --test tests/portable/auth.test.mjs
 node tests/portable/http-smoke.mjs
 ```
 
-The preparation script requires an unchanged exact source checkout and a nonexistent target directory. It verifies the patch checksum, exports that commit, applies only the portability patch, checks all 936 content/media files byte for byte, removes Sites publishing metadata from the **new copy only**, and initializes Git without a remote. Put the resulting complete application in a **private** repository before connecting Render. Never push the full source into this public repository.
+The preparation script requires an unchanged exact source checkout and a nonexistent target directory. It verifies the patch checksum, exports that commit, applies only the portability patch, checks all 938 content/media files byte for byte, removes Sites publishing metadata from the **new copy only**, and initializes Git without a remote. Put the resulting complete application in a **private** repository before connecting Render. Never push the full source into this public repository.
 
 ## What changed
 
@@ -40,7 +40,7 @@ Supply the existing ten media encryption keys securely under their original `PED
 
 ## Lossless data preparation
 
-The Sites table viewer truncates long payloads and is not an export mechanism. Obtain a complete, consistent native D1 export and preserve its original checksum. Follow [`../render/migration/README.md`](../render/migration/README.md) to create an independently checked normalized snapshot and private archive.
+The Sites table viewer truncates long payloads and is not an export mechanism. A fresh one-row-per-table check still returned truncated payloads for study sessions, spaced review, mock exams and custom exams; lowering the page size does not recover the missing text. None of those partial rows were saved as an import snapshot. Obtain a complete, consistent native D1 export and preserve its original checksum. Follow [`../render/migration/README.md`](../render/migration/README.md) to create an independently checked normalized snapshot and private archive.
 
 ```sh
 node deployment/portable/import-sql.mjs /private/snapshot.json /private/source-manifest.json /private/application-import.sql
@@ -48,13 +48,15 @@ node deployment/portable/import-sql.mjs /private/snapshot.json /private/source-m
 
 This command only writes private SQL; it does not connect to either database. Run the reviewed SQL only on the separate unused target after `schema.sql`. It imports all eight tables without changing IDs, timestamps, revisions or payload strings. An exact retry adds no duplicates. Any extra or different destination row aborts and rolls back the entire import; existing data is never overwritten. A target with linked accounts is refused. All tables are compared in both directions before commit.
 
-No live export or real account linking has happened. Before activating links, require authenticated proof of both accounts or a documented owner-verified recovery process. Reconcile per-table source checksums and per-user states, then test resume/save/redeploy against the imported records. Keep a recovery copy for unclaimed users. A final source-write reconciliation and user approval are required before any traffic switch; no source-write pause is authorized by this draft. If the target later accepts writes, rollback must preserve them too.
+No live export or real account linking has happened. Read-only target checks still report zero authentication users, zero Render progress rows and zero checkpoint rows. The only accessible GitHub repository is public; no private deployment destination is currently connected. These observations do not authorize account recreation or copying private content to the public repository. Before activating links, require authenticated proof of both accounts or a documented owner-verified recovery process. Reconcile per-table source checksums and per-user states, then test resume/save/redeploy against the imported records. Keep a recovery copy for unclaimed users. A final source-write reconciliation and user approval are required before any traffic switch; no source-write pause is authorized by this draft. If the target later accepts writes, rollback must preserve them too.
 
 ## Verification completed on 12 September 2026
 
-- Production native build and TypeScript checks passed with the complete v86 source.
-- All 936 tracked `data/` and `public/` files match the original byte for byte.
+- Production native build and TypeScript checks passed with the complete v87 source.
+- All 938 tracked `data/` and `public/` files match the original byte for byte.
 - Four isolated authentication tests passed using fictional identities and mocked provider responses.
+- Five current English teaching tests passed, and all 14 files changed by v87 are preserved byte for byte.
+- Preparation rejects both the stale v86 source and an existing destination before writing files.
 - The compiled server rejects forged platform identity headers on protected APIs and pages, rejects cross-origin auth writes, clears logout cookies, and reports migration readiness as false. It ran without hosted credentials.
 - In-memory PostgreSQL tests cover long payloads, millisecond timestamps, current study/exam/spaced-review functions, revision conflicts, account isolation, rollback, and forbidden account-link writes.
 - Offline import tests restore all eight fictional application tables exactly, preserve unmapped question IDs, keep unclaimed users inaccessible, allow identical retries, roll back conflicting imports and refuse linked targets.

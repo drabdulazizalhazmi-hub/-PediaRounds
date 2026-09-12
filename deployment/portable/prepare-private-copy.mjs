@@ -11,8 +11,8 @@ if(!sourceArg||!targetArg||process.argv.length!==4)throw Error('Usage: prepare-p
 const source=resolve(sourceArg),target=resolve(targetArg),inside=relative(source,target);
 if(!inside||(!inside.startsWith('..')&&!isAbsolute(inside))||existsSync(target))throw Error('Target must be a new directory outside the source checkout');
 const verification=JSON.parse(readFileSync(new URL('./verification.json',import.meta.url),'utf8'));
-if(run(source,'rev-parse','HEAD')!==verification.sourceCommit||run(source,'status','--porcelain'))throw Error('Clean exact version-86 source required');
-const patch=fileURLToPath(new URL('./current-v86.patch',import.meta.url));
+if(run(source,'rev-parse','HEAD')!==verification.sourceCommit||run(source,'status','--porcelain'))throw Error(`Clean exact version-${verification.sourceVersion} source required`);
+const patch=fileURLToPath(new URL('./current-v87.patch',import.meta.url));
 if(createHash('sha256').update(readFileSync(patch)).digest('hex')!==verification.patchSha256)throw Error('Patch checksum mismatch');
 mkdirSync(target,{mode:0o700});
 const archive=spawn('git',['archive',verification.sourceCommit],{cwd:source,stdio:['ignore','pipe','inherit']});
@@ -24,5 +24,5 @@ const paths=execFileSync('git',['ls-files','-z','data','public'],{cwd:source,enc
 for(const path of paths)if(!readFileSync(resolve(source,path)).equals(readFileSync(resolve(target,path))))throw Error('Content changed: '+path);
 // This new copy must never be mistaken for the Sites publishing workspace.
 rmSync(resolve(target,'.openai'),{recursive:true,force:true});
-run(target,'init','--quiet','--initial-branch','independent-v86');
-console.log(JSON.stringify({prepared:target,sourceVersion:86,contentFilesUnchanged:paths.length,gitRemotes:0,deployed:false,sourceModified:false}));
+run(target,'init','--quiet','--initial-branch',`independent-v${verification.sourceVersion}`);
+console.log(JSON.stringify({prepared:target,sourceVersion:verification.sourceVersion,contentFilesUnchanged:paths.length,gitRemotes:0,deployed:false,sourceModified:false}));

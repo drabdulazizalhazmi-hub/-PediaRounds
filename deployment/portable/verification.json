@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "84de28f7c4b1ffe4eef99ae1d65d22f7f92b6983",
-  "sourceVersion": 86,
-  "patchSha256": "c402e2b97ed41a32fac6fab9fb6aec4da5e4b8a046b8e7f8b83794c461088b7b",
-  "contentFilesCompared": 936,
+  "sourceCommit": "293eea34ffaf7f260b35004af6710c534796ded1",
+  "sourceVersion": 87,
+  "patchSha256": "479822dc3b622a257ec655fc05ac030cdcf89bf394c5112448b0a348522183aa",
+  "contentFilesCompared": 938,
   "contentFilesChanged": 0,
   "nativeBuildPassed": true,
   "typecheckPassed": true,
@@ -18,6 +18,24 @@
   "isolatedCopyReproductionPassed": true,
   "latestObservedPublishedVersion": 87,
   "latestObservedSourceCommit": "293eea34ffaf7f260b35004af6710c534796ded1",
-  "latestVersionReconciled": false,
-  "latestVersionSourceReadError": "HTTP 500"
+  "latestVersionReconciled": true,
+  "sourceRecoveryMethod": "Existing authorized clean local checkout, exact published commit verified",
+  "englishTeachingTestsPassed": 5,
+  "latestDeltaFilesPreserved": 14,
+  "staleSourceRejectedBeforeWrite": true,
+  "existingDestinationRejectedBeforeWrite": true,
+  "targetAuthUsersObserved": 0,
+  "targetProgressRowsObserved": 0,
+  "targetCheckpointRowsObserved": 0,
+  "liveExportProbe": {
+    "rowsPerTable": 1,
+    "tables": [
+      "study_sessions",
+      "mock_exam_attempts",
+      "custom_exam_attempts",
+      "spaced_review_sessions"
+    ],
+    "allProbedPayloadsTruncated": true,
+    "suitableForRestore": false
+  }
 }

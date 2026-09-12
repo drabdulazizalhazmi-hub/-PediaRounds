@@ -309,7 +309,7 @@ index 0000000..a1307f5
 +++ b/app/readyz/route.ts
 @@ -0,0 +1,2 @@
 +export const dynamic='force-dynamic';
-+export async function GET(){return Response.json({ready:false,sourceVersion:86,legacyDataMigrated:false,realLoginVerified:false},{status:503,headers:{'Cache-Control':'no-store'}});}
++export async function GET(){return Response.json({ready:false,sourceVersion:87,legacyDataMigrated:false,realLoginVerified:false},{status:503,headers:{'Cache-Control':'no-store'}});}
 diff --git a/app/signin-with-chatgpt/route.ts b/app/signin-with-chatgpt/route.ts
 new file mode 100644
 index 0000000..5cb6f98
@@ -945,7 +945,7 @@ index 0000000..daee8f6
 --- /dev/null
 +++ b/server/portable/postgres.mjs
 @@ -0,0 +1,89 @@
-+/** PostgreSQL implementation of the narrow D1 API used by PediaRounds v86. */
++/** PostgreSQL implementation of the narrow D1 API used by PediaRounds v87. */
 +const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 +let poolPromise;
 +async function pool() {
