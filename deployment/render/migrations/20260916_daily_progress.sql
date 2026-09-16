@@ -1,21 +1,7 @@
--- Additive external staging storage. Does not import or modify Sites identities/data.
-CREATE TABLE public.pediarounds_render_progress (
-  user_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
-  question_id text NOT NULL CHECK (length(question_id) BETWEEN 1 AND 200 AND question_id !~ '[[:cntrl:]]'),
-  answered boolean NOT NULL DEFAULT false,
-  correct boolean,
-  seen_at timestamptz NOT NULL DEFAULT now(),
-  answered_at timestamptz,
-  PRIMARY KEY (user_id, question_id),
-  CHECK (answered OR (correct IS NULL AND answered_at IS NULL))
-);
-CREATE TABLE public.pediarounds_render_checkpoints (
-  user_id uuid PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
-  revision integer NOT NULL CHECK (revision > 0),
-  state jsonb NOT NULL CHECK (jsonb_typeof(state) = 'object' AND octet_length(state::text) <= 50000),
-  updated_at timestamptz NOT NULL DEFAULT now()
-);
-CREATE TABLE public.pediarounds_render_daily_reviews (
+BEGIN;
+
+-- Add a durable, per-day review ledger without changing existing progress semantics.
+CREATE TABLE IF NOT EXISTS public.pediarounds_render_daily_reviews (
   user_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
   review_date date NOT NULL,
   question_id text NOT NULL CHECK (length(question_id) BETWEEN 1 AND 200 AND question_id !~ '[[:cntrl:]]'),
@@ -23,21 +9,16 @@ CREATE TABLE public.pediarounds_render_daily_reviews (
   PRIMARY KEY (user_id, review_date, question_id),
   CHECK (review_date = (reviewed_at AT TIME ZONE 'Asia/Riyadh')::date)
 );
-ALTER TABLE public.pediarounds_render_progress ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.pediarounds_render_checkpoints ENABLE ROW LEVEL SECURITY;
+
 ALTER TABLE public.pediarounds_render_daily_reviews ENABLE ROW LEVEL SECURITY;
-REVOKE ALL ON public.pediarounds_render_progress, public.pediarounds_render_checkpoints,
-  public.pediarounds_render_daily_reviews FROM PUBLIC, anon, authenticated;
-GRANT SELECT, INSERT, UPDATE ON public.pediarounds_render_progress, public.pediarounds_render_checkpoints TO authenticated;
+REVOKE ALL ON public.pediarounds_render_daily_reviews FROM PUBLIC, anon, authenticated;
 GRANT SELECT, INSERT ON public.pediarounds_render_daily_reviews TO authenticated;
-CREATE POLICY own_progress ON public.pediarounds_render_progress TO authenticated
-USING ((SELECT auth.uid()) = user_id AND COALESCE((SELECT auth.jwt()->>'is_anonymous'), 'false') = 'false')
-WITH CHECK ((SELECT auth.uid()) = user_id AND COALESCE((SELECT auth.jwt()->>'is_anonymous'), 'false') = 'false');
-CREATE POLICY own_checkpoint ON public.pediarounds_render_checkpoints TO authenticated
-USING ((SELECT auth.uid()) = user_id AND COALESCE((SELECT auth.jwt()->>'is_anonymous'), 'false') = 'false')
-WITH CHECK ((SELECT auth.uid()) = user_id AND COALESCE((SELECT auth.jwt()->>'is_anonymous'), 'false') = 'false');
+
+DROP POLICY IF EXISTS own_daily_reviews_select ON public.pediarounds_render_daily_reviews;
 CREATE POLICY own_daily_reviews_select ON public.pediarounds_render_daily_reviews FOR SELECT TO authenticated
 USING ((SELECT auth.uid()) = user_id AND COALESCE((SELECT auth.jwt())->>'is_anonymous', 'false') = 'false');
+
+DROP POLICY IF EXISTS own_daily_reviews_insert ON public.pediarounds_render_daily_reviews;
 CREATE POLICY own_daily_reviews_insert ON public.pediarounds_render_daily_reviews FOR INSERT TO authenticated
 WITH CHECK ((SELECT auth.uid()) = user_id
   AND COALESCE((SELECT auth.jwt())->>'is_anonymous', 'false') = 'false'
@@ -45,7 +26,15 @@ WITH CHECK ((SELECT auth.uid()) = user_id
   AND reviewed_at <= now() + interval '5 minutes'
   AND review_date <= (timezone('Asia/Riyadh', now()))::date);
 
-CREATE FUNCTION public.pediarounds_render_read_progress() RETURNS jsonb
+-- Existing storage has only the latest answer timestamp per question. Preserve that
+-- last known day as a best-effort starting point; future days are captured immutably.
+INSERT INTO public.pediarounds_render_daily_reviews(user_id, review_date, question_id, reviewed_at)
+SELECT user_id, (answered_at AT TIME ZONE 'Asia/Riyadh')::date, question_id, answered_at
+FROM public.pediarounds_render_progress
+WHERE answered IS TRUE AND answered_at IS NOT NULL
+ON CONFLICT(user_id, review_date, question_id) DO NOTHING;
+
+CREATE OR REPLACE FUNCTION public.pediarounds_render_read_progress() RETURNS jsonb
 LANGUAGE plpgsql SECURITY INVOKER SET search_path = '' AS $$
 DECLARE result jsonb;
 BEGIN
@@ -81,7 +70,7 @@ BEGIN
   RETURN result;
 END; $$;
 
-CREATE FUNCTION public.pediarounds_render_save_progress(completed jsonb DEFAULT '[]'::jsonb, seen jsonb DEFAULT '[]'::jsonb) RETURNS jsonb
+CREATE OR REPLACE FUNCTION public.pediarounds_render_save_progress(completed jsonb DEFAULT '[]'::jsonb, seen jsonb DEFAULT '[]'::jsonb) RETURNS jsonb
 LANGUAGE plpgsql SECURITY INVOKER SET search_path = '' AS $$
 DECLARE item jsonb; qid text; value boolean; reviewed_time timestamptz;
 BEGIN
@@ -127,40 +116,9 @@ BEGIN
   RETURN public.pediarounds_render_read_progress();
 END; $$;
 
-CREATE FUNCTION public.pediarounds_render_read_checkpoint() RETURNS jsonb
-LANGUAGE plpgsql SECURITY INVOKER SET search_path = '' AS $$
-DECLARE result jsonb;
-BEGIN
-  IF auth.uid() IS NULL OR COALESCE(auth.jwt()->>'is_anonymous', 'false') <> 'false' THEN
-    RAISE EXCEPTION 'Authentication required' USING ERRCODE = '42501';
-  END IF;
-  SELECT jsonb_build_object('revision', revision, 'state', state, 'updatedAt', updated_at) INTO result
-  FROM public.pediarounds_render_checkpoints WHERE user_id = auth.uid();
-  RETURN COALESCE(result, '{"revision":0,"state":null}'::jsonb);
-END; $$;
+REVOKE ALL ON FUNCTION public.pediarounds_render_read_progress(),
+  public.pediarounds_render_save_progress(jsonb,jsonb) FROM PUBLIC, anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.pediarounds_render_read_progress(),
+  public.pediarounds_render_save_progress(jsonb,jsonb) TO authenticated;
 
-CREATE FUNCTION public.pediarounds_render_save_checkpoint(expected_revision integer, new_state jsonb) RETURNS jsonb
-LANGUAGE plpgsql SECURITY INVOKER SET search_path = '' AS $$
-DECLARE actual integer;
-BEGIN
-  IF auth.uid() IS NULL OR COALESCE(auth.jwt()->>'is_anonymous', 'false') <> 'false' THEN
-    RAISE EXCEPTION 'Authentication required' USING ERRCODE = '42501';
-  END IF;
-  IF expected_revision IS NULL OR expected_revision < 0 OR expected_revision > 2147483645 OR new_state IS NULL
-      OR jsonb_typeof(new_state) <> 'object' OR octet_length(new_state::text) > 50000 THEN
-    RAISE EXCEPTION 'Invalid checkpoint' USING ERRCODE = '22023';
-  END IF;
-  IF expected_revision = 0 THEN
-    INSERT INTO public.pediarounds_render_checkpoints(user_id, revision, state) VALUES(auth.uid(), 1, new_state)
-    ON CONFLICT(user_id) DO NOTHING RETURNING revision INTO actual;
-  ELSE
-    UPDATE public.pediarounds_render_checkpoints SET revision = revision + 1, state = new_state, updated_at = now()
-    WHERE user_id = auth.uid() AND revision = expected_revision RETURNING revision INTO actual;
-  END IF;
-  IF actual IS NULL THEN RAISE EXCEPTION 'Checkpoint changed; reload before retrying' USING ERRCODE = '40001'; END IF;
-  RETURN public.pediarounds_render_read_checkpoint();
-END; $$;
-REVOKE ALL ON FUNCTION public.pediarounds_render_read_progress(), public.pediarounds_render_save_progress(jsonb,jsonb),
-  public.pediarounds_render_read_checkpoint(), public.pediarounds_render_save_checkpoint(integer,jsonb) FROM PUBLIC, anon, authenticated;
-GRANT EXECUTE ON FUNCTION public.pediarounds_render_read_progress(), public.pediarounds_render_save_progress(jsonb,jsonb),
-  public.pediarounds_render_read_checkpoint(), public.pediarounds_render_save_checkpoint(integer,jsonb) TO authenticated;
+COMMIT;

@@ -19,7 +19,7 @@ function fixture({ids=['q1'],questionText,failQuestion=null,failProgress=false}=
  const elements=new Map(),requests=[],spoken=[];let revision=0;
  const element=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id);};
  const q=id=>({id,module:'Fixture',text:questionText||'Fictional question '+id,notice:'Fixture only',reviewOnly:false,options:[{key:'A',text:'Choice A'},{key:'B',text:'Choice B'}]});
- const reply={correct:true,sourceKey:'A',notice:'Fictional key',explanation:'Exact fictional explanation.',originalExplanationAvailable:true,references:[]};
+ const reply={correct:true,sourceKey:'A',notice:'Fictional key',explanation:'Exact fictional explanation.',originalExplanationAvailable:true,references:[],reviewedAt:'2026-09-16T08:30:00.000Z'};
  class Utterance{constructor(text){this.text=text;}}
  const synth={speak:u=>spoken.push(u),cancel(){spoken.at(-1)?.onerror?.({error:'interrupted'});},getVoices:()=>[],addEventListener(){}};
  const respond=(data,status=200)=>new Response(JSON.stringify(data),{status});
@@ -74,6 +74,15 @@ test('correction feedback survives a failed earlier progress save',async()=>{
  const f=fixture({failProgress:true});await f.run('start()');f.run("pendingSaves.set('q1',false);history[0].selected=0;");await f.element('submit').click();
  assert.equal(f.element('result').textContent,'ممتاز إجابتك صحيحة لقد صححت معلومتك');assert.equal(f.element('retry-save').hidden,false);assert.match(f.element('save-status').textContent,/not yet/);
  assert.equal(f.run("pendingSaves.get('q1')"),true);
+});
+test('saved answers retain their review time and daily activity renders by day',async()=>{
+ const f=fixture();await f.run('start()');f.run('history[0].selected=0;');await f.element('submit').click();
+ const save=f.requests.find(r=>r.url.endsWith('/progress'));const completed=JSON.parse(save.options.body).completed;
+ assert.equal(completed[0].reviewedAt,f.reply.reviewedAt);
+ f.run(`progress={done:[],seen:[],dailyProgress:[{date:'2026-09-16',reviewedCount:7},{date:'2026-09-15',reviewedCount:2}]};renderDailyProgress();`);
+ assert.equal(f.element('today-progress').textContent,'Today: 7 questions');assert.equal(f.element('daily-progress-total').textContent,'9 reviewed in 30 days');
+ assert.equal(f.element('daily-progress-list').children.length,2);await f.element('daily-progress-toggle').click();
+ assert.equal(f.element('daily-progress-panel').hidden,false);assert.equal(f.element('daily-progress-toggle').textContent,'Hide daily progress');
 });
 test('logout clears content and reading cannot be restarted by an old speech event',async()=>{
  const f=fixture();await f.run('start()');await f.element('read-question').click();const old=f.spoken[0];f.run('clearWorkspace()');old.onerror({error:'network'});old.onend();

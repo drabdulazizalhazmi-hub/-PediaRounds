@@ -6,13 +6,20 @@ const fail = (status, code) => Object.assign(new Error(code), {status, code});
 const object = value => !!value && typeof value === 'object' && !Array.isArray(value);
 const keys = (value, allowed) => Object.keys(value).every(key => allowed.includes(key));
 const idOK = id => typeof id === 'string' && id.length > 0 && id.length <= 200 && !/[\p{Cc}]/u.test(id);
+const reviewedAtOK = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(value) &&
+  Number.isFinite(Date.parse(value)) && new Date(value).toISOString() === value;
+const dayOK = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) &&
+  new Date(value + 'T00:00:00.000Z').toISOString().slice(0,10) === value;
+const dailyProgressOK = value => Array.isArray(value) && value.length <= 31 && value.every(row => object(row) &&
+  keys(row,['date','reviewedCount']) && dayOK(row.date) && Number.isInteger(row.reviewedCount) && row.reviewedCount >= 0);
 
 export function validateProgress(body) {
   if (!object(body) || !keys(body, ['completed','seen'])) throw fail(400, 'invalid_progress');
   const {completed = [], seen = []} = body;
   if (!Array.isArray(completed) || !Array.isArray(seen) || completed.length > 500 || seen.length > 500) throw fail(400, 'invalid_progress');
-  if (!seen.every(idOK) || !completed.every(row => object(row) && keys(row,['questionId','correct']) && idOK(row.questionId) &&
-      Object.hasOwn(row, 'correct') && (row.correct === null || typeof row.correct === 'boolean'))) throw fail(400, 'invalid_progress');
+  if (!seen.every(idOK) || !completed.every(row => object(row) && keys(row,['questionId','correct','reviewedAt']) && idOK(row.questionId) &&
+      Object.hasOwn(row, 'correct') && (row.correct === null || typeof row.correct === 'boolean') &&
+      (!Object.hasOwn(row,'reviewedAt') || reviewedAtOK(row.reviewedAt)))) throw fail(400, 'invalid_progress');
   return {completed, seen};
 }
 
@@ -124,8 +131,9 @@ export function createExternalBackend({env = process.env, fetcher = globalThis.f
         const payload = req.method === 'GET' ? {} : validateProgress(await bodyJSON(req));
         const name = req.method === 'GET' ? 'read_progress' : 'save_progress';
         const data = await remote('/rest/v1/rpc/pediarounds_render_' + name, token, payload);
-        if (!object(data) || !Array.isArray(data.done) || !Array.isArray(data.seen) || !Number.isInteger(data.reviewedCount)) throw fail(503,'backend_unavailable');
-        send(200,{...data,user}); return true;
+        if (!object(data) || !Array.isArray(data.done) || !Array.isArray(data.seen) || !Number.isInteger(data.reviewedCount) ||
+            (data.dailyProgress !== undefined && !dailyProgressOK(data.dailyProgress))) throw fail(503,'backend_unavailable');
+        send(200,{...data,dailyProgress:data.dailyProgress || [],user}); return true;
       }
       const payload = req.method === 'GET' ? {} : validateCheckpoint(await bodyJSON(req));
       const name = req.method === 'GET' ? 'read_checkpoint' : 'save_checkpoint';

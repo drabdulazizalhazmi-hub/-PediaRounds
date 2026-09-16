@@ -1,17 +1,52 @@
 import {createEnglishReader,canReadEnglish,englishVoices} from './reader.mjs';
 const $=id=>document.getElementById(id);
 const IDLE=600000;
-let user=null,epoch=0,catalog=null,progress={done:[],seen:[]},checkpointRevision=0,checkpointBlocked=false;
-let history=[],position=-1,pool=[],cursor=0,freshCount=0,reviews=[],currentQuestion=null,loading=false,atEnd=false,viewVersion=0,signingOut=false;
+const REVIEW_OUTBOX='pediarounds-review-outbox-v2:';
+let user=null,epoch=0,catalog=null,progress={done:[],seen:[],dailyProgress:[]},checkpointRevision=0,checkpointBlocked=false;
+let history=[],position=-1,pool=[],cursor=0,freshCount=0,reviews=[],currentQuestion=null,loading=false,atEnd=false,viewVersion=0,signingOut=false,dailyProgressOpen=false;
 let lastActivity=Date.now(),lastRefresh=Date.now(),refreshPromise=null,checkpointTask=null,pendingCheckpoint=null,persistTask=null,checkpointFailed=false;
-const pendingSaves=new Map(),controllers=new Set();
-const messages={sign_in_required:'Please sign in.',authentication_failed:'Sign-in was not accepted. Check your email/password and email confirmation.',email_confirmation_required:'Confirm your email, then return here and sign in.',invalid_signup:'Enter a valid email and a password of at least 10 characters.',invalid_credentials:'Enter your email and password.',external_backend_not_configured:'The external authentication service is not configured.',auth_unavailable:'The sign-in service is unavailable. Please retry.',rate_limited:'Too many requests. Please wait a minute and retry.',same_origin_required:'This request was blocked. Open this page directly and retry.',checkpoint_conflict:'Another session saved a newer position. Reload the saved position before continuing to save.',backend_unavailable:'Account storage is unavailable. Your progress has not been confirmed as saved.'};
+let currentRiyadhDay=new Date(Date.now()+10800000).toISOString().slice(0,10);
+const pendingSaves=new Map(),pendingReviewEvents=new Map(),controllers=new Set();
+const messages={sign_in_required:'Please sign in.',authentication_failed:'Sign-in was not accepted. Check your email/password and email confirmation.',email_confirmation_required:'Confirm your email, then return here and sign in.',invalid_signup:'Enter a valid email and a password of at least 10 characters.',invalid_credentials:'Enter your email and password.',external_backend_not_configured:'The external authentication service is not configured.',auth_unavailable:'The sign-in service is unavailable. Please retry.',rate_limited:'Too many requests. Please wait a minute and retry.',same_origin_required:'This request was blocked. Open this page directly and retry.',session_changed:'The signed-in account changed in another tab. Return to this account or reload before saving.',checkpoint_conflict:'Another session saved a newer position. Reload the saved position before continuing to save.',backend_unavailable:'Account storage is unavailable. Your progress has not been confirmed as saved.'};
 const notice=text=>{$('status').textContent=text;};
 function errorMessage(e){return messages[e.code]||'The request could not be completed. Check the connection and retry.';}
+function riyadhDay(reviewedAt){return new Date(Date.parse(reviewedAt)+10800000).toISOString().slice(0,10);}
+function outboxPrefix(userId){return REVIEW_OUTBOX+userId+':';}
+function reviewEventKey(event){return riyadhDay(event.reviewedAt)+'\u0000'+event.questionId+'\u0000'+event.reviewedAt+'\u0000'+String(event.correct);}
+function storedEventKey(userId,key){return outboxPrefix(userId)+encodeURIComponent(key);}
+function eventJSON(event){return JSON.stringify({questionId:event.questionId,correct:event.correct,reviewedAt:event.reviewedAt});}
+function storeReviewEvent(key,event){try{if(user?.id)globalThis.localStorage?.setItem(storedEventKey(user.id,key),eventJSON(event));}catch{}}
+function removeStoredReviewEvent(userId,key){try{globalThis.localStorage?.removeItem(storedEventKey(userId,key));}catch{}}
+function discardReviewOutbox(userId){
+ try{const storage=globalThis.localStorage,prefix=outboxPrefix(userId),keys=[];for(let i=0;i<(storage?.length||0);i++){const key=storage.key(i);if(key?.startsWith(prefix))keys.push(key);}for(const key of keys)storage.removeItem(key);}catch{}
+}
+function restoreReviewOutbox(){
+ if(!user?.id)return;
+ let storage;try{storage=globalThis.localStorage;}catch{return;}
+ const prefix=outboxPrefix(user.id);let restored=0;
+ try{
+ for(let index=0;index<(storage?.length||0)&&restored<5000;index++){
+  const storageKey=storage.key(index);if(!storageKey?.startsWith(prefix))continue;
+  let event;try{event=JSON.parse(storage.getItem(storageKey));}catch{storage.removeItem(storageKey);index--;continue;}
+  if(!event||typeof event.questionId!=='string'||event.questionId.length<1||event.questionId.length>200||/[\p{Cc}]/u.test(event.questionId)||
+     !(event.correct===null||typeof event.correct==='boolean')||typeof event.reviewedAt!=='string'||
+     !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(event.reviewedAt)||!Number.isFinite(Date.parse(event.reviewedAt))||new Date(event.reviewedAt).toISOString()!==event.reviewedAt){storage.removeItem(storageKey);index--;continue;}
+  const restoredEvent={questionId:event.questionId,correct:event.correct,reviewedAt:event.reviewedAt},key=reviewEventKey(restoredEvent);
+  if(storageKey!==storedEventKey(user.id,key)){storage.removeItem(storageKey);index--;continue;}
+  pendingReviewEvents.set(key,restoredEvent);
+  restored++;
+ }
+ for(const event of [...pendingReviewEvents.values()].sort((a,b)=>a.reviewedAt.localeCompare(b.reviewedAt)))pendingSaves.set(event.questionId,event.correct);
+ }catch{}
+}
+function queueReviewedQuestion(questionId,correct,reviewedAt=new Date().toISOString()){
+ const event={questionId,correct,reviewedAt},key=reviewEventKey(event);pendingSaves.set(questionId,correct);pendingReviewEvents.set(key,event);storeReviewEvent(key,event);
+}
 async function raw(action,method='GET',body){
  const controller=new AbortController();controllers.add(controller);const timer=setTimeout(()=>controller.abort(),15000);
  try{
-  const response=await fetch('/api/study/'+action,{method,credentials:'same-origin',signal:controller.signal,headers:{Accept:'application/json',...(method==='POST'?{'Content-Type':'application/json'}:{})},...(body===undefined?{}:{body:JSON.stringify(body)})});
+  const accountBound=['progress','checkpoint'].includes(action)&&user?.id?{'X-PediaRounds-User-ID':user.id}:{};
+  const response=await fetch('/api/study/'+action,{method,credentials:'same-origin',signal:controller.signal,headers:{Accept:'application/json',...accountBound,...(method==='POST'?{'Content-Type':'application/json'}:{})},...(body===undefined?{}:{body:JSON.stringify(body)})});
   let data;try{data=await response.json();}catch{throw Object.assign(Error('invalid_response'),{code:'invalid_response'});}
   if(!response.ok)throw Object.assign(Error(data.error||'request_failed'),{code:data.error,status:response.status});return data;
  }finally{clearTimeout(timer);controllers.delete(controller);}
@@ -65,15 +100,46 @@ function updateReadControls(){
   $(id).disabled=!eligible||!reader.supported||!user||loading||atEnd||!currentQuestion;
  }
 }
-function clearWorkspace(){
- epoch++;viewVersion++;atEnd=false;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;progress={done:[],seen:[]};history=[];reviews=[];pool=[];position=-1;currentQuestion=null;loading=false;pendingSaves.clear();pendingCheckpoint=null;checkpointTask=null;persistTask=null;checkpointFailed=false;checkpointBlocked=false;checkpointRevision=0;
+function renderDailyProgress(){
+ const rows=Array.isArray(progress?.dailyProgress)?progress.dailyProgress.filter(row=>row&&typeof row.date==='string'&&Number.isInteger(row.reviewedCount)&&row.reviewedCount>=0):[];
+ const list=$('daily-progress-list');list.replaceChildren();
+ const total=rows.reduce((sum,row)=>sum+row.reviewedCount,0),maximum=Math.max(1,...rows.map(row=>row.reviewedCount));
+ const todayKey=riyadhDay(new Date().toISOString()),yesterdayKey=riyadhDay(new Date(Date.now()-86400000).toISOString());
+ const today=rows.find(row=>row.date===todayKey)?.reviewedCount||0;
+ $('today-progress').textContent='Today: '+today+' '+(today===1?'question':'questions');
+ $('daily-progress-total').textContent=total+' reviewed in 30 days';
+ rows.forEach((row,index)=>{
+  const item=document.createElement('li');item.className='daily-progress-row';
+  const date=document.createElement('time');date.dateTime=row.date;
+  let label;try{label=new Intl.DateTimeFormat('en',{weekday:'short',month:'short',day:'numeric',timeZone:'Asia/Riyadh'}).format(new Date(row.date+'T12:00:00.000Z'));}catch{label=row.date;}
+  date.textContent=(row.date===todayKey?'Today · ':row.date===yesterdayKey?'Yesterday · ':'')+label;
+  const meter=document.createElement('progress');meter.max=maximum;meter.value=row.reviewedCount;meter.setAttribute?.('aria-label',row.reviewedCount+' questions reviewed');
+  const count=document.createElement('strong');count.textContent=String(row.reviewedCount);
+  const unit=document.createElement('span');unit.textContent=row.reviewedCount===1?'question':'questions';
+  item.append(date,meter,count,unit);list.append(item);
+ });
+ $('daily-progress-empty').hidden=total>0;
+}
+function setDailyProgress(open){
+ dailyProgressOpen=!!open;$('daily-progress-panel').hidden=!dailyProgressOpen;$('daily-progress-toggle').setAttribute?.('aria-expanded',String(dailyProgressOpen));
+ $('daily-progress-toggle').textContent=dailyProgressOpen?'Hide daily progress':'Show daily progress';
+}
+async function refreshDailyProgress(){
+ if(!user)return;
+ const ownEpoch=epoch,ownUser=user.id;
+ try{const stored=await api('progress');if(ownEpoch!==epoch||user?.id!==ownUser)return;progress={...progress,dailyProgress:stored.dailyProgress||[]};renderDailyProgress();}
+ catch(e){if(ownEpoch===epoch&&user?.id===ownUser&&dailyProgressOpen)notice(errorMessage(e));}
+}
+function clearWorkspace({discardOutbox=false,userId=user?.id}={}){
+ if(discardOutbox)discardReviewOutbox(userId);
+ epoch++;viewVersion++;atEnd=false;for(const c of controllers)c.abort();controllers.clear();stopReading();user=null;catalog=null;progress={done:[],seen:[],dailyProgress:[]};history=[];reviews=[];pool=[];position=-1;currentQuestion=null;loading=false;pendingSaves.clear();pendingReviewEvents.clear();pendingCheckpoint=null;checkpointTask=null;persistTask=null;checkpointFailed=false;checkpointBlocked=false;checkpointRevision=0;
  $('workspace').hidden=true;$('logout').hidden=true;$('login').hidden=false;
  for(const id of ['stem','explanation','source-key','result','validation-note','coverage','progress-count','save-status'])$(id).textContent='';
- $('options').replaceChildren();$('references').replaceChildren();renderFigures('question-figures');renderFigures('explanation-figures');$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;updateReadControls();
+ $('options').replaceChildren();$('references').replaceChildren();renderFigures('question-figures');renderFigures('explanation-figures');$('password').value='';$('retry-save').hidden=true;$('reload-position').hidden=true;setDailyProgress(false);renderDailyProgress();updateReadControls();
 }
 async function signOut(message='Signed out.',{automatic=false}={}){
  if(signingOut)return;
- const unsaved=!!(user&&(pendingSaves.size||pendingCheckpoint||checkpointTask));
+ const unsaved=!!(user&&(pendingSaves.size||pendingReviewEvents.size||pendingCheckpoint||checkpointTask));
  // Manual departure needs consent before discarding an unconfirmed save.
  // Idle expiry must still clear private data without waiting for a dialog.
  if(unsaved&&!automatic&&(typeof globalThis.confirm!=='function'||!globalThis.confirm('Some answers or your current position have not been saved. Sign out anyway and discard these unsaved changes?'))){
@@ -81,9 +147,9 @@ async function signOut(message='Signed out.',{automatic=false}={}){
  }
  signingOut=true;
  try{
-  try{await refreshPromise;}catch{}clearWorkspace();
+  const signedOutUser=user?.id;try{await refreshPromise;}catch{}clearWorkspace({discardOutbox:!automatic,userId:signedOutUser});
   $('signin').disabled=$('signup').disabled=true;
-  try{await raw('signout','POST',{});notice(message+(automatic&&unsaved?' Unsaved progress was not confirmed.':''));}
+  try{await raw('signout','POST',{});notice(message+(automatic&&unsaved?' Pending answers remain on this device and will retry for this account.':''));}
   catch{notice('This page has been cleared, but server sign-out could not be confirmed. Retry signing out when connected before using a shared device.');$('logout').hidden=false;}
  }finally{signingOut=false;$('signin').disabled=$('signup').disabled=false;}
 }
@@ -126,7 +192,7 @@ function updateCounters(){
 }
 function lock(value){loading=value;for(const id of ['submit','module','mode','restart','open-review'])$(id).disabled=value;updateCounters();updateReadControls();}
 function updateSaveControls(){
- $('retry-save').hidden=!(pendingSaves.size||checkpointFailed);
+ $('retry-save').hidden=!(pendingSaves.size||pendingReviewEvents.size||checkpointFailed);
 }
 async function savePosition(retryOnly=false){
  if(!user||checkpointBlocked)return;
@@ -222,28 +288,35 @@ async function start(saved=null){
 async function initialize(){
  const ownEpoch=epoch;
  try{const session=await api('session');if(ownEpoch!==epoch)return;
+  user=session.user;restoreReviewOutbox();
   const [bank,stored,saved]=await Promise.all([api('catalog'),api('progress'),api('checkpoint')]);if(ownEpoch!==epoch)return;
-  user=session.user;catalog=bank;progress=stored;checkpointRevision=saved.revision;checkpointBlocked=false;$('reload-position').hidden=true;lastActivity=lastRefresh=Date.now();
+  catalog=bank;progress=stored;checkpointRevision=saved.revision;checkpointBlocked=false;$('reload-position').hidden=true;lastActivity=lastRefresh=Date.now();renderDailyProgress();
   const state=saved.state?.schema==='render-study-v1'?saved.state:null;
   // Only an explicitly saved review session may reopen that list. An empty ready set is not consent.
   $('mode').value=state?.mode==='review'?'review':'practice';
   updateSetControls();
   $('module').value=[...$('module').options].some(m=>m.value===state?.module)?state.module:'';
   $('coverage').textContent=bank.summary.questionCount+' records from the current GitHub bank only. '+bank.summary.originalEnglishCount+' have attached original English explanation text; '+bank.summary.missingOriginalEnglishCount+' do not. This is not the complete legacy platform.';
-  $('login').hidden=true;$('workspace').hidden=false;$('logout').hidden=false;notice('');await start(state);
+  $('login').hidden=true;$('workspace').hidden=false;$('logout').hidden=false;notice('');updateSaveControls();await start(state);
+  if(ownEpoch===epoch&&pendingReviewEvents.size)void persist();
  }catch(e){if(ownEpoch!==epoch)return;clearWorkspace();notice(e.status===401?'Sign in to begin.':errorMessage(e));}
 }
 async function persist(){
  if(persistTask)return persistTask.promise;
- if(!user||!pendingSaves.size)return;
- const ownEpoch=epoch,task={promise:null};persistTask=task;
+ if(!user||(!pendingSaves.size&&!pendingReviewEvents.size))return;
+ const ownEpoch=epoch,ownUser=user.id,task={promise:null};persistTask=task;
  task.promise=(async()=>{
-  try{while(pendingSaves.size&&ownEpoch===epoch&&persistTask===task){
-   const rows=[...pendingSaves].slice(0,500).map(([questionId,correct])=>({questionId,correct}));
+  try{while((pendingSaves.size||pendingReviewEvents.size)&&ownEpoch===epoch&&persistTask===task){
+   const eventRows=[...pendingReviewEvents.entries()].slice(0,500),represented=new Set(eventRows.map(([,event])=>event.questionId));
+   const rows=eventRows.map(([,event])=>({...event}));
+   for(const [questionId,correct] of pendingSaves){if(rows.length>=500)break;if(!represented.has(questionId))rows.push({questionId,correct});}
    const stored=await api('progress','POST',{completed:rows,seen:rows.map(r=>r.questionId)});if(ownEpoch!==epoch||persistTask!==task)return;
-   progress=stored;for(const row of rows)if(pendingSaves.get(row.questionId)===row.correct)pendingSaves.delete(row.questionId);
+   progress=stored;
+   for(const [key,event] of eventRows){if(pendingReviewEvents.get(key)===event)pendingReviewEvents.delete(key);removeStoredReviewEvent(ownUser,key);}
+   const stillPending=new Set([...pendingReviewEvents.values()].map(event=>event.questionId));
+   for(const row of rows)if(!stillPending.has(row.questionId)&&pendingSaves.get(row.questionId)===row.correct)pendingSaves.delete(row.questionId);
    for(const slot of history)if(slot.reply&&!pendingSaves.has(slot.id))slot.saved=true;
-   if(history[position]?.reply)showFeedback(history[position]);updateCounters();
+   if(history[position]?.reply)showFeedback(history[position]);renderDailyProgress();updateCounters();
   }}catch(e){if(ownEpoch===epoch)notice(errorMessage(e));}
   finally{if(persistTask===task){persistTask=null;updateSaveControls();}}
  })();
@@ -272,7 +345,7 @@ $('submit').addEventListener('click',async()=>{
  const ownEpoch=epoch;lock(true);
  try{slot.wasWrong=pendingSaves.get(slot.id)===false||(progress.done||[]).some(r=>r.questionId===slot.id&&r.correct===false)||history.some(r=>r.id===slot.id&&r.reply?.correct===false);const reply=await api('answer','POST',{id:slot.id,selectedIndex:slot.selected});if(ownEpoch!==epoch)return;slot.reply=reply;
   if(reply.correct===false&&!reviews.some(r=>r.id===slot.id))reviews.push({id:slot.id,after:freshCount+3+Math.floor(Math.random()*3)});
-  pendingSaves.set(slot.id,reply.correct);showFeedback(slot);$('options').querySelectorAll('input').forEach(input=>input.disabled=true);await persist();
+  queueReviewedQuestion(slot.id,reply.correct,reply.reviewedAt);showFeedback(slot);$('options').querySelectorAll('input').forEach(input=>input.disabled=true);await persist();
   if(ownEpoch===epoch)void savePosition();
  }catch(e){if(ownEpoch===epoch)notice(errorMessage(e));}finally{if(ownEpoch===epoch&&user){lock(false);$('submit').disabled=!!slot.reply;}}
 });
@@ -281,19 +354,24 @@ $('module').addEventListener('change',()=>void start());
 $('mode').addEventListener('change',()=>{updateSetControls();void start();});
 $('open-review').addEventListener('click',()=>{if(loading)return;$('mode').value='review';updateSetControls();void start();});
 $('restart').addEventListener('click',()=>void start());
+$('daily-progress-toggle').addEventListener('click',()=>{setDailyProgress(!dailyProgressOpen);if(dailyProgressOpen)void refreshDailyProgress();});
 $('retry-save').textContent='Retry saving';
 $('retry-save').addEventListener('click',()=>void retrySaving());$('reload-position').addEventListener('click',()=>void reloadSavedPosition());
-window.addEventListener('online',()=>{if(user)void retrySaving();});
+window.addEventListener('online',()=>{if(user)void retrySaving().then(()=>refreshDailyProgress());});
 window.addEventListener('beforeunload',event=>{
- if(user&&(pendingSaves.size||pendingCheckpoint||checkpointTask)){event.preventDefault();event.returnValue='';}
+ if(user&&(pendingSaves.size||pendingReviewEvents.size||pendingCheckpoint||checkpointTask)){event.preventDefault();event.returnValue='';}
 });
 function loadVoices(){const selected=$('voice').value;const voices=englishVoices();$('voice').replaceChildren();const def=document.createElement('option');def.value='';def.textContent='System English voice';$('voice').append(def);for(const voice of voices.filter(v=>/^en(?:-|_)/i.test(v.lang))){const opt=document.createElement('option');opt.value=voice.voiceURI;opt.textContent=voice.name+' · '+voice.lang;$('voice').append(opt);}if([...$('voice').options].some(o=>o.value===selected))$('voice').value=selected;}
 function read(text){if(!user||loading||atEnd||!currentQuestion)return;reader.speak(text,{voiceURI:$('voice').value});}
 $('read-question').addEventListener('click',()=>read(currentQuestion?.text));$('read-explanation').addEventListener('click',()=>read(history[position]?.reply?.originalExplanationAvailable?history[position].reply.explanation:''));$('stop-reading').addEventListener('click',stopReading);
 globalThis.speechSynthesis?.addEventListener?.('voiceschanged',loadVoices);loadVoices();updateReadControls();
 for(const event of ['pointerdown','keydown','scroll'])window.addEventListener(event,()=>{lastActivity=Date.now();},{passive:true});
-setInterval(()=>{if(!user)return;if(Date.now()-lastActivity>=IDLE){void signOut('Signed out after 10 minutes of inactivity.',{automatic:true});return;}if(Date.now()-lastRefresh>240000&&Date.now()-lastActivity<60000)void refresh().catch(()=>{});},20000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&user&&Date.now()-lastActivity>=IDLE)void signOut('Session expired after inactivity.',{automatic:true});});
+setInterval(()=>{
+ const day=riyadhDay(new Date().toISOString());
+ if(day!==currentRiyadhDay){currentRiyadhDay=day;renderDailyProgress();if(user)void refreshDailyProgress();}
+ if(!user)return;if(Date.now()-lastActivity>=IDLE){void signOut('Signed out after 10 minutes of inactivity.',{automatic:true});return;}if(Date.now()-lastRefresh>240000&&Date.now()-lastActivity<60000)void refresh().catch(()=>{});
+},20000);
+document.addEventListener('visibilitychange',()=>{if(document.hidden||!user)return;if(Date.now()-lastActivity>=IDLE)void signOut('Session expired after inactivity.',{automatic:true});else if(dailyProgressOpen)void refreshDailyProgress();});
 // Confirmation links may contain provider tokens. Never store or echo the fragment.
 if(location.hash){globalThis.history.replaceState(null,'','/study');notice('After confirming your email, sign in below.');}
 void initialize();

@@ -67,6 +67,7 @@ export function createStudyApp({backend,env=process.env,fetcher=globalThis.fetch
       }
       if(['progress','checkpoint'].includes(action)) {
         if(!backend)throw failure(503,'backend_unavailable');
+        if(req.headers['x-pediarounds-user-id']!==user.id)throw failure(409,'session_changed');
         // Origin was checked BEFORE converting the ambient cookie to a bearer token.
         req.headers.authorization='Bearer '+token;
         await backend.handle(req,res,'/api/external/'+action);return true;
@@ -93,6 +94,7 @@ export function createStudyApp({backend,env=process.env,fetcher=globalThis.fetch
         if(Object.keys(body).some(k=>!['id','selectedIndex'].includes(k))||!Object.hasOwn(body,'selectedIndex'))throw failure(400,'invalid_input');
         const q=bank.get(body.id);if(!q)throw failure(404,'question_not_found');
         const payload=answerFeedback(q,body.selectedIndex),figures=images.descriptors(q.id,'explanation',imageIdentity);
+        payload.reviewedAt=new Date(now()).toISOString();
         if(figures.length)payload.figures=figures;
         if(images.descriptors(q.id,'question',imageIdentity).length)payload.notice=payload.notice.replace('Original question image has not been migrated.','Source figures are attached; completeness and clinical review remain pending.');
         return send(200,payload);

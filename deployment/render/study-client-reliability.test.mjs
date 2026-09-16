@@ -10,19 +10,20 @@ import {createEnglishReader,canReadEnglish,englishVoices} from './study-reader.m
 const source=readFileSync(new URL('./study-client.mjs',import.meta.url),'utf8').replace(/^import .* from '\.\/reader\.mjs';\n/,'');
 const response=(data,status=200)=>({ok:status>=200&&status<300,status,json:async()=>data});
 function deferred(){let resolve;const promise=new Promise(r=>{resolve=r;});return {promise,resolve};}
-function client(fetcher=async()=>response({})){
+function client(fetcher=async()=>response({}),localStorage){
  const elements=new Map(),events=new Map();
  const element=()=>({hidden:false,disabled:false,value:'',textContent:'',dataset:{},children:[],listeners:new Map(),
   addEventListener(name,fn){this.listeners.set(name,fn);},replaceChildren(...children){this.children=children;},append(...children){this.children.push(...children);},get options(){return this.children;},querySelectorAll(){return [];},reportValidity(){return true;}});
  const get=id=>{if(!elements.has(id))elements.set(id,element());return elements.get(id);};
  get('mode').value='practice';
- const context={createEnglishReader,canReadEnglish,englishVoices,console,AbortController,setTimeout,clearTimeout,setInterval:()=>0,crypto:webcrypto,URL,Uint32Array,
+ const context={createEnglishReader,canReadEnglish,englishVoices,console,AbortController,setTimeout,clearTimeout,setInterval:()=>0,crypto:webcrypto,URL,Uint32Array,localStorage,
   fetch:fetcher,location:{hash:''},document:{getElementById:get,createElement:element,addEventListener(){}},
   window:{addEventListener(name,fn){events.set(name,fn);}}};
  runInNewContext(source.replace(/void initialize\(\);\s*$/,'')+`\n;globalThis.testClient={api,persist,savePosition,display,next,clearWorkspace,
   retry:()=>typeof retrySaving==='function'?retrySaving():persist(),
-  seed(){user={id:'fictional-user'};history=[{id:'q1',reply:null,selected:null,saved:false}];position=0;currentQuestion={id:'q1',text:'Old question',options:[]};catalog={summary:{questionCount:2},items:[]};},
-  enqueue(id,correct){pendingSaves.set(id,correct);},
+  seed(userId='fictional-user'){user={id:userId};history=[{id:'q1',reply:null,selected:null,saved:false}];position=0;currentQuestion={id:'q1',text:'Old question',options:[]};catalog={summary:{questionCount:2},items:[]};},
+  enqueue(id,correct,reviewedAt){queueReviewedQuestion(id,correct,reviewedAt);},
+  restore(){restoreReviewOutbox();},
   move(id){history.push({id,reply:null,selected:null,saved:false});position=history.length-1;},
   snapshot(){return {pending:[...pendingSaves],pendingCheckpoint,checkpointRevision,checkpointBlocked,currentQuestion,position,progress};}
  };`,context);
@@ -44,10 +45,39 @@ test('new answers queued during a save are drained serially',async()=>{
  gate.resolve(response({done:[{questionId:'q1',correct:false}],seen:['q1']}));await saving;
  assert.equal(batches.length,2);assert.equal(batches[1].find(r=>r.questionId==='q1').correct,true);assert.equal(c.snapshot().pending.length,0);
 });
+test('an older acknowledgement cannot erase a newer same-day review',async()=>{
+ const gate=deferred(),batches=[];const {c}=client(async(_url,options)=>{batches.push(JSON.parse(options.body).completed);return batches.length===1?gate.promise:response({done:[],seen:[],dailyProgress:[]});});
+ c.enqueue('q1',true,'2026-09-16T10:00:00.000Z');const saving=c.persist();await tick();c.enqueue('q1',true,'2026-09-16T11:00:00.000Z');
+ gate.resolve(response({done:[],seen:[],dailyProgress:[]}));await saving;
+ assert.equal(batches.length,2);assert.equal(batches[1][0].reviewedAt,'2026-09-16T11:00:00.000Z');assert.equal(c.snapshot().pending.length,0);
+});
+test('Riyadh midnight keeps adjacent-day reviews as separate immutable rows',async()=>{
+ const batches=[];const {c}=client(async(_url,options)=>{batches.push(JSON.parse(options.body).completed);return response({done:[],seen:[],dailyProgress:[]});});
+ assert.equal(c.snapshot().pending.length,0);c.enqueue('q1',false,'2026-09-16T20:59:59.999Z');c.enqueue('q1',true,'2026-09-16T21:00:00.000Z');await c.persist();
+ assert.equal(batches[0].length,2);assert.deepEqual(batches[0].map(row=>row.reviewedAt),['2026-09-16T20:59:59.999Z','2026-09-16T21:00:00.000Z']);
+});
 test('failed answer saving remains retryable without claiming success',async()=>{
  let fail=true;const {c,get}=client(async()=>fail?response({error:'backend_unavailable'},503):response({done:[{questionId:'q1',correct:true}],seen:['q1']}));
  c.enqueue('q1',true);await c.persist();assert.equal(c.snapshot().pending.length,1);assert.equal(get('retry-save').hidden,false);
  fail=false;await c.persist();assert.equal(c.snapshot().pending.length,0);assert.equal(get('retry-save').hidden,true);
+});
+test('a failed daily review survives reload and restores only for the same account',async()=>{
+ const data=new Map(),storage={get length(){return data.size;},key:index=>[...data.keys()][index]??null,getItem:key=>data.get(key)??null,setItem:(key,value)=>data.set(key,value),removeItem:key=>data.delete(key)};
+ const first=client(async()=>response({error:'backend_unavailable'},503),storage).c;
+ first.enqueue('q1',true,'2026-09-16T08:30:00.000Z');await first.persist();
+ assert.ok([...data.keys()].some(key=>key.startsWith('pediarounds-review-outbox-v2:fictional-user:')));
+ const other=client(async()=>response({done:[],seen:[],dailyProgress:[]}),storage).c;other.seed('other-user');other.restore();
+ assert.equal(other.snapshot().pending.length,0);
+ const restored=client(async()=>response({done:[],seen:[],dailyProgress:[]}),storage).c;restored.restore();
+ assert.equal(restored.snapshot().pending.length,1);await restored.persist();
+ assert.equal(restored.snapshot().pending.length,0);assert.equal(data.size,0);
+});
+test('one tab acknowledgement cannot erase a newer same-day event from another tab',async()=>{
+ const data=new Map(),storage={get length(){return data.size;},key:index=>[...data.keys()][index]??null,getItem:key=>data.get(key)??null,setItem:(key,value)=>data.set(key,value),removeItem:key=>data.delete(key)};
+ const ok=async()=>response({done:[],seen:[],dailyProgress:[]}),first=client(ok,storage).c,second=client(ok,storage).c;
+ first.enqueue('q1',true,'2026-09-16T08:30:00.000Z');second.enqueue('q1',false,'2026-09-16T09:30:00.000Z');assert.equal(data.size,2);
+ await first.persist();assert.equal(data.size,1);assert.match([...data.values()][0],/09:30:00\.000Z/);
+ await second.persist();assert.equal(data.size,0);
 });
 test('checkpoint failure keeps the unsaved position and exposes retry',async()=>{
  const {c,get}=client(async()=>response({error:'backend_unavailable'},503));await c.savePosition();

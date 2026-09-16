@@ -16,7 +16,7 @@ async function running(t,options={}) {
   if(url.endsWith('/auth/v1/user')) return json(user);
   if(url.endsWith('/auth/v1/settings')) return json({external:{email:true}});
   if(url.includes('checkpoint')) return json({revision:1,state:{currentId:'source-id'}});
-  return json({reviewedCount:1,done:[{questionId:'source-id',correct:true}],seen:['source-id']});
+  return json({reviewedCount:1,done:[{questionId:'source-id',correct:true}],seen:['source-id'],dailyProgress:[{date:'2026-09-16',reviewedCount:1}]});
  },...options});
  const server=createServer(async(req,res)=>{
   if(!await backend.handle(req,res,new URL(req.url,'http://localhost').pathname)){res.writeHead(404);res.end();}
@@ -28,11 +28,11 @@ async function running(t,options={}) {
 const post=(body)=>({method:'POST',headers:{...auth,'Content-Type':'application/json'},body:JSON.stringify(body)});
 
 test('progress preserves original IDs and tri-state correct values',()=>{
- const b={completed:[{questionId:'p2-original-001',correct:null},{questionId:'original-false',correct:false},{questionId:'original-true',correct:true}],seen:['another-id']};
+ const b={completed:[{questionId:'p2-original-001',correct:null,reviewedAt:'2026-09-16T08:30:00.000Z'},{questionId:'original-false',correct:false},{questionId:'original-true',correct:true}],seen:['another-id']};
  assert.deepEqual(validateProgress(b),b);
 });
 test('progress rejects user spoofing, unknown fields and malformed values',()=>{
- for(const body of [null,[],{user_id:'x'},{completed:[{questionId:'x'}]},{completed:[{questionId:'x',correct:1}]},{completed:[{questionId:'x',correct:'true'}]},{completed:[{questionId:'x',correct:true,user_id:'spoof'}]},{seen:['']},{seen:['x\n']},{seen:[4]},{seen:['x'.repeat(201)]},{completed:Array(501).fill({questionId:'x',correct:true})}]) assert.throws(()=>validateProgress(body));
+ for(const body of [null,[],{user_id:'x'},{completed:[{questionId:'x'}]},{completed:[{questionId:'x',correct:1}]},{completed:[{questionId:'x',correct:'true'}]},{completed:[{questionId:'x',correct:true,user_id:'spoof'}]},{completed:[{questionId:'x',correct:true,reviewedAt:'yesterday'}]},{completed:[{questionId:'x',correct:true,reviewedAt:'2026-99-99T08:30:00.000Z'}]},{completed:[{questionId:'x',correct:true,reviewedAt:'2026-02-30T08:30:00.000Z'}]},{completed:[{questionId:'x',correct:true,reviewedAt:'2026-09-16T08:30:00Z'}]},{seen:['']},{seen:['x\n']},{seen:[4]},{seen:['x'.repeat(201)]},{completed:Array(501).fill({questionId:'x',correct:true})}]) assert.throws(()=>validateProgress(body));
 });
 test('empty progress is a no-op payload, never a delete request',()=>assert.deepEqual(validateProgress({}),{completed:[],seen:[]}));
 test('checkpoint requires an explicit nonnegative revision and bounded object',()=>{
@@ -78,10 +78,15 @@ test('malformed Auth response never authenticates',async t=>{
 test('progress read uses the verified user token and the read RPC',async t=>{
  const {url,calls}=await running(t);const r=await fetch(url+'/api/external/progress',{headers:auth});assert.equal(r.status,200);
  assert.match(calls[1].url,/rpc\/pediarounds_render_read_progress$/);assert.equal(calls[1].opts.headers.Authorization,'Bearer '+token);assert.equal(calls[1].opts.body,'{}');
+ assert.deepEqual((await r.json()).dailyProgress,[{date:'2026-09-16',reviewedCount:1}]);
 });
 test('progress write validates fields before issuing the transactional RPC',async t=>{
- const {url,calls}=await running(t);const payload={completed:[{questionId:'source-id',correct:true}],seen:[]};
+ const {url,calls}=await running(t);const payload={completed:[{questionId:'source-id',correct:true,reviewedAt:'2026-09-16T08:30:00.000Z'}],seen:[]};
  const r=await fetch(url+'/api/external/progress',post(payload));assert.equal(r.status,200);assert.deepEqual(JSON.parse(calls[1].opts.body),payload);
+});
+test('malformed daily progress from storage fails closed',async t=>{
+ const {url}=await running(t,{fetcher:url=>url.endsWith('/user')?json(user):json({reviewedCount:1,done:[],seen:[],dailyProgress:[{date:'not-a-day',reviewedCount:1}]})});
+ assert.equal((await fetch(url+'/api/external/progress',{headers:auth})).status,503);
 });
 test('invalid input does not reach the persistence layer',async t=>{
  const {url,calls}=await running(t);const r=await fetch(url+'/api/external/progress',post({user_id:'another-user'}));assert.equal(r.status,400);assert.equal(calls.length,1);

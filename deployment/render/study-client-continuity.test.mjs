@@ -29,7 +29,7 @@ function client({confirm=false,failSignout=false,failSaves=false}={}){
   window:{addEventListener(name,fn){events.set(name,fn);}}};
  runInNewContext(source.replace(/^import[^\n]*\n/,'').replace(/void initialize\(\);\s*$/,'')+`\n;globalThis.testClient={start,next,signOut,savePosition,
   seed(ids=['q1']){user={id:'fictional-user'};history=[{id:ids[0],reply:null,selected:1,saved:false}];position=0;currentQuestion={id:ids[0],text:'Fictional question',options:[]};catalog={summary:{questionCount:ids.length},items:ids.map(id=>({id,module:'Test',reviewOnly:false}))};},
-  enqueue(id,correct){pendingSaves.set(id,correct);},
+  enqueue(id,correct,reviewedAt){queueReviewedQuestion(id,correct,reviewedAt);},
   done(id){progress.done.push({questionId:id,correct:true});},
   snapshot(){return {user,pending:[...pendingSaves],current:currentQuestion?.id,position,reviews,pool,history};}
  };`,context);
