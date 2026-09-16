@@ -1,0 +1,1254 @@
+diff --git a/app/api/independent/[...action]/route.ts b/app/api/independent/[...action]/route.ts
+new file mode 100644
+index 0000000..18eaac0
+--- /dev/null
++++ b/app/api/independent/[...action]/route.ts
+@@ -0,0 +1,4 @@
++import {handleAuth} from '../../../../server/portable/http.mjs';
++export const dynamic='force-dynamic';
++export async function GET(request:Request){return handleAuth(request,new URL(request.url).pathname.slice('/api/independent/'.length));}
++export const POST=GET;
+diff --git a/app/api/question-figures/[id]/route.ts b/app/api/question-figures/[id]/route.ts
+new file mode 100644
+index 0000000..867cf18
+--- /dev/null
++++ b/app/api/question-figures/[id]/route.ts
+@@ -0,0 +1,4 @@
++import {servePortable} from '../../../../server/portable/services';
++export const dynamic='force-dynamic';
++export async function GET(request:Request){return servePortable(request,'figures');}
++export const HEAD=GET;
+diff --git a/app/api/scenario/route.ts b/app/api/scenario/route.ts
+new file mode 100644
+index 0000000..2c571a5
+--- /dev/null
++++ b/app/api/scenario/route.ts
+@@ -0,0 +1,3 @@
++import {servePortable} from '../../../server/portable/services';
++export const dynamic='force-dynamic';
++export async function POST(request:Request){return servePortable(request,'scenario');}
+diff --git a/app/api/source-documents/[id]/route.ts b/app/api/source-documents/[id]/route.ts
+new file mode 100644
+index 0000000..81f0189
+--- /dev/null
++++ b/app/api/source-documents/[id]/route.ts
+@@ -0,0 +1,4 @@
++import {servePortable} from '../../../../server/portable/services';
++export const dynamic='force-dynamic';
++export async function GET(request:Request){return servePortable(request,'documents');}
++export const HEAD=GET;
+diff --git a/app/api/speech/route.ts b/app/api/speech/route.ts
+new file mode 100644
+index 0000000..02728ea
+--- /dev/null
++++ b/app/api/speech/route.ts
+@@ -0,0 +1,4 @@
++import {servePortable} from '../../../server/portable/services';
++export const dynamic='force-dynamic';
++export async function GET(request:Request){return servePortable(request,'speech');}
++export const POST=GET;
+diff --git a/app/auth/callback/route.ts b/app/auth/callback/route.ts
+new file mode 100644
+index 0000000..a29d099
+--- /dev/null
++++ b/app/auth/callback/route.ts
+@@ -0,0 +1,3 @@
++import {portableAuth,nodeRequest,nodeResponse} from '../../../server/portable/http.mjs';
++export const dynamic='force-dynamic';
++export async function GET(request:Request){const res=nodeResponse();const target=await portableAuth.oauth.callback(nodeRequest(request),res);const headers=res.headers();headers.set('Location',target+'#');return new Response(null,{status:303,headers});}
+diff --git a/app/chatgpt-auth.ts b/app/chatgpt-auth.ts
+index 36c6a36..b657e51 100644
+--- a/app/chatgpt-auth.ts
++++ b/app/chatgpt-auth.ts
+@@ -1,96 +1,28 @@
+-import { headers } from "next/headers";
+-import { redirect } from "next/navigation";
+-import { signInReturnPath } from '../public/sign-in-session.js';
+-
+-export type ChatGPTUser = {
+-  id: string;
+-  displayName: string;
+-  email: string;
+-  fullName: string | null;
+-};
+-
+-const USER_ID_HEADER = "oai-authenticated-user-id";
+-const USER_EMAIL_HEADER = "oai-authenticated-user-email";
+-const USER_FULL_NAME_HEADER = "oai-authenticated-user-full-name";
+-const USER_FULL_NAME_ENCODING_HEADER =
+-  "oai-authenticated-user-full-name-encoding";
+-const PERCENT_ENCODED_UTF8 = "percent-encoded-utf-8";
+-const SIGN_IN_PATH = "/signin-with-chatgpt";
+-const SIGN_OUT_PATH = "/signout-with-chatgpt";
+-const CALLBACK_PATH = "/callback";
+-
+-export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
+-  const requestHeaders = await headers();
+-  const id = requestHeaders.get(USER_ID_HEADER)?.trim();
+-  const email = requestHeaders.get(USER_EMAIL_HEADER);
+-  if (!id || !email?.trim()) return null;
+-
+-  // This header is only an expectation, never an identity or permission grant.
+-  // Old pages can outlive a sign-out/account switch in another browser tab.
+-  const expectedId = requestHeaders.get('x-pediarounds-user-id');
+-  if (expectedId !== null && expectedId !== id) return null;
+-
+-  const encodedFullName = requestHeaders.get(USER_FULL_NAME_HEADER);
+-  const fullName =
+-    encodedFullName &&
+-    requestHeaders.get(USER_FULL_NAME_ENCODING_HEADER) === PERCENT_ENCODED_UTF8
+-      ? safeDecodeURIComponent(encodedFullName)
+-      : null;
+-
+-  return {
+-    id,
+-    displayName: fullName ?? email,
+-    email,
+-    fullName,
+-  };
+-}
+-
+-export async function requireChatGPTUser(
+-  returnTo: string,
+-): Promise<ChatGPTUser> {
+-  const user = await getChatGPTUser();
+-  if (user) return user;
+-
+-  redirect(chatGPTSignInPath(returnTo));
+-}
+-
+-export function chatGPTSignInPath(returnTo: string): string {
+-  const safeReturnTo = safeRelativeReturnPath(returnTo);
+-  return `${SIGN_IN_PATH}?return_to=${encodeURIComponent(signInReturnPath(safeReturnTo))}`;
+-}
+-
+-export function chatGPTSignOutPath(returnTo = "/"): string {
+-  const safeReturnTo = safeRelativeReturnPath(returnTo);
+-  return `${SIGN_OUT_PATH}?return_to=${encodeURIComponent(safeReturnTo)}`;
+-}
+-
+-function safeRelativeReturnPath(value: string): string {
+-  if (!value.startsWith("/") || value.startsWith("//")) return "/";
+-
+-  let url: URL;
++// Compatibility exports keep the current screens unchanged; identity comes from Supabase.
++import {headers} from 'next/headers';
++import {redirect} from 'next/navigation';
++import {cache} from 'react';
++import {portableAuth, nodeRequest} from '../server/portable/http.mjs';
++import {resolveAccount} from '../server/portable/postgres.mjs';
++export type ChatGPTUser={id:string;externalId:string;displayName:string;email:string;fullName:string|null};
++export const getChatGPTUser=cache(async():Promise<ChatGPTUser|null>=>{
++  const h=await headers();
+   try {
+-    url = new URL(value, "https://app.local");
+-  } catch {
+-    return "/";
++    const {user}=await portableAuth.current(nodeRequest(new Request('https://localhost/',{headers:h})));
++    const id=await resolveAccount(user.id);
++    const expected=h.get('x-pediarounds-user-id');
++    if(expected!==null && expected!==id)return null;
++    return {id,externalId:user.id,email:user.email,displayName:user.email,fullName:null};
++  } catch(error) {
++    if(typeof error==='object' && error && 'status' in error && [401,403].includes(Number(error.status)))return null;
++    throw new Error('Independent account service unavailable');
+   }
+-  if (url.origin !== "https://app.local") return "/";
+-  if (isReservedAuthPath(url.pathname)) return "/";
+-
+-  return `${url.pathname}${url.search}${url.hash}`;
++});
++export async function requireChatGPTUser(returnTo:string):Promise<ChatGPTUser> {
++  const user=await getChatGPTUser();if(user)return user;redirect(chatGPTSignInPath(returnTo));
+ }
+-
+-function isReservedAuthPath(pathname: string): boolean {
+-  return (
+-    pathname === SIGN_IN_PATH ||
+-    pathname === SIGN_OUT_PATH ||
+-    pathname === CALLBACK_PATH
+-  );
+-}
+-
+-function safeDecodeURIComponent(value: string): string | null {
+-  try {
+-    return decodeURIComponent(value);
+-  } catch {
+-    return null;
+-  }
++export function safeReturn(value:string):string {
++  try {const u=new URL(value,'https://app.local');if(!value.startsWith('/')||value.startsWith('//')||u.origin!=='https://app.local'||/^\/(login|logout|auth|api|signin-with-chatgpt|signout-with-chatgpt)(\/|$)/.test(u.pathname))return '/questions';return u.pathname+u.search+u.hash;}catch{return '/questions';}
+ }
++export function chatGPTSignInPath(returnTo:string):string {return '/login?return_to='+encodeURIComponent(safeReturn(returnTo));}
++export function chatGPTSignOutPath(_returnTo='/'):string {return '/logout';}
+diff --git a/app/healthz/route.ts b/app/healthz/route.ts
+new file mode 100644
+index 0000000..3697394
+--- /dev/null
++++ b/app/healthz/route.ts
+@@ -0,0 +1 @@
++export async function GET(){return Response.json({ok:true,runtime:'independent-node'},{headers:{'Cache-Control':'no-store'}});}
+diff --git a/app/layout.tsx b/app/layout.tsx
+index 899c39b..6b36bb1 100644
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -4,6 +4,7 @@ import { AppProvider } from "./app-install";
+ import { getChatGPTUser } from './chatgpt-auth';
+ import IdleSession from './idle-session';
+ import SectionReader from './section-reader';
++import PortableSession from './portable-session';
+ 
+ export const metadata: Metadata = {
+   title: "PediaRounds — مراجعة تجميعات الأطفال",
+@@ -29,7 +30,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
+         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+         <link rel="stylesheet" href="/styles.css?v=single-language-20260910" />
+       </head>
+-      <body className="home-mode" data-user-id={user?.id}><AppProvider><div id="siteContent">{children}</div><IdleSession userId={user?.id || null} />{user && <SectionReader />}</AppProvider></body>
++      <body className="home-mode" data-user-id={user?.id}><AppProvider><div id="siteContent">{children}</div><IdleSession userId={user?.id || null} /><PortableSession signedIn={!!user}/>{user && <SectionReader />}</AppProvider></body>
+     </html>
+   );
+ }
+diff --git a/app/login/login-form.tsx b/app/login/login-form.tsx
+new file mode 100644
+index 0000000..f831f07
+--- /dev/null
++++ b/app/login/login-form.tsx
+@@ -0,0 +1,23 @@
++'use client';
++import {useEffect,useState} from 'react';
++export default function LoginForm({returnTo,oauthError}:{returnTo:string;oauthError:boolean}) {
++  const [email,setEmail]=useState(''),[password,setPassword]=useState(''),[busy,setBusy]=useState(false),[message,setMessage]=useState(oauthError?'تعذر إتمام الدخول. حاول مجددًا.':''),[providers,setProviders]=useState<Record<string,boolean>>({});
++  useEffect(()=>{fetch('/api/independent/oauth/providers',{cache:'no-store'}).then(r=>r.json()).then(d=>setProviders(d.providers||{})).catch(()=>{});},[]);
++  async function submit(action:string,provider?:string) {
++    if(busy)return;setBusy(true);setMessage('');
++    try {
++      const r=await fetch('/api/independent/'+action,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify(provider?{provider}:{email,password}),signal:AbortSignal.timeout(15000)});
++      const data=await r.json();if(!r.ok)throw Error(data.error);
++      if(provider){const u=new URL(data.url);if(!/^https:\/\/[a-z0-9]{20}\.supabase\.co$/.test(u.origin)||u.pathname!=='/auth/v1/authorize'||u.searchParams.get('provider')!==provider||u.searchParams.get('redirect_to')!==location.origin+'/auth/callback')throw Error();location.assign(u.href);}
++      else if(action==='signin'){setPassword('');location.assign(returnTo);}
++      else {setPassword('');setMessage('تحقق من بريدك لتأكيد الحساب، ثم سجّل الدخول.');}
++    } catch(error){const code=error instanceof Error?error.message:'';setMessage(code==='email_confirmation_required'?'أكد بريدك الإلكتروني أولًا.':code==='rate_limited'?'انتظر دقيقة قبل المحاولة مجددًا.':'تعذر تسجيل الدخول. تحقق من بياناتك أو حاول لاحقًا.');}
++    finally {setBusy(false);}
++  }
++  return <><form onSubmit={e=>{e.preventDefault();void submit('signin');}} style={{display:'grid',gap:16}}>
++    <label>البريد الإلكتروني<input required type="email" autoComplete="email" dir="ltr" value={email} onChange={e=>setEmail(e.target.value)} disabled={busy} style={{display:'block',width:'100%',padding:12}}/></label>
++    <label>كلمة المرور<input required type="password" autoComplete="current-password" value={password} onChange={e=>setPassword(e.target.value)} disabled={busy} style={{display:'block',width:'100%',padding:12}}/></label>
++    <button type="submit" disabled={busy}>تسجيل الدخول</button><button type="button" disabled={busy||password.length<10||!email} onClick={()=>void submit('signup')}>إنشاء حساب</button>
++    {['google','apple'].filter(p=>providers[p]).map(p=><button key={p} type="button" disabled={busy} onClick={()=>void submit('oauth/start',p)}>الدخول باستخدام {p==='google'?'Google':'Apple'}</button>)}
++  </form><p role="status" aria-live="polite">{message}</p></>;
++}
+diff --git a/app/login/page.tsx b/app/login/page.tsx
+new file mode 100644
+index 0000000..3bec05d
+--- /dev/null
++++ b/app/login/page.tsx
+@@ -0,0 +1,9 @@
++import {redirect} from 'next/navigation';
++import {getChatGPTUser,safeReturn} from '../chatgpt-auth';
++import LoginForm from './login-form';
++export const dynamic='force-dynamic';
++export default async function Login({searchParams}:{searchParams:Promise<{return_to?:string;auth_error?:string}>}) {
++  const p=await searchParams,returnTo=safeReturn(p.return_to||'/questions');
++  if(await getChatGPTUser())redirect(returnTo);
++  return <main className="site-shell" style={{maxWidth:520,margin:'5vh auto',padding:24}}><h1>PediaRounds</h1><h2>تسجيل الدخول</h2><LoginForm returnTo={returnTo} oauthError={!!p.auth_error}/></main>;
++}
+diff --git a/app/logout/page.tsx b/app/logout/page.tsx
+new file mode 100644
+index 0000000..5d8ed1f
+--- /dev/null
++++ b/app/logout/page.tsx
+@@ -0,0 +1,3 @@
++'use client';
++import {useEffect,useState} from 'react';
++export default function Logout(){const [failed,setFailed]=useState(false);useEffect(()=>{fetch('/api/independent/signout',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'}).then(r=>{if(!r.ok)throw Error();location.replace('/login');}).catch(()=>setFailed(true));},[]);return <main style={{padding:32}}><p>{failed?'تعذر تسجيل الخروج. أعد المحاولة.':'جارٍ تسجيل الخروج…'}</p>{failed&&<button onClick={()=>location.reload()}>إعادة المحاولة</button>}</main>;}
+diff --git a/app/page.tsx b/app/page.tsx
+index 39e0163..7a89c59 100644
+--- a/app/page.tsx
++++ b/app/page.tsx
+@@ -43,11 +43,11 @@ function LoginView({ user }: { user: ChatGPTUser | null }) {
+           </div>
+ 
+           <a className="auth-primary-button" href={signInHref} target="_top">
+-            {user ? "الدخول إلى بنك الأسئلة" : "المتابعة عبر ChatGPT"}
++            {user ? "الدخول إلى بنك الأسئلة" : "تسجيل الدخول"}
+             <span aria-hidden="true">←</span>
+           </a>
+ 
+-          {!user && <p className="auth-helper">تُفتح شاشة ChatGPT الآمنة، ومنها تختار Google أو Apple أو البريد الإلكتروني لإكمال الدخول أو إنشاء حساب.</p>}
++          {!user && <p className="auth-helper">سجّل الدخول ببريدك الإلكتروني أو بإحدى طرق الدخول المتاحة لاستكمال المراجعة.</p>}
+ 
+           <div className="auth-app-install"><MockExamLink /></div>
+           <nav className="auth-resource-links" aria-label="مصادر الدراسة">
+diff --git a/app/portable-session.tsx b/app/portable-session.tsx
+new file mode 100644
+index 0000000..6077a7c
+--- /dev/null
++++ b/app/portable-session.tsx
+@@ -0,0 +1,16 @@
++'use client';
++import {useEffect} from 'react';
++export default function PortableSession({signedIn}:{signedIn:boolean}) {
++  useEffect(()=>{
++    if(!signedIn)return;let lastActivity=Date.now(),lastRefresh=Date.now(),pending=false,stopped=false;
++    let controller:AbortController|undefined;
++    const stop=()=>{stopped=true;controller?.abort();};
++    const leaving=(event:MouseEvent)=>{const link=(event.target as Element)?.closest?.('a');if(link && ['/logout','/signout-with-chatgpt'].includes(new URL(link.href,location.origin).pathname))stop();};
++    window.addEventListener('pedia:before-signout',stop);window.addEventListener('pagehide',stop);document.addEventListener('click',leaving,true);
++    const activity=()=>{lastActivity=Date.now();};const events=['pointerdown','keydown','touchstart','scroll'];events.forEach(n=>window.addEventListener(n,activity,{passive:true}));
++    const timer=setInterval(async()=>{if(stopped||pending||document.visibilityState!=='visible'||Date.now()-lastActivity>120000||Date.now()-lastRefresh<240000)return;pending=true;
++      controller=new AbortController();const timeout=setTimeout(()=>controller?.abort(),12000);
++      try{const r=await fetch('/api/independent/refresh',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}',signal:controller.signal});if(!stopped && r.ok)lastRefresh=Date.now();else if(!stopped && r.status===401){stop();location.replace('/logout');}}catch{}finally{clearTimeout(timeout);pending=false;controller=undefined;}},15000);
++    return()=>{stop();clearInterval(timer);events.forEach(n=>window.removeEventListener(n,activity));window.removeEventListener('pedia:before-signout',stop);window.removeEventListener('pagehide',stop);document.removeEventListener('click',leaving,true);};
++  },[signedIn]);return null;
++}
+diff --git a/app/readyz/route.ts b/app/readyz/route.ts
+new file mode 100644
+index 0000000..a1307f5
+--- /dev/null
++++ b/app/readyz/route.ts
+@@ -0,0 +1,2 @@
++export const dynamic='force-dynamic';
++export async function GET(){return Response.json({ready:false,sourceVersion:87,legacyDataMigrated:false,realLoginVerified:false},{status:503,headers:{'Cache-Control':'no-store'}});}
+diff --git a/app/signin-with-chatgpt/route.ts b/app/signin-with-chatgpt/route.ts
+new file mode 100644
+index 0000000..5cb6f98
+--- /dev/null
++++ b/app/signin-with-chatgpt/route.ts
+@@ -0,0 +1,2 @@
++import {safeReturn} from '../chatgpt-auth';
++export async function GET(request:Request){return new Response(null,{status:303,headers:{Location:'/login?return_to='+encodeURIComponent(safeReturn(new URL(request.url).searchParams.get('return_to')||'/questions')),'Cache-Control':'no-store'}});}
+diff --git a/app/signout-with-chatgpt/route.ts b/app/signout-with-chatgpt/route.ts
+new file mode 100644
+index 0000000..382fcbc
+--- /dev/null
++++ b/app/signout-with-chatgpt/route.ts
+@@ -0,0 +1 @@
++export async function GET(){return new Response(null,{status:303,headers:{Location:'/logout','Cache-Control':'no-store'}});}
+diff --git a/db/portable/schema.sql b/db/portable/schema.sql
+new file mode 100644
+index 0000000..f5995e3
+--- /dev/null
++++ b/db/portable/schema.sql
+@@ -0,0 +1,34 @@
++-- Run once in a SEPARATE PostgreSQL database as its owner. No Sites connection.
++BEGIN;
++CREATE ROLE pediarounds_portable_runtime NOLOGIN NOSUPERUSER NOBYPASSRLS;
++CREATE SCHEMA pediarounds_portable;
++REVOKE ALL ON SCHEMA pediarounds_portable FROM PUBLIC;
++GRANT USAGE ON SCHEMA pediarounds_portable TO pediarounds_portable_runtime;
++CREATE TABLE pediarounds_portable.account_links (
++  external_user_id uuid PRIMARY KEY, legacy_user_id text NOT NULL UNIQUE,
++  proof_method text NOT NULL CHECK(proof_method IN ('both_accounts_verified','owner_verified_recovery')),
++  verified_at timestamptz NOT NULL, proof_reference text NOT NULL
++);
++CREATE TABLE pediarounds_portable.user_profiles (user_id text PRIMARY KEY,email text NOT NULL,display_name text,created_at bigint NOT NULL,updated_at bigint NOT NULL);
++CREATE TABLE pediarounds_portable.done_questions (user_id text NOT NULL,question_id text NOT NULL,correct integer CHECK(correct IN(0,1)),completed_at bigint NOT NULL,PRIMARY KEY(user_id,question_id));
++CREATE TABLE pediarounds_portable.seen_questions (user_id text NOT NULL,question_id text NOT NULL,seen_at bigint NOT NULL,PRIMARY KEY(user_id,question_id));
++CREATE TABLE pediarounds_portable.question_annotations (user_id text NOT NULL,question_id text NOT NULL,marked integer NOT NULL DEFAULT 0 CHECK(marked IN(0,1)),confidence text,updated_at bigint NOT NULL,PRIMARY KEY(user_id,question_id));
++CREATE TABLE pediarounds_portable.study_sessions (user_id text PRIMARY KEY,payload text NOT NULL,revision bigint NOT NULL,updated_at bigint NOT NULL);
++CREATE TABLE pediarounds_portable.spaced_review_sessions (user_id text NOT NULL,bank text NOT NULL,payload text NOT NULL,revision bigint NOT NULL,updated_at bigint NOT NULL,PRIMARY KEY(user_id,bank));
++CREATE TABLE pediarounds_portable.mock_exam_attempts (user_id text PRIMARY KEY,payload text NOT NULL,revision bigint NOT NULL,updated_at bigint NOT NULL);
++CREATE TABLE pediarounds_portable.custom_exam_attempts (user_id text PRIMARY KEY,payload text NOT NULL,revision bigint NOT NULL,updated_at bigint NOT NULL);
++ALTER TABLE pediarounds_portable.account_links ENABLE ROW LEVEL SECURITY;
++GRANT SELECT ON pediarounds_portable.account_links TO pediarounds_portable_runtime;
++CREATE POLICY own_link ON pediarounds_portable.account_links TO pediarounds_portable_runtime
++  USING (external_user_id::text=current_setting('pediarounds.external_user_id',true));
++DO $schema$ DECLARE name text; BEGIN
++  FOREACH name IN ARRAY ARRAY['user_profiles','done_questions','seen_questions','question_annotations','study_sessions','spaced_review_sessions','mock_exam_attempts','custom_exam_attempts'] LOOP
++    EXECUTE format('ALTER TABLE pediarounds_portable.%I ENABLE ROW LEVEL SECURITY',name);
++    EXECUTE format('GRANT SELECT, INSERT, UPDATE, DELETE ON pediarounds_portable.%I TO pediarounds_portable_runtime',name);
++    EXECUTE format('CREATE POLICY own_rows ON pediarounds_portable.%I TO pediarounds_portable_runtime USING(user_id=current_setting(''pediarounds.user_id'',true)) WITH CHECK(user_id=current_setting(''pediarounds.user_id'',true))',name);
++  END LOOP;
++END $schema$;
++COMMIT;
++-- Provision a separate LOGIN role and grant it ONLY pediarounds_portable_runtime.
++-- Keep its credentials in PEDIAROUNDS_DATABASE_URL; never use the database owner.
++-- Do not populate account_links by matching email strings. Each mapping needs verified ownership.
+diff --git a/db/progress.ts b/db/progress.ts
+index e2b3e06..c2dbea2 100644
+--- a/db/progress.ts
++++ b/db/progress.ts
+@@ -1,11 +1,14 @@
++import type { D1Database } from '../server/portable/database-types';
+ import type { ChatGPTUser } from "../app/chatgpt-auth";
++import { getChatGPTUser } from "../app/chatgpt-auth";
++import { postgresD1 } from '../server/portable/postgres.mjs';
+ 
+ type DoneInput = { questionId: string; correct: boolean | null };
+ 
+ export async function getProgressDb() {
+-  const { env } = await import("cloudflare:workers");
+-  if (!env.DB) throw new Error("Progress database is unavailable");
+-  return env.DB;
++  const user=await getChatGPTUser();
++  if(!user)throw new Error('Sign in required');
++  return postgresD1(user) as unknown as D1Database;
+ }
+ 
+ function profileStatement(db: D1Database, user: ChatGPTUser, now: number) {
+@@ -13,8 +16,8 @@ function profileStatement(db: D1Database, user: ChatGPTUser, now: number) {
+     INSERT INTO user_profiles (user_id, email, display_name, created_at, updated_at)
+     VALUES (?, ?, ?, ?, ?)
+     ON CONFLICT(user_id) DO UPDATE SET
+-      email = excluded.email,
+-      display_name = excluded.display_name,
++      email = user_profiles.email,
++      display_name = COALESCE(user_profiles.display_name, excluded.display_name),
+       updated_at = excluded.updated_at
+   `).bind(user.id, user.email, user.fullName ?? user.displayName, now, now);
+ }
+diff --git a/next.config.ts b/next.config.ts
+index e9ffa30..9a31d4f 100644
+--- a/next.config.ts
++++ b/next.config.ts
+@@ -1,7 +1,9 @@
+ import type { NextConfig } from "next";
+ 
+ const nextConfig: NextConfig = {
+-  /* config options here */
++  output: 'standalone',
++  serverExternalPackages: ['pg'],
++  async headers(){return [{source:'/:path*',headers:[{key:'Cache-Control',value:'private, no-store'},{key:'X-Content-Type-Options',value:'nosniff'},{key:'Referrer-Policy',value:'same-origin'},{key:'X-Frame-Options',value:'DENY'}]}];},
+ };
+ 
+ export default nextConfig;
+diff --git a/package-lock.json b/package-lock.json
+index 18fb8ee..28b3bf9 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -21,6 +21,7 @@
+         "lucide-react": "^1.31.0",
+         "next": "16.2.6",
+         "next-themes": "^0.4.6",
++        "pg": "8.23.0",
+         "radix-ui": "^1.6.7",
+         "react": "19.2.6",
+         "react-day-picker": "^10.0.1",
+@@ -11118,6 +11119,95 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/pg": {
++      "version": "8.23.0",
++      "resolved": "https://registry.npmjs.org/pg/-/pg-8.23.0.tgz",
++      "integrity": "sha512-Ip2EQCngowJLGOfCwkFhPXU7/ljlhn6Rxlmy4XYfL2Y+vyRM59+8uR2xqRWKdYmbXmxCFOAmKxBuSUCdF34qLg==",
++      "license": "MIT",
++      "dependencies": {
++        "pg-connection-string": "^2.14.0",
++        "pg-pool": "^3.14.0",
++        "pg-protocol": "^1.16.0",
++        "pg-types": "2.2.0",
++        "pgpass": "1.0.5"
++      },
++      "engines": {
++        "node": ">= 16.0.0"
++      },
++      "optionalDependencies": {
++        "pg-cloudflare": "^1.4.0"
++      },
++      "peerDependencies": {
++        "pg-native": ">=3.0.1"
++      },
++      "peerDependenciesMeta": {
++        "pg-native": {
++          "optional": true
++        }
++      }
++    },
++    "node_modules/pg-cloudflare": {
++      "version": "1.4.0",
++      "resolved": "https://registry.npmjs.org/pg-cloudflare/-/pg-cloudflare-1.4.0.tgz",
++      "integrity": "sha512-Vo7z/6rrQYxpNRylp4Tlob2elzbh+N/MOQbxFVWCxS7oEx6jF53GTJFxK2WWpKuBRkmiin4Mt+xofFDjx09R0A==",
++      "license": "MIT",
++      "optional": true
++    },
++    "node_modules/pg-connection-string": {
++      "version": "2.14.0",
++      "resolved": "https://registry.npmjs.org/pg-connection-string/-/pg-connection-string-2.14.0.tgz",
++      "integrity": "sha512-XwWDGcLRGCXAR8F/AM5bG7Q+A3Wm2s6QeEjlOKZLlH3UYcguiqCWKyWXVag5TLTIjR7oOJUY8kcADaZgWPyLeg==",
++      "license": "MIT"
++    },
++    "node_modules/pg-int8": {
++      "version": "1.0.1",
++      "resolved": "https://registry.npmjs.org/pg-int8/-/pg-int8-1.0.1.tgz",
++      "integrity": "sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==",
++      "license": "ISC",
++      "engines": {
++        "node": ">=4.0.0"
++      }
++    },
++    "node_modules/pg-pool": {
++      "version": "3.14.0",
++      "resolved": "https://registry.npmjs.org/pg-pool/-/pg-pool-3.14.0.tgz",
++      "integrity": "sha512-gKtPkFdQPU3DksooVLi9LsjZxrsBUZIpa+7aVx+LV5pNh0KzP4Zleud2po+ConrxbuXGBJ6Hfer6hdgpIBpBaw==",
++      "license": "MIT",
++      "peerDependencies": {
++        "pg": ">=8.0"
++      }
++    },
++    "node_modules/pg-protocol": {
++      "version": "1.16.0",
++      "resolved": "https://registry.npmjs.org/pg-protocol/-/pg-protocol-1.16.0.tgz",
++      "integrity": "sha512-sILXutLVjCLjcDuOmvhX5e2Z4cS5qG/6Bu3VkpFwdf/633ElGLpEh9bgmuI5I4sqKqkifQiGyiCcx1HdtrK7tg==",
++      "license": "MIT"
++    },
++    "node_modules/pg-types": {
++      "version": "2.2.0",
++      "resolved": "https://registry.npmjs.org/pg-types/-/pg-types-2.2.0.tgz",
++      "integrity": "sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==",
++      "license": "MIT",
++      "dependencies": {
++        "pg-int8": "1.0.1",
++        "postgres-array": "~2.0.0",
++        "postgres-bytea": "~1.0.0",
++        "postgres-date": "~1.0.4",
++        "postgres-interval": "^1.1.0"
++      },
++      "engines": {
++        "node": ">=4"
++      }
++    },
++    "node_modules/pgpass": {
++      "version": "1.0.5",
++      "resolved": "https://registry.npmjs.org/pgpass/-/pgpass-1.0.5.tgz",
++      "integrity": "sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==",
++      "license": "MIT",
++      "dependencies": {
++        "split2": "^4.1.0"
++      }
++    },
+     "node_modules/picocolors": {
+       "version": "1.1.1",
+       "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+@@ -11183,6 +11273,45 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/postgres-array": {
++      "version": "2.0.0",
++      "resolved": "https://registry.npmjs.org/postgres-array/-/postgres-array-2.0.0.tgz",
++      "integrity": "sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=4"
++      }
++    },
++    "node_modules/postgres-bytea": {
++      "version": "1.0.1",
++      "resolved": "https://registry.npmjs.org/postgres-bytea/-/postgres-bytea-1.0.1.tgz",
++      "integrity": "sha512-5+5HqXnsZPE65IJZSMkZtURARZelel2oXUEO8rH83VS/hxH5vv1uHquPg5wZs8yMAfdv971IU+kcPUczi7NVBQ==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=0.10.0"
++      }
++    },
++    "node_modules/postgres-date": {
++      "version": "1.0.7",
++      "resolved": "https://registry.npmjs.org/postgres-date/-/postgres-date-1.0.7.tgz",
++      "integrity": "sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=0.10.0"
++      }
++    },
++    "node_modules/postgres-interval": {
++      "version": "1.2.0",
++      "resolved": "https://registry.npmjs.org/postgres-interval/-/postgres-interval-1.2.0.tgz",
++      "integrity": "sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==",
++      "license": "MIT",
++      "dependencies": {
++        "xtend": "^4.0.0"
++      },
++      "engines": {
++        "node": ">=0.10.0"
++      }
++    },
+     "node_modules/prelude-ls": {
+       "version": "1.2.1",
+       "resolved": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz",
+@@ -12143,6 +12272,15 @@
+         "source-map": "^0.6.0"
+       }
+     },
++    "node_modules/split2": {
++      "version": "4.2.0",
++      "resolved": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
++      "integrity": "sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==",
++      "license": "ISC",
++      "engines": {
++        "node": ">= 10.x"
++      }
++    },
+     "node_modules/srvx": {
+       "version": "0.11.15",
+       "resolved": "https://registry.npmjs.org/srvx/-/srvx-0.11.15.tgz",
+@@ -14322,6 +14460,15 @@
+         }
+       }
+     },
++    "node_modules/xtend": {
++      "version": "4.0.2",
++      "resolved": "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz",
++      "integrity": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=0.4"
++      }
++    },
+     "node_modules/yallist": {
+       "version": "3.1.1",
+       "resolved": "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz",
+diff --git a/package.json b/package.json
+index 499eeb5..cafd760 100644
+--- a/package.json
++++ b/package.json
+@@ -13,7 +13,9 @@
+     "test": "npm run build && node --test tests/*.test.mjs",
+     "typecheck": "tsc --noEmit",
+     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
+-    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
++    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate",
++    "build:portable": "next build --webpack && node scripts/package-portable.mjs",
++    "start:portable": "HOSTNAME=0.0.0.0 node .next/standalone/server.js"
+   },
+   "dependencies": {
+     "@base-ui/react": "^1.7.0",
+@@ -29,6 +31,7 @@
+     "lucide-react": "^1.31.0",
+     "next": "16.2.6",
+     "next-themes": "^0.4.6",
++    "pg": "8.23.0",
+     "radix-ui": "^1.6.7",
+     "react": "19.2.6",
+     "react-day-picker": "^10.0.1",
+diff --git a/render.yaml b/render.yaml
+new file mode 100644
+index 0000000..7040cf3
+--- /dev/null
++++ b/render.yaml
+@@ -0,0 +1,24 @@
++# Separate private-repository deployment. Does not update the original Sites project.
++services:
++  - type: web
++    name: pediarounds-independent-preview
++    runtime: node
++    plan: free
++    region: frankfurt
++    buildCommand: npm ci --ignore-scripts && npm run build:portable
++    startCommand: npm run start:portable
++    healthCheckPath: /healthz
++    autoDeployTrigger: off
++    envVars:
++      - key: NODE_ENV
++        value: production
++      - key: PEDIAROUNDS_APP_ORIGIN
++        sync: false
++      - key: PEDIAROUNDS_DATABASE_URL
++        sync: false
++      - key: PEDIAROUNDS_SUPABASE_URL
++        sync: false
++      - key: PEDIAROUNDS_SUPABASE_PUBLISHABLE_KEY
++        sync: false
++      - key: PEDIAROUNDS_EXTERNAL_BACKEND
++        value: enabled
+diff --git a/scripts/package-portable.mjs b/scripts/package-portable.mjs
+new file mode 100644
+index 0000000..0819ef0
+--- /dev/null
++++ b/scripts/package-portable.mjs
+@@ -0,0 +1,4 @@
++import {cp,mkdir} from 'node:fs/promises';
++await mkdir('.next/standalone/.next',{recursive:true});
++await cp('public','.next/standalone/public',{recursive:true});
++await cp('.next/static','.next/standalone/.next/static',{recursive:true});
+diff --git a/server/portable/assets.mjs b/server/portable/assets.mjs
+new file mode 100644
+index 0000000..eb98622
+--- /dev/null
++++ b/server/portable/assets.mjs
+@@ -0,0 +1,9 @@
++import {readFile,realpath} from 'node:fs/promises';
++import {resolve,sep} from 'node:path';
++export function portableEnvironment() {
++  return {...Object.fromEntries(Object.entries(process.env).filter(([k])=>/^(PEDIA_|OPENAI_)/.test(k))),ASSETS:{async fetch(request){
++    const path=new URL(request.url).pathname;
++    if(!/^\/(question-media|source-media)\/[a-zA-Z0-9_.-]+\.bin$/.test(path))return new Response(null,{status:404});
++    try {const root=await realpath(resolve(process.cwd(),'public'));const target=await realpath(resolve(root,'.'+path));if(!target.startsWith(root+sep))return new Response(null,{status:404});const bytes=await readFile(target);return new Response(bytes,{headers:{'Content-Type':'application/octet-stream','Cache-Control':'private, no-store'}});}catch{return new Response(null,{status:404});}
++  }}};
++}
+diff --git a/server/portable/auth.mjs b/server/portable/auth.mjs
+new file mode 100644
+index 0000000..ad69c03
+--- /dev/null
++++ b/server/portable/auth.mjs
+@@ -0,0 +1,106 @@
++/** Supabase browser sessions. Tokens stay in short-lived HttpOnly cookies. */
++import {createHash} from 'node:crypto';
++import {createStudyOAuth} from './oauth.mjs';
++export const ACCESS='__Host-pediarounds_access', REFRESH='__Host-pediarounds_refresh';
++const TOKEN=/^[A-Za-z0-9_.-]{16,3500}$/;
++const REFRESH_VALUE=/^[A-Za-z0-9_.-]{8,3500}$/;
++const UUID=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
++export const failure=(status,code)=>Object.assign(Error(code),{status,code});
++export function cookie(req,name) {
++  const values=String(req.headers.cookie||'').split(';').map(v=>v.trim()).filter(v=>v.startsWith(name+'='));
++  if(values.length!==1) return '';
++  const value=values[0].slice(name.length+1);return (name===REFRESH?REFRESH_VALUE:TOKEN).test(value)?value:'';
++}
++export async function readJSON(req) {
++  if(!/^application\/json(?:\s*;|$)/i.test(req.headers['content-type']||'')) throw failure(415,'json_required');
++  if(req.headers['content-encoding'] && req.headers['content-encoding']!=='identity') throw failure(415,'encoding_not_supported');
++  if(Number(req.headers['content-length']||0)>16000) throw failure(413,'body_too_large');
++  const chunks=[];let size=0;
++  for await(const chunk of req.iterator({destroyOnReturn:false})) {size+=chunk.length;if(size>16000) throw failure(413,'body_too_large');chunks.push(chunk);}
++  let data;try{data=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw failure(400,'invalid_json');}
++  if(!data||typeof data!=='object'||Array.isArray(data))throw failure(400,'invalid_input');
++  return data;
++}
++export function createStudyAuth({env=process.env,fetcher=globalThis.fetch,now=Date.now}={}) {
++  const url=String(env.PEDIAROUNDS_SUPABASE_URL||'').replace(/\/$/,'');
++  const key=String(env.PEDIAROUNDS_SUPABASE_PUBLISHABLE_KEY||'');
++  const configured=env.PEDIAROUNDS_EXTERNAL_BACKEND==='enabled' && /^https:\/\/[a-z0-9]{20}\.supabase\.co$/.test(url) && /^sb_publishable_[a-zA-Z0-9_-]+$/.test(key);
++  const origin=new URL(env.PEDIAROUNDS_APP_ORIGIN||env.RENDER_EXTERNAL_URL||'https://localhost').origin;
++  let minute=-1,total=0;const attempts=new Map(),refreshing=new Map();
++  function guard(req) {
++    if(req.headers.origin!==origin || req.headers['sec-fetch-site']==='cross-site')throw failure(403,'same_origin_required');
++  }
++  function limit(req,email='') {
++    const current=Math.floor(now()/60000);if(current!==minute){minute=current;total=0;attempts.clear();}
++    if(++total>120)throw failure(429,'rate_limited');
++    const id=createHash('sha256').update(String(req.socket?.remoteAddress||'')+'|'+email.toLowerCase()).digest('hex');
++    const n=(attempts.get(id)||0)+1;attempts.set(id,n);if(n>12)throw failure(429,'rate_limited');
++  }
++  async function remote(endpoint,token,payload) {
++    if(!configured)throw failure(503,'external_backend_not_configured');
++    const controller=new AbortController();let timer;
++    const deadline=new Promise((_,reject)=>{timer=setTimeout(()=>{controller.abort();reject(failure(503,'auth_unavailable'));},7000);timer.unref?.();});
++    try{return await Promise.race([(async()=>{
++      const response=await fetcher(url+'/auth/v1'+endpoint,{method:payload===undefined?'GET':'POST',redirect:'error',signal:controller.signal,
++        headers:{apikey:key,'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},...(payload===undefined?{}:{body:JSON.stringify(payload)})});
++      let result={};if(response.status!==204){try{result=await response.json();}catch{throw failure(503,'auth_unavailable');}}
++      if(!response.ok){
++        if(response.status===429)throw failure(429,'rate_limited');
++        if(response.status>=500)throw failure(503,'auth_unavailable');
++        if(result?.error_code==='email_not_confirmed')throw failure(401,'email_confirmation_required');
++        throw failure(401,'authentication_failed');
++      }
++      return result;
++    })(),deadline]);}catch(error){if(error.status)throw error;throw failure(503,'auth_unavailable');}finally{clearTimeout(timer);}
++  }
++  async function userFor(token) {
++    if(!TOKEN.test(token))throw failure(401,'sign_in_required');
++    const u=await remote('/user',token);
++    if(!UUID.test(u?.id||'')||u.role!=='authenticated'||u.is_anonymous===true||u.deleted_at||!u.email_confirmed_at||typeof u.email!=='string'||(u.banned_until&&Date.parse(u.banned_until)>now()))throw failure(401,'sign_in_required');
++    return {id:u.id,email:u.email};
++  }
++  function setCookies(res,access,refresh) {
++    if(!TOKEN.test(access)||!REFRESH_VALUE.test(refresh))throw failure(503,'invalid_auth_response');
++    res.setHeader('Set-Cookie',[ACCESS+'='+access+'; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=600',REFRESH+'='+refresh+'; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=600']);
++  }
++  function clear(res){res.setHeader('Set-Cookie',[ACCESS+'=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0',REFRESH+'=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0']);}
++  async function establish(res,data) {
++    if(!TOKEN.test(data?.access_token||'')||!REFRESH_VALUE.test(data?.refresh_token||''))throw failure(503,'invalid_auth_response');
++    const user=await userFor(data.access_token);setCookies(res,data.access_token,data.refresh_token);return {user};
++  }
++  async function current(req) {
++    if(req.headers['sec-fetch-site']==='cross-site')throw failure(403,'same_origin_required');
++    const token=cookie(req,ACCESS),user=await userFor(token);
++    // Do not reissue cookies on GET: a slow response must not undo a later logout.
++    return {token,user};
++  }
++  async function signIn(req,res,data) {
++    const allowed=['email','password'];if(Object.keys(data).some(k=>!allowed.includes(k)))throw failure(400,'invalid_input');
++    if(typeof data.email!=='string'||data.email.length>254||!/^\S+@\S+\.\S+$/.test(data.email)||typeof data.password!=='string'||data.password.length<1||data.password.length>1024)throw failure(400,'invalid_credentials');
++    limit(req,data.email);
++    const result=await establish(res,await remote('/token?grant_type=password',undefined,{email:data.email.trim(),password:data.password}));
++    if(oauth.hasPending(req))oauth.clear(res);
++    return result;
++  }
++  async function signUp(req,data) {
++    if(Object.keys(data).some(k=>!['email','password'].includes(k))||typeof data.email!=='string'||data.email.length>254||!/^\S+@\S+\.\S+$/.test(data.email)||typeof data.password!=='string'||data.password.length<10||data.password.length>1024)throw failure(400,'invalid_signup');
++    limit(req,data.email);
++    await remote('/signup?redirect_to='+encodeURIComponent(origin+'/questions'),undefined,{email:data.email.trim(),password:data.password});
++    return {confirmationRequired:true,message:'Check your email for confirmation, then return here and sign in. Existing website accounts are not automatically linked.'};
++  }
++  async function refresh(req,res) {
++    const token=cookie(req,REFRESH);if(!token)throw failure(401,'sign_in_required');
++    const hash=createHash('sha256').update(token).digest('hex');
++    limit(req,'refresh:'+hash);
++    let pending=refreshing.get(hash);
++    if(!pending){pending=remote('/token?grant_type=refresh_token',undefined,{refresh_token:token});refreshing.set(hash,pending);pending.finally(()=>refreshing.delete(hash)).catch(()=>{});}
++    return establish(res,await pending);
++  }
++  async function signOut(req,res) {
++    const token=cookie(req,ACCESS);let remoteRevoked=false;
++    try{if(token){await remote('/logout?scope=local',token,{});remoteRevoked=true;}}catch{}finally{clear(res);oauth.clear(res);}
++    return {signedOut:true,remoteRevoked};
++  }
++  const oauth=createStudyOAuth({origin,url,configured,remote,establish,guard,limit,now});
++  return {configured,guard,current,signIn,signUp,refresh,signOut,clear,oauth};
++}
+diff --git a/server/portable/database-types.ts b/server/portable/database-types.ts
+new file mode 100644
+index 0000000..78b5a36
+--- /dev/null
++++ b/server/portable/database-types.ts
+@@ -0,0 +1,10 @@
++export interface Statement {
++  bind(...values:unknown[]):Statement;
++  all<T=Record<string,unknown>>():Promise<{results:T[];meta:{changes:number}}>;
++  first<T=Record<string,unknown>>():Promise<T|null>;
++  run():Promise<{meta:{changes:number}}>;
++}
++export interface D1Database {
++  prepare(sql:string):Statement;
++  batch(statements:Statement[]):Promise<unknown[]>;
++}
+diff --git a/server/portable/http.mjs b/server/portable/http.mjs
+new file mode 100644
+index 0000000..5487d14
+--- /dev/null
++++ b/server/portable/http.mjs
+@@ -0,0 +1,28 @@
++import {createStudyAuth} from './auth.mjs';
++export const portableAuth=createStudyAuth();
++export const nodeRequest=request=>({method:request.method,url:request.url,headers:Object.fromEntries(request.headers),socket:{remoteAddress:'render-edge'}});
++export function nodeResponse() {
++  const values=new Map();return {setHeader:(k,v)=>values.set(k.toLowerCase(),v),getHeader:k=>values.get(k.toLowerCase()),
++    headers(){const h=new Headers({'Cache-Control':'private, no-store','Vary':'Cookie','X-Content-Type-Options':'nosniff'});for(const [k,v] of values)for(const entry of Array.isArray(v)?v:[v])h.append(k,entry);return h;}};
++}
++export async function handleAuth(request,action) {
++  const req=nodeRequest(request),res=nodeResponse();
++  try {
++    if(action==='oauth/providers'&&request.method==='GET')return Response.json(await portableAuth.oauth.providers(),{headers:res.headers()});
++    if(request.method!=='POST')return Response.json({error:'method_not_allowed'},{status:405,headers:res.headers()});
++    portableAuth.guard(req);
++    if(!/^application\/json(?:\s*;|$)/i.test(request.headers.get('content-type')||''))throw Object.assign(Error(),{status:415,code:'json_required'});
++    const reader=request.body?.getReader();let size=0;const chunks=[];
++    if(reader)try {while(true){const part=await reader.read();if(part.done)break;size+=part.value.byteLength;if(size>16000){await reader.cancel();throw Object.assign(Error(),{status:413,code:'body_too_large'});}chunks.push(part.value);}}finally{reader.releaseLock();}
++    let body;try{body=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw Object.assign(Error(),{status:400,code:'invalid_json'});}
++    if(!body||typeof body!=='object'||Array.isArray(body))throw Object.assign(Error(),{status:400,code:'invalid_input'});
++    let data;
++    if(action==='signin')data=await portableAuth.signIn(req,res,body);
++    else if(action==='signup')data=await portableAuth.signUp(req,body);
++    else if(action==='signout')data=await portableAuth.signOut(req,res);
++    else if(action==='refresh')data=await portableAuth.refresh(req,res);
++    else if(action==='oauth/start')data=await portableAuth.oauth.begin(req,res,body);
++    else return Response.json({error:'not_found'},{status:404,headers:res.headers()});
++    return Response.json(data,{headers:res.headers()});
++  } catch(error){return Response.json({error:error.code||'auth_unavailable'},{status:error.status||503,headers:res.headers()});}
++}
+diff --git a/server/portable/oauth.mjs b/server/portable/oauth.mjs
+new file mode 100644
+index 0000000..d8d8e12
+--- /dev/null
++++ b/server/portable/oauth.mjs
+@@ -0,0 +1,94 @@
++/** Google/Apple login through Supabase Auth; no provider secret or token reaches JS. */
++import {createHash, randomBytes} from 'node:crypto';
++
++export const OAUTH_COOKIE = '__Host-pediarounds_oauth';
++export const OAUTH_CALLBACK = '/auth/callback';
++const PROVIDERS = new Set(['google', 'apple']);
++const TTL = 600000;
++const fail = (status, code) => Object.assign(new Error(code), {status, code});
++
++function appendCookie(res, value) {
++  const existing = res.getHeader('Set-Cookie');
++  res.setHeader('Set-Cookie', [...(Array.isArray(existing) ? existing : existing ? [existing] : []), value]);
++}
++function pendingValue(req) {
++  const values = String(req.headers.cookie || '').split(';').map(v => v.trim())
++    .filter(v => v.startsWith(OAUTH_COOKIE + '='));
++  if (values.length !== 1) return '';
++  const value = values[0].slice(OAUTH_COOKIE.length + 1);
++  return /^[A-Za-z0-9_-]{40,1024}$/.test(value) ? value : '';
++}
++function readPending(req, now) {
++  try {
++    const data = JSON.parse(Buffer.from(pendingValue(req), 'base64url').toString('utf8'));
++    if (data?.version !== 1 || !PROVIDERS.has(data.provider) ||
++        !/^[A-Za-z0-9_-]{43}$/.test(data.verifier || '') ||
++        !Number.isSafeInteger(data.createdAt) || data.createdAt > now || now - data.createdAt >= TTL) return null;
++    return data;
++  } catch { return null; }
++}
++
++export function createStudyOAuth({origin, url, configured, remote, establish, guard, limit, now = Date.now}) {
++  let cached = null, pending = null, cachedAt = 0;
++  function clear(res) {
++    appendCookie(res, OAUTH_COOKIE + '=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');
++  }
++  async function providers() {
++    if (!configured) return {configured: false, providers: {google: false, apple: false}, authorizationOrigin: null};
++    if (cached && now() - cachedAt < 30000) return cached;
++    if (pending) return pending;
++    pending = (async () => {
++      const data = await remote('/settings');
++      if (!data || typeof data.external?.google !== 'boolean' || typeof data.external?.apple !== 'boolean')
++        throw fail(503, 'oauth_settings_unavailable');
++      // Public capability flags only. Never forward the entire settings response.
++      cached = {configured: true, providers: {google: data.external.google, apple: data.external.apple}, authorizationOrigin: url};
++      cachedAt = now();
++      return cached;
++    })();
++    try { return await pending; } finally { pending = null; }
++  }
++  async function begin(req, res, data) {
++    if (req.method !== 'POST') throw fail(405, 'method_not_allowed');
++    guard(req);
++    if (!data || Array.isArray(data) || Object.keys(data).length !== 1 || !PROVIDERS.has(data.provider))
++      throw fail(400, 'invalid_oauth_provider');
++    if (!configured || new URL(origin).protocol !== 'https:') throw fail(503, 'external_backend_not_configured');
++    limit(req, 'oauth');
++    const settings = await providers();
++    if (!settings.providers[data.provider]) throw fail(409, 'oauth_provider_not_enabled');
++    const verifier = randomBytes(32).toString('base64url');
++    const challenge = createHash('sha256').update(verifier).digest('base64url');
++    const transaction = Buffer.from(JSON.stringify({version: 1, provider: data.provider, verifier, createdAt: now()})).toString('base64url');
++    appendCookie(res, OAUTH_COOKIE + '=' + transaction + '; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=600');
++    const authorization = new URL(url + '/auth/v1/authorize');
++    authorization.searchParams.set('provider', data.provider);
++    authorization.searchParams.set('redirect_to', origin + OAUTH_CALLBACK);
++    authorization.searchParams.set('code_challenge', challenge);
++    authorization.searchParams.set('code_challenge_method', 's256');
++    authorization.searchParams.set('scopes', data.provider === 'google' ? 'openid email profile' : 'email');
++    if (data.provider === 'google') authorization.searchParams.set('prompt', 'select_account');
++    return {provider: data.provider, url: authorization.href};
++  }
++  async function callback(req, res) {
++    if (req.method !== 'GET') throw fail(405, 'method_not_allowed');
++    try {
++      const transaction = readPending(req, now());
++      if (!transaction) throw fail(400, 'oauth_expired');
++      const query = new URL(req.url, origin).searchParams;
++      if (query.has('error')) throw fail(400, query.get('error') === 'access_denied' ? 'oauth_cancelled' : 'oauth_failed');
++      const codes = query.getAll('code');
++      if (codes.length !== 1 || !/^[A-Za-z0-9_-]{16,512}$/.test(codes[0])) throw fail(400, 'oauth_failed');
++      limit(req, 'oauth-callback');
++      // Supabase owns and validates provider OAuth state. PKCE binds its returned
++      // one-use auth code to the browser's HttpOnly verifier, preventing login CSRF.
++      const data = await remote('/token?grant_type=pkce', undefined, {auth_code: codes[0], code_verifier: transaction.verifier});
++      await establish(res, data); // Re-fetch /user server-side before issuing cookies.
++      return '/questions'; // Ignore all caller-controlled next/redirect/provider values.
++    } catch (error) {
++      const allowed = new Set(['oauth_expired', 'oauth_cancelled', 'oauth_failed', 'rate_limited', 'auth_unavailable', 'external_backend_not_configured']);
++      return '/login?auth_error=' + (allowed.has(error.code) ? error.code : 'oauth_failed');
++    } finally { clear(res); }
++  }
++  return {providers, begin, callback, clear, hasPending: req => !!pendingValue(req)};
++}
+diff --git a/server/portable/postgres.mjs b/server/portable/postgres.mjs
+new file mode 100644
+index 0000000..daee8f6
+--- /dev/null
++++ b/server/portable/postgres.mjs
+@@ -0,0 +1,89 @@
++/** PostgreSQL implementation of the narrow D1 API used by PediaRounds v87. */
++const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
++let poolPromise;
++async function pool() {
++  if(!poolPromise)poolPromise=(async()=>{
++    const value=process.env.PEDIAROUNDS_DATABASE_URL;
++    if(!value)throw Error('portable_database_not_configured');
++    const url=new URL(value);
++    if(!['postgres:','postgresql:'].includes(url.protocol)||!url.hostname)throw Error('invalid_database_configuration');
++    for(const key of ['sslmode','sslcert','sslkey','sslrootcert','sslnegotiation'])url.searchParams.delete(key);
++    const {Pool}=await import('pg');
++    const p=new Pool({connectionString:url.href,max:5,connectionTimeoutMillis:7000,idleTimeoutMillis:30000,
++      ssl:{rejectUnauthorized:true,...(process.env.PEDIAROUNDS_DATABASE_CA?{ca:process.env.PEDIAROUNDS_DATABASE_CA}:{})}});
++    p.on('error',()=>console.error('portable_database_connection_failed'));
++    return p;
++  })().catch(error=>{poolPromise=undefined;throw error;});
++  return poolPromise;
++}
++export function translateQuery(sql) {
++  let text='',position=0,quote=null;
++  for(let i=0;i<sql.length;i++) {
++    const c=sql[i];
++    if(quote) {text+=c;if(c===quote){if(sql[i+1]===quote){text+=sql[++i];}else quote=null;}continue;}
++    if(c==="'"||c==='"'){quote=c;text+=c;continue;}
++    if(c===';' || c==='$' || c==='-'&&sql[i+1]==='-' || c==='/'&&sql[i+1]==='*')throw Error('unsupported_query_syntax');
++    text+=c==='?'?'$'+(++position):c;
++  }
++  if(quote)throw Error('unterminated_query_literal');
++  // PostgreSQL folds unquoted identifiers; the current handlers expect camelCase aliases.
++  text=text.replace(/\bAS (questionId|completedAt|updatedAt)\b/g,'AS "$1"');
++  // SQLite uses numeric flags for these two annotation-update conditions.
++  text=text.replace(/\bCASE WHEN (\$\d+) THEN/g,'CASE WHEN $1::integer <> 0 THEN');
++  if(!/^\s*(SELECT|INSERT|UPDATE|DELETE)\b/i.test(text))throw Error('unsupported_query_operation');
++  return {text,parameters:position};
++}
++function result(value) {
++  const bigints=new Set((value.fields||[]).filter(f=>f.dataTypeID===20).map(f=>f.name));
++  const rows=value.rows.map(row=>Object.fromEntries(Object.entries(row).map(([key,v])=>{
++    if(bigints.has(key)&&v!==null){const n=Number(v);if(!Number.isSafeInteger(n))throw Error('unsafe_database_integer');return [key,n];}
++    return [key,v];
++  })));
++  return {success:true,results:rows,meta:{changes:['SELECT','SHOW'].includes(value.command)?0:value.rowCount??0}};
++}
++async function transaction(externalId,expectedId,fn,providedPool) {
++  if(!UUID.test(externalId))throw Error('invalid_verified_identity');
++  const p=providedPool||await pool(),client=await p.connect();let begun=false,broken=false;
++  try {
++    await client.query('BEGIN');begun=true;
++    const role=await client.query('SELECT rolsuper,rolbypassrls FROM pg_roles WHERE rolname=current_user');
++    if(role.rows[0]?.rolsuper!==false || role.rows[0]?.rolbypassrls!==false)throw Error('least_privilege_database_role_required');
++    await client.query("SET LOCAL search_path = pg_catalog, pediarounds_portable");
++    await client.query("SET LOCAL statement_timeout = '8s'");
++    await client.query("SELECT set_config('pediarounds.external_user_id',$1,true)",[externalId]);
++    const linked=await client.query('SELECT legacy_user_id FROM pediarounds_portable.account_links WHERE external_user_id=$1::uuid',[externalId]);
++    const id=linked.rows[0]?.legacy_user_id||externalId;
++    if(expectedId && expectedId!==id)throw Error('account_mapping_changed');
++    await client.query("SELECT set_config('pediarounds.user_id',$1,true)",[id]);
++    const value=await fn(client,id);
++    await client.query('COMMIT');begun=false;return value;
++  } catch(error) {
++    if(begun)try{await client.query('ROLLBACK');}catch{broken=true;}
++    throw error;
++  } finally {client.release(broken);}
++}
++export async function resolveAccount(externalId,providedPool) {
++  return transaction(externalId,null,async(_client,id)=>id,providedPool);
++}
++export function postgresD1(user,providedPool) {
++  if(!user || !UUID.test(user.externalId||''))throw Error('verified_identity_required');
++  const statements=new WeakMap();
++  async function execute(list) {
++    return transaction(user.externalId,user.id,async client=>{
++      const output=[];
++      for(const statement of list){const spec=statements.get(statement);if(!spec)throw Error('foreign_statement');output.push(result(await client.query(spec.text,spec.values)));}
++      return output;
++    },providedPool);
++  }
++  function prepared(sql,values=[]) {
++    const {text,parameters}=translateQuery(sql);
++    const item={
++      bind(...args){if(args.length!==parameters)throw Error('parameter_count_mismatch');return prepared(sql,args);},
++      async all(){return (await execute([item]))[0];},
++      async first(){return (await item.all()).results[0]??null;},
++      async run(){return (await execute([item]))[0];}
++    };
++    statements.set(item,{text,values});return item;
++  }
++  return {prepare:prepared,batch:execute};
++}
+diff --git a/server/portable/services.ts b/server/portable/services.ts
+new file mode 100644
+index 0000000..68a36fb
+--- /dev/null
++++ b/server/portable/services.ts
+@@ -0,0 +1,22 @@
++import {getChatGPTUser} from '../../app/chatgpt-auth';
++import {portableEnvironment} from './assets.mjs';
++import {serveQuestionFigure} from '../../worker/question-figures';
++import {createSourceDocumentService} from '../source-documents.mjs';
++import {createSpeechService} from '../speech-service.mjs';
++import sourceDocuments from '../../data/source-documents.json';
++const sources=createSourceDocumentService(sourceDocuments),speech=createSpeechService();
++let scenarios:Promise<(request:Request,env:unknown)=>Promise<Response>>|undefined;
++export async function servePortable(request:Request,kind:'figures'|'documents'|'speech'|'scenario') {
++  const user=await getChatGPTUser();
++  if(!user)return Response.json({error:'Sign in required.'},{status:401,headers:{'Cache-Control':'private, no-store'}});
++  const headers=new Headers(request.headers);
++  // Strip caller-supplied platform identity before invoking existing pure service functions.
++  for(const key of [...headers.keys()])if(key.startsWith('oai-authenticated-'))headers.delete(key);
++  headers.set('oai-authenticated-user-id',user.id);headers.set('oai-authenticated-user-email',user.email);
++  const trusted=new Request(request,{headers});const env=portableEnvironment();
++  if(kind==='documents')return sources(trusted,env);
++  if(kind==='speech')return speech(trusted,env);
++  if(kind==='figures')return serveQuestionFigure(trusted,env as unknown as Parameters<typeof serveQuestionFigure>[1]);
++  scenarios ||= Promise.all([import('../../lib/question-bank'),import('../../data/arabic-scenarios.json'),import('../scenario-service.mjs')]).then(([bank,saved,service])=>service.createScenarioService({questions:bank.default.questions,savedScenarios:saved.default}));
++  return (await scenarios)(trusted,env);
++}
+diff --git a/tests/portable/auth.test.mjs b/tests/portable/auth.test.mjs
+new file mode 100644
+index 0000000..1788049
+--- /dev/null
++++ b/tests/portable/auth.test.mjs
+@@ -0,0 +1,37 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {createStudyAuth,ACCESS,REFRESH} from '../../server/portable/auth.mjs';
++const origin='https://portable.example.test',token='fictional-access-token-12345',refresh='fictional-refresh-token';
++const user={id:'11111111-1111-4111-8111-111111111111',email:'fictional@example.test',role:'authenticated',email_confirmed_at:'2026-09-12'};
++const req=(cookie='')=>({method:'POST',headers:{origin,cookie},socket:{remoteAddress:'test'}});
++const response=()=>({values:new Map(),setHeader(k,v){this.values.set(k,v);},getHeader(k){return this.values.get(k);}});
++function setup(verified=user){const calls=[];return {calls,auth:createStudyAuth({env:{PEDIAROUNDS_APP_ORIGIN:origin,PEDIAROUNDS_EXTERNAL_BACKEND:'enabled',PEDIAROUNDS_SUPABASE_URL:'https://abcdefghijklmnopqrst.supabase.co',PEDIAROUNDS_SUPABASE_PUBLISHABLE_KEY:'sb_publishable_fictional'},fetcher:async(url,init)=>{
++  calls.push({url,init});
++  if(url.endsWith('/user'))return Response.json(verified);
++  if(url.includes('/logout'))return new Response(null,{status:204});
++  return Response.json({access_token:token,refresh_token:refresh,user:{id:'untrusted-token-user'}});
++}})};}
++test('login verifies identity with provider and keeps tokens out of response JSON',async()=>{
++  const {auth,calls}=setup(),res=response();
++  assert.deepEqual(await auth.signIn(req(),res,{email:user.email,password:'fictional-password'}),{user:{id:user.id,email:user.email}});
++  assert.ok(calls.some(c=>c.url.endsWith('/user')));
++  for(const cookie of res.getHeader('Set-Cookie'))assert.match(cookie,/HttpOnly; Secure; SameSite=Lax; Max-Age=600/);
++});
++test('platform headers and duplicate cookies cannot supply an identity',async()=>{
++  const {auth}=setup();
++  await assert.rejects(auth.current({...req(),headers:{'oai-authenticated-user-id':user.id}}),/sign_in_required/);
++  await assert.rejects(auth.current(req(ACCESS+'='+token+'; '+ACCESS+'='+token)),/sign_in_required/);
++});
++test('unverified or anonymous provider identity is rejected before cookies are issued',async()=>{
++  for(const altered of [{...user,email_confirmed_at:null},{...user,is_anonymous:true},{...user,banned_until:'2100-01-01'}]){
++    const {auth}=setup(altered),res=response();await assert.rejects(auth.signIn(req(),res,{email:user.email,password:'fictional'}),/sign_in_required/);assert.equal(res.getHeader('Set-Cookie'),undefined);
++  }
++});
++test('cross-origin writes rejected, refresh re-verifies, logout clears both cookies',async()=>{
++  const {auth}=setup(),res=response();
++  assert.throws(()=>auth.guard({...req(),headers:{origin:'https://different.example'}}),/same_origin_required/);
++  await auth.refresh(req(REFRESH+'='+refresh),res);
++  assert.equal((await auth.current(req(ACCESS+'='+token))).user.id,user.id);
++  await auth.signOut(req(ACCESS+'='+token),res);
++  assert.ok(res.getHeader('Set-Cookie').filter(c=>c.startsWith(ACCESS+'=')||c.startsWith(REFRESH+'=')).every(c=>c.includes('Max-Age=0')));
++});
+diff --git a/tests/portable/http-smoke.mjs b/tests/portable/http-smoke.mjs
+new file mode 100644
+index 0000000..f100a57
+--- /dev/null
++++ b/tests/portable/http-smoke.mjs
+@@ -0,0 +1,20 @@
++/** Runs the compiled server with NO database, provider or media credentials. */
++import assert from 'node:assert/strict';
++import {spawn} from 'node:child_process';
++import {once} from 'node:events';
++const origin='http://127.0.0.1:4319';
++const child=spawn(process.execPath,['.next/standalone/server.js'],{env:{PATH:process.env.PATH,NODE_ENV:'production',HOSTNAME:'127.0.0.1',PORT:'4319',PEDIAROUNDS_APP_ORIGIN:origin},stdio:['ignore','pipe','pipe']});
++let output='';child.stdout.on('data',d=>{output+=d;});child.stderr.on('data',d=>{output+=d;});
++try {
++  await Promise.race([new Promise((resolve,reject)=>{
++    const check=setInterval(()=>{if(output.includes('Ready in')){clearInterval(check);resolve();}else if(child.exitCode!==null){clearInterval(check);reject(Error(output));}},50);check.unref();
++  }),new Promise((_,reject)=>{const t=setTimeout(()=>reject(Error('server_start_timeout')),10000);t.unref();})]);
++  for(const [path,want] of [['/healthz',200],['/readyz',503],['/login',200],['/api/progress',401],['/api/study-session',401],['/api/spaced-review',401],['/api/annotations',401],['/api/mock-exam',401],['/api/custom-exam',401],['/api/source-documents/test',401],['/api/question-figures/test',401]]){
++    const r=await fetch(origin+path,{redirect:'manual',headers:{'oai-authenticated-user-id':'forged','oai-authenticated-user-email':'forged@example.test'},signal:AbortSignal.timeout(10000)});assert.equal(r.status,want,path);
++  }
++  const page=await fetch(origin+'/questions',{redirect:'manual',headers:{'oai-authenticated-user-id':'forged'}});assert.equal(page.status,307);assert.ok(page.headers.get('location').startsWith('/login'));
++  const evil=await fetch(origin+'/api/independent/signin',{method:'POST',headers:{origin:'https://evil.example','content-type':'application/json'},body:'{}'});assert.equal(evil.status,403);
++  const logout=await fetch(origin+'/api/independent/signout',{method:'POST',headers:{origin,'content-type':'application/json'},body:'{}'});assert.equal(logout.status,200);assert.equal(logout.headers.getSetCookie().length,3);assert.ok(logout.headers.getSetCookie().every(c=>c.includes('Max-Age=0')));
++  console.log(JSON.stringify({nativeNodeRuntime:true,protectedEndpointsRejectForgedIdentity:true,protectedPageRedirects:true,crossOriginWriteRejected:true,logoutClearsCookies:true,readinessBlocked:true,hostedConnections:false}));
++} catch(error){console.error(output);throw error;}
++finally {if(child.exitCode===null){child.kill('SIGTERM');await once(child,'exit');}}
+diff --git a/tests/portable/postgres-check.mjs b/tests/portable/postgres-check.mjs
+new file mode 100644
+index 0000000..1b1f209
+--- /dev/null
++++ b/tests/portable/postgres-check.mjs
+@@ -0,0 +1,47 @@
++import assert from 'node:assert/strict';
++import {readFileSync} from 'node:fs';
++if(!process.env.PEDIAROUNDS_PGLITE_MODULE)throw Error('Set PEDIAROUNDS_PGLITE_MODULE to a local @electric-sql/pglite 0.5.8 module path');
++const {PGlite}=await import(process.env.PEDIAROUNDS_PGLITE_MODULE);
++import {postgresD1,resolveAccount,translateQuery} from '../../server/portable/postgres.mjs';
++import {readStudySession,writeStudySession} from '../../server/study-session.mjs';
++import {readExam,writeExam} from '../../server/mock-exam.mjs';
++import {readSpacedReview,writeSpacedReview} from '../../server/spaced-review.mjs';
++const db=new PGlite();
++const alice='11111111-1111-4111-8111-111111111111',bob='22222222-2222-4222-8222-222222222222';
++const pool={async connect(){await db.exec('SET ROLE pediarounds_portable_runtime');return {async query(text,values){const r=await db.query(text,values);return {...r,command:text.trim().split(/\s/)[0].toUpperCase(),rowCount:r.affectedRows??r.rows.length};},release(){}};}};
++try {
++  await db.exec(readFileSync('db/portable/schema.sql','utf8'));
++  await db.query("INSERT INTO pediarounds_portable.account_links VALUES($1,'original-alice-id','both_accounts_verified',now(),'fictional-proof')",[alice]);
++  assert.equal(await resolveAccount(alice,pool),'original-alice-id');assert.equal(await resolveAccount(bob,pool),bob);
++  const a=postgresD1({id:'original-alice-id',externalId:alice},pool),b=postgresD1({id:bob,externalId:bob},pool);
++  assert.equal(translateQuery("SELECT '?' AS questionId WHERE user_id = ?").text,"SELECT '?' AS \"questionId\" WHERE user_id = $1");
++  await a.prepare('INSERT INTO user_profiles (user_id,email,display_name,created_at,updated_at) VALUES(?,?,?,?,?)').bind('original-alice-id','fictional@example.test','Test',1700000000123,1700000000123).run();
++  assert.equal((await a.prepare('SELECT created_at AS updatedAt FROM user_profiles WHERE user_id = ?').bind('original-alice-id').first()).updatedAt,1700000000123);
++  const payload={questionIds:['old-q1','old-q2'],currentQuestionId:'old-q2',query:'مراجعة '.repeat(10000)};
++  assert.equal(await writeStudySession(a,'original-alice-id',payload,0),1);
++  assert.equal(await writeStudySession(a,'original-alice-id',payload,0),null);
++  assert.deepEqual((await readStudySession(a,'original-alice-id')).session,payload);
++  assert.equal(await writeStudySession(a,'original-alice-id',{...payload,currentQuestionId:'old-q1'},1),2);
++  assert.equal(await writeStudySession(a,'original-alice-id',payload,1),null);
++  assert.deepEqual(await readStudySession(b,'original-alice-id'),{session:null,revision:0});
++  for(const kind of ['mock','custom']) {
++    const attempt={id:'fictional-'+kind,cursor:7,status:'active',questions:['old-q1']};
++    assert.equal(await writeExam(a,'original-alice-id',attempt,0,1700000000123,kind),1);
++    assert.deepEqual((await readExam(a,'original-alice-id',kind)).attempt,attempt);
++  }
++  await a.prepare(`INSERT INTO question_annotations (user_id,question_id,marked,confidence,updated_at) VALUES (?,?,?,?,?) ON CONFLICT(user_id,question_id) DO UPDATE SET marked = CASE WHEN ? THEN excluded.marked ELSE question_annotations.marked END, confidence = CASE WHEN ? THEN excluded.confidence ELSE question_annotations.confidence END, updated_at = excluded.updated_at`).bind('original-alice-id','old-q1',1,'high',1700000000123,1,1).run();
++  await assert.rejects(a.batch([
++    a.prepare('INSERT INTO seen_questions VALUES(?,?,?)').bind('original-alice-id','rollback-question',1700000000123),
++    a.prepare('INSERT INTO seen_questions VALUES(?,?,?)').bind(bob,'not-owned',1700000000123)
++  ]),/row-level security/);
++  assert.equal(await a.prepare('SELECT question_id FROM seen_questions WHERE user_id = ?').bind('original-alice-id').first(),null);
++  await assert.rejects(a.prepare('INSERT INTO account_links VALUES(?,?,?,?,?)').bind(bob,'stolen','owner_verified_recovery','2026-09-12','bad').run(),/permission denied/);
++  await assert.rejects(postgresD1({id:'incorrect-mapping',externalId:alice},pool).prepare('SELECT user_id FROM user_profiles').all(),/account_mapping_changed/);
++  const review=await readSpacedReview(a,'original-alice-id','original-bank',id=>id,['old-q1','old-q2']);
++  assert.ok(Number.isSafeInteger(review.revision));
++  const next={...review.session,count:1,knownIds:['old-q1'],pending:[]};
++  assert.equal(await writeSpacedReview(a,'original-alice-id','original-bank',next,review.revision),review.revision+1);
++  assert.equal(await writeSpacedReview(a,'original-alice-id','original-bank',next,review.revision),null);
++  assert.deepEqual((await readSpacedReview(a,'original-alice-id','original-bank',id=>id,['old-q1','old-q2'])).session,next);
++  console.log(JSON.stringify({verifiedIdentityMapping:true,accountIsolation:true,millisecondTimestamps:true,longPayloads:true,currentStudySessionFunctions:true,compareAndSwap:true,bothExamTypes:true,annotationTranslation:true,atomicBatchRollback:true,clientCannotLinkAccounts:true,liveSitesModified:false}));
++} finally {await db.close();}
+diff --git a/tsconfig.json b/tsconfig.json
+index 3a13f90..5623e52 100644
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -1,7 +1,11 @@
+ {
+   "compilerOptions": {
+     "target": "ES2017",
+-    "lib": ["dom", "dom.iterable", "esnext"],
++    "lib": [
++      "dom",
++      "dom.iterable",
++      "esnext"
++    ],
+     "allowJs": true,
+     "skipLibCheck": true,
+     "strict": true,
+@@ -19,16 +23,32 @@
+       }
+     ],
+     "paths": {
+-      "@/*": ["./*"]
++      "@/*": [
++        "./*"
++      ]
+     }
+   },
+   "include": [
+     "next-env.d.ts",
+-    "**/*.ts",
+-    "**/*.tsx",
++    "app/**/*.ts",
++    "app/**/*.tsx",
++    "components/**/*.ts",
++    "components/**/*.tsx",
++    "lib/**/*.ts",
++    "server/**/*.ts",
++    "db/progress.ts",
++    "next.config.ts",
+     ".next/types/**/*.ts",
+-    ".next/dev/types/**/*.ts",
+-    "**/*.mts"
++    ".next/dev/types/**/*.ts"
+   ],
+-  "exclude": ["node_modules"]
++  "exclude": [
++    "node_modules",
++    "worker-configuration.d.ts",
++    "worker-env.d.ts",
++    "build",
++    "examples",
++    "scripts",
++    "vite.config.ts",
++    "drizzle.config.ts"
++  ]
+ }
+diff --git a/worker/question-figures.ts b/worker/question-figures.ts
+index fc2211f..ef7097c 100644
+--- a/worker/question-figures.ts
++++ b/worker/question-figures.ts
+@@ -1,6 +1,6 @@
+ import figureData from "../data/question-figures.json";
+ 
+-type FigureEnv = { ASSETS: Fetcher; PEDIA_FIGURE_KEY?: string; PEDIA_FIGURE_SUPPLEMENT_KEY?: string; PEDIA_SOURCE_DOCUMENT_KEY?: string; PEDIA_PART1_2026_KEY?: string; PEDIA_CONTENT_20260910_KEY?: string; PEDIA_MISSING_TEACHING_20260910_KEY?: string; PEDIA_MISSING_TEACHING_FINAL_20260910_KEY?: string };
++type FigureEnv = { ASSETS: { fetch(request: Request): Promise<Response> }; PEDIA_FIGURE_KEY?: string; PEDIA_FIGURE_SUPPLEMENT_KEY?: string; PEDIA_SOURCE_DOCUMENT_KEY?: string; PEDIA_PART1_2026_KEY?: string; PEDIA_CONTENT_20260910_KEY?: string; PEDIA_MISSING_TEACHING_20260910_KEY?: string; PEDIA_MISSING_TEACHING_FINAL_20260910_KEY?: string };
+ const figures: Record<string, { asset: string; mimeType: string; keySlot?: string }> = figureData;
+ const privateHeaders = { "Cache-Control": "private, no-store", "Vary": "Cookie, oai-authenticated-user-id, oai-authenticated-user-email", "X-Content-Type-Options": "nosniff" };
+ 
