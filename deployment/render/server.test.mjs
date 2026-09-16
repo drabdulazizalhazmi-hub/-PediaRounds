@@ -6,8 +6,8 @@ import './study.test.mjs';
 import './service-diagnostics.test.mjs';
 import './service-diagnostics.http.test.mjs';
 
-async function running(t) {
-  const server = createProbeServer();
+async function running(t, options) {
+  const server = createProbeServer(options);
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise(resolve => { server.close(resolve); server.closeAllConnections(); }));
   return `http://127.0.0.1:${server.address().port}`;
@@ -17,7 +17,9 @@ test('health is explicitly process-only', async t => {
   assert.equal(response.status, 200); assert.equal((await response.json()).scope, 'external-backend-process-only');
 });
 test('application readiness fails closed', async t => {
-  const base = await running(t); const response = await fetch(base + '/readyz');
+  const monitor={check:async()=>({configured:false,authReachable:false,anonymousDatabaseDenied:false})};
+  const study={handle:async()=>false,status:()=>({authConfigured:false,bank:{questionCount:0,fileErrors:0,skippedRecords:0,duplicateIDs:0}})};
+  const base = await running(t,{monitor,study}); const response = await fetch(base + '/readyz');
   assert.equal(response.status, 503); const status = await response.json();
   for (const field of ['applicationReady','questionsMigrated','accountsMigrated','progressMigrated']) assert.equal(status[field], false);
 });
