@@ -127,3 +127,8 @@ This receipt supersedes earlier remaining-work statements only for the items exp
 - Validation: production build succeeded; 18 targeted exam, study-session and reconciliation tests passed, including real SQLite persistence and actual HTTP-route authorization/origin handling. TypeScript reports the same 12 diagnostics as the committed baseline, with no new diagnostics. No browser or visual QA was performed.
 - Version 20 source: `2edb2292b5b0b267735ac06d75916531147b3baa`.
 - Production deployment `appgdep_6a9e9d8c08c88191b1ad4372bf4b8ece` **succeeded**. Live exam: https://pediarounds-alhazmi.dr-abdulazizalhazmi.chatgpt.site/exam
+
+
+## Scientific English language revision — 2026-09-12
+
+Added edited English teaching and option discussions for Endocrinology Q34–Q38, checked against the existing GitHub PDF pp. 177–180 (including visual review of p. 178). Prior data fields and all scoring/review states are unchanged. See `updates/scientific-english-2026-09-12/README.md` for provenance, companion current-Site work, and explicit remaining coverage. This is not whole-platform completion or independent validation of every answer.

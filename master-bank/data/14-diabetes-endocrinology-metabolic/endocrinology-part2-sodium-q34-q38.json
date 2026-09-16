@@ -1,67 +1,363 @@
 [
   {
-    "id":"part2-endo-sodium-q34","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"SIADH","yearTags":[2021],"examPart":"Part II",
-    "stemEn":"A child with severe pneumonia has oliguria, hyponatremia, and concentrated urine with specific gravity 1.030. What is the most likely diagnosis?",
-    "options":[{"key":"A","text":"SIADH"},{"key":"B","text":"Cerebral salt wasting"},{"key":"C","text":"Diabetes insipidus"}],
-    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high",
-    "explanationAr":"Pneumonia من triggers المعروفة لـSIADH. Hyponatremia مع concentrated urine وoliguria/relative water retention يناسب SIADH أكثر من DI أو CSW.",
-    "reasoningEn":"Pulmonary disease can trigger SIADH, causing hypotonic hyponatremia with inappropriately concentrated urine.",
-    "incorrectOptionsAr":"DI يعطي polyuria وhypernatremia غالبًا؛ CSW يكون hypovolemia مع renal sodium loss وhigh urine output أكثر.",
-    "keywords":["pneumonia","hyponatremia","concentrated urine","SIADH"],"clinicalPearl":"Volume status helps distinguish SIADH from cerebral salt wasting.",
-    "image":null,"tts":{"enabled":true,"language":"en","text":"A child with severe pneumonia has oliguria, hyponatremia, and concentrated urine with specific gravity 1.030. What is the most likely diagnosis?"},
-    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2021,"part":"Part II","page":177,"questionNumber":"Endocrinology Q34"}],
-    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":null},"duplicateOf":null,"reviewStatus":"needs_verification"
+    "id": "part2-endo-sodium-q34",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "SIADH",
+    "yearTags": [
+      2021
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child with severe pneumonia has oliguria, hyponatremia, and concentrated urine with specific gravity 1.030. What is the most likely diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "SIADH"
+      },
+      {
+        "key": "B",
+        "text": "Cerebral salt wasting"
+      },
+      {
+        "key": "C",
+        "text": "Diabetes insipidus"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "Pneumonia من triggers المعروفة لـSIADH. Hyponatremia مع concentrated urine وoliguria/relative water retention يناسب SIADH أكثر من DI أو CSW.",
+    "reasoningEn": "Pulmonary disease can trigger SIADH, causing hypotonic hyponatremia with inappropriately concentrated urine.",
+    "incorrectOptionsAr": "DI يعطي polyuria وhypernatremia غالبًا؛ CSW يكون hypovolemia مع renal sodium loss وhigh urine output أكثر.",
+    "keywords": [
+      "pneumonia",
+      "hyponatremia",
+      "concentrated urine",
+      "SIADH"
+    ],
+    "clinicalPearl": "Volume status helps distinguish SIADH from cerebral salt wasting.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child with severe pneumonia has oliguria, hyponatremia, and concentrated urine with specific gravity 1.030. What is the most likely diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2021,
+        "part": "Part II",
+        "page": 177,
+        "questionNumber": "Endocrinology Q34"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": null
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "explanationEn": "Pneumonia is a recognized trigger for the syndrome of inappropriate antidiuretic hormone secretion (SIADH). Hyponatremia with inappropriately concentrated urine and oliguria or relative water retention favors SIADH over diabetes insipidus or cerebral salt wasting.",
+    "incorrectOptionsEn": "Diabetes insipidus typically produces polyuria and may cause hypernatremia when water intake is inadequate. Cerebral salt wasting is associated with renal sodium loss, hypovolemia, and increased urine output.",
+    "englishEditorialReview": {
+      "date": "2026-09-12",
+      "scope": "English language revision of the retained explanation; no change to answer validation",
+      "sourcePdf": "Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "pdfPages": [
+        177,
+        178
+      ],
+      "sha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourceAttribution": "The PDF cites UpToDate. No independent access to the full UpToDate entry is claimed."
+    }
   },
   {
-    "id":"part2-endo-sodium-q35","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Postoperative hyponatremia","yearTags":[2020],"examPart":"Part II",
-    "stemEn":"A child develops seizures after recent tumor surgery and the seizures are not responding to anticonvulsants. Which laboratory value should be checked urgently?",
-    "options":[{"key":"A","text":"Serum osmolality"},{"key":"B","text":"Serum sodium"},{"key":"C","text":"Serum potassium"}],
-    "recalledAnswer":"B","verifiedAnswer":"B","answerConfidence":"high",
-    "explanationAr":"Postoperative ADH excess قد يسبب acute hyponatremia، والتي قد تظهر كـseizures. لذلك serum sodium يجب فحصه فورًا ضمن reversible causes.",
-    "reasoningEn":"Acute postoperative hyponatremia can cause refractory seizures and should be identified rapidly.",
-    "incorrectOptionsAr":"Osmolality مفيدة لاحقًا لتصنيف المشكلة، لكن sodium هو الاختبار المباشر العاجل؛ potassium لا يفسر الصورة بنفس القوة.",
-    "keywords":["postoperative seizure","hyponatremia","serum sodium"],"clinicalPearl":"Severe symptomatic hyponatremia may require carefully dosed hypertonic saline.",
-    "image":null,"tts":{"enabled":true,"language":"en","text":"A child develops seizures after recent tumor surgery and the seizures are not responding to anticonvulsants. Which laboratory value should be checked urgently?"},
-    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2020,"part":"Part II","page":178,"questionNumber":"Endocrinology Q35"}],
-    "verification":{"upToDate":"supports","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation quotes UpToDate."},"duplicateOf":null,"reviewStatus":"needs_verification"
+    "id": "part2-endo-sodium-q35",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Postoperative hyponatremia",
+    "yearTags": [
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "A child develops seizures after recent tumor surgery and the seizures are not responding to anticonvulsants. Which laboratory value should be checked urgently?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Serum osmolality"
+      },
+      {
+        "key": "B",
+        "text": "Serum sodium"
+      },
+      {
+        "key": "C",
+        "text": "Serum potassium"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "high",
+    "explanationAr": "Postoperative ADH excess قد يسبب acute hyponatremia، والتي قد تظهر كـseizures. لذلك serum sodium يجب فحصه فورًا ضمن reversible causes.",
+    "reasoningEn": "Acute postoperative hyponatremia can cause refractory seizures and should be identified rapidly.",
+    "incorrectOptionsAr": "Osmolality مفيدة لاحقًا لتصنيف المشكلة، لكن sodium هو الاختبار المباشر العاجل؛ potassium لا يفسر الصورة بنفس القوة.",
+    "keywords": [
+      "postoperative seizure",
+      "hyponatremia",
+      "serum sodium"
+    ],
+    "clinicalPearl": "Severe symptomatic hyponatremia may require carefully dosed hypertonic saline.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "A child develops seizures after recent tumor surgery and the seizures are not responding to anticonvulsants. Which laboratory value should be checked urgently?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2020,
+        "part": "Part II",
+        "page": 178,
+        "questionNumber": "Endocrinology Q35"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "explanationEn": "Postoperative antidiuretic hormone excess may cause acute hyponatremia, which can present with seizures. Serum sodium should therefore be measured promptly when investigating reversible causes of postoperative seizures.",
+    "incorrectOptionsEn": "Serum osmolality helps classify the disturbance, but serum sodium is the direct, urgent measurement sought in this scenario. A potassium abnormality does not explain the presentation as well.",
+    "englishEditorialReview": {
+      "date": "2026-09-12",
+      "scope": "English language revision of the retained explanation; no change to answer validation",
+      "sourcePdf": "Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "pdfPages": [
+        178
+      ],
+      "sha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourceAttribution": "The PDF cites UpToDate. No independent access to the full UpToDate entry is claimed."
+    }
   },
   {
-    "id":"part2-endo-sodium-q36","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Cerebral salt wasting","yearTags":[2023],"examPart":"Part II",
-    "stemEn":"After craniopharyngioma surgery, a child is dehydrated and hypotensive with high urine output, hyponatremia, high urine sodium, low serum osmolality, and concentrated urine. What is the diagnosis?",
-    "options":[{"key":"A","text":"Cerebral salt wasting"},{"key":"B","text":"Central diabetes insipidus"},{"key":"C","text":"SIADH"}],
-    "recalledAnswer":"A","verifiedAnswer":"A","answerConfidence":"high",
-    "explanationAr":"CSW يتميز بـhyponatremia مع renal sodium loss وhypovolemia/high urine output بعد CNS disease أو surgery. هذا يختلف عن SIADH الذي يكون فيه المريض غالبًا euvolemic.",
-    "reasoningEn":"Hypovolemia, natriuresis and high urine output after CNS surgery strongly support cerebral salt wasting.",
-    "incorrectOptionsAr":"Central DI يسبب dilute urine وhypernatremia غالبًا؛ SIADH لا يسبب dehydration/hypovolemia بهذا الشكل.",
-    "keywords":["CSW","hyponatremia","high urine sodium","hypovolemia"],"clinicalPearl":"CSW and SIADH can look biochemically similar; volume status and sodium balance are key.",
-    "image":null,"tts":{"enabled":true,"language":"en","text":"After craniopharyngioma surgery, a child is dehydrated and hypotensive with high urine output, hyponatremia, high urine sodium, low serum osmolality, and concentrated urine. What is the diagnosis?"},
-    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2023,"part":"Part II","page":178,"questionNumber":"Endocrinology Q36"}],
-    "verification":{"upToDate":"supports","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source explanation quotes UpToDate."},"duplicateOf":null,"reviewStatus":"needs_verification"
+    "id": "part2-endo-sodium-q36",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Cerebral salt wasting",
+    "yearTags": [
+      2023
+    ],
+    "examPart": "Part II",
+    "stemEn": "After craniopharyngioma surgery, a child is dehydrated and hypotensive with high urine output, hyponatremia, high urine sodium, low serum osmolality, and concentrated urine. What is the diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cerebral salt wasting"
+      },
+      {
+        "key": "B",
+        "text": "Central diabetes insipidus"
+      },
+      {
+        "key": "C",
+        "text": "SIADH"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": "A",
+    "answerConfidence": "high",
+    "explanationAr": "CSW يتميز بـhyponatremia مع renal sodium loss وhypovolemia/high urine output بعد CNS disease أو surgery. هذا يختلف عن SIADH الذي يكون فيه المريض غالبًا euvolemic.",
+    "reasoningEn": "Hypovolemia, natriuresis and high urine output after CNS surgery strongly support cerebral salt wasting.",
+    "incorrectOptionsAr": "Central DI يسبب dilute urine وhypernatremia غالبًا؛ SIADH لا يسبب dehydration/hypovolemia بهذا الشكل.",
+    "keywords": [
+      "CSW",
+      "hyponatremia",
+      "high urine sodium",
+      "hypovolemia"
+    ],
+    "clinicalPearl": "CSW and SIADH can look biochemically similar; volume status and sodium balance are key.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "After craniopharyngioma surgery, a child is dehydrated and hypotensive with high urine output, hyponatremia, high urine sodium, low serum osmolality, and concentrated urine. What is the diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2023,
+        "part": "Part II",
+        "page": 178,
+        "questionNumber": "Endocrinology Q36"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source explanation quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "explanationEn": "Cerebral salt wasting is characterized by hyponatremia with renal sodium loss, hypovolemia, and increased urine output after central nervous system disease or surgery. This differs from SIADH, in which the patient is usually clinically euvolemic.",
+    "incorrectOptionsEn": "Central diabetes insipidus produces dilute urine and may cause hypernatremia when water intake is inadequate. SIADH does not usually cause the marked volume depletion described here.",
+    "englishEditorialReview": {
+      "date": "2026-09-12",
+      "scope": "English language revision of the retained explanation; no change to answer validation",
+      "sourcePdf": "Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "pdfPages": [
+        178,
+        179
+      ],
+      "sha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourceAttribution": "The PDF cites UpToDate. No independent access to the full UpToDate entry is claimed."
+    }
   },
   {
-    "id":"part2-endo-sodium-q37","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Central diabetes insipidus","yearTags":[2024,2020],"examPart":"Part II",
-    "stemEn":"After pituitary surgery, a child has dehydration, urine output 7 mL/kg/hour, sodium 165 mmol/L, high serum osmolality, and urine specific gravity 1.005. What is the diagnosis?",
-    "options":[{"key":"A","text":"Cerebral salt wasting"},{"key":"B","text":"Central diabetes insipidus"},{"key":"C","text":"SIADH"}],
-    "recalledAnswer":"B","verifiedAnswer":"B","answerConfidence":"high",
-    "explanationAr":"Polyuria + hypernatremia + high serum osmolality + very dilute urine بعد pituitary/suprasellar surgery = central diabetes insipidus (AVP deficiency).",
-    "reasoningEn":"Post-pituitary-surgery hypernatremic polyuria with dilute urine is classic central diabetes insipidus.",
-    "incorrectOptionsAr":"CSW يسبب hyponatremia؛ SIADH يسبب water retention وconcentrated urine.",
-    "keywords":["pituitary surgery","polyuria","hypernatremia","dilute urine","central DI"],"clinicalPearl":"Monitor for the triphasic response after pituitary surgery in selected patients.",
-    "image":null,"tts":{"enabled":true,"language":"en","text":"After pituitary surgery, a child has dehydration, urine output 7 milliliters per kilogram per hour, sodium 165, high serum osmolality, and urine specific gravity 1.005. What is the diagnosis?"},
-    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2024,"part":"Part II","page":179,"questionNumber":"Endocrinology Q37"}],
-    "verification":{"upToDate":"supports","nelson":"not_checked","guideline":"not_checked","referenceNotes":"Source quotes UpToDate."},"duplicateOf":null,"reviewStatus":"needs_verification"
+    "id": "part2-endo-sodium-q37",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Central diabetes insipidus",
+    "yearTags": [
+      2024,
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "After pituitary surgery, a child has dehydration, urine output 7 mL/kg/hour, sodium 165 mmol/L, high serum osmolality, and urine specific gravity 1.005. What is the diagnosis?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cerebral salt wasting"
+      },
+      {
+        "key": "B",
+        "text": "Central diabetes insipidus"
+      },
+      {
+        "key": "C",
+        "text": "SIADH"
+      }
+    ],
+    "recalledAnswer": "B",
+    "verifiedAnswer": "B",
+    "answerConfidence": "high",
+    "explanationAr": "Polyuria + hypernatremia + high serum osmolality + very dilute urine بعد pituitary/suprasellar surgery = central diabetes insipidus (AVP deficiency).",
+    "reasoningEn": "Post-pituitary-surgery hypernatremic polyuria with dilute urine is classic central diabetes insipidus.",
+    "incorrectOptionsAr": "CSW يسبب hyponatremia؛ SIADH يسبب water retention وconcentrated urine.",
+    "keywords": [
+      "pituitary surgery",
+      "polyuria",
+      "hypernatremia",
+      "dilute urine",
+      "central DI"
+    ],
+    "clinicalPearl": "Monitor for the triphasic response after pituitary surgery in selected patients.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "After pituitary surgery, a child has dehydration, urine output 7 milliliters per kilogram per hour, sodium 165, high serum osmolality, and urine specific gravity 1.005. What is the diagnosis?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2024,
+        "part": "Part II",
+        "page": 179,
+        "questionNumber": "Endocrinology Q37"
+      }
+    ],
+    "verification": {
+      "upToDate": "supports",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": "Source quotes UpToDate."
+    },
+    "duplicateOf": null,
+    "reviewStatus": "needs_verification",
+    "explanationEn": "Polyuria, hypernatremia, elevated serum osmolality, and very dilute urine after pituitary or suprasellar surgery support central diabetes insipidus, now termed arginine vasopressin deficiency (AVP-D).",
+    "incorrectOptionsEn": "Cerebral salt wasting causes hyponatremia. SIADH causes water retention with inappropriately concentrated urine.",
+    "englishEditorialReview": {
+      "date": "2026-09-12",
+      "scope": "English language revision of the retained explanation; no change to answer validation",
+      "sourcePdf": "Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "pdfPages": [
+        179
+      ],
+      "sha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourceAttribution": "The PDF cites UpToDate. No independent access to the full UpToDate entry is claimed."
+    }
   },
   {
-    "id":"part2-endo-sodium-q38","module":"diabetes-endocrinology-metabolic","specialty":"Endocrinology","topic":"Diabetes insipidus","yearTags":[2022,2020],"examPart":"Part II",
-    "stemEn":"Which laboratory pattern is expected in untreated diabetes insipidus when water intake is insufficient?",
-    "options":[{"key":"A","text":"High urine output, high serum sodium, high serum osmolality, and low urine osmolality"}],
-    "recalledAnswer":"A","verifiedAnswer":null,"answerConfidence":"high",
-    "explanationAr":"DI يعني inability to concentrate urine، لذلك polyuria مع dilute urine؛ إذا لم يعوض الطفل الماء يرتفع sodium وserum osmolality.",
-    "reasoningEn":"Deficient AVP action causes hypotonic polyuria and can lead to hypernatremic hyperosmolality.",
-    "incorrectOptionsAr":"لا توجد خيارات أخرى في الـrecall.",
-    "keywords":["DI","hypernatremia","low urine osmolality"],"clinicalPearl":"Always interpret sodium in relation to access to water; older children may maintain normal sodium by drinking excessively.",
-    "image":null,"tts":{"enabled":true,"language":"en","text":"Which laboratory pattern is expected in untreated diabetes insipidus when water intake is insufficient?"},
-    "sourceRefs":[{"sourceName":"Pediatric Saudi Board Exams Question Collection 4th Edition","year":2022,"part":"Part II","page":179,"questionNumber":"Endocrinology Q38"}],
-    "verification":{"upToDate":"not_checked","nelson":"not_checked","guideline":"not_checked","referenceNotes":null},"duplicateOf":"part2-endo-sodium-q37","reviewStatus":"deduplicated"
+    "id": "part2-endo-sodium-q38",
+    "module": "diabetes-endocrinology-metabolic",
+    "specialty": "Endocrinology",
+    "topic": "Diabetes insipidus",
+    "yearTags": [
+      2022,
+      2020
+    ],
+    "examPart": "Part II",
+    "stemEn": "Which laboratory pattern is expected in untreated diabetes insipidus when water intake is insufficient?",
+    "options": [
+      {
+        "key": "A",
+        "text": "High urine output, high serum sodium, high serum osmolality, and low urine osmolality"
+      }
+    ],
+    "recalledAnswer": "A",
+    "verifiedAnswer": null,
+    "answerConfidence": "high",
+    "explanationAr": "DI يعني inability to concentrate urine، لذلك polyuria مع dilute urine؛ إذا لم يعوض الطفل الماء يرتفع sodium وserum osmolality.",
+    "reasoningEn": "Deficient AVP action causes hypotonic polyuria and can lead to hypernatremic hyperosmolality.",
+    "incorrectOptionsAr": "لا توجد خيارات أخرى في الـrecall.",
+    "keywords": [
+      "DI",
+      "hypernatremia",
+      "low urine osmolality"
+    ],
+    "clinicalPearl": "Always interpret sodium in relation to access to water; older children may maintain normal sodium by drinking excessively.",
+    "image": null,
+    "tts": {
+      "enabled": true,
+      "language": "en",
+      "text": "Which laboratory pattern is expected in untreated diabetes insipidus when water intake is insufficient?"
+    },
+    "sourceRefs": [
+      {
+        "sourceName": "Pediatric Saudi Board Exams Question Collection 4th Edition",
+        "year": 2022,
+        "part": "Part II",
+        "page": 179,
+        "questionNumber": "Endocrinology Q38"
+      }
+    ],
+    "verification": {
+      "upToDate": "not_checked",
+      "nelson": "not_checked",
+      "guideline": "not_checked",
+      "referenceNotes": null
+    },
+    "duplicateOf": "part2-endo-sodium-q37",
+    "reviewStatus": "deduplicated",
+    "explanationEn": "Diabetes insipidus impairs urinary concentration, causing polyuria with dilute urine. Serum sodium and osmolality increase if water losses are not adequately replaced.",
+    "incorrectOptionsEn": "No additional options are preserved in this recalled question.",
+    "englishEditorialReview": {
+      "date": "2026-09-12",
+      "scope": "English language revision of the retained explanation; no change to answer validation",
+      "sourcePdf": "Pediatric-Saudi-Board-Exams-Question-Collection-4th-ED-1-May-2026.pdf",
+      "pdfPages": [
+        179,
+        180
+      ],
+      "sha256": "85f22dabc1e7f434bc39c49efecb2dcb7f4caadc63ac2abb93f6124a96b370b3",
+      "sourceAttribution": "The PDF cites UpToDate. No independent access to the full UpToDate entry is claimed."
+    }
   }
 ]
