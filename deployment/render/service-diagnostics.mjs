@@ -1,4 +1,4 @@
-/** Read-only, bounded dependency diagnostics. Never promotes migration readiness. */
+/** Read-only, bounded dependency diagnostics for the deployed study service. */
 export function createDependencyMonitor({backend, now = Date.now, ttlMs = 30000, timeoutMs = 4000} = {}) {
   if (!backend || typeof backend.probe !== 'function') throw new TypeError('A backend probe is required.');
   if (!Number.isFinite(ttlMs) || ttlMs < 0 || !Number.isFinite(timeoutMs) || timeoutMs <= 0) throw new TypeError('Invalid diagnostic timing.');
@@ -45,8 +45,8 @@ export function studyInfrastructureStatus(backend, study) {
   };
   const infrastructureReady = Object.values(checks).every(value => value === true);
   return {status: infrastructureReady ? 'ok' : 'unavailable',
-    scope: 'repository-study-beta-dependencies-only', infrastructureReady,
-    applicationReady: false, fullSiteMigrated: false, legacyAccountsMigrated: false,
+    scope: 'authenticated-repository-study', infrastructureReady,
+    applicationReady: infrastructureReady, fullSiteMigrated: false, legacyAccountsMigrated: false,
     legacyProgressMigrated: false, originalImagesMigrated: false, realUserEndToEndTested: false,
     checkedAt: backend?.checkedAt ?? null, checks};
 }

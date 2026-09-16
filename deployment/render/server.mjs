@@ -20,9 +20,9 @@ const headers = {
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
 };
 export const deploymentStatus = Object.freeze({
-  service: 'PediaRounds Render external backend foundation',
-  stage: 'external-backend-with-repository-study-beta',
-  applicationReady: false,
+  service: 'PediaRounds Render study service',
+  stage: 'authenticated-repository-study',
+  applicationReady: true,
   studyBetaPath: '/study',
   questionsMigrated: false,
   accountsMigrated: false,
@@ -52,9 +52,13 @@ export function createProbeServer({backend = createExternalBackend(), study = cr
       req.resume();
       return send(405, { error: 'The full application is not available.' }, undefined, { Allow: 'GET, HEAD' });
     }
-    // Full migration readiness remains distinct from the additive study beta.
+    // Operational readiness is distinct from legacy migration completeness.
     if (pathname === '/healthz') return send(200, { status: 'ok', scope: 'external-backend-process-only' });
-    if (pathname === '/readyz') return send(503, deploymentStatus);
+    if (pathname === '/readyz') {
+      const backendStatus = await monitor.check();
+      const readiness = studyInfrastructureStatus(backendStatus,study?.status());
+      return send(readiness.infrastructureReady ? 200 : 503,{...deploymentStatus,...readiness});
+    }
     if (pathname === '/login' || pathname === '/login/') {
       if (study) return send(302, '', 'text/plain; charset=utf-8', {Location:'/study'});
       return send(503, {error:'study_unavailable'});
@@ -67,7 +71,10 @@ export function createProbeServer({backend = createExternalBackend(), study = cr
           const readiness = studyInfrastructureStatus(backendStatus, studyStatus);
           return send(readiness.infrastructureReady ? 200 : 503, readiness);
         }
-        if (pathname === '/deployment-status') return send(200, {...deploymentStatus,backend:backendStatus,studyBeta:studyStatus});
+        if (pathname === '/deployment-status') {
+          const readiness = studyInfrastructureStatus(backendStatus,studyStatus);
+          return send(200, {...deploymentStatus,applicationReady:readiness.infrastructureReady,backend:backendStatus,studyBeta:studyStatus});
+        }
         return send(200, {...backendStatus,frontendIntegrated:false,studyBetaIntegrated:!!study,endToEndLoginTested:false,existingDataMigrated:false});
       } catch {
         return send(503, {error:'diagnostics_unavailable',applicationReady:false});
@@ -101,7 +108,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const server = createProbeServer({backend,study,monitor});
   server.on('error', error => { console.error('External staging process failed:', error.code || 'unknown'); process.exit(1); });
   server.listen(port, '0.0.0.0', () => {
-    console.log(`External staging process listening on ${port}; applicationReady=false; studyBeta=/study`);
+    console.log(`External study service listening on ${port}; operational readiness is checked at /readyz; study=/study`);
     console.log('Repository study beta:',JSON.stringify(study.status()));
     void study.oauthProviders().then(result=>console.log('Social sign-in providers:',JSON.stringify({configured:result.configured,...result.providers}))).catch(()=>console.log('Social sign-in providers: settings unavailable; no credentials logged.'));
     void monitor.check().then(result => {

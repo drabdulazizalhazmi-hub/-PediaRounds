@@ -1,18 +1,18 @@
-# Render deployment connection probe
+# PediaRounds Render study service
 
-This dependency-free Node service verifies GitHub-to-Render deployment only. It is NOT the PediaRounds application, a question-bank migration, or an authentication implementation. It exposes no repository files, PDFs, question content, secrets, or learner data. The current hosted website is not modified.
+This dependency-free Node service hosts the authenticated external study interface and its protected Supabase progress bridge. It remains separate from the complete Sites application and does not claim a legacy account/content migration.
 
 Build: `node --test deployment/render/server.test.mjs`
 Start: `node deployment/render/server.mjs`
 Binding: `0.0.0.0:$PORT` (default 10000).
 
 - `/healthz`: 200 when this probe runs; not application readiness.
-- `/readyz`: 503, because the application has not been migrated.
-- `/deployment-status`: explicit false migration/readiness flags.
+- `/readyz`: operational readiness for authentication, storage protection and the repository bank; it remains explicit about incomplete legacy migration.
+- `/deployment-status`: separates current service readiness from legacy migration flags.
 - All writes: rejected. Legacy identity headers confer no access.
 - No tracking, cookies, passwords, external JavaScript, or filesystem serving.
 
-## Migration blockers established from the available backup
+## Remaining legacy-migration boundaries
 
 The 7 September 2026 source snapshot is commit `6f2e93930db2a57d81971accaa3cbf3f5271f52a`, recording source `fe5fa4c72090b317861dc48c8c246a443f342a14`. It has 1,074 tracked files. Later audits identify a newer 10 September source; do not replace it with this backup or represent this probe as the latest full application.
 

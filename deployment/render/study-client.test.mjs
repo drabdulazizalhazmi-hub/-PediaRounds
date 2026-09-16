@@ -6,6 +6,11 @@ import {readFileSync} from 'node:fs';
 import {createEnglishReader,canReadEnglish,englishVoices} from './study-reader.mjs';
 const source=readFileSync(new URL('./study-client.mjs',import.meta.url),'utf8')
  .replace(/^import .* from '\.\/reader\.mjs';\n/,'').replace(/void initialize\(\);\s*$/,'');
+test('study session has no forced ten-minute logout and reacquires a screen wake lock',()=>{
+ assert.doesNotMatch(source,/const IDLE=|Signed out after 10 minutes|Session expired after inactivity/);
+ assert.match(source,/navigator\.wakeLock\?\.request/);
+ assert.match(source,/addEventListener\('release'/);
+});
 class Element {
  constructor(tag='div'){this.tag=tag;this.value='';this.hidden=false;this.disabled=false;this.children=[];this.dataset={};this.events=new Map();this.textContent='';}
  addEventListener(type,fn){this.events.set(type,fn);}

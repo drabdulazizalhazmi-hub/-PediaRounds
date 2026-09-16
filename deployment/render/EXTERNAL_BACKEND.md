@@ -9,6 +9,8 @@ This is a partial Render migration, not a release of the full study application.
 - Additive PostgreSQL storage with row-level ownership policies and SECURITY INVOKER functions. The user token, not a service-role key, is used for data access.
 - Atomic progress merges preserve original question IDs, preserve correctly answered status and keep seen-only questions distinct from answered questions.
 - Daily review events use the answer endpoint's server timestamp, count a question once per Riyadh calendar day, and are retained in a user-scoped browser outbox until the database confirms them.
+- The answer route computes correctness on the server and persists that verdict atomically; browser progress requests cannot assert their own `correct` value.
+- Every answered progress mutation is copied by a database trigger into an append-only attempt ledger with no browser write/update/delete privileges.
 - Progress and checkpoint requests are bound to the account that opened the tab, preventing a later cookie switch in another tab from receiving stale writes.
 - Compare-and-swap checkpoint revisions return HTTP 409 on stale writes rather than overwriting a newer resume position.
 - Body limits, network deadlines, rate limits, explicit errors and no-store responses. No credentials are logged or committed.
@@ -35,7 +37,7 @@ Required environment variable names (no values in this repository):
 - `PEDIAROUNDS_SUPABASE_URL`: the existing project's HTTPS API URL
 - `PEDIAROUNDS_SUPABASE_PUBLISHABLE_KEY`: a modern `sb_publishable_` key, never a secret/service-role key
 
-`/external-backend-status` reports configuration and non-user dependency checks. A successful dependency probe only establishes provider reachability and rejection of anonymous database access, not successful end-user login. `/readyz` remains 503 because the full application is not migrated.
+`/external-backend-status` reports configuration and non-user dependency checks. `/readyz` reports the deployed study service as operational only when authentication, database isolation and the repository bank are all healthy; the response separately keeps all legacy-migration flags false.
 
 ## Remaining integration
 

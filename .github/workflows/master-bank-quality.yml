@@ -19,17 +19,14 @@ jobs:
         with:
           python-version: '3.12'
       - name: Structural audit
-        continue-on-error: true
         run: python master-bank/tools/audit_master_bank.py
       - name: Source coverage audit
         run: python master-bank/tools/audit_source_coverage.py
       - name: Source representation audit
         run: python master-bank/tools/audit_source_representation.py
       - name: Duplicate report
-        continue-on-error: true
         run: python master-bank/tools/detect_duplicate_questions.py
       - name: Asset validation
-        continue-on-error: true
         run: python master-bank/tools/validate_assets.py
       - name: Build manifest
         run: python master-bank/tools/build_manifest.py

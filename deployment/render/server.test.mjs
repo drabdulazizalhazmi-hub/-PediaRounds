@@ -21,9 +21,9 @@ test('application readiness fails closed', async t => {
   assert.equal(response.status, 503); const status = await response.json();
   for (const field of ['applicationReady','questionsMigrated','accountsMigrated','progressMigrated']) assert.equal(status[field], false);
 });
-test('home is labelled setup-only, with restrictive headers', async t => {
+test('home labels the operational study boundary, with restrictive headers', async t => {
   const base = await running(t); const response = await fetch(base); const html = await response.text();
-  assert.match(html, /ليست منصة الأسئلة/); assert.match(html, /Hosting setup only/);
+  assert.match(html, /خدمة المذاكرة تعمل/); assert.match(html, /study service is operational/);
   assert.doesNotMatch(html, /<form|<script|type="password"/i);
   assert.match(response.headers.get('content-security-policy'), /frame-ancestors 'none'/);
   assert.match(response.headers.get('x-robots-tag'), /noindex/); assert.equal(response.headers.get('cache-control'), 'no-store');

@@ -59,11 +59,12 @@ test('transport header covers delegated pages, APIs, errors and redirects withou
   }
   assert.match((await request('/study')).headers.get('content-security-policy'),/script-src 'self'/);
 });
-test('fresh health checks do not promote full migration readiness',async t=>{
+test('fresh health checks expose operational readiness without claiming legacy migration',async t=>{
   const {request}=await running(t);const response=await request('/study/readyz');assert.equal(response.status,200);
   const result=await response.json();assert.equal(result.infrastructureReady,true);
-  for(const key of ['applicationReady','fullSiteMigrated','legacyAccountsMigrated','legacyProgressMigrated','originalImagesMigrated','realUserEndToEndTested'])assert.equal(result[key],false);
-  const full=await request('/readyz');assert.equal(full.status,503);assert.equal((await full.json()).applicationReady,false);
+  assert.equal(result.applicationReady,true);
+  for(const key of ['fullSiteMigrated','legacyAccountsMigrated','legacyProgressMigrated','originalImagesMigrated','realUserEndToEndTested'])assert.equal(result[key],false);
+  const full=await request('/readyz');assert.equal(full.status,200);const fullBody=await full.json();assert.equal(fullBody.applicationReady,true);assert.equal(fullBody.fullSiteMigrated,false);
 });
 test('diagnostic endpoints refresh after expiry and recover after a backend outage',async t=>{
   let now=0,healthy=true;

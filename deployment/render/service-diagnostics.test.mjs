@@ -38,10 +38,11 @@ test('diagnostic response uses strict booleans and excludes extra remote fields'
   const result=await monitor.check();assert.equal(result.authReachable,false);assert.equal(result.dependencyCheck,'unavailable');
   assert.doesNotMatch(JSON.stringify(result),/credentials|private/);
 });
-test('limited study health never claims migration or real-user completion', () => {
+test('healthy study is operational without claiming migration or real-user completion', () => {
   const result=studyInfrastructureStatus(good,study);assert.equal(result.infrastructureReady,true);
-  for(const key of ['applicationReady','fullSiteMigrated','legacyAccountsMigrated','legacyProgressMigrated','originalImagesMigrated','realUserEndToEndTested'])assert.equal(result[key],false);
-  assert.equal(result.scope,'repository-study-beta-dependencies-only');
+  assert.equal(result.applicationReady,true);
+  for(const key of ['fullSiteMigrated','legacyAccountsMigrated','legacyProgressMigrated','originalImagesMigrated','realUserEndToEndTested'])assert.equal(result[key],false);
+  assert.equal(result.scope,'authenticated-repository-study');
 });
 test('missing auth, anonymous protection or bank evidence fails study health closed', () => {
   assert.equal(studyInfrastructureStatus(good,null).infrastructureReady,false);

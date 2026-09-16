@@ -68,6 +68,9 @@ export function createStudyApp({backend,env=process.env,fetcher=globalThis.fetch
       if(['progress','checkpoint'].includes(action)) {
         if(!backend)throw failure(503,'backend_unavailable');
         if(req.headers['x-pediarounds-user-id']!==user.id)throw failure(409,'session_changed');
+        // Correctness is written only by the server-side answer route. The
+        // browser may read progress/checkpoints but cannot assert a verdict.
+        if(action==='progress'&&req.method==='POST')throw failure(405,'method_not_allowed');
         // Origin was checked BEFORE converting the ambient cookie to a bearer token.
         req.headers.authorization='Bearer '+token;
         await backend.handle(req,res,'/api/external/'+action);return true;
@@ -95,6 +98,10 @@ export function createStudyApp({backend,env=process.env,fetcher=globalThis.fetch
         const q=bank.get(body.id);if(!q)throw failure(404,'question_not_found');
         const payload=answerFeedback(q,body.selectedIndex),figures=images.descriptors(q.id,'explanation',imageIdentity);
         payload.reviewedAt=new Date(now()).toISOString();
+        // Production persists the server-computed verdict atomically. Test or
+        // transitional adapters without the internal method return no progress
+        // object and retain the older retry path in the browser.
+        payload.progress=backend?.saveProgress ? await backend.saveProgress(token,{completed:[{questionId:q.id,correct:payload.correct,reviewedAt:payload.reviewedAt}],seen:[q.id]}) : null;
         if(figures.length)payload.figures=figures;
         if(images.descriptors(q.id,'question',imageIdentity).length)payload.notice=payload.notice.replace('Original question image has not been migrated.','Source figures are attached; completeness and clinical review remain pending.');
         return send(200,payload);

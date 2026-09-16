@@ -23,11 +23,24 @@ CREATE TABLE public.pediarounds_render_daily_reviews (
   PRIMARY KEY (user_id, review_date, question_id),
   CHECK (review_date = (reviewed_at AT TIME ZONE 'Asia/Riyadh')::date)
 );
+CREATE TABLE public.pediarounds_render_attempts (
+  attempt_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  user_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  question_id text NOT NULL CHECK (length(question_id) BETWEEN 1 AND 200 AND question_id !~ '[[:cntrl:]]'),
+  correct boolean,
+  attempted_at timestamptz NOT NULL,
+  recorded_at timestamptz NOT NULL DEFAULT now()
+);
 ALTER TABLE public.pediarounds_render_progress ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.pediarounds_render_checkpoints ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.pediarounds_render_daily_reviews ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.pediarounds_render_attempts ENABLE ROW LEVEL SECURITY;
 REVOKE ALL ON public.pediarounds_render_progress, public.pediarounds_render_checkpoints,
   public.pediarounds_render_daily_reviews FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON public.pediarounds_render_attempts FROM PUBLIC, anon, authenticated;
+CREATE POLICY own_attempts_read ON public.pediarounds_render_attempts FOR SELECT TO authenticated
+USING ((SELECT auth.uid()) = user_id
+  AND COALESCE((SELECT auth.jwt())->>'is_anonymous', 'false') = 'false');
 GRANT SELECT, INSERT, UPDATE ON public.pediarounds_render_progress, public.pediarounds_render_checkpoints TO authenticated;
 GRANT SELECT, INSERT ON public.pediarounds_render_daily_reviews TO authenticated;
 CREATE POLICY own_progress ON public.pediarounds_render_progress TO authenticated
@@ -44,6 +57,25 @@ WITH CHECK ((SELECT auth.uid()) = user_id
   AND reviewed_at >= timestamptz '2020-01-01 00:00:00+00'
   AND reviewed_at <= now() + interval '5 minutes'
   AND review_date <= (timezone('Asia/Riyadh', now()))::date);
+
+CREATE SCHEMA IF NOT EXISTS private;
+CREATE FUNCTION private.pediarounds_render_log_attempt() RETURNS trigger
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = '' AS $$
+BEGIN
+  IF NEW.answered IS TRUE AND TG_OP = 'INSERT' THEN
+    INSERT INTO public.pediarounds_render_attempts(user_id, question_id, correct, attempted_at)
+    VALUES (NEW.user_id, NEW.question_id, NEW.correct, COALESCE(NEW.answered_at, now()));
+  ELSIF NEW.answered IS TRUE AND TG_OP = 'UPDATE' THEN
+    INSERT INTO public.pediarounds_render_attempts(user_id, question_id, correct, attempted_at)
+    VALUES (NEW.user_id, NEW.question_id, NEW.correct, COALESCE(NEW.answered_at, now()));
+  END IF;
+  RETURN NEW;
+END; $$;
+REVOKE ALL ON FUNCTION private.pediarounds_render_log_attempt() FROM PUBLIC, anon, authenticated;
+CREATE TRIGGER pediarounds_render_progress_attempt
+AFTER INSERT OR UPDATE OF answered, correct, answered_at ON public.pediarounds_render_progress
+FOR EACH ROW EXECUTE FUNCTION private.pediarounds_render_log_attempt();
+CREATE INDEX pediarounds_render_attempts_user_time_idx ON public.pediarounds_render_attempts(user_id, attempted_at DESC);
 
 CREATE FUNCTION public.pediarounds_render_read_progress() RETURNS jsonb
 LANGUAGE plpgsql SECURITY INVOKER SET search_path = '' AS $$

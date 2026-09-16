@@ -94,6 +94,14 @@ export function createExternalBackend({env = process.env, fetcher = globalThis.f
         typeof user.email !== 'string' || !user.email_confirmed_at) throw fail(401,'sign_in_required');
     return {token:match[1], user:{id:user.id,email:user.email}};
   }
+  async function saveProgress(token, payload) {
+    if (!config) throw fail(503,'external_backend_not_configured');
+    const input = validateProgress(payload);
+    const data = await remote('/rest/v1/rpc/pediarounds_render_save_progress', token, input);
+    if (!object(data) || !Array.isArray(data.done) || !Array.isArray(data.seen) || !Number.isInteger(data.reviewedCount) ||
+        (data.dailyProgress !== undefined && !dailyProgressOK(data.dailyProgress))) throw fail(503,'backend_unavailable');
+    return {...data,dailyProgress:data.dailyProgress || []};
+  }
   async function bodyJSON(req) {
     if (!/^application\/json(?:\s*;|$)/i.test(req.headers['content-type'] || '')) throw fail(415,'json_required');
     if (req.headers['content-encoding'] && req.headers['content-encoding'] !== 'identity') throw fail(415,'encoding_not_supported');
@@ -130,7 +138,9 @@ export function createExternalBackend({env = process.env, fetcher = globalThis.f
       if (pathname.endsWith('/progress')) {
         const payload = req.method === 'GET' ? {} : validateProgress(await bodyJSON(req));
         const name = req.method === 'GET' ? 'read_progress' : 'save_progress';
-        const data = await remote('/rest/v1/rpc/pediarounds_render_' + name, token, payload);
+        const data = req.method === 'GET'
+          ? await remote('/rest/v1/rpc/pediarounds_render_' + name, token, payload)
+          : await saveProgress(token,payload);
         if (!object(data) || !Array.isArray(data.done) || !Array.isArray(data.seen) || !Number.isInteger(data.reviewedCount) ||
             (data.dailyProgress !== undefined && !dailyProgressOK(data.dailyProgress))) throw fail(503,'backend_unavailable');
         send(200,{...data,dailyProgress:data.dailyProgress || [],user}); return true;
@@ -150,5 +160,5 @@ export function createExternalBackend({env = process.env, fetcher = globalThis.f
     try {await remote('/rest/v1/rpc/pediarounds_render_read_progress', undefined, {});} catch(error) {anonymousDatabaseDenied = error.code === 'sign_in_required';}
     return {configured:true, authReachable, anonymousDatabaseDenied};
   }
-  return {handle,probe,configured:!!config};
+  return {handle,probe,saveProgress,configured:!!config};
 }

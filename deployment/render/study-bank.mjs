@@ -9,6 +9,27 @@ import {publicationIssues,PUBLICATION_MESSAGES} from './study-readiness.mjs';
 const str = v => typeof v === 'string' ? v : '';
 const list = v => Array.isArray(v) ? v : [];
 const validID = v => typeof v === 'string' && v.length > 0 && v.length <= 200 && !/\p{Cc}/u.test(v);
+const MODULES = new Map([
+  ['Principles of Paediatrics including child safeguarding','principles-of-paediatrics'],['Paediatric Emergency Medicine','paediatric-emergency-medicine'],
+  ['General Paediatrics – Acute & Inpatient','general-paediatrics-acute-inpatient'],['General Paediatrics – Outpatients','general-paediatrics-outpatients'],
+  ['Child Development and Behaviour','child-development-behaviour'],['Neonatology','neonatology'],['Respiratory and ENT','respiratory-ent'],
+  ['Cardiology','cardiology'],['Gastroenterology, Hepatology & Nutrition','gastroenterology-hepatology-nutrition'],
+  ['Neurology and Neurodisability','neurology-neurodisability'],['Infectious Diseases','infectious-diseases'],
+  ['Allergy and Immunology','allergy-immunology'],['Nephrology and Urology','nephrology-urology'],
+  ['Diabetes, Endocrinology and Metabolic Disorders','diabetes-endocrinology-metabolic'],['Genetics and Dysmorphology','genetics-dysmorphology'],
+  ['Haematology and Oncology','haematology-oncology'],['Musculoskeletal and Rheumatology','musculoskeletal-rheumatology'],
+  ['Paediatric Intensive Care','paediatric-intensive-care'],['Child and Adolescent Mental Health','child-adolescent-mental-health'],
+  ['respiratory-and-ent','respiratory-ent']
+]);
+const MODULE_SLUGS = new Set([...MODULES.values()]);
+const canonicalModule = q => {
+  const candidate=str(q?.module || q?.specialty || q?.__moduleSlug).trim();
+  if (MODULES.has(candidate)) return MODULES.get(candidate);
+  if (MODULE_SLUGS.has(candidate)) return candidate;
+  const inferred=str(q?.__moduleSlug).trim();
+  if (MODULE_SLUGS.has(inferred)) return inferred;
+  return candidate || 'Unclassified';
+};
 export const MISSING_EXPLANATION = 'Original source explanation is not available for this question.';
 export function originalEnglish(q) {
   // reasoningEn, explanationAr and generic explanation are NOT original-source evidence.
@@ -36,10 +57,10 @@ function normalized(q) {
   const explanation = originalEnglish(q);
   const publicationBlockers = publicationIssues(q,{key,explanation});
   const reviewOnly = publicationBlockers.length > 0 || q.publishable === false || incomplete || imageRequired || conflicting || !keyValid || clinicalReview?.reviewOnly === true;
-  return {id,module:str(q.module || q.specialty) || 'Unclassified',number:q.number ?? null,stem,options,key,rawKey,
+  return {id,module:canonicalModule(q),number:q.number ?? null,stem,options,key,rawKey,
     reviewOnly,imageRequired,sourceImage,clinicalReview,optionIssues,publicationBlockers,reviewStatus:str(q.reviewStatus) || 'needs_verification',
     explanation,duplicateOf:validID(q.duplicateOf) ? q.duplicateOf : null,
-    references:list(q.sourceRefs).map(r=>({sourceName:str(r?.sourceName),part:str(r?.part),page:r?.page ?? null,questionNumber:r?.questionNumber ?? null})),
+    references:list(q.sourceRefs).map(r=>({sourceName:str(r?.sourceName || r?.source),part:str(r?.part),page:r?.page ?? null,questionNumber:r?.questionNumber ?? null})),
     notice:imageRequired ? 'Original question image has not been migrated. Review only; no score is assigned.' : optionIssues.includes('separated_labels_require_review') ? 'Joined option labels were separated for display. Source layout needs review; no score is assigned.' : incomplete ? 'Missing, duplicated or ambiguous source options. Review only; no score is assigned.' : publicationBlockers.length ? 'Under review; no score is assigned. '+publicationBlockers.map(code=>PUBLICATION_MESSAGES[code]).join(' ') : reviewOnly ? 'Incomplete or pending-review source record. No score is assigned.' : 'Feedback compares your selection with the recorded source key; it is not a new clinical validation.'};
 }
 export function createBank(records,{fileCount=0,errors=[]}={}) {
@@ -74,6 +95,7 @@ export function createBank(records,{fileCount=0,errors=[]}={}) {
   }
   const summary = Object.freeze({scope:'current-github-master-bank-only',fullSiteMigrated:false,fileCount,
     readinessPolicy:'explicit-publication-approval-and-complete-source-v1',publicationBlockerCounts:Object.freeze(publicationBlockerCounts),
+    curriculumModuleCount:MODULE_SLUGS.size,representedModuleCount:moduleCounts.size,
     sourceRecords:records.length,questionCount:questions.length,practiceCount:questions.filter(q=>!q.reviewOnly).length,
     reviewOnlyCount:questions.filter(q=>q.reviewOnly).length,originalEnglishCount:questions.filter(q=>!!q.explanation).length,
     missingOriginalEnglishCount:questions.filter(q=>!q.explanation).length,imageRequiredCount:questions.filter(q=>q.imageRequired).length,
@@ -101,7 +123,15 @@ export function loadRepositoryBank(root=fileURLToPath(new URL('../../master-bank
         const doc=JSON.parse(readFileSync(name,'utf8'));
         const rows=Array.isArray(doc)?doc:Array.isArray(doc?.questions)?doc.questions:Array.isArray(doc?.records)?doc.records:null;
         if(!rows) throw Error('unsupported_document');
-        records.push(...rows);
+        const firstDirectory=path.relative(root,name).split(path.sep)[0];
+        const inferred=firstDirectory.replace(/^\d+-/,'');
+        const inheritedSource=str(doc?.sourceName || doc?.source).trim();
+        records.push(...rows.map(row=>({...row,
+          module:row?.module ?? doc?.module,
+          specialty:row?.specialty ?? doc?.specialty,
+          sourceRefs:list(row?.sourceRefs).map(ref=>inheritedSource && !str(ref?.sourceName || ref?.source).trim()?{...ref,sourceName:inheritedSource}:ref),
+          __moduleSlug:MODULE_SLUGS.has(inferred)?inferred:undefined
+        })));
       } catch {errors.push(path.relative(root,name));}
     }
   }

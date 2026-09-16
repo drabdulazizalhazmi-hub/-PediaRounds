@@ -11,14 +11,14 @@ export function publicationIssues(raw, {key, explanation} = {}) {
   if (raw?.publishable !== undefined && raw.publishable !== true) issues.push('publication_blocked');
   if (raw?.blockers != null && (!Array.isArray(raw.blockers) || raw.blockers.length)) issues.push('unresolved_source_blockers');
   if (!meaningful(explanation)) issues.push('original_english_explanation_missing');
-  if (!Array.isArray(raw?.sourceRefs) || !raw.sourceRefs.some(ref => meaningful(ref?.sourceName))) issues.push('source_reference_missing');
+  if (!Array.isArray(raw?.sourceRefs) || !raw.sourceRefs.some(ref => meaningful(ref?.sourceName || ref?.source))) issues.push('source_reference_missing');
   const verified = text(raw?.verifiedAnswer).toUpperCase();
   if (!/^[A-Z]$/.test(verified)) issues.push('verified_answer_missing');
   else if (verified !== key) issues.push('verified_answer_conflict');
   const verification = raw?.verification;
-  const checks = ['upToDate', 'nelson', 'guideline'].map(name => verification?.[name]);
+  const checks = [verification?.upToDate ?? verification?.uptodate, verification?.nelson, verification?.guideline];
   if (checks.includes('conflicts')) issues.push('verification_conflict');
-  if (!checks.includes('supports') || !meaningful(verification?.referenceNotes)) issues.push('verification_evidence_missing');
+  if (!checks.includes('supports') || !meaningful(verification?.referenceNotes || verification?.notes)) issues.push('verification_evidence_missing');
   return issues;
 }
 export const PUBLICATION_MESSAGES = Object.freeze({
